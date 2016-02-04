@@ -186,7 +186,6 @@ PLATFORMS
 
 DEPENDENCIES
   codeclimate-test-reporter
-  coffee-rails (= 4.1.1)
   govuk_elements_rails!
   jbuilder (~> 2.0)
   jquery-rails

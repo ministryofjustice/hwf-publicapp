@@ -35,3 +35,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rubocop', require: false
 end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
+end

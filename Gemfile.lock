@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ministryofjustice/govuk_elements_rails.git
+  revision: 777894c9932119d4aef46633e91da99a8b63fe0d
+  submodules: true
+  specs:
+    govuk_elements_rails (0.3.0)
+      rails (~> 4.1, >= 4.1.0)
+      sass (~> 3.2, >= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -133,6 +142,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  govuk_elements_rails!
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.5.1)

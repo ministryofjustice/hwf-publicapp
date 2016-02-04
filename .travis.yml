@@ -1,5 +1,8 @@
 language: ruby
 sudo: false
+addons:
+  code_climate:
+    repo_token: ca58e966ca9664d66925f6837f4b2092de2b5eab7580591e955d3bb8be3b40fa
 cache: bundler
 script:
 - bundle exec rubocop

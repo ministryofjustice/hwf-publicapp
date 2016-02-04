@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.5.1'
 gem 'govuk_elements_rails', git: 'https://github.com/ministryofjustice/govuk_elements_rails.git', submodules: true
 # Use SCSS for stylesheets
-gem 'sass-rails', '4.0.5'
+gem 'sass-rails', '5.0.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

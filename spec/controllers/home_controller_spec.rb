@@ -15,4 +15,19 @@ RSpec.describe HomeController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe 'POST #marital_status_save' do
+    it 'redirects' do
+      post :marital_status_save, married: 'true'
+      expect(response).to redirect_to(summary_path)
+    end
+  end
+
+  describe 'GET #summary' do
+    it 'returns http success' do
+      get :summary
+      expect(response).to have_http_status(:success)
+    end
+  end
+
 end

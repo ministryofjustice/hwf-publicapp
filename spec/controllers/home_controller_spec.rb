@@ -18,7 +18,7 @@ RSpec.describe HomeController, type: :controller do
 
   describe 'POST #marital_status_save' do
     it 'redirects' do
-      post :marital_status_save, { marital_status: { married: 'true' } }
+      post :marital_status_save, marital_status: { married: 'true' }
       expect(response).to redirect_to(summary_path)
     end
   end

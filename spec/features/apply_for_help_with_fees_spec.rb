@@ -8,5 +8,6 @@ RSpec.feature 'As a user' do
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'Check details'
+    expect(page).to have_content 'Single'
   end
 end

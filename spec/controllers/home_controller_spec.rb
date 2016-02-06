@@ -9,4 +9,10 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
+  describe 'GET #status' do
+    it 'returns http success' do
+      get :status
+      expect(response).to have_http_status(:success)
+    end
+  end
 end

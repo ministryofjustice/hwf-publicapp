@@ -34,6 +34,7 @@ end
 
 group :test do
   gem 'codeclimate-test-reporter', require: nil
+  gem 'capybara'
 end
 
 gem 'slim-rails'

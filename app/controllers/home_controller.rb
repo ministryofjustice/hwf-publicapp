@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   end
 
   def marital_status
+    @marital_status = MaritalStatus.new
   end
 end

@@ -1,3 +1,14 @@
 p Question 1
 
 h3 What's your status?
+
+= form_for @marital_status, url: marital_status_path do |f|
+  .option
+    label for='married_false'
+      = f.radio_button :married, 'false'
+      = t('married_false')
+  .option
+    label for='application_benefits_true'
+      = f.radio_button :married, 'true'
+      = t('married_true')
+  = f.submit t('submit_button')

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'home#index'
-  get 'status' => 'home'
+  get 'marital-status' => 'home#marital_status'
 end

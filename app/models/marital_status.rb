@@ -1,4 +1,4 @@
-class Status
+class MaritalStatus
   include Virtus.model(nullify_blank: true)
   include ActiveModel::Model
 

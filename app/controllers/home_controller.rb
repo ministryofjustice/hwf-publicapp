@@ -2,6 +2,6 @@ class HomeController < ApplicationController
   def index
   end
 
-  def status
+  def marital_status
   end
 end

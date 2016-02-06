@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Status, type: :model do
-  subject { Status.new }
+RSpec.describe MaritalStatus, type: :model do
+  subject { described_class.new }
 
   describe 'validations' do
     describe 'married' do

@@ -9,9 +9,9 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
-  describe 'GET #status' do
+  describe 'GET #marital_status' do
     it 'returns http success' do
-      get :status
+      get :marital_status
       expect(response).to have_http_status(:success)
     end
   end

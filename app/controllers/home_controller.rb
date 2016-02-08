@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   ACTIONS = [:marital_status]
+
   def index
   end
 
@@ -9,8 +10,15 @@ class HomeController < ApplicationController
     end
 
     define_method("#{action}_save") do
-      session[action] = params[action.to_s]["married"]
-      redirect_to :summary
+      instance_variable_set("@#{action}", model_instance(action))
+      instance = instance_variable_get("@#{action}")
+      instance.married = params[action.to_s]['married']
+      if instance.valid?
+        session[action] = params[action.to_s]['married']
+        redirect_to :summary
+      else
+        redirect_to action
+      end
     end
   end
 

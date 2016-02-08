@@ -17,9 +17,18 @@ RSpec.describe HomeController, type: :controller do
   end
 
   describe 'POST #marital_status_save' do
-    it 'redirects' do
-      post :marital_status_save, marital_status: { married: 'true' }
-      expect(response).to redirect_to(summary_path)
+    context 'when parameters are valid' do
+      it 'redirects to the next page' do
+        post :marital_status_save, marital_status: { married: 'true' }
+        expect(response).to redirect_to(summary_path)
+      end
+    end
+
+    context 'when paramters are invalid' do
+      it 'goes back to the form' do
+        post :marital_status_save, marital_status: { married: 'foo' }
+        expect(response).to redirect_to(:marital_status)
+      end
     end
   end
 

@@ -10,6 +10,29 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+@import 'elements/helpers';
+@import 'elements/reset';
+@import 'elements/elements-typography';
+@import 'elements/layout';
+@import 'elements/forms';
+@import 'elements/tables';
+@import 'elements/buttons';
+@import 'elements/details';
+@import 'elements/lists';
+@import 'elements/panels';
+@import "elements/icons";
+
+@import 'design-patterns/alpha-beta';
+@import 'grid_layout';
+
+.phase-banner {
+  @include phase-banner($state: alpha);
+  max-width: 960px;
+  margin: auto;
+}
+
+.container {
+  padding: 0 30px;
+}

@@ -1,7 +1,4 @@
-class MaritalStatus
-  include Virtus.model(nullify_blank: true)
-  include ActiveModel::Model
-
+class MaritalStatus < Base
   attribute :married, Boolean
 
   validates :married, inclusion: { in: [true, false] }

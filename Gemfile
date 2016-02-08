@@ -28,10 +28,14 @@ gem 'unicorn'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
-  gem 'rubocop', require: false
+  gem 'rubocop', '0.35.1', require: false
   gem 'rubocop-rspec', require: false
 end
 
 group :test do
   gem 'codeclimate-test-reporter', require: nil
+  gem 'capybara'
 end
+
+gem 'slim-rails'
+gem 'virtus'

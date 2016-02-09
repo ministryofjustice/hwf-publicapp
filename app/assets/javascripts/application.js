@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+// (jquery served as part of moj_template)
+
 //= require jquery_ujs
-//= require_tree .
+
+// overwrite annoying console message module
+moj.Modules.devs = {};

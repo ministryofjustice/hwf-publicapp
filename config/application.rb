@@ -31,6 +31,9 @@ module HwfPublicapp
     config.proposition_title = 'Help with fees'
     config.product_type = 'service'
 
+    # Custom directories with classes and modules you want to be autoloadable.
+    config.autoload_paths += %W[#{config.root}/lib]
+
     # The following values are required by the phase banner
     config.phase = 'alpha'
     config.feedback_url = '#'

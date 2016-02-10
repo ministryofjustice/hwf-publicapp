@@ -10,11 +10,10 @@ class HomeController < ApplicationController
     end
 
     define_method("#{action}_save") do
-      instance_variable_set("@#{action}", model_instance(action))
-      instance = instance_variable_get("@#{action}")
-      instance.married = params[action.to_s]['married']
+      instance = create_instance(action)
+      assign_attributes(instance, params[action.to_s])
       if instance.valid?
-        session[action] = params[action.to_s]['married']
+        save_in_session(instance)
         redirect_to :summary
       else
         redirect_to action
@@ -23,12 +22,29 @@ class HomeController < ApplicationController
   end
 
   def summary
-    @marital_status = session[:marital_status]
+    @marital_status = session[:married]
   end
 
   private
 
+  def create_instance(action)
+    instance_variable_set("@#{action}", model_instance(action))
+    instance_variable_get("@#{action}")
+  end
+
   def model_instance(model_name)
     model_name.to_s.classify.constantize.new
+  end
+
+  def assign_attributes(instance, params)
+    instance.attributes.keys.each do |key|
+      instance.send("#{key}=", params[key.to_s])
+    end
+  end
+
+  def save_in_session(instance)
+    instance.attributes.each do |attribute|
+      session[attribute[0]] = instance.send(attribute[0])
+    end
   end
 end

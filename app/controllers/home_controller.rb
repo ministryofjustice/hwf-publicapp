@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  ACTIONS = [:marital_status]
+  ACTIONS = [:marital_status,
+             :savings_and_investment]
 
   def index
   end
@@ -11,10 +12,10 @@ class HomeController < ApplicationController
 
     define_method("#{action}_save") do
       instance = create_instance(action)
-      assign_attributes(instance, params[action.to_s])
+      assign_attributes(instance, params[action.to_s.singularize])
       if instance.valid?
         save_in_session(instance)
-        redirect_to :summary
+        redirect_to next_step(action)
       else
         redirect_to action
       end
@@ -23,6 +24,7 @@ class HomeController < ApplicationController
 
   def summary
     @marital_status = session[:married]
+    @savings_and_investments = session[:less_than_limit]
   end
 
   private
@@ -46,5 +48,9 @@ class HomeController < ApplicationController
     instance.attributes.each do |attribute|
       session[attribute[0]] = instance.send(attribute[0])
     end
+  end
+
+  def next_step(action)
+    ::Navigation.new.steps[action]
   end
 end

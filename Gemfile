@@ -35,6 +35,8 @@ group :development, :test do
   gem 'pry'
 end
 
+gem 'web-console', group: :development
+
 group :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'capybara'

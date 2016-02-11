@@ -33,18 +33,18 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
-  describe 'GET #savings_and_investments' do
+  describe 'GET #savings_and_investment' do
     it 'returns http success' do
       get :savings_and_investment
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'POST #savings_and_investments_save' do
+  describe 'POST #savings_and_investment_save' do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :savings_and_investment_save, savings_and_investment: { less_than_limit: 'true' }
-        expect(response).to redirect_to(summary_path)
+        expect(response).to redirect_to(benefit_path)
       end
     end
 

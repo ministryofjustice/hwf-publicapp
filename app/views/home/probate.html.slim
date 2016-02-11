@@ -1,0 +1,17 @@
+p Question 7 of 14
+
+h3 Are you paying a fee for a probate case?
+
+p These cases are usually about the property and belongings of someone who has died.
+
+p
+  = form_for @probate, url: probate_save_path do |f|
+    .option
+      label for='probate_case_false'
+        = f.radio_button :kase, 'false'
+        = t('probate_case_false')
+    .option
+      label for='probate_case_true'
+        = f.radio_button :kase, 'true'
+        = t('probate_case_true')
+    = f.submit t('submit_button')

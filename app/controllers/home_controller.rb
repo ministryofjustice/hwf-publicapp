@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   ACTIONS = [:marital_status,
              :savings_and_investment,
-             :benefit]
+             :benefit,
+             :fee]
 
   def index
   end

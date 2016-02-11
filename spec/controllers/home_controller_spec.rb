@@ -74,8 +74,15 @@ RSpec.describe HomeController, type: :controller do
     context 'when paramters are invalid' do
       it 'goes back to the form' do
         post :benefit_save, benefit: { on_benefits: 'foo' }
-        expect(response).to redirect_to(:benefit)
+        expect(response).to redirect_to(:fee)
       end
+    end
+  end
+
+  describe 'GET #fee' do
+    it 'returns http success' do
+      get :fee
+      expect(response).to have_http_status(:success)
     end
   end
 

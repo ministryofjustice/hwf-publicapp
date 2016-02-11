@@ -1,25 +1,33 @@
-h2 =t('summary_title')
+h1.heading-large =t('summary_title')
 
-p
-  | Status
-  =t("marital_status_#{@marital_status}")
+table
+  tbody
+    tr
+      td Status
+      td= t("marital_status_#{@marital_status}")
+      td.right= link_to "Change", "#"
+    tr
+      td Savings and investments
+      td= t("less_than_limit_#{@savings_and_investments}")
+      td.right= link_to "Change", "#"
+    tr
+      td Benefits
+      td= t("applicant_on_benefits_#{@benefits}")
+      td.right= link_to "Change", "#"
+    tr
+      td Fee paid
+      td=t("fee_paid_#{@fee}")
+      td.right= link_to "Change", "#"
+    tr
+      td Probate case
+      td=t("probate_case_#{@probate}")
+      td.right= link_to "Change", "#"
+    tr
+      td Claim number
+      td=t("claim_number_#{@claim}")
+      td.right= link_to "Change", "#"
 
-p
-  | Savings and investments
-  =t("less_than_limit_#{@savings_and_investments}")
+h2.heading-medium Declaration and statement of truth
+p By completing and sending this application, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my application may be rejected and the full fee will be payable.
 
-p
-  | Benefits
-  =t("applicant_on_benefits_#{@benefits}")
-
-p
-  | Fee paid
-  =t("fee_paid_#{@fee}")
-
-p
-  | Probate case
-  =t("probate_case_#{@probate}")
-
-p
-  | Claim number
-  =t("claim_number_#{@claim}")
+a.button role="button" href="#" Complete and send application

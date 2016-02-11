@@ -4,21 +4,21 @@ RSpec.describe Probate, type: :model do
   subject { described_class.new }
 
   describe 'validations' do
-    describe 'probate_case' do
+    describe 'kase' do
       context 'when true' do
-        before { subject.probate_case = true }
+        before { subject.kase = true }
 
         it { expect(subject.valid?).to be true }
       end
 
       context 'when false' do
-        before { subject.probate_case = false }
+        before { subject.kase = false }
 
         it { expect(subject.valid?).to be true }
       end
 
       context 'when not a boolean value' do
-        before { subject.probate_case = 'string' }
+        before { subject.kase = 'string' }
 
         it { expect(subject.valid?).to be false }
       end

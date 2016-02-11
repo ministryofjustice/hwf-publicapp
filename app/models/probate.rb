@@ -1,5 +1,5 @@
 class Probate < Base
-  attribute :probate_case, Boolean
+  attribute :kase, Boolean
 
-  validates :probate_case, inclusion: { in: [true, false] }
+  validates :kase, inclusion: { in: [true, false] }
 end

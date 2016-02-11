@@ -86,7 +86,7 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
-  describe 'POST #benefit_save' do
+  describe 'POST #fee_save' do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :fee_save, fee: { paid: 'true' }

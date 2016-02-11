@@ -33,18 +33,18 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
-  describe 'GET #savings_and_investments' do
+  describe 'GET #savings_and_investment' do
     it 'returns http success' do
       get :savings_and_investment
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe 'POST #savings_and_investments_save' do
+  describe 'POST #savings_and_investment_save' do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :savings_and_investment_save, savings_and_investment: { less_than_limit: 'true' }
-        expect(response).to redirect_to(summary_path)
+        expect(response).to redirect_to(benefit_path)
       end
     end
 
@@ -56,11 +56,33 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
+  describe 'GET #benefit' do
+    it 'returns http success' do
+      get :benefit
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #benefit_save' do
+    context 'when parameters are valid' do
+      it 'redirects to the next page' do
+        post :benefit_save, benefit: { on_benefits: 'true' }
+        expect(response).to redirect_to(summary_path)
+      end
+    end
+
+    context 'when paramters are invalid' do
+      it 'goes back to the form' do
+        post :benefit_save, benefit: { on_benefits: 'foo' }
+        expect(response).to redirect_to(:benefit)
+      end
+    end
+  end
+
   describe 'GET #summary' do
     it 'returns http success' do
       get :summary
       expect(response).to have_http_status(:success)
     end
   end
-
 end

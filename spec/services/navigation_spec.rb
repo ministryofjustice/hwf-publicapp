@@ -4,5 +4,6 @@ RSpec.describe Navigation do
   subject { described_class.new.steps }
 
   it { expect(subject[:marital_status]).to eq :savings_and_investment }
-  it { expect(subject[:savings_and_investment]).to eq :summary }
+  it { expect(subject[:savings_and_investment]).to eq :benefit }
+  it { expect(subject[:benefit]).to eq :summary }
 end

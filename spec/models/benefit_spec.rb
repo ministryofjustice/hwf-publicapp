@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Benefits, type: :model do
+RSpec.describe Benefit, type: :model do
   subject { described_class.new }
 
   describe 'validations' do

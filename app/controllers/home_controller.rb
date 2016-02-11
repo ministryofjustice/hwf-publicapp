@@ -28,6 +28,7 @@ class HomeController < ApplicationController
     @marital_status = session[:married]
     @savings_and_investments = session[:less_than_limit]
     @benefits = session[:on_benefits]
+    @fee = session[:paid]
   end
 
   private

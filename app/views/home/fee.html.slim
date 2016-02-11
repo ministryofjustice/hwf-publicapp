@@ -1,0 +1,18 @@
+p Question 6 of 14
+
+h3 Have you already paid the fee?
+
+p
+ You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, answer the following questions about your circumstances at the time you paid the fee.
+
+p
+  = form_for @fee, url: fee_save_path do |f|
+    .option
+      label for='paid_false'
+        = f.radio_button :paid, 'false'
+        = t('fee_paid_false')
+    .option
+      label for='paid_true'
+        = f.radio_button :paid, 'true'
+        = t('fee_paid_true')
+    = f.submit t('submit_button')

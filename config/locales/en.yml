@@ -12,3 +12,5 @@ en:
   on_benefits_true: Yes, I am receiving one of the benefits listed
   applicant_on_benefits_true: Receiving eligible benefits
   applicant_on_benefits_false: Not receiving eligible benefits
+  fee_paid_false: 'No'
+  fee_paid_true: 'Yes'

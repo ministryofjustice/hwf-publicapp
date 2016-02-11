@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   ACTIONS = [:marital_status,
-             :savings_and_investment]
+             :savings_and_investment,
+             :benefit]
 
   def index
   end
@@ -25,6 +26,7 @@ class HomeController < ApplicationController
   def summary
     @marital_status = session[:married]
     @savings_and_investments = session[:less_than_limit]
+    @benefits = session[:on_benefits]
   end
 
   private

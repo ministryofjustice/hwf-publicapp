@@ -1,0 +1,25 @@
+p Question 3 of 14
+
+h3 Do you receive any of the following benefits?
+
+p We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.
+
+ul
+  li Income-based Jobseeker’s Allowance (JSA)
+  li Income-related Employment and Support Allowance (ESA)
+  li Income Support
+  li Universal Credit  (and you’re earning less than £6,000 a year)
+  li State Pension (Guarantee Credit)
+  li Scottish Civil Legal Aid  (not Advice and Assistance or Advice by Way of Representation)
+
+p
+  = form_for @benefit, url: benefit_save_path do |f|
+    .option
+      label for='on_benefits_false'
+        = f.radio_button :on_benefits, 'false'
+        = t('on_benefits_false')
+    .option
+      label for='on_benefits_true'
+        = f.radio_button :on_benefits, 'true'
+        = t('on_benefits_true')
+    = f.submit t('submit_button')

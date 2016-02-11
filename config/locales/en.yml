@@ -8,3 +8,7 @@ en:
   marital_status_true: Married or living with someone and sharing an income
   less_than_limit_false: Less than £3,000
   less_than_limit_true: More than £3,000
+  on_benefits_false: 'No'
+  on_benefits_true: Yes, I am receiving one of the benefits listed
+  applicant_on_benefits_true: Receiving eligible benefits
+  applicant_on_benefits_false: Not receiving eligible benefits

@@ -12,6 +12,7 @@
  *
  */
 
+/*from govuk_elements*/
 @import 'elements/helpers';
 @import 'elements/reset';
 @import 'elements/elements-typography';
@@ -24,15 +25,15 @@
 @import 'elements/panels';
 @import "elements/icons";
 
+/*from govuk_frontend_toolkit*/
 @import 'design-patterns/alpha-beta';
-@import 'grid_layout';
+@import 'design-patterns/buttons';
 
-.phase-banner {
-  @include phase-banner($state: alpha);
-  max-width: 960px;
-  margin: auto;
-}
+/*local*/
+@import 'local/phase-banner';
+@import 'local/typography';
+@import 'local/buttons';
+@import 'local/rules';
+@import 'local/utilities';
 
-.container {
-  padding: 0 30px;
-}
+

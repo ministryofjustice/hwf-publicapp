@@ -9,7 +9,7 @@
     .container
       .phase-banner
         p
-          strong.phase-tag= Rails.application.config.phase
+          strong.phase-tag= Rails.application.config.phase.upcase
           span
             | This is a new service – your #{link_to 'feedback', Rails.application.config.feedback_url} will help us to improve it.
     .container

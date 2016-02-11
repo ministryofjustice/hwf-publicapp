@@ -67,14 +67,14 @@ RSpec.describe HomeController, type: :controller do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :benefit_save, benefit: { on_benefits: 'true' }
-        expect(response).to redirect_to(summary_path)
+        expect(response).to redirect_to(:fee)
       end
     end
 
     context 'when paramters are invalid' do
       it 'goes back to the form' do
         post :benefit_save, benefit: { on_benefits: 'foo' }
-        expect(response).to redirect_to(:fee)
+        expect(response).to redirect_to(:benefit)
       end
     end
   end
@@ -83,6 +83,22 @@ RSpec.describe HomeController, type: :controller do
     it 'returns http success' do
       get :fee
       expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #fee_save' do
+    context 'when parameters are valid' do
+      it 'redirects to the next page' do
+        post :fee_save, fee: { paid: 'true' }
+        expect(response).to redirect_to(summary_path)
+      end
+    end
+
+    context 'when paramters are invalid' do
+      it 'goes back to the form' do
+        post :fee_save, fee: { paid: 'foo' }
+        expect(response).to redirect_to(:fee)
+      end
     end
   end
 

@@ -13,4 +13,3 @@ Using this command `docker build moj/hwf-publicapp:vX.Y`
 ## Project Standards 
 * Rspec features, not cucumber
 * JavaScript in preference to Coffeescript
-* Slim templating

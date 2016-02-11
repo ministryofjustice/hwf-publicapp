@@ -17,10 +17,11 @@ RSpec.describe HomeController, type: :controller do
   end
 
   describe 'POST #marital_status_save' do
+    let(:next_step) { Navigation.new.steps[:marital_status] }
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :marital_status_save, marital_status: { married: 'true' }
-        expect(response).to redirect_to(summary_path)
+        expect(response).to redirect_to(next_step)
       end
     end
 
@@ -28,6 +29,29 @@ RSpec.describe HomeController, type: :controller do
       it 'goes back to the form' do
         post :marital_status_save, marital_status: { married: 'foo' }
         expect(response).to redirect_to(:marital_status)
+      end
+    end
+  end
+
+  describe 'GET #savings_and_investments' do
+    it 'returns http success' do
+      get :savings_and_investment
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #savings_and_investments_save' do
+    context 'when parameters are valid' do
+      it 'redirects to the next page' do
+        post :savings_and_investment_save, savings_and_investment: { less_than_limit: 'true' }
+        expect(response).to redirect_to(summary_path)
+      end
+    end
+
+    context 'when paramters are invalid' do
+      it 'goes back to the form' do
+        post :savings_and_investment_save, savings_and_investment: { less_than_limit: 'foo' }
+        expect(response).to redirect_to(:savings_and_investment)
       end
     end
   end

@@ -1,0 +1,14 @@
+p Question 2 of 14
+
+h3 How much do you have in savings and investments?
+
+= form_for @savings_and_investment, url: savings_and_investment_save_path do |f|
+  .option
+    label for='less_than_limit_false'
+      = f.radio_button :less_than_limit, 'false'
+      = t('less_than_limit_false')
+  .option
+    label for='less_than_limit_true'
+      = f.radio_button :less_than_limit, 'true'
+      = t('less_than_limit_true')
+  = f.submit t('submit_button')

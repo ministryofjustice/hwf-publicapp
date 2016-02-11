@@ -36,6 +36,7 @@ group :development, :test do
 end
 
 gem 'web-console', group: :development
+gem 'launchy', group: :development
 
 group :test do
   gem 'codeclimate-test-reporter', require: nil

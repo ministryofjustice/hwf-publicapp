@@ -22,8 +22,10 @@ class HomeController < ApplicationController
       assign_attributes(instance, params[action.to_s.singularize])
       if instance.valid?
         save_in_session(instance)
+        session[:errors] = nil
         redirect_to next_step(action)
       else
+        session[:errors] = instance.errors
         redirect_to action
       end
     end
@@ -41,7 +43,11 @@ class HomeController < ApplicationController
   end
 
   def model_instance(model_name)
-    model_name.to_s.classify.constantize.new
+    model = model_name.to_s.classify.constantize.new
+    session[:errors].try(:each) do |attribute, message|
+      model.errors.add(attribute, message)
+    end
+    model
   end
 
   def assign_attributes(instance, params)

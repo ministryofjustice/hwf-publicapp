@@ -32,6 +32,7 @@ class HomeController < ApplicationController
     @benefits = session[:on_benefits]
     @fee = session[:paid]
     @probate = session[:kase]
+    @claim = session[:number]
   end
 
   private

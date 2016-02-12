@@ -113,7 +113,7 @@ RSpec.describe HomeController, type: :controller do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :probate_save, probate: { kase: 'true' }
-        expect(response).to redirect_to(:summary)
+        expect(response).to redirect_to(:claim)
       end
     end
 

@@ -14,5 +14,9 @@
 
 //= require jquery_ujs
 
+//= require govuk/selection-buttons
+
+//= require_tree ./modules
+
 // overwrite annoying console message module
 moj.Modules.devs = {};

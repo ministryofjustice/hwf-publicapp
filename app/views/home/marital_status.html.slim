@@ -1,14 +1,41 @@
-p Question 1
-
-h3 What's your status?
+h2.heading-large
+  span.heading-secondary Question 1
+  | What's your status?
 
 = form_for @marital_status, url: marital_status_save_path do |f|
-  .option
-    label for='married_false'
-      = f.radio_button :married, 'false'
-      = t('married_false')
-  .option
-    label for='married_true'
-      = f.radio_button :married, 'true'
-      = t('married_true')
-  = f.submit t('submit_button')
+  fieldset
+    legend.visuallyhidden What's your status?
+
+    .form-group
+      label.block-label for="marital_status_married_false"
+        = f.radio_button :married, 'false'
+        = t('married_false')
+
+      label.block-label for="marital_status_married_true"
+        = f.radio_button :married, 'true'
+        = t('married_true')
+
+  .form-group
+    details
+      summary Help with status
+
+      .panel-indent
+        h3.heading-small Choose ‘married or living with someone and sharing an income’ if you’re:
+        ul.list.list-bullet
+          li married
+          li civil partners
+          li living together as if you are married or in a civil partnership
+          li living at the same address with a joint income
+          li a couple forced to live apart, eg where one or both is serving in the Armed forces, in prison or living in residential care
+
+        h3.heading-small Choose ‘single’ if you rely on your own income or your case involves your partner, for example:
+        ul.list.list-bullet
+          li divorce, dissolution or annulment (unless you have married again or live with a new partner)
+          li gender recognition
+          li domestic violence
+          li forced marriage
+          li you and your partner are both part of a multiple fee group
+
+  .form-group
+    = f.submit t('submit_button'), class: 'button'
+

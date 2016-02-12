@@ -1,24 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe ProbateCaseFee, type: :model do
+RSpec.describe Probate, type: :model do
   subject { described_class.new }
 
   describe 'validations' do
-    describe 'answer' do
+    describe 'kase' do
       context 'when true' do
-        before { subject.answer = true }
+        before { subject.kase = true }
 
         it { expect(subject.valid?).to be true }
       end
 
       context 'when false' do
-        before { subject.answer = false }
+        before { subject.kase = false }
 
         it { expect(subject.valid?).to be true }
       end
 
       context 'when not a boolean value' do
-        before { subject.answer = 'string' }
+        before { subject.kase = 'string' }
 
         it { expect(subject.valid?).to be false }
       end

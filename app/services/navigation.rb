@@ -4,7 +4,8 @@ class Navigation
     { marital_status: :savings_and_investment,
       savings_and_investment: :benefit,
       benefit: :fee,
-      fee: :summary }
+      fee: :probate,
+      probate: :summary }
   end
 
 end

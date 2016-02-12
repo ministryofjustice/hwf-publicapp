@@ -25,7 +25,7 @@ RSpec.describe HomeController, type: :controller do
       end
     end
 
-    context 'when paramters are invalid' do
+    context 'when parameters are invalid' do
       it 'goes back to the form' do
         post :marital_status_save, marital_status: { married: 'foo' }
         expect(response).to redirect_to(:marital_status)
@@ -48,7 +48,7 @@ RSpec.describe HomeController, type: :controller do
       end
     end
 
-    context 'when paramters are invalid' do
+    context 'when parameters are invalid' do
       it 'goes back to the form' do
         post :savings_and_investment_save, savings_and_investment: { less_than_limit: 'foo' }
         expect(response).to redirect_to(:savings_and_investment)
@@ -90,14 +90,37 @@ RSpec.describe HomeController, type: :controller do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :fee_save, fee: { paid: 'true' }
-        expect(response).to redirect_to(summary_path)
+        expect(response).to redirect_to(:probate)
       end
     end
 
-    context 'when paramters are invalid' do
+    context 'when parameters are invalid' do
       it 'goes back to the form' do
         post :fee_save, fee: { paid: 'foo' }
         expect(response).to redirect_to(:fee)
+      end
+    end
+  end
+
+  describe 'GET #probate' do
+    it 'returns http success' do
+      get :probate
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #probate_save' do
+    context 'when parameters are valid' do
+      it 'redirects to the next page' do
+        post :probate_save, probate: { kase: 'true' }
+        expect(response).to redirect_to(:summary)
+      end
+    end
+
+    context 'when parameters are invalid' do
+      it 'goes back to the form' do
+        post :probate_save, probate: { kase: 'foo' }
+        expect(response).to redirect_to(:probate)
       end
     end
   end

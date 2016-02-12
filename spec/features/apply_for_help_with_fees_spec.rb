@@ -100,7 +100,6 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
   end
 
-
   scenario 'I want to add information on case or claim' do
     page.visit '/'
     page.click_link 'Apply now'

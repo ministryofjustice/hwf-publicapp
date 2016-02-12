@@ -4,27 +4,31 @@ table
   tbody
     tr
       td Status
-      td= t("marital_status_#{@marital_status}")
+      td= t("marital_status_#{@summary.marital_status_married}")
       td.right= link_to "Change", "#"
     tr
       td Savings and investments
-      td= t("less_than_limit_#{@savings_and_investments}")
+      td= t("less_than_limit_#{@summary.savings_and_investment_less_than_limit}")
       td.right= link_to "Change", "#"
     tr
       td Benefits
-      td= t("applicant_on_benefits_#{@benefits}")
+      td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}")
       td.right= link_to "Change", "#"
     tr
       td Fee paid
-      td=t("fee_paid_#{@fee}")
+      td=t("fee_paid_#{@summary.fee_paid}")
       td.right= link_to "Change", "#"
     tr
       td Probate case
-      td=t("probate_case_#{@probate}")
+      td=t("probate_case_#{@summary.probate_kase}")
       td.right= link_to "Change", "#"
     tr
       td Claim number
-      td=t("claim_number_#{@claim}")
+      td=t("claim_number_#{@summary.claim_number}")
+      td.right= link_to "Change", "#"
+    tr
+      td Form name
+      td=@summary.form_name_identifier
       td.right= link_to "Change", "#"
 
 h2.heading-medium Declaration and statement of truth

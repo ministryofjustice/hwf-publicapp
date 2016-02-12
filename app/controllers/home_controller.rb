@@ -28,13 +28,7 @@ class HomeController < ApplicationController
   end
 
   def summary
-    @marital_status = session[:married]
-    @savings_and_investments = session[:less_than_limit]
-    @benefits = session[:on_benefits]
-    @fee = session[:paid]
-    @probate = session[:kase]
-    @claim = session[:number]
-    @form_name = session[:identifier]
+    @summary = Views::Summary.new(session)
   end
 
   private
@@ -56,7 +50,7 @@ class HomeController < ApplicationController
 
   def save_in_session(instance)
     instance.attributes.each do |attribute|
-      session[attribute[0]] = instance.send(attribute[0])
+      session["#{instance.class.name.underscore}_#{attribute[0]}"] = instance.send(attribute[0])
     end
   end
 

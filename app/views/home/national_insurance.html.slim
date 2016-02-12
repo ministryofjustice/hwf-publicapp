@@ -1,0 +1,11 @@
+p Question 10 of 14
+
+h3 What is your National Insurance number?
+
+p Example: QQ 12 34 56 C
+
+p
+  = form_for @national_insurance, url: national_insurance_save_path do |f|
+    .option for='national_insurance_number'
+        = f.text_field :number
+    = f.submit t('submit_button')

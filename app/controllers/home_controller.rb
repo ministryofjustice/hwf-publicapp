@@ -4,7 +4,8 @@ class HomeController < ApplicationController
              :benefit,
              :fee,
              :probate,
-             :claim]
+             :claim,
+             :form_name]
 
   def index
   end
@@ -33,6 +34,7 @@ class HomeController < ApplicationController
     @fee = session[:paid]
     @probate = session[:kase]
     @claim = session[:number]
+    @form_name = session[:identifier]
   end
 
   private

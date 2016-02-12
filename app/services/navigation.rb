@@ -6,7 +6,8 @@ class Navigation
       benefit: :fee,
       fee: :probate,
       probate: :claim,
-      claim: :summary }
+      claim: :form_name,
+      form_name: :summary }
   end
 
 end

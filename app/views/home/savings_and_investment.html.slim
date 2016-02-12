@@ -1,14 +1,47 @@
-p Question 2 of 14
-
-h3 How much do you have in savings and investments?
+h2.heading-large
+  span.heading-secondary Question 2 of 14
+  | How much do you have in savings and investments?
 
 = form_for @savings_and_investment, url: savings_and_investment_save_path do |f|
-  .option
-    label for='less_than_limit_false'
-      = f.radio_button :less_than_limit, 'false'
-      = t('less_than_limit_false')
-  .option
-    label for='less_than_limit_true'
-      = f.radio_button :less_than_limit, 'true'
-      = t('less_than_limit_true')
-  = f.submit t('submit_button')
+  fieldset
+    legend.visuallyhidden How much do you have in savings and investments?
+
+    .form-group
+      label.block-label for='savings_and_investment_less_than_limit_false'
+        = f.radio_button :less_than_limit, 'false'
+        = t('less_than_limit_false')
+
+      label.block-label for='savings_and_investment_less_than_limit_true'
+        = f.radio_button :less_than_limit, 'true'
+        = t('less_than_limit_true')
+
+  .form-group
+    details
+      summary Help with savings and investments
+
+      .panel-indent
+        h3.heading-small What to include in savings and investments:
+        ul.list.list-bullet
+          li money in ISAs and any other savings account
+          li joint savings accounts that you share with your partner
+          li fixed rate or investment bonds
+          li any lump sum (eg a redundancy payout)
+          li stocks and shares
+          li trust funds (or any other kind of fund)
+          li second homes
+          li any money or property outside the UK
+
+        h3.heading-small Don’t include the following in your savings total:
+        ul.list.list-bullet
+          li wages or benefits
+          li joint savings accounts that you share with your partner if your case is against your partner
+          li personal pensions
+          li capital value of self-employed businesses
+          li student loans
+          li unfair dismissal awards
+          li money from the criminal injury compensation scheme
+          li medical negligence or personal injury awards
+          li any compensation under a statutory scheme in respect of Mesothelioma
+
+  .form-group
+    = f.submit t('submit_button'), class: 'button'

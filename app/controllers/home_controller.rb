@@ -5,7 +5,8 @@ class HomeController < ApplicationController
              :fee,
              :probate,
              :claim,
-             :form_name]
+             :form_name,
+             :national_insurance]
 
   def index
   end

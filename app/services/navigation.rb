@@ -7,7 +7,8 @@ class Navigation
       fee: :probate,
       probate: :claim,
       claim: :form_name,
-      form_name: :summary }
+      form_name: :national_insurance,
+      national_insurance: :summary }
   end
 
 end

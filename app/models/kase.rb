@@ -1,4 +1,4 @@
-class CaseNumber < Base
+class Kase < Base
   attribute :number, Boolean
 
   validates :number, inclusion: { in: [true, false] }

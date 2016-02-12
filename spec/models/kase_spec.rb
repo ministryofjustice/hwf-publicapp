@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CaseNumber, type: :model do
+RSpec.describe Kase, type: :model do
   subject { described_class.new }
 
   describe 'validations' do

@@ -125,6 +125,29 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
+  describe 'GET #claim' do
+    it 'returns http success' do
+      get :claim
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #claim_save' do
+    context 'when parameters are valid' do
+      it 'redirects to the next page' do
+        post :claim_save, claim: { number: 'true' }
+        expect(response).to redirect_to(:summary)
+      end
+    end
+
+    context 'when parameters are invalid' do
+      it 'goes back to the form' do
+        post :claim_save, claim: { number: 'foo' }
+        expect(response).to redirect_to(:claim)
+      end
+    end
+  end
+
   describe 'GET #summary' do
     it 'returns http success' do
       get :summary

@@ -3,7 +3,8 @@ class HomeController < ApplicationController
              :savings_and_investment,
              :benefit,
              :fee,
-             :probate]
+             :probate,
+             :claim]
 
   def index
   end

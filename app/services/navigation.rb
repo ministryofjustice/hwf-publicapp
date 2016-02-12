@@ -5,7 +5,8 @@ class Navigation
       savings_and_investment: :benefit,
       benefit: :fee,
       fee: :probate,
-      probate: :summary }
+      probate: :claim,
+      claim: :summary }
   end
 
 end

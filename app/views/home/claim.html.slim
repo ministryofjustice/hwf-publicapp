@@ -1,0 +1,17 @@
+p Question 8 of 14
+
+h3 Do you have a case, claim or ‘notice to pay’ number?
+
+p Find this number on letters from the court or tribunal.
+
+p
+  = form_for @claim, url: claim_save_path do |f|
+    .option
+      label for='claim_number_false'
+        = f.radio_button :number, 'false'
+        = t('claim_number_false')
+    .option
+      label for='claim_number_true'
+        = f.radio_button :number, 'true'
+        = t('claim_number_true')
+    = f.submit t('submit_button')

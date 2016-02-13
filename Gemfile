@@ -30,7 +30,7 @@ gem 'unicorn'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
-  gem 'rubocop', '0.35.1', require: false
+  gem 'rubocop', '~>0.37.2', require: true
   gem 'rubocop-rspec', require: false
   gem 'pry'
 end

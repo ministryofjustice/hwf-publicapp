@@ -1,4 +1,4 @@
-class PersonalDetails < Base
+class PersonalDetail < Base
   attribute :title, String
   attribute :first_name, String
   attribute :last_name, String

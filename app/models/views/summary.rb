@@ -9,7 +9,10 @@ module Views
       :probate_kase,
       :claim_number,
       :form_name_identifier,
-      :national_insurance_number
+      :national_insurance_number,
+      :personal_detail_title,
+      :personal_detail_first_name,
+      :personal_detail_last_name
     ].freeze
 
     ATTRIBUTES.each do |attribute|
@@ -23,5 +26,12 @@ module Views
         instance_variable_set("@#{attribute}", session[attribute])
       end
     end
+
+    def full_name
+      [@personal_detail_title,
+       @personal_detail_first_name,
+       @personal_detail_last_name].join(' ')
+    end
+
   end
 end

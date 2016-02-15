@@ -8,7 +8,8 @@ class Navigation
       probate: :claim,
       claim: :form_name,
       form_name: :national_insurance,
-      national_insurance: :summary }
+      national_insurance: :personal_detail,
+      personal_detail: :summary }
   end
 
 end

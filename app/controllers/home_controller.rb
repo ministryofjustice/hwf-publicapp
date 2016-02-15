@@ -6,7 +6,8 @@ class HomeController < ApplicationController
              :probate,
              :claim,
              :form_name,
-             :national_insurance].freeze
+             :national_insurance,
+             :personal_detail].freeze
 
   def index
   end

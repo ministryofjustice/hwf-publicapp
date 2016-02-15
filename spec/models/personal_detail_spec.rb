@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe PersonalDetails, type: :model do
+RSpec.describe PersonalDetail, type: :model do
 
   subject { described_class.new(title: 'Lord', first_name: 'Flash', last_name: 'Gordon') }
 

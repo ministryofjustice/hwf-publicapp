@@ -21,7 +21,6 @@ en:
   applicant_address_postcode: Postcode
   error_block:
     heading: 'You need to fix the errors on this page before continuing.'
-    sub_heading: 'See highlighted errors below.'
     visuallyhidden: 'Errors are listed as links below, click to select the field that needs correcting.'
   activemodel:
     errors:

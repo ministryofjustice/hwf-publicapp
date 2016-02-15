@@ -10,7 +10,7 @@ module Views
       :claim_number,
       :form_name_identifier,
       :national_insurance_number
-    ]
+    ].freeze
 
     ATTRIBUTES.each do |attribute|
       define_method(attribute.to_s) do

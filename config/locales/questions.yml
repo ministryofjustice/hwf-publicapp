@@ -1,6 +1,8 @@
 en:
   questions:
     marital_status:
+      married_true: 'Married or living with someone and sharing an income'
+      married_false: 'Single'
       breadcrumb: 'Question 1 of 14'
       text: "What's your status?"
       details:

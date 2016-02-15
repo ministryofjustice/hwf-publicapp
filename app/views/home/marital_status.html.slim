@@ -1,11 +1,22 @@
+- if @marital_status.errors.any?
+  .error-summary role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1"
+    h1.heading-medium.error-summary-heading#error-summary-heading-example-1 You need to fix the errors on this page before continuing.
+    span.visuallyhidden Errors are listed as links below, click to select the field that needs correcting.
+    ul.error-summary-list
+      - @marital_status.errors.each do |field, message|
+        li
+          - message = message.is_a?(Array) ? message.first : message
+          = link_to message, "##{field}", class: 'error-link', data: { id: "##{field}" }
+
 h2.heading-large
   span.heading-secondary Question 1
   | What's your status?
 
 = form_for @marital_status, url: marital_status_save_path do |f|
-  fieldset
+  fieldset class=('error' if @marital_status.errors[:married].any?)
     legend.visuallyhidden What's your status?
-
+    = f.hidden_field :married, value: nil
+    span.error-message#married =@marital_status.errors[:married].join(' ') if @marital_status.errors[:married].any?
     .form-group
       label.block-label for="marital_status_married_false"
         = f.radio_button :married, 'false'
@@ -38,4 +49,3 @@ h2.heading-large
 
   .form-group
     = f.submit t('submit_button'), class: 'button'
-

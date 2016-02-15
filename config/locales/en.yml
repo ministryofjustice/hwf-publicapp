@@ -21,3 +21,10 @@ en:
   personal_detail_title: Title
   personal_detail_first_name: First name
   personal_detail_last_name: Last name
+  activemodel:
+    errors:
+      models:
+        marital_status:
+          attributes:
+            married:
+              inclusion: 'Select your marital status'

@@ -1,0 +1,33 @@
+# coding: utf-8
+require 'rails_helper'
+
+RSpec.feature 'As a user' do
+  context 'when accessing the "marital_status" page for "Help with fees"' do
+    before { page.visit '/marital-status' }
+
+    context 'completing the form correctly' do
+      before do
+        choose 'marital_status_married_false'
+        click_button 'Continue'
+      end
+
+      scenario 'I expect to be routed to the "savings-and-investment" page' do
+        expect(page).to have_content 'How much do you have in savings and investments?'
+      end
+    end
+
+    context 'not completing the page correctly' do
+      before do
+        click_button 'Continue'
+      end
+
+      scenario 'I expect to be shown the "marital_status" page with error block' do
+        expect(page).to have_content 'You need to fix the errors on this page before continuing.'
+      end
+
+      scenario 'I expect the fields to have specific errors' do
+        expect(page).to have_xpath('//span[@class="error-message"]', text: 'Select your marital status')
+      end
+    end
+  end
+end

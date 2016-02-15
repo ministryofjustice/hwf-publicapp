@@ -37,5 +37,10 @@ module HwfPublicapp
     # The following values are required by the phase banner
     config.phase = 'alpha'
     config.feedback_url = '#'
+
+    # prevent fields being enclosed in field_with_error divs
+    config.action_view.field_error_proc = proc { |html_tag, _instance|
+      html_tag
+    }
   end
 end

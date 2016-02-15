@@ -1,25 +1,79 @@
-p Question 3 of 14
-
-h3 Do you receive any of the following benefits?
+h2.heading-large
+  span.heading-secondary Question 3 of 14
+  | Do you receive any of the following benefits?
 
 p We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.
 
-ul
-  li Income-based Jobseeker’s Allowance (JSA)
-  li Income-related Employment and Support Allowance (ESA)
-  li Income Support
-  li Universal Credit  (and you’re earning less than £6,000 a year)
-  li State Pension (Guarantee Credit)
-  li Scottish Civil Legal Aid  (not Advice and Assistance or Advice by Way of Representation)
+ul.list.list-bullet
+  li
+    | Income-based Jobseeker’s Allowance
+    span.hint
+      | &nbsp;(JSA)
+  li
+    | Income-related Employment and Support Allowance
+    span.hint
+      | &nbsp;(ESA)
+  li
+    | Income Support
+  li
+    | Universal Credit
+    span.hint
+      | &nbsp;(and you’re earning less than £6,000 a year)
+  li
+    | State Pension
+    span.hint
+      | &nbsp;(Guarantee Credit)
+  li
+    | Scottish Civil Legal Aid
+    span.hint
+      | &nbsp;(not Advice and Assistance or Advice by Way of Representation)
 
-p
-  = form_for @benefit, url: benefit_save_path do |f|
-    .option
-      label for='on_benefits_false'
+
+= form_for @benefit, url: benefit_save_path do |f|
+  fieldset
+    legend.visuallyhidden Do you receive any of the following benefits?
+
+    .form-group
+      label.block-label for='benefit_on_benefits_false'
         = f.radio_button :on_benefits, 'false'
         = t('on_benefits_false')
-    .option
-      label for='on_benefits_true'
+      label.block-label for='benefit_on_benefits_true'
         = f.radio_button :on_benefits, 'true'
         = t('on_benefits_true')
-    = f.submit t('submit_button')
+
+    .form-group
+      details
+        summary Help with benefits
+
+        .panel-indent
+          h3.heading-small If you’ve only recently started receiving one of these benefits
+          p
+           | (for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the job centre.
+
+          h3.heading-small Benefits with similar names
+          p There are some benefits with similar names. If you are receiving one of the benefits listed below, select 'No'.
+
+          ul.list.list-bullet
+           li
+            | Contribution-based Job Seekers Allowance
+            span.hint
+              | &nbsp;(JSA)
+           li
+            | Contribution-based Employment Support Allowance
+            span.hint
+              | &nbsp;(ESA)
+           li
+            | Pension Credit and Savings Credit
+           li
+            | Universal Credit
+            span.hint
+              | &nbsp;(and you're earning more than £6,000 a year)
+           li
+            | Scottish Legal Aid Advice and Assistance
+           li
+            | Scottish Legal Aid Advice by Way of Representation
+            span.hint
+              | &nbsp;(ABWOR)
+
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

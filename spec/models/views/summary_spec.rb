@@ -14,4 +14,8 @@ RSpec.describe Views::Summary do
   it { is_expected.to respond_to :claim_number }
   it { is_expected.to respond_to :form_name_identifier }
   it { is_expected.to respond_to :national_insurance_number }
+  it { is_expected.to respond_to :personal_detail_title }
+  it { is_expected.to respond_to :personal_detail_first_name }
+  it { is_expected.to respond_to :personal_detail_last_name }
+  it { is_expected.to respond_to :full_name }
 end

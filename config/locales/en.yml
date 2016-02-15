@@ -18,3 +18,6 @@ en:
   probate_case_true: 'Yes'
   claim_number_false: 'No'
   claim_number_true: 'Yes'
+  personal_detail_title: Title
+  personal_detail_first_name: First name
+  personal_detail_last_name: Last name

@@ -10,5 +10,6 @@ RSpec.describe Navigation do
   it { expect(subject[:probate]).to eq :claim }
   it { expect(subject[:claim]).to eq :form_name }
   it { expect(subject[:form_name]).to eq :national_insurance }
-  it { expect(subject[:national_insurance]).to eq :summary }
+  it { expect(subject[:national_insurance]).to eq :personal_detail }
+  it { expect(subject[:personal_detail]).to eq :summary }
 end

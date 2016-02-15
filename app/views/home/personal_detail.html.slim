@@ -1,0 +1,16 @@
+p Question 12 of 14
+
+h3 What is your full name?
+
+p
+  = form_for @personal_detail, url: personal_detail_save_path do |f|
+    .option for='title'
+      = t('personal_detail_title')
+      = f.text_field :title
+    .option for='first_name'
+      = t('personal_detail_first_name')
+      = f.text_field :first_name
+    .option for='last_name'
+      = t('personal_detail_last_name')
+      = f.text_field :last_name
+    = f.submit t('submit_button')

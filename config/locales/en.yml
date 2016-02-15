@@ -27,4 +27,4 @@ en:
         marital_status:
           attributes:
             married:
-              inclusion: 'Enter your marital status'
+              inclusion: 'Select your marital status'

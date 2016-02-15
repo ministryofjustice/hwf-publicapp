@@ -1,7 +1,6 @@
 - if @marital_status.errors.any?
   .error-summary role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1"
     h1.heading-medium.error-summary-heading#error-summary-heading-example-1 You need to fix the errors on this page before continuing.
-    p See highlighted errors below.
     span.visuallyhidden Errors are listed as links below, click to select the field that needs correcting.
     ul.error-summary-list
       - @marital_status.errors.each do |field, message|

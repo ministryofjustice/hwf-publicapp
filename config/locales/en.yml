@@ -2,8 +2,6 @@ en:
   start_application: Apply now
   submit_button: Continue
   summary_title: Check details
-  marital_status_false: Single
-  marital_status_true: Married or living with someone and sharing an income
   less_than_limit_false: Less than £3,000
   less_than_limit_true: More than £3,000
   on_benefits_false: 'No'

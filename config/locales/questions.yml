@@ -21,3 +21,87 @@ en:
           item_3: 'domestic violence'
           item_4: 'forced marriage'
           item_5: 'you and your partner are both part of a multiple fee group'
+    savings_and_investment:
+      less_than_limit_false: 'Less than £3,000'
+      less_than_limit_true: 'More than £3,000'
+      breadcrumb: 'Question 2 of 14'
+      text: 'How much do you have in savings and investments?'
+      details:
+        summary: 'Help with savings and investments'
+        section_1:
+          heading: 'What to include in savings and investments:'
+          item_1: 'money in ISAs and any other savings account'
+          item_2: 'joint savings accounts that you share with your partner'
+          item_3: 'fixed rate or investment bonds'
+          item_4: 'any lump sum (eg a redundancy payout)'
+          item_5: 'stocks and shares'
+          item_6: 'trust funds (or any other kind of fund)'
+          item_7: 'second homes'
+          item_8: 'any money or property outside the UK'
+        section_2:
+          heading: "Don’t include the following in your savings total:"
+          item_1: 'wages or benefits'
+          item_2: 'joint savings accounts that you share with your partner if your case is against your partner'
+          item_3: 'personal pensions'
+          item_4: 'capital value of self-employed businesses'
+          item_5: 'student loans'
+          item_6: 'unfair dismissal awards'
+          item_7: 'money from the criminal injury compensation scheme'
+          item_8: 'medical negligence or personal injury awards'
+          item_9: 'any compensation under a statutory scheme in respect of Mesothelioma'
+    benefit:
+      on_benefits_false: 'No'
+      on_benefits_true: 'Yes, I am receiving one of the benefits listed'
+      breadcrumb: 'Question 3 of 14'
+      text: "Do you receive any of the following benefits?"
+      list:
+        header: 'We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.'
+        item_1:
+          name: "Income-based Jobseeker’s Allowance"
+          hint: '(JSA)'
+        item_2:
+          name: 'Income-related Employment and Support Allowance'
+          hint: '(ESA)'
+        item_3:
+          name: 'Income Support'
+        item_4:
+          name: 'Universal Credit'
+          hint: '(and you’re earning less than £6,000 a year)'
+        item_5:
+          name: 'State Pension'
+          hint: '(Guarantee Credit)'
+        item_6:
+          name: 'Scottish Civil Legal Aid'
+          hint: '(not Advice and Assistance or Advice by Way of Representation)'
+      details:
+        summary: 'Help with benefits'
+        section_1:
+          heading: 'If you’ve only recently started receiving one of these benefits'
+          details: '(for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the job centre.'
+        section_2:
+          heading: 'Benefits with similar names'
+          details: "There are some benefits with similar names. If you are receiving one of the benefits listed below, select 'No'."
+          item_1:
+            name: 'Contribution-based Job Seekers Allowance'
+            hint: '(JSA)'
+          item_2:
+            name: 'Contribution-based Employment Support Allowance'
+            hint: '(ESA)'
+          item_3:
+            name: 'Pension Credit and Savings Credit'
+            hint: ''
+          item_4:
+            name: 'Universal Credit'
+            hint: "(and you're earning more than £6,000 a year)"
+          item_5:
+            name: 'Scottish Legal Aid Advice and Assistance'
+            hint: ''
+          item_6:
+            name: 'Scottish Legal Aid Advice by Way of Representation'
+            hint: '(ABWOR)'
+    fee:
+      fee_paid_false: 'No'
+      fee_paid_true: 'Yes'
+      breadcrumb: 'Question 6 of 14'
+      text: 'Have you already paid the fee?'
+      details: "You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, answer the following questions about your circumstances at the time you paid the fee."

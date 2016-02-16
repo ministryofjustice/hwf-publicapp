@@ -8,15 +8,15 @@ table
       td.right= link_to "Change", "#"
     tr
       td Savings and investments
-      td= t("less_than_limit_#{@summary.savings_and_investment_less_than_limit}")
+      td= t("less_than_limit_#{@summary.savings_and_investment_less_than_limit}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
       td Benefits
-      td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}")
+      td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
       td Fee paid
-      td=t("fee_paid_#{@summary.fee_paid}")
+      td=t("fee_paid_#{@summary.fee_paid}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
       td Probate case

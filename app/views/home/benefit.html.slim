@@ -1,79 +1,71 @@
-h2.heading-large
-  span.heading-secondary Question 3 of 14
-  | Do you receive any of the following benefits?
+= render('shared/error_block', form: @benefit) if @benefit.errors.any?
 
-p We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.
+h2.heading-large
+  span.heading-secondary = t('breadcrumb', scope: @benefit.i18n_scope)
+  = t('text', scope: @benefit.i18n_scope)
+
+p = t('header', scope:"#{@benefit.i18n_scope}.list")
 
 ul.list.list-bullet
   li
-    | Income-based Jobseeker’s Allowance
-    span.hint
-      | &nbsp;(JSA)
+    = t('name', scope: "#{@benefit.i18n_scope}.list.item_1")
+    span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.list.item_1")}
   li
-    | Income-related Employment and Support Allowance
-    span.hint
-      | &nbsp;(ESA)
+    = t('name', scope: "#{@benefit.i18n_scope}.list.item_2")
+    span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.list.item_2")}
   li
-    | Income Support
+    = t('name', scope: "#{@benefit.i18n_scope}.list.item_3")
   li
-    | Universal Credit
-    span.hint
-      | &nbsp;(and you’re earning less than £6,000 a year)
+    = t('name', scope: "#{@benefit.i18n_scope}.list.item_4")
+    span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.list.item_4")}
   li
-    | State Pension
-    span.hint
-      | &nbsp;(Guarantee Credit)
+    = t('name', scope: "#{@benefit.i18n_scope}.list.item_5")
+    span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.list.item_5")}
   li
-    | Scottish Civil Legal Aid
-    span.hint
-      | &nbsp;(not Advice and Assistance or Advice by Way of Representation)
+    = t('name', scope: "#{@benefit.i18n_scope}.list.item_6")
+    span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.list.item_6")}
 
 
 = form_for @benefit, url: benefit_save_path do |f|
-  fieldset
-    legend.visuallyhidden Do you receive any of the following benefits?
-
+  fieldset class=('error' if @benefit.errors.any?)
+    legend.visuallyhidden = t('text', scope: @benefit.i18n_scope)
+    = f.hidden_field :on_benefits, value: nil
+    span.error-message#on_benefits = @benefit.errors[:on_benefits].join(' ') if @benefit.errors.any?
     .form-group
       label.block-label for='benefit_on_benefits_false'
         = f.radio_button :on_benefits, 'false'
-        = t('on_benefits_false')
+        = t('on_benefits_false', scope: @benefit.i18n_scope)
       label.block-label for='benefit_on_benefits_true'
         = f.radio_button :on_benefits, 'true'
-        = t('on_benefits_true')
+        = t('on_benefits_true', scope: @benefit.i18n_scope)
 
     .form-group
       details
-        summary Help with benefits
+        summary = t('summary', scope: "#{@benefit.i18n_scope}.details")
 
         .panel-indent
-          h3.heading-small If you’ve only recently started receiving one of these benefits
-          p
-           | (for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the job centre.
+          h3.heading-small = t('heading', scope: "#{@benefit.i18n_scope}.details.section_1")
+          p = t('details', scope: "#{@benefit.i18n_scope}.details.section_1")
 
-          h3.heading-small Benefits with similar names
-          p There are some benefits with similar names. If you are receiving one of the benefits listed below, select 'No'.
+          h3.heading-small = t('heading', scope: "#{@benefit.i18n_scope}.details.section_2")
+          p = t('details', scope: "#{@benefit.i18n_scope}.details.section_2")
 
           ul.list.list-bullet
-           li
-            | Contribution-based Job Seekers Allowance
-            span.hint
-              | &nbsp;(JSA)
-           li
-            | Contribution-based Employment Support Allowance
-            span.hint
-              | &nbsp;(ESA)
-           li
-            | Pension Credit and Savings Credit
-           li
-            | Universal Credit
-            span.hint
-              | &nbsp;(and you're earning more than £6,000 a year)
-           li
-            | Scottish Legal Aid Advice and Assistance
-           li
-            | Scottish Legal Aid Advice by Way of Representation
-            span.hint
-              | &nbsp;(ABWOR)
-
+            li
+              = t('name', scope: "#{@benefit.i18n_scope}.details.section_2.item_1")
+              span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.details.section_2.item_1")}
+            li
+              = t('name', scope: "#{@benefit.i18n_scope}.details.section_2.item_2")
+              span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.details.section_2.item_2")}
+            li
+              = t('name', scope: "#{@benefit.i18n_scope}.details.section_2.item_3")
+            li
+              = t('name', scope: "#{@benefit.i18n_scope}.details.section_2.item_4")
+              span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.details.section_2.item_4")}
+            li
+              = t('name', scope: "#{@benefit.i18n_scope}.details.section_2.item_5")
+            li
+              = t('name', scope: "#{@benefit.i18n_scope}.details.section_2.item_6")
+              span.hint &nbsp; #{t('hint', scope: "#{@benefit.i18n_scope}.details.section_2.item_6")}
     .form-group
       = f.submit t('submit_button'), class: 'button'

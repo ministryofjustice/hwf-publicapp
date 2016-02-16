@@ -1,21 +1,22 @@
-h2.heading-large
-  span.heading-secondary Question 6 of 14
-  | Have you already paid the fee?
+= render('shared/error_block', form: @fee) if @fee.errors.any?
 
-p
- | You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, answer the following questions about your circumstances at the time you paid the fee.
+h2.heading-large
+  span.heading-secondary = t('breadcrumb', scope: @fee.i18n_scope)
+  = t('text', scope: @fee.i18n_scope)
+p = t('details', scope: @fee.i18n_scope)
 
 = form_for @fee, url: fee_save_path do |f|
-  fieldset
-    legend.visuallyhidden Have you already paid the fee?
-
+  fieldset class=('error' if @fee.errors.any?)
+    legend.visuallyhidden = t('text', scope: @fee.i18n_scope)
+    = f.hidden_field :paid, value: nil
+    span.error-message#paid = @fee.errors[:paid].join(' ') if @fee.errors.any?
     .form-group
       label.block-label for='fee_paid_false'
         = f.radio_button :paid, 'false'
-        = t('fee_paid_false')
+        = t('fee_paid_false', scope: @fee.i18n_scope)
       label.block-label for='fee_paid_true'
         = f.radio_button :paid, 'true'
-        = t('fee_paid_true')
+        = t('fee_paid_true', scope: @fee.i18n_scope)
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

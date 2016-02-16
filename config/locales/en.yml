@@ -2,14 +2,6 @@ en:
   start_application: Apply now
   submit_button: Continue
   summary_title: Check details
-  less_than_limit_false: Less than £3,000
-  less_than_limit_true: More than £3,000
-  on_benefits_false: 'No'
-  on_benefits_true: Yes, I am receiving one of the benefits listed
-  applicant_on_benefits_true: Receiving eligible benefits
-  applicant_on_benefits_false: Not receiving eligible benefits
-  fee_paid_false: 'No'
-  fee_paid_true: 'Yes'
   probate_case_false: 'No'
   probate_case_true: 'Yes'
   claim_number_false: 'No'
@@ -33,3 +25,11 @@ en:
           attributes:
             less_than_limit:
               inclusion: 'Select a savings answer'
+        benefit:
+          attributes:
+            on_benefits:
+              inclusion: 'Select your benefit status'
+        fee:
+          attributes:
+            paid:
+              inclusion: 'Answer the refund question'

@@ -28,3 +28,7 @@ en:
           attributes:
             married:
               inclusion: 'Select your marital status'
+        savings_and_investment:
+          attributes:
+            less_than_limit:
+              inclusion: 'Select a savings answer'

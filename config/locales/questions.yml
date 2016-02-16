@@ -21,3 +21,31 @@ en:
           item_3: 'domestic violence'
           item_4: 'forced marriage'
           item_5: 'you and your partner are both part of a multiple fee group'
+    savings_and_investment:
+      less_than_limit_false: 'Less than £3,000'
+      less_than_limit_true: 'More than £3,000'
+      breadcrumb: 'Question 2 of 14'
+      text: 'How much do you have in savings and investments?'
+      details:
+        summary: 'Help with savings and investments'
+        section_1:
+          heading: 'What to include in savings and investments:'
+          item_1: 'money in ISAs and any other savings account'
+          item_2: 'joint savings accounts that you share with your partner'
+          item_3: 'fixed rate or investment bonds'
+          item_4: 'any lump sum (eg a redundancy payout)'
+          item_5: 'stocks and shares'
+          item_6: 'trust funds (or any other kind of fund)'
+          item_7: 'second homes'
+          item_8: 'any money or property outside the UK'
+        section_2:
+          heading: "Don’t include the following in your savings total:"
+          item_1: 'wages or benefits'
+          item_2: 'joint savings accounts that you share with your partner if your case is against your partner'
+          item_3: 'personal pensions'
+          item_4: 'capital value of self-employed businesses'
+          item_5: 'student loans'
+          item_6: 'unfair dismissal awards'
+          item_7: 'money from the criminal injury compensation scheme'
+          item_8: 'medical negligence or personal injury awards'
+          item_9: 'any compensation under a statutory scheme in respect of Mesothelioma'

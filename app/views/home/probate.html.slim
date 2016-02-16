@@ -1,17 +1,20 @@
-p Question 7 of 14
-
-h3 Are you paying a fee for a probate case?
+h2.heading-large
+  span.heading-secondary Question 7 of 14
+  | Are you paying a fee for a probate case?
 
 p These cases are usually about the property and belongings of someone who has died.
 
-p
-  = form_for @probate, url: probate_save_path do |f|
-    .option
-      label for='probate_case_false'
+= form_for @probate, url: probate_save_path do |f|
+  fieldset
+    legend.visuallyhidden Are you paying a fee for a probate case?
+
+    .form-group
+      label.block-label for='probate_kase_false'
         = f.radio_button :kase, 'false'
         = t('probate_case_false')
-    .option
-      label for='probate_case_true'
+      label.block-label for='probate_kase_true'
         = f.radio_button :kase, 'true'
         = t('probate_case_true')
-    = f.submit t('submit_button')
+
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

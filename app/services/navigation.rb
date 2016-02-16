@@ -9,7 +9,8 @@ class Navigation
       claim: :form_name,
       form_name: :national_insurance,
       national_insurance: :personal_detail,
-      personal_detail: :summary }
+      personal_detail: :applicant_address,
+      applicant_address: :summary }
   end
 
 end

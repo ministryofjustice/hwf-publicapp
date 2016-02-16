@@ -21,6 +21,8 @@ en:
   personal_detail_title: Title
   personal_detail_first_name: First name
   personal_detail_last_name: Last name
+  applicant_address_address: Address
+  applicant_address_postcode: Postcode
   activemodel:
     errors:
       models:

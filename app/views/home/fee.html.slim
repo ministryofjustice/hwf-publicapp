@@ -1,22 +1,22 @@
 = render('shared/error_block', form: @fee) if @fee.errors.any?
 
 h2.heading-large
-  span.heading-secondary = t('breadcrumb', scope: @fee.scope)
-  = t('text', scope: @fee.scope)
-p = t('details', scope: @fee.scope)
+  span.heading-secondary = t('breadcrumb', scope: @fee.i18n_scope)
+  = t('text', scope: @fee.i18n_scope)
+p = t('details', scope: @fee.i18n_scope)
 
 = form_for @fee, url: fee_save_path do |f|
   fieldset class=('error' if @fee.errors.any?)
-    legend.visuallyhidden = t('text', scope: @fee.scope)
+    legend.visuallyhidden = t('text', scope: @fee.i18n_scope)
     = f.hidden_field :paid, value: nil
     span.error-message#paid = @fee.errors[:paid].join(' ') if @fee.errors.any?
     .form-group
       label.block-label for='fee_paid_false'
         = f.radio_button :paid, 'false'
-        = t('fee_paid_false', scope: @fee.scope)
+        = t('fee_paid_false', scope: @fee.i18n_scope)
       label.block-label for='fee_paid_true'
         = f.radio_button :paid, 'true'
-        = t('fee_paid_true', scope: @fee.scope)
+        = t('fee_paid_true', scope: @fee.i18n_scope)
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

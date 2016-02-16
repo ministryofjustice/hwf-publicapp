@@ -18,4 +18,7 @@ RSpec.describe Views::Summary do
   it { is_expected.to respond_to :personal_detail_first_name }
   it { is_expected.to respond_to :personal_detail_last_name }
   it { is_expected.to respond_to :full_name }
+  it { is_expected.to respond_to :applicant_address_address }
+  it { is_expected.to respond_to :applicant_address_postcode }
+  it { is_expected.to respond_to :full_address }
 end

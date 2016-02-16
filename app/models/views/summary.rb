@@ -12,7 +12,9 @@ module Views
       :national_insurance_number,
       :personal_detail_title,
       :personal_detail_first_name,
-      :personal_detail_last_name
+      :personal_detail_last_name,
+      :applicant_address_address,
+      :applicant_address_postcode
     ].freeze
 
     ATTRIBUTES.each do |attribute|
@@ -31,6 +33,11 @@ module Views
       [@personal_detail_title,
        @personal_detail_first_name,
        @personal_detail_last_name].join(' ')
+    end
+
+    def full_address
+      [@applicant_address_address,
+       @applicant_address_postcode].join(' ')
     end
 
   end

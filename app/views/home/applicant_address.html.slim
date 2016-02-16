@@ -1,0 +1,13 @@
+p Question 13 of 14
+
+h3 What is your address?
+
+p
+  = form_for @applicant_address, url: applicant_address_save_path do |f|
+    .option for='address'
+      = t('applicant_address_address')
+      = f.text_field :address
+    .option for='last_name'
+      = t('applicant_address_postcode')
+      = f.text_field :postcode
+    = f.submit t('submit_button')

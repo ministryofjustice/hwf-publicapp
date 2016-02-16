@@ -205,7 +205,7 @@ RSpec.describe HomeController, type: :controller do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :personal_detail_save, personal_detail: { title: 'Lord', first_name: 'Bob', last_name: 'Foo' }
-        expect(response).to redirect_to(:summary)
+        expect(response).to redirect_to(:applicant_address)
       end
     end
 
@@ -213,6 +213,29 @@ RSpec.describe HomeController, type: :controller do
       it 'goes back to the form' do
         post :personal_detail_save, personal_detail: { random: 'foo' }
         expect(response).to redirect_to(:personal_detail)
+      end
+    end
+  end
+
+  describe 'GET #address' do
+    it 'returns http success' do
+      get :applicant_address
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #applicant_address_save' do
+    context 'when parameters are valid' do
+      it 'redirects to the next page' do
+        post :applicant_address_save, applicant_address: { address: 'Foo', postcode: 'Bar' }
+        expect(response).to redirect_to(:summary)
+      end
+    end
+
+    context 'when parameters are invalid' do
+      it 'goes back to the form' do
+        post :applicant_address_save, applicant_address: { random: 'foo' }
+        expect(response).to redirect_to(:applicant_address)
       end
     end
   end

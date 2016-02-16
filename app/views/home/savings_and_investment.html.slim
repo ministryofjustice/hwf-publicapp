@@ -1,11 +1,14 @@
+=render('shared/error_block', form: @savings_and_investment) if @savings_and_investment.errors.any?
+
 h2.heading-large
   span.heading-secondary Question 2 of 14
   | How much do you have in savings and investments?
 
 = form_for @savings_and_investment, url: savings_and_investment_save_path do |f|
-  fieldset
+  fieldset class=('error' if @savings_and_investment.errors.any?)
     legend.visuallyhidden How much do you have in savings and investments?
-
+    = f.hidden_field :less_than_limit, value: nil
+    span.error-message#less_than_limit =@savings_and_investment.errors[:less_than_limit].join(' ') if @savings_and_investment.errors.any?
     .form-group
       label.block-label for='savings_and_investment_less_than_limit_false'
         = f.radio_button :less_than_limit, 'false'

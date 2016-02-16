@@ -15,6 +15,7 @@
 //= require jquery_ujs
 
 //= require govuk/selection-buttons
+//= require details.polyfill
 
 //= require_tree ./modules
 

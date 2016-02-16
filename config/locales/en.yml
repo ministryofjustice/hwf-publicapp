@@ -2,10 +2,6 @@ en:
   start_application: Apply now
   submit_button: Continue
   summary_title: Check details
-  applicant_on_benefits_true: Receiving eligible benefits
-  applicant_on_benefits_false: Not receiving eligible benefits
-  fee_paid_false: 'No'
-  fee_paid_true: 'Yes'
   probate_case_false: 'No'
   probate_case_true: 'Yes'
   claim_number_false: 'No'
@@ -33,3 +29,7 @@ en:
           attributes:
             on_benefits:
               inclusion: 'Select your benefit status'
+        fee:
+          attributes:
+            paid:
+              inclusion: 'Answer the refund question'

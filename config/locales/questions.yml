@@ -1,0 +1,23 @@
+en:
+  questions:
+    marital_status:
+      married_true: 'Married or living with someone and sharing an income'
+      married_false: 'Single'
+      breadcrumb: 'Question 1 of 14'
+      text: "What's your status?"
+      details:
+        summary: 'Help with status'
+        section_1:
+          heading: "Choose ‘married or living with someone and sharing an income’ if you’re:"
+          item_1: 'married'
+          item_2: 'civil partners'
+          item_3: 'living together as if you are married or in a civil partnership'
+          item_4: 'living at the same address with a joint income'
+          item_5: 'a couple forced to live apart, eg where one or both is serving in the Armed forces, in prison or living in residential care'
+        section_2:
+          heading: "‘single’ if you rely on your own income or your case involves your partner, for example:"
+          item_1: 'divorce, dissolution or annulment (unless you have married again or live with a new partner)'
+          item_2: 'gender recognition'
+          item_3: 'domestic violence'
+          item_4: 'forced marriage'
+          item_5: 'you and your partner are both part of a multiple fee group'

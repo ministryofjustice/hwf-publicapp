@@ -4,7 +4,7 @@ table
   tbody
     tr
       td Status
-      td= t("marital_status_#{@summary.marital_status_married}")
+      td= t("marital_status_#{@summary.marital_status_married}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
       td Savings and investments

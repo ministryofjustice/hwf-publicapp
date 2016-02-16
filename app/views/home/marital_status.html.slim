@@ -1,8 +1,8 @@
 = render('shared/error_block', form: @marital_status) if @marital_status.errors.any?
 
 h2.heading-large
-  span.heading-secondary Question 1
-  | What's your status?
+  span.heading-secondary =t('breadcrumb', scope: 'questions.marital_status')
+  =t('text', scope: 'questions.marital_status')
 
 = form_for @marital_status, url: marital_status_save_path do |f|
   fieldset class=('error' if @marital_status.errors.any?)
@@ -12,32 +12,32 @@ h2.heading-large
     .form-group
       label.block-label for="marital_status_married_false"
         = f.radio_button :married, 'false'
-        = t('married_false')
+        = t('married_false', scope: 'questions.marital_status')
 
       label.block-label for="marital_status_married_true"
         = f.radio_button :married, 'true'
-        = t('married_true')
+        = t('married_true', scope: 'questions.marital_status')
 
   .form-group
     details
-      summary Help with status
+      summary =t('details.summary', scope: 'questions.marital_status')
 
       .panel-indent
-        h3.heading-small Choose ‘married or living with someone and sharing an income’ if you’re:
+        h3.heading-small =t('heading', scope: 'questions.marital_status.details.section_1')
         ul.list.list-bullet
-          li married
-          li civil partners
-          li living together as if you are married or in a civil partnership
-          li living at the same address with a joint income
-          li a couple forced to live apart, eg where one or both is serving in the Armed forces, in prison or living in residential care
+          li =t('item_1', scope: 'questions.marital_status.details.section_1')
+          li =t('item_2', scope: 'questions.marital_status.details.section_1')
+          li =t('item_3', scope: 'questions.marital_status.details.section_1')
+          li =t('item_4', scope: 'questions.marital_status.details.section_1')
+          li =t('item_5', scope: 'questions.marital_status.details.section_1')
 
-        h3.heading-small Choose ‘single’ if you rely on your own income or your case involves your partner, for example:
+        h3.heading-small = t('heading', scope: 'questions.marital_status.details.section_2')
         ul.list.list-bullet
-          li divorce, dissolution or annulment (unless you have married again or live with a new partner)
-          li gender recognition
-          li domestic violence
-          li forced marriage
-          li you and your partner are both part of a multiple fee group
+          li = t('item_1', scope: 'questions.marital_status.details.section_2')
+          li = t('item_2', scope: 'questions.marital_status.details.section_2')
+          li = t('item_3', scope: 'questions.marital_status.details.section_2')
+          li = t('item_4', scope: 'questions.marital_status.details.section_2')
+          li = t('item_5', scope: 'questions.marital_status.details.section_2')
 
   .form-group
     = f.submit t('submit_button'), class: 'button'

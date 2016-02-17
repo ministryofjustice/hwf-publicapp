@@ -3,6 +3,6 @@ class Base
   include ActiveModel::Model
 
   def i18n_scope
-    "questions.#{self.class.to_s.underscore}"
+    "questions.#{self.class.name.underscore}"
   end
 end

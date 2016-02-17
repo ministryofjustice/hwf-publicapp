@@ -27,11 +27,11 @@ ul.list.list-bullet
 
 
 = form_for @benefit, url: benefit_save_path do |f|
-  fieldset class=('error' if @benefit.errors.any?)
+  fieldset
     legend.visuallyhidden = t('text', scope: @benefit.i18n_scope)
-    = f.hidden_field :on_benefits, value: nil
-    span.error-message#on_benefits = @benefit.errors[:on_benefits].join(' ') if @benefit.errors.any?
-    .form-group
+    .form-group class=('error' if @benefit.errors.any?)
+      = f.hidden_field :on_benefits, value: nil
+      span.error-message#on_benefits = @benefit.errors[:on_benefits].join(' ') if @benefit.errors.any?
       label.block-label for='benefit_on_benefits_false'
         = f.radio_button :on_benefits, 'false'
         = t('on_benefits_false', scope: @benefit.i18n_scope)

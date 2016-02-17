@@ -19,6 +19,11 @@ en:
   personal_detail_last_name: Last name
   applicant_address_address: Address
   applicant_address_postcode: Postcode
+  contact_email_option: Email
+  contact_email: Email address
+  contact_phone_option: Phone call
+  contact_phone: Phone number
+  contact_post_option: Post
   error_block:
     heading: 'You need to fix the errors on this page before continuing.'
     visuallyhidden: 'Errors are listed as links below, click to select the field that needs correcting.'

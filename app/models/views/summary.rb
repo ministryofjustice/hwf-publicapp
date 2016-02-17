@@ -14,7 +14,8 @@ module Views
       :personal_detail_first_name,
       :personal_detail_last_name,
       :applicant_address_address,
-      :applicant_address_postcode
+      :applicant_address_postcode,
+      :contact_email
     ].freeze
 
     ATTRIBUTES.each do |attribute|

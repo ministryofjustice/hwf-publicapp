@@ -1,9 +1,9 @@
 class Contact < Base
-  attribute :email_option, Boolean
+  attribute :email_option, Boolean, default: false
   attribute :email, String
-  attribute :phone_option, Boolean
+  attribute :phone_option, Boolean, default: false
   attribute :phone, String
-  attribute :post_option, Boolean
+  attribute :post_option, Boolean, default: false
 
   validates :email_option, inclusion: { in: [true, false] }
   validates :phone_option, inclusion: { in: [true, false] }

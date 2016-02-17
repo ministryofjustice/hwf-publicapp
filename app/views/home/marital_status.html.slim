@@ -5,11 +5,11 @@ h2.heading-large
   =t('text', scope: @marital_status.i18n_scope)
 
 = form_for @marital_status, url: marital_status_save_path do |f|
-  fieldset class=('error' if @marital_status.errors.any?)
+  fieldset
     legend.visuallyhidden =t('text', scope: @marital_status.i18n_scope)
-    = f.hidden_field :married, value: nil
-    span.error-message#married =@marital_status.errors[:married].join(' ') if @marital_status.errors.any?
-    .form-group
+    .form-group class=('error' if @marital_status.errors.any?)
+      = f.hidden_field :married, value: nil
+      span.error-message#married = @marital_status.errors[:married].join(' ') if @marital_status.errors.any?
       label.block-label for="marital_status_married_false"
         = f.radio_button :married, 'false'
         = t('married_false', scope: @marital_status.i18n_scope)

@@ -6,11 +6,11 @@ h2.heading-large
 p = t('details', scope: @fee.i18n_scope)
 
 = form_for @fee, url: fee_save_path do |f|
-  fieldset class=('error' if @fee.errors.any?)
+  fieldset
     legend.visuallyhidden = t('text', scope: @fee.i18n_scope)
-    = f.hidden_field :paid, value: nil
-    span.error-message#paid = @fee.errors[:paid].join(' ') if @fee.errors.any?
-    .form-group
+    .form-group class=('error' if @fee.errors.any?)
+      = f.hidden_field :paid, value: nil
+      span.error-message#paid = @fee.errors[:paid].join(' ') if @fee.errors.any?
       label.block-label for='fee_paid_false'
         = f.radio_button :paid, 'false'
         = t('fee_paid_false', scope: @fee.i18n_scope)

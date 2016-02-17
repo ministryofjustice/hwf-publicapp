@@ -10,7 +10,7 @@ p Example: QQ 12 34 56 C
     .form-group
       label.form-label for='national_insurance_number'
         span.visuallyhidden National Insurance number
-        = f.text_field :number, class: 'form-control'
+        = f.text_field :number, class: 'form-control transform-upper'
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

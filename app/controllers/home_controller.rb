@@ -8,7 +8,8 @@ class HomeController < ApplicationController
              :form_name,
              :national_insurance,
              :personal_detail,
-             :applicant_address].freeze
+             :applicant_address,
+             :contact].freeze
 
   def index
   end

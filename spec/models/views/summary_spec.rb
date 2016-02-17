@@ -21,4 +21,5 @@ RSpec.describe Views::Summary do
   it { is_expected.to respond_to :applicant_address_address }
   it { is_expected.to respond_to :applicant_address_postcode }
   it { is_expected.to respond_to :full_address }
+  it { is_expected.to respond_to :contact_email }
 end

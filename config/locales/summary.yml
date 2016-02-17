@@ -1,5 +1,6 @@
 en:
   summary:
+    title: Check details
     marital_status_false: 'Single'
     marital_status_true: 'Married or living with someone and sharing an income'
     less_than_limit_false: 'Less than £3,000'

@@ -1,20 +1,23 @@
-h2.heading-large
-  span.heading-secondary Question 7 of 14
-  | Are you paying a fee for a probate case?
+= render('shared/error_block', form: @probate) if @probate.errors.any?
 
-p These cases are usually about the property and belongings of someone who has died.
+h2.heading-large
+  span.heading-secondary = t('breadcrumb', scope: @probate.i18n_scope)
+  = t('text', scope: @probate.i18n_scope)
+
+p = t('details', scope: @probate.i18n_scope)
 
 = form_for @probate, url: probate_save_path do |f|
   fieldset
-    legend.visuallyhidden Are you paying a fee for a probate case?
-
-    .form-group
+    legend.visuallyhidden
+    .form-group class=('error' if @probate.errors.any?)
+      = f.hidden_field :kase, value: nil
+      span.error-message#kase = @probate.errors[:kase].join(' ') if @probate.errors.any?
       label.block-label for='probate_kase_false'
         = f.radio_button :kase, 'false'
-        = t('probate_case_false')
+        = t('probate_case_false', scope: @probate.i18n_scope)
       label.block-label for='probate_kase_true'
         = f.radio_button :kase, 'true'
-        = t('probate_case_true')
+        = t('probate_case_true', scope: @probate.i18n_scope)
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

@@ -20,7 +20,7 @@ table
       td.right= link_to "Change", "#"
     tr
       td Probate case
-      td=t("probate_case_#{@summary.probate_kase}")
+      td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
       td Claim number

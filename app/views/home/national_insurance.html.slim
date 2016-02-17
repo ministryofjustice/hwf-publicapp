@@ -1,11 +1,16 @@
-p Question 10 of 14
-
-h3 What is your National Insurance number?
+h2.heading-large
+  span.heading-secondary Question 10 of 14
+  | What is your National Insurance number?
 
 p Example: QQ 12 34 56 C
 
-p
-  = form_for @national_insurance, url: national_insurance_save_path do |f|
-    .option for='national_insurance_number'
-        = f.text_field :number
-    = f.submit t('submit_button')
+= form_for @national_insurance, url: national_insurance_save_path do |f|
+  fieldset
+    legend.visuallyhidden What is your National Insurance number?
+    .form-group
+      label.form-label for='national_insurance_number'
+        span.visuallyhidden National Insurance number
+        = f.text_field :number, class: 'form-control'
+
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

@@ -1,13 +1,19 @@
-p Question 13 of 14
+h2.heading-large
+  span.heading-secondary Question 13 of 14
+  | What is your address?
 
-h3 What is your address?
+= form_for @applicant_address, url: applicant_address_save_path do |f|
+  fieldset
+    legend.visuallyhidden What is your address?
 
-p
-  = form_for @applicant_address, url: applicant_address_save_path do |f|
-    .option for='address'
-      = t('applicant_address_address')
-      = f.text_field :address
-    .option for='last_name'
-      = t('applicant_address_postcode')
-      = f.text_field :postcode
-    = f.submit t('submit_button')
+    .form-group
+      label.form-label for='applicant_address_address'
+        = t('applicant_address_address')
+      = f.text_area :address, class: 'form-control', rows: 6
+    .form-group
+      label.form-label for='applicant_address_postcode'
+        = t('applicant_address_postcode')
+      = f.text_field :postcode, class: 'form-control'
+
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

@@ -1,16 +1,24 @@
-p Question 12 of 14
+h2.heading-large
+  span.heading-secondary Question 12 of 14
+  | What is your full name?
 
-h3 What is your full name?
+= form_for @personal_detail, url: personal_detail_save_path do |f|
+  fieldset
+    legend.visuallyhidden What is your full name?
 
-p
-  = form_for @personal_detail, url: personal_detail_save_path do |f|
-    .option for='title'
-      = t('personal_detail_title')
-      = f.text_field :title
-    .option for='first_name'
-      = t('personal_detail_first_name')
-      = f.text_field :first_name
-    .option for='last_name'
-      = t('personal_detail_last_name')
-      = f.text_field :last_name
-    = f.submit t('submit_button')
+
+    .form-group
+      label.form-label for='title'
+        = t('personal_detail_title')
+      = f.text_field :title, class: 'form-control form-control-smaller'
+    .form-group
+      label.form-label for='first_name'
+        = t('personal_detail_first_name')
+      = f.text_field :first_name, class: 'form-control'
+    .form-group
+      label.form-label for='last_name'
+        = t('personal_detail_last_name')
+      = f.text_field :last_name, class: 'form-control'
+
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

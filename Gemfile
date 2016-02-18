@@ -5,6 +5,7 @@ gem 'rails', '4.2.5.1'
 gem 'govuk_frontend_toolkit', git: "https://github.com/alphagov/govuk_frontend_toolkit_gem.git", submodules: true
 gem 'govuk_elements_rails', git: 'https://github.com/ministryofjustice/govuk_elements_rails.git', submodules: true
 gem 'moj_template', '~> 0.23.2'
+gem 'date_validator'
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.4'
 # Use Uglifier as compressor for JavaScript assets

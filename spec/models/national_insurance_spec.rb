@@ -11,6 +11,18 @@ RSpec.describe NationalInsurance, type: :model do
         it { expect(subject.valid?).to be true }
       end
 
+      context 'when provided in lower case' do
+        before { subject.number = 'ab123456a' }
+
+        it { expect(subject.valid?).to be true }
+
+        describe 'transforms the input to uppercase' do
+          before { subject.valid? }
+
+          it { expect(subject.number).to eql 'AB123456A' }
+        end
+      end
+
       context 'when provided with a space' do
         before { subject.number = 'AB123456A ' }
 

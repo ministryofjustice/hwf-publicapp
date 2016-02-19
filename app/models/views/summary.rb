@@ -6,6 +6,7 @@ module Views
       { savings_and_investment: 'less_than_limit' },
       { benefit: 'on_benefits' },
       { fee: 'paid' },
+      { fee: 'date_paid' },
       { probate: 'kase' },
       { claim: 'number' },
       { form_name: 'identifier' },
@@ -32,6 +33,12 @@ module Views
           instance_variable_set("@#{key}_#{value}", session[key][value]) if session[key]
         end
       end
+    end
+
+    def fee_paid
+      fee = I18n.t("fee_paid_#{@fee_paid}", scope: 'summary')
+      fee += ", on #{Date.parse(@fee_date_paid).strftime('%e %b %Y')}" if @fee_date_paid
+      fee
     end
 
     def full_name

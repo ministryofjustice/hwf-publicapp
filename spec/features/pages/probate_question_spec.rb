@@ -26,7 +26,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect the fields to have specific errors' do
-        expect(page).to have_xpath('//span[@class="error-message"]', text: 'Answer the probate question')
+        expect(page).to have_xpath('//span[@class="error-message"]', text: "Select whether you're paying a fee for a probate case")
       end
     end
   end

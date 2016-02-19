@@ -16,6 +16,7 @@
 
 //= require govuk/selection-buttons
 //= require details.polyfill
+//= require govuk_show-hide-content
 
 //= require_tree ./modules
 

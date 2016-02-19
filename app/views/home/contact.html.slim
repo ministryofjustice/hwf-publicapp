@@ -1,17 +1,31 @@
-p Question 14 of 14
+h2.heading-large
+  span.heading-secondary Question 14 of 14
+  | If we have questions about your application, how should we contact you?
 
-h3 If we have questions about your application, how should we contact you?
-
-p
 = form_for @contact, url: contact_save_path do |f|
-  = t('contact_email_option')
-  = f.check_box :email_option
-  = t('contact_email')
-  = f.text_field :email
-  = t('contact_phone_option')
-  = f.check_box :phone_option
-  = t('contact_phone')
-  = f.text_field :phone
-  = t('contact_post_option')
-  = f.check_box :post_option
-  = f.submit t('submit_button')
+  fieldset
+    legend.visuallyhidden If we have questions about your application, how should we contact you?
+
+    .form-group
+      label.block-label data-target="email-field-panel"
+        = f.check_box :email_option
+        = t('contact_email_option')
+      #email-field-panel.panel-indent.util_mb-medium.js-hidden
+        label.form-label
+          = t('contact_email')
+        = f.text_field :email, class: 'form-control'
+
+      label.block-label data-target="phone-number-panel"
+        = f.check_box :phone_option
+        = t('contact_phone_option')
+      #phone-number-panel.panel-indent.util_mb-medium.js-hidden
+        label.form-label
+          = t('contact_phone')
+        = f.text_field :phone, class: 'form-control'
+
+      label.block-label
+        = f.check_box :post_option
+        = t('contact_post_option')
+
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

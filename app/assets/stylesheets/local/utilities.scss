@@ -1,6 +1,15 @@
+// utility classes used as overrides, therefore valid use of !important
+// https://css-tricks.com/when-using-important-is-the-right-choice/
+
 // margin utilities
 .util-mb-0 {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
+}
+.util_mb-small {
+  margin-bottom: 15px !important;
+}
+.util_mb-medium {
+  margin-bottom: 30px !important;
 }
 
 // case utilities

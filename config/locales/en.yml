@@ -22,20 +22,20 @@ en:
         marital_status:
           attributes:
             married:
-              inclusion: 'Select your marital status'
+              inclusion: "Select whether you're single, married or living with someone and sharing an income"
         savings_and_investment:
           attributes:
             less_than_limit:
-              inclusion: 'Select a savings answer'
+              inclusion: 'Select how much you have in savings and investments'
         benefit:
           attributes:
             on_benefits:
-              inclusion: 'Select your benefit status'
+              inclusion: "Select whether you're receiving one of the benefits listed"
         fee:
           attributes:
             paid:
-              inclusion: 'Answer the refund question'
+              inclusion: "Select whether you've already paid the fee"
         probate:
           attributes:
             kase:
-              inclusion: 'Answer the probate question'
+              inclusion: "Select whether you're paying a fee for a probate case"

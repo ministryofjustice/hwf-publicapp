@@ -30,6 +30,7 @@ RSpec.feature 'As a user' do
           expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter your National Insurance number')
         end
       end
+
       describe 'providing an incorrect value' do
         before do
           fill_in :number, with: 'AB123'
@@ -38,6 +39,10 @@ RSpec.feature 'As a user' do
 
         scenario 'I expect the fields to have specific errors' do
           expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter a valid National Insurance number')
+        end
+
+        scenario 'I expect the incorrect data to be shown' do
+          expect(page).to have_xpath('//input[@id="national_insurance_number" and @value="AB123"]')
         end
       end
     end

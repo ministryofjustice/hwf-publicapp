@@ -3,7 +3,11 @@ require 'rails_helper'
 
 RSpec.describe Views::Summary do
 
-  let(:session) { { marital_status_married: 'true' } }
+  let(:session) {
+    { 'national_insurance' => { 'number' => 'AB123456A' },
+      'marital_status_married' => 'true' }
+  }
+
   subject { described_class.new(session) }
 
   it { is_expected.to respond_to :marital_status_married }

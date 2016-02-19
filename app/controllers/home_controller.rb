@@ -16,18 +16,18 @@ class HomeController < ApplicationController
 
   ACTIONS.each do |action|
     define_method(action.to_s) do
-      instance_variable_set("@#{action}", model_instance(action))
+      instance_variable_set("@#{action}", model_from_params(action))
     end
 
     define_method("#{action}_save") do
-      instance = create_instance(action)
-      assign_attributes(instance, params[action.to_s.singularize])
-      if instance.valid?
-        save_in_session(instance)
-        session[:errors] = nil
+      begin
+        instance = action.to_s.classify.constantize.new(params[action])
+        instance.valid?
+        session[action] = instance
+        session["#{action}_errors"] = instance.errors || nil
+        raise 'invalid object' if instance.errors.any?
         redirect_to next_step(action)
-      else
-        session[:errors] = instance.errors
+      rescue
         redirect_to action
       end
     end
@@ -39,15 +39,13 @@ class HomeController < ApplicationController
 
   private
 
-  def create_instance(action)
-    instance_variable_set("@#{action}", model_instance(action))
-    instance_variable_get("@#{action}")
-  end
-
-  def model_instance(model_name)
-    model = model_name.to_s.classify.constantize.new
-    session[:errors].try(:each) do |attribute, message|
-      model.errors.add(attribute, message)
+  def model_from_params(action)
+    model = action.to_s.classify.constantize.new
+    if session[action]
+      assign_attributes(model, session[action])
+      session["#{action}_errors"].try(:each) do |attribute, message|
+        model.errors.add(attribute, message)
+      end
     end
     model
   end
@@ -55,12 +53,6 @@ class HomeController < ApplicationController
   def assign_attributes(instance, params)
     instance.attributes.keys.each do |key|
       instance.send("#{key}=", params[key.to_s])
-    end
-  end
-
-  def save_in_session(instance)
-    instance.attributes.each do |attribute|
-      session["#{instance.class.name.underscore}_#{attribute[0]}"] = instance.send(attribute[0])
     end
   end
 

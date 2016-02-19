@@ -2,31 +2,35 @@ module Views
   class Summary
 
     ATTRIBUTES = [
-      :marital_status_married,
-      :savings_and_investment_less_than_limit,
-      :benefit_on_benefits,
-      :fee_paid,
-      :probate_kase,
-      :claim_number,
-      :form_name_identifier,
-      :national_insurance_number,
-      :personal_detail_title,
-      :personal_detail_first_name,
-      :personal_detail_last_name,
-      :applicant_address_address,
-      :applicant_address_postcode,
-      :contact_email
+      { marital_status: 'married' },
+      { savings_and_investment: 'less_than_limit' },
+      { benefit: 'on_benefits' },
+      { fee: 'paid' },
+      { probate: 'kase' },
+      { claim: 'number' },
+      { form_name: 'identifier' },
+      { national_insurance: 'number' },
+      { personal_detail: 'title' },
+      { personal_detail: 'first_name' },
+      { personal_detail: 'last_name' },
+      { applicant_address: 'address' },
+      { applicant_address: 'postcode' },
+      { contact: 'email' }
     ].freeze
 
-    ATTRIBUTES.each do |attribute|
-      define_method(attribute.to_s) do
-        instance_variable_get("@#{attribute}")
+    ATTRIBUTES.each do |hash|
+      hash.each do |key, value|
+        define_method("#{key}_#{value}") do
+          instance_variable_get("@#{key}_#{value}")
+        end
       end
     end
 
     def initialize(session)
-      ATTRIBUTES.each do |attribute|
-        instance_variable_set("@#{attribute}", session[attribute])
+      ATTRIBUTES.each do |hash|
+        hash.each do |key, value|
+          instance_variable_set("@#{key}_#{value}", session[key][value]) if session[key]
+        end
       end
     end
 

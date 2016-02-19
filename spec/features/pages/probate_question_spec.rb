@@ -2,17 +2,17 @@
 require 'rails_helper'
 
 RSpec.feature 'As a user' do
-  context 'when accessing the "fee" page for "Help with fees"' do
-    before { page.visit 'fee' }
+  context 'when accessing the "probate" page for "Help with fees"' do
+    before { page.visit 'probate' }
 
     context 'completing the form correctly' do
       before do
-        choose 'fee_paid_true'
+        choose 'probate_kase_true'
         click_button 'Continue'
       end
 
-      scenario 'I expect to be routed to the "fee" page' do
-        expect(page).to have_content 'Are you paying a fee for a probate case?'
+      scenario 'I expect to be routed to the "claim" page' do
+        expect(page).to have_content 'Do you have a case, claim or ‘notice to pay’ number? '
       end
     end
 
@@ -21,12 +21,12 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect to be shown the "fee" page with error block' do
+      scenario 'I expect to be shown the "probate" page with error block' do
         expect(page).to have_content 'You need to fix the errors on this page before continuing.'
       end
 
       scenario 'I expect the fields to have specific errors' do
-        expect(page).to have_xpath('//span[@class="error-message"]', text: 'Answer the refund question')
+        expect(page).to have_xpath('//span[@class="error-message"]', text: 'Answer the probate question')
       end
     end
   end

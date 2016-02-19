@@ -16,6 +16,18 @@ RSpec.feature 'As a user' do
       end
     end
 
+    context 'completing a refund form correctly' do
+      before do
+        choose 'fee_paid_true'
+        fill_in 'fee_date_paid', with: Time.zone.yesterday
+        click_button 'Continue'
+      end
+
+      scenario 'I expect to be routed to the "fee" page' do
+        expect(page).to have_content 'Are you paying a fee for a probate case?'
+      end
+    end
+
     context 'not completing the page correctly' do
       before do
         click_button 'Continue'

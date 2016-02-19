@@ -8,7 +8,17 @@ RSpec.describe Fee, type: :model do
       context 'when true' do
         before { subject.paid = true }
 
-        it { expect(subject.valid?).to be true }
+        context 'and date_paid is completed' do
+          before { subject.date_paid = Time.zone.yesterday }
+
+          it { expect(subject.valid?).to be true }
+        end
+
+        context 'and date_paid is not completed' do
+          before { subject.date_paid = nil }
+
+          it { expect(subject.valid?).to be false }
+        end
       end
 
       context 'when false' do

@@ -5,4 +5,20 @@ class Base
   def i18n_scope
     "questions.#{self.class.name.underscore}"
   end
+
+  def validate_date?(field)
+    attribute = instance_variable_get("@#{field}")
+    if attribute.is_a?(Date) || attribute.is_a?(Time)
+      true
+    else
+      failure_reason = attribute.present? ? :not_a_date : :blank
+      clear_and_set_error(field.to_sym, failure_reason)
+      false
+    end
+  end
+
+  def clear_and_set_error(attribute, validation)
+    errors[attribute].clear
+    errors.add(attribute, validation)
+  end
 end

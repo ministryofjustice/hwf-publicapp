@@ -4,7 +4,7 @@ class Fee < Base
 
   validates :paid, inclusion: { in: [true, false] }
 
-  with_options if: :validate_date_fee_paid? do
+  with_options if: :validate_fee_date_paid? do
     validates :date_paid, date: {
       after_or_equal_to: Time.zone.today - 3.months,
       before_or_equal_to: Time.zone.today,
@@ -14,20 +14,9 @@ class Fee < Base
 
   private
 
-  def validate_date_fee_paid?
+  def validate_fee_date_paid?
     if paid?
-      if date_paid.is_a?(Date) || date_paid.is_a?(Time)
-        true
-      else
-        failure_reason = date_paid.present? ? :not_a_date : :blank
-        clear_and_set_error(failure_reason)
-        false
-      end
+      validate_date? 'date_paid'
     end
-  end
-
-  def clear_and_set_error(validation)
-    errors[:date_paid].clear
-    errors.add(:date_paid, validation)
   end
 end

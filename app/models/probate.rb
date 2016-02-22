@@ -11,7 +11,7 @@ class Probate < Base
     validates :deceased_name, presence: true
   end
 
-  with_options if: :validate_date_of_death? do
+  with_options if: :validate_probate_date_of_death? do
     validates :date_of_death, date: {
       after_or_equal_to: TIME_LIMIT_FOR_PROBATE.years.ago,
       before: Time.zone.tomorrow,
@@ -21,20 +21,9 @@ class Probate < Base
 
   private
 
-  def validate_date_of_death?
+  def validate_probate_date_of_death?
     if kase?
-      if date_of_death.is_a?(Date) || date_of_death.is_a?(Time)
-        true
-      else
-        failure_reason = date_of_death.present? ? :not_a_date : :blank
-        clear_and_set_error(failure_reason)
-        false
-      end
+      validate_date? 'date_of_death'
     end
-  end
-
-  def clear_and_set_error(validation)
-    errors[:date_of_death].clear
-    errors.add(:date_of_death, validation)
   end
 end

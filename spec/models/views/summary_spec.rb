@@ -3,10 +3,12 @@ require 'rails_helper'
 
 RSpec.describe Views::Summary do
 
-  let(:session) {
-    { 'national_insurance' => { 'number' => 'AB123456A' },
-      'marital_status_married' => 'true' }
-  }
+  let(:session) do
+    {
+      national_insurance: { number: 'AB123456A' },
+      marital_status: { married: 'true' }
+    }
+  end
 
   subject { described_class.new(session) }
 

@@ -7,6 +7,8 @@ en:
       benefits: 'Benefits'
       refund: 'Fee paid'
       probate: 'Probate case'
+      deceased_name: 'Name of deceased'
+      date_of_death: 'Date of death'
       claim: 'Claim number'
       form_name: 'Form name'
       ni_number: 'National insurance number'

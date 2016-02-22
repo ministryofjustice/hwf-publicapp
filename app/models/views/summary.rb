@@ -8,6 +8,8 @@ module Views
       { fee: 'paid' },
       { fee: 'date_paid' },
       { probate: 'kase' },
+      { probate: 'deceased_name' },
+      { probate: 'date_of_death' },
       { claim: 'number' },
       { form_name: 'identifier' },
       { national_insurance: 'number' },

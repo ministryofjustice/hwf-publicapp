@@ -22,6 +22,13 @@ table
       td =t('probate', scope: 'summary.labels')
       td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
       td.right= link_to "Change", "#"
+    -if @summary.probate_kase
+      tr
+        td = t('deceased_name', scope: 'summary.labels')
+        td colspan="2" =@summary.probate_deceased_name
+      tr
+        td = t('date_of_death', scope: 'summary.labels')
+        td colspan="2" =@summary.probate_date_of_death
     tr
       td =t('claim', scope: 'summary.labels')
       td=t("claim_number_#{@summary.claim_number}")

@@ -18,6 +18,14 @@ p = t('details', scope: @probate.i18n_scope)
       label.block-label for='probate_kase_true'
         = f.radio_button :kase, 'true'
         = t('probate_case_true', scope: @probate.i18n_scope)
-
+      .panel-indent
+        .form-group class=('error' if @probate.errors[:deceased_name].any?)
+          span.error-message#deceased_name = @probate.errors[:deceased_name].join(' ') if @probate.errors[:deceased_name].any?
+          = f.label :deceased_name
+          = f.text_field :deceased_name
+        .form-group class=('error' if @probate.errors[:date_of_death].any?)
+          span.error-message#date_of_death = @probate.errors[:date_of_death].join(' ') if @probate.errors[:date_of_death].any?
+          = f.label :date_of_death
+          = f.text_field :date_of_death
     .form-group
       = f.submit t('submit_button'), class: 'button'

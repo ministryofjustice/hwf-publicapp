@@ -36,9 +36,12 @@ module Views
     end
 
     def fee_paid
-      fee = I18n.t("fee_paid_#{@fee_paid}", scope: 'summary')
-      fee += ", on #{Date.parse(@fee_date_paid).strftime('%e %b %Y')}" if @fee_date_paid
-      fee
+      message = I18n.t("fee_paid_#{@fee_paid}", scope: 'summary')
+      "#{message}#{payment_date}"
+    end
+
+    def payment_date
+      ", on #{Date.parse(@fee_date_paid)}" if @fee_date_paid
     end
 
     def full_name

@@ -15,8 +15,6 @@ class Fee < Base
   private
 
   def validate_fee_date_paid?
-    if paid?
-      validate_date? 'date_paid'
-    end
+    validate_date? 'date_paid' if paid?
   end
 end

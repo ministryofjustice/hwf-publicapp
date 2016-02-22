@@ -22,8 +22,6 @@ class Probate < Base
   private
 
   def validate_probate_date_of_death?
-    if kase?
-      validate_date? 'date_of_death'
-    end
+    validate_date? 'date_of_death' if kase?
   end
 end

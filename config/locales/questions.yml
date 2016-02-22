@@ -111,3 +111,14 @@ en:
       breadcrumb: 'Question 7 of 14'
       text: 'Are you paying a fee for a probate case?'
       details: 'These cases are usually about the property and belongings of someone who has died.'
+    national_insurance:
+      breadcrumb: 'Question 10 of 14'
+      text: 'What is your National Insurance number?'
+      example: "Example: QQ 12 34 56 C"
+      prompt: 'National Insurance number'
+      details:
+        summary: 'If you don’t know your National Insurance number'
+        section_1:
+          item_1: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
+          item_2: 'ask for a reminder through the post'
+          detail: 'If you can’t provide a National Insurance number you will need to provide a letter from the job centre.'

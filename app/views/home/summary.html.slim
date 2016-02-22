@@ -1,55 +1,55 @@
-h1.heading-large =t('title', scope: 'summary')
+h1.heading-large =t('title', scope: 'summary.labels')
 
 table
   tbody
     tr
-      td Status
+      td =t('married', scope: 'summary.labels')
       td= t("marital_status_#{@summary.marital_status_married}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
-      td Savings and investments
+      td =t('savings', scope: 'summary.labels')
       td= t("less_than_limit_#{@summary.savings_and_investment_less_than_limit}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
-      td Benefits
+      td =t('benefits', scope: 'summary.labels')
       td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
-      td Fee paid
+      td =t('refund', scope: 'summary.labels')
       td=t("fee_paid_#{@summary.fee_paid}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
-      td Probate case
+      td =t('probate', scope: 'summary.labels')
       td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
-      td Claim number
+      td =t('claim', scope: 'summary.labels')
       td=t("claim_number_#{@summary.claim_number}")
       td.right= link_to "Change", "#"
     tr
-      td Form name
+      td =t('form_name', scope: 'summary.labels')
       td=@summary.form_name_identifier
       td.right= link_to "Change", "#"
     tr
-      td National insurance number
+      td =t('ni_number', scope: 'summary.labels')
       td =@summary.national_insurance_number
       td.right= link_to "Change", "#"
     tr
-      td Personal information
+      td =t('personal', scope: 'summary.labels')
       td =@summary.full_name
       td.right= link_to "Change", "#"
     tr
-      td Address
+      td =t('address', scope: 'summary.labels')
       td =@summary.full_address
       td.right= link_to "Change", "#"
     tr
-      td Email
+      td =t('contact', scope: 'summary.labels')
       td =@summary.contact_email
       td.right= link_to "Change", "#"
 
 
 
-h2.heading-medium Declaration and statement of truth
-p By completing and sending this application, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my application may be rejected and the full fee will be payable.
+h2.heading-medium =t('heading', scope: 'summary.truth')
+p =t('statement', scope: 'summary.truth')
 
-a.button role="button" href="#" Complete and send application
+a.button role="button" href="#" =t('button', scope: 'summary.truth')

@@ -16,7 +16,7 @@ table
       td.right= link_to "Change", "#"
     tr
       td =t('refund', scope: 'summary.labels')
-      td=t("fee_paid_#{@summary.fee_paid}", scope: 'summary')
+      td =@summary.fee_paid
       td.right= link_to "Change", "#"
     tr
       td =t('probate', scope: 'summary.labels')

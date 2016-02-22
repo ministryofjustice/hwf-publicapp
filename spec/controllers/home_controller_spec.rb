@@ -89,7 +89,7 @@ RSpec.describe HomeController, type: :controller do
   describe 'POST #fee_save' do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
-        post :fee_save, fee: { paid: 'true' }
+        post :fee_save, fee: { paid: 'true', date_paid: Time.zone.yesterday }
         expect(response).to redirect_to(:probate)
       end
     end
@@ -98,6 +98,22 @@ RSpec.describe HomeController, type: :controller do
       it 'goes back to the form' do
         post :fee_save, fee: { paid: 'foo' }
         expect(response).to redirect_to(:fee)
+      end
+
+      context 'when paid is true' do
+        context 'and date is empty' do
+          it 'goes back to the form' do
+            post :fee_save, fee: { paid: 'true', date_paid: nil }
+            expect(response).to redirect_to(:fee)
+          end
+        end
+
+        context 'and date is invalid' do
+          it 'goes back to the form' do
+            post :fee_save, fee: { paid: 'true', date_paid: '1-31-2016' }
+            expect(response).to redirect_to(:fee)
+          end
+        end
       end
     end
   end

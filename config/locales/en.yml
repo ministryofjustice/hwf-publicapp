@@ -17,6 +17,9 @@ en:
     heading: 'You need to fix the errors on this page before continuing.'
     visuallyhidden: 'Errors are listed as links below, click to select the field that needs correcting.'
   activemodel:
+    attributes:
+      fee:
+        date_paid: "Date fee paid"
     errors:
       models:
         marital_status:
@@ -35,6 +38,11 @@ en:
           attributes:
             paid:
               inclusion: "Select whether you've already paid the fee"
+            date_paid:
+              blank: "Enter the date in this format DD/MM/YYYY"
+              not_a_date: "That date is not recognised"
+              after_or_equal_to: "The application must have been made in the last 3 months"
+              before: "This date can't be in the future"
         probate:
           attributes:
             kase:

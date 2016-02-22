@@ -8,6 +8,8 @@ RSpec.feature 'As a user' do
     context 'completing the form correctly' do
       before do
         choose 'probate_kase_true'
+        fill_in :probate_deceased_name, with: 'foo'
+        fill_in :probate_date_of_death, with: Time.zone.yesterday
         click_button 'Continue'
       end
 
@@ -17,16 +19,71 @@ RSpec.feature 'As a user' do
     end
 
     context 'not completing the page correctly' do
-      before do
-        click_button 'Continue'
+      describe 'leaving all fields empty' do
+        before do
+          click_button 'Continue'
+        end
+
+        scenario 'I expect to be shown the "probate" page with error block' do
+          expect(page).to have_content 'You need to fix the errors on this page before continuing.'
+        end
+
+        scenario 'I expect the fields to have specific errors' do
+          expect(page).to have_xpath('//span[@class="error-message"]', text: "Select whether you're paying a fee for a probate case")
+        end
       end
 
-      scenario 'I expect to be shown the "probate" page with error block' do
-        expect(page).to have_content 'You need to fix the errors on this page before continuing.'
-      end
+      context 'selecting yes to probate case' do
+        before { choose :probate_kase_true }
 
-      scenario 'I expect the fields to have specific errors' do
-        expect(page).to have_xpath('//span[@class="error-message"]', text: "Select whether you're paying a fee for a probate case")
+        context 'leaving deceased_name blank' do
+          before { click_button 'Continue' }
+
+          scenario 'I expect the fields to have specific errors' do
+            expect(page).to have_xpath('//span[@class="error-message"]', text: "Please enter the deceased's name")
+          end
+        end
+
+        context 'leaving date_of_death empty' do
+          before { click_button 'Continue' }
+
+          scenario 'I expect the fields to have specific errors' do
+            expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter the date')
+          end
+        end
+
+        context 'entering date_of_death that is not a date' do
+          before do
+            fill_in :probate_date_of_death, with: 'foo'
+            click_button 'Continue'
+          end
+
+          scenario 'I expect the fields to have specific errors' do
+            expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter the date in this format DD/MM/YYYY')
+          end
+        end
+
+        context 'entering date_of_death that is too old' do
+          before do
+            fill_in :probate_date_of_death, with: Time.zone.today - 21.years
+            click_button 'Continue'
+          end
+
+          scenario 'I expect the fields to have specific errors' do
+            expect(page).to have_xpath('//span[@class="error-message"]', text: 'The date of death must have been in the last 20 years')
+          end
+        end
+
+        context 'entering date_of_death that is in the future' do
+          before do
+            fill_in :probate_date_of_death, with: Time.zone.tomorrow
+            click_button 'Continue'
+          end
+
+          scenario 'I expect the fields to have specific errors' do
+            expect(page).to have_xpath('//span[@class="error-message"]', text: "This date can't be in the future")
+          end
+        end
       end
     end
   end

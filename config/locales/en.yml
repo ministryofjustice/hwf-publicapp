@@ -23,6 +23,8 @@ en:
       probate:
         deceased_name: "Name of deceased"
         date_of_death: "Date of Death"
+      form_name:
+        identifier: Form name
     errors:
       models:
         marital_status:
@@ -57,6 +59,10 @@ en:
               not_a_date: "Enter the date in this format DD/MM/YYYY"
               before: "This date can't be in the future"
               after_or_equal_to: "The date of death must have been in the last 20 years"
+        form_name:
+          attributes:
+            identifier:
+              blank: "Form name can't be blank"
         national_insurance:
           attributes:
             number:

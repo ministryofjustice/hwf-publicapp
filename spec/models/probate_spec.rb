@@ -47,7 +47,7 @@ RSpec.describe Probate, type: :model do
           context 'it returns an error' do
             before { subject.valid? }
 
-            it { expect(subject.errors[:date_of_death]).to eq ['Enter the date'] }
+            it { expect(subject.errors[:date_of_death]).to eq ['Enter the date of death'] }
           end
         end
 

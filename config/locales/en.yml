@@ -1,9 +1,8 @@
 en:
   start_application: Apply now
   submit_button: Continue
-  personal_detail_title: Title
-  personal_detail_first_name: First name
-  personal_detail_last_name: Last name
+  claim_number_false: 'No'
+  claim_number_true: 'Yes'
   applicant_address_address: Address
   applicant_address_postcode: Postcode
   contact_email_option: Email
@@ -72,3 +71,9 @@ en:
             number:
               blank: 'Enter your National Insurance number'
               invalid: 'Enter a valid National Insurance number'
+        personal_detail:
+          attributes:
+            first_name:
+              blank: 'Enter your first name'
+            last_name:
+              blank: 'Enter your last name'

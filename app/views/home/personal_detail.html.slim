@@ -1,23 +1,21 @@
+= render('shared/error_block', form: @personal_detail) if @personal_detail.errors.any?
 h2.heading-large
-  span.heading-secondary Question 12 of 14
-  | What is your full name?
+  span.heading-secondary = t('breadcrumb', scope: @personal_detail.i18n_scope)
+  = t('text', scope: @personal_detail.i18n_scope)
 
 = form_for @personal_detail, url: personal_detail_save_path do |f|
   fieldset
-    legend.visuallyhidden What is your full name?
-
-
+    legend.visuallyhidden = t('text', scope: @personal_detail.i18n_scope)
     .form-group
-      label.form-label for='title'
-        = t('personal_detail_title')
+      = f.label :title, class: 'form-label'
       = f.text_field :title, class: 'form-control form-control-smaller'
-    .form-group
-      label.form-label for='first_name'
-        = t('personal_detail_first_name')
+    .form-group class=('error' if @personal_detail.errors[:first_name].any?)
+      = f.label :first_name, class: 'form-label'
+      span.error-message#first_name = @personal_detail.errors[:first_name].join(' ') if @personal_detail.errors[:first_name].any?
       = f.text_field :first_name, class: 'form-control'
-    .form-group
-      label.form-label for='last_name'
-        = t('personal_detail_last_name')
+    .form-group class=('error' if @personal_detail.errors[:last_name].any?)
+      = f.label :last_name, class: 'form-label'
+      span.error-message#last_name = @personal_detail.errors[:last_name].join(' ') if @personal_detail.errors[:last_name].any?
       = f.text_field :last_name, class: 'form-control'
 
     .form-group

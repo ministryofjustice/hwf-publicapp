@@ -151,7 +151,7 @@ RSpec.describe HomeController, type: :controller do
   describe 'POST #claim_save' do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
-        post :claim_save, claim: { number: 'true' }
+        post :claim_save, claim: { number: 'true', identifier: 'formy-form' }
         expect(response).to redirect_to(:form_name)
       end
     end

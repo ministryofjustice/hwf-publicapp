@@ -16,6 +16,10 @@ p
       label.block-label for='claim_number_true'
         = f.radio_button :number, 'true'
         = t('number_true', scope: @claim.i18n_scope)
+      #claim-identifier-panel
+        label.form-label
+          = t('identifier', scope: @claim.i18n_scope)
+        = f.text_field :identifier, class: 'form-control'
 
     .form-group
       details

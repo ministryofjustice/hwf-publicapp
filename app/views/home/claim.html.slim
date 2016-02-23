@@ -3,11 +3,11 @@ h2.heading-large
   =t('text', scope: @claim.i18n_scope)
 
 p
-  =t('details', scope: @claim.i18n_scope)
+  =t('subtext', scope: @claim.i18n_scope)
 
 = form_for @claim, url: claim_save_path do |f|
   fieldset
-    legend.visuallyhidden Do you have a case, claim or ‘notice to pay’ number?
+    legend.visuallyhidden = t('hidden_legend', scope: @claim.i18n_scope)
 
     .form-group
       label.block-label for='claim_number_false'
@@ -19,14 +19,14 @@ p
 
     .form-group
       details
-        summary Help with case number
+        summary = t('details.summary', scope: @claim.i18n_scope)
 
         .panel-indent
-          p The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.
+          p = t('details.section_1', scope: @claim.i18n_scope)
 
-          p If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
+          p = t('details.section_2', scope: @claim.i18n_scope)
 
-          p If you don’t have a reference number (this might be because your case hasn’t started yet) leave this question blank.
+          p = t('details.section_3', scope: @claim.i18n_scope)
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

@@ -4,7 +4,7 @@ en:
       married_true: 'Married or living with someone and sharing an income'
       married_false: 'Single'
       breadcrumb: 'Question 1 of 14'
-      text: "What's your status?"
+      text: "Are you single, married or living with someone and sharing an income?"
       details:
         summary: 'Help with status'
         section_1:

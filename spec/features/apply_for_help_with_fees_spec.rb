@@ -10,7 +10,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add my marital status' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
   end
@@ -18,7 +18,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add information on my savings and investments' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -29,7 +29,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add information on benefits' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -43,7 +43,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add information on fee payment' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -60,7 +60,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add information on probate case' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -80,7 +80,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add my national insurance number' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -103,7 +103,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add information on case or claim' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -129,7 +129,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add national insurance number' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -158,7 +158,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add my personal information' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -192,7 +192,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add my address' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -230,7 +230,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to add my prefered contact option' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'
@@ -272,7 +272,7 @@ RSpec.feature 'As a user' do
   scenario 'I want to see the summary of my application' do
     page.visit '/'
     page.click_link 'Apply now'
-    expect(page).to have_content "What's your status?"
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
     expect(page).to have_content 'How much do you have in savings and investments?'

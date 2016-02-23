@@ -10,14 +10,6 @@ RSpec.describe PersonalDetail, type: :model do
       it { expect(subject.valid?).to be true }
     end
 
-    describe 'title' do
-      context 'when title not provided' do
-        before { subject.title = '' }
-
-        it { expect(subject.valid?).to be false }
-      end
-    end
-
     describe 'first_name' do
       context 'when not provided' do
         before { subject.first_name = '' }

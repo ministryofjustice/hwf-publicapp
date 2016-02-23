@@ -111,6 +111,12 @@ en:
       breadcrumb: 'Question 7 of 14'
       text: 'Are you paying a fee for a probate case?'
       details: 'These cases are usually about the property and belongings of someone who has died.'
+    claim:
+      breadcrumb: Question 8 of 14
+      text: Do you have a case, claim or ‘notice to pay’ number?
+      details: Find this number on letters from the court or tribunal.
+      number_false: 'No'
+      number_true: 'Yes'
     form_name:
       breadcrumb: 'Question 9 of 14'
       text: 'What is the form name or number related to this application?'

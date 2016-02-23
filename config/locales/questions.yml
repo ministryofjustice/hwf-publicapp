@@ -77,7 +77,7 @@ en:
         summary: 'Help with benefits'
         section_1:
           heading: 'If you’ve only recently started receiving one of these benefits'
-          details: '(for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the job centre.'
+          details: '(for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the jobcentre.'
         section_2:
           heading: 'Benefits with similar names'
           details: "There are some benefits with similar names. If you are receiving one of the benefits listed below, select 'No'."
@@ -124,11 +124,10 @@ en:
     national_insurance:
       breadcrumb: 'Question 10 of 14'
       text: 'What is your National Insurance number?'
-      example: "Example: QQ 12 34 56 C"
+      example: "For example, QQ 12 34 56 C"
       prompt: 'National Insurance number'
       details:
         summary: 'If you don’t know your National Insurance number'
         section_1:
           item_1: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
           item_2: 'ask for a reminder through the post'
-          detail: 'If you can’t provide a National Insurance number you will need to provide a letter from the job centre.'

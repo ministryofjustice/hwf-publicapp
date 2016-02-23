@@ -1,3 +1,4 @@
+= render('shared/error_block', form: @claim) if @claim.errors.any?
 h2.heading-large
   span.heading-secondary =t('breadcrumb', scope: @claim.i18n_scope)
   =t('text', scope: @claim.i18n_scope)
@@ -9,7 +10,7 @@ p
   fieldset
     legend.visuallyhidden = t('hidden_legend', scope: @claim.i18n_scope)
 
-    .form-group
+    .form-group class=('error' if @claim.errors.any?)
       label.block-label for='claim_number_false'
         = f.radio_button :number, 'false'
         = t('number_false', scope: @claim.i18n_scope)
@@ -18,6 +19,7 @@ p
         = t('number_true', scope: @claim.i18n_scope)
       #claim-identifier-panel
         label.form-label
+          span.error-message#identifier = @claim.errors[:identifier].join(' ') if @claim.errors[:identifier].any?
           = t('identifier', scope: @claim.i18n_scope)
         = f.text_field :identifier, class: 'form-control'
 

@@ -118,6 +118,7 @@ en:
       hidden_legend: Do you have a case, claim or ‘notice to pay’ number?
       number_false: 'No'
       number_true: 'Yes'
+      identifier: The case, claim or ‘notice to pay’ number is
       details:
         summary: Help with case number
         section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.

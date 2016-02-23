@@ -133,7 +133,6 @@ en:
         item_1: You can usually find the form name at the top of the form, and the number at the bottom.
         item_2: If you don’t have a form name or number, for example if you’re applying for help with a hearing fee, then write ‘hearing fee’ as the answer to this question.
         item_3: If you don’t know the answer to this question, leave it blank.
-
     national_insurance:
       breadcrumb: 'Question 10 of 14'
       text: 'What is your National Insurance number?'
@@ -151,3 +150,10 @@ en:
     applicant_address:
       breadcrumb: 'Question 13 of 14'
       text: 'What is your address?'
+    contact:
+      breadcrumb: 'Question 14 of 14'
+      text: "What's the best way to contact you?"
+      email_option: "Email"
+      phone_option: "Phone call"
+      post_option: "Post"
+      details: "Enter an email address if you want an email confirmation of your application."

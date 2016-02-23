@@ -13,7 +13,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "fee" page' do
-        expect(page).to have_content 'If we have questions about your application, how should we contact you?'
+        expect(page).to have_content "What's the best way to contact you?"
       end
     end
 

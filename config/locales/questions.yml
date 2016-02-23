@@ -104,7 +104,7 @@ en:
       fee_paid_true: 'Yes'
       breadcrumb: 'Question 6 of 14'
       text: 'Have you already paid the fee?'
-      details: "You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, answer the following questions about your circumstances at the time you paid the fee."
+      details: "You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee."
     probate:
       probate_case_false: 'No'
       probate_case_true: 'Yes'

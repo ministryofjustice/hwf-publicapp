@@ -8,7 +8,7 @@ p =t('example', scope: @national_insurance.i18n_scope)
 = form_for @national_insurance, url: national_insurance_save_path do |f|
   fieldset
     legend.visuallyhidden =t('text', scope: @national_insurance.i18n_scope)
-    .form-group  class=('error' if @national_insurance.errors.any?)
+    .form-group class=('error' if @national_insurance.errors.any?)
       label.form-label for='national_insurance_number'
         span.visuallyhidden =t('prompt', scope: @national_insurance.i18n_scope)
         span.error-message#paid = @national_insurance.errors[:number].join(' ') if @national_insurance.errors[:number].any?

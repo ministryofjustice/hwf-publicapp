@@ -148,3 +148,6 @@ en:
     personal_detail:
       breadcrumb: 'Question 12 of 14'
       text: 'What is your full name?'
+    applicant_address:
+      breadcrumb: 'Question 13 of 14'
+      text: 'What is your address?'

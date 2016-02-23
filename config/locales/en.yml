@@ -1,10 +1,6 @@
 en:
   start_application: Apply now
   submit_button: Continue
-  claim_number_false: 'No'
-  claim_number_true: 'Yes'
-  applicant_address_address: Address
-  applicant_address_postcode: Postcode
   contact_email_option: Email
   contact_email: Email address
   contact_phone_option: Phone call
@@ -77,3 +73,9 @@ en:
               blank: 'Enter your first name'
             last_name:
               blank: 'Enter your last name'
+        applicant_address:
+          attributes:
+            address:
+              blank: 'Enter your address'
+            postcode:
+              blank: 'Enter your postcode'

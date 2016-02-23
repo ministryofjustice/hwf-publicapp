@@ -1,8 +1,6 @@
 en:
   start_application: Apply now
   submit_button: Continue
-  claim_number_false: 'No'
-  claim_number_true: 'Yes'
   personal_detail_title: Title
   personal_detail_first_name: First name
   personal_detail_last_name: Last name
@@ -59,6 +57,12 @@ en:
               not_a_date: "Enter the date in this format DD/MM/YYYY"
               before: "This date can't be in the future"
               after_or_equal_to: "The date of death must have been in the last 20 years"
+        claim:
+          attributes:
+            number:
+              inclusion: Select whether you have a case, claim or ‘notice to pay’ number
+            identifier:
+              blank: Enter a case, claim or ‘notice to pay’ number
         form_name:
           attributes:
             identifier:

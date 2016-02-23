@@ -1,32 +1,38 @@
+= render('shared/error_block', form: @claim) if @claim.errors.any?
 h2.heading-large
-  span.heading-secondary Question 8 of 14
-  | Do you have a case, claim or ‘notice to pay’ number?
+  span.heading-secondary =t('breadcrumb', scope: @claim.i18n_scope)
+  =t('text', scope: @claim.i18n_scope)
 
 p
-  | Find this number on letters from the court or tribunal.
+  =t('subtext', scope: @claim.i18n_scope)
 
 = form_for @claim, url: claim_save_path do |f|
   fieldset
-    legend.visuallyhidden Do you have a case, claim or ‘notice to pay’ number?
+    legend.visuallyhidden = t('hidden_legend', scope: @claim.i18n_scope)
 
-    .form-group
+    .form-group class=('error' if @claim.errors.any?)
       label.block-label for='claim_number_false'
         = f.radio_button :number, 'false'
-        = t('claim_number_false')
+        = t('number_false', scope: @claim.i18n_scope)
       label.block-label for='claim_number_true'
         = f.radio_button :number, 'true'
-        = t('claim_number_true')
+        = t('number_true', scope: @claim.i18n_scope)
+      #claim-identifier-panel
+        label.form-label
+          span.error-message#identifier = @claim.errors[:identifier].join(' ') if @claim.errors[:identifier].any?
+          = t('identifier', scope: @claim.i18n_scope)
+        = f.text_field :identifier, class: 'form-control'
 
     .form-group
       details
-        summary Help with case number
+        summary = t('details.summary', scope: @claim.i18n_scope)
 
         .panel-indent
-          p The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.
+          p = t('details.section_1', scope: @claim.i18n_scope)
 
-          p If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
+          p = t('details.section_2', scope: @claim.i18n_scope)
 
-          p If you don’t have a reference number (this might be because your case hasn’t started yet) leave this question blank.
+          p = t('details.section_3', scope: @claim.i18n_scope)
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

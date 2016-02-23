@@ -31,7 +31,7 @@ table
         td colspan="2" =@summary.probate_date_of_death
     tr
       td =t('claim', scope: 'summary.labels')
-      td=t("claim_number_#{@summary.claim_number}")
+      td =t("claim_number_#{@summary.claim_number}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
       td =t('form_name', scope: 'summary.labels')

@@ -29,3 +29,5 @@ en:
     fee_paid_true: 'Yes'
     probate_case_false: 'No'
     probate_case_true: 'Yes'
+    claim_number_false: 'No'
+    claim_number_true: 'Yes'

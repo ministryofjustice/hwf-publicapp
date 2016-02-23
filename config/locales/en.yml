@@ -22,7 +22,7 @@ en:
         date_paid: "Date fee paid"
       probate:
         deceased_name: "Name of deceased"
-        date_of_death: "Date of Death"
+        date_of_death: "Date of death"
       form_name:
         identifier: Form name
     errors:
@@ -55,7 +55,7 @@ en:
             deceased_name:
               blank: "Please enter the deceased's name"
             date_of_death:
-              blank: "Enter the date"
+              blank: "Enter the date of death"
               not_a_date: "Enter the date in this format DD/MM/YYYY"
               before: "This date can't be in the future"
               after_or_equal_to: "The date of death must have been in the last 20 years"

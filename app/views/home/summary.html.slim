@@ -5,23 +5,23 @@ table
     tr
       td =t('married', scope: 'summary.labels')
       td= t("marital_status_#{@summary.marital_status_married}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", marital_status_url
     tr
       td =t('savings', scope: 'summary.labels')
       td= t("less_than_limit_#{@summary.savings_and_investment_less_than_limit}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", savings_and_investment_url
     tr
       td =t('benefits', scope: 'summary.labels')
       td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", benefit_path
     tr
       td =t('refund', scope: 'summary.labels')
       td =@summary.fee_paid
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", fee_url
     tr
       td =t('probate', scope: 'summary.labels')
       td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", probate_url
     -if @summary.probate_kase
       tr
         td = t('deceased_name', scope: 'summary.labels')
@@ -31,28 +31,28 @@ table
         td colspan="2" =@summary.probate_date_of_death
     tr
       td =t('claim', scope: 'summary.labels')
-      td =t("claim_number_#{@summary.claim_number}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td=t("claim_number_#{@summary.claim_number}", scope: 'summary')
+      td.right= link_to "Change", claim_url
     tr
       td =t('form_name', scope: 'summary.labels')
       td=@summary.form_name_identifier
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", form_name_url
     tr
       td =t('ni_number', scope: 'summary.labels')
       td =@summary.national_insurance_number
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", national_insurance_url
     tr
       td =t('personal', scope: 'summary.labels')
       td =@summary.full_name
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", personal_detail_url
     tr
       td =t('address', scope: 'summary.labels')
       td =@summary.full_address
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", applicant_address_url
     tr
       td =t('contact', scope: 'summary.labels')
       td =@summary.contact_email
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", contact_url
 
 
 

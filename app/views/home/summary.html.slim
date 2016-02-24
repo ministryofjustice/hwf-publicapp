@@ -49,12 +49,27 @@ table
       td =t('address', scope: 'summary.labels')
       td =@summary.full_address
       td.right= link_to "Change", "#"
-    tr
-      td =t('contact', scope: 'summary.labels')
-      td =@summary.contact_email
-      td.right= link_to "Change", "#"
-
-
+    -if @summary.any_contact
+      -if @summary.contact_email_option
+        tr
+          td =t('contact_email', scope: 'summary.labels')
+          td =@summary.contact_email
+          td.right= link_to "Change", "#"
+      -if @summary.contact_phone_option
+        tr
+          td =t('contact_phone', scope: 'summary.labels')
+          td =@summary.contact_phone
+          td.right= link_to "Change", "#"
+      -if @summary.contact_post_option
+        tr
+          td =t('contact_post', scope: 'summary.labels')
+          td Yes
+          td.right= link_to "Change", "#"
+    -else
+      tr
+        td = t('contact', scope: 'summary.labels')
+        td = t('summary.contact_none')
+        td.right= link_to "Change", "#"
 
 h2.heading-medium =t('heading', scope: 'summary.truth')
 p =t('statement', scope: 'summary.truth')

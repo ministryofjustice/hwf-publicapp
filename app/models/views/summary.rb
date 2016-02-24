@@ -18,7 +18,11 @@ module Views
       { personal_detail: 'last_name' },
       { applicant_address: 'address' },
       { applicant_address: 'postcode' },
-      { contact: 'email' }
+      { contact: 'email_option' },
+      { contact: 'email' },
+      { contact: 'phone_option' },
+      { contact: 'phone' },
+      { contact: 'post_option' }
     ].freeze
 
     ATTRIBUTES.each do |hash|
@@ -57,5 +61,8 @@ module Views
        @applicant_address_postcode].join(' ')
     end
 
+    def any_contact
+      @contact_email_option || @contact_phone_option || @contact_post_option
+    end
   end
 end

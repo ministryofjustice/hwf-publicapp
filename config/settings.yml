@@ -1,0 +1,8 @@
+encryption:
+  issuer: <%= ENV['ENCRYPTION_ISSUER'] %>
+  audience: <%= ENV['ENCRYPTION_AUDIENCE'] %>
+  pem: <%= ENV['ENCRYPTION_PEM'] %>
+  hmac: <%= ENV['HMAC'] %>
+cipher:
+  key: <%= ENV['CIPHER_KEY'] %>
+  iv: <%= ENV['CIPHER_IV'] %>

@@ -7,6 +7,7 @@ gem 'govuk_elements_rails', git: 'https://github.com/ministryofjustice/govuk_ele
 gem 'moj_template', '~> 0.23.2'
 gem 'date_validator'
 gem 'jwt'
+gem 'config'
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.4'
 # Use Uglifier as compressor for JavaScript assets

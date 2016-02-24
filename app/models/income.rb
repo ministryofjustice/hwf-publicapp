@@ -1,8 +1,4 @@
 class Income < Base
-  # attribute :on_benefits, Boolean
-  #
-  # validates :on_benefits, inclusion: { in: [true, false] }
-
   attribute :wages, Float
   attribute :child_benefit, Float
   attribute :working_tax_credit, Float
@@ -31,9 +27,17 @@ class Income < Base
 
   validates :other_description, presence: true, if: :other_income?
 
+  validate :either_other_income
+
   private
 
   def other_income?
     other.present? || partner_other.present?
+  end
+
+  def either_other_income
+    if other_description.present? && other.blank? && partner_other.blank?
+      errors.add(:combined_other_payments, I18n.t('errors.combined_other_payments_invalid'))
+    end
   end
 end

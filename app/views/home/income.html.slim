@@ -1,0 +1,176 @@
+= render('shared/error_block', form: @income) if @income.errors.any?
+
+h2.heading-large
+  span.heading-secondary = t('breadcrumb', scope: @income.i18n_scope)
+  = t('text', scope: @income.i18n_scope)
+p = t('details', scope: @income.i18n_scope)
+
+= form_for @income, url: income_save_path do |f|
+  fieldset
+    legend.visuallyhidden = t('text', scope: @income.i18n_scope)
+
+    table
+      thead
+        tr
+          td &nbsp;
+          td = t('labels.your_income', scope: @income.i18n_scope)
+          -if @married
+            td = t('labels.partners_income', scope: @income.i18n_scope)
+      tbody
+        tr
+          td =f.label :wages
+          td
+            |£
+            = f.number_field :wages
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_wages
+              |a month
+        tr
+          td =f.label :child_benefit
+          td
+            |£
+            = f.number_field :child_benefit
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_child_benefit
+              |a month
+        tr
+          td =f.label :working_tax_credit
+          td
+            |£
+            = f.number_field :working_tax_credit
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_working_tax_credit
+              |a month
+        tr
+          td =f.label :child_tax_credit
+          td
+            |£
+            = f.number_field :child_tax_credit
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_child_tax_credit
+              |a month
+        tr
+          td =f.label :maintenance_payment
+          td
+            |£
+            = f.number_field :maintenance_payment
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_maintenance_payment
+              |a month
+        tr
+          td =f.label :contribution_JSA
+          td
+            |£
+            = f.number_field :contribution_JSA
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_contribution_JSA
+              |a month
+        tr
+          td =f.label :contribution_ESA
+          td
+            |£
+            = f.number_field :contribution_ESA
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_contribution_ESA
+              |a month
+        tr
+          td =f.label :universal_credit
+          td
+            |£
+            = f.number_field :universal_credit
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_universal_credit
+              |a month
+        tr
+          td =f.label :pension
+          td
+            |£
+            = f.number_field :pension
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_pension
+              |a month
+        tr
+          td =f.label :rent_living_with
+          td
+            |£
+            = f.number_field :rent_living_with
+            |a month
+          -if @married
+            td
+              |£
+              = f.number_field :partner_rent_living_with
+              |a month
+        tr
+          td =f.label :rent_other_property
+          td
+            |£
+            = f.text_field :rent_other_property, pattern: '^\d*(\.\d{2}$)?'
+            |a month
+          -if @married
+            td
+              |£
+              = f.text_field :partner_rent_other_property, pattern: '^\d*(\.\d{2}$)?'
+              |a month
+        tr
+          td
+            .form-group class=('error' if @income.errors[:other_description].any?)
+              =f.label :other_description, class: 'form-label'
+              span.error-message#other_description = @income.errors[:other_description].join(' ')
+              =f.text_field :other_description, class: 'form-control'
+          td
+            .form-group class=('error' if @income.errors[:combined_other_payments].any?)
+              |£
+              = f.text_field :other, class: 'form-control'
+              |a month
+              p
+                span.error-message#combined_other_payments = @income.errors[:combined_other_payments].join(' ')
+          -if @married
+            td
+              .form-group class=('error' if @income.errors[:combined_other_payments].any?)
+                |£
+                = f.text_field :partner_other, class: 'form-control'
+                |a month
+                p
+                  span.error-message = @income.errors[:combined_other_payments].join(' ')
+
+      tfoot
+        tr
+          td Total
+          td
+            |£
+            input#total type="text"
+            |a month
+          - if @married
+            td
+              |£
+              input#partner_total type="text"
+              |a month
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

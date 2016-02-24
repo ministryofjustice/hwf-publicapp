@@ -4,18 +4,30 @@ en:
   error_block:
     heading: 'You need to fix the errors on this page before continuing.'
     visuallyhidden: 'Errors are listed as links below, click to select the field that needs correcting.'
+  errors:
+    combined_other_payments_invalid: 'Enter the amount of your income'
   activemodel:
     attributes:
+      income:
+        wages: 'Wages (before tax and National Insurance)'
+        child_benefit: 'Child Benefit'
+        working_tax_credit: 'Working tax credit'
+        child_tax_credit: 'Child tax credit'
+        maintenance_payment: 'Maintenence payments'
+        contribution_JSA: 'Contribution-based Jobseekers Allowance (JSA)'
+        contribution_ESA: 'Contribution-based Employment and Support Allowance (ESA)'
+        universal_credit: 'Universal Credit'
+        pension: 'Pensions (state, work, private)'
+        rent_living_with: 'Rent from anyone living with you'
+        rent_other_property: 'Rent from other properties you own'
+        other_description: 'Other monthly income'
       fee:
         date_paid: "Date fee paid"
       probate:
         deceased_name: "Name of deceased"
         date_of_death: "Date of death"
       form_name:
-        identifier: Form name
-      contact:
-        email: Email address
-        phone: Phone number
+        identifier: 'Form name'
     errors:
       models:
         marital_status:
@@ -30,6 +42,10 @@ en:
           attributes:
             on_benefits:
               inclusion: "Select whether you're receiving one of the benefits listed"
+        income:
+          attributes:
+            other_description:
+              blank: "Enter a description for your income"
         fee:
           attributes:
             paid:

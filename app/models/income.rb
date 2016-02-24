@@ -4,8 +4,8 @@ class Income < Base
   attribute :working_tax_credit, Float
   attribute :child_tax_credit, Float
   attribute :maintenance_payment, Float
-  attribute :contribution_JSA, Float
-  attribute :contribution_ESA, Float
+  attribute :contribution_jsa, Float
+  attribute :contribution_esa, Float
   attribute :universal_credit, Float
   attribute :pension, Float
   attribute :rent_living_with, Float
@@ -17,8 +17,8 @@ class Income < Base
   attribute :partner_working_tax_credit, Float
   attribute :partner_child_tax_credit, Float
   attribute :partner_maintenance_payment, Float
-  attribute :partner_contribution_JSA, Float
-  attribute :partner_contribution_ESA, Float
+  attribute :partner_contribution_jsa, Float
+  attribute :partner_contribution_esa, Float
   attribute :partner_universal_credit, Float
   attribute :partner_pension, Float
   attribute :partner_rent_living_with, Float

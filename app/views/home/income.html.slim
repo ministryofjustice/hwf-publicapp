@@ -73,26 +73,26 @@ p = t('details', scope: @income.i18n_scope)
               = f.number_field :partner_maintenance_payment
               |a month
         tr
-          td =f.label :contribution_JSA
+          td =f.label :contribution_jsa
           td
             |£
-            = f.number_field :contribution_JSA
+            = f.number_field :contribution_jsa
             |a month
           -if @married
             td
               |£
-              = f.number_field :partner_contribution_JSA
+              = f.number_field :partner_contribution_jsa
               |a month
         tr
-          td =f.label :contribution_ESA
+          td =f.label :contribution_esa
           td
             |£
-            = f.number_field :contribution_ESA
+            = f.number_field :contribution_esa
             |a month
           -if @married
             td
               |£
-              = f.number_field :partner_contribution_ESA
+              = f.number_field :partner_contribution_esa
               |a month
         tr
           td =f.label :universal_credit

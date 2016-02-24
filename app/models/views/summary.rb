@@ -75,7 +75,7 @@ module Views
       session[:income].try(:each) do |_k, v|
         total += v if v.present? && v.is_a?(Float)
       end
-      "£#{total.round(0)}"
+      total
     end
   end
 end

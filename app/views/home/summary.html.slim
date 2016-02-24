@@ -16,7 +16,7 @@ table
       td.right= link_to "Change", "#"
     tr
       td =t('income', scope: 'summary.labels')
-      td =@summary.income_total
+      td =number_to_currency(@summary.income_total, precision: 2, unit: '£')
       td.right= link_to "Change", "#"
     tr
       td =t('refund', scope: 'summary.labels')

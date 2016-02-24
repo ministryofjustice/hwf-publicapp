@@ -1,10 +1,13 @@
 h2.heading-large
   span.heading-secondary Question 14 of 14
-  | If we have questions about your application, how should we contact you?
+  | What's the best way to contact you?
 
 = form_for @contact, url: contact_save_path do |f|
   fieldset
-    legend.visuallyhidden If we have questions about your application, how should we contact you?
+    legend.visuallyhidden What's the best way to contact you?
+
+    .form-group
+      p Enter an email address if you want an email confirmation of your application.
 
     .form-group
       label.block-label data-target="email-field-panel"
@@ -27,8 +30,7 @@ h2.heading-large
         = f.check_box :post_option
         = t('contact_post_option')
 
-    .form-group
-      p Enter an email address if you want an email confirmation of your application.
+    
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

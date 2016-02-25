@@ -8,8 +8,8 @@ p = t('details', scope: @probate.i18n_scope)
 
 = form_for @probate, url: probate_save_path do |f|
   fieldset
-    legend.visuallyhidden
-    .form-group class=('error' if @probate.errors.any?)
+    legend.visuallyhidden= t('text', scope: @probate.i18n_scope)
+    .form-group class=('error' if @probate.errors[:kase].any?)
       = f.hidden_field :kase, value: nil
       span.error-message#kase = @probate.errors[:kase].join(' ') if @probate.errors.any?
       label.block-label for='probate_kase_false'

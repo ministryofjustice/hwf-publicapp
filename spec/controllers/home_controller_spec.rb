@@ -79,6 +79,13 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
+  describe 'GET #dependent' do
+    it 'returns http success' do
+      get :dependent
+      expect(response).to have_http_status(:success)
+    end
+  end
+
   describe 'GET #income' do
     it 'returns http success' do
       get :income

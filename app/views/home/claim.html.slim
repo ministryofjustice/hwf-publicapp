@@ -10,7 +10,7 @@ p
   fieldset
     legend.visuallyhidden = t('hidden_legend', scope: @claim.i18n_scope)
 
-    .form-group class=('error' if @claim.errors.any?)
+    .form-group class=('error' if @claim.errors[:number].any?)
       label.block-label for='claim_number_false'
         = f.radio_button :number, 'false'
         = t('number_false', scope: @claim.i18n_scope)
@@ -18,10 +18,11 @@ p
         = f.radio_button :number, 'true'
         = t('number_true', scope: @claim.i18n_scope)
       #claim-identifier-panel.panel-indent.util_mb-medium.js-hidden
-        label.form-label
+        .form-group class=('error' if @claim.errors[:identifier].any?)
           span.error-message#identifier = @claim.errors[:identifier].join(' ') if @claim.errors[:identifier].any?
-          = t('identifier', scope: @claim.i18n_scope)
-        = f.text_field :identifier, class: 'form-control'
+          label.form-label(for='claim_identifier')
+            = t('identifier', scope: @claim.i18n_scope)
+          = f.text_field :identifier, class: 'form-control'
 
     .form-group
       details

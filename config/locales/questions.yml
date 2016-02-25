@@ -105,6 +105,13 @@ en:
       breadcrumb: 'Question 6 of 14'
       text: 'Have you already paid the fee?'
       details: "You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee."
+    income:
+      breadcrumb: 'Question 5 of 14'
+      text: 'What is your total monthly income?'
+      details: "You only need to fill in the fields that apply to you."
+      labels:
+        your_income: "Your monthly income"
+        partners_income: "Your partner's monthly income"
     probate:
       probate_case_false: 'No'
       probate_case_true: 'Yes'

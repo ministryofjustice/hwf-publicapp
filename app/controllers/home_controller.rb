@@ -3,6 +3,7 @@ class HomeController < ApplicationController
              :savings_and_investment,
              :benefit,
              :fee,
+             :income,
              :probate,
              :claim,
              :form_name,
@@ -17,6 +18,7 @@ class HomeController < ApplicationController
   ACTIONS.each do |action|
     define_method(action.to_s) do
       instance_variable_set("@#{action}", model_from_params(action))
+      assign_marital_status
     end
 
     define_method("#{action}_save") do
@@ -48,6 +50,10 @@ class HomeController < ApplicationController
       end
     end
     model
+  end
+
+  def assign_marital_status
+    @married = session[:marital_status]['married'] if session[:marital_status]
   end
 
   def assign_attributes(instance, params)

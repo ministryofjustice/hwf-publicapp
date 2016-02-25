@@ -1,6 +1,8 @@
 module Views
   class Summary
 
+    attr_reader :income_total
+
     ATTRIBUTES = [
       { marital_status: 'married' },
       { savings_and_investment: 'less_than_limit' },
@@ -39,6 +41,7 @@ module Views
           instance_variable_set("@#{key}_#{value}", session[key][value]) if session[key]
         end
       end
+      @income_total = build_total(session)
     end
 
     def fee_paid
@@ -63,6 +66,16 @@ module Views
 
     def any_contact
       @contact_email_option || @contact_phone_option || @contact_post_option
+    end
+
+    private
+
+    def build_total(session)
+      total = 0
+      session[:income].try(:each) do |_k, v|
+        total += v if v.present? && v.is_a?(Float)
+      end
+      total
     end
   end
 end

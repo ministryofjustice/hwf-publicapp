@@ -15,6 +15,10 @@ table
       td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}", scope: 'summary')
       td.right= link_to "Change", "#"
     tr
+      td =t('income', scope: 'summary.labels')
+      td =number_to_currency(@summary.income_total, precision: 2, unit: '£')
+      td.right= link_to "Change", "#"
+    tr
       td =t('refund', scope: 'summary.labels')
       td =@summary.fee_paid
       td.right= link_to "Change", "#"

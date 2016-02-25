@@ -2,7 +2,8 @@ class Navigation
 
   STEPS = { marital_status: :savings_and_investment,
             savings_and_investment: :benefit,
-            benefit: :fee,
+            benefit: :income,
+            income: :fee,
             fee: :probate,
             probate: :claim,
             claim: :form_name,

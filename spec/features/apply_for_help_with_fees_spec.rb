@@ -40,6 +40,23 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
   end
 
+  scenario 'I want to add information on income' do
+    page.visit '/'
+    page.click_link 'Apply now'
+    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
+    choose 'marital_status_married_false'
+    click_button 'Continue'
+    expect(page).to have_content 'How much do you have in savings and investments?'
+    choose 'savings_and_investment_less_than_limit_false'
+    click_button 'Continue'
+    expect(page).to have_content 'Do you receive any of the following benefits?'
+    choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
+    click_button 'Continue'
+  end
+
   scenario 'I want to add information on fee payment' do
     page.visit '/'
     page.click_link 'Apply now'
@@ -51,6 +68,9 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
     click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
@@ -68,6 +88,9 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
     click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
@@ -88,6 +111,9 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
     click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
@@ -111,6 +137,9 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
     click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
@@ -137,6 +166,9 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
     click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
@@ -166,6 +198,9 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
     click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
@@ -200,6 +235,9 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
     click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
@@ -238,6 +276,9 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
+    click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
     click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
@@ -281,6 +322,9 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
     click_button 'Continue'
+    expect(page).to have_content 'What is your total monthly income?'
+    fill_in :income_wages, with: 100.0
+    click_button 'Continue'
     expect(page).to have_content 'Have you already paid the fee?'
     choose 'fee_paid_false'
     click_button 'Continue'
@@ -312,6 +356,7 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'Single'
     expect(page).to have_content 'Less than £3,000'
     expect(page).to have_content 'Not receiving eligible benefits'
+    expect(page).to have_content 'Income£100'
     expect(page).to have_content 'Fee paidNo'
     expect(page).to have_content 'Probate caseNo'
     expect(page).to have_content 'Claim numberNo'

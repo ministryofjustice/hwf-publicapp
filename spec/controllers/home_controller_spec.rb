@@ -67,7 +67,7 @@ RSpec.describe HomeController, type: :controller do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
         post :benefit_save, benefit: { on_benefits: 'true' }
-        expect(response).to redirect_to(:income)
+        expect(response).to redirect_to(:dependent)
       end
     end
 
@@ -83,6 +83,22 @@ RSpec.describe HomeController, type: :controller do
     it 'returns http success' do
       get :dependent
       expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'POST #dependent_save' do
+    context 'when parameters are valid' do
+      it 'redirects to the next page' do
+        post :dependent_save, dependent: { children: 'true' }
+        expect(response).to redirect_to(:income)
+      end
+    end
+
+    context 'when paramters are invalid' do
+      it 'goes back to the form' do
+        post :dependent_save, dependent: { children: 'foo' }
+        expect(response).to redirect_to(:dependent)
+      end
     end
   end
 

@@ -130,7 +130,7 @@ en:
         summary: Help with case number
         section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
-        section_3: If you don’t have a reference number (this might be because your case hasn’t started yet) leave this question blank.
+        section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet). 
     form_name:
       breadcrumb: 'Question 9 of 14'
       text: 'What is the form name or number related to this application?'

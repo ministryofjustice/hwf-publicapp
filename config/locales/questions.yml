@@ -105,6 +105,7 @@ en:
       subtext: Up to 19 years old in full-time education.
       children_false: 'No'
       children_true: 'Yes'
+      children_number: Number of children
     income:
       breadcrumb: 'Question 5 of 14'
       text: 'What is your total monthly income?'

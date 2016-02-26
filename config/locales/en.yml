@@ -42,6 +42,10 @@ en:
           attributes:
             on_benefits:
               inclusion: "Select whether you're receiving one of the benefits listed"
+        dependent:
+          attributes:
+            children_number:
+              not_a_number: Please enter a numeric value for number of children
         income:
           attributes:
             other_description:

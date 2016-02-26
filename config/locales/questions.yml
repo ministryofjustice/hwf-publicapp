@@ -137,7 +137,7 @@ en:
         summary: Help with case number
         section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
-        section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet). 
+        section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet).
     form_name:
       breadcrumb: 'Question 9 of 14'
       text: 'What is the form name or number related to this application?'
@@ -158,6 +158,9 @@ en:
           item_1: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
           item_2: 'ask for a reminder through the post'
           detail: 'If you can’t provide a National Insurance number you will need to provide a letter from the job centre.'
+    dob:
+      breadcrumb: Question 11 of 14
+      text: What is your date of birth?
     personal_detail:
       breadcrumb: 'Question 12 of 14'
       text: 'What is your full name?'

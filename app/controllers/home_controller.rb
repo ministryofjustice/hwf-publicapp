@@ -10,6 +10,7 @@ class HomeController < ApplicationController
              :form_name,
              :national_insurance,
              :personal_detail,
+             :dob,
              :applicant_address,
              :contact].freeze
 

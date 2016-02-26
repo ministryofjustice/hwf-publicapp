@@ -1,3 +1,18 @@
 table .right {
   text-align: right;
 }
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+table.income tbody th {
+  font-weight: normal;
+}
+
+table.income tfoot {
+  th, td {
+    @include core-24;
+    font-weight: bold;
+  }
+}

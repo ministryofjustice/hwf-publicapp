@@ -5,7 +5,8 @@ RSpec.describe Navigation do
 
   it { expect(subject[:marital_status]).to eq :savings_and_investment }
   it { expect(subject[:savings_and_investment]).to eq :benefit }
-  it { expect(subject[:benefit]).to eq :income }
+  it { expect(subject[:benefit]).to eq :dependent }
+  it { expect(subject[:dependent]).to eq :income }
   it { expect(subject[:income]).to eq :fee }
   it { expect(subject[:fee]).to eq :probate }
   it { expect(subject[:probate]).to eq :claim }

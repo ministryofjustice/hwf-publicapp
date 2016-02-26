@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   ACTIONS = [:marital_status,
              :savings_and_investment,
              :benefit,
+             :dependent,
              :fee,
              :income,
              :probate,

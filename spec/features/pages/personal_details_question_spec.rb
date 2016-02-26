@@ -11,8 +11,8 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect to be routed to the "personal-detail" page' do
-        expect(page).to have_content 'What is your full name?'
+      scenario 'I expect to be routed to the "dob" page' do
+        expect(page).to have_content 'What is your date of birth?'
       end
     end
 

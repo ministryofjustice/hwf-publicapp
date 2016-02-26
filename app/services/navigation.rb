@@ -9,7 +9,8 @@ class Navigation
             probate: :claim,
             claim: :form_name,
             form_name: :national_insurance,
-            national_insurance: :personal_detail,
+            national_insurance: :dob,
+            dob: :personal_detail,
             personal_detail: :applicant_address,
             applicant_address: :contact,
             contact: :summary }.freeze

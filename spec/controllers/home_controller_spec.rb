@@ -89,7 +89,7 @@ RSpec.describe HomeController, type: :controller do
   describe 'POST #dependent_save' do
     context 'when parameters are valid' do
       it 'redirects to the next page' do
-        post :dependent_save, dependent: { children: 'true' }
+        post :dependent_save, dependent: { children: 'true', children_number: '2' }
         expect(response).to redirect_to(:income)
       end
     end

@@ -3,12 +3,18 @@ class Dob < Base
 
   MINIMUM_AGE = 16
   MAXIMUM_AGE = 120
-  MIN_DOB = Time.zone.today - MINIMUM_AGE.years
-  MAX_DOB = Time.zone.today - MAXIMUM_AGE.years
 
   validate :dob_age_valid?
 
   private
+
+  def minimum_date_of_birth
+    Time.zone.today - MINIMUM_AGE.years
+  end
+
+  def maximum_date_of_birth
+    Time.zone.today - MAXIMUM_AGE.years
+  end
 
   def dob_age_valid?
     validate_dob
@@ -24,10 +30,23 @@ class Dob < Base
   end
 
   def validate_dob_ranges
-    if date_of_birth > MIN_DOB
-      errors.add(:date_of_birth, :too_young, minimum_age: MINIMUM_AGE)
-    elsif date_of_birth < MAX_DOB
-      errors.add(:date_of_birth, :too_old, maximum_age: MAXIMUM_AGE)
-    end
+    too_young_error if too_young?
+    too_old_error if too_old?
+  end
+
+  def too_young?
+    date_of_birth > minimum_date_of_birth
+  end
+
+  def too_young_error
+    errors.add(:date_of_birth, :too_young, minimum_age: MINIMUM_AGE)
+  end
+
+  def too_old?
+    date_of_birth < maximum_date_of_birth
+  end
+
+  def too_old_error
+    errors.add(:date_of_birth, :too_old, maximum_age: MAXIMUM_AGE)
   end
 end

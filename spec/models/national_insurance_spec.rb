@@ -38,7 +38,7 @@ RSpec.describe NationalInsurance, type: :model do
       context 'when not provided' do
         before { subject.number = '' }
 
-        it { expect(subject.valid?).to be false }
+        it { expect(subject.valid?).to be true }
       end
     end
   end

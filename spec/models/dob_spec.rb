@@ -15,6 +15,42 @@ RSpec.describe Dob, type: :model do
         before { subject.date_of_birth = 'some string' }
 
         it { expect(subject.valid?).not_to be true }
+
+        describe 'error message' do
+
+          context 'when a string is provided' do
+            before { subject.valid? }
+            let(:error) { ["can't contain non numbers"] }
+
+            it { expect(subject.errors.messages[:date_of_birth]).to eq error }
+          end
+
+          context 'when a recent date is provided' do
+            before do
+              subject.date_of_birth = Time.zone.today.strftime("%d/%m/%Y")
+              subject.valid?
+            end
+
+            let(:error) do
+              [I18n.t('activemodel.errors.models.dob.attributes.date_of_birth.too_young', minimum_age: Dob::MINIMUM_AGE)]
+            end
+
+            it { expect(subject.errors.messages[:date_of_birth]).to eq error }
+          end
+
+          context 'when a date too far in the past is provided' do
+            before do
+              subject.date_of_birth = (Time.zone.today - 121.years).strftime("%d/%m/%Y")
+              subject.valid?
+            end
+
+            let(:error) do
+              [I18n.t('activemodel.errors.models.dob.attributes.date_of_birth.too_old')]
+            end
+
+            it { expect(subject.errors.messages[:date_of_birth]).to eq error }
+          end
+        end
       end
 
       context 'when passed a two digit year' do

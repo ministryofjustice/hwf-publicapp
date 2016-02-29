@@ -1,7 +1,7 @@
 class Dob < Base
   attribute :date_of_birth, Date
 
-  MINIMUM_AGE = 16
+  MINIMUM_AGE = 15
   MAXIMUM_AGE = 120
 
   validate :dob_age_valid?
@@ -47,6 +47,6 @@ class Dob < Base
   end
 
   def too_old_error
-    errors.add(:date_of_birth, :too_old, maximum_age: MAXIMUM_AGE)
+    errors.add(:date_of_birth, :too_old)
   end
 end

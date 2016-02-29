@@ -89,6 +89,9 @@ en:
           attributes:
             date_of_birth:
               not_a_date: Enter the date in this format DD/MM/YYYY
+              not_a_number: Enter a valid date
+              too_young: "You must be over %{minimum_age} to use this service"
+              too_old: Check this date of birth is correct
         personal_detail:
           attributes:
             first_name:

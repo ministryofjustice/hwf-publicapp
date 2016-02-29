@@ -16,9 +16,48 @@
 
 .currency {
   display: inline-block;
-  margin-right: 10px;
+  tbody & {
+    margin-right: 2px;
+
+    @media (min-width: 641px) {
+      margin-right: 10px;
+    }
+  }
+  tfoot & {
+    margin-right: 2px;
+
+    @media (min-width: 641px) {
+      margin-right: 5px;
+    }
+  }
 }
 .frequency {
-  display: inline-block;
-  margin-left: 10px;
+  tbody & {
+    display: none;
+    @media (min-width: 769px) {
+      margin-left: 10px;
+      display: inline-block;
+    }
+  }
+  tfoot & {
+    display: block;
+    @media (min-width: 769px) {
+      margin-left: 10px;
+      display: inline-block;
+    }
+  }
+}
+
+table.income {
+  input.form-control {
+    width: 100%;
+
+    @media (min-width: 641px) {
+      width: 80%;
+    }
+
+    @media (min-width: 769px) {
+      width: 50%;
+    }
+  }
 }

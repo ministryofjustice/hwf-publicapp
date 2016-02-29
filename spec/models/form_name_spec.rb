@@ -14,7 +14,7 @@ RSpec.describe FormName, type: :model do
       context 'when not provided' do
         before { subject.identifier = '' }
 
-        it { expect(subject.valid?).to be false }
+        it { expect(subject.valid?).to be true }
       end
     end
   end

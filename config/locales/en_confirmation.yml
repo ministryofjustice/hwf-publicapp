@@ -1,0 +1,12 @@
+en:
+  confirmation:
+    success: 'Your reference number is'
+    email: 'We have sent you a confirmation email.'
+    print: 'Print this page'
+    next_steps:
+      header: 'Next steps'
+      step:
+        one: 'Write the reference number on your claim form'
+        two: 'Send your claim form to the court or tribunal dealing with your case'
+        three: "We'll let you know the outcome of your application"
+    gov_uk_link: 'Back to GOV.UK'

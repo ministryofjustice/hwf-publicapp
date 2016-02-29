@@ -41,6 +41,10 @@ class HomeController < ApplicationController
     @summary = Views::Summary.new(session)
   end
 
+  def confirmation
+    @response = { result: true, message: 'HWF-16-1234' }
+  end
+
   private
 
   def model_from_params(action)

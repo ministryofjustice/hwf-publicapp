@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   get 'summary' => 'home#summary'
+  get 'confirmation' => 'home#confirmation'
 
   HomeController::ACTIONS.each do |path|
     get path.to_s.dasherize => "home##{path}"

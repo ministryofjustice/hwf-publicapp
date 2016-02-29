@@ -5,12 +5,19 @@ if ENV['CODECLIMATE_REPO_TOKEN']
 end
 
 ENV['RAILS_ENV'] ||= 'test'
+ENV['SUBMISSION_URL'] ||= 'http://localhost:3000/api/v1/online_applications/create'
 require File.expand_path('../../config/environment', __FILE__)
 
 require 'rspec/rails'
+require 'webmock/rspec'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+
+  config.before(:all) do
+    WebMock.disable_net_connect!(allow: ['127.0.0.1', 'codeclimate.com'])
+  end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

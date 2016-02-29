@@ -150,7 +150,7 @@ en:
     national_insurance:
       breadcrumb: 'Question 10 of 14'
       text: 'What is your National Insurance number?'
-      example: "For example, QQ 12 34 56 C"
+      example: "For example, QQ123456C"
       prompt: 'National Insurance number'
       details:
         summary: 'If you don’t know your National Insurance number'

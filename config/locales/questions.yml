@@ -161,6 +161,7 @@ en:
     dob:
       breadcrumb: Question 11 of 14
       text: What is your date of birth?
+      subtext: 'Enter the date in this format: DD/MM/YYYY'
     personal_detail:
       breadcrumb: 'Question 12 of 14'
       text: 'What is your full name?'

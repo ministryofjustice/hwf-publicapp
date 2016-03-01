@@ -1,0 +1,38 @@
+.next-steps {
+
+  li {
+    min-height: 150px;
+    padding-left: 160px;
+    margin: 15px 0;
+    vertical-align: middle;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-image: asset-url('icon-sprite.png');
+
+    // nth-child selectors don't work in IE8
+    &:first-child {
+      background-position: 0 0;
+    }
+    &:first-child + li {
+      background-position: 0 -155px;
+    }
+    &:first-child + li + li {
+      background-position: 0 -310px;
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+
+      background-image: asset-url('icon-sprite-2x.png');
+      background-size: 145px 465px;
+    }
+
+    span {
+      display: block;
+      padding-top: 30px;
+
+      @media (min-width: 641px) {
+        padding-top: 55px;
+      }
+    }
+  }
+}

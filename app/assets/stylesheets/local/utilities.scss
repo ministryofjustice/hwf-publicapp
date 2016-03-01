@@ -2,6 +2,9 @@
 // https://css-tricks.com/when-using-important-is-the-right-choice/
 
 // margin utilities
+.util-margin-0 {
+  margin: 0 !important;
+}
 .util-mb-0 {
   margin-bottom: 0 !important;
 }

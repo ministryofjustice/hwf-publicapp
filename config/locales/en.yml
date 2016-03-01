@@ -21,6 +21,8 @@ en:
         rent_living_with: 'Rent from anyone living with you'
         rent_other_property: 'Rent from other properties you own'
         other_description: 'Other monthly income'
+      dependent:
+        children_number: Number of children
       fee:
         date_paid: "Date fee paid"
       probate:

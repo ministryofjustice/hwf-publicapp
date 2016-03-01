@@ -2,17 +2,28 @@ table .right {
   text-align: right;
 }
 
-.align-bottom {
-  vertical-align: bottom;
+tr.align-bottom,
+.align-bottom tr {
+  td {
+    vertical-align: bottom;
+  }
 }
 
-table.income tbody th {
-  font-weight: normal;
-}
+table.income {
+  tbody {
+    th {
+      font-weight: normal;
+    }
+    td {
+      white-space: nowrap;
+    }
+  }
 
-table.income tfoot {
-  th, td {
-    @include core-24;
-    font-weight: bold;
+  tfoot {
+    th, td {
+      @include core-24;
+      font-weight: bold;
+      white-space: nowrap;
+    }
   }
 }

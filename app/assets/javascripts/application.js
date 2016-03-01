@@ -16,6 +16,7 @@
 
 //= require govuk/selection-buttons
 //= require details.polyfill
+//= require is-nan.polyfill
 
 //= require_tree ./modules
 

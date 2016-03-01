@@ -4,8 +4,6 @@ h2.heading-large
   span.heading-secondary = t('breadcrumb', scope: @dependent.i18n_scope)
   = t('text', scope: @dependent.i18n_scope)
 
-  = t('subtext', scope: @dependent.i18n_scope)
-
 = form_for @dependent, url: dependent_save_path do |f|
   fieldset
     legend.visuallyhidden = t('text', scope: @dependent.i18n_scope)

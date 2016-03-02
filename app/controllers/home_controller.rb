@@ -17,6 +17,11 @@ class HomeController < ApplicationController
   def index
   end
 
+  def create
+    clear_data
+    redirect_to(action: ACTIONS.first)
+  end
+
   ACTIONS.each do |action|
     define_method(action.to_s) do
       instance_variable_set("@#{action}", model_from_params(action))
@@ -43,6 +48,7 @@ class HomeController < ApplicationController
 
   def confirmation
     @response = { result: true, message: 'HWF-16-1234' }
+    clear_data
   end
 
   private
@@ -70,5 +76,9 @@ class HomeController < ApplicationController
 
   def next_step(action)
     ::Navigation.new.steps[action]
+  end
+
+  def clear_data
+    session.clear
   end
 end

@@ -5,7 +5,7 @@ en:
       married: 'Status'
       savings: 'Savings and investments'
       benefits: 'Benefits'
-      refund: 'Fee paid'
+      fee: 'Fee paid'
       probate: 'Probate case'
       deceased_name: 'Name of deceased'
       date_of_death: 'Date of death'

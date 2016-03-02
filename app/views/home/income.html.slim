@@ -171,5 +171,7 @@ p =t('details.section_5', scope: @income.i18n_scope).html_safe
                 = f.number_field :partner_other, step: '0.01', class: 'form-control'
                 span.frequency a month
 
+    p.js-hidden =t('nojs_info', scope: @income.i18n_scope)
+
     .form-group
       = f.submit t('submit_button'), class: 'button'

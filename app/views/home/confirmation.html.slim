@@ -1,10 +1,25 @@
-#result-block
-  = t('confirmation.success')
-  =@response[:message]
+h2.heading-medium Reference
+.callout.result
+  h3.heading-medium.util-margin-0
+    span.check
+      | ✓
+    =t('confirmation.success')
+    span.reference-number
+      =@response[:message]
 
-p =t('confirmation.print')
+p
+  | We have sent you a confirmation email.
 
-h2 =t('confirmation.next_steps.header')
-p =t('confirmation.next_steps.step.one')
-p =t('confirmation.next_steps.step.two')
-p =t('confirmation.next_steps.step.three')
+p =link_to(t('confirmation.print'), '#')
+
+
+hr
+
+h2.heading-medium =t('confirmation.next_steps.header')
+ul.next-steps
+  li
+    span =t('confirmation.next_steps.step.one')
+  li
+    span =t('confirmation.next_steps.step.two')
+  li
+    span =t('confirmation.next_steps.step.three')

@@ -1,0 +1,21 @@
+.callout {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  &.result {
+    background-color: $grey-1;
+    color: $white;
+  }
+
+  .check {
+    display: inline-block;
+    padding-right: 10px;
+  }
+
+  .reference-number {
+    @include core-36;
+    font-weight: bold;
+    display: block;
+  }
+}

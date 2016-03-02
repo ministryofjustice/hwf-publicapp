@@ -115,7 +115,19 @@ en:
     income:
       breadcrumb: 'Question 5 of 14'
       text: 'What is your total monthly income?'
-      details: "You only need to fill in the fields that apply to you."
+      details: 
+        section_1:"Enter the amount of money you get every month before any tax or National Insurance payments have been taken off."
+        section_2:"You only need to fill in the fields that apply to you."  
+        section_3:"What to include as income:"
+        item_1:"wages"
+        item_2:"some benefits (see the [guide](http://hmctsformfinder.justice.gov.uk/courtfinder/forms/ex160a-eng-20160212.pdf) for a list of benefits you shouldn’t include) 
+        item_3:"pensions (state, work or private without guarantee credit)"
+        item_4:"rent from anyone living with you and other properties that you own"
+        item_5:"payments from relatives"
+        item_6:"maintenance payments, eg from an ex-spouse"
+        item_7:"income from selling goods publicly or privately, including over the internet"
+        section_4: "If you get paid weekly multiply your weekly pay by 52, then divide it by 12. This will give you a monthly total."
+        section_5:"See more information about completing this section in the [guide] (http://hmctsformfinder.justice.gov.uk/courtfinder/forms/ex160a-eng-20160212.pdf)."  
       labels:
         your_income: "Your monthly income"
         partners_income: "Your partner's monthly income"

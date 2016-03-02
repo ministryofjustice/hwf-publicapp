@@ -8,9 +8,15 @@ RSpec.feature 'User details are not persisted' do
     then_their_data_is_not_persisted
   end
 
+  scenario 'User starts the application again and all the previous data is cleared out of the session' do
+    given_user_starts_an_application
+    when_they_go_back_to_homepage_and_start_again
+    then_their_data_is_not_persisted
+  end
+
   def given_user_provides_all_data
     visit '/'
-    click_link 'Apply now'
+    click_button 'Apply now'
     choose 'marital_status_married_false'
     click_button 'Continue'
     choose 'savings_and_investment_less_than_limit_false'
@@ -45,8 +51,20 @@ RSpec.feature 'User details are not persisted' do
     click_button 'Continue'
   end
 
+  def given_user_starts_an_application
+    visit '/'
+    click_button 'Apply now'
+    choose 'marital_status_married_false'
+    click_button 'Continue'
+  end
+
   def when_they_submit_the_application
     click_link 'Complete and send application'
+  end
+
+  def when_they_go_back_to_homepage_and_start_again
+    visit '/'
+    click_button 'Apply now'
   end
 
   def then_their_data_is_not_persisted

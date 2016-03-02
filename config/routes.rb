@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  post 'apply' => 'home#create'
   get 'summary' => 'home#summary'
   get 'confirmation' => 'home#confirmation'
 

@@ -5,27 +5,27 @@ table
     tr
       td =t('married', scope: 'summary.labels')
       td= t("marital_status_#{@summary.marital_status_married}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", marital_status_path
     tr
       td =t('savings', scope: 'summary.labels')
       td= t("less_than_limit_#{@summary.savings_and_investment_less_than_limit}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", savings_and_investment_path
     tr
       td =t('benefits', scope: 'summary.labels')
       td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", benefit_path
     tr
       td =t('income', scope: 'summary.labels')
       td =number_to_currency(@summary.income_total, precision: 2, unit: '£')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", income_path
     tr
-      td =t('refund', scope: 'summary.labels')
+      td =t('fee', scope: 'summary.labels')
       td =@summary.fee_paid
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", fee_path
     tr
       td =t('probate', scope: 'summary.labels')
       td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", probate_path
     -if @summary.probate_kase
       tr
         td = t('deceased_name', scope: 'summary.labels')
@@ -36,44 +36,44 @@ table
     tr
       td =t('claim', scope: 'summary.labels')
       td =t("claim_number_#{@summary.claim_number}", scope: 'summary')
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", claim_path
     tr
       td =t('form_name', scope: 'summary.labels')
       td=@summary.form_name_identifier
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", form_name_path
     tr
       td =t('ni_number', scope: 'summary.labels')
       td =@summary.national_insurance_number
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", national_insurance_path
     tr
       td =t('personal', scope: 'summary.labels')
       td =@summary.full_name
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", personal_detail_path
     tr
       td =t('address', scope: 'summary.labels')
       td =@summary.full_address
-      td.right= link_to "Change", "#"
+      td.right= link_to "Change", applicant_address_path
     -if @summary.any_contact
       -if @summary.contact_email_option
         tr
           td =t('contact_email', scope: 'summary.labels')
           td =@summary.contact_email
-          td.right= link_to "Change", "#"
+          td.right= link_to "Change", contact_path
       -if @summary.contact_phone_option
         tr
           td =t('contact_phone', scope: 'summary.labels')
           td =@summary.contact_phone
-          td.right= link_to "Change", "#"
+          td.right= link_to "Change", contact_path
       -if @summary.contact_post_option
         tr
           td =t('contact_post', scope: 'summary.labels')
           td Yes
-          td.right= link_to "Change", "#"
+          td.right= link_to "Change", applicant_address_path
     -else
       tr
         td = t('contact', scope: 'summary.labels')
         td = t('summary.contact_none')
-        td.right= link_to "Change", "#"
+        td.right= link_to "Change", contact_path
 
 h2.heading-medium =t('heading', scope: 'summary.truth')
 p =t('statement', scope: 'summary.truth')

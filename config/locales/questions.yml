@@ -131,6 +131,7 @@ en:
       labels:
         your_income: "Your monthly income"
         partners_income: "Your partner's monthly income"
+      nojs_info: "The amount of money you've entered will be added up when you click 'Continue'."
     fee:
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'

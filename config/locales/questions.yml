@@ -110,7 +110,7 @@ en:
         section_1: You need to give details of any children you support financially.
         section_2: 'This includes children who are:'
         item_1: under 16 and living at home with you
-        item_2: "between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a href=\"gov.uk/child-tax-credit-when-child-reaches-16\">gov.uk/child-tax-credit-when-child-reaches-16</a>"
+        item_2: "between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class=\"external\" rel=\"external\" href=\"https://www.gov.uk/child-tax-credit-when-child-reaches-16\">gov.uk/child-tax-credit-when-child-reaches-16</a>"
         item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
     income:
       breadcrumb: 'Question 5 of 14'

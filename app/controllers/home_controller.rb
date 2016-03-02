@@ -43,6 +43,7 @@ class HomeController < ApplicationController
 
   def confirmation
     @response = { result: true, message: 'HWF-16-1234' }
+    clear_data
   end
 
   private
@@ -70,5 +71,9 @@ class HomeController < ApplicationController
 
   def next_step(action)
     ::Navigation.new.steps[action]
+  end
+
+  def clear_data
+    session.clear
   end
 end

@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.feature 'User details are not persisted' do
+  include_context 'shared encryption setup'
+  before { staff_app_response }
 
   scenario 'User completes the application and their data is cleared out of the session' do
     given_user_provides_all_data
@@ -59,7 +61,7 @@ RSpec.feature 'User details are not persisted' do
   end
 
   def when_they_submit_the_application
-    click_link 'Complete and send application'
+    click_button 'Complete and send application'
   end
 
   def when_they_go_back_to_homepage_and_start_again

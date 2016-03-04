@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
   post 'apply' => 'home#create'
   get 'summary' => 'home#summary'
+  post 'summary_save' => 'home#summary_save'
   get 'confirmation' => 'home#confirmation'
 
   HomeController::ACTIONS.each do |path|

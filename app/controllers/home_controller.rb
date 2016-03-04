@@ -46,8 +46,16 @@ class HomeController < ApplicationController
     @summary = Views::Summary.new(session)
   end
 
+  def summary_save
+    summary = Views::Summary.new(session)
+    payload = EncodeAndEncrypt.new(summary).encoded_jwt
+    response = SubmitApplication.new(payload).post
+    session[:response] = response
+    redirect_to :confirmation
+  end
+
   def confirmation
-    @response = { result: true, message: 'HWF-16-1234' }
+    @response = session[:response]
     clear_data
   end
 

@@ -363,7 +363,18 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
+  describe 'POST #summary_save' do
+    include_context 'shared encryption setup'
+    before { staff_app_response }
+
+    it 'redirects to the next page' do
+      post :summary_save
+      expect(response).to redirect_to(:confirmation)
+    end
+  end
+
   describe 'GET #confirmation' do
+    before { session[:response] = "{ \"result\": \"success\", \"message\": \"HWF-16-XXX\" }" }
     it 'returns http success' do
       get :confirmation
       expect(response).to have_http_status(:success)

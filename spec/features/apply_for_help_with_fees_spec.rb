@@ -2,6 +2,9 @@
 require 'rails_helper'
 
 RSpec.feature 'As a user' do
+  include_context 'shared encryption setup'
+  before { staff_app_response }
+
   scenario 'I want to start the application for "Help with fees"' do
     visit '/'
     click_button 'Apply now'
@@ -529,7 +532,7 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'Bar'
     expect(page).to have_content 'Email'
     expect(page).to have_content 'foo@bar.com'
-    click_link 'Complete and send application'
+    click_button 'Complete and send application'
     expect(page).to have_content 'Your reference number is'
   end
 end

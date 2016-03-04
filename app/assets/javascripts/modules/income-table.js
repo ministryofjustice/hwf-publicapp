@@ -14,9 +14,16 @@ window.moj.Modules.IncomeTable = {
   bindEvents: function() {
     var self = this;
 
-    self.$tables.find('input.form-control').on('change', function() {
+    self.$tables.find('input.form-control').on('keyup', function() {
       self.getTotalTables();
+    }).on('blur', function(e) {
+      self.formatValue($(e.target));
     });
+  },
+
+  formatValue: function($input) {
+    var val = parseFloat($input.val());
+    $input.val(val.toFixed(2));
   },
 
   getTotalTables: function() {
@@ -49,8 +56,6 @@ window.moj.Modules.IncomeTable = {
 
         if('' !== val && !Number.isNaN(val)) {
           columnTotal += val;
-          val = val.toFixed(2);
-          $input.val(val);
         }
       });
       totals[totals.length] = columnTotal.toFixed(2);

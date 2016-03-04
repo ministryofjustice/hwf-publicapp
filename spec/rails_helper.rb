@@ -7,7 +7,7 @@ end
 ENV['RAILS_ENV'] ||= 'test'
 ENV['SUBMISSION_URL'] ||= 'http://localhost:3000/api/v1/online_applications/create'
 require File.expand_path('../../config/environment', __FILE__)
-
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 require 'rspec/rails'
 require 'webmock/rspec'
 

@@ -53,6 +53,20 @@ Q50zYLQq87oQdMq6OLw=
     SOURCE
   end
 
+  let(:correctly_encoded_encrypted_with_error) do
+    <<-SOURCE
+      TWqWDfDoSJrZNmJDqdYc7UaszFiAr/EgOvgIu9Wb3G+MrUPsCO6xtKEg0s1u
+      Dvh26b+Q2Se2G3iwvRHSCrrrDav6p4JxsRPmiHwVQwE3e/7QBM3UCNb7TYEh
+      uRW2QfwfCDY7Xx5tCTCi7WrWS5CPruKH2tfkRsMUsfD7CDP30+pbPC3t4CAc
+      ssXNyKa6TBhWEP048FwZolpUgsLbncYcZ9ZCEOw8NkTwhwYx7uzhB3xP/7jU
+      nZPmfWFi5xsNb9D2XUSvS23egb5gnVYnPHNg1FFC+hio2uVFaCdi/+q9iXms
+      6qCCLj+dIouKPO193qr4UiivLypjH5T+NHRSl6997joK7A5DPHrCEeSx37x4
+      /X/2rP3W3o969lw3OIWh6LlfrC9K+4j5o8bcyvBxqwbpubC2r/uJ5tgBfg7O
+      XdLv4lz95cXBt8Nks1z5D1eLXClElOXa4/CuRXt+xYTr1gBNKuGMuIpG+KT2
+      CUCSHHqjfZs=
+    SOURCE
+  end
+
   let(:encrypted_with_wrong_cipher) do
     <<-SOURCE
       lsEVUqhKhpvMnwTszaTdHB0gZtNo+9fHBxA+u6aEyU35jb8kTiqgVs+bcDSD

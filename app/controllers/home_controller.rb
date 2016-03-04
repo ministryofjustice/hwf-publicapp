@@ -50,8 +50,12 @@ class HomeController < ApplicationController
     summary = Views::Summary.new(session)
     payload = EncodeAndEncrypt.new(summary).encoded_jwt
     response = SubmitApplication.new(payload).post
+    fail if response['result'].eql?('error')
     session[:response] = response
     redirect_to :confirmation
+  rescue
+    flash[:error] = t('errors.could_not_post_jwt')
+    redirect_to :summary
   end
 
   def confirmation

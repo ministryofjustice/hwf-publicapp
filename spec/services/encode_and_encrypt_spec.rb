@@ -8,9 +8,25 @@ RSpec.describe EncodeAndEncrypt do
 
   it { is_expected.to be_a described_class }
 
-  describe 'error handling' do
-    describe 'when encoding fails' do
+  describe 'error handling while creating' do
+    subject(:encoded) { encrypted_app.encoded_jwt }
 
+    describe 'when encoding fails' do
+      describe 'because the private key env var is missing' do
+        before { allow(Settings.encryption).to receive(:private_key).and_return(nil) }
+
+        it 'result is error' do
+          expect { subject }.to raise_error('Cannot generate private key')
+        end
+      end
+
+      describe 'because the cipher key env var is missing' do
+        before { allow(Settings.cipher).to receive(:key).and_return(nil) }
+
+        it 'result is error' do
+          expect { subject }.to raise_error('Cannot encrypt object')
+        end
+      end
     end
   end
 

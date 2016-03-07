@@ -363,7 +363,62 @@ RSpec.describe HomeController, type: :controller do
     end
   end
 
+  describe 'POST #summary_save' do
+    include_context 'shared encryption setup'
+    before { staff_app_response }
+
+    it 'redirects to the next page' do
+      post :summary_save
+      expect(response).to redirect_to(:confirmation)
+    end
+
+    describe 'when the staff app returns an error message' do
+      before { response_correct_but_with_error }
+
+      it 'returns to the summary page' do
+        post :summary_save
+        expect(response).to redirect_to(:summary)
+      end
+
+      it 'renders a flash error' do
+        post :summary_save
+        expect(flash[:error]).to eql('An error occurred, the administrators have been notified and are aware of this issue.')
+      end
+    end
+
+    describe 'when encoding fails' do
+      describe 'because the cipher key env var is missing' do
+        before { allow(Settings.cipher).to receive(:key).and_return(nil) }
+
+        it 'returns to the summary page' do
+          post :summary_save
+          expect(response).to redirect_to(:summary)
+        end
+
+        it 'renders a flash error' do
+          post :summary_save
+          expect(flash[:error]).to eql('An error occurred, the administrators have been notified and are aware of this issue.')
+        end
+      end
+
+      describe 'because the private key env var is missing' do
+        before { allow(Settings.encryption).to receive(:private_key).and_return(nil) }
+
+        it 'returns to the summary page' do
+          post :summary_save
+          expect(response).to redirect_to(:summary)
+        end
+
+        it 'renders a flash error' do
+          post :summary_save
+          expect(flash[:error]).to eql('An error occurred, the administrators have been notified and are aware of this issue.')
+        end
+      end
+    end
+  end
+
   describe 'GET #confirmation' do
+    before { session[:response] = "{ \"result\": \"success\", \"message\": \"HWF-16-XXX\" }" }
     it 'returns http success' do
       get :confirmation
       expect(response).to have_http_status(:success)

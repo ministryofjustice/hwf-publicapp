@@ -6,6 +6,7 @@ en:
     visuallyhidden: 'Errors are listed as links below, click to select the field that needs correcting.'
   errors:
     combined_other_payments_invalid: 'Enter the amount of your income'
+    could_not_post_jwt: 'An error occurred, the administrators have been notified and are aware of this issue.'
   activemodel:
     attributes:
       income:

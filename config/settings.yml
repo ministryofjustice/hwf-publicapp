@@ -1,0 +1,11 @@
+encryption:
+  public_app_id: <%= ENV['PUBLIC_APP_ID'] %>
+  staff_app_id: <%= ENV['STAFF_APP_ID'] %>
+  private_key: <%= ENV['PUBLICAPP_PRIVATE_PEM'] %>
+  public_key: <%= ENV['STAFFAPP_PUBLIC_PEM'] %>
+cipher:
+  key: <%= ENV['CIPHER_KEY'] %>
+  iv: <%= ENV['CIPHER_IV'] %>
+submission:
+  url: <%= ENV['SUBMISSION_URL'] %>
+  token: <%= ENV['SUBMISSION_TOKEN'] %>

@@ -529,7 +529,7 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'Bar'
     expect(page).to have_content 'Email'
     expect(page).to have_content 'foo@bar.com'
-    click_link 'Complete and send application'
+    click_link 'Complete application'
     expect(page).to have_content 'Your reference number is'
   end
 end

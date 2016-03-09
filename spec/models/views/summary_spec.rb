@@ -9,7 +9,7 @@ RSpec.describe Views::Summary do
     }
   end
 
-  subject { described_class.new(session) }
+  subject(:summary) { described_class.new(session) }
 
   it { is_expected.to respond_to :marital_status_married }
   it { is_expected.to respond_to :savings_and_investment_less_than_limit }

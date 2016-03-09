@@ -79,6 +79,10 @@ module Views
       Date.parse(@dob_date_of_birth) unless @dob_date_of_birth.nil?
     end
 
+    def children
+      @dependent_children ? @dependent_children_number : I18n.t('summary.children_false')
+    end
+
     private
 
     def build_total(session)

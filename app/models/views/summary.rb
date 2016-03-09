@@ -7,6 +7,8 @@ module Views
       { marital_status: 'married' },
       { savings_and_investment: 'less_than_limit' },
       { benefit: 'on_benefits' },
+      { dependent: 'children' },
+      { dependent: 'children_number' },
       { fee: 'paid' },
       { fee: 'date_paid' },
       { probate: 'kase' },
@@ -15,6 +17,7 @@ module Views
       { claim: 'number' },
       { form_name: 'identifier' },
       { national_insurance: 'number' },
+      { dob: 'date_of_birth' },
       { personal_detail: 'title' },
       { personal_detail: 'first_name' },
       { personal_detail: 'last_name' },
@@ -66,6 +69,14 @@ module Views
 
     def any_contact
       @contact_email_option || @contact_phone_option || @contact_post_option
+    end
+
+    def probate_date_of_death
+      Date.parse(@probate_date_of_death) unless @probate_date_of_death.nil?
+    end
+
+    def dob_date_of_birth
+      Date.parse(@dob_date_of_birth) unless @dob_date_of_birth.nil?
     end
 
     private

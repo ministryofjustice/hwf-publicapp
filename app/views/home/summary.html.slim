@@ -14,6 +14,11 @@ table
       td =t('benefits', scope: 'summary.labels')
       td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}", scope: 'summary')
       td.right= link_to "Change", benefit_path
+    -if @summary.dependent_children
+      tr
+        td =t('children', scope: 'summary.labels')
+        td =@summary.dependent_children_number
+        td.right= link_to "Change", dependent_path
     tr
       td =t('income', scope: 'summary.labels')
       td =number_to_currency(@summary.income_total, precision: 2, unit: '£')
@@ -41,6 +46,10 @@ table
       td =t('form_name', scope: 'summary.labels')
       td=@summary.form_name_identifier
       td.right= link_to "Change", form_name_path
+    tr
+      td =t('date_of_birth', scope: 'summary.labels')
+      td =@summary.dob_date_of_birth
+      td.right= link_to "Change", dob_path
     tr
       td =t('ni_number', scope: 'summary.labels')
       td =@summary.national_insurance_number

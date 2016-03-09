@@ -14,7 +14,7 @@ window.moj.Modules.IncomeTable = {
   bindEvents: function() {
     var self = this;
 
-    self.$tables.find('input.form-control').on('keyup', function() {
+    self.$tables.find('input.form-control[type="number"]').on('keyup', function() {
       self.getTotalTables();
     }).on('blur', function(e) {
       self.formatValue($(e.target));

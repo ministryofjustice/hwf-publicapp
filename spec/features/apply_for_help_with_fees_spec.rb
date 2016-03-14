@@ -4,12 +4,12 @@ require 'rails_helper'
 RSpec.feature 'As a user' do
   scenario 'I want to start the application for "Help with fees"' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
   end
 
   scenario 'I want to add my marital status' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -17,7 +17,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add information on my savings and investments' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -28,7 +28,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add information on benefits' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -42,7 +42,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add information on dependents' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -59,7 +59,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add information on income' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -79,7 +79,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add information on fee payment' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -102,7 +102,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add information on probate case' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -128,7 +128,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add my national insurance number' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -157,7 +157,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add information on case or claim' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -189,7 +189,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add national insurance number' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -224,7 +224,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add my date of birth' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -262,7 +262,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add my personal information' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -305,7 +305,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add my address' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -352,7 +352,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to add my prefered contact option' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -403,7 +403,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to see the summary of my application' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -468,7 +468,7 @@ RSpec.feature 'As a user' do
 
   scenario 'I want to see a confirmation of my application' do
     visit '/'
-    click_button 'Apply now'
+    click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'

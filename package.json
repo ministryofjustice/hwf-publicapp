@@ -1,0 +1,20 @@
+{
+  "name": "hwf-publicapp",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ministryofjustice/hwf-publicapp"
+  },
+  "engines": {
+    "node": ">=0.12.x"
+  },
+  "scripts": {},
+  "engineStrict": true,
+  "devDependencies": {
+    "nightwatch": "0.7.9",
+    "phantomjs": "2.1.3",
+    "require-dir": "^0.1.0",
+    "selenium-server-standalone-jar": "~2.48.2",
+    "moment": "^2.11.1"
+  }
+}

@@ -53,7 +53,7 @@ RSpec.feature 'User details are not persisted' do
   end
 
   def when_they_submit_the_application
-    click_link 'Complete application'
+    click_link_or_button 'Complete application'
   end
 
   def when_they_go_back_to_homepage_and_start_again

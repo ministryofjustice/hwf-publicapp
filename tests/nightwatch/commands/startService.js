@@ -12,7 +12,7 @@ exports.command = function(callback) {
       .deleteCookies()
       .init()
       .maximizeWindow()
-      .ensureCorrectPage('input.button-start', '', {
+      .ensureCorrectPage('.button-start', '', {
         'h1': 'Apply for help with fees'
       })
       .pause(200)

@@ -65,16 +65,11 @@ RSpec.feature 'As a user' do
         visit question_path(:contact)
         check :contact_email_option
         fill_in :contact_email, with: 'foo@bar.com'
-        check :contact_phone_option
-        fill_in :contact_phone, with: '00000 000000'
-        check :contact_post_option
         click_button 'Continue'
       end
 
       scenario 'I expect confirmation ' do
         expect(page).to have_content 'Emailfoo@bar.com'
-        expect(page).to have_content 'Phone00000 000000'
-        expect(page).to have_content 'PostYes'
       end
     end
 

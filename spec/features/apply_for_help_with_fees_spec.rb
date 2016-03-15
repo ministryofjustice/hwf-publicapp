@@ -395,7 +395,7 @@ RSpec.feature 'As a user' do
     fill_in 'applicant_address_address', with: 'Foo Street'
     fill_in 'applicant_address_postcode', with: 'Bar'
     click_button 'Continue'
-    expect(page).to have_content "What's the best way to contact you?"
+    expect(page).to have_content "What's your email address?"
     check 'contact_email_option'
     fill_in 'contact_email', with: 'foo@bar.com'
     click_button 'Continue'
@@ -445,7 +445,7 @@ RSpec.feature 'As a user' do
     fill_in 'applicant_address_address', with: 'Foo Street'
     fill_in 'applicant_address_postcode', with: 'Bar'
     click_button 'Continue'
-    expect(page).to have_content "What's the best way to contact you?"
+    expect(page).to have_content "What's your email address?"
     check 'contact_email_option'
     fill_in 'contact_email', with: 'foo@bar.com'
     click_button 'Continue'
@@ -512,7 +512,7 @@ RSpec.feature 'As a user' do
     fill_in 'applicant_address_address', with: 'Foo Street'
     fill_in 'applicant_address_postcode', with: 'Bar'
     click_button 'Continue'
-    expect(page).to have_content "What's the best way to contact you?"
+    expect(page).to have_content "What's your email address?"
     check 'contact_email_option'
     fill_in 'contact_email', with: 'foo@bar.com'
     click_button 'Continue'

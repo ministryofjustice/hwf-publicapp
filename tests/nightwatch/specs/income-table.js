@@ -4,7 +4,7 @@ module.exports = {
   'Start': function(client) {
     client
       .startService()
-      .click('input.button-start', function() {
+      .click('.button-start', function() {
         console.log('     * Click start button');
       })
     ;

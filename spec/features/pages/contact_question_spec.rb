@@ -16,21 +16,6 @@ RSpec.feature 'As a user' do
     end
 
     context 'not completing the page correctly' do
-      context 'selecting phone' do
-        before { check :contact_phone_option }
-
-        describe 'leaving the phone text empty' do
-          before { click_button 'Continue' }
-          scenario 'I expect to be shown the "contact" page with error block' do
-            expect(page).to have_content 'You need to fix the errors on this page before continuing.'
-          end
-
-          scenario 'I expect the fields to have specific errors' do
-            expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter your phone number')
-          end
-        end
-      end
-
       context 'selecting email' do
         before { check :contact_email_option }
 

@@ -10,28 +10,15 @@ h2.heading-large
     .form-group
       p = t('details', scope: @form.i18n_scope)
 
-    .form-group
-      label.block-label data-target="email-field-panel"
+    .form-group class=('error' if @form.errors[:email].any?)
+      = f.label :email, t('email_label', scope: @form.i18n_scope), class: 'form-label'
+      span.error-message#email = @form.errors[:email].join(' ') if @form.errors[:email].any?
+      = f.text_field :email, class: 'form-control'
+
+    .form-group.text
+      label
         = f.check_box :email_option
-        = t('email_option', scope: @form.i18n_scope)
-      #email-field-panel.panel-indent.util_mb-medium.js-hidden
-        .form-group class=('error' if @form.errors[:email].any?)
-          = f.label :email, class: 'form-label'
-          span.error-message#email = @form.errors[:email].join(' ') if @form.errors[:email].any?
-          = f.text_field :email, class: 'form-control'
-
-      label.block-label data-target="phone-number-panel"
-        = f.check_box :phone_option
-        = t('phone_option', scope: @form.i18n_scope)
-      #phone-number-panel.panel-indent.util_mb-medium.js-hidden
-        .form-group class=('error' if @form.errors[:phone].any?)
-          = f.label :phone, class: 'form-label'
-          span.error-message#phone = @form.errors[:phone].join(' ') if @form.errors[:phone].any?
-          = f.text_field :phone, class: 'form-control'
-
-      label.block-label
-        = f.check_box :post_option
-        = t('post_option', scope: @form.i18n_scope)
+        = t('email_optin', scope: @form.i18n_scope)
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

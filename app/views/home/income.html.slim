@@ -6,17 +6,8 @@ h2.heading-large
 
 p =t('details.section_1', scope: @income.i18n_scope)
 p =t('details.section_2', scope: @income.i18n_scope)
-p =t('details.section_3', scope: @income.i18n_scope)
-ul.list.list-bullet
-  li =t('details.item_1', scope: @income.i18n_scope)
-  li =t('details.item_2', scope: @income.i18n_scope).html_safe
-  li =t('details.item_3', scope: @income.i18n_scope)
-  li =t('details.item_4', scope: @income.i18n_scope)
-  li =t('details.item_5', scope: @income.i18n_scope)
-  li =t('details.item_6', scope: @income.i18n_scope)
-  li =t('details.item_7', scope: @income.i18n_scope)
+p =t('details.section_3', scope: @income.i18n_scope).html_safe
 p =t('details.section_4', scope: @income.i18n_scope)
-p =t('details.section_5', scope: @income.i18n_scope).html_safe
 
 
 = form_for @income, url: income_save_path do |f|

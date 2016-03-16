@@ -17,8 +17,8 @@ h2.heading-large
 
     .form-group.text
       label
-        = f.check_box :email_option
-        = t('email_optin', scope: @form.i18n_scope)
+        = f.check_box :feedback_opt_in
+        = t('feedback_opt_in', scope: @form.i18n_scope)
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

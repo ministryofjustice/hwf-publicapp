@@ -187,4 +187,4 @@ en:
       text: "What's your email address?"
       details: "We can email you to confirm your application has been received."
       email_label: "Email address"
-      email_optin: "Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else."
+      feedback_opt_in: "Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else."

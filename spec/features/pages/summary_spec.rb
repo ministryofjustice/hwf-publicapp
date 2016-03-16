@@ -63,7 +63,7 @@ RSpec.feature 'As a user' do
     context 'after answering yes to all of the contact options' do
       before do
         visit question_path(:contact)
-        check :contact_email_option
+        check :contact_feedback_opt_in
         fill_in :contact_email, with: 'foo@bar.com'
         click_button 'Continue'
       end

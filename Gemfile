@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.6'
 
+gem 'config'
 gem 'date_validator'
+gem 'rest-client'
 gem 'virtus'
 
 gem 'govuk_frontend_toolkit', git: "https://github.com/alphagov/govuk_frontend_toolkit_gem.git", submodules: true

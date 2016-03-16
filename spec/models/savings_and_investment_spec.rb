@@ -24,4 +24,24 @@ RSpec.describe SavingsAndInvestment, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    subject { described_class.new(less_than_limit: less_than_limit).export }
+
+    context 'when less_than_limit is true' do
+      let(:less_than_limit) { true }
+
+      it 'returns hash with threshold_exceeded parameter false' do
+        is_expected.to eql(threshold_exceeded: false)
+      end
+    end
+
+    context 'when less_than_limit is false' do
+      let(:less_than_limit) { false }
+
+      it 'returns hash with threshold_exceeded parameter true' do
+        is_expected.to eql(threshold_exceeded: true)
+      end
+    end
+  end
 end

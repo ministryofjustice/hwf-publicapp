@@ -25,4 +25,16 @@ RSpec.describe ApplicantAddress, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:address) { 'London' }
+    let(:postcode) { 'LON DON' }
+
+    subject { described_class.new(address: address, postcode: postcode).export }
+
+    it 'returns hash with address and postcode' do
+      is_expected.to eql(address: address, postcode: postcode)
+    end
+  end
+
 end

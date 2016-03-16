@@ -26,4 +26,17 @@ RSpec.describe PersonalDetail, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:title) { 'TITLE' }
+    let(:first_name) { 'FIRST NAME' }
+    let(:last_name) { 'LAST NAME' }
+
+    subject { described_class.new(title: title, first_name: first_name, last_name: last_name).export }
+
+    it 'returns hash with title, first_name and last_name' do
+      is_expected.to eql(title: title, first_name: first_name, last_name: last_name)
+    end
+  end
+
 end

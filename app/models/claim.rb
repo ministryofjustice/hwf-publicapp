@@ -7,4 +7,12 @@ class Claim < Base
   with_options if: :number do
     validates :identifier, presence: true
   end
+
+  private
+
+  def export_params
+    {
+      case_number: number ? identifier : nil
+    }
+  end
 end

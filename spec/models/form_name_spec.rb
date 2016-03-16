@@ -18,4 +18,33 @@ RSpec.describe FormName, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    subject { described_class.new(identifier: identifier).export }
+
+    context 'when identifier is set and not blank' do
+      let(:identifier) { 'IDENTIFIER' }
+
+      it 'returns hash with form_name set' do
+        is_expected.to eql(form_name: identifier)
+      end
+    end
+
+    context 'when identifier is nil' do
+      let(:identifier) { nil }
+
+      it 'returns hash with form_name nil' do
+        is_expected.to eql(form_name: nil)
+      end
+    end
+
+    context 'when identifier is blank' do
+      let(:identifier) { '  ' }
+
+      it 'returns hash with form_name nil' do
+        is_expected.to eql(form_name: nil)
+      end
+    end
+  end
+
 end

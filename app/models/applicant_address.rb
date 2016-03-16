@@ -4,4 +4,13 @@ class ApplicantAddress < Base
 
   validates :address, presence: true
   validates :postcode, presence: true
+
+  private
+
+  def export_params
+    {
+      address: address,
+      postcode: postcode
+    }
+  end
 end

@@ -24,4 +24,12 @@ class Probate < Base
   def validate_probate_date_of_death?
     validate_date? 'date_of_death' if kase?
   end
+
+  def export_params
+    {
+      probate: kase,
+      deceased_name: kase ? deceased_name : nil,
+      date_of_death: kase ? date_of_death : nil
+    }
+  end
 end

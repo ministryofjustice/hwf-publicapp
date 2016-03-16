@@ -80,4 +80,27 @@ RSpec.describe Probate, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:deceased_name) { 'Mr. Deceased' }
+    let(:date_of_death) { Date.parse('01/01/2016') }
+
+    subject { described_class.new(kase: kase, deceased_name: deceased_name, date_of_death: date_of_death).export }
+
+    context 'when kase is true' do
+      let(:kase) { true }
+
+      it 'returns hash with probate true and details set' do
+        is_expected.to eql(probate: true, deceased_name: deceased_name, date_of_death: date_of_death)
+      end
+    end
+
+    context 'when kase is false' do
+      let(:kase) { false }
+
+      it 'returns hash with probate false and details nil' do
+        is_expected.to eql(probate: false, deceased_name: nil, date_of_death: nil)
+      end
+    end
+  end
 end

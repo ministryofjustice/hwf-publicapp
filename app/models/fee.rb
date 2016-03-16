@@ -17,4 +17,11 @@ class Fee < Base
   def validate_fee_date_paid?
     validate_date? 'date_paid' if paid?
   end
+
+  def export_params
+    {
+      refund: paid,
+      date_fee_paid: paid ? date_paid : nil
+    }
+  end
 end

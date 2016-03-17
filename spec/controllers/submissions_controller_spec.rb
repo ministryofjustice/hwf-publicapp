@@ -21,7 +21,7 @@ RSpec.describe SubmissionsController, type: :controller do
       let(:response) { { result: true, message: 'HWF-00000' } }
 
       it 'stores the result on the session' do
-        expect(session).to have_received(:[]=).with(:submission_response, response)
+        expect(session).to have_received(:[]=).with(:submission_result, response)
       end
 
       it 'redirects to the show action' do
@@ -33,7 +33,7 @@ RSpec.describe SubmissionsController, type: :controller do
       let(:response) { { result: false, message: 'Failed' } }
 
       it 'stores the result on the session' do
-        expect(session).to have_received(:[]=).with(:submission_response, response)
+        expect(session).to have_received(:[]=).with(:submission_result, response)
       end
 
       it 'redirects to the confirmation page' do
@@ -43,7 +43,11 @@ RSpec.describe SubmissionsController, type: :controller do
   end
 
   describe 'GET #show' do
+    let(:result) { { result: true, message: 'HWF-010101' } }
+    let(:session) { { submission_result: result } }
+
     before do
+      allow(controller).to receive(:session).and_return(session)
       allow(controller).to receive(:reset_session)
 
       get :show
@@ -53,8 +57,8 @@ RSpec.describe SubmissionsController, type: :controller do
       expect(response).to render_template(:show)
     end
 
-    it 'assigns the response object' do
-      expect(assigns(:response)).to eql(result: true, message: 'HWF-16-1234')
+    it 'assigns the response object from the session' do
+      expect(assigns(:result)).to eql(result)
     end
 
     it 'clears the session' do

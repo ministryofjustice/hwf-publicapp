@@ -3,7 +3,7 @@ class SubmissionsController < ApplicationController
     builder = OnlineApplicationBuilder.new(session)
     submit_service = SubmitApplication.new(Settings.submission.url, Settings.submission.token)
     response = submit_service.post(builder.online_application)
-    session[:submission_response] = response
+    session[:submission_result] = response
 
     if response[:result]
       redirect_to(action: :show)
@@ -13,7 +13,7 @@ class SubmissionsController < ApplicationController
   end
 
   def show
-    @response = { result: true, message: 'HWF-16-1234' }
+    @result = session[:submission_result]
     reset_session
   end
 end

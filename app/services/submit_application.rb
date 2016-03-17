@@ -6,7 +6,7 @@ class SubmitApplication
 
   def post(online_application)
     response = post_data(online_application)
-    JSON.parse(response)
+    JSON.parse(response).deep_symbolize_keys
   end
 
   private

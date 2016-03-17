@@ -12,13 +12,14 @@ RSpec.describe SubmitApplication do
 
     describe 'when the request is valid' do
       let(:response) { { 'result' => 'RESPONSE' } }
+      let(:expected_response) { { result: 'RESPONSE' } }
 
       before do
         stub_request(:post, "#{url}/api/submissions").to_return(status: 200, body: response.to_json)
       end
 
-      it 'returns the response' do
-        is_expected.to eql(response)
+      it 'returns the response with symbilised keys' do
+        is_expected.to eql(expected_response)
       end
     end
   end

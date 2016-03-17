@@ -467,6 +467,8 @@ RSpec.feature 'As a user' do
   end
 
   scenario 'I want to see a confirmation of my application' do
+    given_the_submission_service_is_available
+
     visit '/'
     click_link_or_button 'Apply now'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"

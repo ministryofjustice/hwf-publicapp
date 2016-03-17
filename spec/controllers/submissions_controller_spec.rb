@@ -36,7 +36,7 @@ RSpec.describe SubmissionsController, type: :controller do
         expect(session).to have_received(:[]=).with(:submission_result, response)
       end
 
-      it 'redirects to the confirmation page' do
+      it 'redirects to the summary page' do
         expect(response).to redirect_to(summary_path)
       end
     end

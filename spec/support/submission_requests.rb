@@ -11,6 +11,11 @@ module SubmissionRequestSteps
     stub_submission_request(200, result: true, message: returns_reference)
   end
   alias and_the_submission_service_is_available given_the_submission_service_is_available
+
+  def given_the_submission_service_is_unavailable
+    stub_submission_request(200, result: false, message: '')
+  end
+  alias and_the_submission_service_is_unavailable given_the_submission_service_is_unavailable
 end
 
 RSpec.configure do |config|

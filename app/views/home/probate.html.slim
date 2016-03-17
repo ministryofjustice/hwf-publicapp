@@ -26,6 +26,7 @@ p = t('details', scope: @probate.i18n_scope)
         .form-group class=('error' if @probate.errors[:date_of_death].any?)
           span.error-message#date_of_death = @probate.errors[:date_of_death].join(' ') if @probate.errors[:date_of_death].any?
           = f.label :date_of_death, class: 'form-label'
+          .hint = t('hint', scope: @probate.i18n_scope)
           = f.text_field :date_of_death, class: 'form-control'
     .form-group
       = f.submit t('submit_button'), class: 'button'

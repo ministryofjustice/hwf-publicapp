@@ -130,12 +130,14 @@ en:
       breadcrumb: 'Question 6 of 14'
       text: 'Have you already paid the fee?'
       details: "You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee."
+      hint: Use this format DD/MM/YYYY
     probate:
       probate_case_false: 'No'
       probate_case_true: 'Yes'
       breadcrumb: 'Question 7 of 14'
       text: 'Are you paying a fee for a probate case?'
       details: 'These cases are usually about the property and belongings of someone who has died.'
+      hint: Use this format DD/MM/YYYY
     claim:
       breadcrumb: Question 8 of 14
       text: Do you have a case, claim or ‘notice to pay’ number?
@@ -173,6 +175,7 @@ en:
       breadcrumb: Question 11 of 14
       text: What is your date of birth?
       subtext: 'Enter the date in this format: DD/MM/YYYY'
+      hint: Use this format DD/MM/YYYY
     personal_detail:
       breadcrumb: 'Question 12 of 14'
       text: 'What is your full name?'

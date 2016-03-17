@@ -19,6 +19,7 @@ gem 'unicorn'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'rubocop', '~>0.37.2', require: true
   gem 'rubocop-rspec', require: false
@@ -33,4 +34,5 @@ end
 group :test do
   gem 'capybara'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'webmock'
 end

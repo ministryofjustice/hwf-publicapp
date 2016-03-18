@@ -1,25 +1,20 @@
-h2.heading-medium Reference
-.callout.result
-  h3.heading-medium.util-margin-0
-    span.check
-      | ✓
-    =t('confirmation.success')
-    span.reference-number
-      =@result['message']
+h2.heading-large
+  span.heading-secondary =t('confirmation.breadcrumb')
+  =t('confirmation.heading')
 
-p
-  | We have sent you a confirmation email.
-
-p =link_to(t('confirmation.print'), '#')
-
-
-hr
-
-h2.heading-medium =t('confirmation.next_steps.header')
-ul.next-steps
+ol.list.list-number.next-steps
   li
-    span =t('confirmation.next_steps.step.one')
-  li
-    span =t('confirmation.next_steps.step.two')
-  li
-    span =t('confirmation.next_steps.step.three')
+    =t('confirmation.steps.one')
+    .number =@result['message']
+  li =t('confirmation.steps.two')
+  li =t('confirmation.steps.three')
+  li =t('confirmation.steps.four')
+
+.notice
+  h3.heading-medium
+    i.icon.icon-important
+      span.visuallyhidden =t('confirmation.notice.warning')
+    strong.bold-small =t('confirmation.notice.text')
+
+.js-only
+  p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')

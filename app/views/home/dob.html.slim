@@ -9,6 +9,7 @@ h2.heading-large
     .form-group  class=('error' if @dob.errors.any?)
       label.form-label for='dob_date_of_birth'
         span.visuallyhidden =t('date_of_birth', scope: @dob.i18n_scope)
+        .hint = t('hint', scope: @dob.i18n_scope)
         span.error-message#date_of_birth = @dob.errors[:date_of_birth].join(' ') if @dob.errors[:date_of_birth].any?
         = f.text_field :date_of_birth, class: 'form-control'
 

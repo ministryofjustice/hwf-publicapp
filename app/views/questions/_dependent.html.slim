@@ -8,7 +8,7 @@ h2.heading-large
   fieldset
     legend.visuallyhidden = t('text', scope: @form.i18n_scope)
     .form-group class=('error' if @form.errors[:children].any?)
-      span.error-message#on_dependents = @form.errors[:on_dependents].join(' ') if @form.errors.any?
+      span.error-message#dependents = @form.errors[:children].join(' ') if @form.errors[:children].any?
       label.block-label for='dependent_children_false'
         = f.radio_button :children, 'false'
         = t('children_false', scope: @form.i18n_scope)

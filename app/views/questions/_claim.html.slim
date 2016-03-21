@@ -9,8 +9,9 @@ p
 = form_for @form, url: question_path(@form), method: :put do |f|
   fieldset
     legend.visuallyhidden = t('hidden_legend', scope: @form.i18n_scope)
-
     .form-group class=('error' if @form.errors[:number].any?)
+      = f.hidden_field :number, value: nil
+      span.error-message#kase = @form.errors[:number].join(' ') if @form.errors[:number].any?
       label.block-label for='claim_number_false'
         = f.radio_button :number, 'false'
         = t('number_false', scope: @form.i18n_scope)

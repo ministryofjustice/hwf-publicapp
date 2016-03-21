@@ -14,6 +14,10 @@
             | Tell us what you think and #{link_to 'help us improve', Rails.application.config.feedback_url}
     .container
       section#content.cf
+        - flash.each do |key, value|
+          .alert class="alert-#{key}"
+            | #{value}
+
         = yield
 
 - content_for :javascripts

@@ -1,29 +1,29 @@
-= render('shared/error_block', form: @national_insurance) if @national_insurance.errors.any?
+= render('shared/error_block', form: @form) if @form.errors.any?
 h2.heading-large
-  span.heading-secondary =t('breadcrumb', scope: @national_insurance.i18n_scope)
-  =t('text', scope: @national_insurance.i18n_scope)
+  span.heading-secondary =t('breadcrumb', scope: @form.i18n_scope)
+  =t('text', scope: @form.i18n_scope)
 
-p =t('example', scope: @national_insurance.i18n_scope)
+p =t('example', scope: @form.i18n_scope)
 
-= form_for @national_insurance, url: national_insurance_save_path do |f|
+= form_for @form, url: question_path(@form), method: :put do |f|
   fieldset
-    legend.visuallyhidden =t('text', scope: @national_insurance.i18n_scope)
-    .form-group class=('error' if @national_insurance.errors.any?)
+    legend.visuallyhidden =t('text', scope: @form.i18n_scope)
+    .form-group class=('error' if @form.errors.any?)
       label.form-label for='national_insurance_number'
-        span.visuallyhidden =t('prompt', scope: @national_insurance.i18n_scope)
-        span.error-message#number = @national_insurance.errors[:number].join(' ') if @national_insurance.errors[:number].any?
+        span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
+        span.error-message#number = @form.errors[:number].join(' ') if @form.errors[:number].any?
         = f.text_field :number, class: 'form-control js-uppercase'
 
     .form-group
       details
-        summary =t('summary', scope: "#{@national_insurance.i18n_scope}.details")
+        summary =t('summary', scope: "#{@form.i18n_scope}.details")
 
         .panel-indent.text
           ul.list.list-bullet
-            li =t('item_1', scope: "#{@national_insurance.i18n_scope}.details.section_1")
-            li =link_to t('item_2', scope: "#{@national_insurance.i18n_scope}.details.section_1"), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
+            li =t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
+            li =link_to t('item_2', scope: "#{@form.i18n_scope}.details.section_1"), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
 
-          p =t('detail', scope: "#{@national_insurance.i18n_scope}.details.section_1")
+          p =t('detail', scope: "#{@form.i18n_scope}.details.section_1")
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

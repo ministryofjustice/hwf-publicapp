@@ -1,27 +1,27 @@
-= render('shared/error_block', form: @income) if @income.errors.any?
+= render('shared/error_block', form: @form) if @form.errors.any?
 
 h2.heading-large
-  span.heading-secondary = t('breadcrumb', scope: @income.i18n_scope)
-  = t('text', scope: @income.i18n_scope)
+  span.heading-secondary = t('breadcrumb', scope: @form.i18n_scope)
+  = t('text', scope: @form.i18n_scope)
 
-p =t('details.section_1', scope: @income.i18n_scope)
-p =t('details.section_2', scope: @income.i18n_scope)
-p =t('details.section_3', scope: @income.i18n_scope).html_safe
-p =t('details.section_4', scope: @income.i18n_scope)
+p =t('details.section_1', scope: @form.i18n_scope)
+p =t('details.section_2', scope: @form.i18n_scope)
+p =t('details.section_3', scope: @form.i18n_scope).html_safe
+p =t('details.section_4', scope: @form.i18n_scope)
 
 
-= form_for @income, url: income_save_path do |f|
+= form_for @form, url: question_path(@form), method: :put do |f|
   fieldset
-    legend.visuallyhidden = t('text', scope: @income.i18n_scope)
+    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
 
     .form-group
       table.income
         thead
           tr
             td &nbsp;
-            th.js-total = t('labels.your_income', scope: @income.i18n_scope)
+            th.js-total = t('labels.your_income', scope: @form.i18n_scope)
             -if @married
-              th.js-total = t('labels.partners_income', scope: @income.i18n_scope)
+              th.js-total = t('labels.partners_income', scope: @form.i18n_scope)
         tbody
           tr
             th =f.label :wages
@@ -145,24 +145,24 @@ p =t('details.section_4', scope: @income.i18n_scope)
                 = f.number_field :partner_rent_other_property, step: '0.01', class: 'form-control'
                 span.frequency a month
           tr.align-bottom
-            th class=('error' if @income.errors[:other_description].any?)
+            th class=('error' if @form.errors[:other_description].any?)
               =f.label :other_description
-              span.error-message#other_description = @income.errors[:other_description].join(' ')
+              span.error-message#other_description = @form.errors[:other_description].join(' ')
               =f.text_field :other_description, class: 'form-control'
-            td class=('error' if @income.errors[:combined_other_payments].any?)
-              span.error-message#combined_other_payments = @income.errors[:combined_other_payments].join(' ')
+            td class=('error' if @form.errors[:combined_other_payments].any?)
+              span.error-message#combined_other_payments = @form.errors[:combined_other_payments].join(' ')
               span.currency £
               = f.number_field :other, step: '0.01', class: 'form-control'
               span.frequency a month
 
             -if @married
-              td class=('error' if @income.errors[:combined_other_payments].any?)
-                span.error-message = @income.errors[:combined_other_payments].join(' ')
+              td class=('error' if @form.errors[:combined_other_payments].any?)
+                span.error-message = @form.errors[:combined_other_payments].join(' ')
                 span.currency £
                 = f.number_field :partner_other, step: '0.01', class: 'form-control'
                 span.frequency a month
 
-    p.js-hidden =t('nojs_info', scope: @income.i18n_scope)
+    p.js-hidden =t('nojs_info', scope: @form.i18n_scope)
 
     .form-group
       = f.submit t('submit_button'), class: 'button'

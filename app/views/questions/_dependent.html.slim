@@ -1,36 +1,36 @@
-= render('shared/error_block', form: @dependent) if @dependent.errors.any?
+= render('shared/error_block', form: @form) if @form.errors.any?
 
 h2.heading-large
-  span.heading-secondary = t('breadcrumb', scope: @dependent.i18n_scope)
-  = t('text', scope: @dependent.i18n_scope)
+  span.heading-secondary = t('breadcrumb', scope: @form.i18n_scope)
+  = t('text', scope: @form.i18n_scope)
 
-= form_for @dependent, url: dependent_save_path do |f|
+= form_for @form, url: question_path(@form), method: :put do |f|
   fieldset
-    legend.visuallyhidden = t('text', scope: @dependent.i18n_scope)
-    .form-group class=('error' if @dependent.errors[:children].any?)
-      span.error-message#on_dependents = @dependent.errors[:on_dependents].join(' ') if @dependent.errors.any?
+    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
+    .form-group class=('error' if @form.errors[:children].any?)
+      span.error-message#on_dependents = @form.errors[:on_dependents].join(' ') if @form.errors.any?
       label.block-label for='dependent_children_false'
         = f.radio_button :children, 'false'
-        = t('children_false', scope: @dependent.i18n_scope)
+        = t('children_false', scope: @form.i18n_scope)
       label.block-label for='dependent_children_true' data-target='dependent-children_number-panel'
         = f.radio_button :children, 'true'
-        = t('children_true', scope: @dependent.i18n_scope)
+        = t('children_true', scope: @form.i18n_scope)
       #dependent-children_number-panel.panel-indent.util_mb-medium.js-hidden
-        .form-group class=('error' if @dependent.errors[:children_number].any?)
-          span.error-message#children_number = @dependent.errors[:children_number].join(' ') if @dependent.errors[:children_number].any?
+        .form-group class=('error' if @form.errors[:children_number].any?)
+          span.error-message#children_number = @form.errors[:children_number].join(' ') if @form.errors[:children_number].any?
           = f.label :children_number, class: 'form-label'
           = f.text_field :children_number, class: 'form-control'
 
   .form-group
     details
-      summary =t('details.summary', scope: @dependent.i18n_scope)
+      summary =t('details.summary', scope: @form.i18n_scope)
       .panel-indent
-        p =t('details.section_1', scope: @dependent.i18n_scope)
-        p =t('details.section_2', scope: @dependent.i18n_scope)
+        p =t('details.section_1', scope: @form.i18n_scope)
+        p =t('details.section_2', scope: @form.i18n_scope)
         ul.list.list-bullet
-          li =t('details.item_1', scope: @dependent.i18n_scope)
-          li =t('details.item_2', scope: @dependent.i18n_scope).html_safe
-          li =t('details.item_3', scope: @dependent.i18n_scope)
+          li =t('details.item_1', scope: @form.i18n_scope)
+          li =t('details.item_2', scope: @form.i18n_scope).html_safe
+          li =t('details.item_3', scope: @form.i18n_scope)
 
   .form-group
     = f.submit t('submit_button'), class: 'button'

@@ -1,16 +1,16 @@
-= render('shared/error_block', form: @dob) if @dob.errors.any?
+= render('shared/error_block', form: @form) if @form.errors.any?
 h2.heading-large
-  span.heading-secondary = t('breadcrumb', scope: @dob.i18n_scope)
-  = t('text', scope: @dob.i18n_scope)
+  span.heading-secondary = t('breadcrumb', scope: @form.i18n_scope)
+  = t('text', scope: @form.i18n_scope)
 
-= form_for @dob, url: dob_save_path do |f|
+= form_for @form, url: question_path(@form), method: :put do |f|
   fieldset
-    legend.visuallyhidden =t('text', scope: @dob.i18n_scope)
-    .form-group  class=('error' if @dob.errors.any?)
+    legend.visuallyhidden =t('text', scope: @form.i18n_scope)
+    .form-group  class=('error' if @form.errors.any?)
       label.form-label for='dob_date_of_birth'
-        span.visuallyhidden =t('date_of_birth', scope: @dob.i18n_scope)
-        .hint = t('hint', scope: @dob.i18n_scope)
-        span.error-message#date_of_birth = @dob.errors[:date_of_birth].join(' ') if @dob.errors[:date_of_birth].any?
+        span.visuallyhidden =t('date_of_birth', scope: @form.i18n_scope)
+        .hint = t('hint', scope: @form.i18n_scope)
+        span.error-message#date_of_birth = @form.errors[:date_of_birth].join(' ') if @form.errors[:date_of_birth].any?
         = f.text_field :date_of_birth, class: 'form-control'
 
     .form-group

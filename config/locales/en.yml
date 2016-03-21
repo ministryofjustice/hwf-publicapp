@@ -46,8 +46,11 @@ en:
               inclusion: "Select whether you're receiving one of the benefits listed"
         dependent:
           attributes:
+            children:
+              inclusion: 'You need to say whether you have financially dependent children'
             children_number:
-              not_a_number: Please enter a numeric value for number of children
+              not_a_number: 'You must enter financially dependent children as a number'
+              blank: 'You must enter the number of financially dependent children'
         income:
           attributes:
             other_description:

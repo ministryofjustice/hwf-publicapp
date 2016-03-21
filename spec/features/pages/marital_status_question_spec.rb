@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "marital_status" page for "Help with fees"' do
-    before { page.visit '/marital-status' }
+    before { page.visit question_path(:marital_status) }
 
     context 'completing the form correctly' do
       before do

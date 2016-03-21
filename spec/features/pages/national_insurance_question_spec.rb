@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "national-insurance" page for "Help with fees"' do
-    before { page.visit 'national-insurance' }
+    before { page.visit question_path(:national_insurance) }
 
     context 'completing the form correctly' do
       describe 'recording a valid NI number' do

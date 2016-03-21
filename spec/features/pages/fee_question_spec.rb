@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "fee" page for "Help with fees"' do
-    before { page.visit 'fee' }
+    before { page.visit question_path(:fee) }
 
     context 'completing a non-refund form correctly' do
       before do

@@ -62,7 +62,7 @@ RSpec.feature 'User details are not persisted' do
   end
 
   def then_their_data_is_not_persisted
-    visit '/marital-status'
+    visit question_path(:marital_status)
     expect(page).to have_unchecked_field('marital_status_married_false')
     expect(page).to have_unchecked_field('marital_status_married_true')
   end

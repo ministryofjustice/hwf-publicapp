@@ -5,7 +5,7 @@ RSpec.feature 'As a user' do
   context 'when accessing the "summary" page for "Help with fees"' do
     context 'after answering yes to the dependents question' do
       before do
-        visit '/dependent'
+        visit question_path(:dependent)
         choose 'dependent_children_true'
         fill_in :dependent_children_number, with: '10'
         click_button 'Continue'
@@ -19,7 +19,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to the dependents question' do
       before do
-        visit '/dependent'
+        visit question_path(:dependent)
         choose 'dependent_children_false'
         click_button 'Continue'
         page.visit '/summary'
@@ -32,7 +32,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering yes to the probate question' do
       before do
-        visit '/probate'
+        visit question_path(:probate)
         choose 'probate_kase_true'
         fill_in :probate_deceased_name, with: 'Foo'
         fill_in :probate_date_of_death, with: Time.zone.today - 1.month
@@ -48,7 +48,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to the probate question' do
       before do
-        visit '/probate'
+        visit question_path(:probate)
         choose 'probate_kase_false'
         click_button 'Continue'
         page.visit '/summary'
@@ -62,7 +62,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering yes to all of the contact options' do
       before do
-        visit '/contact'
+        visit question_path(:contact)
         check :contact_email_option
         fill_in :contact_email, with: 'foo@bar.com'
         check :contact_phone_option
@@ -80,7 +80,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to all of the contact options' do
       before do
-        visit '/contact'
+        visit question_path(:contact)
         click_button 'Continue'
       end
 

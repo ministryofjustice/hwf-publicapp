@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "benefit" page for "Help with fees"' do
-    before { page.visit 'benefit' }
+    before { page.visit question_path(:benefit) }
 
     context 'completing the form correctly' do
       before do

@@ -5,31 +5,31 @@ table
     tr
       td =t('married', scope: 'summary.labels')
       td= t("marital_status_#{@summary.marital_status_married}", scope: 'summary')
-      td.right= link_to "Change", marital_status_path
+      td.right= link_to "Change", question_path(:marital_status)
     tr
       td =t('savings', scope: 'summary.labels')
       td= t("less_than_limit_#{@summary.savings_and_investment_less_than_limit}", scope: 'summary')
-      td.right= link_to "Change", savings_and_investment_path
+      td.right= link_to "Change", question_path(:savings_and_investment)
     tr
       td =t('benefits', scope: 'summary.labels')
       td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}", scope: 'summary')
-      td.right= link_to "Change", benefit_path
+      td.right= link_to "Change", question_path(:benefit)
     tr
       td =t('children', scope: 'summary.labels')
       td =@summary.children
-      td.right= link_to "Change", dependent_path
+      td.right= link_to "Change", question_path(:dependent)
     tr
       td =t('income', scope: 'summary.labels')
       td =number_to_currency(@summary.income_total, precision: 2, unit: '£')
-      td.right= link_to "Change", income_path
+      td.right= link_to "Change", question_path(:income)
     tr
       td =t('fee', scope: 'summary.labels')
       td =@summary.fee_paid
-      td.right= link_to "Change", fee_path
+      td.right= link_to "Change", question_path(:fee)
     tr
       td =t('probate', scope: 'summary.labels')
       td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
-      td.right= link_to "Change", probate_path
+      td.right= link_to "Change", question_path(:probate)
     -if @summary.probate_kase
       tr
         td = t('deceased_name', scope: 'summary.labels')
@@ -40,48 +40,48 @@ table
     tr
       td =t('claim', scope: 'summary.labels')
       td =t("claim_number_#{@summary.claim_number}", scope: 'summary')
-      td.right= link_to "Change", claim_path
+      td.right= link_to "Change", question_path(:claim)
     tr
       td =t('form_name', scope: 'summary.labels')
       td=@summary.form_name_identifier
-      td.right= link_to "Change", form_name_path
+      td.right= link_to "Change", question_path(:form_name)
     tr
       td =t('date_of_birth', scope: 'summary.labels')
       td =@summary.dob_date_of_birth
-      td.right= link_to "Change", dob_path
+      td.right= link_to "Change", question_path(:dob)
     tr
       td =t('ni_number', scope: 'summary.labels')
       td =@summary.national_insurance_number
-      td.right= link_to "Change", national_insurance_path
+      td.right= link_to "Change", question_path(:national_insurance)
     tr
       td =t('personal', scope: 'summary.labels')
       td =@summary.full_name
-      td.right= link_to "Change", personal_detail_path
+      td.right= link_to "Change", question_path(:personal_detail)
     tr
       td =t('address', scope: 'summary.labels')
       td =@summary.full_address
-      td.right= link_to "Change", applicant_address_path
+      td.right= link_to "Change", question_path(:applicant_address)
     -if @summary.any_contact
       -if @summary.contact_email_option
         tr
           td =t('contact_email', scope: 'summary.labels')
           td =@summary.contact_email
-          td.right= link_to "Change", contact_path
+          td.right= link_to "Change", question_path(:contact)
       -if @summary.contact_phone_option
         tr
           td =t('contact_phone', scope: 'summary.labels')
           td =@summary.contact_phone
-          td.right= link_to "Change", contact_path
+          td.right= link_to "Change", question_path(:contact)
       -if @summary.contact_post_option
         tr
           td =t('contact_post', scope: 'summary.labels')
           td Yes
-          td.right= link_to "Change", applicant_address_path
+          td.right= link_to "Change", question_path(:applicant_address)
     -else
       tr
         td = t('contact', scope: 'summary.labels')
         td = t('summary.contact_none')
-        td.right= link_to "Change", contact_path
+        td.right= link_to "Change", question_path(:contact)
 
 h2.heading-medium =t('heading', scope: 'summary.truth')
 p =t('statement', scope: 'summary.truth')

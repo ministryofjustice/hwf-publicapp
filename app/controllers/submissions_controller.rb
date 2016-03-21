@@ -3,7 +3,12 @@ class SubmissionsController < ApplicationController
     response = submit_service.post(builder.online_application)
     storage.submission_result = response
 
-    redirect_to(redirect_path(response))
+    if response[:result]
+      redirect_to(action: :show)
+    else
+      flash[:error] = "We couldn't process your application at this time. Please try again later."
+      redirect_to(summary_path)
+    end
   end
 
   def show
@@ -19,9 +24,5 @@ class SubmissionsController < ApplicationController
 
   def builder
     @builder ||= OnlineApplicationBuilder.new(storage)
-  end
-
-  def redirect_path(response)
-    response[:result] ? { action: :show } : summary_path
   end
 end

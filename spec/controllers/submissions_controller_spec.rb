@@ -45,6 +45,10 @@ RSpec.describe SubmissionsController, type: :controller do
       it 'redirects to the summary page' do
         expect(response).to redirect_to(summary_path)
       end
+
+      it 'sets an flash error message' do
+        expect(flash[:error]).to eql('We couldn\'t process your application at this time. Please try again later.')
+      end
     end
   end
 

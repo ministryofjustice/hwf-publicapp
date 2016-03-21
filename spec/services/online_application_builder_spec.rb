@@ -3,24 +3,26 @@ require 'rails_helper'
 RSpec.describe OnlineApplicationBuilder do
   let(:session) do
     {
-      marital_status: { 'married' => true },
-      savings_and_investment: { 'less_than_limit' => true },
-      benefit: { 'on_benefits' => true },
-      dependent: { 'children' => true, 'children_number' => 2 },
-      fee: { 'paid' => true, 'date_paid' => '12/12/2015' },
-      income: { 'wages' => 300, 'partner_rent_other_property' => 250 },
-      probate: { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'date_of_death' => '01/08/2015' },
-      claim: { 'number' => true, 'identifier' => 'CL001' },
-      form_name: { 'identifier' => 'EX47' },
-      national_insurance: { 'number' => 'AA123456A' },
-      personal_detail: { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' },
-      dob: { 'date_of_birth' => '10/03/1967' },
-      applicant_address: { 'address' => '1 Blue Fields, Shine Town', 'postcode' => 'SH01 TW0' },
-      contact: { 'email_option' => true, 'email' => 'mary@jones.com', 'phone_option' => true, 'phone' => '0721323232', 'post_option' => true }
+      'marital_status' => { 'married' => true },
+      'savings_and_investment' => { 'less_than_limit' => true },
+      'benefit' => { 'on_benefits' => true },
+      'dependent' => { 'children' => true, 'children_number' => 2 },
+      'fee' => { 'paid' => true, 'date_paid' => '12/12/2015' },
+      'income' => { 'wages' => 300, 'partner_rent_other_property' => 250 },
+      'probate' => { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'date_of_death' => '01/08/2015' },
+      'claim' => { 'number' => true, 'identifier' => 'CL001' },
+      'form_name' => { 'identifier' => 'EX47' },
+      'national_insurance' => { 'number' => 'AA123456A' },
+      'personal_detail' => { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' },
+      'dob' => { 'date_of_birth' => '10/03/1967' },
+      'applicant_address' => { 'address' => '1 Blue Fields, Shine Town', 'postcode' => 'SH01 TW0' },
+      'contact' => { 'email_option' => true, 'email' => 'mary@jones.com', 'phone_option' => true, 'phone' => '0721323232', 'post_option' => true }
     }
   end
+  # We're using the real storage here to avoid an unnecessary mocking as these are mostly value objects
+  let(:storage) { Storage.new(session) }
 
-  subject(:builder) { described_class.new(session) }
+  subject(:builder) { described_class.new(storage) }
 
   describe '#online_application' do
     subject { builder.online_application }

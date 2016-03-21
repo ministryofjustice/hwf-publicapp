@@ -1,13 +1,13 @@
 class SubmissionsController < ApplicationController
   def create
     response = submit_service.post(builder.online_application)
-    session[:submission_result] = response
+    storage.submission_result = response
 
     redirect_to(redirect_path(response))
   end
 
   def show
-    @result = session[:submission_result]
+    @result = storage.submission_result
     reset_session
   end
 
@@ -18,7 +18,7 @@ class SubmissionsController < ApplicationController
   end
 
   def builder
-    @builder ||= OnlineApplicationBuilder.new(session)
+    @builder ||= OnlineApplicationBuilder.new(storage)
   end
 
   def redirect_path(response)

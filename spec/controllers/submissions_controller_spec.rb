@@ -1,27 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe SubmissionsController, type: :controller do
+  let(:session) { double }
+  let(:storage) { double }
+
+  before do
+    allow(controller).to receive(:session).and_return(session)
+    allow(Storage).to receive(:new).with(session).and_return(storage)
+  end
 
   describe 'POST #create' do
-    let(:session) { double(:[]= => true) }
     let(:online_application) { double }
     let(:builder) { double(online_application: online_application) }
     let(:service) { double }
 
     before do
-      allow(controller).to receive(:session).and_return(session)
-      allow(OnlineApplicationBuilder).to receive(:new).with(session).and_return(builder)
+      allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
       allow(SubmitApplication).to receive(:new).and_return(service)
       allow(service).to receive(:post).with(online_application).and_return(response)
+      allow(storage).to receive(:submission_result=)
 
       post :create
     end
 
     context 'on a successful response' do
-      let(:response) { { result: true, message: 'HWF-00000' } }
+      let(:response) { { result: true, message: 'HWF-000-000' } }
 
       it 'stores the result on the session' do
-        expect(session).to have_received(:[]=).with(:submission_result, response)
+        expect(storage).to have_received(:submission_result=).with(response)
       end
 
       it 'redirects to the show action' do
@@ -33,7 +39,7 @@ RSpec.describe SubmissionsController, type: :controller do
       let(:response) { { result: false, message: 'Failed' } }
 
       it 'stores the result on the session' do
-        expect(session).to have_received(:[]=).with(:submission_result, response)
+        expect(storage).to have_received(:submission_result=).with(response)
       end
 
       it 'redirects to the summary page' do
@@ -44,10 +50,9 @@ RSpec.describe SubmissionsController, type: :controller do
 
   describe 'GET #show' do
     let(:result) { { result: true, message: 'HWF-010101' } }
-    let(:session) { { submission_result: result } }
+    let(:storage) { double(submission_result: result) }
 
     before do
-      allow(controller).to receive(:session).and_return(session)
       allow(controller).to receive(:reset_session)
 
       get :show

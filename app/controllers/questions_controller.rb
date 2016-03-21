@@ -36,10 +36,6 @@ class QuestionsController < ApplicationController
     params.require(@form.id).permit(*@form.permitted_attributes)
   end
 
-  def storage
-    @storage ||= Storage.new(session)
-  end
-
   def not_found
     render nothing: true, status: :not_found
   end

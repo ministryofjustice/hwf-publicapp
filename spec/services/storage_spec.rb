@@ -45,4 +45,35 @@ RSpec.describe Storage do
       end
     end
   end
+
+  describe '#submission_result=' do
+    let(:result) { double }
+
+    let(:session) { {} }
+
+    before do
+      storage.submission_result = result
+    end
+
+    it 'stores the submission_result in the session' do
+      expect(session[:submission_result]).to eql(result)
+    end
+  end
+
+  describe '#submission_result' do
+    let(:result) { double }
+
+    subject { storage.submission_result }
+
+    context 'when there is a submission_result stored in the session' do
+      let(:session) { { submission_result: result } }
+
+      it { is_expected.to eql(result) }
+    end
+    context 'when there is no submission_result stored in the session' do
+      let(:session) { {} }
+
+      it { is_expected.to be nil }
+    end
+  end
 end

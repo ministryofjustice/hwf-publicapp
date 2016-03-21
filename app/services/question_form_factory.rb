@@ -1,19 +1,20 @@
 class QuestionFormFactory
   class QuestionDoesNotExist < StandardError; end
 
+  # These are ordered
   IDS = [
     :marital_status,
     :savings_and_investment,
     :benefit,
     :dependent,
-    :fee,
     :income,
+    :fee,
     :probate,
     :claim,
     :form_name,
     :national_insurance,
-    :personal_detail,
     :dob,
+    :personal_detail,
     :applicant_address,
     :contact
   ].freeze

@@ -2,16 +2,14 @@ class QuestionsController < ApplicationController
   rescue_from QuestionFormFactory::QuestionDoesNotExist, with: :not_found
 
   def edit
-    @form = QuestionFormFactory.get_form(question)
-    storage.load_form(@form)
+    storage.load_form(form)
   end
 
   def update
-    @form = QuestionFormFactory.get_form(question)
-    @form.update_attributes(form_params)
+    form.update_attributes(form_params)
 
-    if @form.valid?
-      storage.save_form(@form)
+    if form.valid?
+      storage.save_form(form)
       redirect_to(Navigation.new(question).next)
     else
       render :edit
@@ -22,6 +20,10 @@ class QuestionsController < ApplicationController
 
   def question
     @question ||= params[:id].to_sym
+  end
+
+  def form
+    @form ||= QuestionFormFactory.get_form(question)
   end
 
   def form_params

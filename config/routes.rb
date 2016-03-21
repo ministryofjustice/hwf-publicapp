@@ -4,8 +4,5 @@ Rails.application.routes.draw do
   get 'summary' => 'home#summary'
   get 'confirmation' => 'home#confirmation'
 
-  HomeController::ACTIONS.each do |path|
-    get path.to_s.dasherize => "home##{path}"
-    post "#{path}_save" => "home##{path}_save"
-  end
+  resources :questions, only: [:edit, :update], path_names: { edit: '' }
 end

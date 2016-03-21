@@ -1,0 +1,71 @@
+= render('shared/error_block', form: @form) if @form.errors.any?
+
+h2.heading-large
+  span.heading-secondary = t('breadcrumb', scope: @form.i18n_scope)
+  = t('text', scope: @form.i18n_scope)
+
+p = t('header', scope:"#{@form.i18n_scope}.list")
+
+ul.list.list-bullet
+  li
+    = t('name', scope: "#{@form.i18n_scope}.list.item_1")
+    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_1")}
+  li
+    = t('name', scope: "#{@form.i18n_scope}.list.item_2")
+    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_2")}
+  li
+    = t('name', scope: "#{@form.i18n_scope}.list.item_3")
+  li
+    = t('name', scope: "#{@form.i18n_scope}.list.item_4")
+    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_4")}
+  li
+    = t('name', scope: "#{@form.i18n_scope}.list.item_5")
+    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_5")}
+  li
+    = t('name', scope: "#{@form.i18n_scope}.list.item_6")
+    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_6")}
+
+
+= form_for @form, url: question_path(@form), method: :put do |f|
+  fieldset
+    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
+    .form-group class=('error' if @form.errors.any?)
+      = f.hidden_field :on_benefits, value: nil
+      span.error-message#on_benefits = @form.errors[:on_benefits].join(' ') if @form.errors.any?
+      label.block-label for='benefit_on_benefits_false'
+        = f.radio_button :on_benefits, 'false'
+        = t('on_benefits_false', scope: @form.i18n_scope)
+      label.block-label for='benefit_on_benefits_true'
+        = f.radio_button :on_benefits, 'true'
+        = t('on_benefits_true', scope: @form.i18n_scope)
+
+    .form-group
+      details
+        summary = t('summary', scope: "#{@form.i18n_scope}.details")
+
+        .panel-indent
+          h3.heading-small = t('heading', scope: "#{@form.i18n_scope}.details.section_1")
+          p = t('details', scope: "#{@form.i18n_scope}.details.section_1")
+
+          h3.heading-small = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
+          p = t('details', scope: "#{@form.i18n_scope}.details.section_2")
+
+          ul.list.list-bullet
+            li
+              = t('name', scope: "#{@form.i18n_scope}.details.section_2.item_1")
+              span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.details.section_2.item_1")}
+            li
+              = t('name', scope: "#{@form.i18n_scope}.details.section_2.item_2")
+              span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.details.section_2.item_2")}
+            li
+              = t('name', scope: "#{@form.i18n_scope}.details.section_2.item_3")
+            li
+              = t('name', scope: "#{@form.i18n_scope}.details.section_2.item_4")
+              span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.details.section_2.item_4")}
+            li
+              = t('name', scope: "#{@form.i18n_scope}.details.section_2.item_5")
+            li
+              = t('name', scope: "#{@form.i18n_scope}.details.section_2.item_6")
+              span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.details.section_2.item_6")}
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

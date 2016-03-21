@@ -5,7 +5,7 @@ RSpec.feature 'As a user' do
   context 'when accessing the "summary" page for "Help with fees"' do
     context 'after answering yes to the dependents question' do
       before do
-        visit '/dependent'
+        visit question_path(:dependent)
         choose 'dependent_children_true'
         fill_in :dependent_children_number, with: '10'
         click_button 'Continue'
@@ -19,7 +19,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to the dependents question' do
       before do
-        visit '/dependent'
+        visit question_path(:dependent)
         choose 'dependent_children_false'
         click_button 'Continue'
         page.visit '/summary'
@@ -32,7 +32,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering yes to the probate question' do
       before do
-        visit '/probate'
+        visit question_path(:probate)
         choose 'probate_kase_true'
         fill_in :probate_deceased_name, with: 'Foo'
         fill_in :probate_date_of_death, with: Time.zone.today - 1.month
@@ -48,7 +48,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to the probate question' do
       before do
-        visit '/probate'
+        visit question_path(:probate)
         choose 'probate_kase_false'
         click_button 'Continue'
         page.visit '/summary'
@@ -62,7 +62,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering yes to all of the contact options' do
       before do
-        visit '/contact'
+        visit question_path(:contact)
         check :contact_email_option
         fill_in :contact_email, with: 'foo@bar.com'
         check :contact_phone_option
@@ -80,7 +80,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to all of the contact options' do
       before do
-        visit '/contact'
+        visit question_path(:contact)
         click_button 'Continue'
       end
 
@@ -91,20 +91,20 @@ RSpec.feature 'As a user' do
 
     scenario 'the change links take me to the correct page' do
       visit '/summary'
-      expect(page).to have_xpath "//a[.='Change'][@href='/marital-status']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/savings-and-investment']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/benefit']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/dependent']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/income']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/fee']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/probate']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/claim']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/form-name']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/dob']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/national-insurance']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/personal-detail']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/applicant-address']"
-      expect(page).to have_xpath "//a[.='Change'][@href='/contact']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:marital_status)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:savings_and_investment)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:benefit)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:dependent)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:income)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:fee)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:probate)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:claim)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:form_name)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:dob)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:national_insurance)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:personal_detail)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:applicant_address)}']"
+      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:contact)}']"
     end
   end
 end

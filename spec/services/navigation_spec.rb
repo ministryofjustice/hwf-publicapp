@@ -1,20 +1,41 @@
 require 'rails_helper'
 
 RSpec.describe Navigation do
-  subject { described_class.new.steps }
+  include Rails.application.routes.url_helpers
 
-  it { expect(subject[:marital_status]).to eq :savings_and_investment }
-  it { expect(subject[:savings_and_investment]).to eq :benefit }
-  it { expect(subject[:benefit]).to eq :dependent }
-  it { expect(subject[:dependent]).to eq :income }
-  it { expect(subject[:income]).to eq :fee }
-  it { expect(subject[:fee]).to eq :probate }
-  it { expect(subject[:probate]).to eq :claim }
-  it { expect(subject[:claim]).to eq :form_name }
-  it { expect(subject[:form_name]).to eq :national_insurance }
-  it { expect(subject[:national_insurance]).to eq :dob }
-  it { expect(subject[:dob]).to eq :personal_detail }
-  it { expect(subject[:personal_detail]).to eq :applicant_address }
-  it { expect(subject[:applicant_address]).to eq :contact }
-  it { expect(subject[:contact]).to eq :summary }
+  describe '#next' do
+    subject { described_class.new(current_question).next }
+
+    {
+      marital_status: :savings_and_investment,
+      savings_and_investment: :benefit,
+      benefit: :dependent,
+      dependent: :income,
+      income: :fee,
+      fee: :probate,
+      probate: :claim,
+      claim: :form_name,
+      form_name: :national_insurance,
+      national_insurance: :dob,
+      dob: :personal_detail,
+      personal_detail: :applicant_address,
+      applicant_address: :contact
+    }.each do |current_question, next_question|
+      context "for #{current_question} question" do
+        let(:current_question) { current_question }
+
+        it "routes to #{next_question} question" do
+          is_expected.to eql(question_path(next_question))
+        end
+      end
+    end
+
+    context 'for contact question' do
+      let(:current_question) { :contact }
+
+      it 'routes to the summary page' do
+        is_expected.to eql(summary_path)
+      end
+    end
+  end
 end

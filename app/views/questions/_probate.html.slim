@@ -1,0 +1,32 @@
+= render('shared/error_block', form: @form) if @form.errors.any?
+
+h2.heading-large
+  span.heading-secondary = t('breadcrumb', scope: @form.i18n_scope)
+  = t('text', scope: @form.i18n_scope)
+
+p = t('details', scope: @form.i18n_scope)
+
+= form_for @form, url: question_path(@form), method: :put do |f|
+  fieldset
+    legend.visuallyhidden= t('text', scope: @form.i18n_scope)
+    .form-group class=('error' if @form.errors[:kase].any?)
+      = f.hidden_field :kase, value: nil
+      span.error-message#kase = @form.errors[:kase].join(' ') if @form.errors.any?
+      label.block-label for='probate_kase_false'
+        = f.radio_button :kase, 'false'
+        = t('probate_case_false', scope: @form.i18n_scope)
+      label.block-label for='probate_kase_true' data-target='probate-details-panel'
+        = f.radio_button :kase, 'true'
+        = t('probate_case_true', scope: @form.i18n_scope)
+      #probate-details-panel.panel-indent.util_mb-medium.js-hidden
+        .form-group class=('error' if @form.errors[:deceased_name].any?)
+          span.error-message#deceased_name = @form.errors[:deceased_name].join(' ') if @form.errors[:deceased_name].any?
+          = f.label :deceased_name, class: 'form-label'
+          = f.text_field :deceased_name, class: 'form-control'
+        .form-group class=('error' if @form.errors[:date_of_death].any?)
+          span.error-message#date_of_death = @form.errors[:date_of_death].join(' ') if @form.errors[:date_of_death].any?
+          = f.label :date_of_death, class: 'form-label'
+          .hint = t('hint', scope: @form.i18n_scope)
+          = f.text_field :date_of_death, class: 'form-control'
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

@@ -21,4 +21,18 @@ class Base
     errors[attribute].clear
     errors.add(attribute, validation)
   end
+
+  def id
+    self.class.to_s.underscore
+  end
+  alias to_param id
+  alias to_partial_path id
+
+  def update_attributes(attributes)
+    self.attributes = attributes
+  end
+
+  def permitted_attributes
+    self.class.attribute_set.map(&:name)
+  end
 end

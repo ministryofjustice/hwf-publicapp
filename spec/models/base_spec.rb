@@ -1,13 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe Base, type: :model do
-  subject { described_class.new }
+  class SomeQuestion < Base
+    attribute :one, String
+    attribute :two, Boolean
+  end
 
-  it { is_expected.to respond_to :i18n_scope }
+  # Because this is a base (abstract) class, I use a concrete model for testing the features
+  subject(:model) { SomeQuestion.new }
 
-  describe '.i18n_scope' do
+  describe '#i18n_scope' do
     it 'returns the calling object name prefixed with "questions."' do
-      expect(subject.i18n_scope).to eql 'questions.base'
+      expect(model.i18n_scope).to eql 'questions.some_question'
+    end
+  end
+
+  %i[id to_param to_partial_path].each do |method_name|
+    describe "##{method_name}" do
+      it 'returns underscored string based on the class name' do
+        expect(model.send(method_name)).to eql('some_question')
+      end
+    end
+  end
+
+  describe '#update_attributes' do
+    before do
+      model.update_attributes(one: 'ONE', two: true)
+    end
+
+    it 'updates the attributes of the model' do
+      expect(model.one).to eql('ONE')
+      expect(model.two).to be true
+    end
+  end
+
+  describe '#permitted_attributes' do
+    it 'returns the list of all attributes from the model' do
+      expect(model.permitted_attributes).to eql(%i[one two])
     end
   end
 end

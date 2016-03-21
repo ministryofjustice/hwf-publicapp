@@ -20,7 +20,7 @@ RSpec.describe Dob, type: :model do
 
           context 'when a string is provided' do
             before { subject.valid? }
-            let(:error) { ["can't contain non numbers"] }
+            let(:error) { ['Enter the date in this format DD/MM/YYYY'] }
 
             it { expect(subject.errors.messages[:date_of_birth]).to eq error }
           end

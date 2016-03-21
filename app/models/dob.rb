@@ -22,9 +22,7 @@ class Dob < Base
   end
 
   def validate_dob
-    if date_of_birth =~ /[a-zA-Z]/
-      errors.add(:date_of_birth, "can't contain non numbers")
-    elsif !date_of_birth.is_a?(Date)
+    if date_of_birth =~ /[a-zA-Z]/ || !date_of_birth.is_a?(Date)
       errors.add(:date_of_birth, :not_a_date)
     end
   end

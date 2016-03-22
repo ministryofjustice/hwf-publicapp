@@ -184,8 +184,7 @@ en:
       text: 'What is your address?'
     contact:
       breadcrumb: 'Question 14 of 14'
-      text: "What's the best way to contact you?"
-      email_option: "Email"
-      phone_option: "Phone call"
-      post_option: "Post"
-      details: "Enter an email address if you want an email confirmation of your application."
+      text: "What's your email address?"
+      details: "We can email you to confirm your application has been received."
+      email_label: "Email address"
+      feedback_opt_in: "Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else."

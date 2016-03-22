@@ -16,7 +16,7 @@ RSpec.describe OnlineApplicationBuilder do
       'personal_detail' => { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' },
       'dob' => { 'date_of_birth' => '10/03/1967' },
       'applicant_address' => { 'address' => '1 Blue Fields, Shine Town', 'postcode' => 'SH01 TW0' },
-      'contact' => { 'email_option' => true, 'email' => 'mary@jones.com', 'phone_option' => true, 'phone' => '0721323232', 'post_option' => true }
+      'contact' => { 'email_option' => true, 'email' => 'mary@jones.com', 'phone_option' => false, 'post_option' => false, 'feedback_opt_in' => true }
     }
   end
   # We're using the real storage here to avoid an unnecessary mocking as these are mostly value objects
@@ -53,9 +53,9 @@ RSpec.describe OnlineApplicationBuilder do
       expect(subject.postcode).to eql('SH01 TW0')
       expect(subject.email_contact).to be true
       expect(subject.email_address).to eql('mary@jones.com')
-      expect(subject.phone_contact).to be true
-      expect(subject.phone).to eql('0721323232')
-      expect(subject.post_contact).to be true
+      expect(subject.phone_contact).to be false
+      expect(subject.post_contact).to be false
+      expect(subject.feedback_opt_in).to be true
     end
   end
 end

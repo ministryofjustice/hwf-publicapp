@@ -4,7 +4,7 @@ module.exports = {
   'Start': function(client) {
     client
       .startService()
-      .click('input.button-start', function() {
+      .click('.button-start', function() {
         console.log('     * Click start button');
       })
     ;
@@ -89,68 +89,6 @@ module.exports = {
       })
       .testShowHideRadio('claim_number', ['true', 'false'], 'claim-identifier-panel')
       .radioSelect('claim_number', 'false')
-      .nextPage()
-    ;
-  },
-
-  'Form name': function(client) {
-    client
-      .ensureCorrectPage('form.new_form_name', '/form-name', {
-        'h2': 'Question 9 of 14'
-      })
-      .nextPage()
-    ;
-  },
-
-  'NI number': function(client) {
-    client
-      .ensureCorrectPage('form.new_national_insurance', '/national-insurance', {
-        'h2': 'Question 10 of 14'
-      })
-      .setValue('#national_insurance_number', 'AB123456C')
-      .nextPage()
-    ;
-  },
-
-  'Date of birth': function(client) {
-    client
-      .ensureCorrectPage('form.new_dob', '/dob', {
-        'h2': 'Question 11 of 14'
-      })
-      .setValue('#dob_date_of_birth', '01/01/1980')
-      .nextPage()
-    ;
-  },
-
-  'Personal detail': function(client) {
-    client
-      .ensureCorrectPage('form.new_personal_detail', '/personal-detail', {
-        'h2': 'Question 12 of 14'
-      })
-      .setValue('#personal_detail_first_name', 'Test')
-      .setValue('#personal_detail_last_name', 'Tester')
-      .nextPage()
-    ;
-  },
-
-  'Address': function(client) {
-    client
-      .ensureCorrectPage('form.new_applicant_address', '/applicant-address', {
-        'h2': 'Question 13 of 14'
-      })
-      .setValue('#applicant_address_address', '1 Test Street')
-      .setValue('#applicant_address_postcode', 'TE37 1NG')
-      .nextPage()
-    ;
-  },
-
-  'Contact': function(client) {
-    client
-      .ensureCorrectPage('form.new_contact', '/contact', {
-        'h2': 'Question 14 of 14'
-      })
-      .testShowHideCheckbox('contact_email_option', 'email-field-panel')
-      .testShowHideCheckbox('contact_phone_option', 'phone-number-panel')
     ;
   },
 

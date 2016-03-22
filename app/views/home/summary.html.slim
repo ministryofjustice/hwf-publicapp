@@ -61,22 +61,11 @@ table
       td =t('address', scope: 'summary.labels')
       td =@summary.full_address
       td.right= link_to "Change", question_path(:applicant_address)
-    -if @summary.any_contact
-      -if @summary.contact_email_option
-        tr
-          td =t('contact_email', scope: 'summary.labels')
-          td =@summary.contact_email
-          td.right= link_to "Change", question_path(:contact)
-      -if @summary.contact_phone_option
-        tr
-          td =t('contact_phone', scope: 'summary.labels')
-          td =@summary.contact_phone
-          td.right= link_to "Change", question_path(:contact)
-      -if @summary.contact_post_option
-        tr
-          td =t('contact_post', scope: 'summary.labels')
-          td Yes
-          td.right= link_to "Change", question_path(:applicant_address)
+    -if @summary.contact_email.present?
+      tr
+        td =t('contact_email', scope: 'summary.labels')
+        td =@summary.contact_email
+        td.right= link_to "Change", question_path(:contact)
     -else
       tr
         td = t('contact', scope: 'summary.labels')

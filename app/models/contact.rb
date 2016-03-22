@@ -1,32 +1,20 @@
 class Contact < Base
-  attribute :email_option, Boolean, default: false
   attribute :email, String
-  attribute :phone_option, Boolean, default: false
-  attribute :phone, String
-  attribute :post_option, Boolean, default: false
+  attribute :feedback_opt_in, Boolean, default: false
 
-  validates :email_option, inclusion: { in: [true, false] }
-  validates :phone_option, inclusion: { in: [true, false] }
-  validates :post_option, inclusion: { in: [true, false] }
-
-  with_options if: :email_option? do
-    email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-    validates :email, format: { with: email_regex, allow_nil: false }
-  end
-
-  with_options if: :phone_option? do
-    validates :phone, presence: true
-  end
+  email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates :email, format: { with: email_regex, allow_nil: true, allow_blank: true }
+  validates :feedback_opt_in, inclusion: { in: [true, false] }
 
   private
 
   def export_params
     {
-      email_contact: email_option,
-      email_address: email_option ? email : nil,
-      phone_contact: phone_option,
-      phone: phone_option ? phone : nil,
-      post_contact: post_option
+      email_contact: email.present?,
+      email_address: email,
+      phone_contact: false,
+      post_contact: false,
+      feedback_opt_in: feedback_opt_in
     }
   end
 end

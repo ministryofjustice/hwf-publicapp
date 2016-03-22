@@ -23,11 +23,8 @@ module Views
       { personal_detail: 'last_name' },
       { applicant_address: 'address' },
       { applicant_address: 'postcode' },
-      { contact: 'email_option' },
       { contact: 'email' },
-      { contact: 'phone_option' },
-      { contact: 'phone' },
-      { contact: 'post_option' }
+      { contact: 'feedback_opt_in' }
     ].freeze
 
     ATTRIBUTES.each do |hash|
@@ -65,10 +62,6 @@ module Views
     def full_address
       [@applicant_address_address,
        @applicant_address_postcode].join(' ')
-    end
-
-    def any_contact
-      @contact_email_option || @contact_phone_option || @contact_post_option
     end
 
     def probate_date_of_death

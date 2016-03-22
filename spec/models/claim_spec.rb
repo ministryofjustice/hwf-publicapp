@@ -37,4 +37,26 @@ RSpec.describe Claim, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:identifier) { 'IDENTIFIER' }
+
+    subject { described_class.new(number: number, identifier: identifier).export }
+
+    context 'when number is true' do
+      let(:number) { true }
+
+      it 'returns hash with case_number set' do
+        is_expected.to eql(case_number: identifier)
+      end
+    end
+
+    context 'when number is false' do
+      let(:number) { false }
+
+      it 'returns hash with case_number nil' do
+        is_expected.to eql(case_number: nil)
+      end
+    end
+  end
 end

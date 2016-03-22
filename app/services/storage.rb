@@ -11,4 +11,12 @@ class Storage
     params = @session[form.id] || {}
     form.update_attributes(params)
   end
+
+  def submission_result=(result)
+    @session[:submission_result] = result
+  end
+
+  def submission_result
+    @session[:submission_result]
+  end
 end

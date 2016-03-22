@@ -24,4 +24,25 @@ RSpec.describe Benefit, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    subject { described_class.new(on_benefits: on_benefits).export }
+
+    context 'when on_benefits is true' do
+      let(:on_benefits) { true }
+
+      it 'returns hash with benefits parameter true' do
+        is_expected.to eql(benefits: true)
+      end
+    end
+
+    context 'when on_benefits is false' do
+      let(:on_benefits) { false }
+
+      it 'returns hash with on_benefits parameter true' do
+        is_expected.to eql(benefits: false)
+      end
+    end
+  end
+
 end

@@ -10,9 +10,17 @@ class NationalInsurance < Base
 
   before_validation :format_number
 
+  private
+
   def format_number
     unless number.nil?
       number.upcase!
     end
+  end
+
+  def export_params
+    {
+      ni_number: number
+    }
   end
 end

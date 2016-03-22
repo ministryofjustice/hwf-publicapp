@@ -39,4 +39,16 @@ RSpec.describe Base, type: :model do
       expect(model.permitted_attributes).to eql(%i[one two])
     end
   end
+
+  describe '#export' do
+    let(:params) { double }
+
+    before do
+      allow(subject).to receive(:export_params).and_return(params)
+    end
+
+    it 'returns parameters from export_params method overriden by subclassing' do
+      expect(subject.export).to eql(params)
+    end
+  end
 end

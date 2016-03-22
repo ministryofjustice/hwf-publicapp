@@ -39,4 +39,26 @@ RSpec.describe Dependent, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:children_number) { 3 }
+
+    subject { described_class.new(children: children, children_number: children_number).export }
+
+    context 'when children is true' do
+      let(:children) { true }
+
+      it 'returns hash with children parameter containing children_number' do
+        is_expected.to eql(children: children_number)
+      end
+    end
+
+    context 'when children is false' do
+      let(:children) { false }
+
+      it 'returns hash with children parameter containing 0' do
+        is_expected.to eql(children: 0)
+      end
+    end
+  end
 end

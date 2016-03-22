@@ -35,4 +35,14 @@ class Base
   def permitted_attributes
     self.class.attribute_set.map(&:name)
   end
+
+  def export
+    export_params
+  end
+
+  private
+
+  def export_params
+    raise NotImplementedError
+  end
 end

@@ -83,4 +83,57 @@ RSpec.describe Contact, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:email_option) { true }
+    let(:email) { 'some@email.domain' }
+    let(:phone_option) { true }
+    let(:phone) { '12345678' }
+    let(:post_option) { true }
+
+    subject { described_class.new(email_option: email_option, email: email, phone_option: phone_option, phone: phone, post_option: post_option).export }
+
+    context 'when email_option is true' do
+      it 'the returned hash includes email_contact true and email_address' do
+        is_expected.to include(email_contact: true, email_address: email)
+      end
+    end
+
+    context 'when email_option is false' do
+      let(:email_option) { false }
+
+      it 'the returned hash includes email_contact true and email_address is nil' do
+        is_expected.to include(email_contact: false, email_address: nil)
+      end
+    end
+
+    context 'when phone_option is true' do
+      it 'the returned hash includes phone_contact true and phone' do
+        is_expected.to include(phone_contact: true, phone: phone)
+      end
+    end
+
+    context 'when phone_option is false' do
+      let(:phone_option) { false }
+
+      it 'the returned hash includes phone_contact true and phone is nil' do
+        is_expected.to include(phone_contact: false, phone: nil)
+      end
+    end
+
+    context 'when post_option is true' do
+      it 'the returned hash includes post_contact true' do
+        is_expected.to include(post_contact: true)
+      end
+    end
+
+    context 'when post_option is false' do
+      let(:post_option) { false }
+
+      it 'the returned hash includes post_contact true' do
+        is_expected.to include(post_contact: false)
+      end
+    end
+  end
+
 end

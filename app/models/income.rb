@@ -40,4 +40,11 @@ class Income < Base
       errors.add(:combined_other_payments, I18n.t('errors.combined_other_payments_invalid'))
     end
   end
+
+  def export_params
+    usable = attributes.select { |_, v| v.is_a?(Float) }.values
+    {
+      income: usable.empty? ? nil : usable.inject(:+)
+    }
+  end
 end

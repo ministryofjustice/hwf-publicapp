@@ -47,4 +47,10 @@ class Dob < Base
   def too_old_error
     errors.add(:date_of_birth, :too_old)
   end
+
+  def export_params
+    {
+      date_of_birth: date_of_birth
+    }
+  end
 end

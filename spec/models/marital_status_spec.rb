@@ -24,4 +24,24 @@ RSpec.describe MaritalStatus, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    subject { described_class.new(married: married).export }
+
+    context 'when married is true' do
+      let(:married) { true }
+
+      it 'returns hash with married parameter true' do
+        is_expected.to eql(married: true)
+      end
+    end
+
+    context 'when married is false' do
+      let(:married) { false }
+
+      it 'returns hash with married parameter true' do
+        is_expected.to eql(married: false)
+      end
+    end
+  end
 end

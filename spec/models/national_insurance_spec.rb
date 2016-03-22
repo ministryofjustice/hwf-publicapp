@@ -42,4 +42,15 @@ RSpec.describe NationalInsurance, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:number) { 'AA123456A' }
+
+    subject { described_class.new(number: number).export }
+
+    it 'returns hash with ni_number set' do
+      is_expected.to eql(ni_number: number)
+    end
+  end
+
 end

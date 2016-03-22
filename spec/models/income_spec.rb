@@ -23,4 +23,30 @@ RSpec.describe Income, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    subject { described_class.new(wages: wages, other: other, partner_universal_credit: partner_universal_credit).export }
+
+    context 'when some income is set' do
+      let(:wages) { 400 }
+      let(:other) { 100 }
+      let(:partner_universal_credit) { 300 }
+
+      it 'returns hash with all income summarised' do
+        is_expected.to eql(income: (wages + other + partner_universal_credit).to_f)
+      end
+    end
+
+    context 'when no income is set' do
+      let(:wages) { nil }
+      let(:other) { nil }
+      let(:partner_universal_credit) { nil }
+
+      it 'returns hash with income nil' do
+        is_expected.to eql(income: nil)
+      end
+    end
+
+  end
+
 end

@@ -34,4 +34,27 @@ RSpec.describe Fee, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:date_paid) { Date.parse('12/12/2015') }
+
+    subject { described_class.new(paid: paid, date_paid: date_paid).export }
+
+    context 'when paid is true' do
+      let(:paid) { true }
+
+      it 'returns hash with refund true and date_fee_paid set' do
+        is_expected.to eql(refund: true, date_fee_paid: date_paid)
+      end
+    end
+
+    context 'when paid is false' do
+      let(:paid) { false }
+
+      it 'returns hash with refund false dna date_fee_paid nil' do
+        is_expected.to eql(refund: false, date_fee_paid: nil)
+      end
+    end
+  end
+
 end

@@ -17,4 +17,16 @@ class Contact < Base
   with_options if: :phone_option? do
     validates :phone, presence: true
   end
+
+  private
+
+  def export_params
+    {
+      email_contact: email_option,
+      email_address: email_option ? email : nil,
+      phone_contact: phone_option,
+      phone: phone_option ? phone : nil,
+      post_contact: post_option
+    }
+  end
 end

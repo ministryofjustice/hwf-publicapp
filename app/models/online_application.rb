@@ -25,4 +25,5 @@ class OnlineApplication
   attribute :phone_contact, Boolean
   attribute :phone, String
   attribute :post_contact, Boolean
+  attribute :feedback_opt_in, Boolean
 end

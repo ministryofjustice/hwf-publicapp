@@ -529,6 +529,6 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'Email'
     expect(page).to have_content 'foo@bar.com'
     click_link_or_button 'Complete application'
-    expect(page).to have_content 'Your reference number is'
+    expect(page).to have_content 'Write this application reference on your claim form'
   end
 end

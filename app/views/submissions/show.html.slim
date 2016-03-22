@@ -1,6 +1,7 @@
 - content_for :stylesheets
   = stylesheet_link_tag('confirmation-print.css', media: 'print')
 
+/ IF CONFIRMATION
 h2.heading-large
   span.heading-secondary =t('confirmation.breadcrumb')
   =t('confirmation.heading')
@@ -8,7 +9,7 @@ h2.heading-large
 ol.list.list-number.next-steps
   li
     =t('confirmation.steps.one')
-    .number =@result['message']
+    .inset =@result['message']
   li =t('confirmation.steps.two')
   li =t('confirmation.steps.three')
   li =t('confirmation.steps.four')
@@ -19,5 +20,35 @@ ol.list.list-number.next-steps
       span.visuallyhidden =t('confirmation.notice.warning')
     strong.bold-small =t('confirmation.notice.text')
 
+
+/ ELSE IF REFUND
+h2.heading-large
+  span.heading-secondary =t('confirmation.breadcrumb')
+  =t('refund.heading')
+
+ol.list.list-number.next-steps
+  li
+    ul
+      li =t('refund.steps.one.one')
+      li
+        =t('refund.steps.one.two')
+        .inset
+          ul
+            li =t('refund.letter.one')
+            li =t('refund.letter.two')
+            li =t('refund.letter.three')
+            li =t('refund.letter.four')
+            li =t('refund.letter.five')
+  li =t('refund.steps.two')
+  li =t('refund.steps.three')
+
+.notice
+  h3.heading-medium
+    i.icon.icon-important
+      span.visuallyhidden =t('refund.notice.warning')
+    strong.bold-small =t('refund.notice.text')
+
+
+/ SHOW IN BOTH CASES
 .js-only
   p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')

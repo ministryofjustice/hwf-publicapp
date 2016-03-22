@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', groups: [:development] # this has to be here because of load order
+
 gem 'rails', '~> 4.2.6'
 
 gem 'config'
@@ -26,6 +28,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'foreman'
   gem 'launchy'
   gem 'spring'
   gem 'web-console'

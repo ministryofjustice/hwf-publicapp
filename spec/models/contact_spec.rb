@@ -66,6 +66,12 @@ RSpec.describe Contact, type: :model do
       is_expected.to include(post_contact: false)
     end
 
+    context 'when feedback_opt_in is true' do
+      it 'the returned hash includes feedback_opt_in true' do
+        is_expected.to include(feedback_opt_in: true)
+      end
+    end
+
     context 'when feedback_opt_in is false' do
       let(:feedback_opt_in) { false }
 

@@ -42,22 +42,28 @@ RSpec.feature 'As a user' do
 
         describe 'providing an invalid date' do
           before do
-            fill_in 'fee_date_paid', with: '1/45/2016'
+            fill_in :fee_date_paid_day, with: '1'
+            fill_in :fee_date_paid_month, with: '45'
+            fill_in :fee_date_paid_year, with: '2016'
             click_button 'Continue'
           end
 
           scenario 'I expect the fields to have specific errors' do
-            expect(page).to have_xpath('//span[@class="error-message"]', text: 'That date is not recognised')
+            expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter the date in this format DD/MM/YYYY')
           end
 
           scenario 'I expect the incorrect data to be shown' do
-            expect(page).to have_xpath('//input[@id="fee_date_paid" and @value="1/45/2016"]')
+            expect(page).to have_xpath('//input[@id="fee_date_paid_day" and @value="1"]')
+            expect(page).to have_xpath('//input[@id="fee_date_paid_month" and @value="45"]')
+            expect(page).to have_xpath('//input[@id="fee_date_paid_year" and @value="2016"]')
           end
         end
 
         describe 'when the date is too old' do
           before do
-            fill_in 'fee_date_paid', with: 4.months.ago
+            fill_in :fee_date_paid_day, with: 4.months.ago.day
+            fill_in :fee_date_paid_month, with: 4.months.ago.month
+            fill_in :fee_date_paid_year, with: 4.months.ago.year
             click_button 'Continue'
           end
 
@@ -66,7 +72,9 @@ RSpec.feature 'As a user' do
           end
 
           scenario 'I expect the incorrect data to be shown' do
-            expect(page).to have_xpath("//input[@id='fee_date_paid' and @value='#{4.months.ago.strftime('%d/%m/%Y')}']")
+            expect(page).to have_xpath("//input[@id='fee_date_paid_day' and @value='#{4.months.ago.day}']")
+            expect(page).to have_xpath("//input[@id='fee_date_paid_month' and @value='#{4.months.ago.month}']")
+            expect(page).to have_xpath("//input[@id='fee_date_paid_year' and @value='#{4.months.ago.year}']")
           end
         end
 

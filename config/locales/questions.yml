@@ -22,8 +22,8 @@ en:
           item_4: 'forced marriage'
           item_5: 'you and your partner are both part of a multiple fee group'
     savings_and_investment:
-      less_than_limit_false: 'Less than £3,000'
-      less_than_limit_true: 'More than £3,000'
+      less_than_limit_true: 'Less than £3,000'
+      less_than_limit_false: 'More than £3,000'
       breadcrumb: 'Step 2 of 16'
       text: 'How much do you have in savings and investments?'
       details:

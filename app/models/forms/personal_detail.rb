@@ -1,20 +1,20 @@
 module Forms
-class PersonalDetail < Base
-  attribute :title, String
-  attribute :first_name, String
-  attribute :last_name, String
+  class PersonalDetail < Base
+    attribute :title, String
+    attribute :first_name, String
+    attribute :last_name, String
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+    validates :first_name, presence: true
+    validates :last_name, presence: true
 
-  private
+    private
 
-  def export_params
-    {
-      title: title,
-      first_name: first_name,
-      last_name: last_name
-    }
+    def export_params
+      {
+        title: title,
+        first_name: first_name,
+        last_name: last_name
+      }
+    end
   end
-end
 end

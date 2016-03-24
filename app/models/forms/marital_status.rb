@@ -1,13 +1,13 @@
 module Forms
-class MaritalStatus < Base
-  attribute :married, Boolean
+  class MaritalStatus < Base
+    attribute :married, Boolean
 
-  validates :married, inclusion: { in: [true, false] }
+    validates :married, inclusion: { in: [true, false] }
 
-  private
+    private
 
-  def export_params
-    { married: married }
+    def export_params
+      { married: married }
+    end
   end
-end
 end

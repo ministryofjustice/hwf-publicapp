@@ -1,13 +1,13 @@
 module Forms
-class FormName < Base
-  attribute :identifier, String
+  class FormName < Base
+    attribute :identifier, String
 
-  private
+    private
 
-  def export_params
-    {
-      form_name: identifier.blank? ? nil : identifier
-    }
+    def export_params
+      {
+        form_name: identifier.blank? ? nil : identifier
+      }
+    end
   end
-end
 end

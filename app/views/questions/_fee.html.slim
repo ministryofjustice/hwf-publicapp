@@ -5,7 +5,7 @@ h2.heading-large
   = t('text', scope: @form.i18n_scope)
 p = t('details', scope: @form.i18n_scope)
 
-= form_for @form, url: question_path(@form), method: :put do |f|
+= form_for @form, url: question_path(@form), html: { autocomplete: @form.autocomplete, method: :put } do |f|
   fieldset
     legend.visuallyhidden = t('text', scope: @form.i18n_scope)
     .form-group class=('error' if @form.errors[:paid].any?)

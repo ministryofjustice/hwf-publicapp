@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Base, type: :model do
-  class SomeQuestion < Base
+RSpec.describe Forms::Base, type: :model do
+  class SomeQuestion < Forms::Base
     attribute :one, String
     attribute :two, Boolean
   end

@@ -1,3 +1,4 @@
+module Forms
 class NationalInsurance < Base
   include ActiveModel::Validations::Callbacks
 
@@ -23,4 +24,5 @@ class NationalInsurance < Base
       ni_number: number
     }
   end
+end
 end

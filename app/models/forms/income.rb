@@ -1,3 +1,4 @@
+module Forms
 class Income < Base
   attribute :wages, Float
   attribute :child_benefit, Float
@@ -47,4 +48,5 @@ class Income < Base
       income: usable.empty? ? nil : usable.inject(:+)
     }
   end
+end
 end

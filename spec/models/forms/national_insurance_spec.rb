@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe NationalInsurance, type: :model do
+RSpec.describe Forms::NationalInsurance, type: :model do
   subject { described_class.new }
 
   describe 'validations' do

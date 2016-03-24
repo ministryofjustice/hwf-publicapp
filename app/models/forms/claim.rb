@@ -1,3 +1,4 @@
+module Forms
 class Claim < Base
   attribute :number, Boolean
   attribute :identifier, String
@@ -15,4 +16,5 @@ class Claim < Base
       case_number: number ? identifier : nil
     }
   end
+end
 end

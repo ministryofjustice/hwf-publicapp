@@ -1,3 +1,4 @@
+module Forms
 class Contact < Base
   attribute :email, String
   attribute :feedback_opt_in, Boolean, default: false
@@ -17,4 +18,5 @@ class Contact < Base
       feedback_opt_in: feedback_opt_in
     }
   end
+end
 end

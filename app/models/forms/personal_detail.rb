@@ -1,3 +1,4 @@
+module Forms
 class PersonalDetail < Base
   attribute :title, String
   attribute :first_name, String
@@ -15,4 +16,5 @@ class PersonalDetail < Base
       last_name: last_name
     }
   end
+end
 end

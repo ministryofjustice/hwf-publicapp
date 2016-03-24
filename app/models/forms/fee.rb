@@ -1,3 +1,4 @@
+module Forms
 class Fee < Base
   attribute :paid, Boolean
   attribute :date_paid, Date
@@ -24,4 +25,5 @@ class Fee < Base
       date_fee_paid: paid ? date_paid : nil
     }
   end
+end
 end

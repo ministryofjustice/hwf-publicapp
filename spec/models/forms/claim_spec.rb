@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Claim, type: :model do
+RSpec.describe Forms::Claim, type: :model do
   subject { described_class.new }
 
   describe 'validations' do

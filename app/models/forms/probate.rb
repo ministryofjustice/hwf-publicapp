@@ -1,3 +1,4 @@
+module Forms
 class Probate < Base
   attribute :kase, Boolean
   attribute :deceased_name, String
@@ -32,4 +33,5 @@ class Probate < Base
       date_of_death: kase ? date_of_death : nil
     }
   end
+end
 end

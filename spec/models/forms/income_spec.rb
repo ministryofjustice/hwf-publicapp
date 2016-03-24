@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Income, type: :model do
+RSpec.describe Forms::Income, type: :model do
   subject { described_class.new }
 
   describe 'validations' do

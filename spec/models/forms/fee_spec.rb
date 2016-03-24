@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Fee, type: :model do
+RSpec.describe Forms::Fee, type: :model do
   subject { described_class.new }
 
   describe 'validations' do

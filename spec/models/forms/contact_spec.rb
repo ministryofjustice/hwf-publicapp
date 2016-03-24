@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Contact, type: :model do
+RSpec.describe Forms::Contact, type: :model do
   subject do
     described_class.new(email: 'foo@bar.com',
                         feedback_opt_in: true)

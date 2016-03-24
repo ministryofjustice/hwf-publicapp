@@ -1,3 +1,4 @@
+module Forms
 class ApplicantAddress < Base
   attribute :address, String
   attribute :postcode, String
@@ -13,4 +14,5 @@ class ApplicantAddress < Base
       postcode: postcode
     }
   end
+end
 end

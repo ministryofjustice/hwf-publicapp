@@ -1,3 +1,4 @@
+module Forms
 class SavingsAndInvestment < Base
   attribute :less_than_limit, Boolean
 
@@ -10,4 +11,5 @@ class SavingsAndInvestment < Base
       threshold_exceeded: !less_than_limit
     }
   end
+end
 end

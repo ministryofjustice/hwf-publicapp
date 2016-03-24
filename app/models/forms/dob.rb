@@ -1,3 +1,4 @@
+module Forms
 class Dob < Base
   attribute :date_of_birth, Date
 
@@ -53,4 +54,5 @@ class Dob < Base
       date_of_birth: date_of_birth
     }
   end
+end
 end

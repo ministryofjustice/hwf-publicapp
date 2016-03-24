@@ -1,3 +1,4 @@
+module Forms
 class FormName < Base
   attribute :identifier, String
 
@@ -8,4 +9,5 @@ class FormName < Base
       form_name: identifier.blank? ? nil : identifier
     }
   end
+end
 end

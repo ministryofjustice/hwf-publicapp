@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Probate, type: :model do
+RSpec.describe Forms::Probate, type: :model do
   subject { described_class.new }
 
   describe 'validations' do

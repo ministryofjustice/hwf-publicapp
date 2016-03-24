@@ -1,3 +1,4 @@
+module Forms
 class Base
   include Virtus.model(nullify_blank: true)
   include ActiveModel::Model
@@ -49,4 +50,5 @@ class Base
   def export_params
     raise NotImplementedError
   end
+end
 end

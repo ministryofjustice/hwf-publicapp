@@ -1,3 +1,4 @@
+module Forms
 class MaritalStatus < Base
   attribute :married, Boolean
 
@@ -8,4 +9,5 @@ class MaritalStatus < Base
   def export_params
     { married: married }
   end
+end
 end

@@ -1,3 +1,4 @@
+module Forms
 class Benefit < Base
   attribute :on_benefits, Boolean
 
@@ -10,4 +11,5 @@ class Benefit < Base
       benefits: on_benefits
     }
   end
+end
 end

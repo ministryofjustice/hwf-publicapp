@@ -1,3 +1,4 @@
+module Forms
 class Dependent < Base
   attribute :children, Boolean
   attribute :children_number, Integer
@@ -15,4 +16,5 @@ class Dependent < Base
       children: children ? children_number : 0
     }
   end
+end
 end

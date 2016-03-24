@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SavingsAndInvestment, type: :model do
+RSpec.describe Forms::SavingsAndInvestment, type: :model do
   subject { described_class.new }
 
   describe 'validations' do

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Dob, type: :model do
+RSpec.describe Forms::Dob, type: :model do
   subject { described_class.new }
 
   describe 'validations' do
@@ -32,7 +32,7 @@ RSpec.describe Dob, type: :model do
             end
 
             let(:error) do
-              [I18n.t('activemodel.errors.models.dob.attributes.date_of_birth.too_young', minimum_age: Dob::MINIMUM_AGE)]
+              [I18n.t('activemodel.errors.models.forms/dob.attributes.date_of_birth.too_young', minimum_age: Forms::Dob::MINIMUM_AGE)]
             end
 
             it { expect(subject.errors.messages[:date_of_birth]).to eq error }
@@ -45,7 +45,7 @@ RSpec.describe Dob, type: :model do
             end
 
             let(:error) do
-              [I18n.t('activemodel.errors.models.dob.attributes.date_of_birth.too_old')]
+              [I18n.t('activemodel.errors.models.forms/dob.attributes.date_of_birth.too_old')]
             end
 
             it { expect(subject.errors.messages[:date_of_birth]).to eq error }

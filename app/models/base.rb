@@ -40,6 +40,10 @@ class Base
     export_params
   end
 
+  def autocomplete
+    Rails.env.development? ? 'on' : 'off'
+  end
+
   private
 
   def export_params

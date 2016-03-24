@@ -51,4 +51,26 @@ RSpec.describe Base, type: :model do
       expect(subject.export).to eql(params)
     end
   end
+
+  describe '#autocomplete' do
+    before { allow(Rails).to receive(:env).and_return(ActiveSupport::StringInquirer.new(env)) }
+
+    describe 'when in the development environment' do
+      let(:env) { 'development' }
+
+      it 'returns `yes`' do
+        expect(subject.autocomplete).to eql 'on'
+      end
+    end
+
+    %w[production test].each do |environment|
+      describe "when in the #{environment} environment" do
+        let(:env) { environment }
+
+        it 'returns `no`' do
+          expect(subject.autocomplete).to eql 'off'
+        end
+      end
+    end
+  end
 end

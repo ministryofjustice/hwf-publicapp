@@ -3,19 +3,19 @@ require 'rails_helper'
 RSpec.describe SubmissionsController, type: :controller do
   let(:session) { double }
   let(:storage) { double }
+  let(:online_application) { double }
+  let(:builder) { double(online_application: online_application) }
 
   before do
     allow(controller).to receive(:session).and_return(session)
     allow(Storage).to receive(:new).with(session).and_return(storage)
+    allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
   end
 
   describe 'POST #create' do
-    let(:online_application) { double }
-    let(:builder) { double(online_application: online_application) }
     let(:service) { double }
 
     before do
-      allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
       allow(SubmitApplication).to receive(:new).and_return(service)
       allow(service).to receive(:post).with(online_application).and_return(response)
       allow(storage).to receive(:submission_result=)
@@ -72,6 +72,10 @@ RSpec.describe SubmissionsController, type: :controller do
 
     it 'clears the session' do
       expect(controller).to have_received(:reset_session)
+    end
+
+    it 'assigns the online application model' do
+      expect(assigns(:online_application)).to eql(online_application)
     end
   end
 end

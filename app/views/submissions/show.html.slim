@@ -1,23 +1,50 @@
 - content_for :stylesheets
   = stylesheet_link_tag('confirmation-print.css', media: 'print')
 
-h2.heading-large
-  span.heading-secondary =t('confirmation.breadcrumb')
-  =t('confirmation.heading')
+- if @online_application.refund?
+  h2.heading-large
+    span.heading-secondary = t('confirmation.breadcrumb')
+    = t('refund.heading')
 
-ol.list.list-number.next-steps
-  li
-    =t('confirmation.steps.one')
-    .number =@result['message']
-  li =t('confirmation.steps.two')
-  li =t('confirmation.steps.three')
-  li =t('confirmation.steps.four')
+  ol.list.list-number.next-steps
+    li
+      ul
+        li = t('refund.steps.one.one')
+        li
+          = t('refund.steps.one.two')
+          .inset
+            ul
+              li = t('refund.letter.one', reference: @result['message'])
+              li = t('refund.letter.two')
+              li = t('refund.letter.three', date_fee_paid: @online_application.date_fee_paid)
+              li = t('refund.letter.four')
+              li = t('refund.letter.five', full_name: @online_application.full_name)
+    li = t('refund.steps.two')
+    li = t('refund.steps.three')
 
-.notice
-  h3.heading-medium
-    i.icon.icon-important
-      span.visuallyhidden =t('confirmation.notice.warning')
-    strong.bold-small =t('confirmation.notice.text')
+  .notice
+    h3.heading-medium
+      i.icon.icon-important
+        span.visuallyhidden = t('refund.notice.warning')
+      strong.bold-small = t('refund.notice.text')
+- else
+  h2.heading-large
+    span.heading-secondary =t('confirmation.breadcrumb')
+    =t('confirmation.heading')
+
+  ol.list.list-number.next-steps
+    li
+      =t('confirmation.steps.one')
+      .inset =@result['message']
+    li =t('confirmation.steps.two')
+    li =t('confirmation.steps.three')
+    li =t('confirmation.steps.four')
+
+  .notice
+    h3.heading-medium
+      i.icon.icon-important
+        span.visuallyhidden =t('confirmation.notice.warning')
+      strong.bold-small =t('confirmation.notice.text')
 
 .js-only
   p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')

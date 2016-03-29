@@ -26,4 +26,8 @@ class OnlineApplication
   attribute :phone, String
   attribute :post_contact, Boolean
   attribute :feedback_opt_in, Boolean
+
+  def full_name
+    %i[title first_name last_name].map { |field| send(field) }.compact.join(' ')
+  end
 end

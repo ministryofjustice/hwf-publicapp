@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'User submits their application' do
+  let(:current_time) { Time.zone.parse('2016-03-29 14:50') }
   let(:reference) { 'HWF-CIDI16' }
 
   scenario 'User submits their non refund application and it is successfully processed' do
@@ -11,7 +12,9 @@ RSpec.feature 'User submits their application' do
   end
 
   scenario 'User submits their refund application and it is successfully processed' do
-    given_user_provides_all_data_for_refund
+    Timecop.freeze(current_time) do
+      given_user_provides_all_data_for_refund
+    end
     and_the_submission_service_is_available(reference)
     when_they_submit_the_application
     then_they_are_presented_with_the_refund_confirmation_page_with_reference_number
@@ -34,6 +37,7 @@ RSpec.feature 'User submits their application' do
     expect(page.current_path).to eql('/submission')
     expect(page).to have_content('Send your reference number to the court or tribunal dealing with your case')
     expect(page).to have_content(reference)
+    expect(page).to have_content('on 08/03/2016')
     expect(page).to have_content('Sir Bob Oliver')
   end
 

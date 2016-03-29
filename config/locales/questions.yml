@@ -68,7 +68,7 @@ en:
           name: 'Universal Credit'
           hint: '(and you’re earning less than £6,000 a year)'
         item_5:
-          name: 'State Pension'
+          name: 'Pension Credit'
           hint: '(Guarantee Credit)'
         item_6:
           name: 'Scottish Civil Legal Aid'

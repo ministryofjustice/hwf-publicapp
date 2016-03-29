@@ -12,6 +12,7 @@ class SubmissionsController < ApplicationController
   end
 
   def show
+    @online_application = builder.online_application
     @result = storage.submission_result
     reset_session
   end

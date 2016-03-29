@@ -61,3 +61,11 @@ table.income {
     }
   }
 }
+
+.form-checkbox {
+  display: table;
+
+  input, span {
+    display: table-cell;
+  }
+}

@@ -1,1 +1,15 @@
-= render(@form)
+= render('shared/error_block', form: @form) if @form.errors.any?
+
+h2.heading-large
+  span.heading-secondary= t('breadcrumb', scope: @form.i18n_scope)
+  = t('text', scope: @form.i18n_scope)
+
+=render("questions/headers/#{@form.id}")
+
+= form_for @form, as: @form.id, url: question_path(@form), html: { autocomplete: @form.autocomplete, method: :put } do |f|
+  fieldset
+
+    =render("questions/forms/#{@form.id}", f: f)
+
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

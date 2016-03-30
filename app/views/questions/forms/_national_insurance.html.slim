@@ -1,0 +1,18 @@
+legend.visuallyhidden =t('text', scope: @form.i18n_scope)
+
+.form-group class=('error' if @form.errors.any?)
+  label.form-label for='national_insurance_number'
+    span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
+    span.error-message#number = @form.errors[:number].join(' ') if @form.errors[:number].any?
+    = f.text_field :number, class: 'form-control js-uppercase'
+
+.form-group
+  details
+    summary =t('summary', scope: "#{@form.i18n_scope}.details")
+
+    .panel-indent.text
+      ul.list.list-bullet
+        li =t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
+        li =link_to t('item_2', scope: "#{@form.i18n_scope}.details.section_1"), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
+
+      p =t('detail', scope: "#{@form.i18n_scope}.details.section_1")

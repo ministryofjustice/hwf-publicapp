@@ -1,0 +1,16 @@
+legend.visuallyhidden =t('text', scope: @form.i18n_scope)
+
+.form-group  class=('error' if @form.errors.any?)
+  label.form-label for='form_name_identifier'
+    span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
+    span.error-message#identifier = @form.errors[:identifier].join(' ') if @form.errors[:identifier].any?
+    = f.text_field :identifier, class: 'form-control'
+
+.form-group
+  details
+    summary =t('details.summary', scope: @form.i18n_scope)
+
+    .panel-indent
+      p =t('details.item_1', scope: @form.i18n_scope)
+      p =t('details.item_2', scope: @form.i18n_scope)
+      p =t('details.item_3', scope: @form.i18n_scope)

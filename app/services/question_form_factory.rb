@@ -22,7 +22,7 @@ class QuestionFormFactory
   def self.get_form(id)
     raise QuestionDoesNotExist unless IDS.include?(id)
 
-    class_name = id.to_s.classify.constantize
+    class_name = "Forms::#{id.to_s.classify}".constantize
     class_name.new
   end
 end

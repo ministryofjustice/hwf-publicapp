@@ -8,7 +8,7 @@ RSpec.describe QuestionFormFactory do
       let(:id) { :marital_status }
 
       it 'returns an instance of the form' do
-        is_expected.to be_a(MaritalStatus)
+        is_expected.to be_a(Forms::MaritalStatus)
       end
     end
 

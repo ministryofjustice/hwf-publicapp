@@ -9,7 +9,7 @@ p =t('details.section_2', scope: @form.i18n_scope)
 p =t('details.section_3', scope: @form.i18n_scope).html_safe
 p =t('details.section_4', scope: @form.i18n_scope)
 
-= form_for @form, url: question_path(@form), html: { autocomplete: @form.autocomplete, method: :put } do |f|
+= form_for @form, as: @form.id, url: question_path(@form), html: { autocomplete: @form.autocomplete, method: :put } do |f|
   fieldset
     legend.visuallyhidden = t('text', scope: @form.i18n_scope)
 

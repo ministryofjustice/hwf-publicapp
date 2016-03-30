@@ -4,7 +4,7 @@ module Forms
     include ActiveModel::Model
 
     def i18n_scope
-      "questions.#{self.class.name.underscore}"
+      "questions.#{id}"
     end
 
     def validate_date?(field)
@@ -24,10 +24,13 @@ module Forms
     end
 
     def id
-      self.class.to_s.underscore
+      self.class.name.demodulize.underscore
     end
     alias to_param id
-    alias to_partial_path id
+
+    def to_partial_path
+      "questions/forms/#{id}"
+    end
 
     def update_attributes(attributes)
       self.attributes = attributes

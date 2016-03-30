@@ -28,10 +28,6 @@ module Forms
     end
     alias to_param id
 
-    def to_partial_path
-      "questions/forms/#{id}"
-    end
-
     def update_attributes(attributes)
       self.attributes = attributes
     end

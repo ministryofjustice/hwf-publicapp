@@ -24,12 +24,6 @@ module Forms
       end
     end
 
-    describe '#to_partial_path' do
-      it 'returns path to the questions controller forms folder' do
-        expect(model.to_partial_path).to eql('questions/forms/some_question')
-      end
-    end
-
     describe '#update_attributes' do
       before do
         model.update_attributes(one: 'ONE', two: true)

@@ -8,7 +8,7 @@ en:
     combined_other_payments_invalid: 'Enter the amount of your income'
   activemodel:
     attributes:
-      income:
+      forms/income:
         wages: 'Wages (before tax and National Insurance)'
         child_benefit: 'Child Benefit'
         working_tax_credit: 'Working tax credit'
@@ -21,14 +21,14 @@ en:
         rent_living_with: 'Rent from anyone living with you'
         rent_other_property: 'Rent from other properties you own'
         other_description: 'Other monthly income'
-      dependent:
+      forms/dependent:
         children_number: Number of children
-      fee:
+      forms/fee:
         date_paid: "Date fee paid"
-      probate:
+      forms/probate:
         deceased_name: "Name of deceased"
         date_of_death: "Date of death"
-      form_name:
+      forms/form_name:
         identifier: 'Form name'
     errors:
       models:

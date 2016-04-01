@@ -51,13 +51,13 @@ table
       td=@summary.form_name_identifier
       td.right= link_to "Change", question_path(:form_name)
     tr
-      td =t('date_of_birth', scope: 'summary.labels')
-      td =@summary.dob_date_of_birth
-      td.right= link_to "Change", question_path(:dob)
-    tr
       td =t('ni_number', scope: 'summary.labels')
       td =@summary.national_insurance_number
       td.right= link_to "Change", question_path(:national_insurance)
+    tr
+      td =t('date_of_birth', scope: 'summary.labels')
+      td =@summary.dob_date_of_birth
+      td.right= link_to "Change", question_path(:dob)
     tr
       td =t('personal', scope: 'summary.labels')
       td =@summary.full_name

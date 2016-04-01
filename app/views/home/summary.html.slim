@@ -28,17 +28,20 @@ table
       td =t('fee', scope: 'summary.labels')
       td =@summary.fee_paid
       td.right= link_to "Change", question_path(:fee)
-    tr
-      td =t('probate', scope: 'summary.labels')
-      td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
-      td.right= link_to "Change", question_path(:probate)
     -if @summary.probate_kase
       tr
         td = t('deceased_name', scope: 'summary.labels')
-        td colspan="2" =@summary.probate_deceased_name
+        td =@summary.probate_deceased_name
+        td.right= link_to "Change", question_path(:probate)
       tr
         td = t('date_of_death', scope: 'summary.labels')
-        td colspan="2" =@summary.probate_date_of_death
+        td =@summary.probate_date_of_death
+        td.right= link_to "Change", question_path(:probate)
+    -else
+      tr
+        td =t('probate', scope: 'summary.labels')
+        td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
+        td.right= link_to "Change", question_path(:probate)
     tr
       td =t('claim', scope: 'summary.labels')
       td =t("claim_number_#{@summary.claim_number}", scope: 'summary')

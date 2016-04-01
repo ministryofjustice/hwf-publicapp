@@ -36,7 +36,7 @@ module HwfPublicapp
 
     # The following values are required by the phase banner
     config.phase = 'alpha'
-    config.feedback_url = '#'
+    config.feedback_url = 'https://docs.google.com/a/digital.justice.gov.uk/forms/d/13MZDb7dbeEVeInMN8uQDL44ZCjrUvFcS4WhP-r1Cqnw/viewform'
 
     # prevent fields being enclosed in field_with_error divs
     config.action_view.field_error_proc = proc { |html_tag, _instance|

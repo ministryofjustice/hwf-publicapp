@@ -35,7 +35,7 @@
   ol.list.list-number.next-steps
     li
       =t('confirmation.steps.one')
-      .inset =@result['message']
+      .inset.number =@result['message']
     li =t('confirmation.steps.two')
     li =t('confirmation.steps.three')
     li =t('confirmation.steps.four')
@@ -46,7 +46,7 @@
         span.visuallyhidden =t('confirmation.notice.warning')
       strong.bold-small =t('confirmation.notice.text')
 
-.js-only
+.js-only.no-print
   p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')
 
-p.util_mt-large =link_to(t('confirmation.back_to_start'), root_path, class: 'button')
+p.util_mt-large.no-print =link_to(t('confirmation.back_to_start'), root_path, class: 'button')

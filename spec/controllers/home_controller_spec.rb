@@ -15,4 +15,11 @@ RSpec.describe HomeController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe '#terms_and_conditions' do
+    it 'returns http success' do
+      get :terms_and_conditions
+      expect(response).to have_http_status(:success)
+    end
+  end
 end

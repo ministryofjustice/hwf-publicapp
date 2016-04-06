@@ -1,0 +1,31 @@
+h1.heading-xlarge.heading-with-lede =t('terms.heading')
+
+- t('terms.sections').each do |section|
+  - unless section[:title].blank?
+    h2.heading-large
+      =section[:title]
+      =content_tag(:a, '', name: section[:title].parameterize.underscore)
+
+  - if section[:sections]
+    -section[:sections].each do |subsection|
+
+      - unless subsection[:title].blank?
+        h3.heading-medium =subsection[:title]
+
+      - if subsection[:parts]
+        - subsection[:parts].each do |part|
+          - if part.keys.first == :ul
+            = content_tag(part.keys.first, class: 'list list-bullet') do
+              - part.values.first.each do |item|
+                =content_tag('li', item.values.first)
+          - else
+            =content_tag(part.keys.first, part.values.first)
+
+  - if section[:parts]
+    - section[:parts].each do |part|
+      - if part.keys.first == :ul
+        = content_tag(part.keys.first, class: 'list list-bullet') do
+          - part.values.first.each do |item|
+            = content_tag('li', item.values.first)
+      - else
+        = content_tag(part.keys.first, part.values.first)

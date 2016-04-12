@@ -35,7 +35,7 @@ module HwfPublicapp
     config.autoload_paths += %W[#{config.root}/lib]
 
     # The following values are required by the phase banner
-    config.phase = 'alpha'
+    config.phase = 'beta'
     config.feedback_url = 'https://docs.google.com/a/digital.justice.gov.uk/forms/d/13MZDb7dbeEVeInMN8uQDL44ZCjrUvFcS4WhP-r1Cqnw/viewform'
 
     # prevent fields being enclosed in field_with_error divs

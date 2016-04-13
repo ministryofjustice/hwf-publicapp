@@ -32,14 +32,14 @@ en:
     - title: 'How we keep your information safe'
       parts:
       - p: "MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA)."
-      - p: "MOJ use the Amazon Web Services (AWS) to store your data. By submitting your information, you consent to the AWS Terms and Conditions"
-      - p: "This service uses Sendgrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the Sendgrid terms and conditions."
-      - p: "We’ll never share your information with other organisations for their marketing, market research or commercial purposes, and we don’t pass on your personal information to any other websites."
+      - p: "MOJ use the Amazon Web Services (AWS) to store your data. By submitting your information, you consent to the <a href="http://aws.amazon.com/service-terms/"> AWS Terms and Conditions </a>"
+      - p: "This service uses Sendgrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos"> Sendgrid terms and conditions </a>."
+      - p: "We’ll never share your information with other organisations for their marketing, market research or commercial purposes."
       sections:
         - title: 'How we use your personal information'
           parts:
           - p: 'In order to use this service, you will need to enter personal information. We use this information to complete your application for help with fees. Any email address you supply to us will be used by HMCTS to contact you with regards to your claim. We may also use your details to contact you for research purposes.'
-          - p: 'This online service contains several free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive information into these free-text fields or upload documents containing sensitive information unless necessary to your claim or specifically requested. Sensitive information may include, but is not limited to, details of religious beliefs and financial information. Entering or uploading sensitive information is done so at your own risk.'
+          - p: 'This online service contains several free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive information into these free-text fields. Sensitive information may include, but is not limited to, details of religious beliefs and financial information. Entering sensitive information is done so at your own risk.'
         - title: 'How we use non-personal information'
           parts:
           - p: "Separately from the information entered by those using this service, we also collect site-usage information from this service, which allows us to see how the service is being used in order to allow us to improve it. This information does not contain any personal data."
@@ -57,8 +57,8 @@ en:
           - p: "We cannot identify you personally using your site usage data."
     - title: 'How we manage sessions'
       parts:
-      - p: "This service can be used to apply for financial help with court or tribunal fees. When you use this service, personal information about you may be visible to anyone with access to your computer. Your session will expire after 60 minutes of inactivity in order to keep the service secure."
-      - p: "We do not store any personal data in cookies. However, your browser may store cookies while you're using the service. You can manage cookie settings on your computer. See our cookies policy for further information."
+      - p: "This service can be used to apply for financial help with court or tribunal fees. When you use this service, personal information about you may be visible to anyone with access to your computer."
+      - p: "We store your data temporarily using cookies, and all your data is encrypted."
     - title: 'Data Protection Act 1998'
       parts:
       - p: "This service complies with all principles of the DPA 1998. Ministry of Justice (MoJ) is the 'data controller' for the purposes of the Act."
@@ -78,7 +78,7 @@ en:
           - p: "Personal data submitted via the online service is stored for 12 months on our secure servers within EEA. Any data is deleted after this period."
         - title: "How non-personal data is stored"
           parts:
-          - p: "Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the Google Analytics terms and conditions."
+          - p: "Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html"> Google Analytics terms and conditions </a>."
         - title: "Keeping your data secure"
           parts:
           - p: "Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use SSL to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it."

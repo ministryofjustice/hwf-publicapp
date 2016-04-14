@@ -23,4 +23,11 @@
 - content_for :javascripts
   = javascript_include_tag('application.js')
 
+- content_for :footer_support_links
+  li =link_to 'Help', 'http://www.gov.uk/help'
+  li =link_to 'Cookies', 'http://www.gov.uk/help/cookies'
+  li =link_to 'Contact', 'http://www.gov.uk/contact'
+  li =link_to 'Terms and conditions', terms_and_conditions_path
+  li =link_to 'Cymraeg', 'http://www.gov.uk/cymraeg', lang: 'cy'
+
 = render template: "layouts/moj_template"

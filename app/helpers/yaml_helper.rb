@@ -58,7 +58,7 @@ module YamlHelper
                      collect_list_items(part)
                    end
                  else
-                   content_tag(part.keys.first, part.values.first)
+                   content_tag(part.keys.first, part.values.first.html_safe)
                  end
     end
   end

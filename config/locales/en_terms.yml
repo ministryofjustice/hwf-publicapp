@@ -32,8 +32,8 @@ en:
     - title: 'How we keep your information safe'
       parts:
       - p: "MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA)."
-      - p: "MOJ use the Amazon Web Services (AWS) to store your data. By submitting your information, you consent to the <a href="http://aws.amazon.com/service-terms/"> AWS Terms and Conditions </a>"
-      - p: "This service uses Sendgrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos"> Sendgrid terms and conditions </a>."
+      - p: "MOJ use the Amazon Web Services (AWS) to store your data. By submitting your information, you consent to the <a href=\"http://aws.amazon.com/service-terms/\"> AWS Terms and Conditions </a>"
+      - p: "This service uses Sendgrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href=\"https://sendgrid.com/tos\"> Sendgrid terms and conditions </a>."
       - p: "We’ll never share your information with other organisations for their marketing, market research or commercial purposes."
       sections:
         - title: 'How we use your personal information'
@@ -65,20 +65,13 @@ en:
       - p: "You have the right, as the user of this service, to delete your data or any and all information at any point. We will keep data secure for 12 months from the date you submit your claim. You will be able to manually update the information you have entered for up to six months from when you first use this service."
       - p: "After submitting your application, you will not be able to see it anymore or amend it online. Anyone who believes their personal data is kept within the service has the right to submit a subject access request to the MoJ, who will give details of the information stored on the server. If a subject access request shows that the information is inaccurate, the MoJ will amend or delete the information in the database as requested within 5 days. In these circumstances, we will warn the registered user first by email."
       - p: "Our hosting provider, and MOJ staff responsible for supporting the service, will have access to the server in which all personal information entered into the site is stored."
-    - title: "How we keep your information safe"
       sections:
-        - title: ''
-          parts:
-          - p: "MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA)."
-          - p: "MOJ use the Amazon Web Services (AWS) to store your data. By submitting your information, you consent to the AWS Terms and Conditions"
-          - p: "This service uses Sendgrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the Sendgrid terms and conditions."
-          - p: "We’ll never share your information with other organisations for their marketing, market research or commercial purposes, and we don’t pass on your personal information to any other websites."
         - title: "How your personal data is stored"
           parts:
           - p: "Personal data submitted via the online service is stored for 12 months on our secure servers within EEA. Any data is deleted after this period."
         - title: "How non-personal data is stored"
           parts:
-          - p: "Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html"> Google Analytics terms and conditions </a>."
+          - p: "Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href=\"http://www.google.co.uk/analytics/terms/us.html\"> Google Analytics terms and conditions </a>."
         - title: "Keeping your data secure"
           parts:
           - p: "Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use SSL to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it."

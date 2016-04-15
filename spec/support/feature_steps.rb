@@ -44,6 +44,14 @@ module FeatureSteps
     fill_marital_status
   end
 
+  def given_user_fills_in_few_questions
+    visit '/'
+    click_link_or_button 'Apply now'
+    fill_marital_status
+    fill_savings_and_investment
+    fill_benefit
+  end
+
   def when_they_submit_the_application
     click_link_or_button 'Complete application'
   end
@@ -53,11 +61,16 @@ module FeatureSteps
     click_link_or_button 'Apply now'
   end
 
+  def when_they_restart_the_application
+    click_link_or_button 'Start a new application'
+  end
+
   def then_their_data_is_not_persisted
     visit question_path(:marital_status)
     expect(page).to have_unchecked_field('marital_status_married_false')
     expect(page).to have_unchecked_field('marital_status_married_true')
   end
+  alias then_their_data_is_deleted then_their_data_is_not_persisted
 
   def fill_contact
     fill_in 'contact_email', with: 'foo@bar.com'

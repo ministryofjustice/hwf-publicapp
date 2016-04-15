@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resource :submission, only: [:create, :show]
 
   resources :questions, only: [:edit, :update], path_names: { edit: '' }
+
+  resource :session, only: :destroy
 end

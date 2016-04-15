@@ -26,3 +26,21 @@
     background-size: 30px 19px;
   }
 }
+
+.restart-application {
+  @include core-19;
+  border: none;
+  background-color: transparent;
+  color: $link-colour;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: $link-hover-colour;
+  }
+
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
+}

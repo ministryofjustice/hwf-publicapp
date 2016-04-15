@@ -82,3 +82,5 @@ p =t('statement', scope: 'summary.truth')
 
 = form_tag(submission_path, method: :post) do
   = submit_tag(t('button', scope: 'summary.truth'), class: 'button', role: 'button')
+
+=render('shared/restart_application_link')

@@ -45,7 +45,7 @@ module Forms
     def export_params
       usable = attributes.select { |_, v| v.is_a?(Float) }.values
       {
-        income: usable.empty? ? nil : usable.inject(:+)
+        income: usable.empty? ? 0 : usable.inject(:+)
       }
     end
   end

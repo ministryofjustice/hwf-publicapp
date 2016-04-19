@@ -2,7 +2,7 @@ en:
   terms:
     heading: 'Terms and conditions'
     sections:
-    - title: 'Disclaimer'
+    - title:
       parts:
       - p: 'By using this ‘apply for help with fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.'
     - title: 'General terms and conditions'

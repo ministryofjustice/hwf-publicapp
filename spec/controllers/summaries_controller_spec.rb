@@ -24,5 +24,7 @@ RSpec.describe SummariesController, type: :controller do
     it 'assigns the summary view model' do
       expect(assigns(:summary)).to eql(summary_view)
     end
+
+    include_examples 'cache suppress headers'
   end
 end

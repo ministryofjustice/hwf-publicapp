@@ -33,6 +33,8 @@ RSpec.describe QuestionsController, type: :controller do
       it 'loads the form from the storage' do
         expect(storage).to have_received(:load_form).with(form)
       end
+
+      include_examples 'cache suppress headers'
     end
 
     context 'when the question is invalid' do

@@ -76,4 +76,20 @@ RSpec.describe Storage do
       it { is_expected.to be nil }
     end
   end
+
+  describe '#empty?' do
+    subject { storage.empty? }
+
+    context 'when the session has questions set' do
+      let(:session) { { 'questions' => { 'something' => 'else' } } }
+
+      it { is_expected.to be false }
+    end
+
+    context 'when there is no qiestions set in the session' do
+      let(:session) { { 'another' => 'key' } }
+
+      it { is_expected.to be true }
+    end
+  end
 end

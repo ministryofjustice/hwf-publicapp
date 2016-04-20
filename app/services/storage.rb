@@ -20,4 +20,8 @@ class Storage
   def submission_result
     @session[:submission_result]
   end
+
+  def empty?
+    @session['questions'].blank?
+  end
 end

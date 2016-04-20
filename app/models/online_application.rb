@@ -8,7 +8,7 @@ class OnlineApplication
   attribute :income, Integer
   attribute :refund, Boolean
   attribute :date_fee_paid, Date
-  attribute :probate, Integer
+  attribute :probate, Boolean
   attribute :deceased_name, String
   attribute :date_of_death, Date
   attribute :case_number, String

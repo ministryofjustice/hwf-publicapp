@@ -2,6 +2,6 @@ class SummariesController < ApplicationController
   after_action :suppress_browser_cache
 
   def show
-    @summary = Views::Summary.new(session)
+    @summary = Views::Summary.new(online_application)
   end
 end

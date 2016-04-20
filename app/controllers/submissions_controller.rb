@@ -1,6 +1,6 @@
 class SubmissionsController < ApplicationController
   def create
-    response = submit_service.post(builder.online_application)
+    response = submit_service.post(online_application)
     storage.submission_result = response
 
     if response[:result]
@@ -12,7 +12,7 @@ class SubmissionsController < ApplicationController
   end
 
   def show
-    @online_application = builder.online_application
+    @online_application = online_application
     @result = storage.submission_result
     reset_session
   end
@@ -21,9 +21,5 @@ class SubmissionsController < ApplicationController
 
   def submit_service
     @submit_service ||= SubmitApplication.new(Settings.submission.url, Settings.submission.token)
-  end
-
-  def builder
-    @builder ||= OnlineApplicationBuilder.new(storage)
   end
 end

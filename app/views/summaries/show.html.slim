@@ -8,57 +8,57 @@ table
   tbody
     tr
       td =t('married', scope: 'summary.labels')
-      td= t("marital_status_#{@summary.marital_status_married}", scope: 'summary')
+      td= t("marital_status_#{@summary.married}", scope: 'summary')
       td.right= link_to "Change", question_path(:marital_status)
     tr
       td =t('savings', scope: 'summary.labels')
-      td= t("less_than_limit_#{@summary.savings_and_investment_less_than_limit}", scope: 'summary')
+      td= t("less_than_limit_#{!@summary.threshold_exceeded}", scope: 'summary')
       td.right= link_to "Change", question_path(:savings_and_investment)
     tr
       td =t('benefits', scope: 'summary.labels')
-      td= t("applicant_on_benefits_#{@summary.benefit_on_benefits}", scope: 'summary')
+      td= t("applicant_on_benefits_#{@summary.benefits}", scope: 'summary')
       td.right= link_to "Change", question_path(:benefit)
     tr
       td =t('children', scope: 'summary.labels')
-      td =@summary.children
+      td =@summary.children_text
       td.right= link_to "Change", question_path(:dependent)
     tr
       td =t('income', scope: 'summary.labels')
-      td =number_to_currency(@summary.income_total, precision: 2, unit: '£')
+      td =number_to_currency(@summary.income, precision: 2, unit: '£')
       td.right= link_to "Change", question_path(:income)
     tr
       td =t('fee', scope: 'summary.labels')
-      td =@summary.fee_paid
+      td =@summary.refund_text
       td.right= link_to "Change", question_path(:fee)
-    -if @summary.probate_kase
+    -if @summary.probate
       tr
         td = t('deceased_name', scope: 'summary.labels')
-        td =@summary.probate_deceased_name
+        td =@summary.deceased_name
         td.right= link_to "Change", question_path(:probate)
       tr
         td = t('date_of_death', scope: 'summary.labels')
-        td =@summary.probate_date_of_death
+        td =@summary.date_of_death
         td.right= link_to "Change", question_path(:probate)
     -else
       tr
         td =t('probate', scope: 'summary.labels')
-        td=t("probate_case_#{@summary.probate_kase}", scope: 'summary')
+        td=t("probate_case_#{@summary.probate}", scope: 'summary')
         td.right= link_to "Change", question_path(:probate)
     tr
       td =t('claim', scope: 'summary.labels')
-      td =t("claim_number_#{@summary.claim_number}", scope: 'summary')
+      td =t("claim_number_#{@summary.case_number?}", scope: 'summary')
       td.right= link_to "Change", question_path(:claim)
     tr
       td =t('form_name', scope: 'summary.labels')
-      td=@summary.form_name_identifier
+      td=@summary.form_name
       td.right= link_to "Change", question_path(:form_name)
     tr
       td =t('ni_number', scope: 'summary.labels')
-      td =@summary.national_insurance_number
+      td =@summary.ni_number
       td.right= link_to "Change", question_path(:national_insurance)
     tr
       td =t('date_of_birth', scope: 'summary.labels')
-      td =@summary.dob_date_of_birth
+      td =@summary.date_of_birth
       td.right= link_to "Change", question_path(:dob)
     tr
       td =t('personal', scope: 'summary.labels')
@@ -68,10 +68,10 @@ table
       td =t('address', scope: 'summary.labels')
       td =@summary.full_address
       td.right= link_to "Change", question_path(:applicant_address)
-    -if @summary.contact_email.present?
+    -if @summary.email_contact
       tr
         td =t('contact_email', scope: 'summary.labels')
-        td =@summary.contact_email
+        td =@summary.email_address
         td.right= link_to "Change", question_path(:contact)
     -else
       tr

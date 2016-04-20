@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe SummariesController, type: :controller do
 
   describe 'GET #show' do
-    let(:session) { double }
+    let(:online_application) { build :online_application }
     let(:summary_view) { double }
 
     before do
-      allow(controller).to receive(:session).and_return(session)
-      allow(Views::Summary).to receive(:new).with(session).and_return(summary_view)
+      allow(controller).to receive(:online_application).and_return(online_application)
+      expect(Views::Summary).to receive(:new).with(online_application).and_return(summary_view)
 
       get :show
     end

@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def online_application
+    @online_application ||= builder.online_application
+  end
+
+  def builder
+    @builder ||= OnlineApplicationBuilder.new(storage)
+  end
+
   def storage
     @storage ||= Storage.new(session)
   end

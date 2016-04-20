@@ -87,6 +87,7 @@ RSpec.feature 'As a user' do
     end
 
     scenario 'the change links take me to the correct page' do
+      given_user_provides_all_data
       visit '/summary'
       expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:marital_status)}']"
       expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:savings_and_investment)}']"

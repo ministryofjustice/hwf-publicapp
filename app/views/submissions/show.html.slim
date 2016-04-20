@@ -4,6 +4,8 @@
 - if @online_application.refund?
   h1.heading-large
     span.heading-secondary = t('confirmation.breadcrumb')
+    span.visuallyhidden
+      | :&nbsp;
     = t('refund.heading')
 
   ol.list.list-number.next-steps

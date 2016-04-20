@@ -4,11 +4,12 @@ class Storage
   end
 
   def save_form(form)
-    @session[form.id] = form.as_json
+    @session['questions'] = {} unless @session['questions']
+    @session['questions'][form.id] = form.as_json
   end
 
   def load_form(form)
-    params = @session[form.id] || {}
+    params = @session['questions'] ? (@session['questions'][form.id] || {}) : {}
     form.update_attributes(params)
   end
 

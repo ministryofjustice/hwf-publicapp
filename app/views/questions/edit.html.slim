@@ -2,6 +2,8 @@
 
 h1.heading-large
   span.heading-secondary= t('breadcrumb', scope: @form.i18n_scope)
+  span.visuallyhidden
+    | :&nbsp;
   = t('text', scope: @form.i18n_scope)
 
 =render("questions/headers/#{@form.id}")

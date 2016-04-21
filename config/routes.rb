@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   resource :submission, only: [:create, :show]
 
-  resource :session, only: :destroy
+  resource :session, only: :destroy do
+    get :start
+  end
 end

@@ -1,5 +1,5 @@
 class SummariesController < ApplicationController
-  before_action :redirect_if_storage_empty
+  before_action :redirect_if_storage_unstarted
   after_action :suppress_browser_cache
 
   def show

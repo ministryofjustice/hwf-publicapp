@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe SummariesController, type: :controller do
 
   describe 'GET #show' do
-    let(:storage_empty) { false }
-    let(:storage) { double(empty?: storage_empty) }
+    let(:storage_started) { true }
+    let(:storage) { double(started?: storage_started) }
     let(:online_application) { build :online_application }
     let(:summary_view) { double }
 
@@ -31,7 +31,7 @@ RSpec.describe SummariesController, type: :controller do
     include_examples 'cache suppress headers'
 
     context 'when no question has been answered' do
-      let(:storage_empty) { true }
+      let(:storage_started) { false }
 
       it 'redirects to the home page' do
         expect(response).to redirect_to(root_path)

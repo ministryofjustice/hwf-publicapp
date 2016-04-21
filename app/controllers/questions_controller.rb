@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   rescue_from QuestionFormFactory::QuestionDoesNotExist, with: :not_found
-  before_action :redirect_if_storage_empty, unless: :first_question?
+  before_action :redirect_if_storage_unstarted
   after_action :suppress_browser_cache
 
   def edit
@@ -40,9 +40,5 @@ class QuestionsController < ApplicationController
 
   def not_found
     render nothing: true, status: :not_found
-  end
-
-  def first_question?
-    QuestionFormFactory.position(question) == 0
   end
 end

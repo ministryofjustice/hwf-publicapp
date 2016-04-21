@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
   end
 
-  def redirect_if_storage_empty
-    redirect_to(root_path) if storage.empty?
+  def redirect_if_storage_unstarted
+    redirect_to(root_path) unless storage.started?
   end
 end

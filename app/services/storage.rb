@@ -7,6 +7,10 @@ class Storage
     @session[:started_at] = Time.zone.now
   end
 
+  def started?
+    @session[:started_at].present?
+  end
+
   def save_form(form)
     @session['questions'] = {} unless @session['questions']
     @session['questions'][form.id] = form.as_json
@@ -23,9 +27,5 @@ class Storage
 
   def submission_result
     @session[:submission_result]
-  end
-
-  def empty?
-    @session['questions'].blank?
   end
 end

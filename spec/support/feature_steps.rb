@@ -55,7 +55,7 @@ module FeatureSteps
   end
 
   def then_their_data_is_not_persisted
-    visit question_path(:marital_status)
+    visit start_session_path
     expect(page).to have_unchecked_field('marital_status_married_false')
     expect(page).to have_unchecked_field('marital_status_married_true')
   end

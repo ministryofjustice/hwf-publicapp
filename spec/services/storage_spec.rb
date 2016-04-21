@@ -19,6 +19,22 @@ RSpec.describe Storage do
     end
   end
 
+  describe '#started?' do
+    subject { storage.started? }
+
+    context 'when the session has started_at timestamp setup' do
+      let(:session) { { started_at: current_time } }
+
+      it { is_expected.to be true }
+    end
+
+    context 'when there started_at timestamp on the session' do
+      let(:session) { { another: 'key' } }
+
+      it { is_expected.to be false }
+    end
+  end
+
   describe '#save_form' do
     let(:id) { 'ID' }
     let(:json_data) { { some: 'data' } }
@@ -90,22 +106,6 @@ RSpec.describe Storage do
       let(:session) { {} }
 
       it { is_expected.to be nil }
-    end
-  end
-
-  describe '#empty?' do
-    subject { storage.empty? }
-
-    context 'when the session has questions set' do
-      let(:session) { { 'questions' => { 'something' => 'else' } } }
-
-      it { is_expected.to be false }
-    end
-
-    context 'when there is no qiestions set in the session' do
-      let(:session) { { 'another' => 'key' } }
-
-      it { is_expected.to be true }
     end
   end
 end

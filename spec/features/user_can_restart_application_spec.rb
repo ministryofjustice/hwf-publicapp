@@ -13,5 +13,4 @@ RSpec.feature 'User can restart application' do
     when_they_restart_the_application
     then_their_data_is_deleted
   end
-
 end

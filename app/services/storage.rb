@@ -11,6 +11,12 @@ class Storage
     @session[:started_at].present?
   end
 
+  def time_taken
+    return nil unless started?
+    seconds = (Time.zone.now - started_at).round
+    seconds * 1000 # GA needs milliseconds
+  end
+
   def save_form(form)
     @session['questions'] = {} unless @session['questions']
     @session['questions'][form.id] = form.as_json
@@ -27,5 +33,15 @@ class Storage
 
   def submission_result
     @session[:submission_result]
+  end
+
+  private
+
+  def started_at
+    started_at_as_time || @session[:started_at]
+  end
+
+  def started_at_as_time
+    Time.zone.parse(@session[:started_at]) if @session[:started_at].is_a? String
   end
 end

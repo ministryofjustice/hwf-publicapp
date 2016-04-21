@@ -3,6 +3,10 @@ class Storage
     @session = session
   end
 
+  def start
+    @session[:started_at] = Time.zone.now
+  end
+
   def save_form(form)
     @session['questions'] = {} unless @session['questions']
     @session['questions'][form.id] = form.as_json

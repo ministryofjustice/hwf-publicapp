@@ -1,7 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe Storage do
+  let(:current_time) { Time.zone.now }
+
   subject(:storage) { described_class.new(session) }
+
+  describe '#start' do
+    let(:session) { {} }
+
+    before do
+      Timecop.freeze(current_time) do
+        storage.start
+      end
+    end
+
+    it 'sets started_at to the session as the current time' do
+      expect(session).to include(started_at: current_time)
+    end
+  end
 
   describe '#save_form' do
     let(:id) { 'ID' }

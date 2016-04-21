@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe QuestionsController, type: :controller do
   let(:session) { double }
-  let(:storage) { double(load_form: nil, save_form: nil) }
+  let(:storage_empty) { false }
+  let(:storage) { double(load_form: nil, save_form: nil, empty?: storage_empty) }
   let(:valid_id) { :question }
   let(:invalid_id) { :invalid }
   let(:form) { double }
@@ -15,7 +16,11 @@ RSpec.describe QuestionsController, type: :controller do
   end
 
   describe 'GET #edit' do
+    let(:question_position) { 0 }
+
     before do
+      allow(QuestionFormFactory).to receive(:position).with(id).and_return(question_position)
+
       get :edit, id: id
     end
 
@@ -35,6 +40,23 @@ RSpec.describe QuestionsController, type: :controller do
       end
 
       include_examples 'cache suppress headers'
+
+      context 'when the storage is empty' do
+        let(:storage_empty) { true }
+
+        context 'when the question is the first question' do
+          it 'does not redirect to the home page' do
+            expect(response).to have_http_status(200)
+          end
+        end
+        context 'when the question is not the first question' do
+          let(:question_position) { 1 }
+
+          it 'redirects to the home page' do
+            expect(response).to redirect_to(root_path)
+          end
+        end
+      end
     end
 
     context 'when the question is invalid' do

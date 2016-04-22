@@ -19,6 +19,10 @@ class QuestionFormFactory
     :contact
   ].freeze
 
+  def self.position(id)
+    IDS.index(id)
+  end
+
   def self.get_form(id)
     raise QuestionDoesNotExist unless IDS.include?(id)
 

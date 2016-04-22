@@ -1,21 +1,16 @@
 # rubocop:disable ModuleLength
 module FeatureSteps
-  def given_user_provides_all_data
+  def given_user_answers_questions_up_to(question)
     visit '/'
     click_link_or_button 'Apply now'
-    fill_marital_status
-    fill_savings_and_investment
-    fill_benefit
-    fill_dependent
-    fill_income
-    fill_fee
-    fill_probate
-    fill_claim
-    fill_form_name
-    fill_national_insurance
-    fill_dob
-    fill_personal_detail
-    fill_applicant_address
+
+    QuestionFormFactory::IDS.take_while { |id| id != question }.each do |id|
+      send("fill_#{id}")
+    end
+  end
+
+  def given_user_provides_all_data
+    given_user_answers_questions_up_to(:contact)
     fill_contact
   end
 
@@ -39,17 +34,11 @@ module FeatureSteps
   end
 
   def given_user_starts_an_application
-    visit '/'
-    click_link_or_button 'Apply now'
-    fill_marital_status
+    given_user_answers_questions_up_to(:savings_and_investment)
   end
 
   def given_user_fills_in_few_questions
-    visit '/'
-    click_link_or_button 'Apply now'
-    fill_marital_status
-    fill_savings_and_investment
-    fill_benefit
+    given_user_answers_questions_up_to(:dependent)
   end
 
   def when_they_submit_the_application
@@ -66,7 +55,7 @@ module FeatureSteps
   end
 
   def then_their_data_is_not_persisted
-    visit question_path(:marital_status)
+    visit start_session_path
     expect(page).to have_unchecked_field('marital_status_married_false')
     expect(page).to have_unchecked_field('marital_status_married_true')
   end

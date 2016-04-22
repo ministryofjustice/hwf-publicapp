@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
   rescue_from QuestionFormFactory::QuestionDoesNotExist, with: :not_found
+  before_action :redirect_if_storage_unstarted
+  after_action :suppress_browser_cache
 
   def edit
     storage.load_form(form)

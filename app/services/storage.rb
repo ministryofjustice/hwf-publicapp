@@ -3,12 +3,21 @@ class Storage
     @session = session
   end
 
+  def start
+    @session[:started_at] = Time.zone.now
+  end
+
+  def started?
+    @session[:started_at].present?
+  end
+
   def save_form(form)
-    @session[form.id] = form.as_json
+    @session['questions'] = {} unless @session['questions']
+    @session['questions'][form.id] = form.as_json
   end
 
   def load_form(form)
-    params = @session[form.id] || {}
+    params = @session['questions'] ? (@session['questions'][form.id] || {}) : {}
     form.update_attributes(params)
   end
 

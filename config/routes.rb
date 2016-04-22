@@ -2,11 +2,14 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'terms_and_conditions' => 'home#terms_and_conditions'
-  get 'summary' => 'home#summary'
-
-  resource :submission, only: [:create, :show]
 
   resources :questions, only: [:edit, :update], path_names: { edit: '' }
 
-  resource :session, only: :destroy
+  resource :summary, only: :show
+
+  resource :submission, only: [:create, :show]
+
+  resource :session, only: :destroy do
+    get :start
+  end
 end

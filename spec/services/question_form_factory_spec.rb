@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe QuestionFormFactory do
+  describe '.position' do
+    let(:id) { :benefit }
+    subject { described_class.position(id) }
+
+    it 'returns the position of the given question' do
+      is_expected.to eql(2)
+    end
+  end
+
   describe '.get_form' do
     subject { described_class.get_form(id) }
 

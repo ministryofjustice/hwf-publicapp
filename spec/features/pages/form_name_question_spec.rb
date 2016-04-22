@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "form-name" page for "Help with fees"' do
-    before { page.visit question_path(:form_name) }
+    before { given_user_answers_questions_up_to(:form_name) }
 
     context 'completing the form correctly' do
       before do

@@ -5,7 +5,25 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def online_application
+    @online_application ||= builder.online_application
+  end
+
+  def builder
+    @builder ||= OnlineApplicationBuilder.new(storage)
+  end
+
   def storage
     @storage ||= Storage.new(session)
+  end
+
+  def suppress_browser_cache
+    response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
+    response.headers['Pragma'] = 'no-cache'
+    response.headers['Expires'] = 'Fri, 01 Jan 1990 00:00:00 GMT'
+  end
+
+  def redirect_if_storage_unstarted
+    redirect_to(root_path) unless storage.started?
   end
 end

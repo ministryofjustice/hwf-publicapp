@@ -5,7 +5,7 @@ RSpec.feature 'As a user' do
   context 'when accessing the "summary" page for "Help with fees"' do
     context 'after answering yes to the dependents question' do
       before do
-        visit question_path(:dependent)
+        given_user_answers_questions_up_to(:dependent)
         choose 'dependent_children_true'
         fill_in :dependent_children_number, with: '10'
         click_button 'Continue'
@@ -19,7 +19,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to the dependents question' do
       before do
-        visit question_path(:dependent)
+        given_user_answers_questions_up_to(:dependent)
         choose 'dependent_children_false'
         click_button 'Continue'
         page.visit '/summary'
@@ -32,7 +32,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering yes to the probate question' do
       before do
-        visit question_path(:probate)
+        given_user_answers_questions_up_to(:probate)
         choose 'probate_kase_true'
         fill_in :probate_deceased_name, with: 'Foo'
         fill_in :probate_date_of_death, with: Time.zone.today - 1.month
@@ -49,7 +49,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to the probate question' do
       before do
-        visit question_path(:probate)
+        given_user_answers_questions_up_to(:probate)
         choose 'probate_kase_false'
         click_button 'Continue'
         page.visit '/summary'
@@ -64,7 +64,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering yes to all of the contact options' do
       before do
-        visit question_path(:contact)
+        given_user_answers_questions_up_to(:contact)
         check :contact_feedback_opt_in
         fill_in :contact_email, with: 'foo@bar.com'
         click_button 'Continue'
@@ -77,7 +77,7 @@ RSpec.feature 'As a user' do
 
     context 'after answering no to all of the contact options' do
       before do
-        visit question_path(:contact)
+        given_user_answers_questions_up_to(:contact)
         click_button 'Continue'
       end
 
@@ -87,6 +87,7 @@ RSpec.feature 'As a user' do
     end
 
     scenario 'the change links take me to the correct page' do
+      given_user_provides_all_data
       visit '/summary'
       expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:marital_status)}']"
       expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:savings_and_investment)}']"

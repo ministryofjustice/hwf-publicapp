@@ -1,7 +1,39 @@
 require 'rails_helper'
 
 RSpec.describe Storage do
+  let(:current_time) { Time.zone.now }
+
   subject(:storage) { described_class.new(session) }
+
+  describe '#start' do
+    let(:session) { {} }
+
+    before do
+      Timecop.freeze(current_time) do
+        storage.start
+      end
+    end
+
+    it 'sets started_at to the session as the current time' do
+      expect(session).to include(started_at: current_time)
+    end
+  end
+
+  describe '#started?' do
+    subject { storage.started? }
+
+    context 'when the session has started_at timestamp setup' do
+      let(:session) { { started_at: current_time } }
+
+      it { is_expected.to be true }
+    end
+
+    context 'when there started_at timestamp on the session' do
+      let(:session) { { another: 'key' } }
+
+      it { is_expected.to be false }
+    end
+  end
 
   describe '#save_form' do
     let(:id) { 'ID' }
@@ -15,7 +47,7 @@ RSpec.describe Storage do
     end
 
     it 'sets the json data to the session' do
-      expect(session[id]).to eql(json_data)
+      expect(session['questions'][id]).to eql(json_data)
     end
   end
 
@@ -30,7 +62,7 @@ RSpec.describe Storage do
     end
 
     context 'when the data with the form id is in the session' do
-      let(:session) { { id => json_data } }
+      let(:session) { { 'questions' => { id => json_data } } }
 
       it 'updates the form with the data' do
         expect(form).to have_received(:update_attributes).with(json_data)
@@ -38,7 +70,7 @@ RSpec.describe Storage do
     end
 
     context 'when there is no data with the form id in the session' do
-      let(:session) { {} }
+      let(:session) { { 'questions' => {} } }
 
       it 'updates the form with an empty hash' do
         expect(form).to have_received(:update_attributes).with({})

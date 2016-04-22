@@ -14,6 +14,7 @@ class SubmissionsController < ApplicationController
   def show
     @online_application = online_application
     @result = storage.submission_result
+    ga_events << ["'send', 'timing', 'Conversion duration', 'complete', '#{storage.time_taken}'"]
     reset_session
   end
 

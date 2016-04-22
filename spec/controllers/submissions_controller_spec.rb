@@ -54,7 +54,7 @@ RSpec.describe SubmissionsController, type: :controller do
 
   describe 'GET #show' do
     let(:result) { { result: true, message: 'HWF-010101' } }
-    let(:storage) { double(submission_result: result) }
+    let(:storage) { double(submission_result: result, time_taken: 600) }
 
     before do
       allow(controller).to receive(:reset_session)

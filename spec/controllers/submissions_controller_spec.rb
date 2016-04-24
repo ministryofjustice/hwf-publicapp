@@ -58,6 +58,7 @@ RSpec.describe SubmissionsController, type: :controller do
 
     before do
       allow(controller).to receive(:reset_session)
+      allow(online_application).to receive(:benefits).and_return(true)
 
       get :show
     end

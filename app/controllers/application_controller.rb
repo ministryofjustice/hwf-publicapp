@@ -26,4 +26,8 @@ class ApplicationController < ActionController::Base
   def redirect_if_storage_unstarted
     redirect_to(root_path) unless storage.started?
   end
+
+  def ga_events
+    @ga_events ||= []
+  end
 end

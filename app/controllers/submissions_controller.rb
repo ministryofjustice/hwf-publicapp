@@ -14,6 +14,7 @@ class SubmissionsController < ApplicationController
   def show
     @online_application = online_application
     @result = storage.submission_result
+    ga_events << build_ga_event
     reset_session
   end
 
@@ -21,5 +22,11 @@ class SubmissionsController < ApplicationController
 
   def submit_service
     @submit_service ||= SubmitApplication.new(Settings.submission.url, Settings.submission.token)
+  end
+
+  def build_ga_event
+    time = storage.time_taken < 0 ? 1000 : storage.time_taken
+    type = online_application.benefits ? 'benefit' : 'income'
+    "ga('send', 'timing', 'Application', 'Complete', #{time}, '#{type}')"
   end
 end

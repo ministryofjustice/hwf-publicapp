@@ -35,6 +35,28 @@ RSpec.describe Storage do
     end
   end
 
+  describe '#time_taken' do
+    let(:session) { {} }
+
+    subject { storage.time_taken }
+
+    context 'when started_at is not set' do
+      it { is_expected.to be nil }
+    end
+
+    context 'when started_at is stored in the session as a string' do
+      let(:session) { { started_at: current_time.to_s } }
+
+      it { is_expected.to be_a Integer }
+    end
+
+    context 'when started_at is 10 minutes old' do
+      let(:session) { { started_at: current_time - 10.minutes } }
+
+      it { is_expected.to eq 600000 }
+    end
+  end
+
   describe '#save_form' do
     let(:id) { 'ID' }
     let(:json_data) { { some: 'data' } }

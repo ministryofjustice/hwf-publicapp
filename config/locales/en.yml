@@ -52,6 +52,7 @@ en:
             children_number:
               not_a_number: 'You must enter financially dependent children as a number'
               blank: 'You must enter the number of financially dependent children'
+              less_than: 'You must enter number less than 100'
         forms/income:
           attributes:
             other_description:

@@ -1,48 +1,54 @@
 require 'rails_helper'
 
 RSpec.describe Forms::Contact, type: :model do
-  subject do
-    described_class.new(email: 'foo@bar.com',
-                        feedback_opt_in: true)
-  end
+  let(:email) { 'some@email.domain' }
+  let(:feedback_opt_in) { true }
+
+  subject(:form) { described_class.new(email: email, feedback_opt_in: feedback_opt_in) }
 
   describe 'validations' do
     describe 'email' do
-      context 'and valid email is given' do
-        it { expect(subject.valid?).to be true }
+      context 'when valid email is given' do
+        context 'when the email is more than 100 characters' do
+          let(:email) { "#{'A' * 91}@domain.co" }
+
+          it { is_expected.not_to be_valid }
+        end
+        context 'when the email is maximum 100 characters' do
+          let(:email) { "#{'A' * 90}@domain.co" }
+
+          it { is_expected.to be_valid }
+        end
       end
 
-      context 'and invalid email is given' do
-        before { subject.email = 'foobar.com' }
+      context 'when invalid email is given' do
+        let(:email) { 'foobar.com' }
 
-        it { expect(subject.valid?).to be false }
+        it { is_expected.not_to be_valid }
       end
 
-      context 'and email is not given' do
-        before { subject.email = '' }
+      context 'when email is not given' do
+        let(:email) { '' }
 
-        it { expect(subject.valid?).to be true }
+        it { is_expected.to be_valid }
       end
     end
 
     describe 'feedback_opt_in' do
       context 'when true' do
-        it { expect(subject.valid?).to be true }
+        it { is_expected.to be_valid }
       end
 
       context 'when false' do
-        before { subject.feedback_opt_in = false }
+        let(:feedback_opt_in) { false }
 
-        it { expect(subject.valid?).to be true }
+        it { is_expected.to be_valid }
       end
     end
   end
 
   describe '#export' do
-    let(:email) { 'some@email.domain' }
-    let(:feedback_opt_in) { true }
-
-    subject { described_class.new(email: email, feedback_opt_in: feedback_opt_in).export }
+    subject { form.export }
 
     context 'when email is set' do
       it 'the returned hash includes email_contact true and email_address' do

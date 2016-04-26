@@ -123,5 +123,6 @@ en:
           attributes:
             email:
               invalid: 'Enter a valid email address'
+              too_long: "Email must be less than 100 characters"
             phone:
               blank: 'Enter your phone number'

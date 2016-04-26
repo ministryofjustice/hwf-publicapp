@@ -72,6 +72,7 @@ en:
               inclusion: "Select whether you're paying a fee for a probate case"
             deceased_name:
               blank: "Please enter the deceased's name"
+              too_long: "The name must be less than 100 characters"
             date_of_death:
               blank: "Enter the date of death"
               not_a_date: "Enter the date in this format DD/MM/YYYY"

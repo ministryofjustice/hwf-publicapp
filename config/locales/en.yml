@@ -57,6 +57,7 @@ en:
           attributes:
             other_description:
               blank: "Enter a description for your income"
+              too_long: "The description must be less than 20 characters"
         forms/fee:
           attributes:
             paid:

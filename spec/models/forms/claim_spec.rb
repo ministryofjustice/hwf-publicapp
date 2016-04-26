@@ -1,38 +1,45 @@
 require 'rails_helper'
 
 RSpec.describe Forms::Claim, type: :model do
-  subject { described_class.new }
+  subject(:form) { described_class.new(number: number, identifier: identifier) }
 
   describe 'validations' do
+    let(:identifier) { '' }
+
     describe 'number' do
       context 'when true' do
-        before do
-          subject.number = true
-          subject.identifier = 'formy-form'
-        end
+        let(:number) { true }
 
         describe 'identifier' do
           context 'when not provided' do
-            before { subject.identifier = '' }
-
-            it { expect(subject.valid?).to be false }
+            it { is_expected.not_to be_valid }
           end
 
           context 'when provided' do
-            it { expect(subject.valid?).to be true }
+            context 'when more than 50 characters' do
+              let(:identifier) { 'I' * 51 }
+
+              it { is_expected.not_to be_valid }
+            end
+
+            context 'when 50 characters or less' do
+              let(:identifier) { 'I' * 50 }
+
+              it { is_expected.to be_valid }
+            end
           end
         end
 
         context 'when false' do
-          before { subject.number = false }
+          let(:number) { false }
 
-          it { expect(subject.valid?).to be true }
+          it { is_expected.to be_valid }
         end
 
         context 'when not a boolean value' do
-          before { subject.number = 'string' }
+          let(:number) { 'string' }
 
-          it { expect(subject.valid?).to be false }
+          it { is_expected.not_to be_valid }
         end
       end
     end
@@ -41,7 +48,7 @@ RSpec.describe Forms::Claim, type: :model do
   describe '#export' do
     let(:identifier) { 'IDENTIFIER' }
 
-    subject { described_class.new(number: number, identifier: identifier).export }
+    subject { form.export }
 
     context 'when number is true' do
       let(:number) { true }

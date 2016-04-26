@@ -1,38 +1,74 @@
 require 'rails_helper'
 
 RSpec.describe Forms::PersonalDetail, type: :model do
+  let(:title) { 'TITLE' }
+  let(:first_name) { 'FIRST NAME' }
+  let(:last_name) { 'LAST NAME' }
 
-  subject { described_class.new(title: 'Lord', first_name: 'Flash', last_name: 'Gordon') }
+  subject(:form) { described_class.new(title: title, first_name: first_name, last_name: last_name) }
 
   describe 'validations' do
+    describe 'title' do
+      context 'when more than 10 characters long' do
+        let(:title) { 'f' * 11 }
 
-    context 'when all the attributes are provided' do
-      it { expect(subject.valid?).to be true }
+        it { is_expected.not_to be_valid }
+      end
+
+      context 'when maximum 10 characters long' do
+        let(:title) { 'f' * 10 }
+
+        it { is_expected.to be_valid }
+      end
     end
 
     describe 'first_name' do
       context 'when not provided' do
-        before { subject.first_name = '' }
+        let(:first_name) { '' }
 
-        it { expect(subject.valid?).to be false }
+        it { is_expected.not_to be_valid }
+      end
+
+      context 'when provided' do
+        context 'when more than 50 characters long' do
+          let(:first_name) { 'f' * 51 }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when maximum 50 characters long' do
+          let(:first_name) { 'f' * 50 }
+
+          it { is_expected.to be_valid }
+        end
       end
     end
 
     describe 'last_name' do
       context 'when not provided' do
-        before { subject.last_name = '' }
+        let(:last_name) { '' }
 
-        it { expect(subject.valid?).to be false }
+        it { is_expected.not_to be_valid }
+      end
+
+      context 'when provided' do
+        context 'when more than 50 characters long' do
+          let(:last_name) { 'f' * 51 }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when maximum 50 characters long' do
+          let(:last_name) { 'f' * 50 }
+
+          it { is_expected.to be_valid }
+        end
       end
     end
   end
 
   describe '#export' do
-    let(:title) { 'TITLE' }
-    let(:first_name) { 'FIRST NAME' }
-    let(:last_name) { 'LAST NAME' }
-
-    subject { described_class.new(title: title, first_name: first_name, last_name: last_name).export }
+    subject { form.export }
 
     it 'returns hash with title, first_name and last_name' do
       is_expected.to eql(title: title, first_name: first_name, last_name: last_name)

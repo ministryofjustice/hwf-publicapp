@@ -115,8 +115,10 @@ en:
           attributes:
             address:
               blank: 'Enter your address'
+              too_long: "Address must be less than 100 characters"
             postcode:
               blank: 'Enter your postcode'
+              too_long: "Postcode must be less than 10 characters"
         forms/contact:
           attributes:
             email:

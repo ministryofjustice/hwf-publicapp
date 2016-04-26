@@ -88,7 +88,7 @@ en:
         forms/form_name:
           attributes:
             identifier:
-              blank: "Form name can't be blank"
+              too_long: "The form name must be less than 50 characters"
         forms/national_insurance:
           attributes:
             number:

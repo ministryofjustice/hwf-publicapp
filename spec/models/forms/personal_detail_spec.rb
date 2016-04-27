@@ -9,14 +9,14 @@ RSpec.describe Forms::PersonalDetail, type: :model do
 
   describe 'validations' do
     describe 'title' do
-      context 'when more than 10 characters long' do
-        let(:title) { 'f' * 11 }
+      context 'when more than 9 characters long' do
+        let(:title) { 'f' * 10 }
 
         it { is_expected.not_to be_valid }
       end
 
-      context 'when maximum 10 characters long' do
-        let(:title) { 'f' * 10 }
+      context 'when maximum 9 characters long' do
+        let(:title) { 'f' * 9 }
 
         it { is_expected.to be_valid }
       end
@@ -30,14 +30,14 @@ RSpec.describe Forms::PersonalDetail, type: :model do
       end
 
       context 'when provided' do
-        context 'when more than 50 characters long' do
-          let(:first_name) { 'f' * 51 }
+        context 'when more than 49 characters long' do
+          let(:first_name) { 'f' * 50 }
 
           it { is_expected.not_to be_valid }
         end
 
-        context 'when maximum 50 characters long' do
-          let(:first_name) { 'f' * 50 }
+        context 'when maximum 49 characters long' do
+          let(:first_name) { 'f' * 49 }
 
           it { is_expected.to be_valid }
         end
@@ -52,14 +52,14 @@ RSpec.describe Forms::PersonalDetail, type: :model do
       end
 
       context 'when provided' do
-        context 'when more than 50 characters long' do
-          let(:last_name) { 'f' * 51 }
+        context 'when more than 49 characters long' do
+          let(:last_name) { 'f' * 50 }
 
           it { is_expected.not_to be_valid }
         end
 
-        context 'when maximum 50 characters long' do
-          let(:last_name) { 'f' * 50 }
+        context 'when maximum 49 characters long' do
+          let(:last_name) { 'f' * 49 }
 
           it { is_expected.to be_valid }
         end

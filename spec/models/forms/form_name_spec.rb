@@ -5,14 +5,14 @@ RSpec.describe Forms::FormName, type: :model do
 
   describe 'validations' do
     describe 'identifier' do
-      context 'when more than 50 characters' do
-        let(:identifier) { 'I' * 51 }
+      context 'when more than 49 characters' do
+        let(:identifier) { 'I' * 50 }
 
         it { is_expected.not_to be_valid }
       end
 
-      context 'when maximum 50 characters long' do
-        let(:identifier) { 'I' * 50 }
+      context 'when maximum 49 characters long' do
+        let(:identifier) { 'I' * 49 }
 
         it { is_expected.to be_valid }
       end

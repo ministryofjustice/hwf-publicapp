@@ -3,7 +3,7 @@ module Forms
     attribute :address, String
     attribute :postcode, String
 
-    validates :address, presence: true, length: { maximum: 100 }
+    validates :address, presence: true, length: { maximum: 99 }
     validates :postcode, presence: true, length: { maximum: 8 }
 
     private

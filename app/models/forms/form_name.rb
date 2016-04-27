@@ -2,7 +2,7 @@ module Forms
   class FormName < Base
     attribute :identifier, String
 
-    validates :identifier, length: { maximum: 50 }
+    validates :identifier, length: { maximum: 49 }
 
     private
 

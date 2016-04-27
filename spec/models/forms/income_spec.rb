@@ -30,13 +30,13 @@ RSpec.describe Forms::Income, type: :model do
       end
 
       context 'when provided' do
-        let(:other_description) { 'd' * 20 }
+        let(:other_description) { 'd' * 19 }
 
         context 'when other income or other partner income is empty' do
           let(:other) { 100 }
 
-          context 'when the description more than 20 characters' do
-            let(:other_description) { 'd' * 21 }
+          context 'when the description more than 19 characters' do
+            let(:other_description) { 'd' * 20 }
 
             it { is_expected.not_to be_valid }
           end

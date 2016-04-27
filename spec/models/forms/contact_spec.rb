@@ -9,13 +9,13 @@ RSpec.describe Forms::Contact, type: :model do
   describe 'validations' do
     describe 'email' do
       context 'when valid email is given' do
-        context 'when the email is more than 100 characters' do
-          let(:email) { "#{'A' * 91}@domain.co" }
+        context 'when the email is more than 99 characters' do
+          let(:email) { "#{'A' * 90}@domain.co" }
 
           it { is_expected.not_to be_valid }
         end
-        context 'when the email is maximum 100 characters' do
-          let(:email) { "#{'A' * 90}@domain.co" }
+        context 'when the email is maximum 99 characters' do
+          let(:email) { "#{'A' * 89}@domain.co" }
 
           it { is_expected.to be_valid }
         end

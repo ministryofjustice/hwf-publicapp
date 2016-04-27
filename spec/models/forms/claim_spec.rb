@@ -16,14 +16,14 @@ RSpec.describe Forms::Claim, type: :model do
           end
 
           context 'when provided' do
-            context 'when more than 25 characters' do
-              let(:identifier) { 'I' * 26 }
+            context 'when more than 24 characters' do
+              let(:identifier) { 'I' * 25 }
 
               it { is_expected.not_to be_valid }
             end
 
-            context 'when 25 characters or less' do
-              let(:identifier) { 'I' * 25 }
+            context 'when less than 25 characters provided' do
+              let(:identifier) { 'I' * 24 }
 
               it { is_expected.to be_valid }
             end

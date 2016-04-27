@@ -85,7 +85,7 @@ en:
               inclusion: Select whether you have a case, claim or ‘notice to pay’ number
             identifier:
               blank: Enter a case, claim or ‘notice to pay’ number
-              too_long: "The number must be less than 50 characters"
+              too_long: "The number must be less than 25 characters"
         forms/form_name:
           attributes:
             identifier:

@@ -44,14 +44,14 @@ RSpec.describe Forms::Probate, type: :model do
 
         describe 'deceased_name' do
           context 'when present' do
-            context 'when more than 100 characters long' do
-              let(:deceased_name) { 'X' * 101 }
+            context 'when more than 99 characters long' do
+              let(:deceased_name) { 'X' * 100 }
 
               it { is_expected.not_to be_valid }
             end
 
             context 'when less than 100 characters long' do
-              let(:deceased_name) { 'X' * 100 }
+              let(:deceased_name) { 'X' * 99 }
 
               it { is_expected.to be_valid }
             end

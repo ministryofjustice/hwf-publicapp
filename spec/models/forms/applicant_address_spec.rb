@@ -15,14 +15,14 @@ RSpec.describe Forms::ApplicantAddress, type: :model do
       end
 
       context 'when provided' do
-        context 'when more than 100 characters long' do
-          let(:address) { 'a' * 101 }
+        context 'when more than 99 characters long' do
+          let(:address) { 'a' * 100 }
 
           it { is_expected.not_to be_valid }
         end
 
-        context 'when maximum 100 characters long' do
-          let(:address) { 'a' * 100 }
+        context 'when maximum 99 characters long' do
+          let(:address) { 'a' * 99 }
 
           it { is_expected.to be_valid }
         end

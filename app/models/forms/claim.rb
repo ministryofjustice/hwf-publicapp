@@ -4,7 +4,7 @@ module Forms
     attribute :identifier, String
 
     validates :number, inclusion: { in: [true, false] }
-    validates :identifier, presence: true, length: { maximum: 50 }, if: :number?
+    validates :identifier, presence: true, length: { maximum: 25 }, if: :number?
 
     private
 

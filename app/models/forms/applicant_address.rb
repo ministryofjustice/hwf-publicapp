@@ -4,7 +4,7 @@ module Forms
     attribute :postcode, String
 
     validates :address, presence: true, length: { maximum: 100 }
-    validates :postcode, presence: true, length: { maximum: 10 }
+    validates :postcode, presence: true, length: { maximum: 8 }
 
     private
 

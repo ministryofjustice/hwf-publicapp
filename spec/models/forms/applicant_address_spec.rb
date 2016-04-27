@@ -38,14 +38,14 @@ RSpec.describe Forms::ApplicantAddress, type: :model do
       end
 
       context 'when provided' do
-        context 'when more than 10 characters long' do
-          let(:postcode) { 'p' * 11 }
+        context 'when more than 8 characters long' do
+          let(:postcode) { 'p' * 9 }
 
           it { is_expected.not_to be_valid }
         end
 
-        context 'when maximum 10 characters long' do
-          let(:postcode) { 'p' * 10 }
+        context 'when maximum 8 characters long' do
+          let(:postcode) { 'p' * 8 }
 
           it { is_expected.to be_valid }
         end

@@ -7,6 +7,7 @@ window.moj.Modules.IncomeTable = {
 
     if (self.$tables.length) {
       self.getTotalTables();
+      self.formatExistingValues();
       self.bindEvents();
     }
   },
@@ -24,6 +25,18 @@ window.moj.Modules.IncomeTable = {
   formatValue: function($input) {
     var val = parseFloat($input.val());
     $input.val(val.toFixed(2));
+  },
+
+  formatExistingValues: function() {
+    var self = this;
+
+    self.$tables.find('input.form-control[type="number"]').each(function(n, el) {
+      var $el = $(el);
+
+      if($el.val() !== '') {
+        self.formatValue($el);
+      }
+    });
   },
 
   getTotalTables: function() {

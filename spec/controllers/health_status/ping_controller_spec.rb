@@ -3,32 +3,25 @@ require 'rails_helper'
 RSpec.describe HealthStatus::PingController, type: :controller do
 
   describe 'GET #show' do
-    before(:each) { get :show }
+    let(:json) { { some_key: 'some value' } }
+    let(:deployment) { double(as_json: json) }
+
+    before(:each) do
+      allow(HealthStatus::Deployment).to receive(:new).and_return(deployment)
+
+      get :show
+    end
 
     it 'returns success code' do
       expect(response).to have_http_status(:success)
     end
 
-    it 'returns JSON' do
+    it 'returns JSON content type' do
       expect(response.content_type).to eq('application/json')
     end
 
-    describe 'renders correct json' do
-      let(:json) { JSON.parse(response.body) }
-      let(:keys) do
-        ["version_number",
-         "build_date",
-         "commit_id",
-         "build_tag"]
-      end
-
-      it 'has ping.json schema defined keys' do
-        expect(json.keys).to eq keys
-      end
-
-      it 'key count' do
-        expect(json.count).to eq 4
-      end
+    it 'returns the deployment json in the body' do
+      expect(response.body).to eql(json.to_json)
     end
   end
 end

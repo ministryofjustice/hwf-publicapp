@@ -4,3 +4,9 @@ submission:
 analytics:
   id: <%= ENV['GA_ID'] || 'UA-37377084-52' %>
   domain: <%= ENV['GA_DOMAIN'] || 'auto' %>
+health_status:
+  deployment:
+    version_number: <%= ENV['APPVERSION'] || 'unknown' %>
+    build_date: <%= ENV['APP_BUILD_DATE'] || 'unknown' %>
+    commit_id:  <%= ENV['APP_GIT_COMMIT'] || 'unknown' %>
+    build_tag:  <%= ENV['APP_BUILD_TAG'] || 'unknown' %>

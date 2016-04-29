@@ -117,13 +117,13 @@ RSpec.describe QuestionsController, type: :controller do
 
     context 'when the session has "marital_status" value set' do
       context 'when it\'s empty' do
-        let(:session) { { 'marital_status' => {} } }
+        let(:session) { { 'questions' => { 'marital_status' => {} } } }
 
         it { is_expected.to be nil }
       end
 
       context 'when it has a hash with "married" field' do
-        let(:session) { { 'marital_status' => { 'married' => married } } }
+        let(:session) { { 'questions' => { 'marital_status' => { 'married' => married } } } }
 
         context 'when "married" is true' do
           let(:married) { true }
@@ -139,7 +139,7 @@ RSpec.describe QuestionsController, type: :controller do
     end
 
     context 'when the session does not have "marital_status" value set' do
-      let(:session) { {} }
+      let(:session) { { 'questions' => {} } }
 
       it { is_expected.to be nil }
     end

@@ -60,11 +60,13 @@ RSpec.describe QuestionsController, type: :controller do
     let(:valid?) { false }
     let(:params) { { question_1: 'AAA', question_2: 'BBB' } }
     let(:form) { double(id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?) }
+    let(:online_application) { double }
     let(:next_path) { root_path }
     let(:navigation) { double(next: next_path) }
 
     before do
-      allow(Navigation).to receive(:new).with(id).and_return(navigation)
+      allow(controller).to receive(:online_application).and_return(online_application)
+      allow(Navigation).to receive(:new).with(online_application, id).and_return(navigation)
 
       put :update, id: id, id => params
     end

@@ -1,7 +1,8 @@
 class Navigation
   include Rails.application.routes.url_helpers
 
-  def initialize(current_question)
+  def initialize(online_application, current_question)
+    @online_application = online_application
     @current_question = current_question
   end
 
@@ -16,7 +17,11 @@ class Navigation
   private
 
   def next_question_id
-    current_question_index = QuestionFormFactory::IDS.find_index(@current_question)
-    QuestionFormFactory::IDS[current_question_index + 1]
+    if @current_question == :benefit && @online_application.benefits?
+      :fee
+    else
+      current_question_index = QuestionFormFactory::IDS.find_index(@current_question)
+      QuestionFormFactory::IDS[current_question_index + 1]
+    end
   end
 end

@@ -3,13 +3,14 @@ require 'rails_helper'
 RSpec.describe Navigation do
   include Rails.application.routes.url_helpers
 
+  let(:online_application) { build :online_application }
+
   describe '#next' do
-    subject { described_class.new(current_question).next }
+    subject { described_class.new(online_application, current_question).next }
 
     {
       marital_status: :savings_and_investment,
       savings_and_investment: :benefit,
-      benefit: :dependent,
       dependent: :income,
       income: :fee,
       fee: :probate,
@@ -26,6 +27,26 @@ RSpec.describe Navigation do
 
         it "routes to #{next_question} question" do
           is_expected.to eql(question_path(next_question))
+        end
+      end
+    end
+
+    context 'for benefit question' do
+      let(:online_application) { build :online_application, benefits: benefits }
+      let(:current_question) { :benefit }
+
+      context 'when the application is benefit one' do
+        let(:benefits) { true }
+
+        it 'routes to the fee question (skips dependent and income)' do
+          is_expected.to eql(question_path(:fee))
+        end
+      end
+      context 'when the application is not a benefit one' do
+        let(:benefits) { false }
+
+        it 'routes to the dependent question' do
+          is_expected.to eql(question_path(:dependent))
         end
       end
     end

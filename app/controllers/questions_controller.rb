@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
 
     if form.valid?
       storage.save_form(form)
-      redirect_to(Navigation.new(question).next)
+      redirect_to(Navigation.new(online_application, question).next)
     else
       render :edit
     end

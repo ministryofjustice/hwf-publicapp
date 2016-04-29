@@ -7,10 +7,7 @@ module Forms
     TIME_LIMIT_FOR_PROBATE = 20
 
     validates :kase, inclusion: { in: [true, false] }
-
-    with_options if: :kase do
-      validates :deceased_name, presence: true
-    end
+    validates :deceased_name, presence: true, length: { maximum: 99 }, if: :kase?
 
     with_options if: :validate_probate_date_of_death? do
       validates :date_of_death, date: {

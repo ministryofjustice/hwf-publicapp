@@ -52,10 +52,12 @@ en:
             children_number:
               not_a_number: 'You must enter financially dependent children as a number'
               blank: 'You must enter the number of financially dependent children'
+              less_than: 'You must enter number less than 100'
         forms/income:
           attributes:
             other_description:
               blank: "Enter a description for your income"
+              too_long: "The description must be less than 20 characters"
         forms/fee:
           attributes:
             paid:
@@ -71,6 +73,7 @@ en:
               inclusion: "Select whether you're paying a fee for a probate case"
             deceased_name:
               blank: "Please enter the deceased's name"
+              too_long: "The name must be less than 100 characters"
             date_of_death:
               blank: "Enter the date of death"
               not_a_date: "Enter the date in this format DD/MM/YYYY"
@@ -82,10 +85,11 @@ en:
               inclusion: Select whether you have a case, claim or ‘notice to pay’ number
             identifier:
               blank: Enter a case, claim or ‘notice to pay’ number
+              too_long: "The number must be less than 25 characters"
         forms/form_name:
           attributes:
             identifier:
-              blank: "Form name can't be blank"
+              too_long: "The form name must be less than 50 characters"
         forms/national_insurance:
           attributes:
             number:
@@ -100,19 +104,26 @@ en:
               too_old: Check this date of birth is correct
         forms/personal_detail:
           attributes:
+            title:
+              too_long: "Title must be less than 10 characters"
             first_name:
               blank: 'Enter your first name'
+              too_long: "First name must be less than 50 characters"
             last_name:
               blank: 'Enter your last name'
+              too_long: "Last name must be less than 50 characters"
         forms/applicant_address:
           attributes:
             address:
               blank: 'Enter your address'
+              too_long: "Address must be less than 100 characters"
             postcode:
               blank: 'Enter your postcode'
+              too_long: "Postcode must be less than 10 characters"
         forms/contact:
           attributes:
             email:
               invalid: 'Enter a valid email address'
+              too_long: "Email must be less than 100 characters"
             phone:
               blank: 'Enter your phone number'

@@ -1,41 +1,53 @@
 require 'rails_helper'
 
 RSpec.describe Forms::Dependent, type: :model do
-  subject { described_class.new }
+
+  subject(:form) { described_class.new(children: children, children_number: children_number) }
 
   describe 'validations' do
+    let(:children_number) { nil }
+
     describe 'children' do
       context 'when true' do
-        before do
-          subject.children = true
-          subject.children_number = '4'
+        let(:children) { true }
+
+        context 'when children_number is not supplied' do
+          let(:children_number) { '' }
+
+          it { is_expected.not_to be_valid }
         end
 
-        it { expect(subject.valid?).to be true }
+        context 'when children_number is supplied as a word' do
+          let(:children_number) { 'three' }
 
-        context 'and children_number is not supplied' do
-          before { subject.children_number = '' }
-
-          it { expect(subject.valid?).to be false }
+          it { is_expected.not_to be_valid }
         end
 
-        context 'and children_number is supplied as a word' do
-          before { subject.children_number = 'three' }
+        context 'when children_number is supplied as a number' do
+          context 'when it is over 99' do
+            let(:children_number) { '100' }
 
-          it { expect(subject.valid?).to be false }
+            it { is_expected.not_to be_valid }
+          end
+
+          context 'when it is less or equal than 99' do
+            let(:children_number) { '4' }
+
+            it { is_expected.to be_valid }
+          end
         end
       end
 
       context 'when false' do
-        before { subject.children = false }
+        let(:children) { false }
 
-        it { expect(subject.valid?).to be true }
+        it { is_expected.to be_valid }
       end
 
       context 'when not a boolean value' do
-        before { subject.children = 'string' }
+        let(:children) { 'string' }
 
-        it { expect(subject.valid?).to be false }
+        it { is_expected.not_to be_valid }
       end
     end
   end
@@ -43,7 +55,7 @@ RSpec.describe Forms::Dependent, type: :model do
   describe '#export' do
     let(:children_number) { 3 }
 
-    subject { described_class.new(children: children, children_number: children_number).export }
+    subject { form.export }
 
     context 'when children is true' do
       let(:children) { true }

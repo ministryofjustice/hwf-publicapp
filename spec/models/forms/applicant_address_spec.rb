@@ -1,36 +1,61 @@
 require 'rails_helper'
 
 RSpec.describe Forms::ApplicantAddress, type: :model do
+  let(:address) { 'London' }
+  let(:postcode) { 'LON DON' }
 
-  subject { described_class.new(address: '1 Foo Road', postcode: 'SW1') }
+  subject(:form) { described_class.new(address: address, postcode: postcode) }
 
   describe 'validations' do
-    context 'when all the attributes are provided' do
-      it { expect(subject.valid?).to be true }
-    end
-
     describe 'address' do
       context 'when address not provided' do
-        before { subject.address = '' }
+        let(:address) { '' }
 
-        it { expect(subject.valid?).to be false }
+        it { is_expected.not_to be_valid }
       end
+
+      context 'when provided' do
+        context 'when more than 99 characters long' do
+          let(:address) { 'a' * 100 }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when maximum 99 characters long' do
+          let(:address) { 'a' * 99 }
+
+          it { is_expected.to be_valid }
+        end
+      end
+
     end
 
     describe 'postcode' do
       context 'when postcode not provided' do
-        before { subject.postcode = '' }
+        let(:postcode) { '' }
 
-        it { expect(subject.valid?).to be false }
+        it { is_expected.not_to be_valid }
       end
+
+      context 'when provided' do
+        context 'when more than 8 characters long' do
+          let(:postcode) { 'p' * 9 }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when maximum 8 characters long' do
+          let(:postcode) { 'p' * 8 }
+
+          it { is_expected.to be_valid }
+        end
+      end
+
     end
   end
 
   describe '#export' do
-    let(:address) { 'London' }
-    let(:postcode) { 'LON DON' }
-
-    subject { described_class.new(address: address, postcode: postcode).export }
+    subject { form.export }
 
     it 'returns hash with address and postcode' do
       is_expected.to eql(address: address, postcode: postcode)

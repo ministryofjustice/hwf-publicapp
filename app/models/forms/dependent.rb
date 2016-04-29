@@ -4,10 +4,8 @@ module Forms
     attribute :children_number, Integer
 
     validates :children, inclusion: { in: [true, false] }
-
-    with_options if: :children? do
-      validates :children_number, presence: true, numericality: { allow_blank: true }
-    end
+    validates :children_number,
+      presence: true, numericality: { allow_blank: true, less_than: 100 }, if: :children?
 
     private
 

@@ -26,7 +26,7 @@ module Forms
     attribute :partner_rent_other_property, Float
     attribute :partner_other, Float
 
-    validates :other_description, presence: true, if: :other_income?
+    validates :other_description, presence: true, length: { maximum: 19 }, if: :other_income?
 
     validate :either_other_income
 

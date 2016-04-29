@@ -1,26 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe Forms::FormName, type: :model do
-  subject { described_class.new }
+  subject(:form) { described_class.new(identifier: identifier) }
 
   describe 'validations' do
     describe 'identifier' do
-      context 'when provided' do
-        before { subject.identifier = 'N1' }
+      context 'when more than 49 characters' do
+        let(:identifier) { 'I' * 50 }
 
-        it { expect(subject.valid?).to be true }
+        it { is_expected.not_to be_valid }
       end
 
-      context 'when not provided' do
-        before { subject.identifier = '' }
+      context 'when maximum 49 characters long' do
+        let(:identifier) { 'I' * 49 }
 
-        it { expect(subject.valid?).to be true }
+        it { is_expected.to be_valid }
       end
     end
   end
 
   describe '#export' do
-    subject { described_class.new(identifier: identifier).export }
+    subject { form.export }
 
     context 'when identifier is set and not blank' do
       let(:identifier) { 'IDENTIFIER' }

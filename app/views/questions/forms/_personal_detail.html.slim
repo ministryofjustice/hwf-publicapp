@@ -1,7 +1,8 @@
 legend.visuallyhidden = t('text', scope: @form.i18n_scope)
 
-.form-group
+.form-group class=('error' if @form.errors[:title].any?)
   = f.label :title, class: 'form-label'
+  span.error-message#title = @form.errors[:title].join(' ') if @form.errors[:title].any?
   = f.text_field :title, class: 'form-control form-control-smaller'
 .form-group class=('error' if @form.errors[:first_name].any?)
   = f.label :first_name, class: 'form-label'

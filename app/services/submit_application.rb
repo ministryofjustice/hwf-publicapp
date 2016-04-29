@@ -4,6 +4,13 @@ class SubmitApplication
     @token = token
   end
 
+  def available?
+    response = RestClient.get "#{@url}/ping.json"
+    response.code == 200
+  rescue
+    false
+  end
+
   def post(online_application)
     response = post_data(online_application)
     JSON.parse(response).deep_symbolize_keys

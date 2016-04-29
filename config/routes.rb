@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resource :session, only: :destroy do
     get :start
   end
+
+  get 'ping' => 'health_status/ping#show'
+  get 'healthcheck' => 'health_status/health_check#show'
 end

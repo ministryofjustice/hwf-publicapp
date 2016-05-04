@@ -23,10 +23,17 @@ RSpec.describe Forms::NationalInsurance, type: :model do
         end
       end
 
-      context 'when provided with a space' do
-        before { subject.number = 'AB123456A ' }
+      context 'when provided with spaces' do
+        before do
+          subject.number = 'AB 12 34 56 A'
+          subject.valid?
+        end
 
-        it { expect(subject.valid?).to be false }
+        it { expect(subject).to be_valid }
+
+        it 'removes the spaces' do
+          expect(subject.number).to eq 'AB123456A'
+        end
       end
 
       context 'when provided with an invalid format' do

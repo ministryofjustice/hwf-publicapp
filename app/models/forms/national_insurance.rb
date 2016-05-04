@@ -16,6 +16,7 @@ module Forms
     def format_number
       unless number.nil?
         number.upcase!
+        number.delete!(' ')
       end
     end
 

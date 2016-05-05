@@ -6,7 +6,9 @@ module Views
     end
 
     def children_text
-      children > 0 ? children.to_s : I18n.t('summary.children_false')
+      unless children.nil?
+        children > 0 ? children.to_s : I18n.t('summary.children_false')
+      end
     end
 
     def case_number?

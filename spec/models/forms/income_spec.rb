@@ -73,8 +73,8 @@ RSpec.describe Forms::Income, type: :model do
       let(:other) { nil }
       let(:partner_universal_credit) { nil }
 
-      it 'returns hash with income 0' do
-        is_expected.to eql(income: 0)
+      it 'returns hash with income nil' do
+        is_expected.to eql(income: nil)
       end
     end
 

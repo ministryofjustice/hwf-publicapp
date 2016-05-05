@@ -72,5 +72,13 @@ RSpec.describe Forms::Dependent, type: :model do
         is_expected.to eql(children: 0)
       end
     end
+
+    context 'when children is nil' do
+      let(:children) { nil }
+
+      it 'returns hash with children parameter being nil' do
+        is_expected.to eql(children: nil)
+      end
+    end
   end
 end

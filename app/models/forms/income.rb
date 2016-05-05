@@ -1,5 +1,6 @@
 module Forms
   class Income < Base
+    attribute :answered, Boolean
     attribute :wages, Float
     attribute :child_benefit, Float
     attribute :working_tax_credit, Float
@@ -26,6 +27,7 @@ module Forms
     attribute :partner_rent_other_property, Float
     attribute :partner_other, Float
 
+    validates :answered, inclusion: { in: [true, false] }
     validates :other_description, presence: true, length: { maximum: 19 }, if: :other_income?
 
     validate :either_other_income
@@ -45,8 +47,12 @@ module Forms
     def export_params
       usable = attributes.select { |_, v| v.is_a?(Float) }.values
       {
-        income: usable.empty? ? nil : usable.inject(:+)
+        income: usable.empty? ? export_no_income : usable.inject(:+)
       }
+    end
+
+    def export_no_income
+      answered? ? 0 : nil
     end
   end
 end

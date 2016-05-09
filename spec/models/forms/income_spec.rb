@@ -4,11 +4,38 @@ RSpec.describe Forms::Income, type: :model do
   subject(:form) { described_class.new(params) }
 
   describe 'validations' do
+    let(:answered) { true }
     let(:other_description) { '' }
     let(:other) { nil }
     let(:partner_other) { nil }
 
-    let(:params) { { other_description: other_description, other: other, partner_other: partner_other } }
+    let(:params) { { answered: answered, other_description: other_description, other: other, partner_other: partner_other } }
+
+    describe 'answered' do
+      context 'when true' do
+        let(:answered) { true }
+
+        it { is_expected.to be_valid }
+      end
+
+      context 'when false' do
+        let(:answered) { false }
+
+        it { is_expected.to be_valid }
+      end
+
+      context 'when nil' do
+        let(:answered) { nil }
+
+        it { is_expected.not_to be_valid }
+      end
+
+      context 'when not boolean' do
+        let(:answered) { 'string' }
+
+        it { is_expected.not_to be_valid }
+      end
+    end
 
     describe 'other_description' do
       context 'when empty' do
@@ -54,7 +81,8 @@ RSpec.describe Forms::Income, type: :model do
   end
 
   describe '#export' do
-    let(:params) { { wages: wages, other: other, partner_universal_credit: partner_universal_credit } }
+    let(:answered) { true }
+    let(:params) { { answered: answered, wages: wages, other: other, partner_universal_credit: partner_universal_credit } }
 
     subject { form.export }
 
@@ -73,8 +101,18 @@ RSpec.describe Forms::Income, type: :model do
       let(:other) { nil }
       let(:partner_universal_credit) { nil }
 
-      it 'returns hash with income 0' do
-        is_expected.to eql(income: 0)
+      context 'when the income question has been answered' do
+        it 'returns hash with income 0' do
+          is_expected.to eql(income: 0)
+        end
+      end
+
+      context 'when the income question has not been answered' do
+        let(:answered) { nil }
+
+        it 'returns hash with income nil' do
+          is_expected.to eql(income: nil)
+        end
       end
     end
 

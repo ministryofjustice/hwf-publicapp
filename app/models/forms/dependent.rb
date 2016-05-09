@@ -11,8 +11,18 @@ module Forms
 
     def export_params
       {
-        children: children ? children_number : 0
+        children: export_children
       }
+    end
+
+    def export_children
+      if children.nil?
+        nil
+      elsif children
+        children_number
+      else
+        0
+      end
     end
   end
 end

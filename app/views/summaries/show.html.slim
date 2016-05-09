@@ -18,14 +18,16 @@ table
       td =t('benefits', scope: 'summary.labels')
       td= t("applicant_on_benefits_#{@summary.benefits}", scope: 'summary')
       td.right= link_to "Change", question_path(:benefit)
-    tr
-      td =t('children', scope: 'summary.labels')
-      td =@summary.children_text
-      td.right= link_to "Change", question_path(:dependent)
-    tr
-      td =t('income', scope: 'summary.labels')
-      td =number_to_currency(@summary.income, precision: 2, unit: '£')
-      td.right= link_to "Change", question_path(:income)
+    - if @summary.children_text
+      tr
+        td =t('children', scope: 'summary.labels')
+        td =@summary.children_text
+        td.right= link_to "Change", question_path(:dependent)
+    - if @summary.income
+      tr
+        td =t('income', scope: 'summary.labels')
+        td =number_to_currency(@summary.income, precision: 2, unit: '£')
+        td.right= link_to "Change", question_path(:income)
     tr
       td =t('fee', scope: 'summary.labels')
       td =@summary.refund_text

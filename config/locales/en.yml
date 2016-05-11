@@ -31,6 +31,9 @@ en:
         date_of_death: "Date of death"
       forms/form_name:
         identifier: 'Form name'
+      forms/help_request:
+        phone: Telephone number
+        description: Describe what you'd like to talk about
     errors:
       models:
         forms/marital_status:
@@ -127,3 +130,11 @@ en:
               too_long: "Email must be less than 100 characters"
             phone:
               blank: 'Enter your phone number'
+        forms/help_request:
+          attributes:
+            name:
+              blank: Enter a valid name.
+            phone:
+              blank: Enter a valid phone number.
+            description:
+              blank: Describe what you'd like to talk about.

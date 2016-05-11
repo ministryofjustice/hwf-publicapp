@@ -1,0 +1,30 @@
+h1.heading-xlarge.heading-with-lede Ask for technical help
+
+h2.heading-large Please note: we cannot offer legal advice.
+
+= render('shared/error_block', form: @form) if @form.errors.any?
+
+p Enter your name, telephone number and a brief description of what you need help with. We'll get back to you during the next working day between 9am and 5pm.
+
+p We’ll only use your details to call you back. Don’t include any personal information, for example address or date of birth.
+
+= form_for @form, as: @form.id, url: help_request_path do |f|
+  fieldset
+    .form-group class=('error' if @form.errors[:name].any?)
+      = f.label :name, class: 'form-label'
+      span.error-message#name = @form.errors[:name].join(' ') if @form.errors[:name].any?
+      = f.text_field :name, class: 'form-control'
+
+    .form-group class=('error' if @form.errors[:phone].any?)
+      = f.label :phone, class: 'form-label'
+      span.error-message#phone = @form.errors[:phone].join(' ') if @form.errors[:phone].any?
+      = f.text_field :phone, class: 'form-control'
+
+    .form-group class=('error' if @form.errors[:description].any?)
+      = f.label :description, class: 'form-label'
+      span.error-message#description = @form.errors[:description].join(' ') if @form.errors[:description].any?
+      = f.text_area :description, class: 'form-control', rows: 6
+
+
+    .form-group
+      = f.submit t('submit_button'), class: 'button'

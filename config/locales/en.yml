@@ -7,6 +7,8 @@ en:
     visuallyhidden: 'Errors are listed as links below, click to select the field that needs correcting.'
   errors:
     combined_other_payments_invalid: 'Enter the amount of your income'
+  help_requests:
+    success: 'Thank you we will call you back during the next working day between 9am and 5pm.'
   activemodel:
     attributes:
       forms/income:

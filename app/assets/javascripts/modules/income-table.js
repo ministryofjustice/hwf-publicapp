@@ -18,7 +18,10 @@ window.moj.Modules.IncomeTable = {
     self.$tables.find('input.form-control[type="number"]').on('keyup', function() {
       self.getTotalTables();
     }).on('blur', function(e) {
-      self.formatValue($(e.target));
+      var $el = $(e.target);
+      if($el.val() !== '') {
+        self.formatValue($el);
+      }
     });
   },
 

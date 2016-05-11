@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get :start
   end
 
+  resource :help_request, only: %i[new create], path: 'ask-for-help'
+
   get 'ping' => 'health_status/ping#show'
   get 'healthcheck' => 'health_status/health_check#show'
 end

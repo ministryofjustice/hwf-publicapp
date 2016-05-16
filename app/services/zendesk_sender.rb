@@ -32,6 +32,7 @@ class ZendeskSender
 
   def custom_fields(help_request)
     [
+      { id: '32342378', value: Settings.env },
       { id: '24041286', value: help_request.phone },
       { id: '23757677', value: 'help_with_fees_technical_support' }
     ]

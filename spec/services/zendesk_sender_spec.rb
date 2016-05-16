@@ -49,6 +49,7 @@ RSpec.describe ZendeskSender do
             name: 'NAME'
           },
           custom_fields: [
+            { id: '32342378', value: 'test' },
             { id: '24041286', value: 'PHONE' },
             { id: '23757677', value: 'help_with_fees_technical_support' }
           ]

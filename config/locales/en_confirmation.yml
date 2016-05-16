@@ -29,3 +29,6 @@ en:
     notice:
       warning: Warning
       text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
+  feedback:
+    heading: Please tell us what you think of this service
+    link: Take our short survey

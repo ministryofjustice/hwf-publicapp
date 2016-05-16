@@ -10,3 +10,8 @@ health_status:
     build_date: <%= ENV['APP_BUILD_DATE'] || 'unknown' %>
     commit_id:  <%= ENV['APP_GIT_COMMIT'] || 'unknown' %>
     build_tag:  <%= ENV['APP_BUILD_TAG'] || 'unknown' %>
+zendesk:
+  enabled: <%= ENV['ZENDESK_ENABLED'] || true %>
+  url: <%= ENV['ZENDESK_URL'] %>
+  username: <%= ENV['ZENDESK_USERNAME'] %>
+  token: <%= ENV['ZENDESK_TOKEN'] %>

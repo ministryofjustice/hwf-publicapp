@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails', groups: [:development] # this has to be here because of load order
+gem 'dotenv-rails', groups: [:development, :test] # this has to be here because of load order
 
 gem 'rails', '~> 4.2.6'
 
@@ -8,6 +8,7 @@ gem 'config'
 gem 'date_validator'
 gem 'rest-client'
 gem 'virtus'
+gem 'zendesk_api'
 
 gem 'govuk_frontend_toolkit', git: "https://github.com/alphagov/govuk_frontend_toolkit_gem.git", submodules: true
 gem 'govuk_elements_rails', git: 'https://github.com/ministryofjustice/govuk_elements_rails.git', submodules: true

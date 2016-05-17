@@ -25,8 +25,11 @@ RSpec.describe HelpRequestsController, type: :controller do
     let(:params) { { name: 'N', phone: 'P', description: 'D' } }
     let(:id) { :help_request }
     let(:form) { double(id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?) }
+    let(:zendesk_sender) { double(send_help_request: nil) }
 
     before do
+      allow(ZendeskSender).to receive(:new).and_return(zendesk_sender)
+
       post :create, id => params
     end
 
@@ -36,6 +39,11 @@ RSpec.describe HelpRequestsController, type: :controller do
       it 'updates the form from the parameters' do
         expect(form).to have_received(:update_attributes).with(params)
       end
+
+      it 'sends the request using ZendeskSender' do
+        expect(zendesk_sender).to have_received(:send_help_request).with(form)
+      end
+
       it 'sets a flash message' do
         expect(flash[:info]).not_to be_empty
       end

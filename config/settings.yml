@@ -12,7 +12,7 @@ health_status:
     commit_id:  <%= ENV['APP_GIT_COMMIT'] || 'unknown' %>
     build_tag:  <%= ENV['APP_BUILD_TAG'] || 'unknown' %>
 zendesk:
-  enabled: <%= ENV['ZENDESK_ENABLED'] || true %>
+  enabled: <%= ENV['ZENDESK_ENABLED'].present? && ['1', 'true'].include?(ENV['ZENDESK_ENABLED'].downcase) %>
   url: <%= ENV['ZENDESK_URL'] %>
   username: <%= ENV['ZENDESK_USERNAME'] %>
   token: <%= ENV['ZENDESK_TOKEN'] %>

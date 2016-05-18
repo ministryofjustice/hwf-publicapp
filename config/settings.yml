@@ -1,3 +1,4 @@
+env: <%= ENV['ENV'] %>
 submission:
   url: <%= ENV['SUBMISSION_URL'] %>
   token: <%= ENV['SUBMISSION_TOKEN'] %>
@@ -10,3 +11,8 @@ health_status:
     build_date: <%= ENV['APP_BUILD_DATE'] || 'unknown' %>
     commit_id:  <%= ENV['APP_GIT_COMMIT'] || 'unknown' %>
     build_tag:  <%= ENV['APP_BUILD_TAG'] || 'unknown' %>
+zendesk:
+  enabled: <%= ENV['ZENDESK_ENABLED'].present? && ['1', 'true'].include?(ENV['ZENDESK_ENABLED'].downcase) %>
+  url: <%= ENV['ZENDESK_URL'] %>
+  username: <%= ENV['ZENDESK_USERNAME'] %>
+  token: <%= ENV['ZENDESK_TOKEN'] %>

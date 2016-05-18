@@ -11,7 +11,8 @@
         p
           strong.phase-tag= Rails.application.config.phase.upcase
           span
-            | Tell us what you think and #{link_to 'help us improve', Rails.application.config.feedback_url}
+            ' Tell us what you think and #{link_to 'help us improve', Rails.application.config.feedback_url}.
+            =t('help_requests.layout_nudge.text_html', link: link_to(t('help_requests.layout_nudge.link'), new_help_request_path))
     .container
       section#content.cf
         - flash.each do |key, value|

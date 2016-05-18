@@ -1,12 +1,12 @@
-h1.heading-xlarge.heading-with-lede Ask for technical help
+h1.heading-xlarge.heading-with-lede =t('help_requests.heading')
 
-h2.heading-large Please note: we cannot offer legal advice.
+h2.heading-large =t('help_requests.subheading')
 
 = render('shared/error_block', form: @form) if @form.errors.any?
 
-p Enter your name, telephone number and a brief description of what you need help with. We'll get back to you during the next working day between 9am and 5pm.
+p =t('help_requests.description.line_1')
 
-p We’ll only use your details to call you back. Don’t include any personal information, for example address or date of birth.
+p =t('help_requests.description.line_2')
 
 = form_for @form, as: @form.id, url: help_request_path do |f|
   fieldset

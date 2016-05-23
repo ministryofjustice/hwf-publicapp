@@ -3,6 +3,7 @@ en:
     breadcrumb: 'Step 15 of 16'
     labels:
       title: Check details
+      form_name: 'Form name or number'
       married: 'Status'
       savings: 'Savings and investments'
       benefits: 'Benefits'
@@ -12,7 +13,6 @@ en:
       deceased_name: 'Name of deceased'
       date_of_death: 'Date of death'
       claim: 'Claim number'
-      form_name: 'Form name'
       ni_number: 'National Insurance number'
       date_of_birth: 'Date of birth'
       personal: 'Full name'

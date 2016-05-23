@@ -92,6 +92,7 @@ en:
         forms/form_name:
           attributes:
             identifier:
+              blank: "Enter the form name or number, or select 'I don’t know the form name or number'"
               too_long: "The form name must be less than 50 characters"
         forms/national_insurance:
           attributes:

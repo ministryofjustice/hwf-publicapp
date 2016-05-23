@@ -1,20 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe Forms::FormName, type: :model do
-  subject(:form) { described_class.new(identifier: identifier) }
+  let(:unknown) { false }
+
+  subject(:form) { described_class.new(identifier: identifier, unknown: unknown) }
 
   describe 'validations' do
     describe 'identifier' do
-      context 'when more than 49 characters' do
-        let(:identifier) { 'I' * 50 }
+      context 'when missing' do
+        let(:identifier) { nil }
 
-        it { is_expected.not_to be_valid }
+        context 'when the unknown field is false' do
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when the unknown field is true' do
+          let(:unknown) { true }
+
+          it { is_expected.to be_valid }
+        end
       end
 
-      context 'when maximum 49 characters long' do
-        let(:identifier) { 'I' * 49 }
+      context 'when filled in' do
+        context 'when more than 49 characters' do
+          let(:identifier) { 'I' * 50 }
 
-        it { is_expected.to be_valid }
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when maximum 49 characters long' do
+          let(:identifier) { 'I' * 49 }
+
+          it { is_expected.to be_valid }
+        end
       end
     end
   end
@@ -25,8 +43,18 @@ RSpec.describe Forms::FormName, type: :model do
     context 'when identifier is set and not blank' do
       let(:identifier) { 'IDENTIFIER' }
 
-      it 'returns hash with form_name set' do
-        is_expected.to eql(form_name: identifier)
+      context 'when the unknown field is true' do
+        let(:unknown) { true }
+
+        it 'returns hash with form_name set' do
+          is_expected.to eql(form_name: identifier)
+        end
+      end
+
+      context 'when the unknown field is false' do
+        it 'returns hash with form_name set' do
+          is_expected.to eql(form_name: identifier)
+        end
       end
     end
 

@@ -1,8 +1,10 @@
 module Forms
   class FormName < Base
     attribute :identifier, String
+    attribute :unknown, Boolean
 
     validates :identifier, length: { maximum: 49 }
+    validates :identifier, presence: true, unless: :unknown?
 
     private
 

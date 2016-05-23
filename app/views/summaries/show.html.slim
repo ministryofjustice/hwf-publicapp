@@ -7,6 +7,10 @@ h1.heading-large
 table
   tbody
     tr
+      td =t('form_name', scope: 'summary.labels')
+      td=@summary.form_name
+      td.right= link_to "Change", question_path(:form_name)
+    tr
       td =t('married', scope: 'summary.labels')
       td= t("marital_status_#{@summary.married}", scope: 'summary')
       td.right= link_to "Change", question_path(:marital_status)
@@ -50,10 +54,6 @@ table
       td =t('claim', scope: 'summary.labels')
       td =t("claim_number_#{@summary.case_number?}", scope: 'summary')
       td.right= link_to "Change", question_path(:claim)
-    tr
-      td =t('form_name', scope: 'summary.labels')
-      td=@summary.form_name
-      td.right= link_to "Change", question_path(:form_name)
     tr
       td =t('ni_number', scope: 'summary.labels')
       td =@summary.ni_number

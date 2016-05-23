@@ -17,6 +17,7 @@ module FeatureSteps
   def given_user_provides_all_data_for_refund
     visit '/'
     click_link_or_button 'Apply now'
+    fill_form_name
     fill_marital_status
     fill_savings_and_investment
     fill_benefit
@@ -25,7 +26,6 @@ module FeatureSteps
     fill_fee(true)
     fill_probate
     fill_claim
-    fill_form_name
     fill_national_insurance
     fill_dob
     fill_personal_detail
@@ -56,8 +56,8 @@ module FeatureSteps
 
   def then_their_data_is_not_persisted
     visit start_session_path
-    expect(page).to have_unchecked_field('marital_status_married_false')
-    expect(page).to have_unchecked_field('marital_status_married_true')
+    form_name = page.find_field('form_name_identifier').text
+    expect(form_name).to be_empty
   end
   alias then_their_data_is_deleted then_their_data_is_not_persisted
 

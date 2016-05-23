@@ -12,7 +12,17 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "national-insurance" page' do
-        expect(page).to have_content 'What is your National Insurance number?'
+        expect(page).to have_content 'Are you single, married or living with someone and sharing an income?'
+      end
+    end
+
+    context 'not completing the page correctly' do
+      before do
+        click_button 'Continue'
+      end
+
+      scenario 'I expect the form_name field to have an error' do
+        expect(page).to have_content 'Enter the form name or number, or select \'I don’t know the form name or number\''
       end
     end
   end

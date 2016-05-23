@@ -3,6 +3,7 @@ class QuestionFormFactory
 
   # These are ordered
   IDS = [
+    :form_name,
     :marital_status,
     :savings_and_investment,
     :benefit,
@@ -11,7 +12,6 @@ class QuestionFormFactory
     :fee,
     :probate,
     :claim,
-    :form_name,
     :national_insurance,
     :dob,
     :personal_detail,

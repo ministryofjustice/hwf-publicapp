@@ -13,7 +13,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "form-name" page' do
-        expect(page).to have_content 'What is the form name or number related to this application?'
+        expect(page).to have_content 'What is your National Insurance number?'
       end
     end
 

@@ -12,7 +12,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "national-insurance" page' do
-        expect(page).to have_content 'What is your National Insurance number?'
+        expect(page).to have_content 'Are you single, married or living with someone and sharing an income?'
       end
     end
   end

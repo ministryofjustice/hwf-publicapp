@@ -7,7 +7,7 @@ RSpec.feature 'As a user' do
 
     visit '/'
     click_link_or_button 'Apply now'
-    expect(page).to have_content 'What is the form name or number related to this application?'
+    expect(page).to have_content 'What court or tribunal fee do you need help with?'
     fill_in 'form_name_identifier', with: 'N1'
     click_button 'Continue'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"

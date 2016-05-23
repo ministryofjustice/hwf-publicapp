@@ -30,7 +30,7 @@ en:
         deceased_name: "Name of deceased"
         date_of_death: "Date of death"
       forms/form_name:
-        identifier: 'Form name'
+        identifier: 'Form name or number'
       forms/help_request:
         phone: Telephone number
         description: Describe what you'd like to talk about

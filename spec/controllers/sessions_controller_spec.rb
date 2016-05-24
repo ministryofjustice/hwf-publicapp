@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
+  before do
+    allow(controller).to receive(:storage).and_return(storage)
+  end
+
   describe 'GET #start' do
     let(:storage) { double(start: nil) }
 
     before do
-      allow(controller).to receive(:storage).and_return(storage)
-
       get :start
     end
 
@@ -20,14 +22,14 @@ RSpec.describe SessionsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    before do
-      allow(controller).to receive(:reset_session)
+    let(:storage) { double(clear: nil) }
 
+    before do
       delete :destroy
     end
 
-    it 'clears the session' do
-      expect(controller).to have_received(:reset_session)
+    it 'clears the storage' do
+      expect(storage).to have_received(:clear)
     end
 
     it 'redirects to the start page' do

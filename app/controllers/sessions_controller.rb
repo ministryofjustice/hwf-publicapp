@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    reset_session
+    storage.clear
     redirect_to(root_path)
   end
 end

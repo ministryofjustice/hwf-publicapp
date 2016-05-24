@@ -15,7 +15,7 @@ class SubmissionsController < ApplicationController
     @online_application = online_application
     @result = storage.submission_result
     ga_events << build_ga_event
-    reset_session
+    storage.clear
   end
 
   private

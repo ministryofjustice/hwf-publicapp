@@ -6,6 +6,10 @@ class Storage
     check_expiration!
   end
 
+  def clear
+    @session.destroy
+  end
+
   def start
     @session[:started_at] = Time.zone.now
   end
@@ -42,7 +46,7 @@ class Storage
 
   def check_expiration!
     if started? && expired?
-      @session.destroy
+      clear
       raise Expired
     else
       @session[:used_at] = Time.zone.now

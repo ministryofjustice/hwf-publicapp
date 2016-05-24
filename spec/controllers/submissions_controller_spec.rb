@@ -54,10 +54,9 @@ RSpec.describe SubmissionsController, type: :controller do
 
   describe 'GET #show' do
     let(:result) { { result: true, message: 'HWF-010101' } }
-    let(:storage) { double(submission_result: result, time_taken: 600) }
+    let(:storage) { double(submission_result: result, time_taken: 600, clear: nil) }
 
     before do
-      allow(controller).to receive(:reset_session)
       allow(online_application).to receive(:benefits).and_return(true)
 
       get :show
@@ -71,8 +70,8 @@ RSpec.describe SubmissionsController, type: :controller do
       expect(assigns(:result)).to eql(result)
     end
 
-    it 'clears the session' do
-      expect(controller).to have_received(:reset_session)
+    it 'clears the storage' do
+      expect(storage).to have_received(:clear)
     end
 
     it 'assigns the online application model' do

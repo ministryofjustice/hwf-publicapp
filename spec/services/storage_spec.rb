@@ -5,6 +5,44 @@ RSpec.describe Storage do
 
   subject(:storage) { described_class.new(session) }
 
+  describe '#initialize' do
+    let(:session) { { used_at: used_at.to_s } }
+
+    subject do
+      Timecop.freeze(current_time) do
+        storage
+      end
+    end
+
+    context 'when it was used more than 10 minutes ago' do
+      let(:used_at) { current_time - 11.minutes }
+
+      it 'raises an error' do
+        expect { subject }.to raise_error(Storage::Expired)
+      end
+    end
+
+    context 'when it was used less than 10 minutes ago' do
+      let(:used_at) { current_time - 5.minutes }
+
+      before { subject }
+
+      it 'stores the current time to the session, as time of last used' do
+        expect(session[:used_at]).to eql(current_time)
+      end
+    end
+
+    context 'when the storage was just initialised for the first time' do
+      let(:session) { {} }
+
+      before { subject }
+
+      it 'stores the current time to the session, as time of last used' do
+        expect(session[:used_at]).to eql(current_time)
+      end
+    end
+  end
+
   describe '#start' do
     let(:session) { {} }
 

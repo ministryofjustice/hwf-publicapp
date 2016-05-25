@@ -1,6 +1,10 @@
 class Storage
+  class Expired < StandardError; end
+
   def initialize(session)
     @session = session
+    raise Expired if expired?
+    @session[:used_at] = Time.zone.now
   end
 
   def start
@@ -36,6 +40,18 @@ class Storage
   end
 
   private
+
+  def expired?
+    @session[:used_at] && ((Time.zone.now - used_at).round >= 600)
+  end
+
+  def used_at
+    used_at_as_time || @session[:used_at]
+  end
+
+  def used_at_as_time
+    Time.zone.parse(@session[:used_at]) if @session[:used_at].is_a? String
+  end
 
   def started_at
     started_at_as_time || @session[:started_at]

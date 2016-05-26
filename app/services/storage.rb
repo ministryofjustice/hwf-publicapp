@@ -54,19 +54,15 @@ class Storage
   end
 
   def used_at
-    used_at_as_time || @session[:used_at]
-  end
-
-  def used_at_as_time
-    Time.zone.parse(@session[:used_at]) if @session[:used_at].is_a? String
+    field_as_time(:used_at)
   end
 
   def started_at
-    started_at_as_time || @session[:started_at]
+    field_as_time(:started_at)
   end
 
-  def started_at_as_time
-    Time.zone.parse(@session[:started_at]) if @session[:started_at].is_a? String
+  def field_as_time(field)
+    @session[field].is_a?(String) ? Time.zone.parse(@session[field]) : @session[field]
   end
 
   def expires_in_seconds

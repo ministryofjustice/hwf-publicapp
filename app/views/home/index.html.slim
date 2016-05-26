@@ -42,5 +42,10 @@ p Applying takes around 10 minutes. This service is for England and Wales only.
 
 = link_to(t('start_application'), start_session_path, role: :button, class: 'button button-start')
 
+p.util_mt-large
+  strong.block.bold-small =t('session.note.heading')
+  strong.block
+    =t('session.note.text')
+
 h2.heading-large Other ways to apply
 p You can also apply by post using the #{link_to '‘Apply for help with fees (EX160)’ (PDF 82KB)', 'http://hmctsformfinder.justice.gov.uk/courtfinder/forms/ex160-eng-20160212.pdf', class: 'external', rel: 'external'} form.

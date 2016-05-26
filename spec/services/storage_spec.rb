@@ -3,10 +3,15 @@ require 'rails_helper'
 RSpec.describe Storage do
   let(:current_time) { Time.zone.now }
 
+  class MockSession < Hash
+    def destroy
+    end
+  end
+
   subject(:storage) { described_class.new(session) }
 
   describe '#initialize' do
-    let(:session) { { used_at: used_at.to_s } }
+    let(:session) { MockSession[used_at: used_at.to_s, started_at: started_at.to_s] }
 
     subject do
       Timecop.freeze(current_time) do
@@ -14,26 +19,42 @@ RSpec.describe Storage do
       end
     end
 
-    context 'when it was used more than 10 minutes ago' do
-      let(:used_at) { current_time - 11.minutes }
+    context 'when the storage has been started' do
+      let(:started_at) { current_time }
 
-      it 'raises an error' do
-        expect { subject }.to raise_error(Storage::Expired)
+      context 'when it was used more than 10 minutes ago' do
+        let(:used_at) { current_time - 11.minutes }
+
+        it 'raises an error and clears the session' do
+          expect(session).to receive(:destroy)
+          expect { subject }.to raise_error(Storage::Expired)
+        end
+      end
+
+      context 'when it was used less than 10 minutes ago' do
+        let(:used_at) { current_time - 5.minutes }
+
+        before { subject }
+
+        it 'stores the current time to the session, as time of last used' do
+          expect(session[:used_at]).to eql(current_time)
+        end
+      end
+
+      context 'when the storage was just initialised for the first time' do
+        let(:session) { {} }
+
+        before { subject }
+
+        it 'stores the current time to the session, as time of last used' do
+          expect(session[:used_at]).to eql(current_time)
+        end
       end
     end
 
-    context 'when it was used less than 10 minutes ago' do
-      let(:used_at) { current_time - 5.minutes }
-
-      before { subject }
-
-      it 'stores the current time to the session, as time of last used' do
-        expect(session[:used_at]).to eql(current_time)
-      end
-    end
-
-    context 'when the storage was just initialised for the first time' do
-      let(:session) { {} }
+    context 'when the storage has not been started' do
+      let(:started_at) { nil }
+      let(:used_at) { nil }
 
       before { subject }
 

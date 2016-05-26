@@ -3,8 +3,7 @@ class Storage
 
   def initialize(session)
     @session = session
-    raise Expired if expired?
-    @session[:used_at] = Time.zone.now
+    check_expiration!
   end
 
   def start
@@ -40,6 +39,15 @@ class Storage
   end
 
   private
+
+  def check_expiration!
+    if started? && expired?
+      @session.destroy
+      raise Expired
+    else
+      @session[:used_at] = Time.zone.now
+    end
+  end
 
   def expired?
     @session[:used_at] && ((Time.zone.now - used_at).round >= 600)

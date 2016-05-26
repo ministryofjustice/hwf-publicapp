@@ -16,3 +16,5 @@ zendesk:
   url: <%= ENV['ZENDESK_URL'] %>
   username: <%= ENV['ZENDESK_USERNAME'] %>
   token: <%= ENV['ZENDESK_TOKEN'] %>
+session:
+  expires_in_minutes: 10

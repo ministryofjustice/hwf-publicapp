@@ -50,7 +50,7 @@ class Storage
   end
 
   def expired?
-    @session[:used_at] && ((Time.zone.now - used_at).round >= 600)
+    @session[:used_at] && ((Time.zone.now - used_at).round >= expires_in_seconds)
   end
 
   def used_at
@@ -67,5 +67,9 @@ class Storage
 
   def started_at_as_time
     Time.zone.parse(@session[:started_at]) if @session[:started_at].is_a? String
+  end
+
+  def expires_in_seconds
+    Settings.session.expires_in_minutes * 60
   end
 end

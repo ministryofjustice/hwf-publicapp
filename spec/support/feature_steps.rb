@@ -41,17 +41,29 @@ module FeatureSteps
     given_user_answers_questions_up_to(:dependent)
   end
 
+  def given_user_is_reading_the_home_page
+    visit '/'
+  end
+
   def when_they_submit_the_application
     click_link_or_button 'Complete application'
   end
 
+  def when_they_start_new_application
+    click_link_or_button 'Apply now'
+  end
+
   def when_they_go_back_to_homepage_and_start_again
     visit '/'
-    click_link_or_button 'Apply now'
+    when_they_start_new_application
   end
 
   def when_they_restart_the_application
     click_link_or_button 'Start a new application'
+  end
+
+  def when_they_try_to_proceed_after_long_time
+    fill_dependent
   end
 
   def then_their_data_is_not_persisted
@@ -60,6 +72,15 @@ module FeatureSteps
     expect(form_name).to be_empty
   end
   alias then_their_data_is_deleted then_their_data_is_not_persisted
+
+  def then_they_are_redirected_to_homepage_with_expiry_message
+    expect(page).to have_text 'Apply for help with fees'
+    expect(page).to have_text "You didn't enter any information for more than 10 minutes so you need to start your application again."
+  end
+
+  def then_they_are_on_the_first_question
+    expect(page).to have_text 'What court or tribunal fee do you need help with?'
+  end
 
   def fill_contact
     fill_in 'contact_email', with: 'foo@bar.com'

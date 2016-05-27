@@ -16,4 +16,9 @@ h1.heading-large
     .form-group
       = f.submit t('submit_button'), class: 'button'
 
+p
+  strong.block.bold-small =t('session.note.heading')
+  strong.block
+    =t('session.note.text')
+
 =render('shared/restart_application_link')

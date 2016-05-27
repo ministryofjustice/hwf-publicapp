@@ -5,6 +5,11 @@ en:
   error_block:
     heading: 'You need to fix the errors on this page before continuing.'
     visuallyhidden: 'Errors are listed as links below, click to select the field that needs correcting.'
+  session:
+    expired_message: "You didn't enter any information for more than 10 minutes so you need to start your application again."
+    note:
+      heading: Please note
+      text: "If you don’t enter any information for more than 10 minutes, then your session will time out and you’ll need to start again."
   errors:
     combined_other_payments_invalid: 'Enter the amount of your income'
   activemodel:

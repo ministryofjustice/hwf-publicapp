@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resource :submission, only: :create
 
-  resource :confirmation, only: :show
+  resource :confirmation, only: :show do
+    get :refund
+  end
 
   resource :session, only: :destroy do
     get :start

@@ -12,30 +12,33 @@ RSpec.describe ConfirmationsController, type: :controller do
     allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
   end
 
-  describe 'GET #show' do
-    let(:result) { { result: true, message: 'HWF-010101' } }
-    let(:storage) { double(submission_result: result, time_taken: 600, clear: nil) }
+  %i[show refund].each do |action|
+    describe "GET ##{action}" do
+      let(:result) { { result: true, message: 'HWF-010101' } }
+      let(:storage) { double(submission_result: result, time_taken: 600, clear: nil) }
 
-    before do
-      allow(online_application).to receive(:benefits).and_return(true)
+      before do
+        allow(online_application).to receive(:benefits).and_return(true)
 
-      get :show
+        get action
+      end
+
+      it 'renders the show template' do
+        expect(response).to render_template(action)
+      end
+
+      it 'assigns the response object from the session' do
+        expect(assigns(:result)).to eql(result)
+      end
+
+      it 'clears the storage' do
+        expect(storage).to have_received(:clear)
+      end
+
+      it 'assigns the online application model' do
+        expect(assigns(:online_application)).to eql(online_application)
+      end
     end
 
-    it 'renders the show template' do
-      expect(response).to render_template(:show)
-    end
-
-    it 'assigns the response object from the session' do
-      expect(assigns(:result)).to eql(result)
-    end
-
-    it 'clears the storage' do
-      expect(storage).to have_received(:clear)
-    end
-
-    it 'assigns the online application model' do
-      expect(assigns(:online_application)).to eql(online_application)
-    end
   end
 end

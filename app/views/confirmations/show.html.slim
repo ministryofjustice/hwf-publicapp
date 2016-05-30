@@ -1,59 +1,21 @@
-- content_for :stylesheets
-  = stylesheet_link_tag('confirmation-print.css', media: 'print')
+=render('stylesheets')
 
-- if @online_application.refund?
-  h1.heading-large
-    span.heading-secondary = t('confirmation.breadcrumb')
-    span.visuallyhidden
-      | :&nbsp;
-    = t('refund.heading')
+h1.heading-large
+  span.heading-secondary =t('confirmation.breadcrumb')
+  =t('confirmation.heading')
 
-  ol.list.list-number.next-steps
-    li
-      ul
-        li = t('refund.steps.one.one')
-        li
-          = t('refund.steps.one.two')
-          .inset
-            ul
-              li = t('refund.letter.one', reference: @result['message'])
-              li = t('refund.letter.two')
-              li = t('refund.letter.three', date_fee_paid: @online_application.date_fee_paid)
-              li = t('refund.letter.four')
-              li = t('refund.letter.five', full_name: @online_application.full_name)
-    li = t('refund.steps.two')
-    li = t('refund.steps.three')
+ol.list.list-number.next-steps
+  li
+    =t('confirmation.steps.one')
+    .inset.number =@result['message']
+  li =t('confirmation.steps.two')
+  li =t('confirmation.steps.three')
+  li =t('confirmation.steps.four')
 
-  .notice
-    h2.heading-medium
-      i.icon.icon-important
-        span.visuallyhidden = t('refund.notice.warning')
-      strong.bold-small = t('refund.notice.text')
-- else
-  h1.heading-large
-    span.heading-secondary =t('confirmation.breadcrumb')
-    =t('confirmation.heading')
+.notice
+  h2.heading-medium
+    i.icon.icon-important
+      span.visuallyhidden =t('confirmation.notice.warning')
+    strong.bold-small =t('confirmation.notice.text')
 
-  ol.list.list-number.next-steps
-    li
-      =t('confirmation.steps.one')
-      .inset.number =@result['message']
-    li =t('confirmation.steps.two')
-    li =t('confirmation.steps.three')
-    li =t('confirmation.steps.four')
-
-  .notice
-    h2.heading-medium
-      i.icon.icon-important
-        span.visuallyhidden =t('confirmation.notice.warning')
-      strong.bold-small =t('confirmation.notice.text')
-
-p.util_mt-large.no-print
-  strong.block.bold-small =t('feedback.heading')
-  strong.block.bold-small
-    a href="#{Rails.application.config.feedback_url}" =t('feedback.link')
-
-.js-only.no-print
-  p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')
-
-p.util_mt-large.no-print =link_to(t('confirmation.back_to_start'), root_path, class: 'button')
+=render('footer')

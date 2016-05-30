@@ -1,0 +1,31 @@
+=render('stylesheets')
+
+h1.heading-large
+  span.heading-secondary = t('confirmation.breadcrumb')
+  span.visuallyhidden
+    | :&nbsp;
+  = t('refund.heading')
+
+ol.list.list-number.next-steps
+  li
+    ul
+      li = t('refund.steps.one.one')
+      li
+        = t('refund.steps.one.two')
+        .inset
+          ul
+            li = t('refund.letter.one', reference: @result['message'])
+            li = t('refund.letter.two')
+            li = t('refund.letter.three', date_fee_paid: @online_application.date_fee_paid)
+            li = t('refund.letter.four')
+            li = t('refund.letter.five', full_name: @online_application.full_name)
+  li = t('refund.steps.two')
+  li = t('refund.steps.three')
+
+.notice
+  h2.heading-medium
+    i.icon.icon-important
+      span.visuallyhidden = t('refund.notice.warning')
+    strong.bold-small = t('refund.notice.text')
+
+=render('footer')

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe SubmissionsController, type: :controller do
   let(:session) { double }
   let(:storage) { double }
-  let(:online_application) { double }
+  let(:online_application) { build(:online_application) }
   let(:builder) { double(online_application: online_application) }
 
   before do
@@ -30,9 +30,20 @@ RSpec.describe SubmissionsController, type: :controller do
         expect(storage).to have_received(:submission_result=).with(response)
       end
 
-      it 'redirects to the confirmation page' do
-        expect(response).to redirect_to(confirmation_path)
+      context 'when it is a refund application' do
+        let(:online_application) { build(:online_application, :refund) }
+
+        it 'redirects to the default confirmation page' do
+          expect(response).to redirect_to(refund_confirmation_path)
+        end
       end
+
+      context 'when the application is not a refund' do
+        it 'redirects to the default confirmation page' do
+          expect(response).to redirect_to(confirmation_path)
+        end
+      end
+
     end
 
     context 'on a failed response' do

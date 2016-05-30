@@ -34,7 +34,7 @@ RSpec.feature 'User submits their application' do
   end
 
   def then_they_are_presented_with_the_refund_confirmation_page_with_reference_number
-    expect(page.current_path).to eql('/confirmation')
+    expect(page.current_path).to eql('/confirmation/refund')
     expect(page).to have_content('Send your reference number to the court or tribunal dealing with your case')
     expect(page).to have_content(reference)
     expect(page).to have_content('on 08/03/2016')

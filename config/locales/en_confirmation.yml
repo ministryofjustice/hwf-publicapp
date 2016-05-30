@@ -12,6 +12,7 @@ en:
       text: Your case will not proceed until you send your claim form to the court or tribunal
     print: Print this page
     back_to_start: Back to start
+    continue: Continue
   refund:
     heading: Send your reference number to the court or tribunal dealing with your case
     steps:

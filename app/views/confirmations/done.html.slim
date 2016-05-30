@@ -18,7 +18,4 @@ ol.list.list-number.next-steps
       span.visuallyhidden =t('confirmation.notice.warning')
     strong.bold-small =t('confirmation.notice.text')
 
-= form_tag(done_confirmation_path, method: :get, class: 'util_mb-medium util_mt-medium') do
-  = submit_tag(t('continue', scope: 'confirmation'), class: 'button', role: 'button')
-
 =render('footer')

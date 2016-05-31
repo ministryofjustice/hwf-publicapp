@@ -69,5 +69,7 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'foo@bar.com'
     click_link_or_button 'Complete application'
     expect(page).to have_content 'Write your Help with Fees reference number on your N1 form'
+    click_link_or_button 'Continue'
+    expect(page).to have_content 'Send your N1 form to the court or tribunal dealing with your case'
   end
 end

@@ -3,6 +3,7 @@ en:
     form_name:
       unknown: 'I don’t know the form name or number'
       breadcrumb: 'Step 1 of 17'
+      et: 'I need help with an employment tribunal fee'
       text: 'What court or tribunal fee do you need help with?'
       example: 'Enter the court or tribunal form number for the court business you need help with, for example ‘C100’, ‘D8’ or ‘notice to appeal’ form.'
       details:

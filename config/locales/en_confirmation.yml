@@ -2,25 +2,23 @@ en:
   confirmation:
     default:
       breadcrumb: 'Step 16 of 17'
-      heading: Write your Help with Fees reference number on your %{form_name} form
-      instructions: Write the Help with Fees application reference bellow on your %{form_name} form
-      notice:
-        warning: Warning
-        text: Your case will not proceed until you send your claim form to the court or tribunal
+      heading: Your application for help with fees is not finished yet
+      steps:
+        one: You must write this reference number %{reference} on your %{form_name} form
+        two: Write the reference number in the ‘HWF reference’ field if there is one. If not, you should write it wherever there is space on your %{form_name} form
+        three: You can also save or print this page and attach it to your %{form_name} form
+        four: If you provided your email address, you'll get your application reference number by email. If you didn't provide an email, make a note of your reference number for your own records.
       continue: Continue
     done:
       breadcrumb: 'Step 17 of 17'
-      heading: Send your %{form_name} form to the court or tribunal dealing with your case
-      instructions: Deliver your %{form_name} form to the court or tribunal dealing with your case (by post or in person)
+      heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
+      instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
       next:
         heading: What happens next?
         steps:
           one: Your application will be assessed by court or tribunal staff. This usually takes no longer than 21 days.
           two: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.
           three: If your application is successful you'll hear directly from the court or tribunal dealing with your case.
-      notice:
-        warning: Warning
-        text: Your case will not proceed until you send your claim form to the court or tribunal
     refund:
       breadcrumb: 'Step 16 of 16'
       heading: Send your reference number to the court or tribunal dealing with your case

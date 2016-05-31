@@ -6,15 +6,13 @@ h1.heading-large
   span.heading-secondary =t('confirmation.default.breadcrumb')
   =t('confirmation.default.heading', form_name: form_name)
 
-p =t('confirmation.default.instructions', form_name: form_name)
-
-p =@result['message']
-
-.notice
-  h2.heading-medium
-    i.icon.icon-important
-      span.visuallyhidden =t('confirmation.default.notice.warning')
-    strong.bold-small =t('confirmation.default.notice.text')
+ol.list.list-number.next-steps
+  li
+    =t('confirmation.default.steps.one', reference: @result['message'], form_name: form_name)
+    .inset.number =@result['message']
+  li =t('confirmation.default.steps.two', form_name: form_name)
+  li =t('confirmation.default.steps.three', form_name: form_name)
+  li =t('confirmation.default.steps.four')
 
 = form_tag(done_confirmation_path, method: :get, class: 'util_mb-medium util_mt-medium') do
   = submit_tag(t('continue', scope: 'confirmation.default'), class: 'button', role: 'button')

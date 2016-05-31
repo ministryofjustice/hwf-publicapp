@@ -30,7 +30,7 @@ RSpec.feature 'User submits their application' do
   def then_they_are_presented_with_the_non_refund_confirmation_page_with_reference_number
     expect(page.current_path).to eql('/confirmation')
     expect(page).to have_content(reference)
-    expect(page).to have_content('Write your Help with Fees reference number on your N1 form')
+    expect(page).to have_content('Your application for help with fees is not finished yet')
   end
 
   def then_they_are_presented_with_the_refund_confirmation_page_with_reference_number

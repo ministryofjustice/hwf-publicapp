@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   scenario 'I want to fill in all details, submit my application and see the confirmation' do
-    given_the_submission_service_is_available
+    given_the_submission_service_is_available('HWF-123-KLM')
 
     visit '/'
     click_link_or_button 'Apply now'
@@ -68,8 +68,8 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'Email'
     expect(page).to have_content 'foo@bar.com'
     click_link_or_button 'Complete application'
-    expect(page).to have_content 'Write your Help with Fees reference number on your N1 form'
+    expect(page).to have_content 'Your application for help with fees is not finished yet'
     click_link_or_button 'Continue'
-    expect(page).to have_content 'Send your N1 form to the court or tribunal dealing with your case'
+    expect(page).to have_content 'Send your N1 form with your HWF-123-KLM reference on it to complete the process'
   end
 end

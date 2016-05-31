@@ -4,9 +4,9 @@
 
 h1.heading-large
   span.heading-secondary =t('confirmation.done.breadcrumb')
-  =t('confirmation.done.heading', form_name: form_name)
+  =t('confirmation.done.heading', form_name: form_name, reference: @result['message'])
 
-  p =t('confirmation.done.instructions', form_name: form_name)
+  p =t('confirmation.done.instructions')
 
 
 p =t('confirmation.done.next.heading')
@@ -15,11 +15,5 @@ ol.list.list-number.next-steps
     =t('confirmation.done.next.steps.one')
   li =t('confirmation.done.next.steps.two')
   li =t('confirmation.done.next.steps.three')
-
-.notice
-  h2.heading-medium
-    i.icon.icon-important
-      span.visuallyhidden =t('confirmation.done.notice.warning')
-    strong.bold-small =t('confirmation.done.notice.text')
 
 =render('footer')

@@ -21,4 +21,32 @@ RSpec.describe OnlineApplication, type: :model do
       end
     end
   end
+
+  describe '#et?' do
+    subject { build(:online_application, case_number: case_number).et? }
+
+    context 'when the case number is prefixed with ET' do
+      let(:case_number) { 'ET something'}
+
+      it { is_expected.to be true }
+    end
+
+    context 'when the case number starts with ET' do
+      let(:case_number) { 'ET3'}
+
+      it { is_expected.to be true }
+    end
+
+    context 'when the case number is not prefixed with ET' do
+      let(:case_number) { 'N44' }
+
+      it { is_expected.to be false }
+    end
+
+    context 'when the case number is blank' do
+      let(:case_number) { nil }
+
+      it { is_expected.to be false }
+    end
+  end
 end

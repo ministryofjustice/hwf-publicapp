@@ -30,4 +30,8 @@ class OnlineApplication
   def full_name
     %i[title first_name last_name].map { |field| send(field) }.compact.join(' ')
   end
+
+  def et?
+    case_number.present? && /^ET/ === case_number
+  end
 end

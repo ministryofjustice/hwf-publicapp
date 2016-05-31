@@ -1,24 +1,25 @@
 =render('stylesheets')
 
 h1.heading-large
-  span.heading-secondary =t('confirmation.breadcrumb')
-  =t('confirmation.heading')
+  span.heading-secondary =t('confirmation.default.breadcrumb')
+  =t('confirmation.default.heading')
 
 ol.list.list-number.next-steps
   li
-    =t('confirmation.steps.one')
+    =t('confirmation.default.steps.one')
     .inset.number =@result['message']
-  li =t('confirmation.steps.two')
-  li =t('confirmation.steps.three')
-  li =t('confirmation.steps.four')
+  li =t('confirmation.default.steps.two')
+  li =t('confirmation.default.steps.three')
+  li =t('confirmation.default.steps.four')
 
 .notice
   h2.heading-medium
     i.icon.icon-important
-      span.visuallyhidden =t('confirmation.notice.warning')
-    strong.bold-small =t('confirmation.notice.text')
+      span.visuallyhidden =t('confirmation.default.notice.warning')
+    strong.bold-small =t('confirmation.default.notice.text')
 
 = form_tag(done_confirmation_path, method: :get, class: 'util_mb-medium util_mt-medium') do
-  = submit_tag(t('continue', scope: 'confirmation'), class: 'button', role: 'button')
+  = submit_tag(t('continue', scope: 'confirmation.default'), class: 'button', role: 'button')
 
-=render('footer')
+.js-only.no-print
+  p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')

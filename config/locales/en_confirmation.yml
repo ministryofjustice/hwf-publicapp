@@ -1,25 +1,23 @@
 en:
   confirmation:
     default:
-      breadcrumb: 'Step 16 of 16'
-      heading: Send your claim form to the court or tribunal dealing with your case
-      steps:
-        one: Write this application reference on your claim form
-        two: Deliver your claim form to the court or tribunal dealing with your case (by post or in person)
-        three: Your application will be assessed by court or tribunal staff
-        four: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you
+      breadcrumb: 'Step 16 of 17'
+      heading: Write your Help with Fees reference number on your %{form_name} form
+      instructions: Write the Help with Fees application reference bellow on your %{form_name} form
       notice:
         warning: Warning
         text: Your case will not proceed until you send your claim form to the court or tribunal
       continue: Continue
     done:
-      breadcrumb: 'Step 16 of 16'
-      heading: Send your claim form to the court or tribunal dealing with your case
-      steps:
-        one: Write this application reference on your claim form
-        two: Deliver your claim form to the court or tribunal dealing with your case (by post or in person)
-        three: Your application will be assessed by court or tribunal staff
-        four: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you
+      breadcrumb: 'Step 17 of 17'
+      heading: Send your %{form_name} form to the court or tribunal dealing with your case
+      instructions: Deliver your %{form_name} form to the court or tribunal dealing with your case (by post or in person)
+      next:
+        heading: What happens next?
+        steps:
+          one: Your application will be assessed by court or tribunal staff. This usually takes no longer than 21 days.
+          two: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.
+          three: If your application is successful you'll hear directly from the court or tribunal dealing with your case.
       notice:
         warning: Warning
         text: Your case will not proceed until you send your claim form to the court or tribunal
@@ -41,8 +39,8 @@ en:
       notice:
         warning: Warning
         text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
-  print: Print this page
-  back_to_start: Back to start
-  feedback:
-    heading: Please tell us what you think of this service
-    link: Take our short survey
+    print: Print this page
+    back_to_start: Back to start
+    feedback:
+      heading: Please tell us what you think of this service
+      link: Take our short survey

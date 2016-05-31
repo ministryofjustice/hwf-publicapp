@@ -1,16 +1,14 @@
 =render('stylesheets')
 
+- form_name = @online_application.form_name ? @online_application.form_name : 'claim'
+
 h1.heading-large
   span.heading-secondary =t('confirmation.default.breadcrumb')
-  =t('confirmation.default.heading')
+  =t('confirmation.default.heading', form_name: form_name)
 
-ol.list.list-number.next-steps
-  li
-    =t('confirmation.default.steps.one')
-    .inset.number =@result['message']
-  li =t('confirmation.default.steps.two')
-  li =t('confirmation.default.steps.three')
-  li =t('confirmation.default.steps.four')
+p =t('confirmation.default.instructions', form_name: form_name)
+
+p =@result['message']
 
 .notice
   h2.heading-medium

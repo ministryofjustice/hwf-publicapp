@@ -67,7 +67,7 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'Bar'
     expect(page).to have_content 'Email'
     expect(page).to have_content 'foo@bar.com'
-    click_link_or_button 'Complete application'
+    click_link_or_button 'Submit application and continue'
     expect(page).to have_content 'Your application for help with fees is not finished yet'
     click_link_or_button 'Continue'
     expect(page).to have_content 'Send your N1 form with your HWF-123-KLM reference on it to complete the process'

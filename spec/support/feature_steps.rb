@@ -46,7 +46,7 @@ module FeatureSteps
   end
 
   def when_they_submit_the_application
-    click_link_or_button 'Complete application'
+    click_link_or_button 'Submit application and continue'
   end
 
   def when_they_start_new_application

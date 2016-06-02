@@ -53,7 +53,7 @@ RSpec/DescribeClass:
 
 RSpec/FilePath:
   Exclude:
-    - spec/**/*
+    - spec/routing/**/*
 
 # private/protected/public
 Style/AccessModifierIndentation:

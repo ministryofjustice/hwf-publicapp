@@ -116,7 +116,7 @@ module FeatureSteps
   end
 
   def fill_claim
-    choose 'claim_number_false'
+    choose 'claim_default_number_false'
     click_button 'Continue'
   end
 

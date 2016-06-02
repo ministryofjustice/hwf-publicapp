@@ -20,5 +20,9 @@ FactoryGirl.define do
       refund true
       date_fee_paid 20.days.ago
     end
+
+    trait :et do
+      form_name 'ET'
+    end
   end
 end

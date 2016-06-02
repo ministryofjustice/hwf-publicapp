@@ -7,8 +7,8 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        choose :claim_number_true
-        fill_in :claim_identifier, with: 'N1'
+        choose :claim_default_number_true
+        fill_in :claim_default_identifier, with: 'N1'
         click_button 'Continue'
       end
 
@@ -31,7 +31,7 @@ RSpec.feature 'As a user' do
       end
 
       context 'selecting yes' do
-        before { choose :claim_number_true }
+        before { choose :claim_default_number_true }
 
         context 'leaving case number field empty' do
           before { click_button 'Continue' }

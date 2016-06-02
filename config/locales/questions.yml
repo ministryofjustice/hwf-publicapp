@@ -127,7 +127,7 @@ en:
       details:
         section_1: Enter the amount of money you get every month before any tax or National Insurance payments have been taken off.
         section_2: If you get paid weekly, multiply your weekly pay by 52, then divide it by 12. This will give you a monthly total.
-        section_3: There are some benefits you shouldn't include as income, see the full list and further information about completing this section in the <a class="external" rel="external" href="http://hmctsformfinder.justice.gov.uk/courtfinder/forms/ex160a-eng-20160212.pdf">guide</a>.
+        section_3: There are some benefits you shouldn't include as income, see the full list and further information about completing this section in the <a class="external" rel="external" href="http://s3-eu-west-1.amazonaws.com/hmctsformfinder/ex160a-eng-20160212.pdf">guide (EX160A) (PDF 440KB)</a>.
         section_4: You only need to fill in the fields that apply to you.
       labels:
         your_income: "Your monthly income"

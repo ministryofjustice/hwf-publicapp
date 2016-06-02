@@ -3,6 +3,11 @@
 
 - content_for :stylesheets
   = stylesheet_link_tag('application.css')
+  /[if IE 8]
+    = stylesheet_link_tag('ie8.css')
+  /[if IE 7]
+    = stylesheet_link_tag('ie7.css')
+
 
 - content_for :content_override
   #wrapper.group

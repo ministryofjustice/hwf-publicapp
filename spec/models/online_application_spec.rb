@@ -23,28 +23,28 @@ RSpec.describe OnlineApplication, type: :model do
   end
 
   describe '#et?' do
-    subject { build(:online_application, case_number: case_number).et? }
+    subject { build(:online_application, form_name: form_name).et? }
 
-    context 'when the case number is prefixed with ET' do
-      let(:case_number) { 'ET something'}
-
-      it { is_expected.to be true }
-    end
-
-    context 'when the case number starts with ET' do
-      let(:case_number) { 'ET3'}
+    context 'when the form_name is prefixed with ET' do
+      let(:form_name) { 'ET something' }
 
       it { is_expected.to be true }
     end
 
-    context 'when the case number is not prefixed with ET' do
-      let(:case_number) { 'N44' }
+    context 'when the form_name starts with ET' do
+      let(:form_name) { 'ET3' }
+
+      it { is_expected.to be true }
+    end
+
+    context 'when the form_name is not prefixed with ET' do
+      let(:form_name) { 'N44' }
 
       it { is_expected.to be false }
     end
 
-    context 'when the case number is blank' do
-      let(:case_number) { nil }
+    context 'when the form_name is blank' do
+      let(:form_name) { nil }
 
       it { is_expected.to be false }
     end

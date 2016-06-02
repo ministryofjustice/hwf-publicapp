@@ -32,6 +32,6 @@ class OnlineApplication
   end
 
   def et?
-    case_number.present? && /^ET/ === case_number
+    form_name.present? && !(form_name =~ /^ET/).nil?
   end
 end

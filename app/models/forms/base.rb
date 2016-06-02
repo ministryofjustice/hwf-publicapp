@@ -24,7 +24,7 @@ module Forms
     end
 
     def id
-      self.class.name.demodulize.underscore
+      self.class.name.gsub('Forms::', '').underscore
     end
     alias to_param id
 

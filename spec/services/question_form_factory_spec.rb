@@ -11,7 +11,9 @@ RSpec.describe QuestionFormFactory do
   end
 
   describe '.get_form' do
-    subject { described_class.get_form(id) }
+    let(:online_application) { build(:online_application) }
+
+    subject { described_class.get_form(id, online_application) }
 
     context 'for an existing form' do
       let(:id) { :marital_status }

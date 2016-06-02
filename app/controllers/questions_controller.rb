@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
     form.update_attributes(form_params)
 
     if form.valid?
-      storage.save_form(form)
+      save_and_update_online_application
       redirect_to(Navigation.new(online_application, question).next)
     else
       render :edit
@@ -31,11 +31,16 @@ class QuestionsController < ApplicationController
   end
 
   def form
-    @form ||= QuestionFormFactory.get_form(question)
+    @form ||= QuestionFormFactory.get_form(question, online_application)
   end
 
   def form_params
     params.require(@form.id).permit(*@form.permitted_attributes)
+  end
+
+  def save_and_update_online_application
+    storage.save_form(form)
+    online_application.attributes = form.export
   end
 
   def not_found

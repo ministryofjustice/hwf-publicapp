@@ -1,34 +1,44 @@
 en:
   confirmation:
-    breadcrumb: 'Step 16 of 16'
-    heading: Send your claim form to the court or tribunal dealing with your case
-    steps:
-      one: Write this application reference on your claim form
-      two: Deliver your claim form to the court or tribunal dealing with your case (by post or in person)
-      three: Your application will be assessed by court or tribunal staff
-      four: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you
-    notice:
-      warning: Warning
-      text: Your case will not proceed until you send your claim form to the court or tribunal
-    print: Print this page
+    default:
+      breadcrumb: 'Step 16 of 17'
+      heading: Your application for help with fees is not finished yet
+      steps:
+        one_html: You must write this reference number <strong>%{reference}</strong> on your <strong>%{form_name}</strong> form
+        two: Write the reference number in the ‘HWF reference’ field if there is one. If not, you should write it wherever there is space on your %{form_name} form
+        three: You can also save or print this page and attach it to your %{form_name} form
+        four: If you provided your email address, you'll get your application reference number by email. If you didn't provide an email, make a note of your reference number for your own records.
+      continue: Continue
+    done:
+      breadcrumb: 'Step 17 of 17'
+      heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
+      instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
+      next:
+        heading: What happens next?
+        steps:
+          one: Your application will be assessed by court or tribunal staff. This usually takes no longer than 21 days.
+          two: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.
+          three: If your application is successful you'll hear directly from the court or tribunal dealing with your case.
+    refund:
+      breadcrumb: 'Step 16 of 16'
+      heading: Send your reference number to the court or tribunal dealing with your case
+      steps:
+        one:
+          one: Deliver your reference number to the court or tribunal dealing with your case (by post or in person)
+          two: 'You can use the letter template below:'
+        two: Your application will be assessed by court or tribunal staff
+        three: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you
+      letter:
+        one: 'Reference: %{reference}'
+        two: I have completed an online application for help with fees for a refund.
+        three: I paid a fee on %{date_fee_paid}.
+        four: Yours sincerely,
+        five: '%{full_name}'
+      notice:
+        warning: Warning
+        text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
+    print: Save or print this page
     back_to_start: Back to start
-  refund:
-    heading: Send your reference number to the court or tribunal dealing with your case
-    steps:
-      one:
-        one: Deliver your reference number to the court or tribunal dealing with your case (by post or in person)
-        two: 'You can use the letter template below:'
-      two: Your application will be assessed by court or tribunal staff
-      three: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you
-    letter:
-      one: 'Reference: %{reference}'
-      two: I have completed an online application for help with fees for a refund.
-      three: I paid a fee on %{date_fee_paid}.
-      four: Yours sincerely,
-      five: '%{full_name}'
-    notice:
-      warning: Warning
-      text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
-  feedback:
-    heading: Please tell us what you think of this service
-    link: Take our short survey
+    feedback:
+      heading: Please tell us what you think of this service
+      link: Take our short survey

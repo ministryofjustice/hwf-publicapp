@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe SubmissionsController, type: :controller do
   let(:session) { double }
   let(:storage) { double }
-  let(:online_application) { double }
+  let(:online_application) { build(:online_application) }
   let(:builder) { double(online_application: online_application) }
 
   before do
@@ -30,9 +30,20 @@ RSpec.describe SubmissionsController, type: :controller do
         expect(storage).to have_received(:submission_result=).with(response)
       end
 
-      it 'redirects to the show action' do
-        expect(response).to redirect_to(submission_path)
+      context 'when it is a refund application' do
+        let(:online_application) { build(:online_application, :refund) }
+
+        it 'redirects to the default confirmation page' do
+          expect(response).to redirect_to(refund_confirmation_path)
+        end
       end
+
+      context 'when the application is not a refund' do
+        it 'redirects to the default confirmation page' do
+          expect(response).to redirect_to(confirmation_path)
+        end
+      end
+
     end
 
     context 'on a failed response' do
@@ -49,34 +60,6 @@ RSpec.describe SubmissionsController, type: :controller do
       it 'sets an flash error message' do
         expect(flash[:error]).to eql('We couldn\'t process your application at this time. Please try again later.')
       end
-    end
-  end
-
-  describe 'GET #show' do
-    let(:result) { { result: true, message: 'HWF-010101' } }
-    let(:storage) { double(submission_result: result, time_taken: 600) }
-
-    before do
-      allow(controller).to receive(:reset_session)
-      allow(online_application).to receive(:benefits).and_return(true)
-
-      get :show
-    end
-
-    it 'renders the show template' do
-      expect(response).to render_template(:show)
-    end
-
-    it 'assigns the response object from the session' do
-      expect(assigns(:result)).to eql(result)
-    end
-
-    it 'clears the session' do
-      expect(controller).to have_received(:reset_session)
-    end
-
-    it 'assigns the online application model' do
-      expect(assigns(:online_application)).to eql(online_application)
     end
   end
 end

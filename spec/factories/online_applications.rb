@@ -15,5 +15,10 @@ FactoryGirl.define do
     email_contact false
     phone_contact false
     post_contact false
+
+    trait :refund do
+      refund true
+      date_fee_paid 20.days.ago
+    end
   end
 end

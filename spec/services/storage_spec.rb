@@ -64,6 +64,20 @@ RSpec.describe Storage do
     end
   end
 
+  describe '#clear' do
+    let(:session) { MockSession.new }
+
+    before do
+      allow(session).to receive(:destroy)
+
+      storage.clear
+    end
+
+    it 'calls #destroy on the session' do
+      expect(session).to have_received(:destroy)
+    end
+  end
+
   describe '#start' do
     let(:session) { {} }
 

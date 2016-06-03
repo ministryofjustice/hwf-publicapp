@@ -7,7 +7,12 @@ Rails.application.routes.draw do
 
   resource :summary, only: :show
 
-  resource :submission, only: [:create, :show]
+  resource :submission, only: :create
+
+  resource :confirmation, only: :show do
+    get :done
+    get :refund
+  end
 
   resource :session, only: :destroy do
     get :start

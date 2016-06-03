@@ -5,9 +5,27 @@ RSpec.describe Views::Summary do
   subject(:summary) { described_class.new(online_application) }
 
   %i[married threshold_exceeded benefits children income probate deceased_name date_of_death
-     probate form_name ni_number date_of_birth full_name email_contact email_address].each do |method|
+     probate ni_number date_of_birth full_name email_contact email_address].each do |method|
     it "delegates #{method} to the online_application" do
       expect(summary.send(method)).to eql(online_application.send(method))
+    end
+  end
+
+  describe '#form_name' do
+    let(:online_application) { build :online_application, form_name: form_name }
+
+    subject { summary.form_name }
+
+    context 'when the form_name is not nil' do
+      let(:form_name) { 'SOME FORM NAME' }
+
+      it { is_expected.to eql(form_name) }
+    end
+
+    context 'when the form_name is nil' do
+      let(:form_name) { nil }
+
+      it { is_expected.to eql('—') }
     end
   end
 

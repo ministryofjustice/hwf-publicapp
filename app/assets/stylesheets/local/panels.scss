@@ -1,0 +1,41 @@
+.steps-panel {
+  max-width: 640px;
+  background-color: $grey-4;
+  border: 1px solid $grey-2;
+  padding: 20px 10px;
+
+  @media (min-width: 641px) {
+    padding: 30px;
+  }
+}
+
+.text-panel {
+  max-width: 640px;
+}
+
+.post {
+  display: table;
+  min-height: 100px;
+  padding-left: 125px;
+  background-image: asset-url('icon-post.png');
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: left middle;
+
+  @media (min-width: 641px) {
+    min-height: 145px;
+    background-size: 145px 145px;
+    padding-left: 165px;
+  }
+
+  p {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .post {
+    background-image: asset-url('icon-post-2x.png');
+  }
+}

@@ -14,7 +14,6 @@
 
 //= require jquery_ujs
 
-//= require govuk/selection-buttons
 //= require details.polyfill
 //= require is-nan.polyfill
 

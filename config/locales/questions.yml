@@ -2,7 +2,7 @@ en:
   questions:
     form_name:
       unknown: 'I don’t know the form name or number'
-      breadcrumb: 'Step 1 of 16'
+      breadcrumb: 'Step 1 of 17'
       text: 'What court or tribunal fee do you need help with?'
       example: 'Enter the court or tribunal form number for the court business you need help with, for example ‘C100’, ‘D8’ or ‘notice to appeal’ form.'
       details:
@@ -12,7 +12,7 @@ en:
     marital_status:
       married_true: 'Married or living with someone and sharing an income'
       married_false: 'Single'
-      breadcrumb: 'Step 2 of 16'
+      breadcrumb: 'Step 2 of 17'
       text: "Are you single, married or living with someone and sharing an income?"
       details:
         summary: 'Help with status'
@@ -33,7 +33,7 @@ en:
     savings_and_investment:
       less_than_limit_true: 'Less than £3,000'
       less_than_limit_false: 'More than £3,000'
-      breadcrumb: 'Step 3 of 16'
+      breadcrumb: 'Step 3 of 17'
       text: 'How much do you have in savings and investments?'
       details:
         summary: 'Help with savings and investments'
@@ -61,7 +61,7 @@ en:
     benefit:
       on_benefits_false: 'No'
       on_benefits_true: 'Yes, I am receiving one of the benefits listed'
-      breadcrumb: 'Step 4 of 16'
+      breadcrumb: 'Step 4 of 17'
       text: "Do you receive any of the following benefits?"
       list:
         header: 'We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.'
@@ -109,7 +109,7 @@ en:
             name: 'Scottish Legal Aid Advice by Way of Representation'
             hint: '(ABWOR)'
     dependent:
-      breadcrumb: 'Step 5 of 16'
+      breadcrumb: 'Step 5 of 17'
       text: Do you have any children living with you, or who you support financially?
       children_false: 'No'
       children_true: 'Yes'
@@ -122,7 +122,7 @@ en:
         item_2: "between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class=\"external\" rel=\"external\" href=\"https://www.gov.uk/child-tax-credit-when-child-reaches-16\">gov.uk/child-tax-credit-when-child-reaches-16</a>"
         item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
     income:
-      breadcrumb: 'Step 6 of 16'
+      breadcrumb: 'Step 6 of 17'
       text: 'What is your total monthly income?'
       details:
         section_1: Enter the amount of money you get every month before any tax or National Insurance payments have been taken off.
@@ -136,19 +136,19 @@ en:
     fee:
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
-      breadcrumb: 'Step 7 of 16'
+      breadcrumb: 'Step 7 of 17'
       text: 'Have you already paid the fee?'
       details: "You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee."
       hint: Use this format DD/MM/YYYY
     probate:
       probate_case_false: 'No'
       probate_case_true: 'Yes'
-      breadcrumb: 'Step 8 of 16'
+      breadcrumb: 'Step 8 of 17'
       text: 'Are you paying a fee for a probate case?'
       details: 'These cases are usually about the property and belongings of someone who has died.'
       hint: Use this format DD/MM/YYYY
     claim:
-      breadcrumb: 'Step 9 of 16'
+      breadcrumb: 'Step 9 of 17'
       text: Do you have a case, claim or ‘notice to pay’ number?
       subtext: Find this number on letters from the court or tribunal.
       hidden_legend: Do you have a case, claim or ‘notice to pay’ number?
@@ -161,7 +161,7 @@ en:
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
         section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet).
     national_insurance:
-      breadcrumb: 'Step 10 of 16'
+      breadcrumb: 'Step 10 of 17'
       text: 'What is your National Insurance number?'
       example: "For example, QQ123456C"
       prompt: 'National Insurance number'
@@ -172,18 +172,18 @@ en:
           item_2: 'ask for a reminder through the post'
           detail: 'If you can’t provide a National Insurance number you will need to provide a letter from the job centre.'
     dob:
-      breadcrumb: 'Step 11 of 16'
+      breadcrumb: 'Step 11 of 17'
       text: What is your date of birth?
       subtext: 'Enter the date in this format: DD/MM/YYYY'
       hint: Use this format DD/MM/YYYY
     personal_detail:
-      breadcrumb: 'Step 12 of 16'
+      breadcrumb: 'Step 12 of 17'
       text: 'What is your full name?'
     applicant_address:
-      breadcrumb: 'Step 13 of 16'
+      breadcrumb: 'Step 13 of 17'
       text: 'What is your address?'
     contact:
-      breadcrumb: 'Step 14 of 16'
+      breadcrumb: 'Step 14 of 17'
       text: "What's your email address?"
       details: "We can email you to confirm your application has been received."
       email_label: "Email address"

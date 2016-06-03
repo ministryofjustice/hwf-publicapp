@@ -5,6 +5,10 @@ module Views
       "#{message}#{payment_date}"
     end
 
+    def form_name
+      __getobj__.form_name ? __getobj__.form_name : '—'
+    end
+
     def children_text
       unless children.nil?
         children > 0 ? children.to_s : I18n.t('summary.children_false')

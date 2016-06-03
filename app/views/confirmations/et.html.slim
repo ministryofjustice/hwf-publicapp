@@ -1,0 +1,68 @@
+=render('stylesheets')
+
+h1.heading-large
+  span.heading-secondary = t('confirmation.et.breadcrumb')
+  span.visuallyhidden
+    | :&nbsp;
+  = t('confirmation.et.heading')
+
+- email_subject = t('confirmation.et.address.email.subject')
+- email_body = [t('confirmation.et.letter.one', reference: @result['message']),t('confirmation.et.letter.two'),t('confirmation.et.letter.three', case_number: @online_application.case_number),t('confirmation.et.letter.four'),t('confirmation.et.letter.five', full_name: @online_application.full_name)].join("\n")
+
+ol.list.list-number.next-steps
+  li = t('confirmation.et.steps.one_html', reference: @result['message'])
+  li
+    = t('confirmation.et.steps.two')
+    .inset
+      ul
+        li = t('confirmation.et.letter.one', reference: @result['message'])
+        li = t('confirmation.et.letter.two')
+        li = t('confirmation.et.letter.three', case_number: @online_application.case_number)
+        li = t('confirmation.et.letter.four')
+        li = t('confirmation.et.letter.five', full_name: @online_application.full_name)
+  li
+    = t('confirmation.et.steps.three')
+    .inset
+      ul
+        li
+          =t('confirmation.et.address.england.heading')
+          ul
+            li
+              =t('confirmation.et.address.email.heading')
+              ul
+                li =mail_to(Settings.et.england_wales_email, Settings.et.england_wales_email, subject: email_subject, body: email_body)
+                li =t('confirmation.et.address.email.note')
+            li
+              =t('confirmation.et.address.post.heading')
+              ul
+                li =t('confirmation.et.address.england.address.one')
+                li =t('confirmation.et.address.england.address.two')
+                li =t('confirmation.et.address.england.address.three')
+                li =t('confirmation.et.address.england.address.four')
+        li
+          = t('confirmation.et.address.scotland.heading')
+          ul
+            li
+              = t('confirmation.et.address.email.heading')
+              ul
+                li = mail_to(Settings.et.scotland_email, Settings.et.scotland_email, subject: email_subject, body: email_body)
+                li = t('confirmation.et.address.email.note')
+            li
+              = t('confirmation.et.address.post.heading')
+              ul
+                li = t('confirmation.et.address.scotland.address.one')
+                li = t('confirmation.et.address.scotland.address.two')
+                li = t('confirmation.et.address.scotland.address.three')
+                li = t('confirmation.et.address.scotland.address.four')
+                li = t('confirmation.et.address.scotland.address.five')
+
+.steps-panel
+  h2.heading-medium.util_mt-0 =t('confirmation.et.next.heading')
+  ol.list.list-number.next-steps.util_mb-0
+    li
+      =t('confirmation.et.next.steps.one')
+    li =t('confirmation.et.next.steps.two')
+    li =t('confirmation.et.next.steps.three')
+
+
+=render('footer')

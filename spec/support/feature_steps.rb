@@ -66,6 +66,25 @@ module FeatureSteps
     fill_dependent
   end
 
+  def when_they_apply_for_help_with_et_case
+    when_they_go_back_to_homepage_and_start_again
+    fill_et_form_name
+    fill_marital_status
+    fill_savings_and_investment
+    fill_benefit
+    fill_dependent
+    fill_income
+    fill_fee
+    fill_probate
+    fill_et_claim
+    fill_national_insurance
+    fill_dob
+    fill_personal_detail
+    fill_applicant_address
+    fill_contact
+    when_they_submit_the_application
+  end
+
   def then_their_data_is_not_persisted
     visit start_session_path
     form_name = page.find_field('form_name_identifier').text
@@ -80,6 +99,10 @@ module FeatureSteps
 
   def then_they_are_on_the_first_question
     expect(page).to have_text 'What court or tribunal fee do you need help with?'
+  end
+
+  def then_they_see_specific_et_instructions
+    expect(page).to have_text 'You must email or post this help with fees reference number HWF-ABC123 along with your employment tribunal claim number to the employment tribunal.'
   end
 
   def fill_contact
@@ -115,8 +138,18 @@ module FeatureSteps
     click_button 'Continue'
   end
 
+  def fill_et_form_name
+    check 'form_name_et'
+    click_button 'Continue'
+  end
+
   def fill_claim
     choose 'claim_default_number_false'
+    click_button 'Continue'
+  end
+
+  def fill_et_claim
+    fill_in 'claim_et_identifier', with: '12345'
     click_button 'Continue'
   end
 

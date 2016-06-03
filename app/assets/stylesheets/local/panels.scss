@@ -15,12 +15,19 @@
 
 .post {
   display: table;
-  min-height: 100px;
-  padding-left: 125px;
   background-image: asset-url('icon-post.png');
-  background-size: 100px 100px;
   background-repeat: no-repeat;
   background-position: left middle;
+
+  min-height: 145px;
+  background-size: 145px 145px;
+  padding-left: 165px;
+
+  @media (min-width: 0px) {
+    min-height: 100px;
+    padding-left: 125px;
+    background-size: 100px 100px;
+  }
 
   @media (min-width: 641px) {
     min-height: 145px;

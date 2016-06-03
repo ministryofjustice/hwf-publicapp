@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resource :confirmation, only: :show do
     get :done
     get :refund
+    get :et
   end
 
   resource :session, only: :destroy do

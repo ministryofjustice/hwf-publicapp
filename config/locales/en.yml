@@ -74,7 +74,7 @@ en:
               blank: "Enter the date in this format DD/MM/YYYY"
               not_a_date: "That date is not recognised"
               after_or_equal_to: "The application must have been made in the last 3 months"
-              before: "This date can't be in the future"
+              before_or_equal_to: "This date can't be in the future"
         forms/probate:
           attributes:
             kase:

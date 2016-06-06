@@ -45,9 +45,9 @@ en:
         two: You can copy the letter below into an email or print this page.
         three: Email or send your letter to the tribunal where your case is being heard.
       letter:
-        one: 'Reference: %{reference}'
+        one_html: 'Reference: <strong>%{reference}</strong>'
         two: I have completed an online application for help with employment tribunal fees.
-        three: 'My employment tribunal claim number is: %{case_number}.'
+        three_html: 'My employment tribunal claim number is: <strong>%{case_number}</strong>.'
         four: Yours sincerely,
         five: '%{full_name}'
       address:
@@ -71,7 +71,7 @@ en:
           note: '(click for preformatted email)'
           subject: 'Help with Fees'
         post:
-          heading: Post your letter to
+          heading: 'Post your letter to:'
 
       next:
         heading: What happens next?

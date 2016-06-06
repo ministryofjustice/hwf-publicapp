@@ -15,39 +15,39 @@ ol.list.list-number.next-steps
     = t('confirmation.et.steps.two')
     .inset
       ul
-        li = t('confirmation.et.letter.one', reference: @result['message'])
+        li = t('confirmation.et.letter.one_html', reference: @result['message'])
         li = t('confirmation.et.letter.two')
-        li = t('confirmation.et.letter.three', case_number: @online_application.case_number)
+        li = t('confirmation.et.letter.three_html', case_number: @online_application.case_number)
         li = t('confirmation.et.letter.four')
         li = t('confirmation.et.letter.five', full_name: @online_application.full_name)
   li
     = t('confirmation.et.steps.three')
-    .inset
-      ul
-        li
-          =t('confirmation.et.address.england.heading')
+    .addresses-panel.cf
+      .grid-row
+        .column-half.country
+          .heading-small.util_mt-0=t('confirmation.et.address.england.heading')
           ul
-            li
+            li.email.inset-list
               =t('confirmation.et.address.email.heading')
               ul
                 li =mail_to(Settings.et.england_wales_email, Settings.et.england_wales_email, subject: email_subject, body: email_body)
                 li =t('confirmation.et.address.email.note')
-            li
+            li.postal-address.inset-list
               =t('confirmation.et.address.post.heading')
               ul
                 li =t('confirmation.et.address.england.address.one')
                 li =t('confirmation.et.address.england.address.two')
                 li =t('confirmation.et.address.england.address.three')
                 li =t('confirmation.et.address.england.address.four')
-        li
-          = t('confirmation.et.address.scotland.heading')
+        .column-half.country
+          .heading-small.util_mt-0= t('confirmation.et.address.scotland.heading')
           ul
-            li
+            li.email.inset-list
               = t('confirmation.et.address.email.heading')
               ul
                 li = mail_to(Settings.et.scotland_email, Settings.et.scotland_email, subject: email_subject, body: email_body)
                 li = t('confirmation.et.address.email.note')
-            li
+            li.postal-address.inset-list
               = t('confirmation.et.address.post.heading')
               ul
                 li = t('confirmation.et.address.scotland.address.one')

@@ -11,9 +11,25 @@ RSpec.describe QuestionFormFactory do
   end
 
   describe '.get_form' do
-    subject { described_class.get_form(id) }
+    let(:online_application) { build(:online_application) }
 
-    context 'for an existing form' do
+    subject { described_class.get_form(id, online_application) }
+
+    context 'claim question' do
+      let(:id) { :claim }
+
+      context 'when the online_application is an ET one' do
+        let(:online_application) { build(:online_application, :et) }
+
+        it { is_expected.to be_a(Forms::Claim::Et) }
+      end
+
+      context 'when the online_application is not an ET one' do
+        it { is_expected.to be_a(Forms::Claim::Default) }
+      end
+    end
+
+    context 'for other existing question' do
       let(:id) { :marital_status }
 
       it 'returns an instance of the form' do
@@ -21,7 +37,7 @@ RSpec.describe QuestionFormFactory do
       end
     end
 
-    context 'for a form that does not exist' do
+    context 'for a question that does not exist' do
       let(:id) { :wrong }
 
       it 'raises QuestionDoesNotExist error' do

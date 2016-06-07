@@ -15,6 +15,12 @@ class ConfirmationsController < ApplicationController
     clear_storage
   end
 
+  def et
+    prepare_view
+    build_ga_event
+    clear_storage
+  end
+
   private
 
   def prepare_view

@@ -36,6 +36,8 @@ en:
         date_of_death: "Date of death"
       forms/form_name:
         identifier: 'Form name or number'
+      forms/claim/et:
+        identifier: 'Employment tribunal claim number'
       forms/help_request:
         phone: Telephone number
         description: Describe what you'd like to talk about
@@ -87,12 +89,17 @@ en:
               not_a_date: "Enter the date in this format DD/MM/YYYY"
               before: "This date can't be in the future"
               after_or_equal_to: "The date of death must have been in the last 20 years"
-        forms/claim:
+        forms/claim/default:
           attributes:
             number:
               inclusion: Select whether you have a case, claim or ‘notice to pay’ number
             identifier:
               blank: Enter a case, claim or ‘notice to pay’ number
+              too_long: "The number must be less than 25 characters"
+        forms/claim/et:
+          attributes:
+            identifier:
+              blank: Enter your employment tribunal claim number
               too_long: "The number must be less than 25 characters"
         forms/form_name:
           attributes:

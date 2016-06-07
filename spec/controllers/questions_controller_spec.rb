@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe QuestionsController, type: :controller do
+  let(:online_application) { double(:attributes= => nil) }
   let(:session) { double }
   let(:storage_started) { true }
   let(:storage) { double(load_form: nil, save_form: nil, started?: storage_started) }
@@ -9,9 +10,10 @@ RSpec.describe QuestionsController, type: :controller do
   let(:form) { double }
 
   before do
-    allow(QuestionFormFactory).to receive(:get_form).with(valid_id).and_return(form)
-    allow(QuestionFormFactory).to receive(:get_form).with(invalid_id).and_raise(QuestionFormFactory::QuestionDoesNotExist)
+    allow(QuestionFormFactory).to receive(:get_form).with(valid_id, online_application).and_return(form)
+    allow(QuestionFormFactory).to receive(:get_form).with(invalid_id, online_application).and_raise(QuestionFormFactory::QuestionDoesNotExist)
     allow(controller).to receive(:session).and_return(session)
+    allow(controller).to receive(:online_application).and_return(online_application)
     allow(Storage).to receive(:new).with(session).and_return(storage)
   end
 
@@ -59,13 +61,13 @@ RSpec.describe QuestionsController, type: :controller do
   describe 'PUT #update' do
     let(:valid?) { false }
     let(:params) { { question_1: 'AAA', question_2: 'BBB' } }
-    let(:form) { double(id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?) }
-    let(:online_application) { double }
+    let(:form) { double(id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?, export: exported_form) }
+    let(:exported_form) { double }
+
     let(:next_path) { root_path }
     let(:navigation) { double(next: next_path) }
 
     before do
-      allow(controller).to receive(:online_application).and_return(online_application)
       allow(Navigation).to receive(:new).with(online_application, id).and_return(navigation)
 
       put :update, id: id, id => params
@@ -83,6 +85,10 @@ RSpec.describe QuestionsController, type: :controller do
 
         it 'stores the form in the storage' do
           expect(storage).to have_received(:save_form).with(form)
+        end
+
+        it 'updates the online_application in progress' do
+          expect(online_application).to have_received(:attributes=).with(exported_form)
         end
 
         it 'redirects to the next question based on the Navigation object' do

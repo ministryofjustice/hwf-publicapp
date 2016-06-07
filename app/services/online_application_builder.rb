@@ -9,12 +9,12 @@ class OnlineApplicationBuilder
   private
 
   def build_application
-    params = QuestionFormFactory::IDS.inject({}) do |result, id|
-      form = QuestionFormFactory.get_form(id)
-      @storage.load_form(form)
-      result.merge!(form.export)
-    end
+    @online_application = OnlineApplication.new
 
-    @online_application = OnlineApplication.new(params)
+    QuestionFormFactory::IDS.each do |question|
+      form = QuestionFormFactory.get_form(question, @online_application)
+      @storage.load_form(form)
+      @online_application.attributes = form.export
+    end
   end
 end

@@ -3,6 +3,7 @@ en:
     form_name:
       unknown: 'I don’t know the form name or number'
       breadcrumb: 'Step 1 of 17'
+      et: 'I need help with an employment tribunal fee'
       text: 'What court or tribunal fee do you need help with?'
       example: 'Enter the court or tribunal form number for the court business you need help with, for example ‘C100’, ‘D8’ or ‘notice to appeal’ form.'
       details:
@@ -147,7 +148,7 @@ en:
       text: 'Are you paying a fee for a probate case?'
       details: 'These cases are usually about the property and belongings of someone who has died.'
       hint: Use this format DD/MM/YYYY
-    claim:
+    claim/default:
       breadcrumb: 'Step 9 of 17'
       text: Do you have a case, claim or ‘notice to pay’ number?
       subtext: Find this number on letters from the court or tribunal.
@@ -160,6 +161,15 @@ en:
         section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
         section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet).
+    claim/et:
+      breadcrumb: 'Step 9 of 16'
+      text: Enter your employment tribunal claim number
+      subtext: Find this number on your digital submission or letters from the court or tribunal.
+      details:
+        summary: Help with employment tribunal claim number
+        section_1: Your employment tribunal claim number is a unique reference to identify your employment tribunal claim.
+        section_2: You will receive a claim number when you make an employment tribunal claim online.
+        section_3: If your case is ongoing, your claim number will also appear on any letters sent to you by a court or tribunal.
     national_insurance:
       breadcrumb: 'Step 10 of 17'
       text: 'What is your National Insurance number?'

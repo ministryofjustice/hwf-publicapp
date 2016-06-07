@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Forms::FormName, type: :model do
   let(:unknown) { false }
+  let(:et) { false }
 
-  subject(:form) { described_class.new(identifier: identifier, unknown: unknown) }
+  subject(:form) { described_class.new(identifier: identifier, unknown: unknown, et: et) }
 
   describe 'validations' do
     describe 'identifier' do
@@ -11,7 +12,17 @@ RSpec.describe Forms::FormName, type: :model do
         let(:identifier) { nil }
 
         context 'when the unknown field is false' do
-          it { is_expected.not_to be_valid }
+          context 'when the et field is false' do
+            let(:et) { false }
+
+            it { is_expected.not_to be_valid }
+          end
+
+          context 'when the et field is true' do
+            let(:et) { true }
+
+            it { is_expected.to be_valid }
+          end
         end
 
         context 'when the unknown field is true' do
@@ -56,21 +67,49 @@ RSpec.describe Forms::FormName, type: :model do
           is_expected.to eql(form_name: identifier)
         end
       end
+
+      context 'when the et field is true' do
+        let(:et) { true }
+
+        it 'returns hash with form_name prefixed with ET' do
+          is_expected.to eql(form_name: "ET #{identifier}")
+        end
+      end
     end
 
     context 'when identifier is nil' do
       let(:identifier) { nil }
 
-      it 'returns hash with form_name nil' do
-        is_expected.to eql(form_name: nil)
+      context 'when the et field is true' do
+        let(:et) { true }
+
+        it 'returns hash with form_name being ET' do
+          is_expected.to eql(form_name: 'ET')
+        end
+      end
+
+      context 'when the et field is false' do
+        it 'returns hash with form_name nil' do
+          is_expected.to eql(form_name: nil)
+        end
       end
     end
 
     context 'when identifier is blank' do
       let(:identifier) { '  ' }
 
-      it 'returns hash with form_name nil' do
-        is_expected.to eql(form_name: nil)
+      context 'when the et field is true' do
+        let(:et) { true }
+
+        it 'returns hash with form_name being ET' do
+          is_expected.to eql(form_name: 'ET')
+        end
+      end
+
+      context 'when the et field is false' do
+        it 'returns hash with form_name nil' do
+          is_expected.to eql(form_name: nil)
+        end
       end
     end
   end

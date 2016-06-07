@@ -12,7 +12,7 @@ RSpec.describe OnlineApplicationBuilder do
         'fee' => { 'paid' => true, 'date_paid' => '12/12/2015' },
         'income' => { 'wages' => 300, 'partner_rent_other_property' => 250 },
         'probate' => { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'date_of_death' => '01/08/2015' },
-        'claim' => { 'number' => true, 'identifier' => 'CL001' },
+        'claim/default' => { 'number' => true, 'identifier' => 'CL001' },
         'form_name' => { 'identifier' => 'EX47' },
         'national_insurance' => { 'number' => 'AA123456A' },
         'personal_detail' => { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' },

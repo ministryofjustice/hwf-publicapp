@@ -79,4 +79,25 @@ RSpec.describe ConfirmationsController, type: :controller do
     end
   end
 
+  describe 'GET #et' do
+    before do
+      get :et
+    end
+
+    it 'renders the show template' do
+      expect(response).to render_template(:et)
+    end
+
+    it 'assigns the online application model' do
+      expect(assigns(:online_application)).to eql(online_application)
+    end
+
+    it 'assigns the response object from the session' do
+      expect(assigns(:result)).to eql(result)
+    end
+
+    it 'clears the storage' do
+      expect(storage).to have_received(:clear)
+    end
+  end
 end

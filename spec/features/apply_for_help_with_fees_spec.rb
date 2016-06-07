@@ -32,7 +32,7 @@ RSpec.feature 'As a user' do
     choose 'probate_kase_false'
     click_button 'Continue'
     expect(page).to have_content 'Do you have a case, claim or ‘notice to pay’ number?'
-    choose 'claim_number_false'
+    choose 'claim_default_number_false'
     click_button 'Continue'
     expect(page).to have_content 'What is your National Insurance number?'
     fill_in 'national_insurance_number', with: 'AB123456A'

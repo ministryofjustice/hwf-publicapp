@@ -18,3 +18,6 @@ zendesk:
   token: <%= ENV['ZENDESK_TOKEN'] %>
 session:
   expires_in_minutes: 10
+et:
+  england_wales_email: ETHelpwithfees@hmcts.gsi.gov.uk
+  scotland_email: GLASGOWET@hmcts.gsi.gov.uk

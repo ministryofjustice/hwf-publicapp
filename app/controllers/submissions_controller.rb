@@ -12,7 +12,9 @@ class SubmissionsController < ApplicationController
   end
 
   def confirmation_route(online_application)
-    if online_application.refund?
+    if online_application.et?
+      et_confirmation_path
+    elsif online_application.refund?
       refund_confirmation_path
     else
       confirmation_path

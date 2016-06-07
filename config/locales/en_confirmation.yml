@@ -37,6 +37,48 @@ en:
       notice:
         warning: Warning
         text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
+    et:
+      breadcrumb: 'Step 17 of 17'
+      heading: Your application for help with fees is not finished yet
+      steps:
+        one_html: You must email or post this help with fees reference number <strong>%{reference}</strong> along with your employment tribunal claim number to the employment tribunal.
+        two: You can copy the letter below into an email or print this page.
+        three: Email or send your letter to the tribunal where your case is being heard.
+      letter:
+        one_html: 'Reference: <strong>%{reference}</strong>'
+        two: I have completed an online application for help with employment tribunal fees.
+        three_html: 'My employment tribunal claim number is: <strong>%{case_number}</strong>.'
+        four: Yours sincerely,
+        five: '%{full_name}'
+      address:
+        england:
+          heading: 'England & Wales'
+          address:
+            one: 'Employment Tribunal Central Office (England & Wales)'
+            two: PO Box 10218
+            three: Leicester
+            four: LE1 8EG
+        scotland:
+          heading: Scotland
+          address:
+            one: Employment Tribunal Central Office (Scotland)
+            two: Eagle Building
+            three: 215 Bothwell Street
+            four: Glasgow
+            five: G2 7TS
+        email:
+          heading: 'Email your letter to:'
+          note: '(click for preformatted email)'
+          subject: 'Help with Fees'
+        post:
+          heading: 'Post your letter to:'
+
+      next:
+        heading: What happens next?
+        steps:
+          one: Your application for help with fees will be assessed by tribunal staff. This usually takes no longer than 5 working days.
+          two: You'll hear from the tribunal if your application for help with fees is unsuccessful or if they need more information from you.
+          three: If your application for help with fees is successful, you'll hear directly from the tribunal dealing with your case.
     print: Save or print this page
     back_to_start: Back to start
     feedback:

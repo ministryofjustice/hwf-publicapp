@@ -11,6 +11,11 @@ legend.visuallyhidden =t('text', scope: @form.i18n_scope)
     = t('unknown', scope: @form.i18n_scope)
 
 .form-group
+  label.block-label for="form_name_et"
+    = f.check_box :et
+    = t('et', scope: @form.i18n_scope)
+
+.form-group
   details
     summary =t('details.summary', scope: @form.i18n_scope)
 

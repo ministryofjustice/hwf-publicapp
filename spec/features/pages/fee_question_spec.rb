@@ -69,6 +69,21 @@ RSpec.feature 'As a user' do
             expect(page).to have_xpath("//input[@id='fee_date_paid' and @value='#{4.months.ago.strftime('%d/%m/%Y')}']")
           end
         end
+
+        describe 'when the date is in the future' do
+          before do
+            fill_in 'fee_date_paid', with: Time.zone.now + 1.month
+            click_button 'Continue'
+          end
+
+          scenario 'I expect the fields to have specific errors' do
+            expect(page).to have_xpath('//span[@class="error-message"]', text: "This date can't be in the future")
+          end
+
+          scenario 'I expect the incorrect data to be shown' do
+            expect(page).to have_xpath("//input[@id='fee_date_paid' and @value='#{(Time.zone.now + 1.month).strftime('%d/%m/%Y')}']")
+          end
+        end
       end
     end
   end

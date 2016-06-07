@@ -6,14 +6,14 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
   table.income
     caption.visuallyhidden
       | Please enter details of your&nbsp;
-      -if married?
+      -if @online_application.married?
         | and your partner's&nbsp;
       | monthly income
     thead
       tr
         td &nbsp;
         th.js-total = t('labels.your_income', scope: @form.i18n_scope)
-        -if married?
+        -if @online_application.married?
           th.js-total = t('labels.partners_income', scope: @form.i18n_scope)
     tbody
       tr
@@ -22,7 +22,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :wages, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_wages, step: '0.01', class: 'form-control'
@@ -33,7 +33,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :child_benefit, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_child_benefit, step: '0.01', class: 'form-control'
@@ -44,7 +44,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :working_tax_credit, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_working_tax_credit, step: '0.01', class: 'form-control'
@@ -55,7 +55,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :child_tax_credit, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_child_tax_credit, step: '0.01', class: 'form-control'
@@ -66,7 +66,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :maintenance_payment, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_maintenance_payment, step: '0.01', class: 'form-control'
@@ -77,7 +77,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :contribution_jsa, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_contribution_jsa, step: '0.01', class: 'form-control'
@@ -88,7 +88,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :contribution_esa, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_contribution_esa, step: '0.01', class: 'form-control'
@@ -99,7 +99,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :universal_credit, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_universal_credit, step: '0.01', class: 'form-control'
@@ -110,7 +110,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :pension, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_pension, step: '0.01', class: 'form-control'
@@ -121,7 +121,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :rent_living_with, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_rent_living_with, step: '0.01', class: 'form-control'
@@ -132,7 +132,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           span.currency £
           = f.number_field :rent_other_property, step: '0.01', class: 'form-control'
           span.frequency a month
-        -if married?
+        -if @online_application.married?
           td
             span.currency £
             = f.number_field :partner_rent_other_property, step: '0.01', class: 'form-control'
@@ -148,7 +148,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
           = f.number_field :other, step: '0.01', class: 'form-control'
           span.frequency a month
 
-        -if married?
+        -if @online_application.married?
           td class=('error' if @form.errors[:combined_other_payments].any?)
             span.error-message = @form.errors[:combined_other_payments].join(' ')
             span.currency £

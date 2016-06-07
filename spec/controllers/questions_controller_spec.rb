@@ -115,41 +115,4 @@ RSpec.describe QuestionsController, type: :controller do
       end
     end
   end
-
-  describe '#married?' do
-    before do
-      allow(controller).to receive(:session).and_return(session)
-    end
-
-    subject { controller.married? }
-
-    context 'when the session has "marital_status" value set' do
-      context 'when it\'s empty' do
-        let(:session) { { 'questions' => { 'marital_status' => {} } } }
-
-        it { is_expected.to be nil }
-      end
-
-      context 'when it has a hash with "married" field' do
-        let(:session) { { 'questions' => { 'marital_status' => { 'married' => married } } } }
-
-        context 'when "married" is true' do
-          let(:married) { true }
-
-          it { is_expected.to be true }
-        end
-        context 'when "married" is false' do
-          let(:married) { false }
-
-          it { is_expected.to be false }
-        end
-      end
-    end
-
-    context 'when the session does not have "marital_status" value set' do
-      let(:session) { { 'questions' => {} } }
-
-      it { is_expected.to be nil }
-    end
-  end
 end

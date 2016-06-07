@@ -18,12 +18,6 @@ class QuestionsController < ApplicationController
     end
   end
 
-  # FIXME: This is a temporary helper method, until some kind of context is implemented which allows
-  # accessing previously answered questions.
-  helper_method def married?
-    session['questions']['marital_status'] ? session['questions']['marital_status']['married'] : nil
-  end
-
   private
 
   def question

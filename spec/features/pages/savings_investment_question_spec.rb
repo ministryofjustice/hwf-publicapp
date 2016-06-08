@@ -7,7 +7,7 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        choose 'savings_and_investment_less_than_limit_true'
+        choose 'savings_and_investment_choice_less'
         click_button 'Continue'
       end
 

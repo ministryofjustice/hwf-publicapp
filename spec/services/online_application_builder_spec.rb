@@ -6,7 +6,7 @@ RSpec.describe OnlineApplicationBuilder do
       'questions' =>
       {
         'marital_status' => { 'married' => true },
-        'savings_and_investment' => { 'less_than_limit' => true },
+        'savings_and_investment' => { 'choice' => 'less' },
         'benefit' => { 'on_benefits' => true },
         'dependent' => { 'children' => true, 'children_number' => 2 },
         'fee' => { 'paid' => true, 'date_paid' => '12/12/2015' },

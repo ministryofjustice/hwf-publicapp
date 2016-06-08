@@ -185,7 +185,7 @@ module FeatureSteps
   end
 
   def fill_savings_and_investment
-    choose 'savings_and_investment_less_than_limit_false'
+    choose 'savings_and_investment_choice_less'
     click_button 'Continue'
   end
 

@@ -49,7 +49,7 @@ en:
               inclusion: "Select whether you're single, married or living with someone and sharing an income"
         forms/savings_and_investment:
           attributes:
-            less_than_limit:
+            choice:
               inclusion: 'Select how much you have in savings and investments'
         forms/benefit:
           attributes:

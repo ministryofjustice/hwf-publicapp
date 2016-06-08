@@ -35,8 +35,9 @@ en:
           item_5: 'you and your partner are both part of a multiple fee group'
     savings_and_investment:
       title: 'Savings and investments'
-      less_than_limit_true: 'Less than £3,000'
-      less_than_limit_false: 'More than £3,000'
+      less: 'Less than £3,000'
+      between: 'Between £3,000 and £16,000'
+      more: 'More than £16,000'
       breadcrumb: 'Step 3 of 17'
       text: 'How much do you have in savings and investments?'
       details:

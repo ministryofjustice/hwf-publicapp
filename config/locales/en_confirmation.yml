@@ -1,6 +1,7 @@
 en:
   confirmation:
     default:
+      title: 'Your application is not finished yet'
       breadcrumb: 'Step 16 of 17'
       heading: Your application for help with fees is not finished yet
       steps:
@@ -10,6 +11,7 @@ en:
         four: If you provided your email address, you'll get your application reference number by email. If you didn't provide an email, make a note of your reference number for your own records.
       continue: Continue
     done:
+      title: 'Send your form to complete the process'
       breadcrumb: 'Step 17 of 17'
       heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
       instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
@@ -20,6 +22,7 @@ en:
           two: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.
           three: If your application is successful you'll hear directly from the court or tribunal dealing with your case.
     refund:
+      title: 'Send your reference number to complete the process'
       breadcrumb: 'Step 17 of 17'
       heading: Send your reference number to the court or tribunal dealing with your case
       steps:
@@ -38,6 +41,7 @@ en:
         warning: Warning
         text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
     et:
+      title: 'Your application is not finished yet'
       breadcrumb: 'Step 17 of 17'
       heading: Your application for help with fees is not finished yet
       steps:

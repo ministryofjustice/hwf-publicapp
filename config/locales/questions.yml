@@ -1,6 +1,7 @@
 en:
   questions:
     form_name:
+      title: 'Form name or number'
       unknown: 'I don’t know the form name or number'
       breadcrumb: 'Step 1 of 17'
       et: 'I need help with an employment tribunal fee'
@@ -11,6 +12,7 @@ en:
         item_1: You can usually find the form name at the top of the form, and the number at the bottom.
         item_2: If you don’t have a form name or number, for example if you’re applying for help with a hearing fee, then write ‘hearing fee’ as the answer to this question.
     marital_status:
+      title: 'Your marital status'
       married_true: 'Married or living with someone and sharing an income'
       married_false: 'Single'
       breadcrumb: 'Step 2 of 17'
@@ -32,6 +34,7 @@ en:
           item_4: 'forced marriage'
           item_5: 'you and your partner are both part of a multiple fee group'
     savings_and_investment:
+      title: 'Savings and investments'
       less_than_limit_true: 'Less than £3,000'
       less_than_limit_false: 'More than £3,000'
       breadcrumb: 'Step 3 of 17'
@@ -60,6 +63,7 @@ en:
           item_8: 'medical negligence or personal injury awards'
           item_9: 'any compensation under a statutory scheme in respect of Mesothelioma'
     benefit:
+      title: 'Benefits'
       on_benefits_false: 'No'
       on_benefits_true: 'Yes, I am receiving one of the benefits listed'
       breadcrumb: 'Step 4 of 17'
@@ -110,6 +114,7 @@ en:
             name: 'Scottish Legal Aid Advice by Way of Representation'
             hint: '(ABWOR)'
     dependent:
+      title: 'Number of children living with you'
       breadcrumb: 'Step 5 of 17'
       text: Do you have any children living with you, or who you support financially?
       children_false: 'No'
@@ -123,6 +128,7 @@ en:
         item_2: "between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class=\"external\" rel=\"external\" href=\"https://www.gov.uk/child-tax-credit-when-child-reaches-16\">gov.uk/child-tax-credit-when-child-reaches-16</a>"
         item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
     income:
+      title: 'Your income'
       breadcrumb: 'Step 6 of 17'
       text: 'What is your total monthly income?'
       details:
@@ -135,6 +141,7 @@ en:
         partners_income: "Your partner's monthly income"
       nojs_info: "The amount of money you've entered will be added up when you click 'Continue'."
     fee:
+      title: 'Refund'
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
       breadcrumb: 'Step 7 of 17'
@@ -142,6 +149,7 @@ en:
       details: "You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee."
       hint: Use this format DD/MM/YYYY
     probate:
+      title: 'Probate'
       probate_case_false: 'No'
       probate_case_true: 'Yes'
       breadcrumb: 'Step 8 of 17'
@@ -149,6 +157,7 @@ en:
       details: 'These cases are usually about the property and belongings of someone who has died.'
       hint: Use this format DD/MM/YYYY
     claim/default:
+      title: 'Claim or case number'
       breadcrumb: 'Step 9 of 17'
       text: Do you have a case, claim or ‘notice to pay’ number?
       subtext: Find this number on letters from the court or tribunal.
@@ -162,6 +171,7 @@ en:
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
         section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet).
     claim/et:
+      title: 'Claim number'
       breadcrumb: 'Step 9 of 16'
       text: Enter your employment tribunal claim number
       subtext: Find this number on your digital submission or letters from the court or tribunal.
@@ -171,6 +181,7 @@ en:
         section_2: You will receive a claim number when you make an employment tribunal claim online.
         section_3: If your case is ongoing, your claim number will also appear on any letters sent to you by a court or tribunal.
     national_insurance:
+      title: 'National Insurance number'
       breadcrumb: 'Step 10 of 17'
       text: 'What is your National Insurance number?'
       example: "For example, QQ123456C"
@@ -182,17 +193,21 @@ en:
           item_2: 'ask for a reminder through the post'
           detail: 'If you can’t provide a National Insurance number you will need to provide a letter from the job centre.'
     dob:
+      title: 'Date of birth'
       breadcrumb: 'Step 11 of 17'
       text: What is your date of birth?
       subtext: 'Enter the date in this format: DD/MM/YYYY'
       hint: Use this format DD/MM/YYYY
     personal_detail:
+      title: 'Your name'
       breadcrumb: 'Step 12 of 17'
       text: 'What is your full name?'
     applicant_address:
+      title: 'Your address'
       breadcrumb: 'Step 13 of 17'
       text: 'What is your address?'
     contact:
+      title: 'Your email address'
       breadcrumb: 'Step 14 of 17'
       text: "What's your email address?"
       details: "We can email you to confirm your application has been received."

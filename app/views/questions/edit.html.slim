@@ -1,3 +1,7 @@
+- content_for :page_title
+  = t('title', scope: @form.i18n_scope)
+  = ' - '
+
 = render('shared/error_block', form: @form) if @form.errors.any?
 
 h1.heading-large

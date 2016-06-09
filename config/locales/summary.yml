@@ -1,6 +1,7 @@
 en:
   summary:
     breadcrumb: 'Step 15 of 17'
+    title: 'Check details'
     labels:
       title: Check details
       form_name: 'Form name or number'

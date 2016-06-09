@@ -1,3 +1,7 @@
+- content_for :page_title
+  = t('confirmation.done.title')
+  = ' - '
+
 =render('stylesheets')
 
 - form_name = @online_application.form_name ? @online_application.form_name : 'claim'

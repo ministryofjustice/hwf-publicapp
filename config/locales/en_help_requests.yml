@@ -1,5 +1,6 @@
 en:
   help_requests:
+    title: "Ask for technical help"
     heading: "Ask for technical help"
     subheading: "Please note: we cannot offer legal advice."
     description:

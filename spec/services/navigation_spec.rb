@@ -11,7 +11,8 @@ RSpec.describe Navigation do
     {
       form_name: :marital_status,
       marital_status: :savings_and_investment,
-      savings_and_investment: :benefit,
+      savings_and_investment: :savings_and_investment_extra,
+      savings_and_investment_extra: :benefit,
       dependent: :income,
       income: :fee,
       fee: :probate,

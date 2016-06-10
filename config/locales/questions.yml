@@ -63,6 +63,12 @@ en:
           item_7: 'money from the criminal injury compensation scheme'
           item_8: 'medical negligence or personal injury awards'
           item_9: 'any compensation under a statutory scheme in respect of Mesothelioma'
+    savings_and_investment_extra:
+      title: 'Are you or your partner 61 or over?'
+      breadcrumb: 'Step 3 of 17'
+      text: 'Are you or your partner 61 or over?'
+      over_61_true: 'Yes'
+      over_61_false: 'No'
     benefit:
       title: 'Benefits'
       on_benefits_false: 'No'

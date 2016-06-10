@@ -41,6 +41,8 @@ en:
       forms/help_request:
         phone: Telephone number
         description: Describe what you'd like to talk about
+      forms/savings_and_investment_extra:
+        amount: 'How much do you and your partner have in savings and investments?'
     errors:
       models:
         forms/marital_status:

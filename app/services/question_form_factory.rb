@@ -6,6 +6,7 @@ class QuestionFormFactory
     :form_name,
     :marital_status,
     :savings_and_investment,
+    :savings_and_investment_extra,
     :benefit,
     :dependent,
     :income,

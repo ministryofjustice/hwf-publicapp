@@ -20,6 +20,7 @@ module FeatureSteps
     fill_form_name
     fill_marital_status
     fill_savings_and_investment
+    fill_savings_and_investment_extra
     fill_benefit
     fill_dependent
     fill_income
@@ -186,6 +187,11 @@ module FeatureSteps
 
   def fill_savings_and_investment
     choose 'savings_and_investment_choice_less'
+    click_button 'Continue'
+  end
+
+  def fill_savings_and_investment_extra
+    choose 'savings_and_investment_extra_over_61_true'
     click_button 'Continue'
   end
 

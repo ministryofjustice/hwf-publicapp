@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :online_application do
     married false
-    threshold_exceeded false
+    min_threshold_exceeded false
     benefits true
     children 0
     refund false

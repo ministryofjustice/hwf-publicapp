@@ -2,7 +2,10 @@ class OnlineApplication
   include Virtus.model(nullify_blank: true)
 
   attribute :married, Boolean
-  attribute :threshold_exceeded, Boolean
+  attribute :min_threshold_exceeded, Boolean
+  attribute :max_threshold_exceeded, Boolean
+  attribute :over_61, Boolean
+  attribute :amount, Integer
   attribute :benefits, Boolean
   attribute :children, Integer
   attribute :income, Integer

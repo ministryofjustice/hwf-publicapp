@@ -30,8 +30,6 @@ en:
     children_false: 'No'
     marital_status_false: 'Single'
     marital_status_true: 'Married or living with someone and sharing an income'
-    less_than_limit_true: 'Less than £3,000'
-    less_than_limit_false: 'More than £3,000'
     applicant_on_benefits_true: 'Receiving eligible benefits'
     applicant_on_benefits_false: 'Not receiving eligible benefits'
     fee_paid_false: 'No'

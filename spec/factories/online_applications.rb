@@ -29,5 +29,19 @@ FactoryGirl.define do
       min_threshold_exceeded true
       max_threshold_exceeded false
     end
+
+    trait :savings_less_than_threshold do
+      min_threshold_exceeded false
+    end
+
+    trait :savings_more_than_threshold do
+      min_threshold_exceeded true
+      max_threshold_exceeded true
+    end
+
+    trait :savings_between_threshold do
+      min_threshold_exceeded true
+      max_threshold_exceeded false
+    end
   end
 end

@@ -6,7 +6,8 @@ RSpec.describe OnlineApplicationBuilder do
       'questions' =>
       {
         'marital_status' => { 'married' => true },
-        'savings_and_investment' => { 'choice' => 'less' },
+        'savings_and_investment' => { 'choice' => 'between' },
+        'savings_and_investment_extra' => { 'over_61' => false, 'amount' => 6000 },
         'benefit' => { 'on_benefits' => true },
         'dependent' => { 'children' => true, 'children_number' => 2 },
         'fee' => { 'paid' => true, 'date_paid' => '12/12/2015' },
@@ -36,7 +37,10 @@ RSpec.describe OnlineApplicationBuilder do
 
     it 'assigns the correct values to each field' do
       expect(subject.married).to be true
-      expect(subject.threshold_exceeded).to be false
+      expect(subject.min_threshold_exceeded).to be true
+      expect(subject.max_threshold_exceeded).to be false
+      expect(subject.over_61).to be false
+      expect(subject.amount).to eql 6000
       expect(subject.benefits).to be true
       expect(subject.children).to eql(2)
       expect(subject.income).to eql(550)

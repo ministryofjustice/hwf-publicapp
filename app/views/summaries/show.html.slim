@@ -13,77 +13,146 @@ table
     tr
       td =t('form_name', scope: 'summary.labels')
       td=@summary.form_name
-      td.right= link_to "Change", question_path(:form_name)
+      td.right= link_to question_path(:form_name) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('form_name', scope: 'summary.labels').downcase
     tr
       td =t('married', scope: 'summary.labels')
       td= t("marital_status_#{@summary.married}", scope: 'summary')
-      td.right= link_to "Change", question_path(:marital_status)
+      td.right= link_to question_path(:marital_status) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('married', scope: 'summary.labels').downcase
     tr
       td =t('savings', scope: 'summary.labels')
       td= t("less_than_limit_#{!@summary.threshold_exceeded}", scope: 'summary')
-      td.right= link_to "Change", question_path(:savings_and_investment)
+      td.right= link_to question_path(:savings_and_investment) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('savings', scope: 'summary.labels').downcase
     tr
       td =t('benefits', scope: 'summary.labels')
       td= t("applicant_on_benefits_#{@summary.benefits}", scope: 'summary')
-      td.right= link_to "Change", question_path(:benefit)
+      td.right= link_to question_path(:benefit) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('benefits', scope: 'summary.labels').downcase
     - if @summary.children_text
       tr
         td =t('children', scope: 'summary.labels')
         td =@summary.children_text
-        td.right= link_to "Change", question_path(:dependent)
+        td.right= link_to question_path(:dependent) do
+          | Change
+          span.visuallyhidden
+            | &nbsp;
+            =t('children', scope: 'summary.labels').downcase
     - if @summary.income
       tr
         td =t('income', scope: 'summary.labels')
         td =number_to_currency(@summary.income, precision: 2, unit: '£')
-        td.right= link_to "Change", question_path(:income)
+        td.right= link_to question_path(:income) do
+          | Change
+          span.visuallyhidden
+            | &nbsp;
+            =t('income', scope: 'summary.labels')
+
     tr
       td =t('fee', scope: 'summary.labels')
       td =@summary.refund_text
-      td.right= link_to "Change", question_path(:fee)
+      td.right= link_to question_path(:fee) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('fee', scope: 'summary.labels').downcase
     -if @summary.probate
       tr
         td = t('deceased_name', scope: 'summary.labels')
         td =@summary.deceased_name
-        td.right= link_to "Change", question_path(:probate)
+        td.right= link_to question_path(:probate) do
+          | Change
+          span.visuallyhidden
+            | &nbsp;
+            =t('deceased_name', scope: 'summary.labels').downcase
       tr
         td = t('date_of_death', scope: 'summary.labels')
         td =@summary.date_of_death
-        td.right= link_to "Change", question_path(:probate)
+        td.right= link_to question_path(:probate) do
+          | Change
+          span.visuallyhidden
+            | &nbsp;
+            =t('date_of_death', scope: 'summary.labels').downcase
     -else
       tr
         td =t('probate', scope: 'summary.labels')
         td=t("probate_case_#{@summary.probate}", scope: 'summary')
-        td.right= link_to "Change", question_path(:probate)
+        td.right= link_to question_path(:probate) do
+          | Change
+          span.visuallyhidden
+            | &nbsp;
+            =t('probate', scope: 'summary.labels').downcase
     tr
       td =t('claim', scope: 'summary.labels')
       td =t("claim_number_#{@summary.case_number?}", scope: 'summary')
-      td.right= link_to "Change", question_path(:claim)
+      td.right= link_to question_path(:claim) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('claim', scope: 'summary.labels').downcase
     tr
       td =t('ni_number', scope: 'summary.labels')
       td =@summary.ni_number
-      td.right= link_to "Change", question_path(:national_insurance)
+      td.right= link_to question_path(:national_insurance) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('ni_number', scope: 'summary.labels')
     tr
       td =t('date_of_birth', scope: 'summary.labels')
       td =@summary.date_of_birth
-      td.right= link_to "Change", question_path(:dob)
+      td.right= link_to question_path(:dob) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('date_of_birth', scope: 'summary.labels').downcase
     tr
       td =t('personal', scope: 'summary.labels')
       td =@summary.full_name
-      td.right= link_to "Change", question_path(:personal_detail)
+      td.right= link_to question_path(:personal_detail) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('personal', scope: 'summary.labels').downcase
     tr
       td =t('address', scope: 'summary.labels')
       td =@summary.full_address
-      td.right= link_to "Change", question_path(:applicant_address)
+      td.right= link_to question_path(:applicant_address) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          =t('address', scope: 'summary.labels').downcase
     -if @summary.email_contact
       tr
         td =t('contact_email', scope: 'summary.labels')
         td =@summary.email_address
-        td.right= link_to "Change", question_path(:contact)
+        td.right= link_to question_path(:contact) do
+          | Change
+          span.visuallyhidden
+            | &nbsp;
+            =t('contact_email', scope: 'summary.labels').downcase
     -else
       tr
         td = t('contact', scope: 'summary.labels')
         td = t('summary.contact_none')
-        td.right= link_to "Change", question_path(:contact)
+        td.right= link_to question_path(:contact) do
+          | Change
+          span.visuallyhidden
+            | &nbsp;
+            =t('contact', scope: 'summary.labels').downcase
 
 h2.heading-medium =t('heading', scope: 'summary.truth')
 p =t('statement', scope: 'summary.truth')

@@ -2,13 +2,13 @@
   = t('title', scope: @form.i18n_scope)
   = ' - '
 
-= render('shared/error_block', form: @form) if @form.errors.any?
-
 h1.heading-large
   span.heading-secondary= t('breadcrumb', scope: @form.i18n_scope)
   span.visuallyhidden
     | :&nbsp;
   = t('text', scope: @form.i18n_scope)
+
+= render('shared/error_block', form: @form) if @form.errors.any?
 
 =render("questions/headers/#{@form.id}")
 

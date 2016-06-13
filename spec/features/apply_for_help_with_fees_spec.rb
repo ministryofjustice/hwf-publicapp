@@ -16,8 +16,6 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'How much do you have in savings and investments?'
     choose 'savings_and_investment_choice_less'
     click_button 'Continue'
-    choose 'savings_and_investment_extra_over_61_true'
-    click_button 'Continue'
     expect(page).to have_content 'Do you receive any of the following benefits?'
     choose 'benefit_on_benefits_false'
     click_button 'Continue'

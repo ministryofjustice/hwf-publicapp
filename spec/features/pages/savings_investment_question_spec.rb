@@ -11,8 +11,8 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect to be routed to the "savings and investment extra" page' do
-        expect(page).to have_content 'Are you or your partner 61 or over?'
+      scenario 'I expect to be routed to the "benefits" page' do
+        expect(page).to have_content 'Do you receive any of the following benefits?'
       end
     end
 

@@ -24,5 +24,10 @@ FactoryGirl.define do
     trait :et do
       form_name 'ET'
     end
+
+    trait :extra_savings_question_required do
+      min_threshold_exceeded true
+      max_threshold_exceeded false
+    end
   end
 end

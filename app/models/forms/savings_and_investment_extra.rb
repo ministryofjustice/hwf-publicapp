@@ -9,7 +9,11 @@ module Forms
     private
 
     def export_params
-      {}
+      { over_61: over_61 }.merge(amount_param)
+    end
+
+    def amount_param
+      !over_61? && amount.present? ? { amount: amount } : {}
     end
   end
 end

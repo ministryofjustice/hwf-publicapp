@@ -53,6 +53,12 @@ en:
           attributes:
             choice:
               inclusion: 'Select how much you have in savings and investments'
+        forms/savings_and_investment_extra:
+          attributes:
+            over_61:
+              inclusion: 'Select if you or your partner are over 61'
+            amount:
+              blank: 'Enter how much do you have in savings and investments'
         forms/benefit:
           attributes:
             on_benefits:

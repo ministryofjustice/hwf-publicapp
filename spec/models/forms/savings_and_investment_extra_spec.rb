@@ -51,6 +51,20 @@ RSpec.describe Forms::SavingsAndInvestmentExtra, type: :model do
           it { is_expected.to be_valid }
         end
       end
+
+      context 'when over_61 is true and no amount is set' do
+        let(:over_61) { true }
+        let(:amount) { nil }
+
+        it { is_expected.to be_valid }
+      end
+
+      context 'when over_61 is not set' do
+        let(:over_61) { nil }
+        let(:amount) { nil }
+
+        it { is_expected.to be_invalid }
+      end
     end
   end
 

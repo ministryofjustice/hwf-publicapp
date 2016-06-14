@@ -72,6 +72,7 @@ module FeatureSteps
     fill_et_form_name
     fill_marital_status
     fill_savings_and_investment
+    fill_savings_and_investment_extra
     fill_benefit
     fill_dependent
     fill_income

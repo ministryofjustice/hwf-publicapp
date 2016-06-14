@@ -89,20 +89,20 @@ RSpec.feature 'As a user' do
     scenario 'the change links take me to the correct page' do
       given_user_provides_all_data
       visit '/summary'
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:marital_status)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:savings_and_investment)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:benefit)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:dependent)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:income)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:fee)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:probate)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:claim)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:form_name)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:dob)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:national_insurance)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:personal_detail)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:applicant_address)}']"
-      expect(page).to have_xpath "//a[.='Change'][@href='#{question_path(:contact)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:form_name)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:marital_status)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:savings_and_investment)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:benefit)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:dependent)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:income)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:fee)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:probate)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:claim)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:dob)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:national_insurance)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:personal_detail)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:applicant_address)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:contact)}']"
     end
   end
 end

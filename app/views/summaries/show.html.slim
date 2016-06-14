@@ -59,8 +59,7 @@ table
           | Change
           span.visuallyhidden
             | &nbsp;
-            =t('income', scope: 'summary.labels')
-
+            =t('income', scope: 'summary.labels').downcase
     tr
       td =t('fee', scope: 'summary.labels')
       td =@summary.refund_text

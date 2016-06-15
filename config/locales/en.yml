@@ -20,7 +20,7 @@ en:
         working_tax_credit: 'Working Tax Credit'
         child_tax_credit: 'Child Tax Credit'
         maintenance_payment: 'Maintenance payments'
-        contribution_jsa: 'Contribution-based Jobseeker's Allowance (JSA)'
+        contribution_jsa: "Contribution-based Jobseeker's Allowance (JSA)"
         contribution_esa: 'Contribution-based Employment and Support Allowance (ESA)'
         universal_credit: 'Universal Credit'
         pension: 'Pensions (state, work, private)'

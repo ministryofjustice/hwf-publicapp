@@ -4,7 +4,13 @@ module Forms
     attribute :amount, Integer
 
     validates :over_61, inclusion: { in: [true, false] }
-    validates :amount, presence: true, if: 'over_61? == false'
+    validates :amount,
+      presence: true, numericality: {
+        allow_blank: true,
+        less_than_or_equal_to: 16000,
+        greater_than_or_equal_to: 3000
+      },
+      if: 'over_61? == false'
 
     private
 

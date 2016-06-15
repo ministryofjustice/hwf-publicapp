@@ -59,6 +59,8 @@ en:
               inclusion: 'Select if you or your partner are over 61'
             amount:
               blank: 'Enter how much do you have in savings and investments'
+              less_than_or_equal_to: 'The maximum savings is £16,000'
+              greater_than_or_equal_to: 'The minimum savings is £3,000'
         forms/benefit:
           attributes:
             on_benefits:

@@ -13,4 +13,5 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
     .form-group class=('error' if @form.errors[:amount].any?)
       span.error-message#date_paid = @form.errors[:amount].join(' ') if @form.errors[:amount].any?
       = f.label :amount, class: 'form-label'
-      = f.text_field :amount, class: 'form-control'
+      span.currency £
+      = f.text_field :amount, class: 'form-control form-control-smaller'

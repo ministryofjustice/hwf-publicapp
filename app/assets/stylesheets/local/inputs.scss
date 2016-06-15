@@ -50,17 +50,12 @@
 
 .currency {
   display: inline-block;
-  tbody & {
-    margin-right: 2px;
+  margin-right: 2px;
 
-    @media (min-width: 641px) {
-      margin-right: 10px;
-    }
-  }
-  tfoot & {
-    margin-right: 2px;
+  @media (min-width: 641px) {
+    margin-right: 10px;
 
-    @media (min-width: 641px) {
+    tfoot & {
       margin-right: 5px;
     }
   }

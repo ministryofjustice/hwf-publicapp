@@ -18,13 +18,13 @@ module FeatureSteps
     visit '/'
     click_link_or_button 'Apply now'
     fill_form_name
+    fill_fee(true)
     fill_marital_status
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit
     fill_dependent
     fill_income
-    fill_fee(true)
     fill_probate
     fill_claim
     fill_national_insurance
@@ -70,13 +70,13 @@ module FeatureSteps
   def when_they_apply_for_help_with_et_case
     when_they_go_back_to_homepage_and_start_again
     fill_et_form_name
+    fill_fee
     fill_marital_status
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit
     fill_dependent
     fill_income
-    fill_fee
     fill_probate
     fill_et_claim
     fill_national_insurance

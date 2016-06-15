@@ -12,7 +12,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "fee" page' do
-        expect(page).to have_content 'Are you paying a fee for a probate case?'
+        expect(page).to have_content 'Are you single, married or living with someone and sharing an income?'
       end
     end
 

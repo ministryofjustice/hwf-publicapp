@@ -4,6 +4,11 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
 
 .form-group
   table.income
+    caption.visuallyhidden
+      | Please enter details of your&nbsp;
+      -if married?
+        | and your partner's&nbsp;
+      | monthly income
     thead
       tr
         td &nbsp;

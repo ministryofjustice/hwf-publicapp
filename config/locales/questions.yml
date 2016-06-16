@@ -25,7 +25,7 @@ en:
           item_2: 'civil partners'
           item_3: 'living together as if you are married or in a civil partnership'
           item_4: 'living at the same address with a joint income'
-          item_5: 'a couple forced to live apart, eg where one or both is serving in the Armed forces, in prison or living in residential care'
+          item_5: 'a couple forced to live apart, eg where one or both is serving in the armed forces, in prison or living in residential care'
         section_2:
           heading: "Choose ‘single’ if you rely on your own income or your case involves your partner, for example:"
           item_1: 'divorce, dissolution or annulment (unless you have married again or live with a new partner)'
@@ -91,7 +91,7 @@ en:
         summary: 'Help with benefits'
         section_1:
           heading: 'If you’ve only recently started receiving one of these benefits'
-          details: '(for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the jobcentre.'
+          details: '(for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the Jobcentre.'
         section_2:
           heading: 'Benefits with similar names'
           details: "There are some benefits with similar names. If you are receiving one of the benefits listed below, select 'No'."
@@ -191,7 +191,7 @@ en:
         section_1:
           item_1: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
           item_2: 'ask for a reminder through the post'
-          detail: 'If you can’t provide a National Insurance number you will need to provide a letter from the job centre.'
+          detail: 'If you can’t provide a National Insurance number you will need to provide a letter from the Jobcentre.'
     dob:
       title: 'Date of birth'
       breadcrumb: 'Step 11 of 17'

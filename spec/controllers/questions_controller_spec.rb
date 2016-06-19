@@ -8,6 +8,7 @@ RSpec.describe QuestionsController, type: :controller do
   let(:valid_id) { :question }
   let(:invalid_id) { :invalid }
   let(:form) { double }
+  let(:question_title_view) { double }
 
   before do
     allow(QuestionFormFactory).to receive(:get_form).with(valid_id, online_application).and_return(form)
@@ -15,6 +16,7 @@ RSpec.describe QuestionsController, type: :controller do
     allow(controller).to receive(:session).and_return(session)
     allow(controller).to receive(:online_application).and_return(online_application)
     allow(Storage).to receive(:new).with(session).and_return(storage)
+    allow(Views::QuestionTitle).to receive(:new).with(form, online_application).and_return(question_title_view)
   end
 
   describe 'GET #edit' do
@@ -32,6 +34,10 @@ RSpec.describe QuestionsController, type: :controller do
 
       it 'assigns the form' do
         expect(assigns(:form)).to eql(form)
+      end
+
+      it 'assigns the question title view' do
+        expect(assigns(:title_view)).to eql(question_title_view)
       end
 
       it 'loads the form from the storage' do
@@ -103,6 +109,10 @@ RSpec.describe QuestionsController, type: :controller do
 
         it 'assigns the form' do
           expect(assigns(:form)).to eql(form)
+        end
+
+        it 'assigns the question title view' do
+          expect(assigns(:title_view)).to eql(question_title_view)
         end
       end
     end

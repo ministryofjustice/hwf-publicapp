@@ -54,7 +54,7 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'Check details'
     expect(page).to have_content 'Form name or numberN1'
     expect(page).to have_content 'Single'
-    expect(page).to have_content 'Less than £3,000'
+    expect(page).to have_content '£0 to £2,999'
     expect(page).to have_content 'Not receiving eligible benefits'
     expect(page).to have_content 'Income£100'
     expect(page).to have_content 'Fee paidNo'

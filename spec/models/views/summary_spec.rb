@@ -36,7 +36,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :savings_less_than_threshold }
 
       it 'returns the correct text - less than minimum threshold' do
-        is_expected.to eql('Less than £3,000')
+        is_expected.to eql('£0 to £2,999')
       end
     end
 

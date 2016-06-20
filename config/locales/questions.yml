@@ -40,6 +40,7 @@ en:
       more: '£16,000 or more'
       breadcrumb: 'Step 4 of 18'
       text: 'How much do you have in savings and investments?'
+      text_refund: 'How much did you have in savings and investments?'
       subtext_married: 'Remember to include your partner’s savings and investments in your total.'
       details:
         summary: 'Help with savings and investments'
@@ -79,6 +80,7 @@ en:
       on_benefits_true: 'Yes, I am receiving one of the benefits listed'
       breadcrumb: 'Step 6 of 18'
       text: "Do you receive any of the following benefits?"
+      text_refund: "Did you receive any of the following benefits?"
       list:
         header: 'We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.'
         item_1:
@@ -142,6 +144,7 @@ en:
       title: 'Your income'
       breadcrumb: 'Step 8 of 18'
       text: 'What is your total monthly income?'
+      text_refund: 'What was your total monthly income?'
       details:
         section_1: Enter the amount of money you get every month before any tax or National Insurance payments have been taken off.
         section_2: If you get paid weekly, multiply your weekly pay by 52, then divide it by 12. This will give you a monthly total.

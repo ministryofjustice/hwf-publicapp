@@ -6,14 +6,12 @@ module Views
     end
 
     def i18n_title
-      if @form.id == 'savings_and_investment_extra'
-        if @online_application.married?
-          'text_married'
-        else
-          'text_single'
+      'text'.tap do |i18n|
+        if %w[savings_and_investment benefit income].include?(@form.id)
+          i18n << '_refund' if @online_application.refund?
+        elsif @form.id == 'savings_and_investment_extra'
+          i18n << (@online_application.married? ? '_married' : '_single')
         end
-      else
-        'text'
       end
     end
   end

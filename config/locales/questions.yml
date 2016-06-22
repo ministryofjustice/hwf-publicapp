@@ -40,7 +40,6 @@ en:
       more: '£16,000 or more'
       breadcrumb: 'Step 4 of 18'
       text: 'How much do you have in savings and investments?'
-      text_refund: 'How much did you have in savings and investments?'
       subtext_married: 'Remember to include your partner’s savings and investments in your total.'
       details:
         summary: 'Help with savings and investments'

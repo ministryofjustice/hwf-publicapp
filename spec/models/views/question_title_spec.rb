@@ -9,7 +9,7 @@ RSpec.describe Views::QuestionTitle do
 
     subject { service.i18n_title }
 
-    %w[savings_and_investment benefit income].each do |question|
+    %w[benefit income].each do |question|
       context "for the #{question} question" do
         let(:id) { question }
 

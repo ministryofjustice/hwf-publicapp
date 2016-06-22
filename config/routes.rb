@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  if Settings.homepage.external_url
+    root to: redirect(Settings.homepage.external_url)
+  else
+    root 'home#index'
+  end
 
   get 'terms_and_conditions' => 'home#terms_and_conditions'
 

@@ -1,8 +1,9 @@
 class Storage
   class Expired < StandardError; end
 
-  def initialize(session)
+  def initialize(session, options = {})
     @session = session
+    clear if options[:clear]
     check_expiration!
   end
 

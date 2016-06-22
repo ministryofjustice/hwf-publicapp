@@ -11,7 +11,7 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect to be routed to the "fee" page' do
+      scenario 'I expect to be routed to the "marital-status" page' do
         expect(page).to have_content 'Are you single, married or living with someone and sharing an income?'
       end
     end

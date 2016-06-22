@@ -1,15 +1,19 @@
 legend.visuallyhidden = t('text', scope: @form.i18n_scope)
 
 .form-group class=('error' if @form.errors.any?)
-  = f.hidden_field :less_than_limit, value: nil
-  span.error-message#less_than_limit = @form.errors[:less_than_limit].join(' ') if @form.errors.any?
-  label.block-label for='savings_and_investment_less_than_limit_true'
-    = f.radio_button :less_than_limit, 'true'
-    = t('less_than_limit_true', scope: @form.i18n_scope)
+  = f.hidden_field :choice, value: nil
+  span.error-message#choice = @form.errors[:choice].join(' ') if @form.errors.any?
+  label.block-label for='savings_and_investment_choice_less'
+    = f.radio_button :choice, :less
+    = t('less', scope: @form.i18n_scope)
 
-  label.block-label for='savings_and_investment_less_than_limit_false'
-    = f.radio_button :less_than_limit, 'false'
-    = t('less_than_limit_false', scope: @form.i18n_scope)
+  label.block-label for='savings_and_investment_choice_between'
+    = f.radio_button :choice, :between
+    = t('between', scope: @form.i18n_scope)
+
+  label.block-label for='savings_and_investment_choice_more'
+    = f.radio_button :choice, :more
+    = t('more', scope: @form.i18n_scope)
 
 .form-group
   details

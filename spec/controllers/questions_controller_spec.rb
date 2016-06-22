@@ -8,6 +8,7 @@ RSpec.describe QuestionsController, type: :controller do
   let(:valid_id) { :question }
   let(:invalid_id) { :invalid }
   let(:form) { double }
+  let(:question_title_view) { double }
 
   before do
     allow(QuestionFormFactory).to receive(:get_form).with(valid_id, online_application).and_return(form)
@@ -15,6 +16,7 @@ RSpec.describe QuestionsController, type: :controller do
     allow(controller).to receive(:session).and_return(session)
     allow(controller).to receive(:online_application).and_return(online_application)
     allow(Storage).to receive(:new).with(session).and_return(storage)
+    allow(Views::QuestionTitle).to receive(:new).with(form, online_application).and_return(question_title_view)
   end
 
   describe 'GET #edit' do
@@ -32,6 +34,10 @@ RSpec.describe QuestionsController, type: :controller do
 
       it 'assigns the form' do
         expect(assigns(:form)).to eql(form)
+      end
+
+      it 'assigns the question title view' do
+        expect(assigns(:title_view)).to eql(question_title_view)
       end
 
       it 'loads the form from the storage' do
@@ -104,6 +110,10 @@ RSpec.describe QuestionsController, type: :controller do
         it 'assigns the form' do
           expect(assigns(:form)).to eql(form)
         end
+
+        it 'assigns the question title view' do
+          expect(assigns(:title_view)).to eql(question_title_view)
+        end
       end
     end
 
@@ -113,43 +123,6 @@ RSpec.describe QuestionsController, type: :controller do
       it 'responds with 404' do
         expect(response).to have_http_status(404)
       end
-    end
-  end
-
-  describe '#married?' do
-    before do
-      allow(controller).to receive(:session).and_return(session)
-    end
-
-    subject { controller.married? }
-
-    context 'when the session has "marital_status" value set' do
-      context 'when it\'s empty' do
-        let(:session) { { 'questions' => { 'marital_status' => {} } } }
-
-        it { is_expected.to be nil }
-      end
-
-      context 'when it has a hash with "married" field' do
-        let(:session) { { 'questions' => { 'marital_status' => { 'married' => married } } } }
-
-        context 'when "married" is true' do
-          let(:married) { true }
-
-          it { is_expected.to be true }
-        end
-        context 'when "married" is false' do
-          let(:married) { false }
-
-          it { is_expected.to be false }
-        end
-      end
-    end
-
-    context 'when the session does not have "marital_status" value set' do
-      let(:session) { { 'questions' => {} } }
-
-      it { is_expected.to be nil }
     end
   end
 end

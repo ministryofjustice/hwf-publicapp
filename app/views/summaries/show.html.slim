@@ -29,7 +29,7 @@ table
           =t('married', scope: 'summary.labels').downcase
     tr
       td =t('savings', scope: 'summary.labels')
-      td= t("less_than_limit_#{!@summary.threshold_exceeded}", scope: 'summary')
+      td= @summary.savings
       td.right= link_to question_path(:savings_and_investment) do
         | Change
         span.visuallyhidden

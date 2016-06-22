@@ -41,6 +41,8 @@ en:
       forms/help_request:
         phone: Telephone number
         description: Describe what you'd like to talk about
+      forms/savings_and_investment_extra:
+        amount: 'How much do you and your partner have in savings and investments?'
     errors:
       models:
         forms/marital_status:
@@ -49,8 +51,16 @@ en:
               inclusion: "Select whether you're single, married or living with someone and sharing an income"
         forms/savings_and_investment:
           attributes:
-            less_than_limit:
+            choice:
               inclusion: 'Select how much you have in savings and investments'
+        forms/savings_and_investment_extra:
+          attributes:
+            over_61:
+              inclusion: 'Select if you or your partner are over 61'
+            amount:
+              blank: 'Enter how much you have in savings and investments'
+              less_than_or_equal_to: 'Enter an amount between £3,000 and £16,000, or go back to the previous question about your savings'
+              greater_than_or_equal_to: 'Enter an amount between £3,000 and £16,000, or go back to the previous question about your savings'
         forms/benefit:
           attributes:
             on_benefits:

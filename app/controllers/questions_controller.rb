@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   after_action :suppress_browser_cache
 
   def edit
+    assign_title_view
     storage.load_form(form)
   end
 
@@ -14,14 +15,9 @@ class QuestionsController < ApplicationController
       save_and_update_online_application
       redirect_to(Navigation.new(online_application, question).next)
     else
+      assign_title_view
       render :edit
     end
-  end
-
-  # FIXME: This is a temporary helper method, until some kind of context is implemented which allows
-  # accessing previously answered questions.
-  helper_method def married?
-    session['questions']['marital_status'] ? session['questions']['marital_status']['married'] : nil
   end
 
   private
@@ -41,6 +37,10 @@ class QuestionsController < ApplicationController
   def save_and_update_online_application
     storage.save_form(form)
     online_application.attributes = form.export
+  end
+
+  def assign_title_view
+    @title_view = Views::QuestionTitle.new(form, online_application)
   end
 
   def not_found

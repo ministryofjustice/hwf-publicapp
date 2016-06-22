@@ -1,46 +1,74 @@
 require 'rails_helper'
 
 RSpec.describe Forms::SavingsAndInvestment, type: :model do
-  subject { described_class.new }
+  subject(:form) { described_class.new(choice: choice) }
 
   describe 'validations' do
-    describe 'less_than_limit' do
-      context 'when true' do
-        before { subject.less_than_limit = true }
+    describe 'choice' do
+      context 'when "less"' do
+        let(:choice) { 'less' }
 
-        it { expect(subject.valid?).to be true }
+        it { is_expected.to be_valid }
       end
 
-      context 'when false' do
-        before { subject.less_than_limit = false }
+      context 'when "between"' do
+        let(:choice) { 'between' }
 
-        it { expect(subject.valid?).to be true }
+        it { is_expected.to be_valid }
       end
 
-      context 'when not a boolean value' do
-        before { subject.less_than_limit = 'string' }
+      context 'when "more"' do
+        let(:choice) { 'more' }
 
-        it { expect(subject.valid?).to be false }
+        it { is_expected.to be_valid }
+      end
+
+      context 'when neither "less, between or more"' do
+        let(:choice) { 'whatever' }
+
+        it { is_expected.to be_invalid }
+      end
+
+      context 'when empty' do
+        let(:choice) { nil }
+
+        it { is_expected.to be_invalid }
       end
     end
   end
 
   describe '#export' do
-    subject { described_class.new(less_than_limit: less_than_limit).export }
+    subject { form.export }
 
-    context 'when less_than_limit is true' do
-      let(:less_than_limit) { true }
+    context 'when choice is "less"' do
+      let(:choice) { :less }
 
-      it 'returns hash with threshold_exceeded parameter false' do
-        is_expected.to eql(threshold_exceeded: false)
+      it 'returns hash with min_threshold_exceeded parameter false' do
+        is_expected.to eql(min_threshold_exceeded: false)
       end
     end
 
-    context 'when less_than_limit is false' do
-      let(:less_than_limit) { false }
+    context 'when choice is "between"' do
+      let(:choice) { :between }
 
-      it 'returns hash with threshold_exceeded parameter true' do
-        is_expected.to eql(threshold_exceeded: true)
+      it 'returns hash with min_threshold_exceeded parameter true and max_threshold_exceeded parameter false' do
+        is_expected.to eql(min_threshold_exceeded: true, max_threshold_exceeded: false)
+      end
+    end
+
+    context 'when choice is "more"' do
+      let(:choice) { :more }
+
+      it 'returns hash with min_threshold_exceeded parameter true and max_threshold_exceeded parameter true' do
+        is_expected.to eql(min_threshold_exceeded: true, max_threshold_exceeded: true)
+      end
+    end
+
+    context 'when choice is not set' do
+      let(:choice) { nil }
+
+      it 'returns an empty hash' do
+        is_expected.to eql({})
       end
     end
   end

@@ -11,7 +11,7 @@ RSpec.describe Navigation do
     {
       form_name: :marital_status,
       marital_status: :savings_and_investment,
-      savings_and_investment: :benefit,
+      savings_and_investment_extra: :benefit,
       dependent: :income,
       income: :fee,
       fee: :probate,
@@ -47,6 +47,26 @@ RSpec.describe Navigation do
 
         it 'routes to the dependent question' do
           is_expected.to eql(question_path(:dependent))
+        end
+      end
+    end
+
+    context 'for savings and investment question' do
+      let(:current_question) { :savings_and_investment }
+
+      context 'when the extra question is required' do
+        let(:online_application) { build :online_application, :extra_savings_question_required }
+
+        it 'routes to the extra question' do
+          is_expected.to eql(question_path(:savings_and_investment_extra))
+        end
+      end
+
+      context 'when the extra question is not required' do
+        let(:online_application) { build :online_application }
+
+        it 'routes to the benefit question' do
+          is_expected.to eql(question_path(:benefit))
         end
       end
     end

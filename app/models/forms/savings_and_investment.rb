@@ -1,15 +1,22 @@
 module Forms
   class SavingsAndInvestment < Base
-    attribute :less_than_limit, Boolean
+    attribute :choice, Symbol
 
-    validates :less_than_limit, inclusion: { in: [true, false] }
+    validates :choice, inclusion: { in: %i[less between more] }
 
     private
 
     def export_params
-      {
-        threshold_exceeded: !less_than_limit
-      }
+      case choice
+      when :less
+        { min_threshold_exceeded: false }
+      when :between
+        { min_threshold_exceeded: true, max_threshold_exceeded: false }
+      when :more
+        { min_threshold_exceeded: true, max_threshold_exceeded: true }
+      else
+        {}
+      end
     end
   end
 end

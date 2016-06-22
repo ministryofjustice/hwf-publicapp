@@ -2,7 +2,10 @@ class OnlineApplication
   include Virtus.model(nullify_blank: true)
 
   attribute :married, Boolean
-  attribute :threshold_exceeded, Boolean
+  attribute :min_threshold_exceeded, Boolean
+  attribute :max_threshold_exceeded, Boolean
+  attribute :over_61, Boolean
+  attribute :amount, Integer
   attribute :benefits, Boolean
   attribute :children, Integer
   attribute :income, Integer
@@ -33,5 +36,9 @@ class OnlineApplication
 
   def et?
     form_name.present? && !(form_name =~ /^ET/).nil?
+  end
+
+  def savings_and_investment_extra_required?
+    min_threshold_exceeded? && !max_threshold_exceeded?
   end
 end

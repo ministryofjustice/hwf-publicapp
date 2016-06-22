@@ -17,11 +17,22 @@ class Navigation
   private
 
   def next_question_id
-    if @current_question == :benefit && @online_application.benefits?
+    if skip_income?
       :fee
+    elsif skip_savings_and_investment_extra?
+      :benefit
     else
       current_question_index = QuestionFormFactory::IDS.find_index(@current_question)
       QuestionFormFactory::IDS[current_question_index + 1]
     end
+  end
+
+  def skip_income?
+    @current_question == :benefit && @online_application.benefits?
+  end
+
+  def skip_savings_and_investment_extra?
+    @current_question == :savings_and_investment &&
+      !@online_application.savings_and_investment_extra_required?
   end
 end

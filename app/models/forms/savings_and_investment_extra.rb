@@ -7,7 +7,7 @@ module Forms
     validates :amount,
       presence: true, numericality: {
         allow_blank: true,
-        less_than_or_equal_to: 16000,
+        less_than: 16000,
         greater_than_or_equal_to: 3000
       },
       if: 'over_61? == false'

@@ -59,8 +59,8 @@ en:
               inclusion: 'Select if you or your partner are over 61'
             amount:
               blank: 'Enter how much you have in savings and investments'
-              less_than_or_equal_to: 'Enter an amount between £3,000 and £16,000, or go back to the previous question about your savings'
-              greater_than_or_equal_to: 'Enter an amount between £3,000 and £16,000, or go back to the previous question about your savings'
+              less_than: 'Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings'
+              greater_than_or_equal_to: 'Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings'
         forms/benefit:
           attributes:
             on_benefits:

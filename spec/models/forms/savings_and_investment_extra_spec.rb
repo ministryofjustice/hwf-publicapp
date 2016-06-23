@@ -46,14 +46,14 @@ RSpec.describe Forms::SavingsAndInvestmentExtra, type: :model do
         end
 
         context 'when the amount is set' do
-          context 'when bellow the minimum threshold' do
+          context 'when below the minimum threshold' do
             let(:amount) { 2999 }
 
             it { is_expected.to be_invalid }
           end
 
           context 'when above the maximum threshold' do
-            let(:amount) { 16001 }
+            let(:amount) { 16000 }
 
             it { is_expected.to be_invalid }
           end

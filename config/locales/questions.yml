@@ -36,8 +36,8 @@ en:
     savings_and_investment:
       title: 'Savings and investments'
       less: '£0 to £2,999'
-      between: 'Between £3,000 and £16,000'
-      more: 'More than £16,000'
+      between: '£3,000 to £15,999'
+      more: '£16,000 or more'
       breadcrumb: 'Step 3 of 18'
       text: 'How much do you have in savings and investments?'
       subtext_married: 'Remember to include your partner’s savings and investments in your total.'
@@ -69,8 +69,8 @@ en:
       breadcrumb: 'Step 4 of 18'
       text_single: 'Are you 61 years old or over?'
       text_married: 'Are you or your partner 61 years old or over?'
-      amount_single: 'How much between £3,000 and £16,000 do you have in savings and investments?'
-      amount_married: 'How much between £3,000 and £16,000 do you and your partner have in savings and investments?'
+      amount_single: 'How much between £3,000 and £15,999 do you have in savings and investments?'
+      amount_married: 'How much between £3,000 and £15,999 do you and your partner have in savings and investments?'
       over_61_true: 'Yes'
       over_61_false: 'No'
     benefit:

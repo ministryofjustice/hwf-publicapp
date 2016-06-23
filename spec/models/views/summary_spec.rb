@@ -45,7 +45,7 @@ RSpec.describe Views::Summary do
         let(:online_application) { build :online_application, :savings_between_threshold, over_61: true }
 
         it 'returns the correct text - between thresholds' do
-          is_expected.to eql('Between £3,000 and £16,000')
+          is_expected.to eql('£3,000 to £15,999')
         end
       end
 
@@ -62,7 +62,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :savings_more_than_threshold }
 
       it 'returns the correct text - more than maximum threshold' do
-        is_expected.to eql('More than £16,000')
+        is_expected.to eql('£16,000 or more')
       end
     end
   end

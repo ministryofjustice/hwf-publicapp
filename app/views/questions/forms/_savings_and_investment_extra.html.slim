@@ -12,7 +12,7 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
   #amount-panel.panel-indent.util_mb-medium.js-hidden
     .form-group class=('error' if @form.errors[:amount].any?)
       span.error-message#date_paid = @form.errors[:amount].join(' ') if @form.errors[:amount].any?
-      = f.label :amount, class: 'form-label' do
+      = f.label :amount, class: 'form-label text' do
         - if @online_application.married?
           =t('amount_married', scope: @form.i18n_scope)
         - else

@@ -28,7 +28,7 @@ window.moj.Modules.FormName = {
     var self = this;
 
     if (self.$identifier.val().length > 0 && self.$unknown.is(':checked')) {
-      self.$unknown.attr('checked', false);
+      self.$unknown.attr('checked', false).closest('label').removeClass('selected');
     }
   },
 

@@ -9,12 +9,12 @@ RSpec.describe Navigation do
     subject { described_class.new(online_application, current_question).next }
 
     {
-      form_name: :marital_status,
+      form_name: :fee,
+      fee: :marital_status,
       marital_status: :savings_and_investment,
       savings_and_investment_extra: :benefit,
       dependent: :income,
-      income: :fee,
-      fee: :probate,
+      income: :probate,
       probate: :claim,
       claim: :national_insurance,
       national_insurance: :dob,

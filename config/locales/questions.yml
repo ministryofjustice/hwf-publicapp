@@ -15,7 +15,7 @@ en:
       title: 'Your marital status'
       married_true: 'Married or living with someone and sharing an income'
       married_false: 'Single'
-      breadcrumb: 'Step 2 of 18'
+      breadcrumb: 'Step 3 of 18'
       text: "Are you single, married or living with someone and sharing an income?"
       details:
         summary: 'Help with status'
@@ -38,7 +38,7 @@ en:
       less: '£0 to £2,999'
       between: '£3,000 to £15,999'
       more: '£16,000 or more'
-      breadcrumb: 'Step 3 of 18'
+      breadcrumb: 'Step 4 of 18'
       text: 'How much do you have in savings and investments?'
       subtext_married: 'Remember to include your partner’s savings and investments in your total.'
       details:
@@ -66,7 +66,7 @@ en:
           item_9: 'any compensation under a statutory scheme in respect of Mesothelioma'
     savings_and_investment_extra:
       title: 'Are you or your partner 61 or over?'
-      breadcrumb: 'Step 4 of 18'
+      breadcrumb: 'Step 5 of 18'
       text_single: 'Are you 61 years old or over?'
       text_married: 'Are you or your partner 61 years old or over?'
       amount_single: 'How much between £3,000 and £15,999 do you have in savings and investments?'
@@ -77,8 +77,9 @@ en:
       title: 'Benefits'
       on_benefits_false: 'No'
       on_benefits_true: 'Yes, I am receiving one of the benefits listed'
-      breadcrumb: 'Step 5 of 18'
+      breadcrumb: 'Step 6 of 18'
       text: "Do you receive any of the following benefits?"
+      text_refund: "Did you receive any of the following benefits?"
       list:
         header: 'We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.'
         item_1:
@@ -126,7 +127,7 @@ en:
             hint: '(ABWOR)'
     dependent:
       title: 'Number of children living with you'
-      breadcrumb: 'Step 6 of 18'
+      breadcrumb: 'Step 7 of 18'
       text: Do you have any children living with you, or who you support financially?
       children_false: 'No'
       children_true: 'Yes'
@@ -140,8 +141,9 @@ en:
         item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
     income:
       title: 'Your income'
-      breadcrumb: 'Step 7 of 18'
+      breadcrumb: 'Step 8 of 18'
       text: 'What is your total monthly income?'
+      text_refund: 'What was your total monthly income?'
       details:
         section_1: Enter the amount of money you get every month before any tax or National Insurance payments have been taken off.
         section_2: If you get paid weekly, multiply your weekly pay by 52, then divide it by 12. This will give you a monthly total.
@@ -155,7 +157,7 @@ en:
       title: 'Refund'
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
-      breadcrumb: 'Step 8 of 18'
+      breadcrumb: 'Step 2 of 18'
       text: 'Have you already paid the fee?'
       details: "You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee."
       hint_html: 'Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>'

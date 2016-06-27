@@ -10,6 +10,9 @@ RSpec.feature 'As a user' do
     expect(page).to have_content 'What court or tribunal fee do you need help with?'
     fill_in 'form_name_identifier', with: 'N1'
     click_button 'Continue'
+    expect(page).to have_content 'Have you already paid the fee?'
+    choose 'fee_paid_false'
+    click_button 'Continue'
     expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
     choose 'marital_status_married_false'
     click_button 'Continue'
@@ -24,9 +27,6 @@ RSpec.feature 'As a user' do
     click_button 'Continue'
     expect(page).to have_content 'What is your total monthly income?'
     fill_in :income_wages, with: 100.0
-    click_button 'Continue'
-    expect(page).to have_content 'Have you already paid the fee?'
-    choose 'fee_paid_false'
     click_button 'Continue'
     expect(page).to have_content 'Are you paying a fee for a probate case?'
     choose 'probate_kase_false'

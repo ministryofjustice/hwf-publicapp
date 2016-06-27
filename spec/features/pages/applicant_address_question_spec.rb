@@ -12,7 +12,7 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect to be routed to the "fee" page' do
+      scenario 'I expect to be routed to the "contact" page' do
         expect(page).to have_content "What's your email address?"
       end
     end

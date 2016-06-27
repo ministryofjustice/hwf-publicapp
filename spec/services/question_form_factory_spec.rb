@@ -6,7 +6,7 @@ RSpec.describe QuestionFormFactory do
     subject { described_class.position(id) }
 
     it 'returns the position of the given question' do
-      is_expected.to eql(4)
+      is_expected.to eql(5)
     end
   end
 

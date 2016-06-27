@@ -12,7 +12,7 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect to be routed to the "form-name" page' do
+      scenario 'I expect to be routed to the "national-insurance" page' do
         expect(page).to have_content 'What is your National Insurance number?'
       end
     end

@@ -17,7 +17,7 @@ gem 'moj_template', '~> 0.23.2'
 gem 'sass-rails', '5.0.4'
 gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
-
+gem 'nokogiri', '~> 1.6.8'
 gem 'unicorn'
 
 group :development, :test do

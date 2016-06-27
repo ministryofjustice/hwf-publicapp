@@ -10,9 +10,10 @@ legend.visuallyhidden =t('text', scope: @form.i18n_scope)
   details
     summary =t('summary', scope: "#{@form.i18n_scope}.details")
 
-    .panel-indent.text
-      ul.list.list-bullet
-        li =t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
-        li =link_to t('item_2', scope: "#{@form.i18n_scope}.details.section_1"), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
+    .panel-indent
+      .text
+        ul.list.list-bullet
+          li =t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
+          li =link_to t('item_2', scope: "#{@form.i18n_scope}.details.section_1"), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
 
-      p =t('detail', scope: "#{@form.i18n_scope}.details.section_1")
+        p =t('detail', scope: "#{@form.i18n_scope}.details.section_1")

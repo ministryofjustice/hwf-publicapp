@@ -16,6 +16,10 @@ strong {
   font-weight: bold;
 }
 
+.text {
+  max-width: 40em;
+}
+
 // horrific override of moj-template
 #global-header .header-proposition a#proposition-name:hover {
   text-decoration: none;

@@ -2,7 +2,8 @@ legend.visuallyhidden = t('hidden_legend', scope: @form.i18n_scope)
 
 .form-group class=('error' if @form.errors[:number].any?)
   = f.hidden_field :number, value: nil
-  span.error-message#kase = @form.errors[:number].join(' ') if @form.errors[:number].any?
+  - if @form.errors[:number].any?
+    span.error-message#kase = @form.errors[:number].join(' ')
   label.block-label for='claim_default_number_false'
     = f.radio_button :number, 'false'
     = t('number_false', scope: @form.i18n_scope)
@@ -11,7 +12,8 @@ legend.visuallyhidden = t('hidden_legend', scope: @form.i18n_scope)
     = t('number_true', scope: @form.i18n_scope)
   #claim-identifier-panel.panel-indent.util_mb-medium.js-hidden
     .form-group class=('error' if @form.errors[:identifier].any?)
-      span.error-message#identifier = @form.errors[:identifier].join(' ') if @form.errors[:identifier].any?
+      - if @form.errors[:identifier].any?
+        span.error-message#identifier = @form.errors[:identifier].join(' ')
       label.form-label(for='claim_default_identifier')
         = t('identifier', scope: @form.i18n_scope)
       = f.text_field :identifier, class: 'form-control'

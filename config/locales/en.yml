@@ -83,6 +83,16 @@ en:
             kinds:
               blank: "Select your kinds of income"
               invalid: "Select only the kinds from the list"
+        forms/income_range:
+          attributes:
+            choice:
+              inclusion: 'Select your monthly income'
+        forms/income_amount:
+          attributes:
+            amount:
+              blank: 'Enter how much income do you receive'
+              less_than: 'Enter an amount between £0 and £1,000,000'
+              greater_than_or_equal_to: 'Enter an amount between £0 and £1,000,000'
         forms/fee:
           attributes:
             paid:

@@ -78,6 +78,11 @@ en:
             other_description:
               blank: "Enter a description for your income"
               too_long: "The description must be less than 20 characters"
+        forms/income_kind:
+          attributes:
+            kinds:
+              blank: "Select your kinds of income"
+              invalid: "Select only the kinds from the list"
         forms/fee:
           attributes:
             paid:

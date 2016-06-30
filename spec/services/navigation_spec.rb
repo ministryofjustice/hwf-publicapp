@@ -38,8 +38,8 @@ RSpec.describe Navigation do
       context 'when the application is benefit one' do
         let(:benefits) { true }
 
-        it 'routes to the fee question (skips dependent and income)' do
-          is_expected.to eql(question_path(:fee))
+        it 'routes to the probate question (skips dependent and income)' do
+          is_expected.to eql(question_path(:probate))
         end
       end
       context 'when the application is not a benefit one' do

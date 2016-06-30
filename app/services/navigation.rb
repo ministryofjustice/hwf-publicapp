@@ -18,7 +18,7 @@ class Navigation
 
   def next_question_id
     if skip_income?
-      :fee
+      :probate
     elsif skip_savings_and_investment_extra?
       :benefit
     else

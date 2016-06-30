@@ -1,6 +1,6 @@
 legend.visuallyhidden = t('text', scope: @form.i18n_scope)
 
-.form-group class=('error' if @form.errors[:title].any?)
+.form-group.optional class=('error' if @form.errors[:title].any?)
   = f.label :title, class: 'form-label'
   .hint
     | (Optional)

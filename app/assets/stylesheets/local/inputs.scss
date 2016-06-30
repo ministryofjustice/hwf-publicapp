@@ -32,6 +32,15 @@
   }
 }
 
+.optional {
+  label, .hint {
+    display: inline;
+  }
+  input {
+    display: block;
+  }
+}
+
 .form-control-smaller {
   width: 100%;
 

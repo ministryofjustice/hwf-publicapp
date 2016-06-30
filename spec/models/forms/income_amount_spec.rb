@@ -34,4 +34,13 @@ RSpec.describe Forms::IncomeAmount, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:amount) { 2452 }
+    subject { form.export }
+
+    it 'returns hash with income parameter set' do
+      is_expected.to eql(income: amount)
+    end
+  end
 end

@@ -8,5 +8,13 @@ module Forms
         less_than: 100000,
         greater_than_or_equal_to: 0
       }
+
+    private
+
+    def export_params
+      {
+        income: amount
+      }
+    end
   end
 end

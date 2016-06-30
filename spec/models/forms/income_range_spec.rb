@@ -36,4 +36,13 @@ RSpec.describe Forms::IncomeRange, type: :model do
       end
     end
   end
+
+  describe '#export' do
+    let(:choice) { 'more' }
+    subject { form.export }
+
+    it 'returns an empty hash' do
+      is_expected.to eql({})
+    end
+  end
 end

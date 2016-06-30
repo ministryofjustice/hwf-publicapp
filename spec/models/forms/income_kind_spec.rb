@@ -40,4 +40,13 @@ RSpec.describe Forms::IncomeKind, type: :model do
       is_expected.to eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
     end
   end
+
+  describe '#export' do
+    let(:params) { { kinds: [1, 5] } }
+    subject { form.export }
+
+    it 'returns an empty hash' do
+      is_expected.to eql({})
+    end
+  end
 end

@@ -3,5 +3,6 @@ legend.visuallyhidden =t('text', scope: @form.i18n_scope)
   label.form-label for='dob_date_of_birth'
     span.visuallyhidden =t('date_of_birth', scope: @form.i18n_scope)
     span.hint = t('hint_html', scope: @form.i18n_scope)
-    span.error-message#date_of_birth = @form.errors[:date_of_birth].join(' ') if @form.errors[:date_of_birth].any?
+    - if @form.errors[:date_of_birth].any?
+      span.error-message#date_of_birth = @form.errors[:date_of_birth].join(' ')
   = f.text_field :date_of_birth, class: 'form-control'

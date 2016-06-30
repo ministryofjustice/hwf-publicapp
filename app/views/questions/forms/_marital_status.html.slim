@@ -2,7 +2,8 @@ legend.visuallyhidden =t('text', scope: @form.i18n_scope)
 
 .form-group class=('error' if @form.errors.any?)
   = f.hidden_field :married, value: nil
-  span.error-message#married = @form.errors[:married].join(' ') if @form.errors.any?
+  - if @form.errors.any?
+    span.error-message#married = @form.errors[:married].join(' ')
   label.block-label for="marital_status_married_false"
     = f.radio_button :married, 'false'
     = t('married_false', scope: @form.i18n_scope)

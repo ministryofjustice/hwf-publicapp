@@ -3,7 +3,8 @@ legend.visuallyhidden =t('text', scope: @form.i18n_scope)
 .form-group class=('error' if @form.errors.any?)
   label.form-label for='national_insurance_number'
     span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
-    span.error-message#number = @form.errors[:number].join(' ') if @form.errors[:number].any?
+    - if @form.errors[:number].any?
+      span.error-message#number = @form.errors[:number].join(' ')
     = f.text_field :number, class: 'form-control js-uppercase'
 
 .form-group

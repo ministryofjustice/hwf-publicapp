@@ -2,7 +2,8 @@ legend.visuallyhidden= t('text', scope: @form.i18n_scope)
 
 .form-group class=('error' if @form.errors[:kase].any?)
   = f.hidden_field :kase, value: nil
-  span.error-message#kase = @form.errors[:kase].join(' ') if @form.errors.any?
+  - if @form.errors.any?
+    span.error-message#kase = @form.errors[:kase].join(' ')
   label.block-label for='probate_kase_false'
     = f.radio_button :kase, 'false'
     = t('probate_case_false', scope: @form.i18n_scope)
@@ -11,11 +12,13 @@ legend.visuallyhidden= t('text', scope: @form.i18n_scope)
     = t('probate_case_true', scope: @form.i18n_scope)
   #probate-details-panel.panel-indent.util_mb-medium.js-hidden
     .form-group class=('error' if @form.errors[:deceased_name].any?)
-      span.error-message#deceased_name = @form.errors[:deceased_name].join(' ') if @form.errors[:deceased_name].any?
+      - if @form.errors[:deceased_name].any?
+        span.error-message#deceased_name = @form.errors[:deceased_name].join(' ')
       = f.label :deceased_name, class: 'form-label'
       = f.text_field :deceased_name, class: 'form-control'
     .form-group class=('error' if @form.errors[:date_of_death].any?)
-      span.error-message#date_of_death = @form.errors[:date_of_death].join(' ') if @form.errors[:date_of_death].any?
+      - if @form.errors[:date_of_death].any?
+        span.error-message#date_of_death = @form.errors[:date_of_death].join(' ')
       = f.label :date_of_death, class: 'form-label'
       span.visuallyhidden .
       .hint = t('hint_html', scope: @form.i18n_scope)

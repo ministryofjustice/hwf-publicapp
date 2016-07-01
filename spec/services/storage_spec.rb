@@ -8,7 +8,8 @@ RSpec.describe Storage do
     end
   end
 
-  subject(:storage) { described_class.new(session) }
+  let(:options) { {} }
+  subject(:storage) { described_class.new(session, options) }
 
   describe '#initialize' do
     let(:session) { MockSession[used_at: used_at.to_s, started_at: started_at.to_s] }
@@ -19,47 +20,68 @@ RSpec.describe Storage do
       end
     end
 
-    context 'when the storage has been started' do
-      let(:started_at) { current_time }
+    context 'when the storage is requested to be cleared' do
+      let(:started_at) { current_time - 5.minutes }
+      let(:used_at) { current_time - 1.minute }
+      let(:options) { { clear: true } }
 
-      context 'when it was used more than 10 minutes ago' do
-        let(:used_at) { current_time - 11.minutes }
-
-        it 'raises an error and clears the session' do
-          expect(session).to receive(:destroy)
-          expect { subject }.to raise_error(Storage::Expired)
-        end
+      before do
+        allow(session).to receive(:destroy)
+        subject
       end
 
-      context 'when it was used less than 10 minutes ago' do
-        let(:used_at) { current_time - 5.minutes }
-
-        before { subject }
-
-        it 'stores the current time to the session, as time of last used' do
-          expect(session[:used_at]).to eql(current_time)
-        end
+      it 'clears the session' do
+        expect(session).to have_received(:destroy)
       end
-
-      context 'when the storage was just initialised for the first time' do
-        let(:session) { {} }
-
-        before { subject }
-
-        it 'stores the current time to the session, as time of last used' do
-          expect(session[:used_at]).to eql(current_time)
-        end
-      end
-    end
-
-    context 'when the storage has not been started' do
-      let(:started_at) { nil }
-      let(:used_at) { nil }
-
-      before { subject }
 
       it 'stores the current time to the session, as time of last used' do
         expect(session[:used_at]).to eql(current_time)
+      end
+    end
+
+    context 'when the storage is not requested to be cleared' do
+      context 'when the storage has been started' do
+        let(:started_at) { current_time }
+
+        context 'when it was used more than 10 minutes ago' do
+          let(:used_at) { current_time - 11.minutes }
+
+          it 'raises an error and clears the session' do
+            expect(session).to receive(:destroy)
+            expect { subject }.to raise_error(Storage::Expired)
+          end
+        end
+
+        context 'when it was used less than 10 minutes ago' do
+          let(:used_at) { current_time - 5.minutes }
+
+          before { subject }
+
+          it 'stores the current time to the session, as time of last used' do
+            expect(session[:used_at]).to eql(current_time)
+          end
+        end
+
+        context 'when the storage was just initialised for the first time' do
+          let(:session) { {} }
+
+          before { subject }
+
+          it 'stores the current time to the session, as time of last used' do
+            expect(session[:used_at]).to eql(current_time)
+          end
+        end
+      end
+
+      context 'when the storage has not been started' do
+        let(:started_at) { nil }
+        let(:used_at) { nil }
+
+        before { subject }
+
+        it 'stores the current time to the session, as time of last used' do
+          expect(session[:used_at]).to eql(current_time)
+        end
       end
     end
   end

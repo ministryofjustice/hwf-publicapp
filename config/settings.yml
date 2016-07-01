@@ -21,3 +21,5 @@ session:
 et:
   england_wales_email: ETHelpwithfees@hmcts.gsi.gov.uk
   scotland_email: GLASGOWET@hmcts.gsi.gov.uk
+homepage:
+  external_url: <%= ENV['HOMEPAGE_EXTERNAL_URL'] || nil %>

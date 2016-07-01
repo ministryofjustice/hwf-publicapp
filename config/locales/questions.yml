@@ -139,6 +139,37 @@ en:
         item_1: under 16 and living at home with you
         item_2: "between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class=\"external\" rel=\"external\" href=\"https://www.gov.uk/child-tax-credit-when-child-reaches-16\">gov.uk/child-tax-credit-when-child-reaches-16</a>"
         item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
+    income_kind:
+      title: 'Income kind'
+      breadcrumb: 'Step 8a of 18'
+      text: 'What kind of income do you receive?'
+      details: 'Select the kind of income you receive.'
+      kinds:
+        '1': Wages
+        '2': Child Benefit
+        '3': Working tax credit
+        '4': Child tax credit
+        '5': Maintenance payments
+        '6': Contribution-based Jobseekers Allowance (JSA)
+        '7': Contribution-based Employment and Support Allowance (ESA)
+        '8': Universal Credit
+        '9': Pensions (state, work, private)
+        '10': Rent from anyone living with you
+        '11': Rent from other properties you own
+        '12': Other monthly income
+        '13': No income
+    income_range:
+      title: 'Income range'
+      breadcrumb: 'Step 8b of 18'
+      text: 'How much income do you receive each month?'
+      range:
+        less: 'Less than'
+        between: 'Between'
+        more: 'More than'
+    income_amount:
+      title: 'Income amount'
+      breadcrumb: 'Step 8c of 18'
+      text: 'How much income do you receive each month?'
     income:
       title: 'Your income'
       breadcrumb: 'Step 8 of 18'

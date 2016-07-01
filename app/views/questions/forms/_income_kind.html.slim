@@ -1,0 +1,12 @@
+legend.visuallyhidden = t('text', scope: @form.i18n_scope)
+
+.form-group class=('error' if @form.errors.any?)
+  = hidden_field_tag 'income_kind[kinds][]', nil
+  - if @form.errors.any?
+    span.error-message#kinds = @form.errors[:kinds].join(' ')
+
+  - @form.class.allowed_kinds.each do |kind|
+    label.block-label for='income_kind_kinds_#{kind}'
+      = f.check_box :kinds, { multiple: true }, kind, nil
+      = t(kind, scope: [@form.i18n_scope, 'kinds'])
+

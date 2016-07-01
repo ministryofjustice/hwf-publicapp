@@ -43,6 +43,8 @@ en:
         description: Describe what you'd like to talk about
       forms/savings_and_investment_extra:
         amount: 'How much do you and your partner have in savings and investments?'
+      forms/income_amount:
+        amount: 'Enter the total monthly amount you receive in income.'
     errors:
       models:
         forms/marital_status:

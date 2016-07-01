@@ -14,6 +14,15 @@ module Forms
       (1..13).to_a
     end
 
+    def permitted_attributes
+      [kinds: []]
+    end
+
+    def update_attributes(attributes)
+      attributes[:kinds].delete_if { |value| value == '' } if attributes[:kinds]
+      super(attributes)
+    end
+
     private
 
     def export_params

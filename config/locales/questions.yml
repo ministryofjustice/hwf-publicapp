@@ -162,6 +162,9 @@ en:
       title: 'Income range'
       breadcrumb: 'Step 8b of 18'
       text: 'How much income do you receive each month?'
+      details:
+        kinds_list: 'Select the total monthly amount you receive in income from:'
+        average_note: 'If your income varies from month to month, work out an average monthly income based on the last 3 months.'
       range:
         less: 'Less than'
         between: 'Between'

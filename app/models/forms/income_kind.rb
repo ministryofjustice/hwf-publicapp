@@ -14,6 +14,10 @@ module Forms
       (1..13).to_a
     end
 
+    def self.no_income_index
+      13
+    end
+
     def permitted_attributes
       [kinds: []]
     end
@@ -26,7 +30,9 @@ module Forms
     private
 
     def export_params
-      {}
+      {}.tap do |export|
+        export[:income] = 0 if kinds == [self.class.no_income_index]
+      end
     end
   end
 end

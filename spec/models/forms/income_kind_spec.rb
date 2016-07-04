@@ -42,12 +42,38 @@ RSpec.describe Forms::IncomeKind, type: :model do
     end
   end
 
+  describe '.no_income_index' do
+    subject { described_class.no_income_index }
+
+    it { is_expected.to eql(13) }
+  end
+
   describe '#export' do
     let(:params) { { kinds: [1, 5] } }
     subject { form.export }
 
-    it 'returns an empty hash' do
-      is_expected.to eql({})
+    context 'when the only selected option is "no income"' do
+      let(:params) { { kinds: [13] } }
+
+      it 'returns hash with income parameter set to 0' do
+        is_expected.to eql(income: 0)
+      end
+    end
+
+    context 'when the selected options do not include "no income"' do
+      let(:params) { { kinds: [1, 5] } }
+
+      it 'returns an empty hash' do
+        is_expected.to eql({})
+      end
+    end
+
+    context 'when the selected options do include "no income"' do
+      let(:params) { { kinds: [1, 13] } }
+
+      it 'returns an empty hash' do
+        is_expected.to eql({})
+      end
     end
   end
 

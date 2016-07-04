@@ -173,20 +173,6 @@ en:
       title: 'Income amount'
       breadcrumb: 'Step 8c of 18'
       text: 'How much income do you receive each month?'
-    income:
-      title: 'Your income'
-      breadcrumb: 'Step 8 of 18'
-      text: 'What is your total monthly income?'
-      text_refund: 'What was your total monthly income?'
-      details:
-        section_1: Enter the amount of money you get every month before any tax or National Insurance payments have been taken off.
-        section_2: If you get paid weekly, multiply your weekly pay by 52, then divide it by 12. This will give you a monthly total.
-        section_3: There are some benefits you shouldn't include as income, see the full list and further information about completing this section in <a class="external" rel="external" href="http://s3-eu-west-1.amazonaws.com/hmctsformfinder/ex160a-eng.pdf">the guide (EX160A) (PDF 440KB)</a>.
-        section_4: You only need to fill in the fields that apply to you.
-      labels:
-        your_income: "Your monthly income"
-        partners_income: "Your partner's monthly income"
-      nojs_info: "The amount of money you've entered will be added up when you click 'Continue'."
     fee:
       title: 'Refund'
       fee_paid_false: 'No'

@@ -6,14 +6,28 @@ RSpec.feature 'As a user' do
     before { given_user_answers_questions_up_to(:income_kind) }
 
     context 'completing the form correctly' do
-      before do
-        check :income_kind_kinds_2
-        check :income_kind_kinds_8
-        click_button 'Continue'
+      context 'when "no income" selected' do
+        before do
+          check :income_kind_kinds_13
+          click_button 'Continue'
+        end
+
+        scenario 'I expect to be routed to the "probate" page' do
+          expect(page).to have_content 'Are you paying a fee for a probate case?'
+        end
+
       end
 
-      scenario 'I expect to be routed to the "income_range" page' do
-        expect(page).to have_content 'How much income do you receive each month?'
+      context 'when some income sources selected' do
+        before do
+          check :income_kind_kinds_2
+          check :income_kind_kinds_8
+          click_button 'Continue'
+        end
+
+        scenario 'I expect to be routed to the "income_range" page' do
+          expect(page).to have_content 'How much income do you receive each month?'
+        end
       end
     end
 

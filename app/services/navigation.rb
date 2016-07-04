@@ -17,7 +17,7 @@ class Navigation
   private
 
   def next_question_id
-    if skip_income?
+    if skip_income? || skip_further_income?
       :probate
     elsif skip_savings_and_investment_extra?
       :benefit
@@ -29,6 +29,10 @@ class Navigation
 
   def skip_income?
     @current_question == :benefit && @online_application.benefits?
+  end
+
+  def skip_further_income?
+    @current_question == :income_kind && @online_application.income == 0
   end
 
   def skip_savings_and_investment_extra?

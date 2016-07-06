@@ -20,6 +20,5 @@ legend.visuallyhidden= t('text', scope: @form.i18n_scope)
       - if @form.errors[:date_of_death].any?
         span.error-message#date_of_death = @form.errors[:date_of_death].join(' ')
       = f.label :date_of_death, class: 'form-label'
-      span.visuallyhidden .
       .hint = t('hint_html', scope: @form.i18n_scope)
       = f.text_field :date_of_death, class: 'form-control'

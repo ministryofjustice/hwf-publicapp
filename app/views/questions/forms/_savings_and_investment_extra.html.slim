@@ -1,23 +1,23 @@
-legend.visuallyhidden = t('text', scope: @form.i18n_scope)
-
 .form-group class=('error' if @form.errors[:over_61].any?)
   = f.hidden_field :over_61, value: nil
   - if @form.errors[:over_61].any?
     span.error-message#over_61 = @form.errors[:over_61].join(' ')
-  label.block-label for='savings_and_investment_extra_over_61_true'
-    = f.radio_button :over_61, 'true'
-    = t('over_61_true', scope: @form.i18n_scope)
-  label.block-label for='savings_and_investment_extra_over_61_false' data-target='amount-panel'
-    = f.radio_button :over_61, 'false'
-    = t('over_61_false', scope: @form.i18n_scope)
-  #amount-panel.panel-indent.util_mb-medium.js-hidden
-    .form-group class=('error' if @form.errors[:amount].any?)
-      - if @form.errors[:amount].any?
-        span.error-message#date_paid = @form.errors[:amount].join(' ')
-      = f.label :amount, class: 'form-label text' do
-        - if @online_application.married?
-          =t('amount_married', scope: @form.i18n_scope)
-        - else
-          =t('amount_single', scope: @form.i18n_scope)
-      span.currency £
-      = f.text_field :amount, class: 'form-control form-control-smaller'
+  fieldset
+    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
+    label.block-label for='savings_and_investment_extra_over_61_true'
+      = f.radio_button :over_61, 'true'
+      = t('over_61_true', scope: @form.i18n_scope)
+    label.block-label for='savings_and_investment_extra_over_61_false' data-target='amount-panel'
+      = f.radio_button :over_61, 'false'
+      = t('over_61_false', scope: @form.i18n_scope)
+    #amount-panel.panel-indent.util_mb-medium.js-hidden
+      .form-group class=('error' if @form.errors[:amount].any?)
+        - if @form.errors[:amount].any?
+          span.error-message#date_paid = @form.errors[:amount].join(' ')
+        = f.label :amount, class: 'form-label text' do
+          - if @online_application.married?
+            =t('amount_married', scope: @form.i18n_scope)
+          - else
+            =t('amount_single', scope: @form.i18n_scope)
+        span.currency £
+        = f.text_field :amount, class: 'form-control form-control-smaller'

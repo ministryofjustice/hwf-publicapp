@@ -1,5 +1,3 @@
-legend.visuallyhidden =t('text', scope: @form.i18n_scope)
-
 .form-group  class=('error' if @form.errors.any?)
   - if @form.errors[:identifier].any?
     span.error-message#identifier = @form.errors[:identifier].join(' ')

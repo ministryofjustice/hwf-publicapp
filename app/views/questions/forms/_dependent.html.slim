@@ -1,20 +1,20 @@
-legend.visuallyhidden = t('text', scope: @form.i18n_scope)
-
 .form-group class=('error' if @form.errors[:children].any?)
   - if @form.errors[:children].any?
     span.error-message#dependents = @form.errors[:children].join(' ')
-  label.block-label for='dependent_children_false'
-    = f.radio_button :children, 'false'
-    = t('children_false', scope: @form.i18n_scope)
-  label.block-label for='dependent_children_true' data-target='dependent-children_number-panel'
-    = f.radio_button :children, 'true'
-    = t('children_true', scope: @form.i18n_scope)
-  #dependent-children_number-panel.panel-indent.util_mb-medium.js-hidden
-    .form-group class=('error' if @form.errors[:children_number].any?)
-      - if @form.errors[:children_number].any?
-        span.error-message#children_number = @form.errors[:children_number].join(' ')
-      = f.label :children_number, class: 'form-label'
-      = f.text_field :children_number, type: 'number', class: 'form-control'
+  fieldset
+    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
+    label.block-label for='dependent_children_false'
+      = f.radio_button :children, 'false'
+      = t('children_false', scope: @form.i18n_scope)
+    label.block-label for='dependent_children_true' data-target='dependent-children_number-panel'
+      = f.radio_button :children, 'true'
+      = t('children_true', scope: @form.i18n_scope)
+    #dependent-children_number-panel.panel-indent.util_mb-medium.js-hidden
+      .form-group class=('error' if @form.errors[:children_number].any?)
+        - if @form.errors[:children_number].any?
+          span.error-message#children_number = @form.errors[:children_number].join(' ')
+        = f.label :children_number, class: 'form-label'
+        = f.text_field :children_number, type: 'number', class: 'form-control'
 
 .form-group
   details

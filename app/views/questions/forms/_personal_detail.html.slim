@@ -1,19 +1,19 @@
-legend.visuallyhidden = t('text', scope: @form.i18n_scope)
-
-.form-group.optional class=('error' if @form.errors[:title].any?)
-  = f.label :title, class: 'form-label'
-  .hint
-    | (Optional)
-  - if @form.errors[:title].any?
-    span.error-message#title = @form.errors[:title].join(' ')
-  = f.text_field :title, class: 'form-control form-control-smaller'
-.form-group class=('error' if @form.errors[:first_name].any?)
-  = f.label :first_name, class: 'form-label'
-  - if @form.errors[:first_name].any?
-    span.error-message#first_name = @form.errors[:first_name].join(' ')
-  = f.text_field :first_name, class: 'form-control'
-.form-group class=('error' if @form.errors[:last_name].any?)
-  = f.label :last_name, class: 'form-label'
-  - if @form.errors[:last_name].any?
-    span.error-message#last_name = @form.errors[:last_name].join(' ')
-  = f.text_field :last_name, class: 'form-control'
+fieldset
+  legend.visuallyhidden = t('text', scope: @form.i18n_scope)
+  .form-group.optional class=('error' if @form.errors[:title].any?)
+    = f.label :title, class: 'form-label'
+    .hint
+      | (Optional)
+    - if @form.errors[:title].any?
+      span.error-message#title = @form.errors[:title].join(' ')
+    = f.text_field :title, class: 'form-control form-control-smaller'
+  .form-group class=('error' if @form.errors[:first_name].any?)
+    = f.label :first_name, class: 'form-label'
+    - if @form.errors[:first_name].any?
+      span.error-message#first_name = @form.errors[:first_name].join(' ')
+    = f.text_field :first_name, class: 'form-control'
+  .form-group class=('error' if @form.errors[:last_name].any?)
+    = f.label :last_name, class: 'form-label'
+    - if @form.errors[:last_name].any?
+      span.error-message#last_name = @form.errors[:last_name].join(' ')
+    = f.text_field :last_name, class: 'form-control'

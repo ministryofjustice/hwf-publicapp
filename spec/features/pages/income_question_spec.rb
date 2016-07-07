@@ -8,7 +8,7 @@ RSpec.feature 'As a user' do
     context 'completing the form correctly' do
       context 'when "no income" selected' do
         before do
-          check :income_kind_kinds_13
+          check :income_kind_applicant_13
           click_button 'Continue'
         end
 
@@ -20,8 +20,8 @@ RSpec.feature 'As a user' do
 
       context 'when some income sources selected' do
         before do
-          check :income_kind_kinds_2
-          check :income_kind_kinds_8
+          check :income_kind_applicant_2
+          check :income_kind_applicant_8
           click_button 'Continue'
         end
 

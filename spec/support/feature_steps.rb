@@ -176,7 +176,7 @@ module FeatureSteps
   end
 
   def fill_income_kind
-    check 'income_kind_kinds_1'
+    check 'income_kind_applicant_1'
     click_button 'Continue'
   end
 

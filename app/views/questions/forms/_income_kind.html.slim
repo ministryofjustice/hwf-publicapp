@@ -1,17 +1,17 @@
 legend.visuallyhidden = t('text', scope: @form.i18n_scope)
 
-= hidden_field_tag 'income_kind[kinds][]', nil
+= hidden_field_tag 'income_kind[applicant][]', nil
 = hidden_field_tag 'income_kind[partner][]', nil
 
-.form-group class=('error' if @form.errors[:kinds].any?)
+.form-group class=('error' if @form.errors[:applicant].any?)
   h3 Your income
 
-  - if @form.errors[:kinds].any?
-    span.error-message#kinds = @form.errors[:kinds].join(' ')
+  - if @form.errors[:applicant].any?
+    span.error-message#applicant = @form.errors[:applicant].join(' ')
 
   - @form.class.allowed_kinds.each do |kind|
-    label.block-label for='income_kind_kinds_#{kind}'
-      = f.check_box :kinds, { multiple: true }, kind, nil
+    label.block-label for='income_kind_applicant_#{kind}'
+      = f.check_box :applicant, { multiple: true }, kind, nil
       = t(kind, scope: [@form.i18n_scope, 'kinds'])
 
 - if @online_application.married?

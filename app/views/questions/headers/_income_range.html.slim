@@ -1,7 +1,7 @@
 p = t('details.kinds_list', scope: @form.i18n_scope)
 
 ul
-  - session['questions']['income_kind']['kinds'].each do |kind|
+  - session['questions']['income_kind']['applicant'].each do |kind|
     li =t(kind, scope: ['questions.income_kind.kinds'])
 
 p = t('details.average_note', scope: @form.i18n_scope)

@@ -6,29 +6,29 @@ RSpec.describe Forms::IncomeKind, type: :model do
 
   describe 'validations' do
     let(:partner) { nil }
-    let(:params) { { kinds: kinds, partner: partner } }
+    let(:params) { { applicant: applicant, partner: partner } }
 
-    context 'when kinds is not provided' do
-      let(:kinds) { nil }
+    context 'when applicant is not provided' do
+      let(:applicant) { nil }
 
       it { is_expected.not_to be_valid }
     end
 
-    context 'when kinds is provided' do
+    context 'when applicant is provided' do
       context 'when it has values which are not allowed' do
-        let(:kinds) { [2, 50] }
+        let(:applicant) { [2, 50] }
 
         it { is_expected.not_to be_valid }
       end
 
       context 'when it is empty' do
-        let(:kinds) { [] }
+        let(:applicant) { [] }
 
         it { is_expected.not_to be_valid }
       end
 
       context 'when it has only values which are allowed' do
-        let(:kinds) { [2, 5] }
+        let(:applicant) { [2, 5] }
 
         it { is_expected.to be_valid }
 
@@ -71,11 +71,11 @@ RSpec.describe Forms::IncomeKind, type: :model do
   end
 
   describe '#export' do
-    let(:params) { { kinds: [1, 5] } }
+    let(:params) { { applicant: [1, 5] } }
     subject { form.export }
 
     context 'when the only selected option is "no income"' do
-      let(:params) { { kinds: [13] } }
+      let(:params) { { applicant: [13] } }
 
       it 'returns hash with income parameter set to 0' do
         is_expected.to eql(income: 0)
@@ -83,7 +83,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
     end
 
     context 'when the selected options do not include "no income"' do
-      let(:params) { { kinds: [1, 5] } }
+      let(:params) { { applicant: [1, 5] } }
 
       it 'returns an empty hash' do
         is_expected.to eql({})
@@ -91,7 +91,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
     end
 
     context 'when the selected options do include "no income"' do
-      let(:params) { { kinds: [1, 13] } }
+      let(:params) { { applicant: [1, 13] } }
 
       it 'returns an empty hash' do
         is_expected.to eql({})
@@ -102,8 +102,8 @@ RSpec.describe Forms::IncomeKind, type: :model do
   describe '#permitted_attributes' do
     subject { form.permitted_attributes }
 
-    it 'permits the kinds attribute as an array' do
-      is_expected.to eql([kinds: [], partner: []])
+    it 'permits the applicant and partner attributes as an array' do
+      is_expected.to eql([applicant: [], partner: []])
     end
   end
 
@@ -112,22 +112,22 @@ RSpec.describe Forms::IncomeKind, type: :model do
       form.update_attributes(attributes)
     end
 
-    context 'when the attributes contain kinds key' do
-      let(:attributes) { { kinds: kinds } }
+    context 'when the attributes contain applicant key' do
+      let(:attributes) { { applicant: applicant } }
 
       context 'when it contains an empty string element' do
-        let(:kinds) { [1, '', 5] }
+        let(:applicant) { [1, '', 5] }
 
         it 'assigns all but the empty string element' do
-          expect(form.kinds).to eql([1, 5])
+          expect(form.applicant).to eql([1, 5])
         end
       end
 
       context 'when it does not contain an empty string element' do
-        let(:kinds) { [1, 5] }
+        let(:applicant) { [1, 5] }
 
         it 'assigns all the elements' do
-          expect(form.kinds).to eql(kinds)
+          expect(form.applicant).to eql(applicant)
         end
       end
     end
@@ -152,11 +152,11 @@ RSpec.describe Forms::IncomeKind, type: :model do
       end
     end
 
-    context 'when the attributes do not contain kinds or partner key' do
+    context 'when the attributes do not contain applicant or partner key' do
       let(:attributes) { {} }
 
-      it 'kinds attribute is empty' do
-        expect(form.kinds).to be_empty
+      it 'applicant attribute is empty' do
+        expect(form.applicant).to be_empty
       end
 
       it 'partner attribute is empty' do

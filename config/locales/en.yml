@@ -77,7 +77,7 @@ en:
               less_than: 'You must enter number less than 100'
         forms/income_kind:
           attributes:
-            kinds:
+            applicant:
               blank: "Select your kinds of income"
               invalid: "Select only the kinds from the list"
             partner:

@@ -1,9 +1,9 @@
 module Forms
   class IncomeKind < Base
-    attribute :kinds, Array[Integer]
+    attribute :applicant, Array[Integer]
     attribute :partner, Array[Integer]
 
-    validates_each :kinds do |record, attr, value|
+    validates_each :applicant do |record, attr, value|
       if value.blank?
         record.errors.add(attr, :blank)
       elsif value.any? { |v| !allowed_kinds.include?(v) }
@@ -26,11 +26,11 @@ module Forms
     end
 
     def permitted_attributes
-      [kinds: [], partner: []]
+      [applicant: [], partner: []]
     end
 
     def update_attributes(attributes)
-      attributes[:kinds].delete_if { |value| value == '' } if attributes[:kinds]
+      attributes[:applicant].delete_if { |value| value == '' } if attributes[:applicant]
       attributes[:partner].delete_if { |value| value == '' } if attributes[:partner]
       super(attributes)
     end
@@ -39,7 +39,7 @@ module Forms
 
     def export_params
       {}.tap do |export|
-        export[:income] = 0 if kinds == [self.class.no_income_index]
+        export[:income] = 0 if applicant == [self.class.no_income_index]
       end
     end
   end

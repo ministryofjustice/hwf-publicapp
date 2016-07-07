@@ -1,15 +1,15 @@
-legend.visuallyhidden = t('text', scope: @form.i18n_scope)
-
 .form-group class=('error' if @form.errors.any?)
   = f.hidden_field :on_benefits, value: nil
   - if @form.errors.any?
     span.error-message#on_benefits = @form.errors[:on_benefits].join(' ')
-  label.block-label for='benefit_on_benefits_false'
-    = f.radio_button :on_benefits, 'false'
-    = t('on_benefits_false', scope: @form.i18n_scope)
-  label.block-label for='benefit_on_benefits_true'
-    = f.radio_button :on_benefits, 'true'
-    = t('on_benefits_true', scope: @form.i18n_scope)
+  fieldset
+    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
+    label.block-label for='benefit_on_benefits_false'
+      = f.radio_button :on_benefits, 'false'
+      = t('on_benefits_false', scope: @form.i18n_scope)
+    label.block-label for='benefit_on_benefits_true'
+      = f.radio_button :on_benefits, 'true'
+      = t('on_benefits_true', scope: @form.i18n_scope)
 
 .form-group
   details

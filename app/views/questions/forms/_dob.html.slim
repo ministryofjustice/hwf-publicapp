@@ -1,5 +1,4 @@
-legend.visuallyhidden =t('text', scope: @form.i18n_scope)
-.form-group  class=('error' if @form.errors.any?)
+.form-group class=('error' if @form.errors.any?)
   label.form-label for='dob_date_of_birth'
     span.visuallyhidden =t('date_of_birth', scope: @form.i18n_scope)
     span.hint = t('hint_html', scope: @form.i18n_scope)

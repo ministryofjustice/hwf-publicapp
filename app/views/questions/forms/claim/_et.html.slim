@@ -1,5 +1,3 @@
-legend.visuallyhidden = t('hidden_legend', scope: @form.i18n_scope)
-
 .form-group  class=('error' if @form.errors.any?)
   = f.label :identifier, class: 'form-label'
   - if @form.errors[:identifier].any?

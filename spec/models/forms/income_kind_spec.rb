@@ -5,7 +5,8 @@ RSpec.describe Forms::IncomeKind, type: :model do
   subject(:form) { described_class.new(params) }
 
   describe 'validations' do
-    let(:params) { { kinds: kinds } }
+    let(:partner) { nil }
+    let(:params) { { kinds: kinds, partner: partner } }
 
     context 'when kinds is not provided' do
       let(:kinds) { nil }
@@ -30,6 +31,27 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:kinds) { [2, 5] }
 
         it { is_expected.to be_valid }
+
+        context 'when partner is provided' do
+          context 'when it has values which are not allowed' do
+            let(:partner) { [2, 50] }
+
+            it { is_expected.not_to be_valid }
+          end
+
+          context 'when it is empty' do
+            let(:partner) { [] }
+
+            it { is_expected.to be_valid }
+          end
+
+          context 'when it has only values which are allowed' do
+            let(:partner) { [2, 5] }
+
+            it { is_expected.to be_valid }
+          end
+        end
+
       end
     end
   end
@@ -81,14 +103,13 @@ RSpec.describe Forms::IncomeKind, type: :model do
     subject { form.permitted_attributes }
 
     it 'permits the kinds attribute as an array' do
-      is_expected.to eql([kinds: []])
+      is_expected.to eql([kinds: [], partner: []])
     end
   end
 
   describe '#update_attributes' do
-    subject do
+    before do
       form.update_attributes(attributes)
-      form.kinds
     end
 
     context 'when the attributes contain kinds key' do
@@ -98,7 +119,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:kinds) { [1, '', 5] }
 
         it 'assigns all but the empty string element' do
-          is_expected.to eql([1, 5])
+          expect(form.kinds).to eql([1, 5])
         end
       end
 
@@ -106,15 +127,41 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:kinds) { [1, 5] }
 
         it 'assigns all the elements' do
-          is_expected.to eql(kinds)
+          expect(form.kinds).to eql(kinds)
         end
       end
     end
 
-    context 'when the attributes do not contain kinds key' do
+    context 'when the attributes contain partner key' do
+      let(:attributes) { { partner: partner } }
+
+      context 'when it contains an empty string element' do
+        let(:partner) { [1, '', 5] }
+
+        it 'assigns all but the empty string element' do
+          expect(form.partner).to eql([1, 5])
+        end
+      end
+
+      context 'when it does not contain an empty string element' do
+        let(:partner) { [1, 5] }
+
+        it 'assigns all the elements' do
+          expect(form.partner).to eql(partner)
+        end
+      end
+    end
+
+    context 'when the attributes do not contain kinds or partner key' do
       let(:attributes) { {} }
 
-      it { is_expected.to be_empty }
+      it 'kinds attribute is empty' do
+        expect(form.kinds).to be_empty
+      end
+
+      it 'partner attribute is empty' do
+        expect(form.partner).to be_empty
+      end
     end
   end
 end

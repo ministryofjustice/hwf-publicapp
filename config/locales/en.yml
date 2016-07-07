@@ -80,6 +80,8 @@ en:
             kinds:
               blank: "Select your kinds of income"
               invalid: "Select only the kinds from the list"
+            partner:
+              invalid: "Select only the kinds from the list"
         forms/income_range:
           attributes:
             choice:

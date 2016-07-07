@@ -161,9 +161,11 @@ en:
     income_range:
       title: 'Income range'
       breadcrumb: 'Step 8b of 18'
-      text: 'How much income do you receive each month?'
+      text_single: 'How much income do you receive each month?'
+      text_married: 'How much income do you and your partner receive each month?'
       details:
-        kinds_list: 'Select the total monthly amount you receive in income from:'
+        kinds_list_single: 'Select the total monthly amount you receive in income from:'
+        kinds_list_married: 'Select the total monthly amount you and your partner receive in income from:'
         average_note: 'If your income varies from month to month, work out an average monthly income based on the last 3 months.'
       range:
         less: 'Less than %{min_threshold}'
@@ -172,9 +174,11 @@ en:
     income_amount:
       title: 'Income amount'
       breadcrumb: 'Step 8c of 18'
-      text: 'How much income do you receive each month?'
+      text_single: 'How much income do you receive each month?'
+      text_married: 'How much income do you and your partner receive each month?'
       details:
-        kinds_list: 'Enter the total monthly amount you receive in income from:'
+        kinds_list_single: 'Enter the total monthly amount you receive in income from:'
+        kinds_list_married: 'Enter the total monthly amount you and your partner receive in income from:'
         average_note: 'If your income varies from month to month, work out an average monthly income based on the last 3 months.'
     fee:
       title: 'Refund'

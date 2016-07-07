@@ -9,7 +9,7 @@ module Views
       'text'.tap do |i18n|
         if %w[benefit income].include?(@form.id)
           i18n << '_refund' if @online_application.refund?
-        elsif @form.id == 'savings_and_investment_extra'
+        elsif %w[savings_and_investment_extra income_range income_amount].include?(@form.id)
           i18n << (@online_application.married? ? '_married' : '_single')
         end
       end

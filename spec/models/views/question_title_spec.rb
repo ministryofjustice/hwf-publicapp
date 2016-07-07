@@ -27,19 +27,21 @@ RSpec.describe Views::QuestionTitle do
       end
     end
 
-    context 'for the savings_and_investment_extra question' do
-      let(:id) { 'savings_and_investment_extra' }
+    %w[savings_and_investment_extra income_range income_amount].each do |question|
+      context "for the #{question} question" do
+        let(:id) { question }
 
-      context 'when the online_application says the user is married' do
-        let(:online_application) { build(:online_application, married: true) }
+        context 'when the online_application says the user is married' do
+          let(:online_application) { build(:online_application, married: true) }
 
-        it { is_expected.to eql('text_married') }
-      end
+          it { is_expected.to eql('text_married') }
+        end
 
-      context 'when the online_application says the user is single' do
-        let(:online_application) { build(:online_application, married: false) }
+        context 'when the online_application says the user is single' do
+          let(:online_application) { build(:online_application, married: false) }
 
-        it { is_expected.to eql('text_single') }
+          it { is_expected.to eql('text_single') }
+        end
       end
     end
 

@@ -173,6 +173,9 @@ en:
       title: 'Income amount'
       breadcrumb: 'Step 8c of 18'
       text: 'How much income do you receive each month?'
+      details:
+        kinds_list: 'Enter the total monthly amount you receive in income from:'
+        average_note: 'If your income varies from month to month, work out an average monthly income based on the last 3 months.'
     fee:
       title: 'Refund'
       fee_paid_false: 'No'

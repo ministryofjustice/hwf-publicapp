@@ -1,0 +1,7 @@
+p = t('details.kinds_list', scope: @form.i18n_scope)
+
+ul
+  - Views::IncomeKinds.new(session).list.each do |kind|
+    li =kind
+
+p = t('details.average_note', scope: @form.i18n_scope)

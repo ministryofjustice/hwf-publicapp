@@ -6,19 +6,16 @@ class ConfirmationsController < ApplicationController
 
   def done
     prepare_view
-    clear_storage
   end
 
   def refund
     prepare_view
     build_ga_event
-    clear_storage
   end
 
   def et
     prepare_view
     build_ga_event
-    clear_storage
   end
 
   private
@@ -26,10 +23,6 @@ class ConfirmationsController < ApplicationController
   def prepare_view
     @online_application = online_application
     @result = storage.submission_result
-  end
-
-  def clear_storage
-    storage.clear
   end
 
   def build_ga_event

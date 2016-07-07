@@ -1,6 +1,6 @@
 p = t('details.kinds_list', scope: @form.i18n_scope)
 
-ul
+ul.list.list-bullet
   - Views::IncomeKinds.new(session).list.each do |kind|
     li =kind
 

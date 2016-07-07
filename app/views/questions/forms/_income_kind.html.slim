@@ -3,26 +3,30 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
 = hidden_field_tag 'income_kind[applicant][]', nil
 = hidden_field_tag 'income_kind[partner][]', nil
 
-.form-group class=('error' if @form.errors[:applicant].any?)
-  h3 Your income
+.grid-row
+  .column-half
+    .form-group.income-sources class=('error' if @form.errors[:applicant].any?)
+      - if @online_application.married?
+        h3.heading-small Your income
 
-  - if @form.errors[:applicant].any?
-    span.error-message#applicant = @form.errors[:applicant].join(' ')
+      - if @form.errors[:applicant].any?
+        span.error-message#applicant = @form.errors[:applicant].join(' ')
 
-  - @form.class.allowed_kinds.each do |kind|
-    label.block-label for='income_kind_applicant_#{kind}'
-      = f.check_box :applicant, { multiple: true }, kind, nil
-      = t(kind, scope: [@form.i18n_scope, 'kinds'])
+      - @form.class.allowed_kinds.each do |kind|
+        label.block-label for='income_kind_applicant_#{kind}'
+          = f.check_box :applicant, { multiple: true }, kind, nil
+          = t(kind, scope: [@form.i18n_scope, 'kinds'])
 
-- if @online_application.married?
-  .form-group class=('error' if @form.errors[:partner].any?)
-    h3 Your partner's income
+  - if @online_application.married?
+    .column-half
+      .form-group.income-sources class=('error' if @form.errors[:partner].any?)
+        h3.heading-small Your partner's income
 
-    - if @form.errors[:partner].any?
-      span.error-message#partner = @form.errors[:partner].join(' ')
+        - if @form.errors[:partner].any?
+          span.error-message#partner = @form.errors[:partner].join(' ')
 
-    - @form.class.allowed_kinds.each do |kind|
-      label.block-label for='income_kind_partner_#{kind}'
-        = f.check_box :partner, { multiple: true }, kind, nil
-        = t(kind, scope: [@form.i18n_scope, 'kinds'])
+        - @form.class.allowed_kinds.each do |kind|
+          label.block-label for='income_kind_partner_#{kind}'
+            = f.check_box :partner, { multiple: true }, kind, nil
+            = t(kind, scope: [@form.i18n_scope, 'kinds'])
 

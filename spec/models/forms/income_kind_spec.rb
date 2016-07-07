@@ -71,30 +71,64 @@ RSpec.describe Forms::IncomeKind, type: :model do
   end
 
   describe '#export' do
-    let(:params) { { applicant: [1, 5] } }
+    let(:params) { { applicant: applicant, partner: partner } }
+
     subject { form.export }
 
-    context 'when the only selected option is "no income"' do
-      let(:params) { { applicant: [13] } }
+    context 'when partner kinds are provided' do
+      context 'when the only option for both is "no income"' do
+        let(:applicant) { [13] }
+        let(:partner) { [13] }
 
-      it 'returns hash with income parameter set to 0' do
-        is_expected.to eql(income: 0)
+        it 'returns hash with income parameter set to 0' do
+          is_expected.to eql(income: 0)
+        end
+      end
+
+      context 'when applicant has "no income" but partner does have an income' do
+        let(:applicant) { [13] }
+        let(:partner) { [1] }
+
+        it 'returns an empty hash' do
+          is_expected.to eql({})
+        end
+      end
+
+      context 'when both applicant and partner has other sources than "no income"' do
+        let(:applicant) { [1, 13] }
+        let(:partner) { [5, 13] }
+
+        it 'returns an empty hash' do
+          is_expected.to eql({})
+        end
       end
     end
 
-    context 'when the selected options do not include "no income"' do
-      let(:params) { { applicant: [1, 5] } }
+    context 'when only applicant kinds are provided' do
+      let(:partner) { nil }
 
-      it 'returns an empty hash' do
-        is_expected.to eql({})
+      context 'when the only selected option is "no income"' do
+        let(:applicant) { [13] }
+
+        it 'returns hash with income parameter set to 0' do
+          is_expected.to eql(income: 0)
+        end
       end
-    end
 
-    context 'when the selected options do include "no income"' do
-      let(:params) { { applicant: [1, 13] } }
+      context 'when the selected options do not include "no income"' do
+        let(:applicant) { [1, 5] }
 
-      it 'returns an empty hash' do
-        is_expected.to eql({})
+        it 'returns an empty hash' do
+          is_expected.to eql({})
+        end
+      end
+
+      context 'when the selected options do include "no income"' do
+        let(:applicant) { [1, 13] }
+
+        it 'returns an empty hash' do
+          is_expected.to eql({})
+        end
       end
     end
   end

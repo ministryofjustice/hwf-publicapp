@@ -30,8 +30,8 @@ module Forms
     end
 
     def update_attributes(attributes)
-      attributes[:applicant].delete_if { |value| value == '' } if attributes[:applicant]
-      attributes[:partner].delete_if { |value| value == '' } if attributes[:partner]
+      clear_empty_string(attributes, :applicant)
+      clear_empty_string(attributes, :partner)
       super(attributes)
     end
 
@@ -39,8 +39,12 @@ module Forms
 
     def export_params
       {}.tap do |export|
-        export[:income] = 0 if applicant == [self.class.no_income_index]
+        export[:income] = 0 if (applicant + partner).uniq == [self.class.no_income_index]
       end
+    end
+
+    def clear_empty_string(attributes, attribute)
+      attributes[attribute].delete_if { |value| value == '' } if attributes[attribute]
     end
   end
 end

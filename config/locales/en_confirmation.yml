@@ -2,7 +2,7 @@ en:
   confirmation:
     default:
       title: 'Your application is not finished yet'
-      breadcrumb: 'Step 17 of 18'
+      breadcrumb: 'Step 19 of 20'
       heading: Your application for help with fees is not finished yet
       steps:
         one_html: You must write this reference number <strong>%{reference}</strong> on your <strong>%{form_name}</strong> form.
@@ -12,7 +12,7 @@ en:
       continue: Continue
     done:
       title: 'Send your form to complete the process'
-      breadcrumb: 'Step 18 of 18'
+      breadcrumb: 'Step 20 of 20'
       heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
       instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
       next:
@@ -23,7 +23,7 @@ en:
           three: If your application is successful you'll hear directly from the court or tribunal dealing with your case.
     refund:
       title: 'Send your reference number to complete the process'
-      breadcrumb: 'Step 18 of 18'
+      breadcrumb: 'Step 20 of 20'
       heading: Send your reference number to the court or tribunal dealing with your case
       steps:
         one:
@@ -42,7 +42,7 @@ en:
         text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
     et:
       title: 'Your application is not finished yet'
-      breadcrumb: 'Step 18 of 18'
+      breadcrumb: 'Step 20 of 20'
       heading: Your application for help with fees is not finished yet
       steps:
         one_html: You must email or post this help with fees reference number <strong>%{reference}</strong> along with your employment tribunal claim number to the employment tribunal.

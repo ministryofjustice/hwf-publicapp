@@ -15,6 +15,5 @@ legend.visuallyhidden = t('text', scope: @form.i18n_scope)
       - if @form.errors[:date_paid].any?
         span.error-message#date_paid = @form.errors[:date_paid].join(' ')
       = f.label :date_paid, class: 'form-label'
-      span.visuallyhidden .
       .hint = t('hint_html', scope: @form.i18n_scope)
       = f.text_field :date_paid, class: 'form-control'

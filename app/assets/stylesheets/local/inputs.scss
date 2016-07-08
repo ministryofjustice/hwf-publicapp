@@ -34,9 +34,14 @@
 
 .optional {
   label, .hint {
-    display: inline;
+    float: left;
+    margin-right: 5px;
+  }
+  .hint {
+    @include core-19;
   }
   input {
+    clear: left;
     display: block;
   }
 }

@@ -4,7 +4,7 @@ RSpec.describe ConfirmationsController, type: :controller do
   let(:session) { double }
   let(:online_application) { double(benefits: true) }
   let(:result) { { result: true, message: 'HWF-010101' } }
-  let(:storage) { double(submission_result: result, time_taken: 600, clear: nil) }
+  let(:storage) { double(submission_result: result, time_taken: 600) }
   let(:builder) { double(online_application: online_application) }
 
   before do
@@ -29,10 +29,6 @@ RSpec.describe ConfirmationsController, type: :controller do
     it 'assigns the response object from the session' do
       expect(assigns(:result)).to eql(result)
     end
-
-    it 'does not clear the storage' do
-      expect(storage).not_to have_received(:clear)
-    end
   end
 
   describe 'GET #done' do
@@ -50,10 +46,6 @@ RSpec.describe ConfirmationsController, type: :controller do
 
     it 'assigns the response object from the session' do
       expect(assigns(:result)).to eql(result)
-    end
-
-    it 'clears the storage' do
-      expect(storage).to have_received(:clear)
     end
   end
 
@@ -73,10 +65,6 @@ RSpec.describe ConfirmationsController, type: :controller do
     it 'assigns the response object from the session' do
       expect(assigns(:result)).to eql(result)
     end
-
-    it 'clears the storage' do
-      expect(storage).to have_received(:clear)
-    end
   end
 
   describe 'GET #et' do
@@ -94,10 +82,6 @@ RSpec.describe ConfirmationsController, type: :controller do
 
     it 'assigns the response object from the session' do
       expect(assigns(:result)).to eql(result)
-    end
-
-    it 'clears the storage' do
-      expect(storage).to have_received(:clear)
     end
   end
 end

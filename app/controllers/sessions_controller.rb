@@ -7,6 +7,12 @@ class SessionsController < ApplicationController
     redirect_to(question_path(QuestionFormFactory::IDS.first))
   end
 
+  def finish
+    storage.clear
+    redirect_path = Settings.done_page.external_url || root_path
+    redirect_to(redirect_path)
+  end
+
   def destroy
     storage_with_clear
     redirect_to(root_path)

@@ -12,9 +12,9 @@ module Forms
     private
 
     def export_params
-      {
-        income: amount
-      }
+      {}.tap do |export|
+        export[:income] = amount if amount
+      end
     end
   end
 end

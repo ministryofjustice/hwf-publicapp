@@ -23,3 +23,5 @@ et:
   scotland_email: GLASGOWET@hmcts.gsi.gov.uk
 homepage:
   external_url: <%= ENV['HOMEPAGE_EXTERNAL_URL'] || nil %>
+done_page:
+  external_url: <%= ENV['DONE_PAGE_EXTERNAL_URL'] || nil %>

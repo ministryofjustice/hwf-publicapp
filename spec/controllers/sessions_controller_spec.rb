@@ -25,7 +25,11 @@ RSpec.describe SessionsController, type: :controller do
   end
 
   describe 'POST #finish' do
+    let(:external_url) { nil }
+    let(:done_page_settings) { double(external_url: external_url) }
+
     before do
+      allow(Settings).to receive(:done_page).and_return(done_page_settings)
       expect(Storage).to receive(:new).with(session).and_return(storage)
 
       post :finish
@@ -35,9 +39,20 @@ RSpec.describe SessionsController, type: :controller do
       expect(storage).to have_received(:clear)
     end
 
-    it 'redirects to the homepage' do
-      expect(response).to redirect_to(root_path)
+    context 'when the done page external url is set' do
+      let(:external_url) { 'http://som.e.t.h.i.ng' }
+
+      it 'redirects to the external page' do
+        expect(response).to redirect_to(external_url)
+      end
     end
+
+    context 'when no done page external url is set' do
+      it 'redirects to the homepage' do
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
   end
 
   describe 'DELETE #destroy' do

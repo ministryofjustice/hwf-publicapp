@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resource :session, only: :destroy do
     get :start
+    post :finish
   end
 
   resource :help_request, only: %i[new create], path: 'ask-for-help'

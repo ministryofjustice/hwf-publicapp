@@ -195,6 +195,31 @@ RSpec.describe Storage do
     end
   end
 
+  describe '#clear_form' do
+    let(:questions) { { 'existing' => 'SOME_ANSWER' } }
+    let(:session) { { 'questions' => questions } }
+
+    before do
+      storage.clear_form(form_id)
+    end
+
+    context 'when there is a question stored with that id' do
+      let(:form_id) { :existing }
+
+      it 'removes the question from the session' do
+        expect(session['questions']).not_to have_key('existing')
+      end
+    end
+
+    context 'when there is no question stored with that id' do
+      let(:form_id) { :non_existing }
+
+      it 'does not remove anything from the session' do
+        expect(session['questions']).to eql(questions)
+      end
+    end
+  end
+
   describe '#submission_result=' do
     let(:result) { double }
 

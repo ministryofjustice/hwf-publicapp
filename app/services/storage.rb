@@ -35,6 +35,10 @@ class Storage
     form.update_attributes(params)
   end
 
+  def clear_form(form_id)
+    @session['questions'].delete(form_id.to_s) if @session['questions']
+  end
+
   def submission_result=(result)
     @session[:submission_result] = result
   end

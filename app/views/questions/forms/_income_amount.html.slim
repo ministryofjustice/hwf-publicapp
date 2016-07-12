@@ -3,4 +3,4 @@
     span.error-message#amount = @form.errors[:amount].join(' ')
   = f.label :amount, class: 'form-label text visuallyhidden'
   span.currency £
-  = f.text_field :amount, class: 'form-control form-control-smaller'
+  = f.text_field :amount, type: 'number', class: 'form-control form-control-smaller'

@@ -142,13 +142,15 @@ en:
     income_kind:
       title: 'Income kind'
       breadcrumb: 'Step 8 of 20'
-      text: 'What kind of income do you receive?'
-      details: 'Select the kind of income you receive.'
+      text_single: 'What kind of income do you receive?'
+      text_married: 'What kind of income do you and your partner receive?'
+      details_single: 'Choose the different types of income you receive.'
+      details_married: 'Choose the different types of income you and your partner receive.'
       kinds:
         '1': Wages
         '2': Child Benefit
-        '3': Working tax credit
-        '4': Child tax credit
+        '3': Working Tax Credit
+        '4': Child Tax Credit
         '5': Maintenance payments
         '6': Contribution-based Jobseekers Allowance (JSA)
         '7': Contribution-based Employment and Support Allowance (ESA)
@@ -164,8 +166,8 @@ en:
       text_single: 'How much income do you receive each month?'
       text_married: 'How much income do you and your partner receive each month?'
       details:
-        kinds_list_single: 'Select the total monthly amount you receive in income from:'
-        kinds_list_married: 'Select the total monthly amount you and your partner receive in income from:'
+        kinds_list_single: 'Select the monthly amount you receive in income from:'
+        kinds_list_married: 'Select the monthly amount you and your partner receive in income from:'
         average_note: 'If your income varies from month to month, work out an average monthly income based on the last 3 months.'
       range:
         less: 'Less than %{min_threshold}'
@@ -174,12 +176,15 @@ en:
     income_amount:
       title: 'Income amount'
       breadcrumb: 'Step 10 of 20'
-      text_single: 'How much income do you receive each month?'
-      text_married: 'How much income do you and your partner receive each month?'
+      text_single: 'What’s your total monthly income?'
+      text_married: 'What’s your total monthly income?'
       details:
         kinds_list_single: 'Enter the total monthly amount you receive in income from:'
         kinds_list_married: 'Enter the total monthly amount you and your partner receive in income from:'
         average_note: 'If your income varies from month to month, work out an average monthly income based on the last 3 months.'
+      amount:
+        single: 'Enter the total monthly amount you receive in income.'
+        married: 'Enter the total monthly amount you and your partner receive in income.'
     fee:
       title: 'Refund'
       fee_paid_false: 'No'

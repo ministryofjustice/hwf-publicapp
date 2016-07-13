@@ -27,7 +27,7 @@ RSpec.describe Views::QuestionTitle do
       end
     end
 
-    %w[savings_and_investment_extra income_range income_amount].each do |question|
+    %w[savings_and_investment_extra income_kind income_range income_amount].each do |question|
       context "for the #{question} question" do
         let(:id) { question }
 

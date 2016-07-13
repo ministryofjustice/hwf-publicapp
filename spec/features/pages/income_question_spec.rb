@@ -54,7 +54,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "income_amount" page' do
-        expect(page).to have_content 'How much income do you receive each month?'
+        expect(page).to have_content 'What’s your total monthly income?'
         expect(page).to have_content 'Enter the total monthly amount you receive in income.'
       end
     end
@@ -92,7 +92,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be shown the "income_amount" page with error block' do
-        expect(page).to have_content 'How much income do you receive each month?'
+        expect(page).to have_content 'What’s your total monthly income?'
         expect(page).to have_content 'You need to fix the errors on this page before continuing.'
         expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter how much income do you receive')
       end

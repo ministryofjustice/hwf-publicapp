@@ -1,1 +1,4 @@
-p = t('details', scope: @form.i18n_scope)
+- if @online_application.married?
+  p = t('details_married', scope: @form.i18n_scope)
+- else
+  p = t('details_single', scope: @form.i18n_scope)

@@ -1,10 +1,10 @@
-- if @online_application.married?
-  p = t('details.kinds_list_married', scope: @form.i18n_scope)
-- else
-  p = t('details.kinds_list_single', scope: @form.i18n_scope)
+p = t("details.kinds_list#{i18n_status_refund_suffix}", scope: @form.i18n_scope)
 
 ul.list.list-bullet
   - Views::IncomeKinds.new(session).list.each do |kind|
     li =kind
 
-p = t('details.average_note', scope: @form.i18n_scope)
+- if @online_application.refund?
+  p = t('details.average_note_refund', scope: @form.i18n_scope)
+- else
+  p = t('details.average_note', scope: @form.i18n_scope)

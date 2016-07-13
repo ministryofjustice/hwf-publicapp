@@ -1,4 +1,1 @@
-- if @online_application.married?
-  p = t('details_married', scope: @form.i18n_scope)
-- else
-  p = t('details_single', scope: @form.i18n_scope)
+p = t("details#{i18n_status_refund_suffix}", scope: @form.i18n_scope)

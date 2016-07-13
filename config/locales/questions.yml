@@ -143,9 +143,13 @@ en:
       title: 'Income kind'
       breadcrumb: 'Step 8 of 20'
       text_single: 'What kind of income do you receive?'
+      text_single_refund: 'What kind of income did you receive?'
       text_married: 'What kind of income do you and your partner receive?'
+      text_married_refund: 'What kind of income did you and your partner receive?'
       details_single: 'Choose the different types of income you receive.'
+      details_single_refund: 'Choose the different types of income you received at the time you paid the fee.'
       details_married: 'Choose the different types of income you and your partner receive.'
+      details_married_refund: 'Choose the different types of income you and your partner received at the time you paid the fee.'
       kinds:
         '1': Wages
         '2': Child Benefit
@@ -164,11 +168,16 @@ en:
       title: 'Income range'
       breadcrumb: 'Step 9 of 20'
       text_single: 'How much income do you receive each month?'
+      text_single_refund: 'How much income did you receive each month?'
       text_married: 'How much income do you and your partner receive each month?'
+      text_married_refund: 'How much income did you and your partner receive each month?'
       details:
         kinds_list_single: 'Select the monthly amount you receive in income from:'
+        kinds_list_single_refund: 'Select the monthly amount you received in income from:'
         kinds_list_married: 'Select the monthly amount you and your partner receive in income from:'
+        kinds_list_married_refund: 'Select the monthly amount you and your partner received in income from:'
         average_note: 'If your income varies from month to month, work out an average monthly income based on the last 3 months.'
+        average_note_refund: 'If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.'
       range:
         less: 'Less than %{min_threshold}'
         between: 'Between %{min_threshold} and %{max_threshold}'
@@ -177,11 +186,16 @@ en:
       title: 'Income amount'
       breadcrumb: 'Step 10 of 20'
       text_single: 'What’s your total monthly income?'
+      text_single_refund: 'What was your total monthly income?'
       text_married: 'What’s your total monthly income?'
+      text_married_refund: 'What was your total monthly income?'
       details:
         kinds_list_single: 'Enter the total monthly amount you receive in income from:'
+        kinds_list_single_refund: 'Enter the total monthly amount you received in income from:'
         kinds_list_married: 'Enter the total monthly amount you and your partner receive in income from:'
+        kinds_list_married_refund: 'Enter the total monthly amount you and your partner received in income from:'
         average_note: 'If your income varies from month to month, work out an average monthly income based on the last 3 months.'
+        average_note_refund: 'If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.'
       amount:
         single: 'Enter the total monthly amount you receive in income.'
         married: 'Enter the total monthly amount you and your partner receive in income.'

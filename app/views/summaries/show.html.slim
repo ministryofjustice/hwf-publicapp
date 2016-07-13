@@ -56,7 +56,7 @@ table.summary
       tr
         th scope="row" =t('income', scope: 'summary.labels')
         td =number_to_currency(@summary.income, precision: 2, unit: '£')
-        td.right= link_to question_path(:income) do
+        td.right= link_to question_path(:income_kind) do
           | Change
           span.visuallyhidden
             | &nbsp;

@@ -13,8 +13,10 @@ RSpec.describe Navigation do
       fee: :marital_status,
       marital_status: :savings_and_investment,
       savings_and_investment_extra: :benefit,
-      dependent: :income,
-      income: :probate,
+      dependent: :income_kind,
+      income_kind: :income_range,
+      income_range: :income_amount,
+      income_amount: :probate,
       probate: :claim,
       claim: :national_insurance,
       national_insurance: :dob,
@@ -76,6 +78,24 @@ RSpec.describe Navigation do
 
       it 'routes to the summary page' do
         is_expected.to eql(summary_path)
+      end
+    end
+
+    context 'for income_kind question' do
+      let(:current_question) { :income_kind }
+
+      context 'when the application is 0 income - "no income" selected' do
+        let(:online_application) { build :online_application, :no_income }
+
+        it 'routes to the probate question' do
+          is_expected.to eql(question_path(:probate))
+        end
+      end
+
+      context 'when the application is not 0 income - some income sources selected' do
+        it 'routes to the income_range question' do
+          is_expected.to eql(question_path(:income_range))
+        end
       end
     end
   end

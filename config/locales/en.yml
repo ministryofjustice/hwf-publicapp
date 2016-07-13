@@ -43,6 +43,8 @@ en:
         description: Describe what you'd like to talk about
       forms/savings_and_investment_extra:
         amount: 'How much do you and your partner have in savings and investments?'
+      forms/income_amount:
+        amount: 'Enter the total monthly amount you receive in income.'
     errors:
       models:
         forms/marital_status:
@@ -73,11 +75,23 @@ en:
               not_a_number: 'You must enter financially dependent children as a number'
               blank: 'You must enter the number of financially dependent children'
               less_than: 'You must enter number less than 100'
-        forms/income:
+        forms/income_kind:
           attributes:
-            other_description:
-              blank: "Enter a description for your income"
-              too_long: "The description must be less than 20 characters"
+            applicant:
+              blank: "Select your kinds of income"
+              invalid: "Select only the kinds from the list"
+            partner:
+              invalid: "Select only the kinds from the list"
+        forms/income_range:
+          attributes:
+            choice:
+              inclusion: 'Select your monthly income'
+        forms/income_amount:
+          attributes:
+            amount:
+              blank: 'Enter how much income do you receive'
+              less_than: 'Enter an amount between £0 and £1,000,000'
+              greater_than_or_equal_to: 'Enter an amount between £0 and £1,000,000'
         forms/fee:
           attributes:
             paid:

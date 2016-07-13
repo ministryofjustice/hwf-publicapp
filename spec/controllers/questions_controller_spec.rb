@@ -72,9 +72,13 @@ RSpec.describe QuestionsController, type: :controller do
 
     let(:next_path) { root_path }
     let(:navigation) { double(next: next_path) }
+    let(:clear_service) { double(for_changes: nil) }
+    let(:dupped_online_application) { double }
 
     before do
       allow(Navigation).to receive(:new).with(online_application, id).and_return(navigation)
+      allow(ClearDownstreamQuestions).to receive(:new).with(storage, id).and_return(clear_service)
+      allow(online_application).to receive(:dup).and_return(dupped_online_application)
 
       put :update, id: id, id => params
     end
@@ -99,6 +103,10 @@ RSpec.describe QuestionsController, type: :controller do
 
         it 'redirects to the next question based on the Navigation object' do
           expect(response).to redirect_to(next_path)
+        end
+
+        it 'calls the clearing service with old and updated online application' do
+          expect(clear_service).to have_received(:for_changes).with(dupped_online_application, online_application)
         end
       end
 

@@ -1,0 +1,6 @@
+.form-group class=('error' if @form.errors[:amount].any?)
+  - if @form.errors[:amount].any?
+    span.error-message#amount = @form.errors[:amount].join(' ')
+  = f.label :amount, class: 'form-label text visuallyhidden'
+  span.currency £
+  = f.text_field :amount, type: 'number', class: 'form-control form-control-smaller'

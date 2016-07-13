@@ -12,8 +12,8 @@ RSpec.feature 'As a user' do
         click_button 'Continue'
       end
 
-      scenario 'I expect to be routed to the "income" page' do
-        expect(page).to have_content 'What is your total monthly income?'
+      scenario 'I expect to be routed to the "income_kind" page' do
+        expect(page).to have_content 'What kind of income do you receive?'
       end
     end
 

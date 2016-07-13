@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
     form.update_attributes(form_params)
 
     if form.valid?
-      save_and_update_online_application
+      process_form_and_online_application
       redirect_to(Navigation.new(online_application, question).next)
     else
       assign_title_view
@@ -34,9 +34,15 @@ class QuestionsController < ApplicationController
     params.require(@form.id).permit(*@form.permitted_attributes)
   end
 
-  def save_and_update_online_application
+  def process_form_and_online_application
     storage.save_form(form)
+    old_online_application = online_application.dup
     online_application.attributes = form.export
+    clear_service.for_changes(old_online_application, online_application)
+  end
+
+  def clear_service
+    ClearDownstreamQuestions.new(storage, question)
   end
 
   def assign_title_view

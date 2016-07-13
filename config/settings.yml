@@ -25,3 +25,8 @@ homepage:
   external_url: <%= ENV['HOMEPAGE_EXTERNAL_URL'] || nil %>
 done_page:
   external_url: <%= ENV['DONE_PAGE_EXTERNAL_URL'] || nil %>
+income:
+  min_threshold_base: 1085
+  max_threshold_base: 5085
+  per_child_increment: 245
+  married_supplement: 160

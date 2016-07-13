@@ -29,6 +29,10 @@
   }
   @media (min-width: 641px) {
     float: left;
+
+    .income-sources & {
+      float: none;
+    }
   }
 }
 

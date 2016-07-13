@@ -24,7 +24,9 @@ module FeatureSteps
     fill_savings_and_investment_extra
     fill_benefit
     fill_dependent
-    fill_income
+    fill_income_kind
+    fill_income_range
+    fill_income_amount
     fill_probate
     fill_claim
     fill_national_insurance
@@ -76,7 +78,9 @@ module FeatureSteps
     fill_savings_and_investment_extra
     fill_benefit
     fill_dependent
-    fill_income
+    fill_income_kind
+    fill_income_range
+    fill_income_amount
     fill_probate
     fill_et_claim
     fill_national_insurance
@@ -171,8 +175,18 @@ module FeatureSteps
     click_button 'Continue'
   end
 
-  def fill_income
-    fill_in :income_wages, with: 100.0
+  def fill_income_kind
+    check 'income_kind_applicant_1'
+    click_button 'Continue'
+  end
+
+  def fill_income_range
+    choose 'income_range_choice_less'
+    click_button 'Continue'
+  end
+
+  def fill_income_amount
+    fill_in :amount, with: 100.0
     click_button 'Continue'
   end
 

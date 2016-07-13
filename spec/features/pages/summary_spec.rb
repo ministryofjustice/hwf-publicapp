@@ -94,7 +94,7 @@ RSpec.feature 'As a user' do
       expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:savings_and_investment)}']"
       expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:benefit)}']"
       expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:dependent)}']"
-      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:income)}']"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:income_kind)}']"
       expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:fee)}']"
       expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:probate)}']"
       expect(page).to have_xpath "//a[starts-with(text(), 'Change')][@href='#{question_path(:claim)}']"

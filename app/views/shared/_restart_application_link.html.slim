@@ -1,2 +1,12 @@
 = form_tag(session_path, method: :delete) do
   = submit_tag(t('restart_application'), class: 'restart-application')
+
+.panel-indent.restart-confirm
+  p Are you sure you want to cancel your application?
+  p If you cancel, details for your current application will be deleted.
+
+  ul.inline
+    li
+      button.button.secondary.abort Yes, cancel
+    li
+      button.button.secondary.cancel No, return to current application

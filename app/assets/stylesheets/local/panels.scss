@@ -41,6 +41,22 @@
   }
 }
 
+.restart-confirm {
+  display: none;
+  background: asset-url('icon-important.png') 15px 15px no-repeat;
+  background-size: 35px 35px;
+  padding-left: 65px;
+  border-color: $error-colour;
+
+  p:first-child {
+    padding-top: 5px;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: asset-url('icon-important-2x.png');
+  }
+}
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .post {
     background-image: asset-url('icon-post-2x.png');

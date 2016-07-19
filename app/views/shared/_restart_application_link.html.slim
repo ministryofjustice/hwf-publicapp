@@ -1,2 +1,12 @@
 = form_tag(session_path, method: :delete) do
-  = submit_tag(t('restart_application'), class: 'restart-application')
+  = submit_tag(t('restart_application.cancel_button'), class: 'restart-application')
+
+.panel-indent.restart-confirm
+  p =t('restart_application.copy_1')
+  p =t('restart_application.copy_2')
+
+  ul.inline
+    li
+      button.button.secondary.abort =t('restart_application.confirm_cancel')
+    li
+      button.button.secondary.cancel =t('restart_application.return_to_application')

@@ -62,7 +62,7 @@ module FeatureSteps
   end
 
   def when_they_restart_the_application
-    click_link_or_button 'Start a new application'
+    click_link_or_button 'Cancel application'
   end
 
   def when_they_try_to_proceed_after_long_time

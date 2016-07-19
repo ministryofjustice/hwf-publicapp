@@ -1,6 +1,11 @@
 en:
   start_application: Apply now
-  restart_application: Start a new application
+  restart_application:
+    cancel_button: Cancel application
+    copy_1: Are you sure you want to cancel your application?
+    copy_2: If you cancel, details for your current application will be deleted.
+    confirm_cancel: Yes, cancel
+    return_to_application: No, return to current application
   submit_button: Continue
   error_block:
     heading: 'You need to fix the errors on this page before continuing.'

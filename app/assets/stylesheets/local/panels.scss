@@ -41,6 +41,33 @@
   }
 }
 
+.restart-confirm {
+  display: none;
+  background: asset-url('icon-important-red.png') 15px 15px no-repeat;
+  background-size: 34px 34px;
+  padding-left: 65px;
+  border-color: $error-colour;
+
+  p:first-child {
+    padding-top: 5px;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: asset-url('icon-important-red-2x.png');
+  }
+
+  button.secondary {
+    @media (min-width: 0) {
+      display: block;
+      width: 100%;
+    }
+    @media (min-width: 641px) {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .post {
     background-image: asset-url('icon-post-2x.png');

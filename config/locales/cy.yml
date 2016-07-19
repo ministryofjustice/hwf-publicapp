@@ -1,0 +1,691 @@
+cy:
+  activemodel:
+    attributes:
+      forms/applicant_address:
+        address: "..."
+        postcode: "..."
+      forms/claim/et:
+        identifier: "..."
+      forms/dependent:
+        children_number: "..."
+      forms/fee:
+        date_paid: "..."
+      forms/form_name:
+        identifier: "..."
+      forms/help_request:
+        description: "..."
+        phone: "..."
+      forms/income:
+        child_benefit: "..."
+        child_tax_credit: "..."
+        contribution_esa: "..."
+        contribution_jsa: "..."
+        maintenance_payment: "..."
+        other_description: "..."
+        pension: "..."
+        rent_living_with: "..."
+        rent_other_property: "..."
+        universal_credit: "..."
+        wages: "..."
+        working_tax_credit: "..."
+      forms/income_amount:
+        amount: "..."
+      forms/personal_detail:
+        first_name: "..."
+        last_name: "..."
+        title: "..."
+      forms/probate:
+        date_of_death: "..."
+        deceased_name: "..."
+      forms/savings_and_investment_extra:
+        amount: "..."
+    errors:
+      models:
+        forms/applicant_address:
+          attributes:
+            address:
+              blank: "..."
+              too_long: "..."
+            postcode:
+              blank: "..."
+              too_long: "..."
+        forms/benefit:
+          attributes:
+            on_benefits:
+              inclusion: "..."
+        forms/claim/default:
+          attributes:
+            identifier:
+              blank: "..."
+              too_long: "..."
+            number:
+              inclusion: "..."
+        forms/claim/et:
+          attributes:
+            identifier:
+              blank: "..."
+              too_long: "..."
+        forms/contact:
+          attributes:
+            email:
+              invalid: "..."
+              too_long: "..."
+            phone:
+              blank: "..."
+        forms/dependent:
+          attributes:
+            children:
+              inclusion: "..."
+            children_number:
+              blank: "..."
+              less_than: "..."
+              not_a_number: "..."
+        forms/dob:
+          attributes:
+            date_of_birth:
+              not_a_date: "..."
+              not_a_number: "..."
+              too_old: "..."
+              too_young: "..."
+        forms/fee:
+          attributes:
+            date_paid:
+              after_or_equal_to: "..."
+              before_or_equal_to: "..."
+              blank: "..."
+              not_a_date: "..."
+            paid:
+              inclusion: "..."
+        forms/form_name:
+          attributes:
+            identifier:
+              blank: "..."
+              too_long: "..."
+        forms/help_request:
+          attributes:
+            description:
+              blank: "..."
+            name:
+              blank: "..."
+            phone:
+              blank: "..."
+        forms/income_amount:
+          attributes:
+            amount:
+              blank: "..."
+              greater_than_or_equal_to: "..."
+              less_than: "..."
+        forms/income_kind:
+          attributes:
+            applicant:
+              blank: "..."
+              invalid: "..."
+            partner:
+              invalid: "..."
+        forms/income_range:
+          attributes:
+            choice:
+              inclusion: "..."
+        forms/marital_status:
+          attributes:
+            married:
+              inclusion: "..."
+        forms/national_insurance:
+          attributes:
+            number:
+              blank: "..."
+              invalid: "..."
+        forms/personal_detail:
+          attributes:
+            first_name:
+              blank: "..."
+              too_long: "..."
+            last_name:
+              blank: "..."
+              too_long: "..."
+            title:
+              too_long: "..."
+        forms/probate:
+          attributes:
+            date_of_death:
+              after_or_equal_to: "..."
+              before: "..."
+              blank: "..."
+              not_a_date: "..."
+            deceased_name:
+              blank: "..."
+              too_long: "..."
+            kase:
+              inclusion: "..."
+        forms/savings_and_investment:
+          attributes:
+            choice:
+              inclusion: "..."
+        forms/savings_and_investment_extra:
+          attributes:
+            amount:
+              blank: "..."
+              greater_than_or_equal_to: "..."
+              less_than: "..."
+            over_61:
+              inclusion: "..."
+  confirmation:
+    back_to_start: "..."
+    default:
+      breadcrumb: "..."
+      continue: "..."
+      heading: "..."
+      steps:
+        four: "..."
+        one_html: "..."
+        three: "..."
+        two: "..."
+      title: "..."
+    done:
+      breadcrumb: "..."
+      heading: "..."
+      instructions: "..."
+      next:
+        heading: "..."
+        steps:
+          one: "..."
+          three: "..."
+          two: "..."
+      title: "..."
+    et:
+      address:
+        email:
+          heading: "..."
+          note: "..."
+          subject: "..."
+        england:
+          address:
+            four: "..."
+            one: "..."
+            three: "..."
+            two: "..."
+          heading: "..."
+        post:
+          heading: "..."
+        scotland:
+          address:
+            five: "..."
+            four: "..."
+            one: "..."
+            three: "..."
+            two: "..."
+          heading: "..."
+      breadcrumb: "..."
+      heading: "..."
+      letter:
+        five: "..."
+        four: "..."
+        one_html: "..."
+        three_html: "..."
+        two: "..."
+      next:
+        heading: "..."
+        steps:
+          one: "..."
+          three: "..."
+          two: "..."
+      steps:
+        one_html: "..."
+        three: "..."
+        two: "..."
+      title: "..."
+    feedback:
+      heading: "..."
+      link: "..."
+    finish: "..."
+    print: "..."
+    refund:
+      breadcrumb: "..."
+      heading: "..."
+      letter:
+        five: "..."
+        four: "..."
+        one: "..."
+        three: "..."
+        two: "..."
+      notice:
+        text: "..."
+        warning: "..."
+      steps:
+        one:
+          one: "..."
+          two: "..."
+        three: "..."
+        two: "..."
+      title: "..."
+  error_block:
+    heading: "..."
+    visuallyhidden: "..."
+  errors:
+    combined_other_payments_invalid: "..."
+    connection_refused: "..."
+  help_requests:
+    description:
+      line_1: "..."
+      line_2: "..."
+    heading: "..."
+    layout_nudge:
+      link: "..."
+      text_html: "..."
+    subheading: "..."
+    success: "..."
+    survey_nudge:
+      link: ''
+      text_html: "... %{link}."
+    title: "..."
+  optional: "..."
+  questions:
+    applicant_address:
+      breadcrumb: "..."
+      text: "..."
+      title: "..."
+    benefit:
+      breadcrumb: "..."
+      details:
+        section_1:
+          details: "..."
+          heading: "..."
+        section_2:
+          details: "..."
+          heading: "..."
+          item_1:
+            hint: "..."
+            name: "..."
+          item_2:
+            hint: "..."
+            name: "..."
+          item_3:
+            hint: "..."
+            name: "..."
+          item_4:
+            hint: "..."
+            name: "..."
+          item_5:
+            hint: "..."
+            name: "..."
+          item_6:
+            hint: "..."
+            name: "..."
+        summary: "..."
+      list:
+        header: "..."
+        item_1:
+          hint: "..."
+          name: "..."
+        item_2:
+          hint: "..."
+          name: "..."
+        item_3:
+          name: "..."
+        item_4:
+          hint: "..."
+          name: "..."
+        item_5:
+          hint: "..."
+          name: "..."
+        item_6:
+          hint: "..."
+          name: "..."
+      on_benefits_false: "..."
+      on_benefits_true: "..."
+      text: "..."
+      text_refund: "..."
+      title: "..."
+    claim/default:
+      breadcrumb: "..."
+      details:
+        section_1: "..."
+        section_2: "..."
+        section_3: "..."
+        summary: "..."
+      hidden_legend: "..."
+      identifier: "..."
+      number_false: "..."
+      number_true: "..."
+      subtext: "..."
+      text: "..."
+      title: "..."
+    claim/et:
+      breadcrumb: "..."
+      details:
+        section_1: "..."
+        section_2: "..."
+        section_3: "..."
+        summary: "..."
+      subtext: "..."
+      text: "..."
+      title: "..."
+    contact:
+      breadcrumb: "..."
+      details: "..."
+      email_label: "..."
+      feedback_opt_in: "..."
+      text: "..."
+      title: "..."
+    dependent:
+      breadcrumb: "..."
+      children_false: "..."
+      children_number: "..."
+      children_true: "..."
+      details:
+        item_1: "..."
+        item_2: "..."
+        item_3: "..."
+        section_1: "..."
+        section_2: "..."
+        summary: "..."
+      text: "..."
+      title: "..."
+    dob:
+      breadcrumb: "..."
+      hint_html: "..."
+      text: "..."
+      title: "..."
+    fee:
+      breadcrumb: "..."
+      details: "..."
+      fee_paid_false: "..."
+      fee_paid_true: "..."
+      hint_html: "..."
+      text: "..."
+      title: "..."
+    form_name:
+      breadcrumb: "..."
+      details:
+        item_1: "..."
+        item_2: "..."
+        summary: "..."
+      et: "..."
+      example: "..."
+      text: "..."
+      title: "..."
+      unknown: "..."
+    income_amount:
+      amount:
+        married: "..."
+        single: "..."
+      breadcrumb: "..."
+      details:
+        average_note: "..."
+        average_note_refund: "..."
+        kinds_list_married: "..."
+        kinds_list_married_refund: "..."
+        kinds_list_single: "..."
+        kinds_list_single_refund: "..."
+      text_married: "..."
+      text_married_refund: "..."
+      text_single: "..."
+      text_single_refund: "..."
+      title: "..."
+    income_kind:
+      breadcrumb: "..."
+      details_married: "..."
+      details_married_refund: "..."
+      details_single: "..."
+      details_single_refund: "..."
+      kinds:
+        '1': "..."
+        '10': "..."
+        '11': "..."
+        '12': "..."
+        '13': "..."
+        '2': "..."
+        '3': "..."
+        '4': "..."
+        '5': "..."
+        '6': "..."
+        '7': "..."
+        '8': "..."
+        '9': "..."
+      text_married: "..."
+      text_married_refund: "..."
+      text_single: "..."
+      text_single_refund: "..."
+      title: "..."
+    income_range:
+      breadcrumb: "..."
+      details:
+        average_note: "..."
+        average_note_refund: "..."
+        kinds_list_married: "..."
+        kinds_list_married_refund: "..."
+        kinds_list_single: "..."
+        kinds_list_single_refund: "..."
+      range:
+        between: "..."
+        less: "..."
+        more: "..."
+      text_married: "..."
+      text_married_refund: "..."
+      text_single: "..."
+      text_single_refund: "..."
+      title: "..."
+    marital_status:
+      breadcrumb: "..."
+      details:
+        section_1:
+          heading: "..."
+          item_1: "..."
+          item_2: "..."
+          item_3: "..."
+          item_4: "..."
+          item_5: "..."
+        section_2:
+          heading: "..."
+          item_1: "..."
+          item_2: "..."
+          item_3: "..."
+          item_4: "..."
+          item_5: "..."
+        summary: "..."
+      married_false: "..."
+      married_true: "..."
+      text: "..."
+      title: "..."
+    national_insurance:
+      breadcrumb: "..."
+      details:
+        section_1:
+          detail: "..."
+          item_1: "..."
+          item_2: "..."
+        summary: "..."
+      example: "..."
+      prompt: "..."
+      text: "..."
+      title: "..."
+    personal_detail:
+      breadcrumb: "..."
+      text: "..."
+      title: "..."
+    probate:
+      breadcrumb: "..."
+      details: "..."
+      hint_html: "..."
+      probate_case_false: "..."
+      probate_case_true: "..."
+      text: "..."
+      title: "..."
+    savings_and_investment:
+      between: "..."
+      breadcrumb: "..."
+      details:
+        section_1:
+          heading: "..."
+          item_1: "..."
+          item_2: "..."
+          item_3: "..."
+          item_4: "..."
+          item_5: "..."
+          item_6: "..."
+          item_7: "..."
+          item_8: "..."
+        section_2:
+          heading: "..."
+          item_1: "..."
+          item_2: "..."
+          item_3: "..."
+          item_4: "..."
+          item_5: "..."
+          item_6: "..."
+          item_7: "..."
+          item_8: "..."
+          item_9: "..."
+        summary: "..."
+      less: "..."
+      more: "..."
+      subtext_married: "..."
+      text: "..."
+      title: "..."
+    savings_and_investment_extra:
+      amount_married: "..."
+      amount_single: "..."
+      breadcrumb: "..."
+      over_61_false: "..."
+      over_61_true: "..."
+      text_married: "..."
+      text_single: "..."
+      title: "..."
+  restart_application:
+      cancel_button: "..."
+      copy_1: "..."
+      copy_2: "..."
+      confirm_cancel: "..."
+      return_to_application: "..."
+  session:
+    expired_message: "..."
+    note:
+      heading: "..."
+      text: "..."
+  start_application: "..."
+  submit_button: "..."
+  summary:
+    applicant_on_benefits_false: "..."
+    applicant_on_benefits_true: "..."
+    breadcrumb: Cam 18 o 20
+    change: Newid
+    children_false: "..."
+    claim_number_false: "..."
+    claim_number_true: "..."
+    contact_none: "..."
+    fee_paid_false: "..."
+    fee_paid_true: "..."
+    labels:
+      address: "..."
+      benefits: "..."
+      children: "..."
+      claim: "..."
+      contact: "..."
+      contact_email: "..."
+      contact_phone: "..."
+      contact_post: "..."
+      date_of_birth: "..."
+      date_of_death: "..."
+      deceased_name: "..."
+      fee: "..."
+      form_name: "..."
+      income: "..."
+      married: "..."
+      ni_number: "..."
+      personal: "..."
+      probate: "..."
+      savings: "..."
+      title: Gwiriwch y manylion
+    marital_status_false: "..."
+    marital_status_true: "..."
+    probate_case_: ''
+    probate_case_false: "..."
+    probate_case_true: "..."
+    truth:
+      button: "..."
+      heading: "..."
+      statement: "..."
+  terms:
+    heading: "..."
+    sections:
+    - title: 
+      parts:
+      - p: "..."
+    - title: "..."
+      parts:
+      - p: "..."
+      - p: "..."
+      - p: "..."
+    - title: "..."
+      parts:
+      - p: "..."
+      - ul:
+        - li: "..."
+        - li: "..."
+        - li: "..."
+    - title: "..."
+      parts:
+      - p: "..."
+      - p: "..."
+      - p: "..."
+      - p: "..."
+    - title: "..."
+      parts:
+      - p: "..."
+      - p: "..."
+      - p: "..."
+      - p: "..."
+    - title: "..."
+      parts:
+      - p: "..."
+      - p: "..."
+      - p: "..."
+      - p: "..."
+      sections:
+      - title: "..."
+        parts:
+        - p: "..."
+        - p: "..."
+      - title: "..."
+        parts:
+        - p: "..."
+        - p: "..."
+        - p: "..."
+        - ul:
+          - li: "..."
+          - li: "..."
+          - li: "..."
+        - p: "..."
+        - ul:
+          - li: "..."
+          - li: "..."
+          - li: "..."
+        - p: "..."
+    - title: "..."
+      parts:
+      - p: "..."
+      - p: "..."
+    - title: "..."
+      parts:
+      - p: "..."
+      - p: "..."
+      - p: "..."
+      - p: "..."
+      sections:
+      - title: "..."
+        parts:
+        - p: "..."
+      - title: "..."
+        parts:
+        - p: "..."
+      - title: "..."
+        parts:
+        - p: "..."
+      - title: "..."
+        parts:
+        - p: "..."
+    - title: "..."
+      parts:
+      - p: "..."
+      - p: "..."
+    title: "..."

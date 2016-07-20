@@ -1,9 +1,5 @@
 module Forms
-  class SavingsAndInvestment < Base
-    attribute :choice, Symbol
-
-    validates :choice, inclusion: { in: %i[less between more] }
-
+  class SavingsAndInvestment < BaseRange
     private
 
     def export_params

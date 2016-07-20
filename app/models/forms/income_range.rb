@@ -1,9 +1,5 @@
 module Forms
-  class IncomeRange < Base
-    attribute :choice, Symbol
-
-    validates :choice, inclusion: { in: %i[less between more] }
-
+  class IncomeRange < BaseRange
     private
 
     def export_params

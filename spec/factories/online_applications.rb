@@ -44,6 +44,12 @@ FactoryGirl.define do
       max_threshold_exceeded false
     end
 
+    trait :income_not_set do
+      income nil
+      income_min_threshold_exceeded nil
+      income_max_threshold_exceeded nil
+    end
+
     trait :no_income do
       income 0
     end

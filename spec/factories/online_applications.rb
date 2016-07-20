@@ -49,7 +49,7 @@ FactoryGirl.define do
     end
 
     trait :income_between_thresholds do
-      income nil
+      income 1500
       income_min_threshold_exceeded true
       income_max_threshold_exceeded false
     end

@@ -53,5 +53,18 @@ RSpec.describe ClearDownstreamQuestions do
         end
       end
     end
+
+    context 'when the question is "income_range"' do
+      let(:question) { :income_range }
+      let(:old_online_application) { build :online_application, :income_between_thresholds }
+
+      context 'when the range has changed' do
+        let(:new_online_application) { build :online_application, :income_below_thresholds }
+
+        it 'clears income_amount questions' do
+          expect(storage).to have_received(:clear_form).with(:income_amount)
+        end
+      end
+    end
   end
 end

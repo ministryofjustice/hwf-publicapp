@@ -181,7 +181,7 @@ module FeatureSteps
   end
 
   def fill_income_range
-    choose 'income_range_choice_less'
+    choose 'income_range_choice_between'
     click_button 'Continue'
   end
 

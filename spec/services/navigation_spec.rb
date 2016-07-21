@@ -26,7 +26,7 @@ RSpec.describe Navigation do
         let(:current_question) { current_question }
 
         it "routes to #{next_question} question" do
-          is_expected.to eql(question_path(next_question))
+          is_expected.to eql(question_path(next_question, locale: :en))
         end
       end
     end
@@ -40,7 +40,7 @@ RSpec.describe Navigation do
         let(:benefits) { true }
 
         it 'routes to the probate question (skips dependent and income)' do
-          is_expected.to eql(question_path(:probate))
+          is_expected.to eql(question_path(:probate, locale: :en))
         end
 
         context 'when the application is for ET' do
@@ -55,7 +55,7 @@ RSpec.describe Navigation do
         let(:benefits) { false }
 
         it 'routes to the dependent question' do
-          is_expected.to eql(question_path(:dependent))
+          is_expected.to eql(question_path(:dependent, locale: :en))
         end
       end
     end
@@ -67,7 +67,7 @@ RSpec.describe Navigation do
         let(:online_application) { build :online_application, :extra_savings_question_required }
 
         it 'routes to the extra question' do
-          is_expected.to eql(question_path(:savings_and_investment_extra))
+          is_expected.to eql(question_path(:savings_and_investment_extra, locale: :en))
         end
       end
 
@@ -75,7 +75,7 @@ RSpec.describe Navigation do
         let(:online_application) { build :online_application }
 
         it 'routes to the benefit question' do
-          is_expected.to eql(question_path(:benefit))
+          is_expected.to eql(question_path(:benefit, locale: :en))
         end
       end
     end
@@ -84,7 +84,7 @@ RSpec.describe Navigation do
       let(:current_question) { :contact }
 
       it 'routes to the summary page' do
-        is_expected.to eql(summary_path)
+        is_expected.to eql(summary_path(locale: :en))
       end
     end
 
@@ -95,13 +95,13 @@ RSpec.describe Navigation do
         let(:online_application) { build :online_application, :no_income }
 
         it 'routes to the probate question' do
-          is_expected.to eql(question_path(:probate))
+          is_expected.to eql(question_path(:probate, locale: :en))
         end
       end
 
       context 'when the application is not 0 income - some income sources selected' do
         it 'routes to the income_range question' do
-          is_expected.to eql(question_path(:income_range))
+          is_expected.to eql(question_path(:income_range, locale: :en))
         end
       end
     end

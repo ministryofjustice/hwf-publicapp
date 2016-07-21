@@ -10,7 +10,7 @@ RSpec.describe HealthStatus::HealthCheck, type: :service do
 
   before do
     stub_request(:get, "http://submit.to.this/healthcheck.json").
-      to_return(status: 200, body: json_returned, headers: {})
+      to_return(status: downstream_api_ok? ? 200 : 500, body: json_returned, headers: {})
     allow(SubmitApplication).to receive(:new).and_return(submit_application)
   end
 

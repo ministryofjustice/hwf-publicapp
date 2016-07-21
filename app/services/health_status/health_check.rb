@@ -31,14 +31,14 @@ module HealthStatus
     end
 
     def downstream_api_ok?
-      json = JSON.parse(staff_app_health_check_result)
-      @downstream_api_ok = json['ok']
+      @downstream_api_ok = staff_app_health_check_result
     end
 
     def staff_app_health_check_result
-      RestClient.get("#{Settings.submission.url}/healthcheck.json")
-    rescue => e
-      e.response
+      json = JSON.parse(RestClient.get("#{Settings.submission.url}/healthcheck.json"))
+      json['ok']
+    rescue
+      false
     end
   end
 end

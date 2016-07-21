@@ -8,6 +8,8 @@ class OnlineApplication
   attribute :amount, Integer
   attribute :benefits, Boolean
   attribute :children, Integer
+  attribute :income_min_threshold_exceeded, Boolean
+  attribute :income_max_threshold_exceeded, Boolean
   attribute :income, Integer
   attribute :refund, Boolean
   attribute :date_fee_paid, Date

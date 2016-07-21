@@ -1,13 +1,13 @@
 module Forms
-  class IncomeRange < Base
-    attribute :choice, Symbol
-
-    validates :choice, inclusion: { in: %i[less between more] }
-
+  class IncomeRange < BaseRange
     private
 
-    def export_params
-      {}
+    def min_threshold_name
+      :income_min_threshold_exceeded
+    end
+
+    def max_threshold_name
+      :income_max_threshold_exceeded
     end
   end
 end

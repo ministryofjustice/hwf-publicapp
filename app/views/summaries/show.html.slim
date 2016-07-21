@@ -52,10 +52,10 @@ table.summary
           span.visuallyhidden
             | &nbsp;
             =t('children', scope: 'summary.labels').downcase
-    - if @summary.income
+    - if @summary.income_text
       tr
         th scope="row" =t('income', scope: 'summary.labels')
-        td =number_to_currency(@summary.income, precision: 2, unit: '£')
+        td =@summary.income_text
         td.right= link_to question_path(:income_kind) do
           | Change
           span.visuallyhidden

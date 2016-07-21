@@ -14,8 +14,6 @@ RSpec.describe Navigation do
       marital_status: :savings_and_investment,
       savings_and_investment_extra: :benefit,
       dependent: :income_kind,
-      income_kind: :income_range,
-      income_range: :income_amount,
       income_amount: :probate,
       probate: :claim,
       claim: :national_insurance,
@@ -98,5 +96,34 @@ RSpec.describe Navigation do
         end
       end
     end
+
+    context 'for income_range question' do
+      let(:current_question) { :income_range }
+
+      context 'when the application is between thresholds' do
+        let(:online_application) { build :online_application, :income_between_thresholds }
+
+        it 'routes to the income_amount question' do
+          is_expected.to eql(question_path(:income_amount))
+        end
+      end
+
+      context 'when the application is below thresholds' do
+        let(:online_application) { build :online_application, :income_below_thresholds }
+
+        it 'routes to the probate question' do
+          is_expected.to eql(question_path(:probate))
+        end
+      end
+
+      context 'when the application is above thresholds' do
+        let(:online_application) { build :online_application, :income_above_thresholds }
+
+        it 'routes to the probate question' do
+          is_expected.to eql(question_path(:probate))
+        end
+      end
+    end
+
   end
 end

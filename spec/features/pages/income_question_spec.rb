@@ -49,7 +49,7 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        choose :income_range_choice_less
+        choose :income_range_choice_between
         click_button 'Continue'
       end
 

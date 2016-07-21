@@ -17,7 +17,7 @@ class Navigation
   private
 
   def next_question_id
-    if skip_income? || skip_further_income?
+    if skip_income? || skip_income_range? || skip_income_amount?
       :probate
     elsif skip_savings_and_investment_extra?
       :benefit
@@ -31,8 +31,14 @@ class Navigation
     @current_question == :benefit && @online_application.benefits?
   end
 
-  def skip_further_income?
-    @current_question == :income_kind && @online_application.income == 0
+  def skip_income_range?
+    (@current_question == :income_kind && @online_application.income == 0)
+  end
+
+  def skip_income_amount?
+    @current_question == :income_range &&
+      (!@online_application.income_min_threshold_exceeded ||
+        @online_application.income_max_threshold_exceeded)
   end
 
   def skip_savings_and_investment_extra?

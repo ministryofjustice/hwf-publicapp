@@ -30,7 +30,7 @@ RSpec.feature 'As a user' do
     check 'income_kind_applicant_5'
     click_button 'Continue'
     expect(page).to have_content 'How much income do you receive each month?'
-    choose 'income_range_choice_less'
+    choose 'income_range_choice_between'
     click_button 'Continue'
     expect(page).to have_content 'What’s your total monthly income?'
     fill_in 'income_amount_amount', with: '100'

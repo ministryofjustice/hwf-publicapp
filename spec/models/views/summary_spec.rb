@@ -67,6 +67,41 @@ RSpec.describe Views::Summary do
     end
   end
 
+  describe '#income_text' do
+    let(:threshold_attributes) { { married: true, children: 3 } }
+    subject { summary.income_text }
+
+    context 'when the income is between the thresholds' do
+      let(:online_application) { build :online_application, :income_between_thresholds, income: 1600 }
+
+      it 'returns the exact income amount formatted as a currency' do
+        is_expected.to eql('£1,600')
+      end
+    end
+
+    context 'when the income is below the thresholds' do
+      let(:online_application) { build :online_application, :income_below_thresholds, threshold_attributes }
+
+      it 'returns copy saying the applicant earns less than the calculated threshold' do
+        is_expected.to eql('Less than £1,980')
+      end
+    end
+
+    context 'when the income is above the thresholds' do
+      let(:online_application) { build :online_application, :income_above_thresholds, threshold_attributes }
+
+      it 'returns copy saying the applicant earns more than the calculated threshold' do
+        is_expected.to eql('More than £5,980')
+      end
+    end
+
+    context 'when income is not set' do
+      let(:online_application) { build :online_application, :income_not_set, threshold_attributes }
+
+      it { is_expected.to be nil }
+    end
+  end
+
   describe '#refund_text' do
     subject { summary.refund_text }
 

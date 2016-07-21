@@ -22,7 +22,17 @@ module Views
       elsif online_application.over_61?
         I18n.t('between', scope: scope)
       else
-        number_to_currency(online_application.amount, precision: 0, unit: '£')
+        format_currency(online_application.amount)
+      end
+    end
+
+    def income_text
+      if online_application.income_min_threshold_exceeded? == false
+        format_below_threshold
+      elsif online_application.income_max_threshold_exceeded?
+        format_above_threshold
+      elsif online_application.income
+        format_currency(online_application.income)
       end
     end
 
@@ -48,6 +58,24 @@ module Views
 
     def payment_date
       ", on #{date_fee_paid}" if refund
+    end
+
+    def format_currency(amount)
+      number_to_currency(amount, precision: 0, unit: '£')
+    end
+
+    def income_thresholds
+      Views::IncomeThresholds.new(online_application)
+    end
+
+    def format_above_threshold
+      scope = 'questions.income_range.range'
+      I18n.t('more', scope: scope, max_threshold: format_currency(income_thresholds.max_threshold))
+    end
+
+    def format_below_threshold
+      scope = 'questions.income_range.range'
+      I18n.t('less', scope: scope, min_threshold: format_currency(income_thresholds.min_threshold))
     end
   end
 end

@@ -14,7 +14,7 @@
 
 //= require jquery_ujs
 
-//= require details.polyfill
+//= require details.polyfill.iecompatible
 //= require is-nan.polyfill
 
 //= require_tree ./modules

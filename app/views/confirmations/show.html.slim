@@ -25,6 +25,7 @@ h1.heading-large
 
 
 = form_tag(done_confirmation_path, method: :get, class: 'util_mb-medium util_mt-medium') do
+  = hidden_field_tag :locale, params['locale']
   = submit_tag(t('continue', scope: 'confirmation.default'), class: 'button', role: 'button')
 
 .js-only.no-print

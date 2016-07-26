@@ -2,10 +2,9 @@
   = t('title', scope: @form.i18n_scope)
   = ' - '
 
-h1.heading-large
-  span.heading-secondary= t('breadcrumb', scope: @form.i18n_scope)
-  span.visuallyhidden
-    | :&nbsp;
+p.step-info.util_mt-large.util_mb-0
+  = t('breadcrumb', scope: @form.i18n_scope)
+h1.heading-large.util_mt-0
   = t(@title_view.i18n_title, scope: @form.i18n_scope)
 
 = render('shared/error_block', form: @form) if @form.errors.any?

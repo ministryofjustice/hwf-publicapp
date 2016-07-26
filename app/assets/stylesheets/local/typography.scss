@@ -8,6 +8,11 @@ li,
   margin-bottom: 0.625em;
 }
 
+.step-info {
+  @include core-24;
+  color: $grey-1;
+}
+
 .hint {
   color: $grey-1;
 }

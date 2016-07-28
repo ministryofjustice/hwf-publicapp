@@ -11,8 +11,8 @@ gem 'virtus'
 gem 'zendesk_api'
 gem 'sentry-raven'
 
-gem 'govuk_frontend_toolkit', git: "https://github.com/alphagov/govuk_frontend_toolkit_gem.git", submodules: true
-gem 'govuk_elements_rails', git: 'https://github.com/ministryofjustice/govuk_elements_rails.git', submodules: true
+gem 'govuk_frontend_toolkit', '4.7.0'
+gem 'govuk_elements_rails', '0.3.0'
 gem 'jquery-rails'
 gem 'moj_template', '~> 0.23.2'
 gem 'sass-rails'

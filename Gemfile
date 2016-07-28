@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv-rails', groups: [:development, :test] # this has to be here because of load order
 
-gem 'rails', '~> 4.2.6'
+gem 'rails', '~> 4.2.7'
 
 gem 'config'
 gem 'date_validator'
@@ -15,7 +15,7 @@ gem 'govuk_frontend_toolkit', git: "https://github.com/alphagov/govuk_frontend_t
 gem 'govuk_elements_rails', git: 'https://github.com/ministryofjustice/govuk_elements_rails.git', submodules: true
 gem 'jquery-rails'
 gem 'moj_template', '~> 0.23.2'
-gem 'sass-rails', '5.0.4'
+gem 'sass-rails'
 gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'nokogiri', '~> 1.6.8'

@@ -605,6 +605,9 @@ cy:
       button: Cyflwyno cais a pharhau
       heading: Datganiad a datganiad o'r gwirionedd
       statement: Drwy gwblhau'r cais hwn a chlicio'r botwm 'Cyflwyno cais a pharhau', rydw i'n datgan fy mod yn credu bod yr wybodaeth a roddais yn y ffurflen hon yn gywir hyd eithaf fy ngwybodaeth. Os ceir i mi fod yn anwireddus neu anonest o fwriad, gellir dwyn achos troseddol am dwyll yn fy erbyn. Rydw i'n deall, os ydw i wedi rhoi gwybodaeth anwir neu os na ddarparaf dystiolaeth ychwanegol os gofynnir, y gellir gwrthod fy nghais ac y bydd y ffi lawn yn daladwy.
+  switch:
+    language: English
+    locale: en
   terms:
     heading: Telerau ac amodau
     sections:

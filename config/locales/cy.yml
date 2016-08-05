@@ -169,6 +169,9 @@ cy:
               less_than: Rhowch swm rhwng £3,000 a £15,999, neu ewch yn ôl i'r cwestiwn blaenorol am eich cynilion
             over_61:
               inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 61
+  application:
+    name: 'Helo i dalu ffioedd'
+    title: 'Helo i dalu ffioedd - MoJ'
   confirmation:
     back_to_start: Yn ôl i'r dechrau
     default:

@@ -1,5 +1,10 @@
 - content_for :page_title
-  = Rails.application.config.app_title
+  = t('application.title')
+
+- content_for :proposition_header
+  .header-proposition
+    .content
+      =link_to t('application.name'), root_path, id: 'proposition-name'
 
 - content_for :stylesheets
   = stylesheet_link_tag('application.css')

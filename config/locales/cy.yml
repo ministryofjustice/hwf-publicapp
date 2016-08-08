@@ -40,7 +40,7 @@ cy:
         last_name: Enw olaf
         title: Teitl
       forms/probate:
-        date_of_death: Dyddiad marwolaeth
+        date_of_death: Dyddiad
         deceased_name: Enw'r ymadawedig
       forms/savings_and_investment_extra:
         amount: Beth yw swm y cynilion a buddsoddiadau sydd gennych chi a'ch partner?
@@ -421,10 +421,10 @@ cy:
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
-        kinds_list_married: 'Rhowch gyfanswm yr incwm misol rydych chi a''ch partner yn ei gael o:'
-        kinds_list_married_refund: 'Rhowch gyfanswm yr incwm misol roeddech chi a''ch partner yn ei gael o:'
-        kinds_list_single: 'Rhowch gyfanswm yr incwm misol rydych chi''n ei gael o:'
-        kinds_list_single_refund: 'Rhowch gyfanswm yr incwm misol roeddech chi''n ei gael o:'
+        kinds_list_married: 'Rhowch gyfanswm yr incwm misol rydych chi a''ch partner yn ei gael:'
+        kinds_list_married_refund: 'Rhowch gyfanswm yr incwm misol roeddech chi a''ch partner yn ei gael:'
+        kinds_list_single: 'Rhowch gyfanswm yr incwm misol rydych chi''n ei gael:'
+        kinds_list_single_refund: 'Rhowch gyfanswm yr incwm misol roeddech chi''n ei gael:'
       text_married: Beth yw cyfanswm eich incwm misol?
       text_married_refund: Beth oedd cyfanswm eich incwm misol?
       text_single: Beth yw cyfanswm eich incwm misol?
@@ -460,10 +460,10 @@ cy:
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
-        kinds_list_married: 'Dewiswch swm yr incwm misol rydych chi a''ch partner yn ei gael o:'
-        kinds_list_married_refund: 'Dewiswch swm yr incwm misol roeddech chi a''ch partner yn ei gael o:'
-        kinds_list_single: 'Dewiswch swm yr incwm misol rydych chi''n ei gael o:'
-        kinds_list_single_refund: 'Dewiswch swm yr incwm misol roeddech chi''n ei gael o:'
+        kinds_list_married: 'Dewiswch swm yr incwm misol rydych chi a''ch partner yn ei gael:'
+        kinds_list_married_refund: 'Dewiswch swm yr incwm misol roeddech chi a''ch partner yn ei gael:'
+        kinds_list_single: 'Dewiswch swm yr incwm misol rydych chi''n ei gael:'
+        kinds_list_single_refund: 'Dewiswch swm yr incwm misol roeddech chi''n ei gael:'
       range:
         between: Rhwng %{min_threshold} a %{max_threshold}
         less: Llai na %{min_threshold}
@@ -605,7 +605,7 @@ cy:
       form_name: Enw neu rif y ffurflen
       income: Incwm
       married: Statws
-      ni_number: rhif Yswiriant Gwladol
+      ni_number: Yswiriant Gwladol
       personal: Enw llawn
       probate: Achos profiant
       savings: Cynilion a buddsoddiadau

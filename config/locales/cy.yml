@@ -1,4 +1,9 @@
 cy:
+  dictionary:
+    single_no: &single_no 'Nac ydw'
+    single_yes: &single_yes 'Ydw'
+    married_no: &married_no 'Nac ydy'
+    married_yes: &married_yes 'Ydy'
   activemodel:
     attributes:
       forms/applicant_address:
@@ -549,8 +554,14 @@ cy:
       amount_married: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi a'ch partner?
       amount_single: Faint o gynilion a buddsoddiadau rhwng £3,000 a £15,999 sydd gennych chi?
       breadcrumb: Cam 5 o 20
-      over_61_false: Nac ydw
-      over_61_true: Ydw
+      over_61_false_single: *single_no
+      over_61_true_single: *single_yes
+      over_61_false_married: *married_no
+      over_61_true_married: *married_yes
+      over_61_false_single_refund: *single_no
+      over_61_true_single_refund: *single_yes
+      over_61_false_married_refund: *married_no
+      over_61_true_married_refund: *married_yes
       text_married: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
       text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
       title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?

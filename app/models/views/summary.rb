@@ -3,6 +3,10 @@ module Views
     # TODO: Use a different way of including helpers
     include ActionView::Helpers::NumberHelper
 
+    def income_validation_fails?
+      benefits.eql?(false) && income.nil?
+    end
+
     def refund_text
       message = I18n.t("fee_paid_#{refund}", scope: 'summary')
       "#{message}#{payment_date}"

@@ -9,6 +9,8 @@ RSpec.feature 'As a user' do
         choose 'dependent_children_true'
         fill_in :dependent_children_number, with: '10'
         click_button 'Continue'
+        check :income_kind_applicant_13
+        click_button 'Continue'
         page.visit '/summary'
       end
 
@@ -21,6 +23,8 @@ RSpec.feature 'As a user' do
       before do
         given_user_answers_questions_up_to(:dependent)
         choose 'dependent_children_false'
+        click_button 'Continue'
+        check :income_kind_applicant_13
         click_button 'Continue'
         page.visit '/summary'
       end

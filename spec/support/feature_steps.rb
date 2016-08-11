@@ -36,6 +36,27 @@ module FeatureSteps
     fill_contact
   end
 
+  def given_user_provides_all_data_for_below_threshold_income
+    visit '/'
+    click_link_or_button 'Apply now'
+    fill_form_name
+    fill_fee(true)
+    fill_marital_status
+    fill_savings_and_investment
+    fill_savings_and_investment_extra
+    fill_benefit
+    fill_dependent
+    fill_income_kind
+    fill_income_range(below: true)
+    fill_probate
+    fill_claim
+    fill_national_insurance
+    fill_dob
+    fill_personal_detail
+    fill_applicant_address
+    fill_contact
+  end
+
   def given_user_provides_all_data_for_benefit
     visit '/'
     click_link_or_button 'Apply now'
@@ -129,6 +150,20 @@ module FeatureSteps
     expect(page).to have_text 'You must email or post this help with fees reference number HWF-ABC123 along with your employment tribunal claim number to the employment tribunal.'
   end
 
+  def then_they_cannot_procced
+    expect(page).to have_content 'Check details'
+    expect(page).to have_content 'Not receiving eligible benefits'
+    expect(page).to have_content 'IncomePlease answer questions about your income'
+    expect(page).to have_content 'You’ve made changes. Please answer the highlighted questions to complete your application.'
+  end
+
+  def then_they_can_proceed
+    expect(page).to have_content 'Check details'
+    expect(page).to have_content 'Not receiving eligible benefits'
+    expect(page).to have_content 'IncomeLess than £1,085'
+    expect(page).to have_content 'Submit application and continue'
+  end
+
   def fill_contact
     fill_in 'contact_email', with: 'foo@bar.com'
     click_button 'Continue'
@@ -198,8 +233,12 @@ module FeatureSteps
     click_button 'Continue'
   end
 
-  def fill_income_range
-    choose 'income_range_choice_between'
+  def fill_income_range(below = false)
+    if below
+      choose :income_range_choice_less
+    else
+      choose :income_range_choice_between
+    end
     click_button 'Continue'
   end
 

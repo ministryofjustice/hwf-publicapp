@@ -4,7 +4,7 @@ module Views
     include ActionView::Helpers::NumberHelper
 
     def income_validation_fails?
-      benefits.eql?(false) && income.nil?
+      benefits.eql?(false) && income.nil? && income_text.nil?
     end
 
     def refund_text

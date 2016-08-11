@@ -33,10 +33,23 @@ RSpec.describe Views::Summary do
     end
 
     context 'when benefits are false' do
+      let(:threshold_attributes) { { married: true, children: 3, benefits: benefits } }
       let(:benefits) { false }
 
-      context 'and income is nil' do
-        let(:income) { nil }
+      context 'when the income is below the thresholds' do
+        let(:online_application) { build :online_application, :income_below_thresholds, threshold_attributes }
+
+        it { is_expected.to be false }
+      end
+
+      context 'when the income is above the thresholds' do
+        let(:online_application) { build :online_application, :income_above_thresholds, threshold_attributes }
+
+        it { is_expected.to be false }
+      end
+
+      context 'when income is not set' do
+        let(:online_application) { build :online_application, :income_not_set, threshold_attributes }
 
         it { is_expected.to be true }
       end

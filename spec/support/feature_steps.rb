@@ -36,6 +36,24 @@ module FeatureSteps
     fill_contact
   end
 
+  def given_user_provides_all_data_for_benefit
+    visit '/'
+    click_link_or_button 'Apply now'
+    fill_form_name
+    fill_fee
+    fill_marital_status
+    fill_savings_and_investment
+    fill_savings_and_investment_extra
+    fill_benefit(true)
+    fill_probate
+    fill_claim
+    fill_national_insurance
+    fill_dob
+    fill_personal_detail
+    fill_applicant_address
+    fill_contact
+  end
+
   def given_user_starts_an_application
     given_user_answers_questions_up_to(:savings_and_investment)
   end
@@ -195,8 +213,8 @@ module FeatureSteps
     click_button 'Continue'
   end
 
-  def fill_benefit
-    choose 'benefit_on_benefits_false'
+  def fill_benefit(benefit = false)
+    choose "benefit_on_benefits_#{benefit}"
     click_button 'Continue'
   end
 

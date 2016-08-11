@@ -11,6 +11,44 @@ RSpec.describe Views::Summary do
     end
   end
 
+  describe 'income_validation_fails?' do
+    subject { summary.income_validation_fails? }
+
+    let(:online_application) { build :online_application, income: income, benefits: benefits }
+
+    context 'when benefits are true' do
+      let(:benefits) { true }
+
+      context 'and income is nil' do
+        let(:income) { nil }
+
+        it { is_expected.to be false }
+      end
+
+      context 'and income is set' do
+        let(:income) { 0 }
+
+        it { is_expected.to be false }
+      end
+    end
+
+    context 'when benefits are false' do
+      let(:benefits) { false }
+
+      context 'and income is nil' do
+        let(:income) { nil }
+
+        it { is_expected.to be true }
+      end
+
+      context 'and income is set' do
+        let(:income) { 0 }
+
+        it { is_expected.to be false }
+      end
+    end
+  end
+
   describe '#form_name' do
     let(:online_application) { build :online_application, form_name: form_name }
 

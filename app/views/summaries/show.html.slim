@@ -8,6 +8,9 @@ h1.heading-large
     | :&nbsp;
   =t('title', scope: 'summary.labels')
 
+.text
+  p =t('summary.details')
+
 table.summary
   caption.visuallyhidden Please check the details of your application for help with fees
   tbody
@@ -43,24 +46,46 @@ table.summary
         span.visuallyhidden
           | &nbsp;
           =t('benefits', scope: 'summary.labels').downcase
-    - if @summary.children_text
+    - if @summary.income_validation_fails?
       tr
-        th scope="row" =t('children', scope: 'summary.labels')
-        td =@summary.children_text
+        th scope="row"
+          span.error-message = t('children', scope: 'summary.labels')
+        td.error
+          span.error-message =t('summary.missing_answer.dependents')
         td.right= link_to question_path(:dependent) do
           | Change
           span.visuallyhidden
             | &nbsp;
-            =t('children', scope: 'summary.labels').downcase
-    - if @summary.income_text
+            = t('children', scope: 'summary.labels').downcase
       tr
-        th scope="row" =t('income', scope: 'summary.labels')
-        td =@summary.income_text
+        th scope="row"
+          span.error-message = t('income', scope: 'summary.labels')
+        td.error
+          span.error-message =t('summary.missing_answer.income')
         td.right= link_to question_path(:income_kind) do
           | Change
           span.visuallyhidden
             | &nbsp;
-            =t('income', scope: 'summary.labels').downcase
+            = t('income', scope: 'summary.labels').downcase
+    -else
+      - if @summary.children_text
+        tr
+          th scope="row" =t('children', scope: 'summary.labels')
+          td =@summary.children_text
+          td.right= link_to question_path(:dependent) do
+            | Change
+            span.visuallyhidden
+              | &nbsp;
+              =t('children', scope: 'summary.labels').downcase
+      - if @summary.income_text
+        tr
+          th scope="row" =t('income', scope: 'summary.labels')
+          td =@summary.income_text
+          td.right= link_to question_path(:income_kind) do
+            | Change
+            span.visuallyhidden
+              | &nbsp;
+              =t('income', scope: 'summary.labels').downcase
     tr
       th scope="row" =t('fee', scope: 'summary.labels')
       td =@summary.refund_text
@@ -154,13 +179,16 @@ table.summary
             | &nbsp;
             =t('contact', scope: 'summary.labels').downcase
 
-.text
-  h2.heading-medium =t('heading', scope: 'summary.truth')
-  p =t('statement', scope: 'summary.truth')
-
-= form_tag(submission_path, method: :post, class: 'util_mb-medium util_mt-medium') do
-  = submit_tag(t('button', scope: 'summary.truth'), class: 'button', role: 'button')
-
+- if @summary.income_validation_fails?
+  .form-group.error.util_mt-small
+    span.util_mt-small.error-message =t('summary.invalid_footer')
+    p = link_to 'Continue', question_path(:dependent), class: 'button'
+- else
+  .text
+    h2.heading-medium = t('heading', scope: 'summary.truth')
+    p = t('statement', scope: 'summary.truth')
+    = form_tag(submission_path, method: :post, class: 'util_mb-medium util_mt-medium') do
+      = submit_tag(t('button', scope: 'summary.truth'), class: 'button', role: 'button')
 .text
   p
     strong.block.bold-small =t('session.note.heading')

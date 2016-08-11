@@ -2,6 +2,8 @@ en:
   dictionary:
     yes: &yes 'Yes'
     no: &no 'No'
+    # intentionally blank to align with welsh file
+    # intentionally blank to align with welsh file
   activemodel:
     attributes:
       forms/applicant_address:

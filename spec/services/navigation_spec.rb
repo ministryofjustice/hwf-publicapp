@@ -46,7 +46,7 @@ RSpec.describe Navigation do
         context 'when the application is for ET' do
           let(:form_name) { 'ET1' }
           it 'routes to the claim question (skips dependent and income)' do
-            is_expected.to eql(question_path(:claim))
+            is_expected.to eql(question_path(:claim, locale: :en))
           end
         end
       end
@@ -113,7 +113,7 @@ RSpec.describe Navigation do
         let(:online_application) { build :online_application, :income_between_thresholds }
 
         it 'routes to the income_amount question' do
-          is_expected.to eql(question_path(:income_amount))
+          is_expected.to eql(question_path(:income_amount, locale: :en))
         end
       end
 
@@ -121,7 +121,7 @@ RSpec.describe Navigation do
         let(:online_application) { build :online_application, :income_below_thresholds }
 
         it 'routes to the probate question' do
-          is_expected.to eql(question_path(:probate))
+          is_expected.to eql(question_path(:probate, locale: :en))
         end
       end
 
@@ -129,7 +129,7 @@ RSpec.describe Navigation do
         let(:online_application) { build :online_application, :income_above_thresholds }
 
         it 'routes to the probate question' do
-          is_expected.to eql(question_path(:probate))
+          is_expected.to eql(question_path(:probate, locale: :en))
         end
       end
     end

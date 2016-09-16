@@ -36,6 +36,8 @@ class QuestionFormFactory
   def self.form_class_name(id, online_application)
     if id == :claim
       online_application.et? ? 'Claim::Et' : 'Claim::Default'
+    elsif id == :probate && online_application.et?
+      'Claim::Et'
     else
       id.to_s.classify
     end

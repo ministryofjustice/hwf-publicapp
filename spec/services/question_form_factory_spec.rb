@@ -29,6 +29,20 @@ RSpec.describe QuestionFormFactory do
       end
     end
 
+    context 'probate question' do
+      let(:id) { :probate }
+
+      context 'when the online_application is an ET one' do
+        let(:online_application) { build(:online_application, :et) }
+
+        it { is_expected.to be_a(Forms::Claim::Et) }
+      end
+
+      context 'when the online_application is not an ET one' do
+        it { is_expected.to be_a(Forms::Probate) }
+      end
+    end
+
     context 'for other existing question' do
       let(:id) { :marital_status }
 

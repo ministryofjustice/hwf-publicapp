@@ -18,7 +18,7 @@ class Navigation
 
   def next_question_id
     if skip_income? || skip_income_range? || skip_income_amount?
-      :probate
+      probate_or_claim
     elsif skip_savings_and_investment_extra?
       :benefit
     else
@@ -44,5 +44,9 @@ class Navigation
   def skip_savings_and_investment_extra?
     @current_question == :savings_and_investment &&
       !@online_application.savings_and_investment_extra_required?
+  end
+
+  def probate_or_claim
+    @online_application.et? ? :claim : :probate
   end
 end

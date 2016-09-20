@@ -32,8 +32,9 @@ RSpec.describe Navigation do
     end
 
     context 'for benefit question' do
-      let(:online_application) { build :online_application, benefits: benefits }
+      let(:online_application) { build :online_application, benefits: benefits, form_name: form_name }
       let(:current_question) { :benefit }
+      let(:form_name) { nil }
 
       context 'when the application is benefit one' do
         let(:benefits) { true }
@@ -41,7 +42,15 @@ RSpec.describe Navigation do
         it 'routes to the probate question (skips dependent and income)' do
           is_expected.to eql(question_path(:probate))
         end
+
+        context 'when the application is for ET' do
+          let(:form_name) { 'ET1' }
+          it 'routes to the claim question (skips dependent and income)' do
+            is_expected.to eql(question_path(:claim))
+          end
+        end
       end
+
       context 'when the application is not a benefit one' do
         let(:benefits) { false }
 

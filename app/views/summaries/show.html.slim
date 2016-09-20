@@ -23,6 +23,14 @@ table.summary
           | &nbsp;
           =t('form_name', scope: 'summary.labels').downcase
     tr
+      th scope="row" = t('fee', scope: 'summary.labels')
+      td = @summary.refund_text
+      td.right= link_to question_path(:fee) do
+        | Change
+        span.visuallyhidden
+          | &nbsp;
+          = t('fee', scope: 'summary.labels').downcase
+    tr
       th scope="row" =t('married', scope: 'summary.labels')
       td= t("marital_status_#{@summary.married}", scope: 'summary')
       td.right= link_to question_path(:marital_status) do
@@ -86,14 +94,6 @@ table.summary
             span.visuallyhidden
               | &nbsp;
               =t('income', scope: 'summary.labels').downcase
-    tr
-      th scope="row" =t('fee', scope: 'summary.labels')
-      td =@summary.refund_text
-      td.right= link_to question_path(:fee) do
-        | Change
-        span.visuallyhidden
-          | &nbsp;
-          =t('fee', scope: 'summary.labels').downcase
     -if @summary.probate
       tr
         th scope="row" = t('deceased_name', scope: 'summary.labels')

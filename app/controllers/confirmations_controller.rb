@@ -26,8 +26,17 @@ class ConfirmationsController < ApplicationController
   end
 
   def build_ga_event
-    time = storage.time_taken < 0 ? 1000 : storage.time_taken
+    time = calculate_time_taken
     type = online_application.benefits ? 'benefit' : 'income'
     ga_events << "ga('send', 'timing', 'Application', 'Complete', #{time}, '#{type}')"
+  end
+
+  def calculate_time_taken
+    return 0 unless storage_has_time?
+    storage.time_taken
+  end
+
+  def storage_has_time?
+    storage.started? && storage.time_taken > 0
   end
 end

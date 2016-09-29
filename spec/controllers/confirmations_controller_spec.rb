@@ -11,6 +11,7 @@ RSpec.describe ConfirmationsController, type: :controller do
     allow(controller).to receive(:session).and_return(session)
     allow(Storage).to receive(:new).with(session).and_return(storage)
     allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
+    allow(storage).to receive(:started?).and_return(true)
   end
 
   describe 'GET #show' do

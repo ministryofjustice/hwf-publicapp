@@ -4,14 +4,14 @@ RSpec.describe ConfirmationsController, type: :controller do
   let(:session) { double }
   let(:online_application) { double(benefits: true) }
   let(:result) { { result: true, message: 'HWF-010101' } }
-  let(:storage) { double(submission_result: result, time_taken: 600) }
+  let(:storage_started) { true }
+  let(:storage) { double(submission_result: result, time_taken: 600, started?: storage_started) }
   let(:builder) { double(online_application: online_application) }
 
   before do
     allow(controller).to receive(:session).and_return(session)
     allow(Storage).to receive(:new).with(session).and_return(storage)
     allow(OnlineApplicationBuilder).to receive(:new).with(storage).and_return(builder)
-    allow(storage).to receive(:started?).and_return(true)
   end
 
   describe 'GET #show' do
@@ -29,6 +29,17 @@ RSpec.describe ConfirmationsController, type: :controller do
 
     it 'assigns the response object from the session' do
       expect(assigns(:result)).to eql(result)
+    end
+
+    include_examples 'cache suppress headers'
+
+    context 'when storage has been cleared' do
+      let(:storage_started) { false }
+      let(:result) { nil }
+
+      it 'redirects to the home page' do
+        expect(response).to redirect_to(root_path)
+      end
     end
   end
 
@@ -48,6 +59,16 @@ RSpec.describe ConfirmationsController, type: :controller do
     it 'assigns the response object from the session' do
       expect(assigns(:result)).to eql(result)
     end
+
+    include_examples 'cache suppress headers'
+
+    context 'when storage has been cleared' do
+      let(:storage_started) { false }
+
+      it 'redirects to the home page' do
+        expect(response).to redirect_to(root_path)
+      end
+    end
   end
 
   describe 'GET #refund' do
@@ -66,6 +87,16 @@ RSpec.describe ConfirmationsController, type: :controller do
     it 'assigns the response object from the session' do
       expect(assigns(:result)).to eql(result)
     end
+
+    include_examples 'cache suppress headers'
+
+    context 'when storage has been cleared' do
+      let(:storage_started) { false }
+
+      it 'redirects to the home page' do
+        expect(response).to redirect_to(root_path)
+      end
+    end
   end
 
   describe 'GET #et' do
@@ -83,6 +114,16 @@ RSpec.describe ConfirmationsController, type: :controller do
 
     it 'assigns the response object from the session' do
       expect(assigns(:result)).to eql(result)
+    end
+
+    include_examples 'cache suppress headers'
+
+    context 'when storage has been cleared' do
+      let(:storage_started) { false }
+
+      it 'redirects to the home page' do
+        expect(response).to redirect_to(root_path)
+      end
     end
   end
 end

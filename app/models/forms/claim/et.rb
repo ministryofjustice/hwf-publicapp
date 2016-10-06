@@ -9,7 +9,8 @@ module Forms
 
       def export_params
         {
-          case_number: identifier
+          case_number: identifier,
+          probate: false
         }
       end
     end

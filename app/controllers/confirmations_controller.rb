@@ -1,4 +1,7 @@
 class ConfirmationsController < ApplicationController
+  before_action :redirect_if_storage_unstarted
+  after_action :suppress_browser_cache
+
   def show
     prepare_view
     build_ga_event

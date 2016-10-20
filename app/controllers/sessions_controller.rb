@@ -15,7 +15,11 @@ class SessionsController < ApplicationController
 
   def destroy
     storage_with_clear
-    redirect_to(root_path)
+    if params['redirect'] == 'false'
+      render text: ''
+    else
+      redirect_to root_path
+    end
   end
 
   private

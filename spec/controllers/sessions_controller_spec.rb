@@ -59,11 +59,30 @@ RSpec.describe SessionsController, type: :controller do
     before do
       expect(Storage).to receive(:new).with(session, clear: true).and_return(storage)
 
-      delete :destroy
+      delete :destroy, redirect: redirect
     end
 
-    it 'redirects to the start page' do
-      expect(response).to redirect_to(root_path)
+    context 'when redirect param is explicitly false' do
+      let(:redirect) { 'false' }
+
+      it 'returns success' do
+        expect(response).to have_http_status(:success)
+      end
+      it 'returns an empty page' do
+        expect(response.body).to eql ''
+      end
+    end
+
+    context 'when redirect param is not false' do
+      let(:redirect) { nil }
+
+      it 'redirects' do
+        expect(response).to have_http_status(:redirect)
+      end
+
+      it 'redirects to the start page' do
+        expect(response).to redirect_to(root_path)
+      end
     end
   end
 end

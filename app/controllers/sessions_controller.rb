@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
   def destroy
     storage_with_clear
     if params['redirect'] == 'false'
+      flash[:error] = t('session.expired_message')
       render text: ''
     else
       redirect_to root_path

@@ -20,7 +20,7 @@ moj.Modules.sessionModal = (function() {
   init = function() {
   };
 
-  showModal = function( refreshSession, sessionMinutes, warnBeforeEndMinutes ) {
+  showModal = function( refreshSession, endSession, sessionMinutes, warnBeforeEndMinutes ) {
     var source = $( '#extend-session' ).html(),
         template = Handlebars.compile( source ),
         sessionString,
@@ -49,12 +49,20 @@ moj.Modules.sessionModal = (function() {
       escClose:       false,
       onShow: function() {
         window.setTimeout( function() {
-          $('#session-modal').find('a#extend').focus();
+          // $('#session-modal').find('a#extend').focus();
         }, 100 );
       }
     } );
 
-    $( '#session-modal' ).find( 'a#extend' ).on( 'click' , ( function( _this, callback ) {
+    $( '#session-modal' ).find( 'button#destroy' ).on( 'click' , ( function( _this, callback ) {
+      return function( e ) {
+        e.preventDefault();
+        callback();
+        _this.closeModal();
+      };
+    } ( this, endSession ) ) );
+
+    $( '#session-modal' ).find( 'button#extend' ).on( 'click' , ( function( _this, callback ) {
       return function( e ) {
         e.preventDefault();
         callback();

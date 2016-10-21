@@ -58,8 +58,11 @@ moj.Modules.sessionTimeout = (function() {
     var minutesToEnd = (endSessionTime.getTime() - new Date().getTime()) / (60 * 1000);
 
     if( minutesToEnd > 0) {
-      moj.Modules.sessionModal.showModal( function() { refreshSession(); },
-        sessionMinutes, minutesToEnd );
+      moj.Modules.sessionModal.showModal(
+        function() { refreshSession(); },
+        function() { endSession(); },
+        sessionMinutes,
+        minutesToEnd);
     } else {
       endSession();
     }

@@ -1,9 +1,11 @@
 script#extend-session(type='text/x-handlebars-template')
   .modal#session-modal
-    h2
-      |Your session will expire in
+    h2 Want more time to continue?
+    p
+      |Your application will be deleted in
       span#timeRemaining
         |{{remainingString}}
+      | For security reasons, any information will not be saved.
     p
-      |Get more time to complete the form:
-      a#extend(href='#') extend for {{sessionString}}
+      button.button.secondary.cancel#extend(href='#') Yes, continue application
+      button.button.secondary.abort#destroy(href='#') No, delete my details

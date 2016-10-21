@@ -15,7 +15,7 @@ moj.Modules.sessionTimeout = (function() {
       endSessionTimer = null,
       endSessionTime = null,
       sessionMinutes = moj.Modules.sessionLength,
-      warnMinutesBeforeEnd = 2,
+      warnMinutesBeforeEnd = moj.Modules.sessionWarnRemaining,
       elapsedMinutes,
       minute = 60 * 1000,
       quick = false,

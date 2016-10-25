@@ -62,8 +62,19 @@ RSpec.describe SessionsController, type: :controller do
       delete :destroy, redirect: redirect
     end
 
-    context 'when redirect param is explicitly false' do
-      let(:redirect) { 'false' }
+    context 'when redirect param is set to manual' do
+      let(:redirect) { 'manual' }
+
+      it 'returns success' do
+        expect(response).to have_http_status(:success)
+      end
+      it 'returns an empty page' do
+        expect(response.body).to eql ''
+      end
+    end
+
+    context 'when redirect param is set to timeout' do
+      let(:redirect) { 'timeout' }
 
       it 'returns success' do
         expect(response).to have_http_status(:success)

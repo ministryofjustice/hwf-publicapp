@@ -51,7 +51,7 @@ moj.Modules.sessionTimeout = (function() {
     new window.EndTimer(function() { showPopup(); }, popupDelay, sessionStartTime );
 
     var endSessionDelay = sessionMinutes;
-    endSessionTimer = new window.EndTimer(function() { endSession(); }, endSessionDelay, sessionStartTime );
+    endSessionTimer = new window.EndTimer(function() { endSession('timeout'); }, endSessionDelay, sessionStartTime );
   };
 
   showPopup = function() {
@@ -60,11 +60,11 @@ moj.Modules.sessionTimeout = (function() {
     if( minutesToEnd > 0) {
       moj.Modules.sessionModal.showModal(
         function() { refreshSession(); },
-        function() { endSession(); },
+        function() { endSession('manual'); },
         sessionMinutes,
         minutesToEnd);
     } else {
-      endSession();
+      endSession('timeout');
     }
   };
 
@@ -76,13 +76,13 @@ moj.Modules.sessionTimeout = (function() {
     } );
   };
 
-  endSession = function() {
+  endSession = function(redirect) {
     $.ajax( {
       type:     'DELETE',
       beforeSend: $.rails.CSRFProtection,
       url:      basePath + '/session',
       data:     {
-        redirect:   false
+        redirect:   redirect
       },
       success:  function( data, textStatus, jqXHR ) {
         document.location.href = basePath + '/';

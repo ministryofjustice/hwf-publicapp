@@ -576,10 +576,27 @@ en:
       confirm_cancel: "Yes, cancel"
       return_to_application: "No, return to current application"
   session:
-    expired_message: You didn't enter any information for more than 10 minutes so you need to start your application again.
+    expiring:
+      heading: 'Want more time to continue?'
+      in: 'Your application will be deleted in'
+      security: 'For security reasons, any information will not be saved.'
+      extend: 'Yes, continue my application'
+      destroy: 'No, delete my details'
+    expired:
+      title: 'Session expired'
+      heading: 'Your application has been cancelled'
+      description: 'For your security, the information you’ve entered has automatically been deleted.'
+      restart: 'You can start again below.'
+      restart_button: 'Start again'
+    canceled_message: "Your application has been deleted. Please start again."
+    expired_message: "You've been inactive for 30 minutes. Your application has been automatically deleted. Please start again."
+    minute_single: 'minute'
+    second_single: 'second'
+    minutes_plural: 'minutes'
+    seconds_plural: 'seconds'
     note:
-      heading: Please note
-      text: If you don’t enter any information for more than 10 minutes, then your session will time out and you’ll need to start again.
+      heading: 'Security time-out'
+      text: "If it looks like you're inactive for more than 30 minutes, we'll automatically delete your application and you'll need to start again."
   start_application: Apply now
   submit_button: Continue
   summary:

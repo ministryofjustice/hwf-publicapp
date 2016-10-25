@@ -576,10 +576,27 @@ cy:
     confirm_cancel: "Ie, canslo"
     return_to_application: "Na, mynd yn ôl at y cais cyfredol"
   session:
-    expired_message: Dydych chi ddim wedi mewnbynnu gwybodaeth ers mwy na 10 munud felly rhaid i chi ailddechrau'ch cais.
+    expiring:
+      heading: "Angen rhagor o amser i fynd ymlaen?"
+      in: "Bydd eich cais yn cael ei ddileu mewn"
+      security: "Am resymau diogelwch, ni fydd unrhyw wybodaeth yn cael ei chadw."
+      extend: "Ie, mynd ymlaen gyda fy nghais"
+      destroy: "Na, dileu fy manylion"
+    expired:
+      title: "Sesiwn wedi dod i ben"
+      heading: "Mae eich cais wedi cael ei ganslo"
+      description: "Ar gyfer eich diogelwch, mae'r wybodaeth yr ydych wedi'i rhoi wedi cael ei dileu yn awtomatig."
+      restart: "Gallwch ddechrau eto isod."
+      restart_button: "Dechrau eto"
+    canceled_message: "Mae eich cais wedi cael ei ddileu. Rhowch gynnig arall arni."
+    expired_message: "Nid ydych wedi bod weithredol ers 30 munud. Mae eich cais wedi cael ei ddileu yn awtomatig. Rhowch gynnig arall arni."
+    minute_single: "munud"
+    second_single: "eiliad"
+    minutes_plural: "o funudau"
+    seconds_plural: "o eiliadau"
     note:
-      heading: Sylwch
-      text: Os na fyddwch chi wedi mewnbynnu gwybodaeth ers mwy na 10 munud, yna bydd eich sesiwn yn dod i ben a bydd angen i chi ailddechrau.
+      heading: 'Security time-out'
+      text: "If it looks like you're inactive for more than 30 minutes, we'll automatically delete your application and you'll need to start again."
   start_application: Gwnewch gais nawr
   submit_button: Parhau
   summary:

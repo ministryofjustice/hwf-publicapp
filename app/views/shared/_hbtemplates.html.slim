@@ -1,11 +1,11 @@
 script#extend-session(type='text/x-handlebars-template')
   .modal#session-modal
-    h2 Want more time to continue?
+    h2 =t('session.expiring.heading')
     p
-      |Your application will be deleted in
+      =t('session.expiring.in')
       span#timeRemaining
         |{{remainingString}}
-      | For security reasons, any information will not be saved.
+      =t('session.expiring.security')
     p
-      button.button.secondary.cancel#extend(href='#') Yes, continue my application
-      button.button.secondary.abort#destroy(href='#') No, delete my details
+      button.button.secondary.cancel#extend(href='#') =t('session.expiring.extend')
+      button.button.secondary.abort#destroy(href='#') =t('session.expiring.destroy')

@@ -2,9 +2,10 @@
   = t('session.expired.title')
   = ' - '
 
-h2.heading-large = t('session.expired.title')
+h2.heading-large = t('session.expired.heading')
 
 section
+  p.strong =t('session.expired.description')
+  p =t('session.expired.restart')
   p
-    strong.bold-small Your session expired. Your help with fees application has not been completed.
-  p #{link_to 'Start again', root_path}
+    =link_to t('session.expired.restart_button'), root_path, role: :button, class: 'button button-start'

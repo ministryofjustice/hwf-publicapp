@@ -23,6 +23,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def expired
+    flash[:error] = flash_message
+  end
+
   private
 
   def storage_with_clear

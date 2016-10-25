@@ -1,0 +1,10 @@
+- content_for :page_title
+  = t('session.expired.title')
+  = ' - '
+
+h2.heading-large = t('session.expired.title')
+
+section
+  p
+    strong.bold-small Your session expired. Your help with fees application has not been completed.
+  p #{link_to 'Start again', root_path}

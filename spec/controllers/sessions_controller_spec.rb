@@ -96,4 +96,12 @@ RSpec.describe SessionsController, type: :controller do
       end
     end
   end
+
+  describe 'GET #expired' do
+    before { get :expired }
+
+    subject { response }
+
+    it { is_expected.to have_http_status(:success) }
+  end
 end

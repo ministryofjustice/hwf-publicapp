@@ -50,6 +50,6 @@ class QuestionsController < ApplicationController
   end
 
   def not_found
-    render nothing: true, status: :not_found
+    render file: 'public/404.html', status: :not_found, layout: false
   end
 end

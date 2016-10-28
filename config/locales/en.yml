@@ -1,4 +1,8 @@
 en:
+  date_fields:
+    day: Day
+    month: Month
+    year: Year
   start_application: Apply now
   restart_application:
     cancel_button: Cancel application

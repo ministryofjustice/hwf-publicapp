@@ -1,7 +1,6 @@
 .form-group class=('error' if @form.errors[:paid].any?)
   = f.hidden_field :paid, value: nil
-  - if @form.errors[:paid].any?
-    span.error-message#paid = @form.errors[:paid].join(' ')
+  span.error-message#paid = @form.errors[:paid].join(' ') if @form.errors[:paid].any?
   fieldset
     legend.visuallyhidden = t('text', scope: @form.i18n_scope)
     label.block-label for='fee_paid_false'
@@ -12,8 +11,18 @@
       = t('fee_paid_true', scope: @form.i18n_scope)
     #date-fee-paid-panel.panel-indent.util_mb-medium.js-hidden
       .form-group class=('error' if @form.errors[:date_paid].any?)
-        - if @form.errors[:date_paid].any?
-          span.error-message#date_paid = @form.errors[:date_paid].join(' ')
+        span.error-message#date_paid = @form.errors[:date_paid].join(' ') if @form.errors[:date_paid].any?
         = f.label :date_paid, class: 'form-label'
-        .hint = t('hint_html', scope: @form.i18n_scope)
-        = f.text_field :date_paid, class: 'form-control'
+        .form-date
+          .form-group.form-group-day
+            = f.label :date_paid_day, class: 'form-label'
+              .hint= t('date_fields.day')
+            = f.text_field :date_paid_day, type: 'number', class: 'form-control form-control-smaller'
+          .form-group.form-group-month
+            = f.label :date_paid_month, class: 'form-label'
+              .hint= t('date_fields.month')
+            = f.text_field :date_paid_month, type: 'number', class: 'form-control form-control-smaller'
+          .form-group.form-group-year
+            = f.label :date_paid_year, class: 'form-label'
+              .hint= t('date_fields.year')
+            = f.text_field :date_paid_year, type: 'number', class: 'form-control form-control-smaller'

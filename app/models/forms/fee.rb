@@ -1,7 +1,15 @@
 module Forms
   class Fee < Base
+    define_model_callbacks :initialize, only: :after
+
     attribute :paid, Boolean
     attribute :date_paid, Date
+
+    extend SplitDmy::SplitAccessors
+    split_dmy_accessor :date_paid
+    attribute :date_paid_day, String
+    attribute :date_paid_month, String
+    attribute :date_paid_year, String
 
     validates :paid, inclusion: { in: [true, false] }
 

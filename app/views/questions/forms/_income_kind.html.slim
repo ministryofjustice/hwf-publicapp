@@ -7,7 +7,7 @@ fieldset
     .column-half
       .form-group.income-sources class=('error' if @form.errors[:applicant].any?)
         - if @online_application.married?
-          h3.heading-small Your income
+          h3.heading-small =t('applicant_income', scope: @form.i18n_scope)
 
         - if @form.errors[:applicant].any?
           span.error-message#applicant = @form.errors[:applicant].join(' ')
@@ -20,7 +20,7 @@ fieldset
     - if @online_application.married?
       .column-half
         .form-group.income-sources class=('error' if @form.errors[:partner].any?)
-          h3.heading-small Your partner's income
+          h3.heading-small =t('partner_income', scope: @form.i18n_scope)
 
           - if @form.errors[:partner].any?
             span.error-message#partner = @form.errors[:partner].join(' ')

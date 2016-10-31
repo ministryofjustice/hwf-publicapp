@@ -26,7 +26,7 @@ table.summary
       th scope="row" = t('fee', scope: 'summary.labels')
       td = @summary.refund_text
       td.right= link_to question_path(:fee) do
-        | Change
+        =t('summary.change')
         span.visuallyhidden
           | &nbsp;
           = t('fee', scope: 'summary.labels').downcase
@@ -81,7 +81,7 @@ table.summary
           th scope="row" =t('children', scope: 'summary.labels')
           td =@summary.children_text
           td.right= link_to question_path(:dependent) do
-            | Change
+            =t('summary.change')
             span.visuallyhidden
               | &nbsp;
               =t('children', scope: 'summary.labels').downcase
@@ -90,7 +90,7 @@ table.summary
           th scope="row" =t('income', scope: 'summary.labels')
           td =@summary.income_text
           td.right= link_to question_path(:income_kind) do
-            | Change
+            =t('summary.change')
             span.visuallyhidden
               | &nbsp;
               =t('income', scope: 'summary.labels').downcase

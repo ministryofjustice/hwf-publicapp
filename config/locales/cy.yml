@@ -20,6 +20,7 @@ cy:
       forms/help_request:
         description: Disgrifiwch beth hoffech chi siarad amdano
         phone: Rhif ffôn
+        name: Enw
       forms/income:
         child_benefit: Budd-dal Plant
         child_tax_credit: Credyd Treth Plant
@@ -40,7 +41,7 @@ cy:
         last_name: Enw olaf
         title: Teitl
       forms/probate:
-        date_of_death: Dyddiad
+        date_of_death: Dyddiad y farwolaeth
         deceased_name: Enw'r ymadawedig
       forms/savings_and_investment_extra:
         amount: Beth yw swm y cynilion a buddsoddiadau sydd gennych chi a'ch partner?
@@ -175,8 +176,8 @@ cy:
             over_61:
               inclusion: Dewiswch os ydych chi neu'ch partner yn hŷn na 61
   application:
-    name: 'Helo i dalu ffioedd'
-    title: 'Helo i dalu ffioedd - MoJ'
+    name: 'Help i dalu ffioedd'
+    title: 'Help i dalu ffioedd - MoJ'
   confirmation:
     back_to_start: Yn ôl i'r dechrau
     default:
@@ -184,7 +185,7 @@ cy:
       continue: Parhau
       heading: Nid yw'ch cais am help i dalu ffioedd wedi'i orffen eto
       steps:
-        four: Os ydych chi wedi rhoi'ch cyfeiriad e-bost, byddwch chi'n cael cyfeirnod eich cais drwy'r e-bost. Os nad oeddech chi wedi rhoi cyfeiriad e-bost, gwnewch nodyn o'ch cyfeirnod ar gyfer eich cofnodion.
+        four: Os ydych chi wedi rhoi'ch cyfeiriad e-bost, byddwch chi'n cael cyfeirnod eich cais drwy e-bost. Os nad oeddech chi wedi rhoi cyfeiriad e-bost, gwnewch nodyn o'ch cyfeirnod ar gyfer eich cofnodion.
         one_html: Rhaid i chi ysgrifennu'r cyfeirnod hwn <strong>%{reference}</strong> ar eich ffurflen <strong>%{form_name}</strong>.
         three: Gallwch chi hefyd gadw neu argraffu'r dudalen hon a'i hatodi i'ch ffurflen %{form_name}.
         two: Ysgrifennwch y cyfeirnod yn y maes ‘cyfeirnod HWF’ os oes un. Os nad oes un, dylech chi ei ysgrifennu lle bynnag y mae lle ar eich ffurflen %{form_name}.
@@ -197,8 +198,8 @@ cy:
         heading: Beth fydd yn digwydd nesaf?
         steps:
           one: Bydd eich cais yn cael ei asesu gan staff y llys neu dribiwnlys. Fel arfer ni fydd hyn yn cymryd mwy na 21 diwrnod.
-          three: Os bydd eich cais yn llwyddo, byddwch chi'n clywed yn uniongyrchol gan y llys neu dribiwnlys sy'n delio â'ch achos.
-          two: Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais wedi llwyddo neu os oes angen i chi roi gwybodaeth ychwanegol iddynt.
+          three: Os bydd eich cais yn llwyddiannus, byddwch chi'n clywed yn uniongyrchol gan y llys neu dribiwnlys sy'n delio â'ch achos.
+          two: Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais yn llwyddiannus neu os oes angen i chi roi gwybodaeth ychwanegol iddynt.
       title: Anfonwch eich ffurflen i gwblhau'r broses
     et:
       address:
@@ -274,13 +275,13 @@ cy:
     connection_refused: Cysylltiad wedi'i wrthod
   help_requests:
     description:
-      line_1: Rhowch eich enw, rhif ffôn a disgrifiad byr o beth rydych chi angen help i ddelio ag ef. Byddwn ni'n cysylltu â chi yn ystod y diwrnod gwaith nesaf rhwng 9am a 5pm.
+      line_1: Rhowch eich enw, rhif ffôn a disgrifiad byr o ba fath o help yr hoffech ei gael. Byddwn ni'n cysylltu â chi yn ystod y diwrnod gwaith nesaf rhwng 9am a 5pm.
       line_2: Dim ond ar gyfer eich ffonio'n ôl y byddwn ni'n defnyddio'ch manylion. Peidiwch â chynnwys gwybodaeth bersonol, er enghraifft, cyfeiriad neu ddyddiad geni.
     heading: Gofynnwch am help technegol
     layout_nudge:
       link: help technegol
       text_html: Os oes arnoch angen help i ddefnyddio'r gwasanaeth ar-lein, gallwn ni gynnig %{link}.
-    subheading: 'Sylwer: ni allwn gynnig cyngor cyfreithiol.'
+    subheading: 'Sylwch: ni allwn gynnig cyngor cyfreithiol.'
     success: Diolch, byddwn ni'n ffonio'n ôl yn ystod y diwrnod gwaith nesaf rhwng 8am a 6pm.
     survey_nudge:
       link: helpwch ni i wella
@@ -391,7 +392,7 @@ cy:
       title: Nifer y plant sy'n byw gyda chi
     dob:
       breadcrumb: Cam 14 o 20
-      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       text: Beth yw'ch dyddiad geni?
       title: Dyddiad geni
     fee:
@@ -399,7 +400,7 @@ cy:
       details: Gallwch chi wneud cais am ad-dalu ffi a dalwyd yn y 3 mis diwethaf. Os ydych chi'n gwneud cais am ad-daliad, cofiwch ateb yr holl gwestiynau am eich amgylchiadau pan oeddech chi wedi talu'r ffi.
       fee_paid_false: Nac ydw
       fee_paid_true: Ydw
-      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       text: Ydych chi wedi talu'r ffi'n barod?
       title: Ad-dalu
     form_name:
@@ -409,7 +410,7 @@ cy:
         item_2: Os nad oes enw neu rif ffurflen gennych chi, er enghraifft os ydych chi'n gwneud cais am help gyda ffi gwrandawiad, yna rhowch 'ffi gwrandawiad' yn ateb i'r cwestiwn hwn.
         summary: Help gydag enw neu rif y ffurflen
       et: Mae arnaf angen help gyda ffi tribiwnlys cyflogaeth
-      example: Rhowch rif y ffurflen llys neu dribiwnlys ar gyfer y busnes llys y mae arnoch angen help gydag ef, er enghraifft ffurflen ‘C100’, ‘D8’ neu 'hysbysiad apelio'
+      example: Rhowch rif y ffurflen llys neu dribiwnlys ar gyfer y busnes llys y mae arnoch angen help gydag ef, er enghraifft ffurflen ‘C100’, ‘D8’ neu 'Hysbysiad o Apêl'
       text: Pa ffi llys neu dribiwnlys y mae arnoch chi angen help gyda hi?
       title: Enw neu rif y ffurflen
       unknown: Dydw i ddim yn gwybod enw neu rif y ffurflen
@@ -421,10 +422,10 @@ cy:
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
-        kinds_list_married: 'Rhowch gyfanswm yr incwm misol rydych chi a''ch partner yn ei gael:'
-        kinds_list_married_refund: 'Rhowch gyfanswm yr incwm misol roeddech chi a''ch partner yn ei gael:'
-        kinds_list_single: 'Rhowch gyfanswm yr incwm misol rydych chi''n ei gael:'
-        kinds_list_single_refund: 'Rhowch gyfanswm yr incwm misol roeddech chi''n ei gael:'
+        kinds_list_married: "Rhowch gyfanswm yr incwm misol rydych chi a'ch partner yn ei gael o'r canlynol:"
+        kinds_list_married_refund: "Rhowch gyfanswm yr incwm misol roeddech chi a'ch partner yn ei gael o'r canlynol:"
+        kinds_list_single: "Rhowch gyfanswm yr incwm misol rydych chi'n ei gael o'r canlynol:"
+        kinds_list_single_refund: "Rhowch gyfanswm yr incwm misol roeddech chi'n ei gael o'r canlynol:"
       text_married: Beth yw cyfanswm eich incwm misol?
       text_married_refund: Beth oedd cyfanswm eich incwm misol?
       text_single: Beth yw cyfanswm eich incwm misol?
@@ -433,13 +434,15 @@ cy:
     income_kind:
       breadcrumb: Cam 8 o 20
       details_married: Dewiswch y gwahanol fathau o incwm rydych chi a'ch partner yn eu cael.
-      details_married_refund: Dewiswch y gwahanol fathau o incwm roeddech chi a'ch partner yn eu cael pan oeddech chi wedi talu'r ffi.
+      details_married_refund: Dewiswch y gwahanol fathau o incwm rydych chi a'ch partner yn eu cael.
       details_single: Dewiswch y gwahanol fathau o incwm rydych chi'n eu cael.
-      details_single_refund: Dewiswch y gwahanol fathau o incwm roeddech chi'n eu cael pan oeddech chi wedi talu'r ffi.
+      details_single_refund: Dewiswch y gwahanol fathau o incwm rydych chi'n eu cael pan oeddech chi wedi talu'r ffi.
+      applicant_income: Eich incwm
+      partner_income: Incwm eich partner
       kinds:
         '1': Cyflog
         '10': Rhent oddi wrth rywun sy'n byw gyda chi
-        '11': Rhent o eiddo arall rydych chi'n berchen arno
+        '11': Rhent o eiddo arall rydych chi'n berchen arnynt
         '12': Incwm misol arall
         '13': Dim incwm
         '2': Budd-dal Plant
@@ -451,19 +454,19 @@ cy:
         '8': Credyd Cynhwysol
         '9': Pensiynau (gwladwriaeth, gwaith, preifat)
       text_married: Pa fath o incwm rydych chi a'ch partner yn ei gael?
-      text_married_refund: Pa fath o incwm roeddech chi a'ch partner yn ei gael?
+      text_married_refund: Pa fath o incwm rydych chi a'ch partner yn ei gael?
       text_single: Pa fath o incwm rydych chi'n ei gael?
-      text_single_refund: Pa fath o incwm roeddech chi'n ei gael?
+      text_single_refund: Pa fath o incwm rydych chi'n ei gael?
       title: Math o incwm
     income_range:
       breadcrumb: Cam 9 o 20
       details:
         average_note: Os yw'ch incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis diwethaf.
         average_note_refund: Os oedd eich incwm yn amrywio o fis i fis, cyfrifwch incwm misol cyfartalog ar sail y 3 mis cyn i chi dalu'r ffi.
-        kinds_list_married: 'Dewiswch swm yr incwm misol rydych chi a''ch partner yn ei gael:'
-        kinds_list_married_refund: 'Dewiswch swm yr incwm misol roeddech chi a''ch partner yn ei gael:'
-        kinds_list_single: 'Dewiswch swm yr incwm misol rydych chi''n ei gael:'
-        kinds_list_single_refund: 'Dewiswch swm yr incwm misol roeddech chi''n ei gael:'
+        kinds_list_married: "Dewiswch swm yr incwm misol rydych chi a'ch partner yn ei gael o'r canlynol:"
+        kinds_list_married_refund: "Dewiswch swm yr incwm misol roeddech chi a'ch partner yn ei gael o'r canlynol:"
+        kinds_list_single: "Dewiswch swm yr incwm misol rydych chi'n ei gael o'r canlynol:"
+        kinds_list_single_refund: "Dewiswch swm yr incwm misol roeddech chi'n ei gael o'r canlynol:"
       range:
         between: Rhwng %{min_threshold} a %{max_threshold}
         less: Llai na %{min_threshold}
@@ -514,7 +517,7 @@ cy:
     probate:
       breadcrumb: Cam 11 o 20
       details: Fel arfer mae'r achosion hyn yn ymwneud ag eiddo rhywun sydd wedi marw.
-      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       probate_case_false: Nac ydw
       probate_case_true: Ydw
       text: Ydych chi'n talu ffi am achos profiant?
@@ -574,7 +577,7 @@ cy:
   session:
     expired_message: Dydych chi ddim wedi mewnbynnu gwybodaeth ers mwy na 10 munud felly rhaid i chi ailddechrau'ch cais.
     note:
-      heading: Sylwer
+      heading: Sylwch
       text: Os na fyddwch chi wedi mewnbynnu gwybodaeth ers mwy na 10 munud, yna bydd eich sesiwn yn dod i ben a bydd angen i chi ailddechrau.
   start_application: Gwnewch gais nawr
   submit_button: Parhau
@@ -605,7 +608,7 @@ cy:
       form_name: Enw neu rif y ffurflen
       income: Incwm
       married: Statws
-      ni_number: Yswiriant Gwladol
+      ni_number: Rhif Yswiriant Gwladol
       personal: Enw llawn
       probate: Achos profiant
       savings: Cynilion a buddsoddiadau
@@ -617,7 +620,7 @@ cy:
     probate_case_true: Ydw
     truth:
       button: Cyflwyno cais a pharhau
-      heading: Datganiad a datganiad o'r gwirionedd
+      heading: Datganiad a datganiad gwirionedd
       statement: Drwy gwblhau'r cais hwn a chlicio'r botwm 'Cyflwyno cais a pharhau', rydw i'n datgan fy mod yn credu bod yr wybodaeth a roddais yn y ffurflen hon yn gywir hyd eithaf fy ngwybodaeth. Os ceir i mi fod yn anwireddus neu anonest o fwriad, gellir dwyn achos troseddol am dwyll yn fy erbyn. Rydw i'n deall, os ydw i wedi rhoi gwybodaeth anwir neu os na ddarparaf dystiolaeth ychwanegol os gofynnir, y gellir gwrthod fy nghais ac y bydd y ffi lawn yn daladwy.
   switch:
     language: English
@@ -627,64 +630,64 @@ cy:
     sections:
     - title:
       parts:
-      - p:	Drwy ddefnyddio'r gwasanaeth 'cais am help i dalu ffioedd' hwn rydych chi'n cytuno i dderbyn ein polisi preifatrwydd a'r telerau ac amodau hyn. Darllenwch y rhain yn ofalus.
+      - p:	Drwy ddefnyddio'r gwasanaeth 'cais am help i dalu ffioedd' hwn, rydych chi'n cytuno i dderbyn ein polisi preifatrwydd a'r telerau ac amodau hyn. Darllenwch y rhain yn ofalus.
     - title:	Telerau ac amodau cyffredinol
       parts:
       - p:	Mae'r telerau ac amodau hyn yn effeithio ar eich hawliau a'ch atebolrwydd o dan y gyfraith. Maent yn rheoli'r ffordd rydych yn defnyddio'r gwasanaeth 'cais am help i dalu ffioedd' hwn a'ch perthynas ag ef. Nid ydynt yn berthnasol i wasanaethau eraill y Weinyddiaeth Cyfiawnder (Gwasanaeth Llysoedd a Thribiwnlysoedd EM), nac unrhyw adran neu wasanaeth sy'n gysylltiedig â'r gwasanaeth hwn.
       - p:	Gallwn ni ddiweddaru'r telerau ac amodau hyn o bryd i'w gilydd. Gall hyn ddigwydd os bydd newid yn y gyfraith neu'r ffordd o redeg y gwasanaeth.
-      - p:	Os nad ydych chi'n derbyn y telerau ac amodau a'r polisi preifatrwydd yn y ddogfen hon, peidiwch â defnyddio'r gwasanaeth hwn.
-    - title:	Cyfraith gymwysadwy
+      - p:	Os nad ydych chi'n derbyn y telerau ac amodau na'r polisi preifatrwydd yn y ddogfen hon, peidiwch â defnyddio'r gwasanaeth hwn.
+    - title:  Cyfraith berthnasol
       parts:
-      - p:	Bydd eich defnydd o'r gwasanaeth hwn ac unrhyw anghydfod sy'n codi o'i ddefnyddio'n cael ei reoli a'i ddehongli'n unol â chyfreithiau Cymru a Lloegr, gan gynnwys ymysg eraill:'
+      - p:	Bydd y defnydd a wnewch o'r gwasanaeth hwn ac unrhyw anghydfod sy'n codi o'i ddefnyddio'n cael ei reoli a'i ddehongli'n unol â chyfreithiau Cymru a Lloegr, gan gynnwys ymysg eraill:'
       - ul:
         - li:	Deddf Camddefnyddio Cyfrifiaduron 1990
         - li:	Deddf Diogelu Data 1998
         - li:	Deddf Galluedd Meddyliol 2005
-    - title:	Defnyddio'r gwasanaeth hwn yn gyfrifol
+    - title: Defnyddio'r gwasanaeth hwn mewn modd gyfrifol
       parts:
-      - p:	Mae'r gwasanaeth wedi'i fwriadu i'w ddefnyddio gan ymgeiswyr, neu gan eraill ar eu rhan a dim ond ar ôl cael eu cydsyniad.
-      - p:	Mae peryglon ynglŷn â defnyddio cyfrifiadur a rennir (ee mewn caffi rhyngrwyd), i gyrraedd y gwasanaeth hwn. Chi sy'n gyfrifol am fod yn ymwybodol o'r peryglon hyn ac osgoi defnyddio unrhyw gyfrifiadur a all roi mynediad i bobl eraill at eich gwybodaeth personol. Chi sy'n gyfrifol os fyddwch yn dewis i adael eich cyfrifiadur heb amddiffyn tra'n defnyddio'r gwasanaeth hwn.
+      - p:	Mae'r gwasanaeth wedi'i fwriadu er defnydd gan ymgeiswyr, neu gan eraill ar eu rhan a dim ond ar ôl cael eu cydsyniad.
+      - p:	Mae peryglon wrth ddefnyddio cyfrifiadur a rennir (ee mewn caffi rhyngrwyd), i gael mynediad at y gwasanaeth hwn. Chi sy'n gyfrifol am fod yn ymwybodol o'r peryglon hyn ac osgoi defnyddio unrhyw gyfrifiadur a all roi mynediad i bobl eraill at eich gwybodaeth bersonol. Chi sy'n gyfrifol pe baech yn dewis gadael eich cyfrifiadur yn agored tra'n defnyddio'r gwasanaeth hwn.
       - p:	Rydyn ni'n gwneud pob ymdrech i wirio a phrofi'r gwasanaeth hwn pryd bynnag y byddwn yn ei newid neu ei ddiweddaru. Fodd bynnag, rhaid i chi gymryd gofal i sicrhau nad yw'r ffordd rydych yn cyrraedd y gwasanaeth hwn yn eich gadael yn agored i firysau, cod cyfrifiadur maleisus neu ymyrraeth o fath arall a allai achosi difrod i’ch system gyfrifiadurol eich hun.
-      - p:	Rhaid i chi beidio â chamddefnyddio'r gwasanaeth hwn drwy fynd ati'n fwriadol i gyflwyno feirysau, ffeiliau diwahoddiad, mwydod, bomiau rhesymeg neu ddeunydd arall sy'n faleisus neu'n niweidiol i dechnoleg. Ni ddylech geisio cael mynediad heb awdurdod at ein gwasanaeth, y system lle caiff ein gwasanaeth ei storio nac unrhyw weinydd, cyfrifiadur neu gronfa ddata sy’n gysylltiedig â’n gwasanaeth. Ni ddylech ymosod ar ein safle drwy ymosodiad atal gwasanaeth neu ymosodiad gwrthod gwasanaeth a ddosbarthwyd.
-    - title:	Polisi preifatrwydd
+      - p:	Peidiwch â chamddefnyddio'r gwasanaeth hwn drwy fynd ati'n fwriadol i gyflwyno feirysau, ffeiliau diwahoddiad, mwydod, bomiau rhesymeg neu ddeunydd arall sy'n faleisus neu'n niweidiol i dechnoleg. Ni ddylech geisio cael mynediad heb awdurdod at ein gwasanaeth, y system lle caiff ein gwasanaeth ei storio nac unrhyw weinydd, cyfrifiadur neu gronfa ddata sy’n gysylltiedig â’n gwasanaeth. Ni ddylech ymosod ar ein safle drwy ymosodiad atal gwasanaeth neu ymosodiad gwrthod gwasanaeth a ddosbarthwyd.
+    - title: Polisi preifatrwydd
       parts:
       - p:	Mae'r Weinyddiaeth Cyfiawnder yn gweithio'n galed i sicrhau bod gwybodaeth sydd yn y gwasanaeth yn gywir. Fodd bynnag, ni allwn warantu y bydd gwybodaeth yn gywir a chyflawn bob amser. Ni ddylid ystyried y cyfarwyddyd o fewn y gwasanaeth hwn fel cyngor cyfreithiol.
-      - p:	Mae'r gwasanaeth hwn yn darparu gwybodaeth i'ch helpu i wneud cais am gymorth ariannol gyda ffioedd llys neu dribiwnlys. Fodd bynnag, ni allwn roi cyngor cyfreithiol ar achosion penodol. Dylech chi ateb y cwestiynau ar sail yr amgylchiadau penodol, gan geisio cyngor gan weithiwr cyfreithiol proffesiynol os bydd angen.
+      - p:	Mae'r gwasanaeth hwn yn rhoi gwybodaeth i'ch helpu i wneud cais am gymorth ariannol gyda ffioedd llys neu dribiwnlys. Fodd bynnag, ni allwn roi cyngor cyfreithiol ar achosion penodol. Dylech chi ateb y cwestiynau ar sail yr amgylchiadau penodol, gan geisio cyngor gan weithiwr cyfreithiol proffesiynol os bydd angen.
       - p:	Nid yw'r Weinyddiaeth Cyfiawnder yn gyfrifol am gynnwys neu ddibynadwyedd unrhyw wasanaethau neu wefannau cysylltiedig, ac nid yw o reidrwydd yn cymeradwyo unrhyw farn sydd wedi'i mynegi ynddynt.
       - p:	Er ein bod yn gwneud pob ymdrech i sicrhau bod y gwasanaeth hwn ar gael bob amser, ni fyddwn yn atebol os na fydd y gwasanaeth ar gael am gyfnodau penodol.
-    - title:	Sut rydyn ni'n cadw'ch gwybodaeth yn ddiogel
+    - title:  Sut rydyn ni'n cadw'ch gwybodaeth yn ddiogel
       parts:
       - p:	Mae'r Weinyddiaeth Cyfiawnder yn rhoi pwys mawr ar ddiogelu data a byddwn yn cymryd pob cam i sicrhau bod eich data'n aros yn breifat a diogel. Mae'r holl ddata sy'n cael eu casglu gan y gwasanaeth hwn a'u storio yn ein cronfa ddata ddiogel yn cael ei gadw yn gyfan gwbl o fewn yr Ardal Economaidd Ewropeaidd (AEE).
       - p:	Mae'r Weinyddiaeth Cyfiawnder yn storio'ch data gydag Amazon Web Services (AWS). Drwy gyflwyno'ch gwybodaeth, rydych yn derbyn <a href="http://aws.amazon.com/service-terms/"> Telerau ac Amodau AWS </a>
-      - p:	Mae'r gwasanaeth hwn yn anfon negeseuon e-bost drwy lwybrydd Sendgrid. Am fod seilwaith y Rhyngrwyd yn rhyngwladol, ni allwn warantu y bydd gwybodaeth mewn negeseuon e-bost a anfonir gan y gwasanaeth hwn yn cael eu llwybro o fewn yr Ardal Economaidd Ewropeaidd (AEE). Trwy gyflwyno'ch gwybodaeth, rydych yn cytuno i <a href="https://sendgrid.com/tos">delerau ac amodau Sengrid</a>
+      - p:	Mae'r gwasanaeth hwn yn anfon negeseuon e-bost drwy lwybrydd Sendgrid. Gan fod seilwaith y Rhyngrwyd yn rhyngwladol, ni allwn warantu y bydd gwybodaeth mewn negeseuon e-bost a anfonir gan y gwasanaeth hwn yn cael eu llwybro o fewn yr Ardal Economaidd Ewropeaidd (AEE). Trwy gyflwyno'ch gwybodaeth, rydych yn cytuno i <a href="https://sendgrid.com/tos">delerau ac amodau Sengrid</a>
       - p:	Ni fyddwn byth yn rhannu'ch gwybodaeth â sefydliadau eraill i'w defnyddio ganddynt i farchnata, ymchwilio i'r farchnad neu fasnachu.
       sections:
       - title:	Sut rydyn ni'n defnyddio'ch gwybodaeth bersonol
         parts:
-        - p:	Er mwyn defnyddio'r gwasanaeth hwn, bydd angen i chi roi gwybodaeth bersonol. Rydyn ni'n defnyddio'r wybodaeth hon i gwblhau'ch cais am help gyda ffioedd. Bydd unrhyw gyfeiriad e-bost a rowch i ni yn cael ei ddefnyddio gan GLlTEM i gysylltu â chi mewn perthynas â'ch cais. Efallai y byddwn yn defnyddio'ch manylion i gysylltu â chi at ddibenion ymchwil hefyd.
+        - p:	Er mwyn defnyddio'r gwasanaeth hwn, bydd angen i chi fewnbynnu gwybodaeth bersonol. Rydyn ni'n defnyddio'r wybodaeth hon i gwblhau'ch cais am help i dalu ffioedd. Bydd unrhyw gyfeiriad e-bost a rowch i ni yn cael ei ddefnyddio gan GLlTEM i gysylltu â chi mewn perthynas â'ch cais. Efallai y byddwn yn defnyddio'ch manylion i gysylltu â chi at ddibenion ymchwil hefyd.
         - p:	Mae'r gwasanaeth ar-lein hwn yn cynnwys nifer o feysydd testun rhydd lle cewch chi roi mathau penodol o wybodaeth. Ni ddylech chi roi gwybodaeth sensitif yn y meysydd testun rhydd hyn. Gall gwybodaeth sensitif gynnwys, ond nid yw'n gyfyngedig i, fanylion am gredoau crefyddol a gwybodaeth ariannol. Byddwch yn cofnodi gwybodaeth sensitif ar eich menter eich hun.
       - title:	Sut rydyn ni'n defnyddio gwybodaeth amhersonol
         parts:
-        - p:	Ar wahân i'r wybodaeth a roddir gan y rheini sy'n defnyddio'r gwasanaeth hwn, rydyn ni hefyd yn casglu gwybodaeth am y defnydd o wefan y gwasanaeth hwn, sy'n caniatáu i ni weld sut mae'r gwasanaeth yn cael ei ddefnyddio er mwyn ein galluogi i weld sut mae'r gwasanaeth yn cael ei ddefnyddio er mwyn i ni ei wella. Nid yw'r wybodaeth hon yn cynnwys unrhyw ddata personol.
-        - p:	Yr unig wybodaeth a gasglwn ni fydd gwybodaeth i'n helpu i wneud i'r wefan weithio'n well i chi; gwybodaeth a fydd yn gadael i ni gysylltu â chi os ydych chi wedi gofyn i ni wneud, yn gadael i ni roi gwybodaeth gywir i chi os bydd arnoch ei hangen, a rhoi syniad i ni sut mae pobl yn defnyddio'r gwasanaeth, er mwyn i ni barhau i'w wella.
-        - p:	Mae'n cynnwys:'
+        - p:	Ar wahân i'r wybodaeth a roddir gan y rheini sy'n defnyddio'r gwasanaeth hwn, rydyn ni hefyd yn casglu gwybodaeth am y defnydd a wneir o wefan y gwasanaeth hwn, sy'n ein galluogi i weld sut mae'r gwasanaeth yn cael ei ddefnyddio er mwyn i ni ei wella. Nid yw'r wybodaeth hon yn cynnwys unrhyw ddata personol.
+        - p:	Yr unig wybodaeth y byddwyn yn ei chasglu fydd gwybodaeth i'n helpu i wneud i'r wefan weithio'n well i chi; gwybodaeth a fydd yn ein galluogi i gysylltu â chi os ydych chi wedi gofyn i ni wneud, yn gadael i ni roi gwybodaeth gywir i chi os bydd arnoch ei hangen, a rhoi syniad i ni sut mae pobl yn defnyddio'r gwasanaeth, fel y gallwn barhau i'w wella.
+        - p:	"Mae'n cynnwys:"
         - ul:
-          - li:	cwestiynau, ymholiadau neu adborth rydych chi'n eu gadael, gan gynnwys eich cyfeiriad e-bost os byddwch yn anfon neges drwy adborth
-          - li:	eich cyfeiriad IP wedi'i docio (yr wythawd olaf wedi'i dynnu), a manylion y fersiwn o'r porwr gwe roeddech chi wedi'i ddefnyddio
-          - li:	gwybodaeth am y ffordd rydych chi'n defnyddio'r wefan, drwy ddefnyddio cwcis a dulliau tagio tudalen i'n helpu i wella'r wefan
-        - p:	Mae hyn yn ein helpu i:'
+          - li:	"cwestiynau, ymholiadau neu adborth rydych chi'n eu gadael, gan gynnwys eich cyfeiriad e-bost pe byddwch yn anfon neges drwy adborth"
+          - li:	"eich cyfeiriad IP wedi'i docio (yr wythawd olaf wedi'i dynnu), a manylion y fersiwn o'r porwr gwe roeddech chi wedi'i ddefnyddio"
+          - li:	"gwybodaeth am y ffordd rydych chi'n defnyddio'r wefan, drwy ddefnyddio cwcis a dulliau tagio tudalen i'n helpu i wella'r wefan"
+        - p:	"Mae hyn yn ein helpu i:"
         - ul:
-          - li:	gwella'r wefan drwy fonitro'ch defnydd ohoni
+          - li:	wella'r wefan drwy fonitro'ch defnydd ohoni
           - li:	ymateb i unrhyw adborth rydych chi'n ei anfon atom, os ydych wedi gofyn i ni wneud
           - li:	darparu gwybodaeth i chi am wasanaethau lleol os ydych am ei chael
-        - p:	Ni allwn eich adnabod yn bersonol ar sail data am eich defnydd o'r wefan.
+        - p:	Ni allwn eich adnabod yn bersonol ar sail data am y defnydd a wnewch o'r wefan.
     - title:	Sut rydyn ni'n rheoli sesiynau
       parts:
-      - p:	Gallwch chi ddefnyddio'r gwasanaeth hwn i wneud cais am help ariannol gyda ffioedd llys neu dribiwnlys. Pan ddefnyddiwch y gwasanaeth hwn, mae'n bosibl y bydd unrhyw un sy'n cael defnyddio'ch cyfrifiadur yn gallu gweld gwybodaeth bersonol amdanoch.
+      - p:	Gallwch chi ddefnyddio'r gwasanaeth hwn i wneud cais am help ariannol gyda ffioedd llys neu dribiwnlys. Pan fyddwch yn defnyddio'r gwasanaeth hwn, mae'n bosibl y bydd unrhyw un sy'n cael defnyddio'ch cyfrifiadur yn gallu gweld gwybodaeth bersonol amdanoch.
       - p:	Rydyn ni'n storio'ch data dros dro drwy ddefnyddio cwcis, ac mae'ch holl ddata yn cael eu hamgryptio.
     - title:	Deddf Diogelu Data 1998
       parts:
-      - p:	Mae'r gwasanaeth hwn yn cydymffurfio â holl egwyddorion Deddf Diogelu Data 1998. Y Weinyddiaeth Cyfiawnder yw'r 'rheolydd data' i ddibenion y Ddeddf.
+      - p:	Mae'r gwasanaeth hwn yn cydymffurfio â holl egwyddorion Deddf Diogelu Data 1998. Y Weinyddiaeth Cyfiawnder yw'r 'rheolydd data' at ddibenion y Ddeddf.
       - p:	Mae gennych hawl, fel defnyddiwr y gwasanaeth hwn, i ddileu'ch data a rhan neu'r cyfan o'r wybodaeth ar unrhyw adeg. Byddwn yn cadw data yn ddiogel am 12 mis ar ôl y dyddiad rydych chi'n cyflwyno'ch hawliad. Bydd modd i chi newid yr wybodaeth yr ydych wedi'i chyflwyno hyd at chwe mis o'r adeg pan fyddwch yn defnyddio'r gwasanaeth y tro cyntaf.
       - p:	Ar ôl cyflwyno'ch cais, ni fyddwch yn gallu ei weld wedyn na'i newid ar-lein. Mae hawl gan unrhyw un sy'n credu bod ei ddata personol yn cael eu cadw o fewn y gwasanaeth i gyflwyno SAR i’r Weinyddiaeth Cyfiawnder, a fydd yn rhoi manylion ynghylch yr wybodaeth sydd wedi’i storio ar y gweinydd. Os bydd SAR yn dangos bod yr wybodaeth yn anghywir, bydd y Weinyddiaeth Cyfiawnder yn cywiro neu'n dileu'r wybodaeth yn y gronfa ddata o fewn pum niwrnod. O dan yr amgylchiadau hyn, byddwn yn rhoi gwybod i'r defnyddiwr trwy e-bost yn gyntaf.
       - p:	Bydd ein darparwr gwe-letya, a staff y Weinyddiaeth Cyfiawnder sy'n gyfrifol am gynnal y gwasanaeth, yn gallu cael mynediad i'r gweinydd sy'n storio'r holl wybodaeth bersonol a roddir ar y wefan.

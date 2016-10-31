@@ -20,6 +20,7 @@ en:
       forms/help_request:
         description: Describe what you'd like to talk about
         phone: Telephone number
+        name: Name
       forms/income:
         child_benefit: Child Benefit
         child_tax_credit: Child Tax Credit
@@ -436,6 +437,8 @@ en:
       details_married_refund: Choose the different types of income you and your partner received at the time you paid the fee.
       details_single: Choose the different types of income you receive.
       details_single_refund: Choose the different types of income you received at the time you paid the fee.
+      applicant_income: Your income
+      partner_income: Your partner's income
       kinds:
         '1': Wages
         '10': Rent from anyone living with you

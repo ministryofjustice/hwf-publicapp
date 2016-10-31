@@ -570,11 +570,11 @@ en:
       text_single: Are you 61 years old or over?
       title: Are you or your partner 61 or over?
   restart_application:
-      cancel_button: Cancel application
-      copy_1: Are you sure you want to cancel your application?
-      copy_2: If you cancel, details for your current application will be deleted.
-      confirm_cancel: Yes, cancel
-      return_to_application: No, return to current application
+      cancel_button: "Cancel application"
+      copy_1: "Are you sure you want to cancel your application?"
+      copy_2: "If you cancel, details for your current application will be deleted."
+      confirm_cancel: "Yes, cancel"
+      return_to_application: "No, return to current application"
   session:
     expired_message: You didn't enter any information for more than 10 minutes so you need to start your application again.
     note:
@@ -591,8 +591,10 @@ en:
     claim_number_false: 'No'
     claim_number_true: 'Yes'
     contact_none: Contact details not provided
+    details: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
     fee_paid_false: 'No'
     fee_paid_true: 'Yes'
+    invalid_footer: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
     labels:
       address: Address
       benefits: Benefits
@@ -616,6 +618,9 @@ en:
       title: Check details
     marital_status_false: Single
     marital_status_true: Married or living with someone and sharing an income
+    missing_answer:
+      dependents: 'Please give details of children or dependents'
+      income: 'Please answer questions about your income'
     probate_case_: ''
     probate_case_false: 'No'
     probate_case_true: 'Yes'

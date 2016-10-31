@@ -570,11 +570,11 @@ cy:
       text_single: Ydych chi'n 61 mlwydd oed neu'n hŷn?
       title: Ydych chi neu'ch partner yn 61 mlwydd oed neu'n hŷn?
   restart_application:
-      cancel_button: Cancel application
-      copy_1: Are you sure you want to cancel your application?
-      copy_2: If you cancel, details for your current application will be deleted.
-      confirm_cancel: Yes, cancel
-      return_to_application: No, return to current application
+    cancel_button: "Canslo cais"
+    copy_1: "Ydych chi'n siŵr eich bod am ganslo eich cais?"
+    copy_2: "Os ydych chi'n canslo, bydd manylion eich cais cyfredol yn cael eu dileu"
+    confirm_cancel: "Ie, canslo"
+    return_to_application: "Na, mynd yn ôl at y cais cyfredol"
   session:
     expired_message: Dydych chi ddim wedi mewnbynnu gwybodaeth ers mwy na 10 munud felly rhaid i chi ailddechrau'ch cais.
     note:
@@ -591,8 +591,10 @@ cy:
     claim_number_false: Nac ydw
     claim_number_true: Ydw
     contact_none: Manylion cyswllt heb eu darparu
+    details: "Gwiriwch fod eich manylion yn gywir. Os ydych yn gwneud newidiadau, efallai y bydd yn rhaid i chi ateb cwestiynau newydd a chadarnhau gwybodaeth a gyflwynwyd gennych eisoes."
     fee_paid_false: Nac ydw
     fee_paid_true: Ydw
+    invalid_footer: "Rydych chi wedi gwneud newidiadau. Atebwch y cwestiynau sydd wedi'u amlygu i gwblhau eich cais"
     labels:
       address: Cyfeiriad
       benefits: Budd-daliadau
@@ -616,6 +618,9 @@ cy:
       title: Gwiriwch y manylion
     marital_status_false: Sengl
     marital_status_true: Priod neu'n byw gyda rhywun ac yn rhannu incwm
+    missing_answer:
+      dependents: "Rhowch fanylion unrhyw blant neu ddibynyddion"
+      income: "Atebwch gwestiynau am eich incwm"
     probate_case_: ''
     probate_case_false: Nac ydw
     probate_case_true: Ydw

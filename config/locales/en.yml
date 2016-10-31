@@ -180,6 +180,7 @@ en:
     title: 'Help with fees - MoJ'
   confirmation:
     back_to_start: Back to start
+    default_form_name: claim
     default:
       breadcrumb: Step 19 of 20
       continue: Continue

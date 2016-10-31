@@ -4,7 +4,7 @@
 
 =render('stylesheets')
 
-- form_name = @online_application.form_name ? @online_application.form_name : 'claim'
+- form_name = @online_application.form_name ? @online_application.form_name : t('confirmation.default_form_name')
 
 h1.heading-large
   span.heading-secondary =t('confirmation.default.breadcrumb')

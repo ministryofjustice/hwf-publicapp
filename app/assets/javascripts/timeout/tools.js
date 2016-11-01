@@ -17,7 +17,8 @@ moj.Modules.tools = (function() {
         validMonth,
         jsError,
         getQueryVar,
-        getTextFieldValue
+        getTextFieldValue,
+        getI18nText
         ;
 
     removeFromArray = function( arr, item ) {
@@ -173,6 +174,11 @@ moj.Modules.tools = (function() {
         return false;
     };
 
+    getI18nText = function( label ) {
+        var locale = getQueryVar('locale');
+        return eval('moj.Modules.' + label + '.' + locale);
+    };
+
     return {
         removeFromArray: removeFromArray,
         ucFirst: ucFirst,
@@ -183,7 +189,8 @@ moj.Modules.tools = (function() {
         isDate: isDate,
         validMonth: validMonth,
         jsError: jsError,
-        getQueryVar: getQueryVar
+        getQueryVar: getQueryVar,
+        getI18nText: getI18nText
     };
 
 }());

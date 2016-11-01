@@ -83,9 +83,9 @@ moj.Modules.sessionModal = (function() {
     var m;
     if( minutes >= 1 ) {
       m = Math.ceil( minutes );
-      return m + ' minute' + ( m === 1 ? '' : 's' ) + '.';
+      return m + ' ' + ( m === 1 ? moj.Modules.tools.getI18nText('minuteSingularText') : moj.Modules.tools.getI18nText('minutesPluralText') ) + '.';
     }
-    return parseInt( minutes * 60, 10 ) + ' second' + ( (Math.floor( minutes * 60 ) === 1) ? '' : 's' ) + '.';
+    return parseInt( minutes * 60, 10 ) + ' ' + ( (Math.floor( minutes * 60 ) === 1) ? moj.Modules.tools.getI18nText('secondSingularText') : moj.Modules.tools.getI18nText('secondsPluralText') ) + '.';
   };
 
   startCountdown = function( remaining ) {

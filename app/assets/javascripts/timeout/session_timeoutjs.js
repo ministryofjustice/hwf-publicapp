@@ -77,6 +77,7 @@ moj.Modules.sessionTimeout = (function() {
   };
 
   endSession = function(redirect) {
+    var locale = moj.Modules.tools.getQueryVar('locale');
     $.ajax( {
       type:     'DELETE',
       beforeSend: $.rails.CSRFProtection,
@@ -85,14 +86,14 @@ moj.Modules.sessionTimeout = (function() {
         redirect:   redirect
       },
       success:  function( data, textStatus, jqXHR ) {
-        document.location.href = basePath + '/expired';
+        document.location.href = basePath + '/expired?locale=' + locale;
       },
       error:    function( jqXHR, textStatus, errorThrown ) {
         moj.log( 'error' );
         moj.log( jqXHR );
         moj.log( textStatus );
         moj.log( errorThrown );
-        document.location.href = basePath + '/';
+        document.location.href = basePath + '/?locale=' + locale;
       }
     } );
   };

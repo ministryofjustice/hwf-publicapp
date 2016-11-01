@@ -4,8 +4,8 @@ script#extend-session(type='text/x-handlebars-template')
     p
       =t('session.expiring.in')
       span#timeRemaining
-        |{{remainingString}}
-      =t('session.expiring.security')
+        |{{remainingString}}&nbsp;
+    p =t('session.expiring.security')
     p
       button.button.secondary.cancel#extend(href='#') =t('session.expiring.extend')
       button.button.secondary.abort#destroy(href='#') =t('session.expiring.destroy')

@@ -1,182 +1,717 @@
 en:
-  start_application: Apply now
-  restart_application:
-    cancel_button: Cancel application
-    copy_1: Are you sure you want to cancel your application?
-    copy_2: If you cancel, details for your current application will be deleted.
-    confirm_cancel: Yes, cancel
-    return_to_application: No, return to current application
-  submit_button: Continue
-  error_block:
-    heading: 'You need to fix the errors on this page before continuing.'
-    visuallyhidden: 'Errors are listed as links below, click to select the field that needs correcting.'
-  session:
-    expired_message: "You didn't enter any information for more than 10 minutes so you need to start your application again."
-    note:
-      heading: Please note
-      text: "If you don’t enter any information for more than 10 minutes, then your session will time out and you’ll need to start again."
-  errors:
-    combined_other_payments_invalid: 'Enter the amount of your income'
+  dictionary:
+    yes: &yes 'Yes'
+    no: &no 'No'
+    # intentionally blank to align with welsh file
+    # intentionally blank to align with welsh file
   activemodel:
     attributes:
-      forms/income:
-        wages: 'Wages (before tax and National Insurance)'
-        child_benefit: 'Child Benefit'
-        working_tax_credit: 'Working Tax Credit'
-        child_tax_credit: 'Child Tax Credit'
-        maintenance_payment: 'Maintenance payments'
-        contribution_jsa: "Contribution-based Jobseeker's Allowance (JSA)"
-        contribution_esa: 'Contribution-based Employment and Support Allowance (ESA)'
-        universal_credit: 'Universal Credit'
-        pension: 'Pensions (state, work, private)'
-        rent_living_with: 'Rent from anyone living with you'
-        rent_other_property: 'Rent from other properties you own'
-        other_description: 'Other monthly income'
+      forms/applicant_address:
+        address: Address
+        postcode: Postcode
+      forms/claim/et:
+        identifier: Employment tribunal claim number
       forms/dependent:
         children_number: Number of children
       forms/fee:
-        date_paid: "Date fee paid"
-      forms/probate:
-        deceased_name: "Name of deceased"
-        date_of_death: "Date of death"
+        date_paid: Date fee paid
       forms/form_name:
-        identifier: 'Form name or number'
-      forms/claim/et:
-        identifier: 'Employment tribunal claim number'
+        identifier: Form name or number
       forms/help_request:
-        phone: Telephone number
         description: Describe what you'd like to talk about
-      forms/savings_and_investment_extra:
-        amount: 'How much do you and your partner have in savings and investments?'
+        phone: Telephone number
+        name: Name
+      forms/income:
+        child_benefit: Child Benefit
+        child_tax_credit: Child Tax Credit
+        contribution_esa: Contribution-based Employment and Support Allowance (ESA)
+        contribution_jsa: Contribution-based Jobseeker's Allowance (JSA)
+        maintenance_payment: Maintenance payments
+        other_description: Other monthly income
+        pension: Pensions (state, work, private)
+        rent_living_with: Rent from anyone living with you
+        rent_other_property: Rent from other properties you own
+        universal_credit: Universal Credit
+        wages: Wages (before tax and National Insurance)
+        working_tax_credit: Working Tax Credit
       forms/income_amount:
-        amount: 'Enter the total monthly amount you receive in income.'
+        amount: Enter the total monthly amount you receive in income.
+      forms/personal_detail:
+        first_name: First name
+        last_name: Last name
+        title: Title
+      forms/probate:
+        date_of_death: Date of death
+        deceased_name: Name of deceased
+      forms/savings_and_investment_extra:
+        amount: How much do you and your partner have in savings and investments?
     errors:
       models:
-        forms/marital_status:
+        forms/applicant_address:
           attributes:
-            married:
-              inclusion: "Select whether you're single, married or living with someone and sharing an income"
-        forms/savings_and_investment:
-          attributes:
-            choice:
-              inclusion: 'Select how much you have in savings and investments'
-        forms/savings_and_investment_extra:
-          attributes:
-            over_61:
-              inclusion: 'Select if you or your partner are over 61'
-            amount:
-              blank: 'Enter how much you have in savings and investments'
-              less_than: 'Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings'
-              greater_than_or_equal_to: 'Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings'
+            address:
+              blank: Enter your address
+              too_long: Address must be less than 100 characters
+            postcode:
+              blank: Enter your postcode
+              too_long: Postcode must be less than 10 characters
         forms/benefit:
           attributes:
             on_benefits:
-              inclusion: "Select whether you're receiving one of the benefits listed"
-        forms/dependent:
-          attributes:
-            children:
-              inclusion: 'You need to say whether you have financially dependent children'
-            children_number:
-              not_a_number: 'You must enter financially dependent children as a number'
-              blank: 'You must enter the number of financially dependent children'
-              less_than: 'You must enter number less than 100'
-        forms/income_kind:
-          attributes:
-            applicant:
-              blank: "Select your kinds of income"
-              invalid: "Select only the kinds from the list"
-            partner:
-              invalid: "Select only the kinds from the list"
-        forms/income_range:
-          attributes:
-            choice:
-              inclusion: 'Select your monthly income'
-        forms/income_amount:
-          attributes:
-            amount:
-              blank: 'Enter how much income do you receive'
-              less_than: 'Enter an amount between £0 and £1,000,000'
-              greater_than_or_equal_to: 'Enter an amount between £0 and £1,000,000'
-        forms/fee:
-          attributes:
-            paid:
-              inclusion: "Select whether you've already paid the fee"
-            date_paid:
-              blank: "Enter the date in this format DD/MM/YYYY"
-              not_a_date: "That date is not recognised"
-              after_or_equal_to: "The application must have been made in the last 3 months"
-              before_or_equal_to: "This date can't be in the future"
-        forms/probate:
-          attributes:
-            kase:
-              inclusion: "Select whether you're paying a fee for a probate case"
-            deceased_name:
-              blank: "Please enter the deceased's name"
-              too_long: "The name must be less than 100 characters"
-            date_of_death:
-              blank: "Enter the date of death"
-              not_a_date: "Enter the date in this format DD/MM/YYYY"
-              before: "This date can't be in the future"
-              after_or_equal_to: "The date of death must have been in the last 20 years"
+              inclusion: Select whether you're receiving one of the benefits listed
         forms/claim/default:
           attributes:
-            number:
-              inclusion: Select whether you have a case, claim or ‘notice to pay’ number
             identifier:
               blank: Enter a case, claim or ‘notice to pay’ number
-              too_long: "The number must be less than 25 characters"
+              too_long: The number must be less than 25 characters
+            number:
+              inclusion: Select whether you have a case, claim or ‘notice to pay’ number
         forms/claim/et:
           attributes:
             identifier:
               blank: Enter your employment tribunal claim number
-              too_long: "The number must be less than 25 characters"
-        forms/form_name:
+              too_long: The number must be less than 25 characters
+        forms/contact:
           attributes:
-            identifier:
-              blank: "Enter the form name or number, or select 'I don’t know the form name or number'"
-              too_long: "The form name must be less than 50 characters"
-        forms/national_insurance:
+            email:
+              invalid: Enter a valid email address
+              too_long: Email must be less than 100 characters
+            phone:
+              blank: Enter your phone number
+        forms/dependent:
           attributes:
-            number:
-              blank: 'Enter your National Insurance number'
-              invalid: 'Enter a valid National Insurance number'
+            children:
+              inclusion: You need to say whether you have financially dependent children
+            children_number:
+              blank: You must enter the number of financially dependent children
+              less_than: You must enter number less than 100
+              not_a_number: You must enter financially dependent children as a number
         forms/dob:
           attributes:
             date_of_birth:
               not_a_date: Enter the date in this format DD/MM/YYYY
               not_a_number: Enter a valid date
-              too_young: "You must be over %{minimum_age} to use this service"
               too_old: Check this date of birth is correct
-        forms/personal_detail:
+              too_young: You must be over %{minimum_age} to use this service
+        forms/fee:
           attributes:
-            title:
-              too_long: "Title must be less than 10 characters"
-            first_name:
-              blank: 'Enter your first name'
-              too_long: "First name must be less than 50 characters"
-            last_name:
-              blank: 'Enter your last name'
-              too_long: "Last name must be less than 50 characters"
-        forms/applicant_address:
+            date_paid:
+              after_or_equal_to: The application must have been made in the last 3 months
+              before_or_equal_to: This date can't be in the future
+              blank: Enter the date in this format DD/MM/YYYY
+              not_a_date: That date is not recognised
+            paid:
+              inclusion: Select whether you've already paid the fee
+        forms/form_name:
           attributes:
-            address:
-              blank: 'Enter your address'
-              too_long: "Address must be less than 100 characters"
-            postcode:
-              blank: 'Enter your postcode'
-              too_long: "Postcode must be less than 10 characters"
-        forms/contact:
-          attributes:
-            email:
-              invalid: 'Enter a valid email address'
-              too_long: "Email must be less than 100 characters"
-            phone:
-              blank: 'Enter your phone number'
+            identifier:
+              blank: Enter the form name or number, or select 'I don’t know the form name or number'
+              too_long: The form name must be less than 50 characters
         forms/help_request:
           attributes:
+            description:
+              blank: Describe what you'd like to talk about.
             name:
               blank: Enter a valid name.
             phone:
               blank: Enter a valid phone number.
-            description:
-              blank: Describe what you'd like to talk about.
+        forms/income_amount:
+          attributes:
+            amount:
+              blank: Enter how much income do you receive
+              greater_than_or_equal_to: Enter an amount between £0 and £1,000,000
+              less_than: Enter an amount between £0 and £1,000,000
+        forms/income_kind:
+          attributes:
+            applicant:
+              blank: Select your kinds of income
+              invalid: Select only the kinds from the list
+            partner:
+              invalid: Select only the kinds from the list
+        forms/income_range:
+          attributes:
+            choice:
+              inclusion: Select your monthly income
+        forms/marital_status:
+          attributes:
+            married:
+              inclusion: Select whether you're single, married or living with someone and sharing an income
+        forms/national_insurance:
+          attributes:
+            number:
+              blank: Enter your National Insurance number
+              invalid: Enter a valid National Insurance number
+        forms/personal_detail:
+          attributes:
+            first_name:
+              blank: Enter your first name
+              too_long: First name must be less than 50 characters
+            last_name:
+              blank: Enter your last name
+              too_long: Last name must be less than 50 characters
+            title:
+              too_long: Title must be less than 10 characters
+        forms/probate:
+          attributes:
+            date_of_death:
+              after_or_equal_to: The date of death must have been in the last 20 years
+              before: This date can't be in the future
+              blank: Enter the date of death
+              not_a_date: Enter the date in this format DD/MM/YYYY
+            deceased_name:
+              blank: Please enter the deceased's name
+              too_long: The name must be less than 100 characters
+            kase:
+              inclusion: Select whether you're paying a fee for a probate case
+        forms/savings_and_investment:
+          attributes:
+            choice:
+              inclusion: Select how much you have in savings and investments
+        forms/savings_and_investment_extra:
+          attributes:
+            amount:
+              blank: Enter how much you have in savings and investments
+              greater_than_or_equal_to: Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings
+              less_than: Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings
+            over_61:
+              inclusion: Select if you or your partner are over 61
+  application:
+    name: 'Help with fees'
+    title: 'Help with fees - MoJ'
+  confirmation:
+    back_to_start: Back to start
+    default_form_name: claim
+    default:
+      breadcrumb: Step 19 of 20
+      continue: Continue
+      heading: Your application for help with fees is not finished yet
+      steps:
+        four: If you provided your email address, you'll get your application reference number by email. If you didn't provide an email, make a note of your reference number for your own records.
+        one_html: You must write this reference number <strong>%{reference}</strong> on your <strong>%{form_name}</strong> form.
+        three: You can also save or print this page and attach it to your %{form_name} form.
+        two: Write the reference number in the ‘HWF reference’ field if there is one. If not, you should write it wherever there is space on your %{form_name} form.
+      title: Your application is not finished yet
+    done:
+      breadcrumb: Step 20 of 20
+      heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
+      instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
+      next:
+        heading: What happens next?
+        steps:
+          one: Your application will be assessed by court or tribunal staff. This usually takes no longer than 21 days.
+          three: If your application is successful you'll hear directly from the court or tribunal dealing with your case.
+          two: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.
+      title: Send your form to complete the process
+    et:
+      address:
+        email:
+          heading: 'Email your letter to:'
+          note: "(click for preformatted email)"
+          subject: Help with Fees
+        england:
+          address:
+            four: LE1 8EG
+            one: Employment Tribunal Central Office (England & Wales)
+            three: Leicester
+            two: PO Box 10218
+          heading: England & Wales
+        post:
+          heading: 'Post your letter to:'
+        scotland:
+          address:
+            five: G2 7TS
+            four: Glasgow
+            one: Employment Tribunal Central Office (Scotland)
+            three: 215 Bothwell Street
+            two: Eagle Building
+          heading: Scotland
+      breadcrumb: Step 20 of 20
+      heading: Your application for help with fees is not finished yet
+      letter:
+        five: "%{full_name}"
+        four: Yours sincerely,
+        one_html: 'Reference: <strong>%{reference}</strong>'
+        three_html: 'My employment tribunal claim number is: <strong>%{case_number}</strong>.'
+        two: I have completed an online application for help with employment tribunal fees.
+      next:
+        heading: What happens next?
+        steps:
+          one: Your application for help with fees will be assessed by tribunal staff. This usually takes no longer than 5 working days.
+          three: If your application for help with fees is successful, you'll hear directly from the tribunal dealing with your case.
+          two: You'll hear from the tribunal if your application for help with fees is unsuccessful or if they need more information from you.
+      steps:
+        one_html: You must email or post this help with fees reference number <strong>%{reference}</strong> along with your employment tribunal claim number to the employment tribunal.
+        three: Email or send your letter to the tribunal where your case is being heard.
+        two: You can copy the letter below into an email or print this page.
+      title: Your application is not finished yet
+    feedback:
+      heading: Tell us what you think and help improve the service
+      link: Give us your feedback
+    finish: Finish application
+    print: Save or print this page
+    refund:
+      breadcrumb: Step 20 of 20
+      heading: Send your reference number to the court or tribunal dealing with your case
+      letter:
+        five: "%{full_name}"
+        four: Yours sincerely,
+        one: 'Reference: %{reference}'
+        three: I paid a fee on %{date_fee_paid}.
+        two: I have completed an online application for help with fees for a refund.
+      notice:
+        text: Your application for a refund will not proceed until you send your reference number to the court or tribunal
+        warning: Warning
+      steps:
+        one:
+          one: Deliver your reference number to the court or tribunal dealing with your case (by post or in person)
+          two: 'You can use the letter template below:'
+        three: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you
+        two: Your application will be assessed by court or tribunal staff
+      title: Send your reference number to complete the process
+  error_block:
+    heading: You need to fix the errors on this page before continuing.
+    visuallyhidden: Errors are listed as links below, click to select the field that needs correcting.
+  errors:
+    combined_other_payments_invalid: Enter the amount of your income
+    connection_refused: Connection refused
+  help_requests:
+    description:
+      line_1: Enter your name, telephone number and a brief description of what you need help with. We'll get back to you during the next working day between 9am and 5pm.
+      line_2: We’ll only use your details to call you back. Don’t include any personal information, for example address or date of birth.
+    heading: Ask for technical help
+    layout_nudge:
+      link: technical help
+      text_html: If you need help with using the online service, we can offer %{link}.
+    subheading: 'Please note: we cannot offer legal advice.'
+    success: Thank you we will call you back during the next working day between 8am and 6pm.
+    survey_nudge:
+      link: help us improve
+      text_html: Tell us what you think and %{link}.
+    title: Ask for technical help
+  optional: "(Optional)"
+  questions:
+    applicant_address:
+      breadcrumb: Step 16 of 20
+      text: What is your address?
+      title: Your address
+    benefit:
+      breadcrumb: Step 6 of 20
+      details:
+        section_1:
+          details: "(for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the Jobcentre."
+          heading: If you’ve only recently started receiving one of these benefits
+        section_2:
+          details: There are some benefits with similar names. If you are receiving one of the benefits listed below, select 'No'.
+          heading: Benefits with similar names
+          item_1:
+            hint: "(JSA)"
+            name: Contribution-based Job Seekers Allowance
+          item_2:
+            hint: "(ESA)"
+            name: Contribution-based Employment and Support Allowance
+          item_3:
+            hint: ''
+            name: Pension Credit and Savings Credit
+          item_4:
+            hint: "(and you're earning more than £6,000 a year)"
+            name: Universal Credit
+          item_5:
+            hint: ''
+            name: Scottish Legal Aid Advice and Assistance
+          item_6:
+            hint: "(ABWOR)"
+            name: Scottish Legal Aid Advice by Way of Representation
+        summary: Help with benefits
+      list:
+        header: We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.
+        item_1:
+          hint: "(JSA)"
+          name: Income-based Jobseeker’s Allowance
+        item_2:
+          hint: "(ESA)"
+          name: Income-related Employment and Support Allowance
+        item_3:
+          name: Income Support
+        item_4:
+          hint: "(and you’re earning less than £6,000 a year)"
+          name: Universal Credit
+        item_5:
+          hint: "(Guarantee Credit)"
+          name: Pension Credit
+        item_6:
+          hint: "(not Advice and Assistance or Advice by Way of Representation)"
+          name: Scottish Civil Legal Aid
+      on_benefits_false: 'No'
+      on_benefits_true: Yes, I am receiving one of the benefits listed
+      text: Do you receive any of the following benefits?
+      text_refund: Did you receive any of the following benefits?
+      title: Benefits
+    claim/default:
+      breadcrumb: Step 12 of 20
+      details:
+        section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.
+        section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
+        section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet).
+        summary: Help with case number
+      hidden_legend: Do you have a case, claim or ‘notice to pay’ number?
+      identifier: The case, claim or ‘notice to pay’ number is
+      number_false: 'No'
+      number_true: 'Yes'
+      subtext: Find this number on letters from the court or tribunal.
+      text: Do you have a case, claim or ‘notice to pay’ number?
+      title: Claim or case number
+    claim/et:
+      breadcrumb: Step 12 of 20
+      details:
+        section_1: Your employment tribunal claim number is a unique reference to identify your employment tribunal claim.
+        section_2: You will receive a claim number when you make an employment tribunal claim online.
+        section_3: If your case is ongoing, your claim number will also appear on any letters sent to you by a court or tribunal.
+        summary: Help with employment tribunal claim number
+      subtext: Find this number on your digital submission or letters from the court or tribunal.
+      text: Enter your employment tribunal claim number
+      title: Claim number
+    contact:
+      breadcrumb: Step 17 of 20
+      details: We will email you to confirm your application has been received.
+      email_label: Email address
+      feedback_opt_in: Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else.
+      text: What's your email address?
+      title: Your email address
+    dependent:
+      breadcrumb: Step 7 of 20
+      children_false: 'No'
+      children_number: Number of children
+      children_true: 'Yes'
+      details:
+        item_1: under 16 and living at home with you
+        item_2: between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class="external" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
+        item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
+        section_1: You need to give details of any children you support financially.
+        section_2: 'This includes children who are:'
+        summary: Help with financially dependent children
+      text: Do you have any children living with you, or who you support financially?
+      title: Number of children living with you
+    dob:
+      breadcrumb: Step 14 of 20
+      hint_html: Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      text: What is your date of birth?
+      title: Date of birth
+    fee:
+      breadcrumb: Step 2 of 20
+      details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
+      fee_paid_false: 'No'
+      fee_paid_true: 'Yes'
+      hint_html: Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      text: Have you already paid the fee?
+      title: Refund
+    form_name:
+      breadcrumb: Step 1 of 20
+      details:
+        item_1: You can usually find the form name at the top of the form, and the number at the bottom.
+        item_2: If you don’t have a form name or number, for example if you’re applying for help with a hearing fee, then write ‘hearing fee’ as the answer to this question.
+        summary: Help with form name or number
+      et: I need help with an employment tribunal fee
+      example: Enter the court or tribunal form number for the court business you need help with, for example ‘C100’, ‘D8’ or ‘notice to appeal’ form.
+      text: What court or tribunal fee do you need help with?
+      title: Form name or number
+      unknown: I don’t know the form name or number
+    income_amount:
+      amount:
+        married: Enter the total monthly amount you and your partner receive in income.
+        single: Enter the total monthly amount you receive in income.
+      breadcrumb: Step 10 of 20
+      details:
+        average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
+        average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
+        kinds_list_married: 'Enter the total monthly amount you and your partner receive in income from:'
+        kinds_list_married_refund: 'Enter the total monthly amount you and your partner received in income from:'
+        kinds_list_single: 'Enter the total monthly amount you receive in income from:'
+        kinds_list_single_refund: 'Enter the total monthly amount you received in income from:'
+      text_married: What’s your total monthly income?
+      text_married_refund: What was your total monthly income?
+      text_single: What’s your total monthly income?
+      text_single_refund: What was your total monthly income?
+      title: Income amount
+    income_kind:
+      breadcrumb: Step 8 of 20
+      details_married: Choose the different types of income you and your partner receive.
+      details_married_refund: Choose the different types of income you and your partner received at the time you paid the fee.
+      details_single: Choose the different types of income you receive.
+      details_single_refund: Choose the different types of income you received at the time you paid the fee.
+      applicant_income: Your income
+      partner_income: Your partner's income
+      kinds:
+        '1': Wages
+        '10': Rent from anyone living with you
+        '11': Rent from other properties you own
+        '12': Other monthly income
+        '13': No income
+        '2': Child Benefit
+        '3': Working Tax Credit
+        '4': Child Tax Credit
+        '5': Maintenance payments
+        '6': Contribution-based Jobseekers Allowance (JSA)
+        '7': Contribution-based Employment and Support Allowance (ESA)
+        '8': Universal Credit
+        '9': Pensions (state, work, private)
+      text_married: What kind of income do you and your partner receive?
+      text_married_refund: What kind of income did you and your partner receive?
+      text_single: What kind of income do you receive?
+      text_single_refund: What kind of income did you receive?
+      title: Income kind
+    income_range:
+      breadcrumb: Step 9 of 20
+      details:
+        average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
+        average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
+        kinds_list_married: 'Select the monthly amount you and your partner receive in income from:'
+        kinds_list_married_refund: 'Select the monthly amount you and your partner received in income from:'
+        kinds_list_single: 'Select the monthly amount you receive in income from:'
+        kinds_list_single_refund: 'Select the monthly amount you received in income from:'
+      range:
+        between: Between %{min_threshold} and %{max_threshold}
+        less: Less than %{min_threshold}
+        more: More than %{max_threshold}
+      text_married: How much income do you and your partner receive each month?
+      text_married_refund: How much income did you and your partner receive each month?
+      text_single: How much income do you receive each month?
+      text_single_refund: How much income did you receive each month?
+      title: Income range
+    marital_status:
+      breadcrumb: Step 3 of 20
+      details:
+        section_1:
+          heading: 'Choose ‘married or living with someone and sharing an income’ if you’re:'
+          item_1: married
+          item_2: civil partners
+          item_3: living together as if you are married or in a civil partnership
+          item_4: living at the same address with a joint income
+          item_5: a couple forced to live apart, eg where one or both is serving in the armed forces, in prison or living in residential care
+        section_2:
+          heading: 'Choose ‘single’ if you rely on your own income or your case involves your partner, for example:'
+          item_1: divorce, dissolution or annulment (unless you have married again or live with a new partner)
+          item_2: gender recognition
+          item_3: domestic violence
+          item_4: forced marriage
+          item_5: you and your partner are both part of a multiple fee group
+        summary: Help with status
+      married_false: Single
+      married_true: Married or living with someone and sharing an income
+      text: Are you single, married or living with someone and sharing an income?
+      title: Your marital status
+    national_insurance:
+      breadcrumb: Step 13 of 20
+      details:
+        section_1:
+          detail: If you can’t provide a National Insurance number you will need to provide a letter from the Jobcentre.
+          item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
+          item_2: ask for a reminder through the post
+        summary: If you don’t know your National Insurance number
+      example: For example, QQ123456C
+      prompt: National Insurance number
+      text: What is your National Insurance number?
+      title: National Insurance number
+    personal_detail:
+      breadcrumb: Step 15 of 20
+      text: What is your full name?
+      title: Your name
+    probate:
+      breadcrumb: Step 11 of 20
+      details: These cases are usually about the property and belongings of someone who has died.
+      hint_html: Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      probate_case_false: 'No'
+      probate_case_true: 'Yes'
+      text: Are you paying a fee for a probate case?
+      title: Probate
+    savings_and_investment:
+      between: "£3,000 to £15,999"
+      breadcrumb: Step 4 of 20
+      details:
+        section_1:
+          heading: 'What to include in savings and investments:'
+          item_1: money in ISAs and any other savings account
+          item_2: joint savings accounts that you share with your partner
+          item_3: fixed rate or investment bonds
+          item_4: any lump sum (eg a redundancy payout)
+          item_5: stocks and shares
+          item_6: trust funds (or any other kind of fund)
+          item_7: second homes
+          item_8: any money or property outside the UK
+        section_2:
+          heading: 'Don’t include the following in your savings total:'
+          item_1: wages or benefits
+          item_2: joint savings accounts that you share with your partner if your case is against your partner or concerns divorce or gender recognition
+          item_3: personal pensions
+          item_4: capital value of self-employed businesses
+          item_5: student loans
+          item_6: unfair dismissal awards
+          item_7: money from the criminal injury compensation scheme
+          item_8: medical negligence or personal injury awards
+          item_9: any compensation under a statutory scheme in respect of Mesothelioma
+        summary: Help with savings and investments
+      less: "£0 to £2,999"
+      more: "£16,000 or more"
+      subtext_married: Remember to include your partner’s savings and investments in your total.
+      text: How much do you have in savings and investments?
+      title: Savings and investments
+    savings_and_investment_extra:
+      amount_married: How much between £3,000 and £15,999 do you and your partner have in savings and investments?
+      amount_single: How much between £3,000 and £15,999 do you have in savings and investments?
+      breadcrumb: Step 5 of 20
+      over_61_false_single: *no
+      over_61_true_single: *yes
+      over_61_false_single_refund: *no
+      over_61_true_single_refund: *yes
+      over_61_false_married: *no
+      over_61_true_married: *yes
+      over_61_false_married_refund: *no
+      over_61_true_married_refund: *yes
+      text_married: Are you or your partner 61 years old or over?
+      text_single: Are you 61 years old or over?
+      title: Are you or your partner 61 or over?
+  restart_application:
+      cancel_button: "Cancel application"
+      copy_1: "Are you sure you want to cancel your application?"
+      copy_2: "If you cancel, details for your current application will be deleted."
+      confirm_cancel: "Yes, cancel"
+      return_to_application: "No, return to current application"
+  session:
+    expired_message: You didn't enter any information for more than 10 minutes so you need to start your application again.
+    note:
+      heading: Please note
+      text: If you don’t enter any information for more than 10 minutes, then your session will time out and you’ll need to start again.
+  start_application: Apply now
+  submit_button: Continue
+  summary:
+    applicant_on_benefits_false: Not receiving eligible benefits
+    applicant_on_benefits_true: Receiving eligible benefits
+    breadcrumb: Step 18 of 20
+    change: Change
+    children_false: 'No'
+    claim_number_false: 'No'
+    claim_number_true: 'Yes'
+    contact_none: Contact details not provided
+    details: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
+    fee_paid_false: 'No'
+    fee_paid_true: 'Yes'
+    invalid_footer: 'You’ve made changes. Please answer the highlighted questions to complete your application.'
+    labels:
+      address: Address
+      benefits: Benefits
+      children: Children
+      claim: Claim number
+      contact: Contact
+      contact_email: Email
+      contact_phone: Phone
+      contact_post: Post
+      date_of_birth: Date of birth
+      date_of_death: Date of death
+      deceased_name: Name of deceased
+      fee: Fee paid
+      form_name: Form name or number
+      income: Income
+      married: Status
+      ni_number: National Insurance number
+      personal: Full name
+      probate: Probate case
+      savings: Savings and investments
+      title: Check details
+    marital_status_false: Single
+    marital_status_true: Married or living with someone and sharing an income
+    missing_answer:
+      dependents: 'Please give details of children or dependents'
+      income: 'Please answer questions about your income'
+    probate_case_: ''
+    probate_case_false: 'No'
+    probate_case_true: 'Yes'
+    truth:
+      button: Submit application and continue
+      heading: Declaration and statement of truth
+      statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my application may be rejected and the full fee will be payable.
+  switch:
+    language: Cymraeg
+    locale: cy
+  terms:
+    heading: Terms and conditions
+    sections:
+    - title: 
+      parts:
+      - p: By using this ‘apply for help with fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.
+    - title: General terms and conditions
+      parts:
+      - p: These terms and conditions affect your rights and liabilities under the law. They govern your use of, and relationship with, this ‘apply for help with fees’ service. They do not apply to other Ministry of Justice (HM Courts and Tribunals Service) services, or to any department or service that is linked to in this service.
+      - p: We may occasionally update these terms and conditions. This might happen if there is a change in the law or to the way the service works.
+      - p: If you do not agree to the terms and conditions and privacy policy set out in this document, do not use this service.
+    - title: Applicable law
+      parts:
+      - p: 'Your use of this service and any dispute arising from its use will be governed by and construed in accordance with the laws of England and Wales, including but not limited to the:'
+      - ul:
+        - li: Computer Misuse Act 1990
+        - li: Data Protection Act 1998
+        - li: Mental Capacity Act 2005
+    - title: Responsible use of this service
+      parts:
+      - p: The service is intended for use by applicants, or by others on their behalf and only with their consent.
+      - p: There are risks in using a shared computer (eg in an internet café), to access this service. It is your responsibility to be aware of these risks and to avoid using any computer which may leave your personal information accessible to others. You’re responsible if you choose to leave a computer unprotected while using this service.
+      - p: We make every effort to check and test this service whenever we amend or update it. However, you must take your own precautions to ensure that the way you access this service does not expose you to the risk of viruses, malicious computer code or other forms of interference which may damage your computer system.
+      - p: You must not misuse this service by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful. You must not attempt to gain unauthorised access to this service, the system on which it is stored or any server, computer or database connected to it. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack.
+    - title: Privacy policy
+      parts:
+      - p: Ministry Of Justice (MOJ) work hard to ensure that information within the service is accurate. However, we cannot guarantee the accuracy and completeness of any information at all times. Guidance contained within this service should not be considered legal advice.
+      - p: This service provides information to support you in applying for financial help with court or tribunal fees. However, we cannot give legal advice on individual cases. You should answer questions based on consideration of the specific circumstances, seeking advice from a legal professional if needed.
+      - p: MOJ are not responsible for the content or reliability of any linked services or websites, and do not necessarily endorse any views expressed within them.
+      - p: While we make every effort to ensure this service is accessible at all times, we are not liable if the service is unavailable for any period of time.
+    - title: How we keep your information safe
+      parts:
+      - p: MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA).
+      - p: MOJ use the Amazon Web Services (AWS) to store your data. By submitting your information, you consent to the <a href="http://aws.amazon.com/service-terms/"> AWS Terms and Conditions </a>
+      - p: This service uses Sendgrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos"> Sendgrid terms and conditions </a>.
+      - p: We’ll never share your information with other organisations for their marketing, market research or commercial purposes.
+      sections:
+      - title: How we use your personal information
+        parts:
+        - p: In order to use this service, you will need to enter personal information. We use this information to complete your application for help with fees. Any email address you supply to us will be used by HMCTS to contact you with regards to your claim. We may also use your details to contact you for research purposes.
+        - p: This online service contains several free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive information into these free-text fields. Sensitive information may include, but is not limited to, details of religious beliefs and financial information. Entering sensitive information is done so at your own risk.
+      - title: How we use non-personal information
+        parts:
+        - p: Separately from the information entered by those using this service, we also collect site-usage information from this service, which allows us to see how the service is being used in order to allow us to improve it. This information does not contain any personal data.
+        - p: We’ll only ever collect information that will help us make the site work better for you; information that will let us contact you if you’ve asked us to, let us give you accurate information if you need it, and give us a sense of how people are using this service, so we can keep improving it.
+        - p: 'It includes:'
+        - ul:
+          - li: questions, queries or feedback you leave, including your email address if you send a message via feedback
+          - li: your truncated IP address (with the trailing octet removed), and details of which version of web browser you used
+          - li: information on how you use the site, using cookies and page tagging techniques to help us improve the website
+        - p: 'This helps us to:'
+        - ul:
+          - li: improve the site by monitoring how you use it
+          - li: respond to any feedback you send us, if you’ve asked us to
+          - li: provide you with information about local services if you want it
+        - p: We cannot identify you personally using your site usage data.
+    - title: How we manage sessions
+      parts:
+      - p: This service can be used to apply for financial help with court or tribunal fees. When you use this service, personal information about you may be visible to anyone with access to your computer.
+      - p: We store your data temporarily using cookies, and all your data is encrypted.
+    - title: Data Protection Act 1998
+      parts:
+      - p: This service complies with all principles of the DPA 1998. Ministry of Justice (MoJ) is the 'data controller' for the purposes of the Act.
+      - p: You have the right, as the user of this service, to delete your data or any and all information at any point. We will keep data secure for 12 months from the date you submit your claim. You will be able to manually update the information you have entered for up to six months from when you first use this service.
+      - p: After submitting your application, you will not be able to see it anymore or amend it online. Anyone who believes their personal data is kept within the service has the right to submit a subject access request to the MoJ, who will give details of the information stored on the server. If a subject access request shows that the information is inaccurate, the MoJ will amend or delete the information in the database as requested within 5 days. In these circumstances, we will warn the registered user first by email.
+      - p: Our hosting provider, and MOJ staff responsible for supporting the service, will have access to the server in which all personal information entered into the site is stored.
+      sections:
+      - title: How your personal data is stored
+        parts:
+        - p: Personal data submitted via the online service is stored for 12 months on our secure servers within EEA. Any data is deleted after this period.
+      - title: How non-personal data is stored
+        parts:
+        - p: Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html"> Google Analytics terms and conditions </a>.
+      - title: Keeping your data secure
+        parts:
+        - p: Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use SSL to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it.
+      - title: Disclosing your information
+        parts:
+        - p: We may pass on your personal information if we have a legal obligation to do so.
+    - title: Disclaimer
+      parts:
+      - p: We do not accept liability for loss or damage incurred by users of this service, whether direct, indirect or consequential, whether caused by tort, breach of contract or otherwise. This includes loss of income or revenue, business, profits or contracts, anticipated savings, data, goodwill, tangible property or wasted time in connection with this service or any websites linked to it and any materials posted on it. This condition shall not prevent claims for loss of or damage to your tangible property or any other claims for direct financial loss that are not excluded by any of the categories set out above.
+      - p: This does not affect our liability for death or personal injury arising from our negligence, nor our liability for fraudulent misrepresentation or misrepresentation as to a fundamental matter, nor any other liability which cannot be excluded or limited under applicable law.
+    title: Terms and conditions

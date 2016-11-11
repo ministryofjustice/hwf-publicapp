@@ -8,9 +8,9 @@ class Navigation
 
   def next
     if @current_question == QuestionFormFactory::IDS.last
-      summary_path
+      summary_path(locale: I18n.locale)
     else
-      question_path(next_question_id)
+      question_path(next_question_id, locale: I18n.locale)
     end
   end
 

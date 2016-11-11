@@ -3,7 +3,7 @@ fieldset
   .form-group.optional class=('error' if @form.errors[:title].any?)
     = f.label :title, class: 'form-label'
     .hint
-      | (Optional)
+      = t('optional')
     - if @form.errors[:title].any?
       span.error-message#title = @form.errors[:title].join(' ')
     = f.text_field :title, class: 'form-control form-control-smaller'

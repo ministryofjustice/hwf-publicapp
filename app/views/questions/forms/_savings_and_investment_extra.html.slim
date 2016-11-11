@@ -3,13 +3,13 @@
   - if @form.errors[:over_61].any?
     span.error-message#over_61 = @form.errors[:over_61].join(' ')
   fieldset
-    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
+    legend.visuallyhidden = t(@title_view.i18n_title, scope: @form.i18n_scope)
     label.block-label for='savings_and_investment_extra_over_61_true'
       = f.radio_button :over_61, 'true'
-      = t('over_61_true', scope: @form.i18n_scope)
+      = t("over_61_true#{i18n_status_refund_suffix}", scope: @form.i18n_scope)
     label.block-label for='savings_and_investment_extra_over_61_false' data-target='amount-panel'
       = f.radio_button :over_61, 'false'
-      = t('over_61_false', scope: @form.i18n_scope)
+      = t("over_61_false#{i18n_status_refund_suffix}", scope: @form.i18n_scope)
     #amount-panel.panel-indent.util_mb-medium.js-hidden
       .form-group class=('error' if @form.errors[:amount].any?)
         - if @form.errors[:amount].any?

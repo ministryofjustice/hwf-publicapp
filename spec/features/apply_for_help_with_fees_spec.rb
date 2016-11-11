@@ -1,86 +1,108 @@
 # coding: utf-8
 require 'rails_helper'
 
+def find_button_by_label(label_text)
+  find(:xpath, "//form//input[@class='button' and @value='#{label_text}']")
+end
+
+def find_continue_button
+  find_button_by_label(I18n.t('submit_button'))
+end
+
+def find_summary_button
+  find_button_by_label(I18n.t('summary.truth.button'))
+end
+
+def find_finish_button
+  find_button_by_label(I18n.t('confirmation.finish'))
+end
+
 RSpec.feature 'As a user' do
-  scenario 'I want to fill in all details, submit my application and see the confirmation' do
-    given_the_submission_service_is_available('HWF-123-KLM')
 
-    visit '/'
-    click_link_or_button 'Apply now'
-    expect(page).to have_content 'What court or tribunal fee do you need help with?'
-    fill_in 'form_name_identifier', with: 'N1'
-    click_button 'Continue'
-    expect(page).to have_content 'Have you already paid the fee?'
-    choose 'fee_paid_false'
-    click_button 'Continue'
-    expect(page).to have_content "Are you single, married or living with someone and sharing an income?"
-    choose 'marital_status_married_false'
-    click_button 'Continue'
-    expect(page).to have_content 'How much do you have in savings and investments?'
-    choose 'savings_and_investment_choice_less'
-    click_button 'Continue'
-    expect(page).to have_content 'Do you receive any of the following benefits?'
-    choose 'benefit_on_benefits_false'
-    click_button 'Continue'
-    expect(page).to have_content 'Do you have any children living with you, or who you support financially?'
-    choose 'dependent_children_false'
-    click_button 'Continue'
-    expect(page).to have_content 'What kind of income do you receive?'
-    check 'income_kind_applicant_1'
-    check 'income_kind_applicant_5'
-    click_button 'Continue'
-    expect(page).to have_content 'How much income do you receive each month?'
-    choose 'income_range_choice_between'
-    click_button 'Continue'
-    expect(page).to have_content 'What’s your total monthly income?'
-    fill_in 'income_amount_amount', with: '100'
-    click_button 'Continue'
-    click_button 'Continue'
-    expect(page).to have_content 'Are you paying a fee for a probate case?'
-    choose 'probate_kase_false'
-    click_button 'Continue'
-    expect(page).to have_content 'Do you have a case, claim or ‘notice to pay’ number?'
-    choose 'claim_default_number_false'
-    click_button 'Continue'
-    expect(page).to have_content 'What is your National Insurance number?'
-    fill_in 'national_insurance_number', with: 'AB123456A'
-    click_button 'Continue'
-    expect(page).to have_content 'What is your date of birth?'
-    fill_in 'dob_date_of_birth', with: '01/01/1980'
-    click_button 'Continue'
-    fill_in 'personal_detail_title', with: 'Sir'
-    fill_in 'personal_detail_first_name', with: 'Bob'
-    fill_in 'personal_detail_last_name', with: 'Oliver'
-    click_button 'Continue'
-    expect(page).to have_content 'What is your address?'
-    fill_in 'applicant_address_address', with: 'Foo Street'
-    fill_in 'applicant_address_postcode', with: 'Bar'
-    click_button 'Continue'
-    expect(page).to have_content "What's your email address?"
-    fill_in 'contact_email', with: 'foo@bar.com'
-    click_button 'Continue'
-    expect(page).to have_content 'Check details'
-    expect(page).to have_content 'Form name or numberN1'
-    expect(page).to have_content 'Single'
-    expect(page).to have_content '£0 to £2,999'
-    expect(page).to have_content 'Not receiving eligible benefits'
-    expect(page).to have_content 'Income£100'
-    expect(page).to have_content 'Fee paidNo'
-    expect(page).to have_content 'Probate caseNo'
-    expect(page).to have_content 'Claim numberNo'
-    expect(page).to have_content 'National Insurance numberAB123456A'
-    expect(page).to have_content 'Date of birth01/01/1980'
-    expect(page).to have_content 'Sir Bob Oliver'
-    expect(page).to have_content 'Foo Street'
-    expect(page).to have_content 'Bar'
-    expect(page).to have_content 'Email'
-    expect(page).to have_content 'foo@bar.com'
-    click_link_or_button 'Submit application and continue'
-    expect(page).to have_content 'Your application for help with fees is not finished yet'
-    click_link_or_button 'Continue'
-    expect(page).to have_content 'Send your N1 form with your HWF-123-KLM reference on it to complete the process'
+  after { I18n.locale = :en }
 
-    click_link_or_button 'Finish application'
-    expect(page).to have_content 'Apply for help with court and tribunal fees'
+  I18n.available_locales.each do |locale|
+    context "using the #{locale.upcase} language" do
+      scenario 'I want to fill in all details, submit my application and see the confirmation' do
+        given_the_submission_service_is_available('HWF-123-KLM')
+
+        visit "/?locale=#{locale}"
+        click_link_or_button I18n.t('start_application')
+        expect(page).to have_content I18n.t('questions.form_name.text')
+        fill_in 'form_name_identifier', with: 'N1'
+        find_continue_button.click
+        expect(page).to have_content
+        choose 'fee_paid_false'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.marital_status.text')
+        choose 'marital_status_married_false'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.savings_and_investment.text')
+        choose 'savings_and_investment_choice_less'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.benefit.text')
+        choose 'benefit_on_benefits_false'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.dependent.text')
+        choose 'dependent_children_false'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.income_kind.text_single')
+        check 'income_kind_applicant_1'
+        check 'income_kind_applicant_5'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.income_range.text_single')
+        choose 'income_range_choice_between'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.income_amount.text_single')
+        fill_in 'income_amount_amount', with: '100'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.probate.text')
+        choose 'probate_kase_false'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.claim/default.text')
+        choose 'claim_default_number_false'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.national_insurance.text')
+        fill_in 'national_insurance_number', with: 'AB123456A'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.dob.text')
+        fill_in 'dob_date_of_birth', with: '01/01/1980'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.personal_detail.text')
+        fill_in 'personal_detail_title', with: 'Sir'
+        fill_in 'personal_detail_first_name', with: 'Bob'
+        fill_in 'personal_detail_last_name', with: 'Oliver'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.applicant_address.text')
+        fill_in 'applicant_address_address', with: 'Foo Street'
+        fill_in 'applicant_address_postcode', with: 'Bar'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.contact.text')
+        fill_in 'contact_email', with: 'foo@bar.com'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('summary.labels.title')
+        expect(page).to have_content "#{I18n.t('summary.labels.form_name')}N1"
+        expect(page).to have_content I18n.t('summary.marital_status_false')
+        expect(page).to have_content I18n.t('questions.savings_and_investment.less')
+        expect(page).to have_content I18n.t('summary.applicant_on_benefits_false')
+        expect(page).to have_content "#{I18n.t('summary.labels.income')}£100"
+        expect(page).to have_content "#{I18n.t('summary.labels.fee')}#{I18n.t('summary.fee_paid_false')}"
+        expect(page).to have_content "#{I18n.t('summary.labels.probate')}#{I18n.t('summary.probate_case_false')}"
+        expect(page).to have_content "#{I18n.t('summary.labels.claim')}#{I18n.t('summary.claim_number_false')}"
+        expect(page).to have_content "#{I18n.t('summary.labels.ni_number')}AB123456A"
+        expect(page).to have_content "#{I18n.t('summary.labels.date_of_birth')}01/01/1980"
+        expect(page).to have_content 'Sir Bob Oliver'
+        expect(page).to have_content 'Foo Street'
+        expect(page).to have_content 'Bar'
+        expect(page).to have_content I18n.t('summary.labels.contact_email')
+        expect(page).to have_content 'foo@bar.com'
+        find_summary_button.click
+        expect(page).to have_content I18n.t('confirmation.default.heading')
+        find_continue_button.click
+        expect(page).to have_content I18n.t('confirmation.done.heading', form_name: 'N1', reference: 'HWF-123-KLM')
+        find_finish_button.click
+        expect(page).to have_content 'Apply for help with court and tribunal fees'
+      end
+    end
   end
 end

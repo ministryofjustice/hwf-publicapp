@@ -594,9 +594,6 @@ en:
     second_single: 'second'
     minutes_plural: 'minutes'
     seconds_plural: 'seconds'
-    note:
-      heading: 'Security time-out'
-      text: "If it looks like you're inactive for more than 30 minutes, we'll automatically delete your application and you'll need to start again."
   start_application: Apply now
   submit_button: Continue
   summary:

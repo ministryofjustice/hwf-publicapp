@@ -42,4 +42,5 @@ group :test do
   gem 'shoulda-matchers'
   gem 'timecop'
   gem 'webmock', require: false
+  gem 'poltergeist'
 end

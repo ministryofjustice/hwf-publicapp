@@ -142,6 +142,11 @@ module FeatureSteps
     expect(page).to have_text "You've been inactive for 30 minutes. Your application has been automatically deleted. Please start again."
   end
 
+  def then_they_are_redirected_to_expired_page_with_expiry_message
+    expect(page).to have_text 'Your application has been cancelled'
+    expect(page).to have_text "You've been inactive for 30 minutes. Your application has been automatically deleted. Please start again."
+  end
+
   def then_they_are_on_the_first_question
     expect(page).to have_text 'What court or tribunal fee do you need help with?'
   end

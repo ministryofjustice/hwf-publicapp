@@ -189,10 +189,5 @@ table.summary
     p = t('statement', scope: 'summary.truth')
     = form_tag(submission_path, method: :post, class: 'util_mb-medium util_mt-medium') do
       = submit_tag(t('button', scope: 'summary.truth'), class: 'button', role: 'button')
-.text
-  p
-    strong.block.bold-small =t('session.note.heading')
-    strong.block
-      =t('session.note.text')
 
 =render('shared/restart_application_link')

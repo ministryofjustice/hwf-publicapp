@@ -58,11 +58,49 @@ RSpec.describe SessionsController, type: :controller do
     before do
       allow(Storage).to receive(:new).with(session, clear: true).and_return(storage)
 
-      delete :destroy
+      delete :destroy, redirect: redirect
     end
 
-    it 'redirects to the start page' do
-      expect(response).to redirect_to(root_path)
+    context 'when redirect param is set to manual' do
+      let(:redirect) { 'manual' }
+
+      it 'returns success' do
+        expect(response).to have_http_status(:success)
+      end
+      it 'returns an empty page' do
+        expect(response.body).to eql ''
+      end
     end
+
+    context 'when redirect param is set to timeout' do
+      let(:redirect) { 'timeout' }
+
+      it 'returns success' do
+        expect(response).to have_http_status(:success)
+      end
+      it 'returns an empty page' do
+        expect(response.body).to eql ''
+      end
+    end
+
+    context 'when redirect param is not false' do
+      let(:redirect) { nil }
+
+      it 'redirects' do
+        expect(response).to have_http_status(:redirect)
+      end
+
+      it 'redirects to the start page' do
+        expect(response).to redirect_to(root_path)
+      end
+    end
+  end
+
+  describe 'GET #expired' do
+    before { get :expired }
+
+    subject { response }
+
+    it { is_expected.to have_http_status(:success) }
   end
 end

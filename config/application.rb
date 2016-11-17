@@ -31,6 +31,7 @@ module HwfPublicapp
     config.app_title = 'Help with fees - MoJ'
     config.proposition_title = 'Help with fees'
     config.product_type = 'service'
+    config.relative_url_root = ENV['RAILS_RELATIVE_URL_ROOT'] || ''
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W[#{config.root}/lib]

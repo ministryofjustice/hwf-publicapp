@@ -13,11 +13,14 @@
 // (jquery served as part of moj_template)
 
 //= require jquery_ujs
+//= require handlebars-v1.3.0
+//= require jquery.simplemodal-1.4.5
 
 //= require details.polyfill.iecompatible
 //= require is-nan.polyfill
 
 //= require_tree ./modules
+//= require_tree ./timeout
 
 // overwrite annoying console message module
 moj.Modules.devs = {};

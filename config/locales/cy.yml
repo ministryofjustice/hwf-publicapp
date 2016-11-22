@@ -244,6 +244,7 @@ cy:
         three: E-bostiwch neu anfonwch eich llythyr i'r tribiwnlys sy'n gwrando eich achos.
         two: Gallwch chi gopïo'r llythyr isod i mewn i e-bost neu argraffu'r dudalen hon.
       title: Nid yw'ch cais wedi'i gwblhau eto
+    expiry: "Mae eich cyfeirnod help i dalu ffioedd yn ddilys i’w ddefnyddio unwaith, ac mae’n dod i ben ar ôl 3 mis. Rhaid i chi wneud cais arall os oes arnoch angen rhagor o help i dalu ffioedd."
     feedback:
       heading: Rhowch eich barn am y gwasanaeth i helpu i'w wella
       link: Rhowch eich adborth i ni

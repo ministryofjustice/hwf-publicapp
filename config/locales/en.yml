@@ -244,6 +244,7 @@ en:
         three: Email or send your letter to the tribunal where your case is being heard.
         two: You can copy the letter below into an email or print this page.
       title: Your application is not finished yet
+    expiry: 'Your help with fees reference number is valid for a single use, and expires after 3 months. Please apply again if you need further help with fees.'
     feedback:
       heading: Tell us what you think and help improve the service
       link: Give us your feedback

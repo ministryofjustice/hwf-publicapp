@@ -55,7 +55,7 @@ RSpec/DescribeClass:
     - spec/support/**/*
     - spec/views/**/*
 
-RSpec/FilePath:
+Rails/FilePath:
   Exclude:
     - spec/routing/**/*
 

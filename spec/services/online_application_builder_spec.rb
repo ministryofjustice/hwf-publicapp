@@ -40,10 +40,10 @@ RSpec.describe OnlineApplicationBuilder do
       expect(subject.min_threshold_exceeded).to be true
       expect(subject.max_threshold_exceeded).to be false
       expect(subject.over_61).to be false
-      expect(subject.amount).to eql 6000
+      expect(subject.amount).to eq 6000
       expect(subject.benefits).to be true
-      expect(subject.children).to eql(2)
-      expect(subject.income).to eql(550)
+      expect(subject.children).to eq 2
+      expect(subject.income).to eq 550
       expect(subject.refund).to be true
       expect(subject.date_fee_paid).to eql(Date.parse('12/12/2015'))
       expect(subject.probate).to be true

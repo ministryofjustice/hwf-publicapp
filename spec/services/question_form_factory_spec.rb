@@ -7,7 +7,7 @@ RSpec.describe QuestionFormFactory do
     let(:id) { :benefit }
 
     it 'returns the position of the given question' do
-      is_expected.to eql(5)
+      is_expected.to eq 5
     end
   end
 

@@ -68,7 +68,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
   describe '.no_income_index' do
     subject { described_class.no_income_index }
 
-    it { is_expected.to eql(13) }
+    it { is_expected.to eq 13 }
   end
 
   describe '#export' do

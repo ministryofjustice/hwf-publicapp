@@ -25,8 +25,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
-  gem 'rubocop', '~>0.37.2', require: true
-  gem 'rubocop-rspec', require: false
+  gem 'rubocop', '~>0.47.1', require: true
+  gem 'rubocop-rspec', '~>1.10', require: false
 end
 
 group :development do

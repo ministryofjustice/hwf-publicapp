@@ -29,9 +29,9 @@ module Forms
         model.update_attributes(one: 'ONE', two: true)
       end
 
-      it 'updates the attributes of the model' do
-        expect(model.one).to eql('ONE')
-        expect(model.two).to be true
+      describe 'updates the attributes of the model' do
+        it { expect(model.one).to eql('ONE') }
+        it { expect(model.two).to be true }
       end
     end
 

@@ -46,8 +46,8 @@ RSpec.describe Storage do
         context 'when it was used more than 10 minutes ago' do
           let(:used_at) { current_time - 11.minutes }
 
+          before { expect(session).to receive(:destroy) }
           it 'raises an error and clears the session' do
-            expect(session).to receive(:destroy)
             expect { subject }.to raise_error(Storage::Expired)
           end
         end

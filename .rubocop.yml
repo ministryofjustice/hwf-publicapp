@@ -153,4 +153,32 @@ Style/WordArray:
   Exclude:
     - 'spec/**/*'
 
+RSpec/NestedGroups:
+  Max: 10
+
+RSpec/ExpectActual:
+  Exclude:
+    - 'spec/routing/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'lib/tasks/**/*'
+
+# ---------------
+# HttpPositionalArguments is rails 5 only
+# https://github.com/bbatsov/rubocop/issues/3629
+# ---------------
+Rails/HttpPositionalArguments:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/features/**/*'
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/**/*'
+
 require: rubocop-rspec

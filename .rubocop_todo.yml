@@ -27,19 +27,6 @@ RSpec/BeEql:
     - 'spec/services/online_application_builder_spec.rb'
     - 'spec/services/question_form_factory_spec.rb'
 
-# Offense count: 12
-# Configuration parameters: Max.
-RSpec/ExampleLength:
-  Exclude:
-    - 'spec/features/apply_for_help_with_fees_spec.rb'
-    - 'spec/features/pages/summary_spec.rb'
-    - 'spec/features/session_expires_when_inactive_spec.rb'
-    - 'spec/features/user_submits_their_application_spec.rb'
-    - 'spec/features/user_switches_from_benefits_but_avoids_income_spec.rb'
-    - 'spec/services/health_status/deployment_spec.rb'
-    - 'spec/services/health_status/health_check_spec.rb'
-    - 'spec/services/online_application_builder_spec.rb'
-
 # Offense count: 1
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 # SupportedStyles: implicit, each, example
@@ -58,10 +45,6 @@ RSpec/MessageSpies:
   Exclude:
     - 'spec/controllers/sessions_controller_spec.rb'
     - 'spec/services/storage_spec.rb'
-
-# Offense count: 13
-RSpec/MultipleExpectations:
-  Max: 35
 
 # Offense count: 91
 RSpec/NamedSubject:
@@ -105,15 +88,6 @@ RSpec/VerifiedDoubles:
     - 'spec/services/health_status/health_check_spec.rb'
     - 'spec/services/storage_spec.rb'
     - 'spec/services/zendesk_sender_spec.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: Include.
-# Include: spec/**/*, test/**/*
-Rails/HttpPositionalArguments:
-  Exclude:
-    - 'spec/controllers/help_requests_controller_spec.rb'
-    - 'spec/controllers/questions_controller_spec.rb'
 
 # Offense count: 1
 Rails/OutputSafety:

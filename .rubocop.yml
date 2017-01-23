@@ -2,6 +2,7 @@ inherit_from:
   - .rubocop_todo.yml
 
 AllCops:
+  TargetRubyVersion: 2.3
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
   # generated code and copy-and-pasted snipets from READMEs.
@@ -18,7 +19,7 @@ AllCops:
     - 'features/support/env.rb'
     - 'script/cucumber'
     - 'lib/log_stuff.rb'
-  TargetRubyVersion: 2.3
+
 Rails:
   Enabled: true
 

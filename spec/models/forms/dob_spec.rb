@@ -73,9 +73,9 @@ RSpec.describe Forms::Dob, type: :model do
   end
 
   describe '#export' do
-    let(:date_of_birth) { Date.parse('01/01/1980') }
-
     subject { described_class.new(date_of_birth: date_of_birth).export }
+
+    let(:date_of_birth) { Date.parse('01/01/1980') }
 
     it 'returns hash with date_of_birth' do
       is_expected.to eql(date_of_birth: date_of_birth)

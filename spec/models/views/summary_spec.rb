@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Views::Summary do
-  let(:online_application) { build :online_application }
   subject(:summary) { described_class.new(online_application) }
+
+  let(:online_application) { build :online_application }
 
   %i[married benefits children income probate deceased_name date_of_death
      probate ni_number date_of_birth full_name email_contact email_address].each do |method|
@@ -63,9 +64,9 @@ RSpec.describe Views::Summary do
   end
 
   describe '#form_name' do
-    let(:online_application) { build :online_application, form_name: form_name }
-
     subject { summary.form_name }
+
+    let(:online_application) { build :online_application, form_name: form_name }
 
     context 'when the form_name is not nil' do
       let(:form_name) { 'SOME FORM NAME' }
@@ -119,8 +120,9 @@ RSpec.describe Views::Summary do
   end
 
   describe '#income_text' do
-    let(:threshold_attributes) { { married: true, children: 3 } }
     subject { summary.income_text }
+
+    let(:threshold_attributes) { { married: true, children: 3 } }
 
     context 'when the income is between the thresholds' do
       let(:online_application) { build :online_application, :income_between_thresholds, income: 1600 }

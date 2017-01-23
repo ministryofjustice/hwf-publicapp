@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe OnlineApplicationBuilder do
+  subject(:builder) { described_class.new(storage) }
+
   let(:session) do
     {
       'questions' =>
@@ -25,8 +27,6 @@ RSpec.describe OnlineApplicationBuilder do
   end
   # We're using the real storage here to avoid an unnecessary mocking as these are mostly value objects
   let(:storage) { Storage.new(session) }
-
-  subject(:builder) { described_class.new(storage) }
 
   describe '#online_application' do
     subject { builder.online_application }

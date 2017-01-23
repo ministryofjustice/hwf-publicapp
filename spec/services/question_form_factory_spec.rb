@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe QuestionFormFactory do
   describe '.position' do
-    let(:id) { :benefit }
     subject { described_class.position(id) }
+
+    let(:id) { :benefit }
 
     it 'returns the position of the given question' do
       is_expected.to eql(5)
@@ -11,9 +12,9 @@ RSpec.describe QuestionFormFactory do
   end
 
   describe '.get_form' do
-    let(:online_application) { build(:online_application) }
-
     subject { described_class.get_form(id, online_application) }
+
+    let(:online_application) { build(:online_application) }
 
     context 'claim question' do
       let(:id) { :claim }

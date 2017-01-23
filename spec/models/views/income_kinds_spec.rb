@@ -4,8 +4,9 @@ RSpec.describe Views::IncomeKinds do
   subject(:view) { described_class.new(session) }
 
   describe '#list' do
-    let(:session) { { 'questions' => { 'income_kind' => income_kind } } }
     subject { view.list }
+
+    let(:session) { { 'questions' => { 'income_kind' => income_kind } } }
 
     context 'when only applicant kinds are present' do
       let(:income_kind) { { 'applicant' => applicant } }

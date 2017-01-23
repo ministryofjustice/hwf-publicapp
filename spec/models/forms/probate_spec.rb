@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Forms::Probate, type: :model do
-  let(:params) { { kase: kase, deceased_name: deceased_name, date_of_death: date_of_death } }
   subject(:form) { described_class.new(params) }
+
+  let(:params) { { kase: kase, deceased_name: deceased_name, date_of_death: date_of_death } }
 
   describe 'validations' do
     let(:deceased_name) { nil }
@@ -74,10 +75,10 @@ RSpec.describe Forms::Probate, type: :model do
   end
 
   describe '#export' do
+    subject { form.export }
+
     let(:deceased_name) { 'Mr. Deceased' }
     let(:date_of_death) { Date.parse('01/01/2016') }
-
-    subject { form.export }
 
     context 'when kase is true' do
       let(:kase) { true }

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Forms::IncomeAmount, type: :model do
-  let(:amount) { nil }
-
   subject(:form) { described_class.new(amount: amount) }
+
+  let(:amount) { nil }
 
   describe 'validations' do
     describe 'amount' do

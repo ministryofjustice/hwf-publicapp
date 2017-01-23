@@ -51,8 +51,9 @@ RSpec.describe OnlineApplication, type: :model do
   end
 
   describe '#savings_and_investment_extra_required?' do
-    let(:model) { build(:online_application, min_threshold_exceeded: min_threshold_exceeded, max_threshold_exceeded: max_threshold_exceeded) }
     subject { model.savings_and_investment_extra_required? }
+
+    let(:model) { build(:online_application, min_threshold_exceeded: min_threshold_exceeded, max_threshold_exceeded: max_threshold_exceeded) }
 
     context 'when minimum threshold has not been exceeded' do
       let(:min_threshold_exceeded) { false }

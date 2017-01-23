@@ -4,10 +4,10 @@ RSpec.describe Views::QuestionTitle do
   subject(:service) { described_class.new(form, online_application) }
 
   describe '#i18n_title' do
+    subject { service.i18n_title }
+
     let(:form) { double(id: id) }
     let(:online_application) { build(:online_application) }
-
-    subject { service.i18n_title }
 
     context 'for the benefit question' do
       let(:id) { 'benefit' }

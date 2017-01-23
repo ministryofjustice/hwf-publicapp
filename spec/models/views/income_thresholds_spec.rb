@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Views::IncomeThresholds do
-  let(:online_application) { build(:online_application, married: married, children: children) }
   subject(:service) { described_class.new(online_application) }
+
+  let(:online_application) { build(:online_application, married: married, children: children) }
 
   describe '#min_threshold' do
     subject { service.min_threshold }

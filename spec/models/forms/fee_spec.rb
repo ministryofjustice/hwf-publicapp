@@ -36,9 +36,9 @@ RSpec.describe Forms::Fee, type: :model do
   end
 
   describe '#export' do
-    let(:date_paid) { Date.parse('12/12/2015') }
-
     subject { described_class.new(paid: paid, date_paid: date_paid).export }
+
+    let(:date_paid) { Date.parse('12/12/2015') }
 
     context 'when paid is true' do
       let(:paid) { true }

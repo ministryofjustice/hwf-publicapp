@@ -4,8 +4,9 @@ RSpec.describe Forms::IncomeRange, type: :model do
   subject(:form) { described_class.new(choice: choice) }
 
   describe '#export' do
-    let(:choice) { 'more' }
     subject { form.export }
+
+    let(:choice) { 'more' }
 
     context 'when "less"' do
       let(:choice) { 'less' }

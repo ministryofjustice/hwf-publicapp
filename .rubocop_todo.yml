@@ -36,7 +36,7 @@ RSpec/HookArgument:
 
 # Offense count: 34
 RSpec/LeadingSubject:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 4
 # Configuration parameters: EnforcedStyle, SupportedStyles.

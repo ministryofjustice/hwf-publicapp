@@ -6,7 +6,7 @@ RSpec.describe HealthStatus::PingController, type: :controller do
     let(:json) { { some_key: 'some value' } }
     let(:deployment) { double(as_json: json) }
 
-    before(:each) do
+    before do
       allow(HealthStatus::Deployment).to receive(:new).and_return(deployment)
 
       get :show

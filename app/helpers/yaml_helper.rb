@@ -17,8 +17,7 @@ module YamlHelper
   def add_header
     unless @this_section[:title].blank?
       @result << header_block do
-        header_text +
-        anchor_tag
+        header_text + anchor_tag
       end
     end
   end

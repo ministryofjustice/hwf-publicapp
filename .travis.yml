@@ -18,3 +18,5 @@ addons:
 script:
 - bundle exec rubocop
 - bundle exec rspec
+after_success:
+- bundle exec codeclimate-test-reporter

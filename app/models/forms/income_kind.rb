@@ -44,7 +44,7 @@ module Forms
     end
 
     def clear_empty_string(attributes, attribute)
-      attributes[attribute].delete_if { |value| value == '' } if attributes[attribute]
+      attributes[attribute]&.delete_if { |value| value == '' }
     end
   end
 end

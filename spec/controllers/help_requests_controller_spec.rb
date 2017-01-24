@@ -24,8 +24,8 @@ RSpec.describe HelpRequestsController, type: :controller do
   describe 'POST #create' do
     let(:params) { { name: 'N', phone: 'P', description: 'D' } }
     let(:id) { :help_request }
-    let(:form) { double(id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?) }
-    let(:zendesk_sender) { double(send_help_request: nil) }
+    let(:form) { instance_double(Forms::HelpRequest, id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?) }
+    let(:zendesk_sender) { instance_double(ZendeskSender, send_help_request: nil) }
 
     before do
       allow(ZendeskSender).to receive(:new).and_return(zendesk_sender)

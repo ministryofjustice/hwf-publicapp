@@ -6,7 +6,7 @@ RSpec.describe Views::QuestionTitle do
   describe '#i18n_title' do
     subject { service.i18n_title }
 
-    let(:form) { double(id: id) }
+    let(:form) { instance_double(Forms::Benefit, id: id) }
     let(:online_application) { build(:online_application) }
 
     context 'for the benefit question' do

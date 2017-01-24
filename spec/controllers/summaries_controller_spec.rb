@@ -4,7 +4,7 @@ RSpec.describe SummariesController, type: :controller do
 
   describe 'GET #show' do
     let(:storage_started) { true }
-    let(:storage) { double(started?: storage_started) }
+    let(:storage) { instance_double(Storage, started?: storage_started) }
     let(:online_application) { build :online_application }
     let(:summary_view) { double }
 

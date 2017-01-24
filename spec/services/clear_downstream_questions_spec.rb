@@ -4,7 +4,7 @@ RSpec.describe ClearDownstreamQuestions do
   subject(:service) { described_class.new(storage, question) }
 
   describe '#for_changes' do
-    let(:storage) { double(clear_form: nil) }
+    let(:storage) { instance_double(Storage, clear_form: nil) }
 
     before do
       service.for_changes(old_online_application, new_online_application)

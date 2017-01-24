@@ -4,7 +4,7 @@ RSpec.describe HealthStatus::PingController, type: :controller do
 
   describe 'GET #show' do
     let(:json) { { some_key: 'some value' } }
-    let(:deployment) { double(as_json: json) }
+    let(:deployment) { instance_double(HealthStatus::Deployment, as_json: json) }
 
     before do
       allow(HealthStatus::Deployment).to receive(:new).and_return(deployment)

@@ -157,7 +157,7 @@ RSpec.describe Storage do
     let(:json_data) { { some: 'data' } }
 
     let(:session) { {} }
-    let(:form) { double(id: id, as_json: json_data) }
+    let(:form) { instance_double(Forms::Benefit, id: id, as_json: json_data) }
 
     before do
       storage.save_form(form)
@@ -172,7 +172,7 @@ RSpec.describe Storage do
     let(:id) { 'ID' }
     let(:json_data) { { some: 'data' } }
 
-    let(:form) { double(id: id, update_attributes: nil) }
+    let(:form) { instance_double(Forms::Benefit, id: id, update_attributes: nil) }
 
     before do
       storage.load_form(form)

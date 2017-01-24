@@ -10,7 +10,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'GET #start' do
     before do
-      expect(Storage).to receive(:new).with(session, clear: true).and_return(storage)
+      allow(Storage).to receive(:new).with(session, clear: true).and_return(storage)
 
       get :start
     end
@@ -30,7 +30,7 @@ RSpec.describe SessionsController, type: :controller do
 
     before do
       allow(Settings).to receive(:done_page).and_return(done_page_settings)
-      expect(Storage).to receive(:new).with(session).and_return(storage)
+      allow(Storage).to receive(:new).with(session).and_return(storage)
 
       post :finish
     end
@@ -57,7 +57,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'DELETE #destroy' do
     before do
-      expect(Storage).to receive(:new).with(session, clear: true).and_return(storage)
+      allow(Storage).to receive(:new).with(session, clear: true).and_return(storage)
 
       delete :destroy
     end

@@ -42,14 +42,16 @@ module Forms
     end
 
     describe '#export' do
+      subject(:export) { model.export }
+
       let(:params) { double }
 
       before do
-        allow(subject).to receive(:export_params).and_return(params)
+        allow(model).to receive(:export_params).and_return(params)
       end
 
       it 'returns parameters from export_params method overriden by subclassing' do
-        expect(subject.export).to eql(params)
+        is_expected.to eql(params)
       end
     end
 
@@ -60,7 +62,7 @@ module Forms
         let(:env) { 'development' }
 
         it 'returns `yes`' do
-          expect(subject.autocomplete).to eql 'on'
+          expect(model.autocomplete).to eql 'on'
         end
       end
 
@@ -69,7 +71,7 @@ module Forms
           let(:env) { environment }
 
           it 'returns `no`' do
-            expect(subject.autocomplete).to eql 'off'
+            expect(model.autocomplete).to eql 'off'
           end
         end
       end

@@ -12,7 +12,7 @@ RSpec.describe QuestionFormFactory do
   end
 
   describe '.get_form' do
-    subject { described_class.get_form(id, online_application) }
+    subject(:get_form) { described_class.get_form(id, online_application) }
 
     let(:online_application) { build(:online_application) }
 
@@ -56,7 +56,7 @@ RSpec.describe QuestionFormFactory do
       let(:id) { :wrong }
 
       it 'raises QuestionDoesNotExist error' do
-        expect { subject }.to raise_error(QuestionFormFactory::QuestionDoesNotExist)
+        expect { get_form }.to raise_error(QuestionFormFactory::QuestionDoesNotExist)
       end
     end
   end

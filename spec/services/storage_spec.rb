@@ -6,8 +6,7 @@ RSpec.describe Storage do
   let(:current_time) { Time.zone.now }
 
   class MockSession < Hash
-    def destroy
-    end
+    def destroy; end
   end
 
   let(:options) { {} }

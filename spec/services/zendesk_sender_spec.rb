@@ -14,14 +14,11 @@ RSpec.describe ZendeskSender do
       Settings.zendesk.enabled = true
       allow(ZendeskAPI::Client).to receive(:new).and_yield(config).and_return(client)
       allow(ZendeskAPI::Ticket).to receive(:create!).with(client, attributes)
+      send_help_request
     end
 
     after do
       Settings.zendesk.enabled = false
-    end
-
-    before do
-      send_help_request
     end
 
     describe 'the ZendeskAPI client is initialised with' do

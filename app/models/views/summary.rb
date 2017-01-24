@@ -42,7 +42,7 @@ module Views
 
     def children_text
       unless children.nil?
-        children > 0 ? children.to_s : I18n.t('summary.children_false')
+        children.positive? ? children.to_s : I18n.t('summary.children_false')
       end
     end
 

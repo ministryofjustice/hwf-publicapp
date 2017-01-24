@@ -36,7 +36,7 @@ class Storage
   end
 
   def clear_form(form_id)
-    @session['questions'].delete(form_id.to_s) if @session['questions']
+    @session['questions']&.delete(form_id.to_s)
   end
 
   def submission_result=(result)

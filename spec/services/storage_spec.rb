@@ -1,24 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe Storage do
+  subject(:storage) { described_class.new(session, options) }
+
   let(:current_time) { Time.zone.now }
 
   class MockSession < Hash
-    def destroy
-    end
+    def destroy; end
   end
 
   let(:options) { {} }
-  subject(:storage) { described_class.new(session, options) }
 
   describe '#initialize' do
-    let(:session) { MockSession[used_at: used_at.to_s, started_at: started_at.to_s] }
-
-    subject do
+    subject(:frozen_storage) do
       Timecop.freeze(current_time) do
         storage
       end
     end
+
+    let(:session) { MockSession[used_at: used_at.to_s, started_at: started_at.to_s] }
 
     context 'when the storage is requested to be cleared' do
       let(:started_at) { current_time - 5.minutes }
@@ -27,7 +27,7 @@ RSpec.describe Storage do
 
       before do
         allow(session).to receive(:destroy)
-        subject
+        frozen_storage
       end
 
       it 'clears the session' do
@@ -46,16 +46,16 @@ RSpec.describe Storage do
         context 'when it was used more than 10 minutes ago' do
           let(:used_at) { current_time - 11.minutes }
 
+          before { allow(session).to receive(:destroy) }
           it 'raises an error and clears the session' do
-            expect(session).to receive(:destroy)
-            expect { subject }.to raise_error(Storage::Expired)
+            expect { frozen_storage }.to raise_error(Storage::Expired)
           end
         end
 
         context 'when it was used less than 10 minutes ago' do
           let(:used_at) { current_time - 5.minutes }
 
-          before { subject }
+          before { frozen_storage }
 
           it 'stores the current time to the session, as time of last used' do
             expect(session[:used_at]).to eql(current_time)
@@ -65,7 +65,7 @@ RSpec.describe Storage do
         context 'when the storage was just initialised for the first time' do
           let(:session) { {} }
 
-          before { subject }
+          before { frozen_storage }
 
           it 'stores the current time to the session, as time of last used' do
             expect(session[:used_at]).to eql(current_time)
@@ -77,7 +77,7 @@ RSpec.describe Storage do
         let(:started_at) { nil }
         let(:used_at) { nil }
 
-        before { subject }
+        before { frozen_storage }
 
         it 'stores the current time to the session, as time of last used' do
           expect(session[:used_at]).to eql(current_time)
@@ -131,9 +131,9 @@ RSpec.describe Storage do
   end
 
   describe '#time_taken' do
-    let(:session) { {} }
-
     subject { storage.time_taken }
+
+    let(:session) { {} }
 
     context 'when started_at is not set' do
       it { is_expected.to be nil }
@@ -157,7 +157,7 @@ RSpec.describe Storage do
     let(:json_data) { { some: 'data' } }
 
     let(:session) { {} }
-    let(:form) { double(id: id, as_json: json_data) }
+    let(:form) { instance_double(Forms::Benefit, id: id, as_json: json_data) }
 
     before do
       storage.save_form(form)
@@ -172,7 +172,7 @@ RSpec.describe Storage do
     let(:id) { 'ID' }
     let(:json_data) { { some: 'data' } }
 
-    let(:form) { double(id: id, update_attributes: nil) }
+    let(:form) { instance_double(Forms::Benefit, id: id, update_attributes: nil) }
 
     before do
       storage.load_form(form)
@@ -235,9 +235,9 @@ RSpec.describe Storage do
   end
 
   describe '#submission_result' do
-    let(:result) { double }
-
     subject { storage.submission_result }
+
+    let(:result) { double }
 
     context 'when there is a submission_result stored in the session' do
       let(:session) { { submission_result: result } }

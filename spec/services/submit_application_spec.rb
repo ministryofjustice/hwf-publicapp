@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe SubmitApplication do
+  subject(:submit_application) { described_class.new(url, token) }
+
   let(:url) { 'URL' }
   let(:token) { 'TOKEN' }
   let(:online_application) { build(:online_application) }
 
-  subject(:submit_application) { described_class.new(url, token) }
-
   describe '#available?' do
-    let(:request_path) { "#{url}/ping.json" }
-
     subject { submit_application.available? }
+
+    let(:request_path) { "#{url}/ping.json" }
 
     context 'when the connection is working' do
       before do

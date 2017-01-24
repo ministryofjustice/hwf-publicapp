@@ -46,9 +46,9 @@ RSpec.describe Forms::Claim::Default, type: :model do
   end
 
   describe '#export' do
-    let(:identifier) { 'IDENTIFIER' }
-
     subject { form.export }
+
+    let(:identifier) { 'IDENTIFIER' }
 
     context 'when number is true' do
       let(:number) { true }

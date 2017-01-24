@@ -4,7 +4,7 @@ RSpec.describe SubmissionsController, type: :controller do
   let(:session) { double }
   let(:storage) { double }
   let(:online_application) { build(:online_application) }
-  let(:builder) { double(online_application: online_application) }
+  let(:builder) { instance_double(OnlineApplicationBuilder, online_application: online_application) }
 
   before do
     allow(controller).to receive(:session).and_return(session)

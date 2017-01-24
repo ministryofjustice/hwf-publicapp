@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Forms::ApplicantAddress, type: :model do
+  subject(:form) { described_class.new(address: address, postcode: postcode) }
+
   let(:address) { 'London' }
   let(:postcode) { 'LON DON' }
-
-  subject(:form) { described_class.new(address: address, postcode: postcode) }
 
   describe 'validations' do
     describe 'address' do

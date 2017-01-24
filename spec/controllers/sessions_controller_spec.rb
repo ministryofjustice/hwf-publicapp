@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
   let(:session) { double }
-  let(:storage) { double(start: nil, clear: nil) }
+  let(:storage) { instance_double(Storage, start: nil, clear: nil) }
 
   before do
     allow(controller).to receive(:session).and_return(session)
@@ -10,7 +10,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'GET #start' do
     before do
-      expect(Storage).to receive(:new).with(session, clear: true).and_return(storage)
+      allow(Storage).to receive(:new).with(session, clear: true).and_return(storage)
 
       get :start
     end
@@ -26,11 +26,10 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'POST #finish' do
     let(:external_url) { nil }
-    let(:done_page_settings) { double(external_url: external_url) }
 
     before do
-      allow(Settings).to receive(:done_page).and_return(done_page_settings)
-      expect(Storage).to receive(:new).with(session).and_return(storage)
+      allow(Settings.done_page).to receive(:external_url).and_return(external_url)
+      allow(Storage).to receive(:new).with(session).and_return(storage)
 
       post :finish
     end
@@ -57,7 +56,7 @@ RSpec.describe SessionsController, type: :controller do
 
   describe 'DELETE #destroy' do
     before do
-      expect(Storage).to receive(:new).with(session, clear: true).and_return(storage)
+      allow(Storage).to receive(:new).with(session, clear: true).and_return(storage)
 
       delete :destroy
     end

@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Forms::IncomeKind, type: :model do
-  let(:params) { {} }
   subject(:form) { described_class.new(params) }
+
+  let(:params) { {} }
 
   describe 'validations' do
     let(:partner) { nil }
@@ -67,13 +68,13 @@ RSpec.describe Forms::IncomeKind, type: :model do
   describe '.no_income_index' do
     subject { described_class.no_income_index }
 
-    it { is_expected.to eql(13) }
+    it { is_expected.to eq 13 }
   end
 
   describe '#export' do
-    let(:params) { { applicant: applicant, partner: partner } }
-
     subject { form.export }
+
+    let(:params) { { applicant: applicant, partner: partner } }
 
     context 'when partner kinds are provided' do
       context 'when the only option for both is "no income"' do

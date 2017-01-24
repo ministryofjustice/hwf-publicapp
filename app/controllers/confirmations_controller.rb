@@ -40,6 +40,6 @@ class ConfirmationsController < ApplicationController
   end
 
   def storage_has_time?
-    storage.started? && storage.time_taken > 0
+    storage.started? && storage.time_taken.positive?
   end
 end

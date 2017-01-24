@@ -4,7 +4,7 @@ RSpec.describe ClearDownstreamQuestions do
   subject(:service) { described_class.new(storage, question) }
 
   describe '#for_changes' do
-    let(:storage) { double(clear_form: nil) }
+    let(:storage) { instance_double(Storage, clear_form: nil) }
 
     before do
       service.for_changes(old_online_application, new_online_application)
@@ -17,9 +17,9 @@ RSpec.describe ClearDownstreamQuestions do
       context 'when the amount of children has changed' do
         let(:new_online_application) { build :online_application, children: 1 }
 
-        it 'clears income_range and income_amount questions' do
-          expect(storage).to have_received(:clear_form).with(:income_range)
-          expect(storage).to have_received(:clear_form).with(:income_amount)
+        describe 'clears income_range and income_amount questions' do
+          it { expect(storage).to have_received(:clear_form).with(:income_range) }
+          it { expect(storage).to have_received(:clear_form).with(:income_amount) }
         end
       end
 
@@ -39,9 +39,9 @@ RSpec.describe ClearDownstreamQuestions do
       context 'when the income has changed to 0' do
         let(:new_online_application) { build :online_application, income: 0 }
 
-        it 'clears income_range and income_amount questions' do
-          expect(storage).to have_received(:clear_form).with(:income_range)
-          expect(storage).to have_received(:clear_form).with(:income_amount)
+        describe 'clears income_range and income_amount questions' do
+          it { expect(storage).to have_received(:clear_form).with(:income_range) }
+          it { expect(storage).to have_received(:clear_form).with(:income_amount) }
         end
       end
 

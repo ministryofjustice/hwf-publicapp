@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe QuestionsController, type: :controller do
-  let(:online_application) { double(:attributes= => nil) }
+  let(:online_application) { instance_double(OnlineApplication, :attributes= => nil) }
   let(:session) { double }
   let(:storage_started) { true }
-  let(:storage) { double(load_form: nil, save_form: nil, started?: storage_started) }
+  let(:storage) { instance_double(Storage, load_form: nil, save_form: nil, started?: storage_started) }
   let(:valid_id) { :question }
   let(:invalid_id) { :invalid }
   let(:form) { double }
@@ -67,12 +67,12 @@ RSpec.describe QuestionsController, type: :controller do
   describe 'PUT #update' do
     let(:valid?) { false }
     let(:params) { { question_1: 'AAA', question_2: 'BBB' } }
-    let(:form) { double(id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?, export: exported_form) }
+    let(:form) { instance_double(Forms::Benefit, id: id, permitted_attributes: params.keys, update_attributes: nil, valid?: valid?, export: exported_form) }
     let(:exported_form) { double }
 
     let(:next_path) { root_path }
-    let(:navigation) { double(next: next_path) }
-    let(:clear_service) { double(for_changes: nil) }
+    let(:navigation) { instance_double(Navigation, next: next_path) }
+    let(:clear_service) { instance_double(ClearDownstreamQuestions, for_changes: nil) }
     let(:dupped_online_application) { double }
 
     before do

@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Forms::FormName, type: :model do
+  subject(:form) { described_class.new(identifier: identifier, unknown: unknown, et: et) }
+
   let(:unknown) { false }
   let(:et) { false }
-
-  subject(:form) { described_class.new(identifier: identifier, unknown: unknown, et: et) }
 
   describe 'validations' do
     describe 'identifier' do

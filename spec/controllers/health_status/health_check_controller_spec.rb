@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe HealthStatus::HealthCheckController, type: :controller do
   describe '#show' do
     let(:json) { { some_key: 'some_value' } }
-    let(:health_check) { double(as_json: json, healthy?: healthy?) }
+    let(:health_check) { instance_double(HealthStatus::HealthCheck, as_json: json, healthy?: healthy?) }
 
     before do
       allow(HealthStatus::HealthCheck).to receive(:new).and_return(health_check)

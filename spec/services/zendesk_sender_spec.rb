@@ -4,6 +4,8 @@ RSpec.describe ZendeskSender do
   subject(:service) { described_class.new }
 
   describe '#send_help_request' do
+    subject(:send_help_request) { service.send_help_request(help_request) }
+
     let(:config) { double(:url= => nil, :username= => nil, :token= => nil) }
     let(:client) { double }
     let(:help_request) { double(name: 'NAME', phone: 'PHONE', description: 'DESCRIPTION') }
@@ -12,16 +14,11 @@ RSpec.describe ZendeskSender do
       Settings.zendesk.enabled = true
       allow(ZendeskAPI::Client).to receive(:new).and_yield(config).and_return(client)
       allow(ZendeskAPI::Ticket).to receive(:create!).with(client, attributes)
+      send_help_request
     end
 
     after do
       Settings.zendesk.enabled = false
-    end
-
-    subject { service.send_help_request(help_request) }
-
-    before do
-      subject
     end
 
     describe 'the ZendeskAPI client is initialised with' do

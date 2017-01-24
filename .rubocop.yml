@@ -1,4 +1,8 @@
+inherit_from:
+  - .rubocop_todo.yml
+
 AllCops:
+  TargetRubyVersion: 2.3
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
   # generated code and copy-and-pasted snipets from READMEs.
@@ -15,7 +19,7 @@ AllCops:
     - 'features/support/env.rb'
     - 'script/cucumber'
     - 'lib/log_stuff.rb'
-  TargetRubyVersion: 2.3
+
 Rails:
   Enabled: true
 
@@ -51,7 +55,7 @@ RSpec/DescribeClass:
     - spec/support/**/*
     - spec/views/**/*
 
-RSpec/FilePath:
+Rails/FilePath:
   Exclude:
     - spec/routing/**/*
 
@@ -148,5 +152,47 @@ Style/PercentLiteralDelimiters:
 Style/WordArray:
   Exclude:
     - 'spec/**/*'
+
+RSpec/NestedGroups:
+  Max: 10
+
+RSpec/ExpectActual:
+  Exclude:
+    - 'spec/routing/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'lib/tasks/**/*'
+
+# ---------------
+# HttpPositionalArguments is rails 5 only
+# https://github.com/bbatsov/rubocop/issues/3629
+# ---------------
+Rails/HttpPositionalArguments:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - 'spec/features/**/*'
+
+RSpec/ExampleLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/NumericPredicate:
+  Exclude:
+    - 'spec/**/*'
+
+Rails/OutputSafety:
+  Exclude:
+    - 'app/helpers/yaml_helper.rb'
+
+RSpec/VerifiedDoubles:
+  Exclude:
+    - 'spec/services/health_status/deployment_spec.rb'
+    - 'spec/services/health_status/health_check_spec.rb'
+    - 'spec/services/zendesk_sender_spec.rb'
 
 require: rubocop-rspec

@@ -2,18 +2,19 @@ require 'rails_helper'
 
 RSpec.describe QuestionFormFactory do
   describe '.position' do
-    let(:id) { :benefit }
     subject { described_class.position(id) }
 
+    let(:id) { :benefit }
+
     it 'returns the position of the given question' do
-      is_expected.to eql(5)
+      is_expected.to eq 5
     end
   end
 
   describe '.get_form' do
-    let(:online_application) { build(:online_application) }
+    subject(:get_form) { described_class.get_form(id, online_application) }
 
-    subject { described_class.get_form(id, online_application) }
+    let(:online_application) { build(:online_application) }
 
     context 'claim question' do
       let(:id) { :claim }
@@ -55,7 +56,7 @@ RSpec.describe QuestionFormFactory do
       let(:id) { :wrong }
 
       it 'raises QuestionDoesNotExist error' do
-        expect { subject }.to raise_error(QuestionFormFactory::QuestionDoesNotExist)
+        expect { get_form }.to raise_error(QuestionFormFactory::QuestionDoesNotExist)
       end
     end
   end

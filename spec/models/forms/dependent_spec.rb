@@ -53,9 +53,9 @@ RSpec.describe Forms::Dependent, type: :model do
   end
 
   describe '#export' do
-    let(:children_number) { 3 }
-
     subject { form.export }
+
+    let(:children_number) { 3 }
 
     context 'when children is true' do
       let(:children) { true }

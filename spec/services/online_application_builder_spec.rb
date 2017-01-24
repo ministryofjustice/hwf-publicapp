@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe OnlineApplicationBuilder do
+  subject(:builder) { described_class.new(storage) }
+
   let(:session) do
     {
       'questions' =>
@@ -26,43 +28,41 @@ RSpec.describe OnlineApplicationBuilder do
   # We're using the real storage here to avoid an unnecessary mocking as these are mostly value objects
   let(:storage) { Storage.new(session) }
 
-  subject(:builder) { described_class.new(storage) }
-
   describe '#online_application' do
-    subject { builder.online_application }
+    subject(:online_application) { builder.online_application }
 
     it 'returns an online_application' do
       is_expected.to be_a(OnlineApplication)
     end
 
-    it 'assigns the correct values to each field' do
-      expect(subject.married).to be true
-      expect(subject.min_threshold_exceeded).to be true
-      expect(subject.max_threshold_exceeded).to be false
-      expect(subject.over_61).to be false
-      expect(subject.amount).to eql 6000
-      expect(subject.benefits).to be true
-      expect(subject.children).to eql(2)
-      expect(subject.income).to eql(550)
-      expect(subject.refund).to be true
-      expect(subject.date_fee_paid).to eql(Date.parse('12/12/2015'))
-      expect(subject.probate).to be true
-      expect(subject.deceased_name).to eql('Mr. Deceased')
-      expect(subject.date_of_death).to eql(Date.parse('01/08/2015'))
-      expect(subject.case_number).to eql('CL001')
-      expect(subject.form_name).to eql('EX47')
-      expect(subject.ni_number).to eql('AA123456A')
-      expect(subject.date_of_birth).to eql(Date.parse('10/03/1967'))
-      expect(subject.title).to eql('Mrs.')
-      expect(subject.first_name).to eql('Mary')
-      expect(subject.last_name).to eql('Jones')
-      expect(subject.address).to eql('1 Blue Fields, Shine Town')
-      expect(subject.postcode).to eql('SH01 TW0')
-      expect(subject.email_contact).to be true
-      expect(subject.email_address).to eql('mary@jones.com')
-      expect(subject.phone_contact).to be false
-      expect(subject.post_contact).to be false
-      expect(subject.feedback_opt_in).to be true
+    it 'assigns the correct values to each field' do # rubocop:disable RSpec/MultipleExpectations
+      expect(online_application.married).to be true
+      expect(online_application.min_threshold_exceeded).to be true
+      expect(online_application.max_threshold_exceeded).to be false
+      expect(online_application.over_61).to be false
+      expect(online_application.amount).to eq 6000
+      expect(online_application.benefits).to be true
+      expect(online_application.children).to eq 2
+      expect(online_application.income).to eq 550
+      expect(online_application.refund).to be true
+      expect(online_application.date_fee_paid).to eql(Date.parse('12/12/2015'))
+      expect(online_application.probate).to be true
+      expect(online_application.deceased_name).to eql('Mr. Deceased')
+      expect(online_application.date_of_death).to eql(Date.parse('01/08/2015'))
+      expect(online_application.case_number).to eql('CL001')
+      expect(online_application.form_name).to eql('EX47')
+      expect(online_application.ni_number).to eql('AA123456A')
+      expect(online_application.date_of_birth).to eql(Date.parse('10/03/1967'))
+      expect(online_application.title).to eql('Mrs.')
+      expect(online_application.first_name).to eql('Mary')
+      expect(online_application.last_name).to eql('Jones')
+      expect(online_application.address).to eql('1 Blue Fields, Shine Town')
+      expect(online_application.postcode).to eql('SH01 TW0')
+      expect(online_application.email_contact).to be true
+      expect(online_application.email_address).to eql('mary@jones.com')
+      expect(online_application.phone_contact).to be false
+      expect(online_application.post_contact).to be false
+      expect(online_application.feedback_opt_in).to be true
     end
   end
 end

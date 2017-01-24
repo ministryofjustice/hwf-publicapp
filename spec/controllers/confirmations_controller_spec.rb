@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe ConfirmationsController, type: :controller do
   let(:session) { double }
-  let(:online_application) { double(benefits: true) }
+  let(:online_application) { instance_double(OnlineApplication, benefits: true) }
   let(:result) { { result: true, message: 'HWF-010101' } }
   let(:storage_started) { true }
-  let(:storage) { double(submission_result: result, time_taken: 600, started?: storage_started) }
-  let(:builder) { double(online_application: online_application) }
+  let(:storage) { instance_double(Storage, submission_result: result, time_taken: 600, started?: storage_started) }
+  let(:builder) { instance_double(OnlineApplicationBuilder, online_application: online_application) }
 
   before do
     allow(controller).to receive(:session).and_return(session)

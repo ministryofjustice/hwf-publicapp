@@ -181,4 +181,18 @@ RSpec/ExampleLength:
   Exclude:
     - 'spec/**/*'
 
+Style/NumericPredicate:
+  Exclude:
+    - 'spec/**/*'
+
+Rails/OutputSafety:
+  Exclude:
+    - 'app/helpers/yaml_helper.rb'
+
+RSpec/VerifiedDoubles:
+  Exclude:
+    - 'spec/services/health_status/deployment_spec.rb'
+    - 'spec/services/health_status/health_check_spec.rb'
+    - 'spec/services/zendesk_sender_spec.rb'
+
 require: rubocop-rspec

@@ -1,5 +1,6 @@
 script#extend-session(type='text/x-handlebars-template')
-  .modal#session-modal
+  .modal#session-modal role='dialog' aria-labelledby='aria-label'
+    span.visuallyhidden#aria-label = t('session.expiring.aria-warning')
     h2 =t('session.expiring.heading')
     p
       =t('session.expiring.in')

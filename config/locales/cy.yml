@@ -577,6 +577,7 @@ cy:
     return_to_application: "Na, mynd yn ôl at y cais cyfredol"
   session:
     expiring:
+      aria-warning: 'REPLACE WITH TRANSLATION'
       heading: "Angen rhagor o amser i fynd ymlaen?"
       in: "Bydd eich cais yn cael ei ddileu mewn"
       security: "Am resymau diogelwch, ni fydd unrhyw wybodaeth yn cael ei chadw."

@@ -577,6 +577,7 @@ en:
       return_to_application: "No, return to current application"
   session:
     expiring:
+      aria-warning: 'Your time to complete application has almost expired'
       heading: 'Want more time to continue?'
       in: 'Your application will be deleted in'
       security: 'For security reasons, any information will not be saved.'

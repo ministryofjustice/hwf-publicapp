@@ -14,13 +14,17 @@ moj.Modules.sessionModal = (function() {
       writeTime,
 
       //vars
-      countdownTimer
+      countdownTimer,
+      lastFocus
       ;
 
   init = function() {
   };
 
   showModal = function( refreshSession, endSession, sessionMinutes, warnBeforeEndMinutes ) {
+
+    lastFocus = document.activeElement;
+
     var source = $( '#extend-session' ).html(),
         template = Handlebars.compile( source ),
         sessionString,
@@ -76,6 +80,7 @@ moj.Modules.sessionModal = (function() {
   closeModal = function() {
     $.modal.close();
     $( '#session-modal' ).remove();
+    lastFocus.focus();
     cancelCountdown();
   };
 

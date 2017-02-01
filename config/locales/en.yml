@@ -576,8 +576,11 @@ en:
       confirm_cancel: "Yes, cancel"
       return_to_application: "No, return to current application"
   session:
+    note:
+      heading: 'Security time-out'
+      text: 'After %{session_length} minutes of inactivity, we’ll check if you need more time or automatically delete your application for security reasons.'
     expiring:
-      aria-warning: 'Your time to complete application has almost expired'
+      aria-warning: 'Your application has been inactive for over %{passed} minutes. Your session will time out in less than %{remain} minutes. Hit space bar to continue for another %{session_length} minutes.'
       heading: 'Want more time to continue?'
       in: 'Your application will be deleted in'
       security: 'For security reasons, any information will not be saved.'

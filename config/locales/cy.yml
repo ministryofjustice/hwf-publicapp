@@ -576,6 +576,9 @@ cy:
     confirm_cancel: "Ie, canslo"
     return_to_application: "Na, mynd yn ôl at y cais cyfredol"
   session:
+    note:
+      heading: 'REPLACE WITH TRANSLATION'
+      text: 'REPLACE WITH TRANSLATION'
     expiring:
       aria-warning: 'REPLACE WITH TRANSLATION'
       heading: "Angen rhagor o amser i fynd ymlaen?"

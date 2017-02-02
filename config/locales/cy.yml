@@ -577,10 +577,10 @@ cy:
     return_to_application: "Na, mynd yn ôl at y cais cyfredol"
   session:
     note:
-      heading: 'REPLACE WITH TRANSLATION'
-      text: 'REPLACE WITH TRANSLATION'
+      heading: 'Terfyn amser er diogelwch'
+      text: 'Os na fyddwch wedi gwneud unrhyw beth gyda’ch cais am %{session_length} munud, byddwn yn gofyn a oes arnoch angen rhagor o amser, neu byddwn yn dileu eich cais yn awtomatig er dibenion diogelwch.'
     expiring:
-      aria-warning: 'REPLACE WITH TRANSLATION'
+      aria-warning: 'Nid ydych wedi gwneud unrhyw beth gyda’ch cais am dros %{passed} munud.  Bydd eich sesiwn yn dod i ben mewn llai na %{remain} munud.  Pwyswch y bylchwr i barhau am %{session_length} munud arall.'
       heading: "Angen rhagor o amser i fynd ymlaen?"
       in: "Bydd eich cais yn cael ei ddileu mewn"
       security: "Am resymau diogelwch, ni fydd unrhyw wybodaeth yn cael ei chadw."

@@ -22,14 +22,12 @@ RSpec.describe Forms::Probate, type: :model do
         let(:date_of_death) { Time.zone.today - 1.month }
 
         context 'time set to past' do
-          before { Timecop.freeze(Time.parse("2016-11-01")) }
+          before { Timecop.freeze(Time.zone.parse("2016-11-01")) }
           after { Timecop.return }
 
-          let(:date_of_death) { 2.day.from_now }
+          let(:date_of_death) { 2.days.from_now }
 
-          it "will use correct 'tomorrow' date" do
-            expect(subject).not_to be_valid
-          end
+          it { is_expected.not_to be_valid }
         end
 
         describe 'date of death' do

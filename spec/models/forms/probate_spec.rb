@@ -30,6 +30,13 @@ RSpec.describe Forms::Probate, type: :model do
           it { is_expected.not_to be_valid }
         end
 
+        context 'time limit probate' do
+          before { Timecop.freeze(Time.zone.parse("1940-01-01")) }
+          after { Timecop.return }
+
+          it { is_expected.to be_valid }
+        end
+
         describe 'date of death' do
           describe 'when missing' do
             let(:date_of_death) { nil }

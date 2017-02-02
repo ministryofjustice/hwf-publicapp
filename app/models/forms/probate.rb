@@ -11,8 +11,8 @@ module Forms
 
     with_options if: :validate_probate_date_of_death? do
       validates :date_of_death, date: {
-        after_or_equal_to: TIME_LIMIT_FOR_PROBATE.years.ago,
-        before: Time.zone.tomorrow,
+        after_or_equal_to: :time_limit_probate,
+        before: :tomorrow,
         allow_blank: false
       }
     end
@@ -29,6 +29,14 @@ module Forms
         deceased_name: kase ? deceased_name : nil,
         date_of_death: kase ? date_of_death : nil
       }
+    end
+
+    def tomorrow
+      Time.zone.tomorrow
+    end
+
+    def time_limit_probate
+      TIME_LIMIT_FOR_PROBATE.years.ago
     end
   end
 end

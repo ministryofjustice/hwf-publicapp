@@ -30,3 +30,6 @@ income:
   max_threshold_base: 5085
   per_child_increment: 245
   married_supplement: 160
+responsible_disclosure:
+  url: https://fast-stream-29712.herokuapp.com/report_for/
+  app_name: Help with Fees

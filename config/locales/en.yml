@@ -240,8 +240,8 @@ en:
           three: If your application for help with fees is successful, you'll hear directly from the tribunal dealing with your case.
           two: You'll hear from the tribunal if your application for help with fees is unsuccessful or if they need more information from you.
       steps:
-        one_html: You must email or post this help with fees reference number <strong>%{reference}</strong> along with your employment tribunal claim number to the employment tribunal.
-        three: Email or send your letter to the tribunal where your case is being heard.
+        one_html: You must email or post this help with fees reference number <strong>%{reference}</strong> along with your employment tribunal claim number to the relevant Employment Tribunal Central Office.
+        three: Email or send your letter to the relevant Employment Tribunal Central Office detailed below.
         two: You can copy the letter below into an email or print this page.
       title: Your application is not finished yet
     feedback:
@@ -634,7 +634,7 @@ en:
   terms:
     heading: Terms and conditions
     sections:
-    - title: 
+    - title:
       parts:
       - p: By using this ‘apply for help with fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.
     - title: General terms and conditions

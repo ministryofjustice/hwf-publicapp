@@ -120,7 +120,6 @@ module FeatureSteps
     fill_income_kind
     fill_income_range
     fill_income_amount
-    fill_probate
     fill_et_claim
     fill_national_insurance
     fill_dob
@@ -144,10 +143,6 @@ module FeatureSteps
 
   def then_they_are_on_the_first_question
     expect(page).to have_text 'What court or tribunal fee do you need help with?'
-  end
-
-  def then_they_see_specific_et_instructions
-    expect(page).to have_text 'You must email or post this help with fees reference number HWF-ABC123 along with your employment tribunal claim number to the employment tribunal.'
   end
 
   def then_they_cannot_procced
@@ -209,6 +204,8 @@ module FeatureSteps
 
   def fill_et_claim
     fill_in 'claim_et_identifier', with: '12345'
+    # for some reason this has to be clicked twice.
+    click_button 'Continue'
     click_button 'Continue'
   end
 

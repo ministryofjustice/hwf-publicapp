@@ -236,9 +236,9 @@ en:
       next:
         heading: What happens next?
         steps:
-          one: Your application for help with fees will be assessed by tribunal staff. This usually takes no longer than 5 working days.
+          one: Your help with fees application will be assessed by staff at our Central Office.
+          two: The Central Office will let you know the outcome of your help with fees application, or if they need more information from you. This usually takes no longer than 5 working days.
           three: If your application for help with fees is successful, you'll hear directly from the tribunal dealing with your case.
-          two: You'll hear from the tribunal if your application for help with fees is unsuccessful or if they need more information from you.
       steps:
         one_html: You must email or post this help with fees reference number <strong>%{reference}</strong> along with your employment tribunal claim number to the relevant Employment Tribunal Central Office.
         three: Email or send your letter to the relevant Employment Tribunal Central Office detailed below.

@@ -118,8 +118,7 @@ module FeatureSteps
     fill_benefit
     fill_dependent
     fill_income_kind
-    fill_income_range
-    fill_income_amount
+    fill_income_range(true)
     fill_et_claim
     fill_national_insurance
     fill_dob
@@ -204,8 +203,6 @@ module FeatureSteps
 
   def fill_et_claim
     fill_in 'claim_et_identifier', with: '12345'
-    # for some reason this has to be clicked twice.
-    click_button 'Continue'
     click_button 'Continue'
   end
 

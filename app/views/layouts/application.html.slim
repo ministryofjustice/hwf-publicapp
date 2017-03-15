@@ -50,6 +50,7 @@
     });
 
 - content_for :footer_support_links
+  li =link_to 'Report a security issue', "#{Settings.responsible_disclosure.url}#{Settings.responsible_disclosure.app_name}"
   li =link_to 'Help', 'http://www.gov.uk/help'
   li =link_to 'Cookies', 'http://www.gov.uk/help/cookies'
   li =link_to 'Contact', 'http://www.gov.uk/contact'

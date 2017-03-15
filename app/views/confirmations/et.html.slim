@@ -63,8 +63,10 @@ ol.list.list-number.next-steps
 .steps-panel
   h2.heading-medium.util_mt-0 =t('confirmation.et.next.heading')
   ol.list.list-number.next-steps.util_mb-0
-    li
-      =t('confirmation.et.next.steps.one')
+    li =t('confirmation.et.next.steps.one')
     li =t('confirmation.et.next.steps.two')
+    - unless display_for_english?
+      li =t('confirmation.et.next.steps.three')
+
 
 =render('footer')

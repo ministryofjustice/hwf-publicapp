@@ -23,5 +23,20 @@ RSpec.feature 'As a user' do
         expect(page).not_to have_text('If your application for help with fees is successful, you’ll hear directly from the tribunal dealing with your case.')
       end
     end
+
+    context 'Welsh' do
+      scenario 'I expect to "What happens next?" instructions' do
+        within(:xpath, ".//div[@class='language-picker']") do
+          click_link 'Cymraeg'
+        end
+
+        within(:xpath, ".//div[@class='steps-panel']") do
+          expect(page).to have_text 'Beth fydd yn digwydd nesaf?'
+          expect(page.find(:xpath, './/ol/li[1]').text).to eql "Bydd eich cais am help i dalu ffioedd yn cael ei asesu gan staff y tribiwnlys. Ni fydd hyn yn cymryd mwy na 5 diwrnod gwaith fel arfer."
+          expect(page.find(:xpath, './/ol/li[2]').text).to eql "Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais wedi llwyddo neu os oes angen i chi roi gwybodaeth ychwanegol iddynt"
+          expect(page.find(:xpath, './/ol/li[3]').text).to eql "Os bydd eich cais am help i dalu ffioedd yn llwyddo, byddwch chi'n clywed yn uniongyrchol oddi wrth y tribiwnlys sy'n delio â'ch achos."
+        end
+      end
+    end
   end
 end

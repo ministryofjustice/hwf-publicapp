@@ -3,6 +3,8 @@
 window.moj.Modules.FormName = {
   $identifier: $('#form_name_identifier'),
   $unknown: $('#form_name_unknown'),
+  $probate: $("#form_name_probate"),
+  $continue: $("input.button"),
 
   init: function () {
     var self = this;
@@ -19,6 +21,10 @@ window.moj.Modules.FormName = {
       self.identifierKeyUp();
     });
 
+    self.$probate.on('click', function() {
+      self.probateClick();
+    })
+
     self.$unknown.on('click', function() {
       self.unknownClick();
     });
@@ -30,6 +36,13 @@ window.moj.Modules.FormName = {
     if (self.$identifier.val().length > 0 && self.$unknown.is(':checked')) {
       self.$unknown.attr('checked', false).closest('label').removeClass('selected');
     }
+  },
+
+  probateClick: function() {
+    var self = this;
+    var is_checked = self.$probate.is(':checked');
+
+    self.$continue.attr("disabled", is_checked);
   },
 
   unknownClick: function() {

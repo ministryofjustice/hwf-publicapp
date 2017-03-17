@@ -15,6 +15,11 @@
     = t('et', scope: @form.i18n_scope)
 
 .form-group
+  label.block-label for="form_name_probate"
+    = check_box_tag :form_name_probate
+    = t('probate', scope: @form.i18n_scope)
+
+.form-group
   details
     summary =t('details.summary', scope: @form.i18n_scope)
 

@@ -397,6 +397,7 @@ en:
         summary: Help with form name or number
       et: I need help with an employment tribunal fee
       example: Enter the court or tribunal form number for the court business you need help with, for example ‘C100’, ‘D8’ or ‘notice to appeal’ form.
+      probate: I need help with a Probate fee
       text: What court or tribunal fee do you need help with?
       title: Form name or number
       unknown: I don’t know the form name or number

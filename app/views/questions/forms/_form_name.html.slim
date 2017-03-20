@@ -9,10 +9,11 @@
     = f.check_box :unknown
     = t('unknown', scope: @form.i18n_scope)
 
-.form-group
-  label.block-label for="form_name_probate"
-    = check_box_tag :form_name_probate
-    = t('probate', scope: @form.i18n_scope)
+- if ProbateFeesSwitch.use_probate_fees_changes?
+  .form-group
+    label.block-label for="form_name_probate"
+      = check_box_tag :form_name_probate
+      = t('probate', scope: @form.i18n_scope)
 
 .form-group
   details

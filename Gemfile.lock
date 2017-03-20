@@ -64,6 +64,11 @@ GEM
     cliver (0.3.2)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
+    capybara-webkit (1.12.0)
+      capybara (>= 2.3.0, < 2.13.0)
+      json
+    codeclimate-test-reporter (1.0.5)
+      simplecov
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -334,6 +339,7 @@ DEPENDENCIES
   capybara
   capybara-screenshot
   chromedriver-helper (~> 1.1)
+  capybara-webkit
   codeclimate-test-reporter
   config
   cucumber-rails (~> 1.5)

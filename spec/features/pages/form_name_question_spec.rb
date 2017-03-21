@@ -33,8 +33,6 @@ RSpec.feature 'As a user' do
         end
       end
 
-      after { Timecop.return }
-
       scenario 'I expect the submit button to be disabled' do
         check 'form_name_probate'
 

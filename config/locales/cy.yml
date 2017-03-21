@@ -412,6 +412,7 @@ cy:
         summary: Help gydag enw neu rif y ffurflen
       et: Mae arnaf angen help gyda ffi tribiwnlys cyflogaeth
       example: Rhowch rif y ffurflen llys neu dribiwnlys ar gyfer y busnes llys y mae arnoch angen help gydag ef, er enghraifft ffurflen ‘C100’, ‘D8’ neu 'Hysbysiad o Apêl'
+      probate: I need help with a Probate fee
       text: Pa ffi llys neu dribiwnlys y mae arnoch chi angen help gyda hi?
       title: Enw neu rif y ffurflen
       unknown: Dydw i ddim yn gwybod enw neu rif y ffurflen

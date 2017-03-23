@@ -26,18 +26,44 @@ RSpec.feature 'As a user' do
       end
     end
 
-    context 'choosing the probate fees option' do
+    describe 'help with probate fee option' do
       before do
         Capybara.current_driver = :webkit
         Timecop.freeze(probate_fees_release_date) do
           given_user_answers_questions_up_to(:form_name)
         end
+        check 'form_name_probate'
       end
 
-      scenario 'I expect the submit button to be disabled' do
-        check 'form_name_probate'
+      context 'selecting the probate fees option' do
+        scenario 'I expect a warning message to appear' do
+          expect(page).to have_content('Help with Fees is no longer available for probate applications')
+        end
 
-        expect(page).to have_css("input.button[name='commit'][disabled='disabled']")
+        scenario 'I expect the form name, the form options and the continue button to be disabled' do
+          expect(page).to have_css("#form_name_identifier[disabled='disabled']")
+          expect(page).to have_css("#form_name_unknown[disabled='disabled']")
+          expect(page).to have_css("#form_name_et[disabled='disabled']")
+          expect(page).to have_css("input.button[name='commit'][disabled='disabled']")
+          expect(page).to have_css("input.button[name='commit'][disabled='disabled']")
+        end
+      end
+
+      context 'deselecting the probate fees option' do
+        before do
+          uncheck 'form_name_probate'
+        end
+
+        scenario 'I expect the form name, the form options and the continue button to not be disabled' do
+          expect(page).not_to have_css("#form_name_identifier[disabled='disabled']")
+          expect(page).not_to have_css("#form_name_unknown[disabled='disabled']")
+          expect(page).not_to have_css("#form_name_et[disabled='disabled']")
+          expect(page).not_to have_css("input.button[name='commit'][disabled='disabled']")
+        end
+
+        scenario 'I expect the warning message to disappear' do
+          expect(page).not_to have_content('Help with Fees is no longer available for probate applications')
+        end
       end
     end
   end

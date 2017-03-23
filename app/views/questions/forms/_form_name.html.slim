@@ -16,9 +16,18 @@
 
 - if ProbateFeesSwitch.use_probate_fees_changes?
   .form-group
-    label.block-label for="form_name_probate"
+    label.block-label for="form_name_probate" data-target='probate-warning'
       = check_box_tag :form_name_probate
-      = t('probate', scope: @form.i18n_scope)
+      = t('probate.label', scope: @form.i18n_scope)
+
+  #probate-warning.probate-warning.js-hidden
+    .form-group
+      .notice.text
+        i.icon.icon-important
+          span.visually-hidden
+            Warning
+        strong.bold-small
+          = t('probate.warning_html', scope: @form.i18n_scope)
 
 .form-group
   details

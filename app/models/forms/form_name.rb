@@ -3,9 +3,12 @@ module Forms
     attribute :identifier, String
     attribute :unknown, Boolean
     attribute :et, Boolean
+    attribute :probate, Boolean
 
     validates :identifier, length: { maximum: 49 }
     validates :identifier, presence: true, unless: 'unknown? || et?'
+
+    validates :probate, acceptance: { accept: false }
 
     private
 

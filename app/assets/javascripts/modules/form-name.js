@@ -1,10 +1,12 @@
 'use strict';
 
 window.moj.Modules.FormName = {
-  $identifier: $('#form_name_identifier'),
-  $unknown: $('#form_name_unknown'),
-  $probate: $("#form_name_probate"),
   $continue: $("input.button"),
+  $et: $("#form_name_et"),
+  $identifier: $('#form_name_identifier'),
+  $probate: $("#form_name_probate"),
+  $probate_warning: $('#probate-warning'),
+  $unknown: $('#form_name_unknown'),
 
   init: function () {
     var self = this;
@@ -43,6 +45,9 @@ window.moj.Modules.FormName = {
     var is_checked = self.$probate.is(':checked');
 
     self.$continue.attr("disabled", is_checked);
+    self.$et.attr("disabled", is_checked);
+    self.$identifier.attr("disabled", is_checked);
+    self.$unknown.attr("disabled", is_checked);
   },
 
   unknownClick: function() {

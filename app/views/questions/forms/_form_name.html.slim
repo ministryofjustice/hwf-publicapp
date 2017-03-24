@@ -1,4 +1,4 @@
-.form-group  class=('error' if @form.errors.any?)
+.form-group class=('error' if @form.errors[:identifier].any?)
   - if @form.errors[:identifier].any?
     span.error-message#identifier = @form.errors[:identifier].join(' ')
   = f.label :identifier, class: 'form-label'
@@ -10,9 +10,11 @@
     = t('unknown', scope: @form.i18n_scope)
 
 - if ProbateFeesSwitch.use_probate_fees_changes?
-  .form-group
+  .form-group class=('error' if @form.errors[:probate].any?)
+    - if @form.errors[:probate].any?
+      span.error-message#probate = @form.errors[:probate].join(' ')
     label.block-label for="form_name_probate" data-target='probate-warning'
-      = check_box_tag :form_name_probate
+      = f.check_box :probate
       = t('probate.label', scope: @form.i18n_scope)
 
   #probate-warning.probate-warning.js-hidden

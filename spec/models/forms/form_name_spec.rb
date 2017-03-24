@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Forms::FormName, type: :model do
-  subject(:form) { described_class.new(identifier: identifier, unknown: unknown) }
+  subject(:form) { described_class.new(identifier: identifier, unknown: unknown, probate: probate) }
 
+  let(:identifier) { nil }
+  let(:probate) { false }
   let(:unknown) { false }
 
   describe 'validations' do
@@ -34,6 +36,26 @@ RSpec.describe Forms::FormName, type: :model do
           let(:identifier) { 'I' * 49 }
 
           it { is_expected.to be_valid }
+        end
+      end
+    end
+
+    describe 'probate' do
+      context 'when it is false' do
+        let(:probate) { false }
+
+        it 'should not have probate validation errors' do
+          subject.valid?
+          expect(subject.errors[:probate].count).to eq 0
+        end
+      end
+
+      context 'when it is true' do
+        let(:probate) { true }
+
+        it 'should have probate validation errors' do
+          subject.valid?
+          expect(subject.errors[:probate].count).to eq 1
         end
       end
     end

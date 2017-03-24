@@ -44,18 +44,18 @@ RSpec.describe Forms::FormName, type: :model do
       context 'when it is false' do
         let(:probate) { false }
 
-        it 'should not have probate validation errors' do
-          subject.valid?
-          expect(subject.errors[:probate].count).to eq 0
+        it 'has no probate validation errors' do
+          form.valid?
+          expect(form.errors[:probate].count).to eq 0
         end
       end
 
       context 'when it is true' do
         let(:probate) { true }
 
-        it 'should have probate validation errors' do
-          subject.valid?
-          expect(subject.errors[:probate].count).to eq 1
+        it 'has porbate validation errors' do
+          form.valid?
+          expect(form.errors[:probate].count).to eq 1
         end
       end
     end

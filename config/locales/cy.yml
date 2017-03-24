@@ -107,6 +107,8 @@ cy:
             identifier:
               blank: Rhowch enw neu rif y ffurflen, neu dewiswch 'Dydw i ddim yn gwybod enw neu rif y ffurflen'
               too_long: Rhaid i enw'r ffurflen fod yn llai na 50 o nodau
+            probate:
+              accepted: Nid yw'r cynllun Help i dalu Ffioedd ar gael ar gyfer ceisiadau am brofiant ddim mwy. Dewiswch opsiwn arall os gwelwch yn dda.
         forms/help_request:
           attributes:
             description:

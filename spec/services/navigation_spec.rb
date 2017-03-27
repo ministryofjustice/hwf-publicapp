@@ -36,19 +36,40 @@ RSpec.describe Navigation do
       let(:current_question) { :benefit }
       let(:form_name) { nil }
 
-      context 'when the application is benefit one' do
-        let(:benefits) { true }
+      context 'when probate fees is deactivated' do
+        context 'when the application is benefit one' do
+          let(:benefits) { true }
 
-        it 'routes to the probate question (skips dependent and income)' do
-          expect(subject).to eql(question_path(:probate, locale: :en))
+          it 'routes to the probate question (skips dependent and income)' do
+            Timecop.freeze(Date.parse('2017-05-01')) do
+              is_expected.to eql(question_path(:claim, locale: :en))
+            end
+          end
         end
       end
 
-      context 'when the application is not a benefit one' do
-        let(:benefits) { false }
+      context 'when probate fees is still active' do
+        context 'when the application is benefit one' do
+          let(:benefits) { true }
 
-        it 'routes to the dependent question' do
-          expect(subject).to eql(question_path(:dependent, locale: :en))
+          it 'routes to the probate question (skips dependent and income)' do
+            is_expected.to eql(question_path(:probate, locale: :en))
+          end
+
+          context 'when the application is for ET' do
+            let(:form_name) { 'ET1' }
+            it 'routes to the claim question (skips dependent and income)' do
+              is_expected.to eql(question_path(:claim, locale: :en))
+            end
+          end
+        end
+
+        context 'when the application is not a benefit one' do
+          let(:benefits) { false }
+
+          it 'routes to the dependent question' do
+            is_expected.to eql(question_path(:dependent, locale: :en))
+          end
         end
       end
     end

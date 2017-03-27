@@ -17,8 +17,10 @@ class Navigation
   private
 
   def next_question_id
-    if skip_income? || skip_income_range? || skip_income_amount?
-      :probate
+    if ProbateFeesSwitch.use_probate_fees_changes? && skip_income?
+      :claim
+    elsif skip_income? || skip_income_range? || skip_income_amount?
+      probate_or_claim
     elsif skip_savings_and_investment_extra?
       :benefit
     else

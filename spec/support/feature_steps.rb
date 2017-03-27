@@ -66,7 +66,7 @@ module FeatureSteps
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit(true)
-    fill_probate
+    fill_probate unless ProbateFeesSwitch.use_probate_fees_changes?
     fill_claim
     fill_national_insurance
     fill_dob

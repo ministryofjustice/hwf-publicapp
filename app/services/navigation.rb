@@ -49,7 +49,8 @@ class Navigation
 
   def skip_probate_step?
     ProbateFeesSwitch.use_probate_fees_changes? && skip_income? ||
-      ProbateFeesSwitch.use_probate_fees_changes? && skip_income_range?
+      ProbateFeesSwitch.use_probate_fees_changes? && skip_income_range? ||
+      ProbateFeesSwitch.use_probate_fees_changes? && skip_income_amount?
   end
 
   def skip_savings_and_investment_extra?

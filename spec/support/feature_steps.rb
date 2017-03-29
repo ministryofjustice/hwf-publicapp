@@ -47,7 +47,7 @@ module FeatureSteps
     fill_dependent
     fill_income_kind
     fill_income_range(below: true)
-    fill_probate
+    fill_probate unless ProbateFeesSwitch.use_probate_fees_changes?
     fill_claim
     fill_national_insurance
     fill_dob

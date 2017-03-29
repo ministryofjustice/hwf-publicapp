@@ -41,7 +41,7 @@ RSpec.describe Navigation do
           let(:benefits) { true }
 
           it 'routes to the probate question (skips dependent and income)' do
-            Timecop.freeze(Date.parse('2017-05-01')) do
+            Timecop.freeze(probate_fees_release_date) do
               is_expected.to eql(question_path(:claim, locale: :en))
             end
           end
@@ -49,6 +49,8 @@ RSpec.describe Navigation do
       end
 
       context 'when probate fees is still active' do
+        before { Timecop.freeze(probate_fees_release_date - 1.day) }
+        after { Timecop.return }
         context 'when the application is benefit one' do
           let(:benefits) { true }
 

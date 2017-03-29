@@ -108,17 +108,34 @@ RSpec.describe Navigation do
     context 'for income_kind question' do
       let(:current_question) { :income_kind }
 
-      context 'when the application is 0 income - "no income" selected' do
-        let(:online_application) { build :online_application, :no_income }
+      context 'when probate fees is deactived' do
+        context 'when the application is 0 income - "no income" selected' do
+          let(:online_application) { build :online_application, :no_income }
 
-        it 'routes to the probate question' do
-          expect(subject).to eql(question_path(:probate, locale: :en))
+          it 'routes to the claims question' do
+            Timecop.freeze(probate_fees_release_date) do
+              is_expected.to eql(question_path(:claim, locale: :en))
+            end
+          end
         end
       end
 
-      context 'when the application is not 0 income - some income sources selected' do
-        it 'routes to the income_range question' do
-          expect(subject).to eql(question_path(:income_range, locale: :en))
+      context 'when probate fees is still active' do
+        before { Timecop.freeze(probate_fees_release_date - 1.day) }
+        after { Timecop.return }
+
+        context 'when the application is 0 income - "no income" selected' do
+          let(:online_application) { build :online_application, :no_income }
+
+          it 'routes to the probate question' do
+            is_expected.to eql(question_path(:probate, locale: :en))
+          end
+        end
+
+        context 'when the application is not 0 income - some income sources selected' do
+          it 'routes to the income_range question' do
+            is_expected.to eql(question_path(:income_range, locale: :en))
+          end
         end
       end
     end

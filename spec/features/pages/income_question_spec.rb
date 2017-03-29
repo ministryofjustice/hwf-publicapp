@@ -7,9 +7,12 @@ RSpec.feature 'As a user' do
     context 'completing the form correctly' do
       context 'when "no income" selected' do
         before do
+          Timecop.freeze(probate_fees_release_date - 1.day)
           check :income_kind_applicant_13
           click_button 'Continue'
         end
+
+        after { Timecop.return }
 
         scenario 'I expect to be routed to the "probate" page' do
           expect(page).to have_content 'Are you paying a fee for a probate case?'

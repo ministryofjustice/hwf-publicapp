@@ -143,27 +143,53 @@ RSpec.describe Navigation do
     context 'for income_range question' do
       let(:current_question) { :income_range }
 
-      context 'when the application is between thresholds' do
-        let(:online_application) { build :online_application, :income_between_thresholds }
+      context ' when probate fess is deactivated' do
+        before { Timecop.freeze(probate_fees_release_date) }
+        after { Timecop.return }
 
-        it 'routes to the income_amount question' do
-          is_expected.to eql(question_path(:income_amount, locale: :en))
+        context 'when the application is below thresholds' do
+          let(:online_application) { build :online_application, :income_below_thresholds }
+
+          it 'routes to the claim question' do
+            is_expected.to eql(question_path(:claim, locale: :en))
+          end
+        end
+
+        context 'when the application is above thresholds' do
+          let(:online_application) { build :online_application, :income_above_thresholds }
+
+          it 'routes to the claim question' do
+            is_expected.to eql(question_path(:claim, locale: :en))
+          end
         end
       end
 
-      context 'when the application is below thresholds' do
-        let(:online_application) { build :online_application, :income_below_thresholds }
+      context 'when probate fees is still active' do
+        before { Timecop.freeze(probate_fees_release_date - 1.day) }
+        after { Timecop.return }
 
-        it 'routes to the probate question' do
-          is_expected.to eql(question_path(:probate, locale: :en))
+        context 'when the application is between thresholds' do
+          let(:online_application) { build :online_application, :income_between_thresholds }
+
+          it 'routes to the income_amount question' do
+            is_expected.to eql(question_path(:income_amount, locale: :en))
+          end
         end
-      end
 
-      context 'when the application is above thresholds' do
-        let(:online_application) { build :online_application, :income_above_thresholds }
+        context 'when the application is below thresholds' do
+          let(:online_application) { build :online_application, :income_below_thresholds }
 
-        it 'routes to the probate question' do
-          is_expected.to eql(question_path(:probate, locale: :en))
+          it 'routes to the probate question' do
+            is_expected.to eql(question_path(:probate, locale: :en))
+          end
+        end
+
+        context 'when the application is above thresholds' do
+          let(:online_application) { build :online_application, :income_above_thresholds }
+
+          it 'routes to the probate question' do
+            is_expected.to eql(question_path(:probate, locale: :en))
+          end
         end
       end
     end

@@ -17,7 +17,7 @@ class Navigation
   private
 
   def next_question_id
-    if skip_probate_step?
+    if skip_to_claim_step?
       :claim
     elsif skip_income_steps?
       probate_or_claim
@@ -31,6 +31,10 @@ class Navigation
 
   def skip_income?
     @current_question == :benefit && @online_application.benefits?
+  end
+
+  def skip_probate?
+    @current_question == :income_amount
   end
 
   def skip_income_range?
@@ -47,10 +51,9 @@ class Navigation
     skip_income? || skip_income_range? || skip_income_amount?
   end
 
-  def skip_probate_step?
-    ProbateFeesSwitch.use_probate_fees_changes? && skip_income? ||
-      ProbateFeesSwitch.use_probate_fees_changes? && skip_income_range? ||
-      ProbateFeesSwitch.use_probate_fees_changes? && skip_income_amount?
+  def skip_to_claim_step?
+    ProbateFeesSwitch.use_probate_fees_changes? &&
+      (skip_income_steps? || skip_probate?)
   end
 
   def skip_savings_and_investment_extra?

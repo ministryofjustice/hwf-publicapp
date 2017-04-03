@@ -76,7 +76,12 @@ RSpec.feature 'As a user' do
   end
 
   context 'when accessing the "income_amount" page for "Help with fees"' do
-    before { given_user_answers_questions_up_to(:income_amount) }
+    before do
+      Timecop.freeze(probate_fees_release_date - 1.day)
+      given_user_answers_questions_up_to(:income_amount)
+    end
+
+    after { Timecop.return }
 
     context 'completing the form correctly' do
       before do

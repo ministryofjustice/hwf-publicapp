@@ -26,7 +26,9 @@ RSpec.describe Navigation do
         let(:current_question) { current_question }
 
         it "routes to #{next_question} question" do
-          expect(subject).to eql(question_path(next_question, locale: :en))
+          Timecop.freeze(probate_fees_release_date - 1.day) do
+            is_expected.to eql(question_path(next_question, locale: :en))
+          end
         end
       end
     end

@@ -1,10 +1,10 @@
 RSpec.describe ProbateFeesSwitch do
   subject { described_class }
 
-  describe '#use_probate_fees_changes?' do
+  describe '#disable_probate_fees?' do
     subject do
       Timecop.freeze(current_time) do
-        described_class.use_probate_fees_changes?
+        described_class.disable_probate_fees?
       end
     end
 
@@ -15,7 +15,7 @@ RSpec.describe ProbateFeesSwitch do
     end
 
     context 'when called before the set date' do
-      let(:current_time) { probate_fees_release_date - 1.day }
+      let(:current_time) { a_day_before_disable_probate_fees }
 
       it { is_expected.to be false }
     end

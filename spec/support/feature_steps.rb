@@ -5,6 +5,8 @@ module FeatureSteps
     click_link_or_button 'Apply now'
 
     QuestionFormFactory::IDS.take_while { |id| id != question }.each do |id|
+      next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
+
       send("fill_#{id}")
     end
   end
@@ -27,7 +29,7 @@ module FeatureSteps
     fill_income_kind
     fill_income_range
     fill_income_amount
-    fill_probate
+    fill_probate unless ProbateFeesSwitch.disable_probate_fees?
     fill_claim
     fill_national_insurance
     fill_dob
@@ -48,7 +50,7 @@ module FeatureSteps
     fill_dependent
     fill_income_kind
     fill_income_range(below: true)
-    fill_probate
+    fill_probate unless ProbateFeesSwitch.disable_probate_fees?
     fill_claim
     fill_national_insurance
     fill_dob
@@ -66,7 +68,7 @@ module FeatureSteps
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit(true)
-    fill_probate
+    fill_probate unless ProbateFeesSwitch.disable_probate_fees?
     fill_claim
     fill_national_insurance
     fill_dob

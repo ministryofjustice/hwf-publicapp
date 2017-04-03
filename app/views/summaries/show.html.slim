@@ -94,7 +94,7 @@ table.summary
             span.visuallyhidden
               | &nbsp;
               =t('income', scope: 'summary.labels').downcase
-    -unless ProbateFeesSwitch.use_probate_fees_changes?
+    -unless ProbateFeesSwitch.disable_probate_fees?
       - if @summary.probate
         tr
           th scope="row" = t('deceased_name', scope: 'summary.labels')

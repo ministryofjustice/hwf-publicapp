@@ -52,7 +52,7 @@ class Navigation
   end
 
   def skip_to_claim_step?
-    ProbateFeesSwitch.use_probate_fees_changes? &&
+    ProbateFeesSwitch.disable_probate_fees? &&
       (skip_income_steps? || skip_probate?)
   end
 

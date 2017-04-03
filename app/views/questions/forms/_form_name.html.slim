@@ -9,7 +9,7 @@
     = f.check_box :unknown
     = t('unknown', scope: @form.i18n_scope)
 
-- if ProbateFeesSwitch.use_probate_fees_changes?
+- if ProbateFeesSwitch.disable_probate_fees?
   .form-group class=('error' if @form.errors[:probate].any?)
     - if @form.errors[:probate].any?
       span.error-message#probate = @form.errors[:probate].join(' ')

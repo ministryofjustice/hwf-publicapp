@@ -26,7 +26,7 @@ RSpec.describe Navigation do
         let(:current_question) { current_question }
 
         it "routes to #{next_question} question" do
-          Timecop.freeze(probate_fees_release_date - 1.day) do
+          Timecop.freeze(a_day_before_disable_probate_fees) do
             is_expected.to eql(question_path(next_question, locale: :en))
           end
         end
@@ -51,7 +51,7 @@ RSpec.describe Navigation do
       end
 
       context 'when probate fees is still active' do
-        before { Timecop.freeze(probate_fees_release_date - 1.day) }
+        before { Timecop.freeze(a_day_before_disable_probate_fees) }
         after { Timecop.return }
 
         context 'when the application is benefit one' do
@@ -123,7 +123,7 @@ RSpec.describe Navigation do
       end
 
       context 'when probate fees is still active' do
-        before { Timecop.freeze(probate_fees_release_date - 1.day) }
+        before { Timecop.freeze(a_day_before_disable_probate_fees) }
         after { Timecop.return }
 
         context 'when the application is 0 income - "no income" selected' do
@@ -167,7 +167,7 @@ RSpec.describe Navigation do
       end
 
       context 'when probate fees is still active' do
-        before { Timecop.freeze(probate_fees_release_date - 1.day) }
+        before { Timecop.freeze(a_day_before_disable_probate_fees) }
         after { Timecop.return }
 
         context 'when the application is between thresholds' do

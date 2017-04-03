@@ -34,7 +34,7 @@ RSpec.feature 'As a user' do
     end
 
     context 'when probate fess is still active' do
-      before { Timecop.freeze(probate_fees_release_date - 1.day) }
+      before { Timecop.freeze(a_day_before_disable_probate_fees) }
       after { Timecop.return }
 
       context 'after answering yes to the probate question' do
@@ -96,7 +96,7 @@ RSpec.feature 'As a user' do
 
     context 'when probate is still active' do
       scenario 'the change links take me to the correct page' do
-        Timecop.freeze(probate_fees_release_date - 1.day) do
+        Timecop.freeze(a_day_before_disable_probate_fees) do
           given_user_provides_all_data
           visit '/summary'
         end

@@ -18,7 +18,7 @@ end
 
 RSpec.feature 'As a user' do
 
-  before { Timecop.freeze(probate_fees_release_date - 1.day) }
+  before { Timecop.freeze(a_day_before_disable_probate_fees) }
   after do
     Timecop.return
     I18n.locale = :en

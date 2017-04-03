@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature 'As a user' do
-  before { Timecop.freeze(probate_fees_release_date - 1.day) }
+  before { Timecop.freeze(a_day_before_disable_probate_fees) }
   after { Timecop.return }
 
   context 'when accessing the "probate" page for "Help with fees"' do

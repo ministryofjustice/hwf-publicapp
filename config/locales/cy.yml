@@ -105,7 +105,7 @@ cy:
         forms/form_name:
           attributes:
             identifier:
-              blank: Rhowch enw neu rif y ffurflen, neu dewiswch 'Dydw i ddim yn gwybod enw neu rif y ffurflen'
+              blank: Rhowch enw neu rif y ffurflen, neu dewiswch 'Dydw i ddim yn gwybod beth yw enw neu rif y ffurflen'
               too_long: Rhaid i enw'r ffurflen fod yn llai na 50 o nodau
             probate:
               accepted: Nid yw'r cynllun Help i dalu Ffioedd ar gael ar gyfer ceisiadau am brofiant ddim mwy. Dewiswch opsiwn arall os gwelwch yn dda.
@@ -186,7 +186,7 @@ cy:
     default:
       breadcrumb: Cam 19 o 20
       continue: Parhau
-      heading: Nid yw'ch cais am help i dalu ffioedd wedi'i orffen eto
+      heading: Nid yw eich cais am help i dalu ffioedd wedi'i orffen eto
       steps:
         four: Os ydych chi wedi rhoi'ch cyfeiriad e-bost, byddwch chi'n cael cyfeirnod eich cais drwy e-bost. Os nad oeddech chi wedi rhoi cyfeiriad e-bost, gwnewch nodyn o'ch cyfeirnod ar gyfer eich cofnodion.
         one_html: Rhaid i chi ysgrifennu'r cyfeirnod hwn <strong>%{reference}</strong> ar eich ffurflen <strong>%{form_name}</strong>.
@@ -228,7 +228,7 @@ cy:
             two: Eagle Building
           heading: Yr Alban
       breadcrumb: Cam 20 o 20
-      heading: Nid yw'ch cais am help i dalu ffioedd wedi'i orffen eto
+      heading: Nid yw eich cais am help i dalu ffioedd wedi'i orffen eto
       letter:
         five: "%{full_name}"
         four: Yn gywir,
@@ -238,12 +238,11 @@ cy:
       next:
         heading: Beth fydd yn digwydd nesaf?
         steps:
-          one: Bydd eich cais am help i dalu ffioedd yn cael ei asesu gan staff y tribiwnlys. Ni fydd hyn yn cymryd mwy na 5 diwrnod gwaith fel arfer.
-          three: Os bydd eich cais am help i dalu ffioedd yn llwyddo, byddwch chi'n clywed yn uniongyrchol oddi wrth y tribiwnlys sy'n delio â'ch achos.
-          two: Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais wedi llwyddo neu os oes angen i chi roi gwybodaeth ychwanegol iddynt
+          one: Bydd eich cais am help i dalu ffioedd yn cael ei asesu gan staff yn ein swyddfa ganolog.
+          two: Byddwch chi'n clywed oddi wrth y swyddfa ganolog am ganlyniad eich cais am help i dalu ffioedd, neu os oes angen rhoi gwybodaeth ychwanegol iddynt. Ni fydd hyn yn cymryd mwy na 5 diwrnod gwaith fel arfer.
       steps:
-        one_html: Rhaid i chi e-bostio neu bostio'r cyfeirnod help i dalu ffioedd hwn <strong>%{reference}</strong> ynghyd â'ch rhif hawliad tribiwnlys cyflogaeth i'r tribiwnlys cyflogaeth.
-        three: E-bostiwch neu anfonwch eich llythyr i'r tribiwnlys sy'n gwrando eich achos.
+        one_html: Rhaid i chi e-bostio neu bostio'r cyfeirnod help i dalu ffioedd hwn <strong>%{reference}</strong> ynghyd â'ch rhif hawliad tribiwnlys cyflogaeth i Swyddfa Ganolog berthnasol y Tribiwnlys Cyflogaeth.
+        three: E-bostiwch neu anfonwch eich llythyr i'r Swyddfa Ganolog berthnasol y Tribiwnlys Cyflogaeth a nodir isod.
         two: Gallwch chi gopïo'r llythyr isod i mewn i e-bost neu argraffu'r dudalen hon.
       title: Nid yw'ch cais wedi'i gwblhau eto
     feedback:
@@ -294,7 +293,7 @@ cy:
   questions:
     applicant_address:
       breadcrumb: Cam 16 o 20
-      text: Beth yw'ch cyfeiriad?
+      text: Beth yw eich cyfeiriad?
       title: Eich cyfeiriad
     benefit:
       breadcrumb: Cam 6 o 20
@@ -355,12 +354,12 @@ cy:
         section_2: Os yw'ch achos yn mynd ymlaen ar hyn o bryd, bydd y cyfeirnod ar lythyrau oddi wrth y llys neu dribiwnlys.
         section_3: Rhowch 'nac oes' yn ateb i'r cwestiwn hwn os nad oes gennych chi gyfeirnod (efallai am nad yw'ch achos wedi dechrau eto).
         summary: Help gyda rhif achos
-      hidden_legend: Oes gennych chi rif achos, hawliad neu 'hysbysiad talu'?
+      hidden_legend: Oes gennych chi rif achos, rhif hawliad neu rif 'hysbysiad talu'?
       identifier: Y rhif achos, hawliad neu 'hysbysiad talu' yw
       number_false: Nac oes
       number_true: Oes
       subtext: Mae'r rhif hwn ar lythyrau oddi wrth y llys neu dribiwnlys.
-      text: Oes gennych chi rif achos, hawliad neu 'hysbysiad talu'?
+      text: Oes gennych chi rif achos, rhif hawliad neu rif 'hysbysiad talu'?
       title: Rhif hawliad neu achos
     claim/et:
       breadcrumb: Cam 12 o 20
@@ -377,7 +376,7 @@ cy:
       details: Byddwn ni'n anfon e-bost i gadarnhau ein bod wedi cael eich cais.
       email_label: Cyfeiriad e-bost
       feedback_opt_in: Ticiwch y blwch hwn os ydych chi'n barod i rannu'ch profiad o'r gwasanaeth hwn. Efallai y bydd aelod o'r tîm yn cysylltu â chi. Ni fyddwn yn defnyddio'ch cyfeiriad e-bost at unrhyw bwrpas arall.
-      text: Beth yw'ch cyfeiriad e-bost?
+      text: Beth yw eich cyfeiriad e-bost?
       title: Eich cyfeiriad e-bost
     dependent:
       breadcrumb: Cam 7 o 20
@@ -396,13 +395,13 @@ cy:
     dob:
       breadcrumb: Cam 14 o 20
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
-      text: Beth yw'ch dyddiad geni?
+      text: Beth yw eich dyddiad geni?
       title: Dyddiad geni
     fee:
       breadcrumb: Cam 2 o 20
       details: Gallwch chi wneud cais am ad-dalu ffi a dalwyd yn y 3 mis diwethaf. Os ydych chi'n gwneud cais am ad-daliad, cofiwch ateb yr holl gwestiynau am eich amgylchiadau pan oeddech chi wedi talu'r ffi.
-      fee_paid_false: Nac ydw
-      fee_paid_true: Ydw
+      fee_paid_false: Naddo
+      fee_paid_true: Do
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       text: Ydych chi wedi talu'r ffi'n barod?
       title: Ad-dalu
@@ -412,14 +411,14 @@ cy:
         item_1: Fel arfer mae enw'r ffurflen ar ben y ffurflen, a'r rhif ar y gwaelod.
         item_2: Os nad oes enw neu rif ffurflen gennych chi, er enghraifft os ydych chi'n gwneud cais am help gyda ffi gwrandawiad, yna rhowch 'ffi gwrandawiad' yn ateb i'r cwestiwn hwn.
         summary: Help gydag enw neu rif y ffurflen
-      et: Mae arnaf angen help gyda ffi tribiwnlys cyflogaeth
+      et: Rwyf angen help gyda ffi tribiwnlys cyflogaeth
       example: Rhowch rif y ffurflen llys neu dribiwnlys ar gyfer y busnes llys y mae arnoch angen help gydag ef, er enghraifft ffurflen ‘C100’, ‘D8’ neu 'Hysbysiad o Apêl'
       probate:
-        label: Rwyf angen help gyda ffi tribiwnlys cyflogaeth
+        label: Rwyf angen help gyda ffi Profiant
         warning_html: 'Nid yw''r Gwasanaeth Help i Dalu Ffioedd ar gael i geisiadau profiant mwyach. Cewch fanylion pellach a gwneud cais am brofiant yma: <a class="external" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation</a>'
-      text: Pa ffi llys neu dribiwnlys y mae arnoch chi angen help gyda hi?
+      text: Pa ffi llys neu dribiwnlys y mae arnoch angen help gyda hi?
       title: Enw neu rif y ffurflen
-      unknown: Dydw i ddim yn gwybod enw neu rif y ffurflen
+      unknown: Dydw i ddim yn gwybod beth yw enw neu rif y ffurflen
     income_amount:
       amount:
         married: Rhowch gyfanswm yr incwm rydych chi a'ch partner yn ei gael bob mis.
@@ -514,11 +513,11 @@ cy:
         summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
       example: Er enghraifft, QQ123456C
       prompt: rhif Yswiriant Gwladol
-      text: Beth yw'ch rhif Yswiriant Gwladol?
+      text: Beth yw eich rhif Yswiriant Gwladol?
       title: rhif Yswiriant Gwladol
     personal_detail:
       breadcrumb: Cam 15 o 20
-      text: Beth yw'ch enw llawn
+      text: Beth yw eich enw llawn?
       title: Eich enw
     probate:
       breadcrumb: Cam 11 o 20
@@ -581,10 +580,10 @@ cy:
     confirm_cancel: "Ie, canslo"
     return_to_application: "Na, mynd yn ôl at y cais cyfredol"
   session:
-    expired_message: Dydych chi ddim wedi mewnbynnu gwybodaeth ers mwy na 10 munud felly rhaid i chi ailddechrau'ch cais.
+    expired_message: Dydych chi ddim wedi rhoi gwybodaeth ers mwy na 10 munud felly rhaid i chi ailddechrau'ch cais.
     note:
       heading: Sylwch
-      text: Os na fyddwch chi wedi mewnbynnu gwybodaeth ers mwy na 10 munud, yna bydd eich sesiwn yn dod i ben a bydd angen i chi ailddechrau.
+      text: Os na fyddwch chi wedi rhoi gwybodaeth ers mwy na 10 munud, yna bydd eich sesiwn yn dod i ben a bydd angen i chi ailddechrau.
   start_application: Gwnewch gais nawr
   submit_button: Parhau
   summary:
@@ -593,12 +592,12 @@ cy:
     breadcrumb: Cam 18 o 20
     change: Newid
     children_false: Nac ydw
-    claim_number_false: Nac ydw
-    claim_number_true: Ydw
+    claim_number_false: Nac oes
+    claim_number_true: Oes
     contact_none: Manylion cyswllt heb eu darparu
     details: "Gwiriwch fod eich manylion yn gywir. Os ydych yn gwneud newidiadau, efallai y bydd yn rhaid i chi ateb cwestiynau newydd a chadarnhau gwybodaeth a gyflwynwyd gennych eisoes."
-    fee_paid_false: Nac ydw
-    fee_paid_true: Ydw
+    fee_paid_false: Naddo
+    fee_paid_true: Do
     invalid_footer: "Rydych chi wedi gwneud newidiadau. Atebwch y cwestiynau sydd wedi'u amlygu i gwblhau eich cais"
     labels:
       address: Cyfeiriad

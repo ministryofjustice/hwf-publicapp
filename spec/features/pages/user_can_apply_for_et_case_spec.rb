@@ -35,9 +35,8 @@ RSpec.feature 'As a user' do
 
         within(:xpath, ".//div[@class='steps-panel']") do
           expect(page).to have_text 'Beth fydd yn digwydd nesaf?'
-          expect(page.find(:xpath, './/ol/li[1]').text).to eql "Bydd eich cais am help i dalu ffioedd yn cael ei asesu gan staff y tribiwnlys. Ni fydd hyn yn cymryd mwy na 5 diwrnod gwaith fel arfer."
-          expect(page.find(:xpath, './/ol/li[2]').text).to eql "Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais wedi llwyddo neu os oes angen i chi roi gwybodaeth ychwanegol iddynt"
-          expect(page.find(:xpath, './/ol/li[3]').text).to eql "Os bydd eich cais am help i dalu ffioedd yn llwyddo, byddwch chi'n clywed yn uniongyrchol oddi wrth y tribiwnlys sy'n delio â'ch achos."
+          expect(page.find(:xpath, './/ol/li[1]').text).to eql "Bydd eich cais am help i dalu ffioedd yn cael ei asesu gan staff yn ein swyddfa ganolog."
+          expect(page.find(:xpath, './/ol/li[2]').text).to eql "Byddwch chi'n clywed oddi wrth y swyddfa ganolog am ganlyniad eich cais am help i dalu ffioedd, neu os oes angen rhoi gwybodaeth ychwanegol iddynt. Ni fydd hyn yn cymryd mwy na 5 diwrnod gwaith fel arfer."
         end
       end
     end

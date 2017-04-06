@@ -40,7 +40,6 @@ group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'chromedriver-helper', '~> 1.1'
-  gem 'capybara-webkit'
   gem 'codeclimate-test-reporter', require: nil
   gem 'cucumber-rails', '~> 1.5', require: false
   gem 'geckodriver-helper', '~> 0.0'

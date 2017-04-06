@@ -107,8 +107,6 @@ cy:
             identifier:
               blank: Rhowch enw neu rif y ffurflen, neu dewiswch 'Dydw i ddim yn gwybod beth yw enw neu rif y ffurflen'
               too_long: Rhaid i enw'r ffurflen fod yn llai na 50 o nodau
-            probate:
-              accepted: Nid yw'r cynllun Help i dalu Ffioedd ar gael ar gyfer ceisiadau am brofiant ddim mwy. Dewiswch opsiwn arall os gwelwch yn dda.
         forms/help_request:
           attributes:
             description:
@@ -399,9 +397,6 @@ cy:
       et: Rwyf angen help gyda ffi tribiwnlys cyflogaeth
       example: Rhowch rif y ffurflen llys neu dribiwnlys ar gyfer y busnes llys y mae arnoch angen help gydag ef, er enghraifft ffurflen ‘C100’, ‘D8’ neu 'Hysbysiad o Apêl'
       text: Pa ffi llys neu dribiwnlys y mae arnoch angen help gyda hi?
-      probate:
-        label: Rwyf angen help gyda ffi Profiant
-        warning_html: 'Nid yw''r Gwasanaeth Help i Dalu Ffioedd ar gael i geisiadau profiant mwyach. Cewch fanylion pellach a gwneud cais am brofiant yma: <a class="external" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation</a>'
       title: Enw neu rif y ffurflen
       unknown: Dydw i ddim yn gwybod beth yw enw neu rif y ffurflen
     income_amount:

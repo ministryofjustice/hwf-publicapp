@@ -411,6 +411,7 @@ cy:
         summary: Help gydag enw neu rif y ffurflen
       et: Rwyf angen help gyda ffi tribiwnlys cyflogaeth
       example: Rhowch rif y ffurflen llys neu dribiwnlys ar gyfer y busnes llys y mae arnoch angen help gydag ef, er enghraifft ffurflen ‘C100’, ‘D8’ neu 'Hysbysiad o Apêl'
+      probate_warning_html: Nid yw'r Gwasanaeth Help i Dalu Ffioedd ar gael i geisiadau am brofiant ddim mwy. <a class="external" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Dod o hyd i fanylion pellach a gwneud cais am brofiant.</a>
       text: Pa ffi llys neu dribiwnlys y mae arnoch angen help gyda hi?
       title: Enw neu rif y ffurflen
       unknown: Dydw i ddim yn gwybod beth yw enw neu rif y ffurflen

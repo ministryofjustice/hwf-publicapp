@@ -4,7 +4,6 @@ RSpec.describe Forms::FormName, type: :model do
   subject(:form) { described_class.new(identifier: identifier, unknown: unknown) }
 
   let(:unknown) { false }
-  let(:et) { false }
 
   describe 'validations' do
     describe 'identifier' do

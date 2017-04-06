@@ -57,10 +57,6 @@ RSpec.configure do |config|
   # particularly slow.
   config.profile_examples = 10 if ENV['RACK_ENV'].eql?('test')
 
-  Capybara::Webkit.configure do |config|
-    config.block_unknown_urls
-  end
-
   # Seed global randomization in this process using the `--seed` CLI option.
   # Setting this allows you to use `--seed` to deterministically reproduce
   # test failures related to randomization by passing the same `--seed` value

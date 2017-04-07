@@ -51,9 +51,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.12.0)
-      capybara (>= 2.3.0, < 2.13.0)
-      json
     codeclimate-test-reporter (1.0.5)
       simplecov
     coderay (1.1.1)
@@ -281,7 +278,6 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  capybara-webkit
   codeclimate-test-reporter
   config
   date_validator

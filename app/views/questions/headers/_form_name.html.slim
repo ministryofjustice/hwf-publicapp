@@ -1,1 +1,9 @@
+- if ProbateFeesSwitch.disable_probate_fees?
+  p#probate-warning.notice.text.util_mt-large
+    i.icon.icon-important
+      span.visually-hidden
+        Warning
+    strong.bold-small
+      = t('probate_warning_html', scope: @form.i18n_scope)
+
 p =t('example', scope: @form.i18n_scope)

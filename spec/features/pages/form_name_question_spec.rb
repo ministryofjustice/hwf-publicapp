@@ -26,43 +26,23 @@ RSpec.feature 'As a user' do
       end
     end
 
-    describe 'help with probate fee option' do
+    context 'when probate fees are still supported' do
       before do
-        Capybara.current_driver = :webkit
+        Timecop.freeze(a_day_before_disable_probate_fees)
+        given_user_answers_questions_up_to(:form_name)
+      end
+
+      after { Timecop.return }
+
+      scenario 'I do not expect the warning message to be displayed' do
+        expect(page).not_to have_css('#probate-warning')
+      end
+    end
+
+    context 'when probate fees are no longer supported' do
+      scenario 'I expect a warning message to be displayed' do
         Timecop.freeze(probate_fees_release_date) do
-          given_user_answers_questions_up_to(:form_name)
-        end
-        check 'form_name_probate'
-      end
-
-      context 'selecting the probate fees option' do
-        scenario 'I expect a warning message to appear' do
-          expect(page).to have_content('Help with Fees is no longer available for probate applications')
-        end
-
-        scenario 'I expect the form name, the form options and the continue button to be disabled' do
-          expect(page).to have_css("#form_name_identifier[disabled='disabled']")
-          expect(page).to have_css("#form_name_unknown[disabled='disabled']")
-          expect(page).to have_css("#form_name_et[disabled='disabled']")
-          expect(page).to have_css("input.button[name='commit'][disabled='disabled']")
-          expect(page).to have_css("input.button[name='commit'][disabled='disabled']")
-        end
-      end
-
-      context 'deselecting the probate fees option' do
-        before do
-          uncheck 'form_name_probate'
-        end
-
-        scenario 'I expect the form name, the form options and the continue button to not be disabled' do
-          expect(page).not_to have_css("#form_name_identifier[disabled='disabled']")
-          expect(page).not_to have_css("#form_name_unknown[disabled='disabled']")
-          expect(page).not_to have_css("#form_name_et[disabled='disabled']")
-          expect(page).not_to have_css("input.button[name='commit'][disabled='disabled']")
-        end
-
-        scenario 'I expect the warning message to disappear' do
-          expect(page).not_to have_content('Help with Fees is no longer available for probate applications')
+          expect(page).to have_css('#probate-warning')
         end
       end
     end

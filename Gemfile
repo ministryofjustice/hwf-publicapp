@@ -38,7 +38,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'capybara-webkit'
   gem 'codeclimate-test-reporter', require: nil
   gem 'shoulda-matchers'
   gem 'timecop'

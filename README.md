@@ -8,3 +8,9 @@ Help with fees app for public
 Using this command `docker build moj/hwf-publicapp:vX.Y`
 
 (Where `X` & `Y` are version numbers)
+
+
+## Project Standards 
+* Rspec features, not cucumber
+* JavaScript in preference to Coffeescript
+* Slim templating

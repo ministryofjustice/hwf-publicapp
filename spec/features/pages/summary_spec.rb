@@ -34,40 +34,35 @@ RSpec.feature 'As a user' do
       end
     end
 
-    context 'when probate fess is still active' do
-      before { Timecop.freeze(a_day_before_disable_probate_fees) }
-      after { Timecop.return }
-
-      context 'after answering yes to the probate question' do
-        before do
-          given_user_answers_questions_up_to(:probate)
-          choose 'probate_kase_true'
-          fill_in :probate_deceased_name, with: 'Foo'
-          fill_in :probate_date_of_death, with: Time.zone.today - 1.month
-          click_button 'Continue'
-          page.visit '/summary'
-        end
-
-        scenario 'I expect to see my answers' do
-          expect(page).to have_no_content 'Probate case'
-          expect(page).to have_content 'Name of deceasedFooChange'
-          expect(page).to have_content "Date of death#{(Time.zone.today - 1.month).strftime(Date::DATE_FORMATS[:default])}Change"
-        end
+    context 'after answering yes to the probate question' do
+      before do
+        given_user_answers_questions_up_to(:probate)
+        choose 'probate_kase_true'
+        fill_in :probate_deceased_name, with: 'Foo'
+        fill_in :probate_date_of_death, with: Time.zone.today - 1.month
+        click_button 'Continue'
+        page.visit '/summary'
       end
 
-      context 'after answering no to the probate question' do
-        before do
-          given_user_answers_questions_up_to(:probate)
-          choose 'probate_kase_false'
-          click_button 'Continue'
-          page.visit '/summary'
-        end
+      scenario 'I expect to see my answers' do
+        expect(page).to have_no_content 'Probate case'
+        expect(page).to have_content 'Name of deceasedFooChange'
+        expect(page).to have_content "Date of death#{(Time.zone.today - 1.month).strftime(Date::DATE_FORMATS[:default])}Change"
+      end
+    end
 
-        scenario 'I do not expect to see the probate sub headers' do
-          expect(page).to have_content 'Probate case'
-          expect(page).to have_no_content 'Name of deceased'
-          expect(page).to have_no_content 'Date of death'
-        end
+    context 'after answering no to the probate question' do
+      before do
+        given_user_answers_questions_up_to(:probate)
+        choose 'probate_kase_false'
+        click_button 'Continue'
+        page.visit '/summary'
+      end
+
+      scenario 'I do not expect to see the probate sub headers' do
+        expect(page).to have_content 'Probate case'
+        expect(page).to have_no_content 'Name of deceased'
+        expect(page).to have_no_content 'Date of death'
       end
     end
 
@@ -95,52 +90,23 @@ RSpec.feature 'As a user' do
       end
     end
 
-    context 'when probate is still active' do
-      scenario 'the change links take me to the correct page' do
-        Timecop.freeze(a_day_before_disable_probate_fees) do
-          given_user_provides_all_data
-          visit '/summary'
-        end
-
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:form_name)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:marital_status)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:savings_and_investment)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:benefit)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:dependent)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:income_kind)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:fee)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:probate)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:claim)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:dob)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:national_insurance)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:personal_detail)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:applicant_address)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:contact)}')]"
-      end
-    end
-
-    context 'when probate is deactivated' do
-      scenario 'the change links take me to the correct page' do
-        Timecop.freeze(probate_fees_release_date) do
-          given_user_provides_all_data
-          visit '/summary'
-        end
-
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:form_name)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:marital_status)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:savings_and_investment)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:benefit)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:dependent)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:income_kind)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:fee)}')]"
-        expect(page).not_to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:probate)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:claim)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:dob)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:national_insurance)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:personal_detail)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:applicant_address)}')]"
-        expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:contact)}')]"
-      end
+    scenario 'the change links take me to the correct page' do
+      given_user_provides_all_data
+      visit '/summary'
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:form_name)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:marital_status)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:savings_and_investment)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:benefit)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:dependent)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:income_kind)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:fee)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:probate)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:claim)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:dob)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:national_insurance)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:personal_detail)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:applicant_address)}')]"
+      expect(page).to have_xpath "//a[starts-with(text(), 'Change')][starts-with(@href,'#{question_path(:contact)}')]"
     end
   end
 end

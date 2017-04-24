@@ -19,11 +19,7 @@ end
 
 RSpec.feature 'As a user' do
 
-  before { Timecop.freeze(a_day_before_disable_probate_fees) }
-  after do
-    Timecop.return
-    I18n.locale = :en
-  end
+  after { I18n.locale = :en }
 
   I18n.available_locales.each do |locale|
     context "using the #{locale.upcase} language" do

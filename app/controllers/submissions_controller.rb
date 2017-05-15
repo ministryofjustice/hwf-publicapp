@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class SubmissionsController < ApplicationController
   def create
     response = submit_service.post(online_application)

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ConfirmationsController < ApplicationController
   before_action :redirect_if_storage_unstarted
   after_action :suppress_browser_cache

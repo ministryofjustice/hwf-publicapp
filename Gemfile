@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 gem 'dotenv-rails', groups: [:development, :test] # this has to be here because of load order

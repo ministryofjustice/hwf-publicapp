@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class OnlineApplicationBuilder
   attr_reader :online_application
 

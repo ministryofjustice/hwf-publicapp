@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Forms
   class Dob < Base
     attribute :date_of_birth, Date

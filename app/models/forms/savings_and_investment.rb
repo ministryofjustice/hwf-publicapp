@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module Forms
   class SavingsAndInvestment < BaseRange
     private

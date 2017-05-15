@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module HealthStatus
   class HealthCheckController < ApplicationController
     def show

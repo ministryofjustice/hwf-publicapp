@@ -1,4 +1,5 @@
 # coding: utf-8
+# frozen_string_literal: true
 require 'rails_helper'
 
 def find_button_by_label(label_text)

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class ZendeskSender
   def send_help_request(help_request)
     if Settings.zendesk.enabled

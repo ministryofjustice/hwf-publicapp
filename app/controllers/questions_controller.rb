@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class QuestionsController < ApplicationController
   rescue_from QuestionFormFactory::QuestionDoesNotExist, with: :not_found
   before_action :redirect_if_storage_unstarted

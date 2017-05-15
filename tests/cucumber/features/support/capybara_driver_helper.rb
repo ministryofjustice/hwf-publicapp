@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 Capybara.configure do |config|
-  driver = (ENV['DRIVER'].to_sym if ENV['DRIVER']) || :poltergeist
+  driver = ENV['DRIVER']&.to_sym || :poltergeist
   config.default_driver = driver
   config.default_max_wait_time = 30
   config.match = :prefer_exact

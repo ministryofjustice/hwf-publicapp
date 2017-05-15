@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class StepTwoPage < BasePage
   set_url '/questions/fee'
 

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Given(/^I visit the page for step one$/) do
   step_one_page.load_page
 end

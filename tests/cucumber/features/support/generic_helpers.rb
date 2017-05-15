@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 def wait_for
   Timeout.timeout(Capybara.default_max_wait_time) do
     begin

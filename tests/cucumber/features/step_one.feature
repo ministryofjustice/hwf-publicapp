@@ -52,4 +52,5 @@ Feature: Step one page
       And I click on cancel application
       When I click on no, return to current application
       Then I should not see the cancel application options
+      And I should remain on the page for step one
 

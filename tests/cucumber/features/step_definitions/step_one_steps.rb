@@ -64,6 +64,10 @@ And(/^I click on yes, cancel$/) do
   step_one_page.restart_confirm.button[0].click
 end
 
+Then(/^I should remain on the page for step one$/) do
+  expect(current_path).to eq '/questions/form_name'
+end
+
 Then(/^I am taken to step two$/) do
   expect(step_two_page.content.p.text).to eq 'Step 2 of 20'
 end

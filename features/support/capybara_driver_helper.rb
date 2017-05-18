@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 Capybara.configure do |config|
   driver = ENV['DRIVER']&.to_sym || :poltergeist
   config.default_driver = driver

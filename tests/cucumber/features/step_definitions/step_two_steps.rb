@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 Given(/^I visit the page for step two$/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
@@ -46,19 +45,19 @@ end
 Then(/^I should see error message prompting a date$/) do
   error_summary_group = step_two_page.content.error_summary
   expect(error_summary_group.link.text)
-      .to eq 'Enter the date in this format DD/MM/YYYY'
+    .to eq 'Enter the date in this format DD/MM/YYYY'
 end
 
 Then(/^I should see error message prompting me to make a selection$/) do
   error_summary_group = step_two_page.content.error_summary
   expect(error_summary_group.link.text)
-      .to eq 'Select whether you\'ve already paid the fee'
+    .to eq 'Select whether you\'ve already paid the fee'
 end
 
 Then(/^I should see date can't be in the future error message$/) do
   error_summary_group = step_two_page.content.error_summary
   expect(error_summary_group.link.text)
-      .to eq 'This date can\'t be in the future'
+    .to eq 'This date can\'t be in the future'
 end
 
 And(/^the date I enter is within the last three months$/) do

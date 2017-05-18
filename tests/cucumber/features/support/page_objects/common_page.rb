@@ -1,6 +1,4 @@
-# frozen_string_literal: true
 class CommonPage < BasePage
-
   section :content, '#content' do
     element :p, 'p'
     element :page_header, 'h1'

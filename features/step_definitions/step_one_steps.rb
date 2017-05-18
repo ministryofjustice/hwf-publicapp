@@ -15,9 +15,13 @@ When(/^I enter a valid form name$/) do
 end
 
 When(/^I select I don’t know the form name or number$/) do
-  form_name = step_one_page.content.new_form_name eq 'I don’t know the form name or number'
-  expect(form_name.form_group[1].form_name_unknown['type']).to eq 'checkbox'
-  form_name.form_group[1].form_name_unknown.click
+  form_name = step_one_page.content.new_form_name
+  form_group_one = form_name.form_group[1]
+  form_group_one_label = form_group_one.block_label[0].text
+
+  expect(form_group_one_label).to eq 'I don’t know the form name or number'
+  expect(form_group_one.form_name_unknown['type']).to eq 'checkbox'
+  form_group_one.form_name_unknown.click
   form_name.form_group[4].continue_button.click
 end
 

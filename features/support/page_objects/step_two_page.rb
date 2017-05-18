@@ -23,23 +23,6 @@ class StepTwoPage < BasePage
     end
   end
 
-  # TO DO: Below Timecop functions are unreliable. Needs refactoring.
-
-  def valid_date
-    Timecop.return
-    Timecop.freeze(Time.zone.today - 30)
-  end
-
-  def invalid_date
-    Timecop.return
-    Timecop.freeze(Time.zone.today - 90)
-  end
-
-  def future_date
-    Timecop.return
-    Timecop.freeze(Time.zone.today + 30)
-  end
-
   def load_page(page_version = nil)
     load(v: page_version)
   end

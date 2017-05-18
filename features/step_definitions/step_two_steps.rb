@@ -57,18 +57,18 @@ And(/^the date I enter is within the last three months$/) do
   fee_date_paid_group = step_two_page.content.form_group[1]
   expect(fee_date_paid_group.form_label.text).to eq 'Date fee paid'
   expect(fee_date_paid_group.hint.text).to eq 'Use this format D D / M M / Y Y Y Y'
-  fee_date_paid_group.fee_date_paid.set(step_two_page.valid_date)
+  fee_date_paid_group.fee_date_paid.set(Time.zone.today - 1.month)
   step_two_page.content.form_group[2].continue_button.click
 end
 
 And(/^the date I enter exceeds three months$/) do
   fee_date_paid_group = step_two_page.content.form_group[1]
-  fee_date_paid_group.fee_date_paid.set(step_two_page.invalid_date)
+  fee_date_paid_group.fee_date_paid.set(Time.zone.today - 4.month)
   step_two_page.content.form_group[2].continue_button.click
 end
 
 When(/^the date I enter is in the future$/) do
   fee_date_paid_group = step_two_page.content.form_group[1]
-  fee_date_paid_group.fee_date_paid.set(step_two_page.future_date)
+  fee_date_paid_group.fee_date_paid.set(Time.zone.today + 1.month)
   step_two_page.content.form_group[2].continue_button.click
 end

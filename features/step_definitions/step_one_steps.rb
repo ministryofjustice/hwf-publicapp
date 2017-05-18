@@ -111,8 +111,7 @@ Then(/^I should see the please note copy$/) do
 end
 
 Then(/^I am taken to the Help with Fees homepage$/) do
-  expect(current_path).to eq '/get-help-with-court-fees'
-  expect(step_one_page.content.page_header.text).to eq 'Get help paying court and tribunal fees'
+  expect(current_path).to eq '/'
 end
 
 Then(/^I should not see the cancel application options$/) do

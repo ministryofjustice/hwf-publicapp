@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 class StepOnePage < BasePage
   set_url 'session/start'
 

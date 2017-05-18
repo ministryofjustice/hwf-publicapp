@@ -41,7 +41,8 @@ Capybara::Screenshot.register_filename_prefix_formatter(:cucumber) do |scenario|
   "screenshot_cucumber_#{title}"
 end
 
-# TODO: add local server http://127.0.0.1:
 Capybara.javascript_driver = Capybara.default_driver
 Capybara.current_driver = Capybara.default_driver
-Capybara.app_host = 'https://helpwithcourtfees.service.gov.uk'
+Capybara.app_host = 'http://localhost:3000'
+Capybara.server_host = 'localhost'
+Capybara.server_port = '3000'

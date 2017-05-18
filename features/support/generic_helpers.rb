@@ -41,3 +41,15 @@ module WaitUntil
     wait.until(&block)
   end
 end
+
+def step_one_page
+  @step_one_page ||= StepOnePage.new
+end
+
+def step_two_page
+  @step_two_page ||= StepTwoPage.new
+end
+
+def base_page
+  @base_page ||= BasePage.new
+end

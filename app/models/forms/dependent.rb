@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module Forms
   class Dependent < Base
     attribute :children, Boolean

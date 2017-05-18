@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module Views
   class Summary < SimpleDelegator
     # TODO: Use a different way of including helpers

@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module HealthStatus
   class Deployment
     def as_json(_options = {})

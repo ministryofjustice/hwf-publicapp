@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 Rails.application.routes.draw do
   if Settings.homepage.external_url
     root to: redirect(Settings.homepage.external_url)

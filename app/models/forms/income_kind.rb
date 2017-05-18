@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module Forms
   class IncomeKind < Base
     attribute :applicant, Array[Integer]

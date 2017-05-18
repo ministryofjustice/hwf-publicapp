@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 RSpec.shared_examples 'cache suppress headers' do
   it 'sets headers to suppress browser cache' do
     expect(response.headers).to include(

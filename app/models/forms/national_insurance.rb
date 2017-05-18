@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module Forms
   class NationalInsurance < Base
     include ActiveModel::Validations::Callbacks

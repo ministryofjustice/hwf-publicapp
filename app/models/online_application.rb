@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 class OnlineApplication
   include Virtus.model(nullify_blank: true)
 

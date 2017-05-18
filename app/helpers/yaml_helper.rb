@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module YamlHelper
   include ActionView::Helpers::TagHelper
 

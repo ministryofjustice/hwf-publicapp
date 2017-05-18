@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 class ClearDownstreamQuestions
   def initialize(storage, question)
     @storage = storage

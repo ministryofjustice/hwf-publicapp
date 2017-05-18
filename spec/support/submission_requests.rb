@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module SubmissionRequests
   def stub_submission_request(response_status, response_body)
     stub_request(:post, 'http://submit.to.this/api/submissions').

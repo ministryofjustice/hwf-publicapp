@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module Forms
   class SavingsAndInvestmentExtra < Base
     attribute :over_61, Boolean

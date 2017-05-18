@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module Views
   class QuestionTitle
     def initialize(form, online_application)

@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 class SubmitApplication
   def initialize(url, token)
     @url = url

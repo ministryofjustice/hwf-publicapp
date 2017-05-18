@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 Date::DATE_FORMATS[:default] = '%d/%m/%Y'
 Time::DATE_FORMATS[:default] = '%d/%m/%Y %H:%M'
 Date::DATE_FORMATS[:gov_uk_long] = '%-d %B %Y'

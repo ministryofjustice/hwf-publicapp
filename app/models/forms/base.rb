@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module Forms
   class Base
     include Virtus.model(nullify_blank: true)

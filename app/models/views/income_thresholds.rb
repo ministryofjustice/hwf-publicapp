@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 module Views
   class IncomeThresholds
     def initialize(online_application)

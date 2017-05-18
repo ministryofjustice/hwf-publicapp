@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 class Navigation
   include Rails.application.routes.url_helpers
 

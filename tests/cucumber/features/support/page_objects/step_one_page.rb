@@ -21,7 +21,7 @@ class StepOnePage < BasePage
         element :form_name_et, '#form_name_et'
         element :summary, 'summary'
         elements :details_content, '#details-content-0 > p'
-        element :continue_button, '.form-group > .button'
+        element :continue_button, '.button'
       end
     end
   end

@@ -159,12 +159,10 @@ GEM
     multi_test (0.1.2)
     multipart-post (2.0.0)
     netrc (0.11.0)
-    nokogiri (1.6.8)
+    nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
     parser (2.3.3.1)
       ast (~> 2.2)
-    pkg-config (1.1.7)
     poltergeist (1.10.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -365,4 +363,4 @@ DEPENDENCIES
   zendesk_api
 
 BUNDLED WITH
-   1.14.5
+   1.14.6

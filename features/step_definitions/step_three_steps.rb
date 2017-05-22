@@ -1,7 +1,6 @@
 Given(/^I visit the page for step three$/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
-  step 'I am taken to step two'
   step 'I select no to have you already paid the fee?'
 end
 

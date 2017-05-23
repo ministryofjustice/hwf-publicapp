@@ -47,36 +47,8 @@ When(/^I leave the form name or number blank$/) do
   form_group.continue_button.click
 end
 
-When(/^I click on cancel application$/) do
-  restart_app = step_one_page.restart_application
-  expect(restart_app['value']).to eq 'Cancel application'
-  restart_app.click
-end
-
-When(/^I see the are you sure copy$/) do
-  confirm = step_one_page.restart_confirm
-  expect(confirm.p.count).to eq 2
-  expect(confirm.p[0].text).to eq 'Are you sure you want to cancel your application?'
-end
-
-When(/^I click on no, return to current application$/) do
-  step_one_page.restart_confirm.button[1].click
-end
-
-And(/^I click on yes, cancel$/) do
-  step_one_page.restart_confirm.button[0].click
-end
-
-Then(/^I should remain on the page for step one$/) do
-  expect(current_path).to eq '/questions/form_name'
-end
-
 Then(/^I am taken to step two$/) do
-  expect(step_two_page.content.p.text).to eq 'Step 2 of 20'
-end
-
-Then(/^I should see step number$/) do
-  expect(step_one_page.content.p.text).to eq 'Step 1 of 20'
+  expect(current_path).to eq '/questions/fee'
 end
 
 Then(/^I should see the step one header$/) do
@@ -106,18 +78,4 @@ end
 Then(/^I see more information about the form name or number$/) do
   form_group = step_one_page.content.new_form_name.form_group[3]
   expect(form_group.details_content.count).to eq 2
-end
-
-Then(/^I should see the please note copy$/) do
-  expect(step_one_page.block.count).to eq 2
-  expect(step_one_page.block[0].text).to eq 'Please note'
-end
-
-Then(/^I am taken to the Help with Fees homepage$/) do
-  expect(current_path).to eq '/'
-end
-
-Then(/^I should not see the cancel application options$/) do
-  expect(step_one_page.restart_confirm.button[0]).to_not be_visible
-  expect(step_one_page.restart_confirm.button[1]).to_not be_visible
 end

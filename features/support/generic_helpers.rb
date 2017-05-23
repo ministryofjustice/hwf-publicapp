@@ -52,3 +52,7 @@ end
 def base_page
   @base_page ||= BasePage.new
 end
+
+def common_page
+  @common_page ||= CommonPage.new
+end

@@ -4,7 +4,7 @@ Feature: Step one page
     Given I visit the page for step one
 
     Scenario: Displays step number
-      Then I should see step number
+      Then I should see step '1' of 20
 
     Scenario: Displays header
       Then I should see the step one header
@@ -41,16 +41,3 @@ Feature: Step one page
 
     Scenario: Please note is displayed
       Then I should see the please note copy
-
-    Scenario: Cancel application
-      And I click on cancel application
-      And I see the are you sure copy
-      When I click on yes, cancel
-      Then I am taken to the Help with Fees homepage
-
-    Scenario: Return to current application
-      And I click on cancel application
-      When I click on no, return to current application
-      Then I should not see the cancel application options
-      And I should remain on the page for step one
-

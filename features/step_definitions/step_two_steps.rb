@@ -63,7 +63,7 @@ end
 
 And(/^the date I enter exceeds three months$/) do
   fee_date_paid_group = step_two_page.content.form_group[1]
-  fee_date_paid_group.fee_date_paid.set(Time.zone.today - 4.month)
+  fee_date_paid_group.fee_date_paid.set(Time.zone.today - 4.months)
   step_two_page.content.form_group[2].continue_button.click
 end
 

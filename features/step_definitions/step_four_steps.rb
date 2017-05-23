@@ -8,7 +8,7 @@ end
 When(/^I select £0 to £2,999$/) do
   from_group_one = step_four_page.content.form_group[0]
 
-  expect(from_group_one.block_label[0].text).to eq '£0 to £2,999'  
+  expect(from_group_one.block_label[0].text).to eq '£0 to £2,999'
   expect(from_group_one.savings_and_investment_choice_less['type']).to eq 'radio'
   from_group_one.savings_and_investment_choice_less.click
   step_three_page.content.form_group[2].continue_button.click
@@ -17,7 +17,7 @@ end
 When(/^I select £3,000 to £15,999$/) do
   from_group_one = step_four_page.content.form_group[0]
 
-  expect(from_group_one.block_label[1].text).to eq '£3,000 to £15,999'  
+  expect(from_group_one.block_label[1].text).to eq '£3,000 to £15,999'
   expect(from_group_one.savings_and_investment_choice_between['type']).to eq 'radio'
   from_group_one.savings_and_investment_choice_between.click
   step_three_page.content.form_group[2].continue_button.click
@@ -26,7 +26,7 @@ end
 When(/^I select £16,000 or more$/) do
   from_group_one = step_four_page.content.form_group[0]
 
-  expect(from_group_one.block_label[2].text).to eq '£16,000 or more'  
+  expect(from_group_one.block_label[2].text).to eq '£16,000 or more'
   expect(from_group_one.savings_and_investment_choice_more['type']).to eq 'radio'
   from_group_one.savings_and_investment_choice_more.click
   step_three_page.content.form_group[2].continue_button.click
@@ -64,5 +64,3 @@ Then(/^I should see help with savings and investments copy$/) do
   expect(help_with_status_group.ul[0].li.count).to eq 8
   expect(help_with_status_group.ul[1].li.count).to eq 9
 end
-
-

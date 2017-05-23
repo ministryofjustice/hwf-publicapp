@@ -1,4 +1,4 @@
-  class StepThreePage < BasePage
+class StepThreePage < BasePage
   section :content, '#content' do
     element :p, 'p'
     element :page_header, 'h1'

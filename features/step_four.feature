@@ -35,8 +35,3 @@ Feature: Step four page
   Scenario: Displays reminder for married people
     Given I am a married person on the step four page
     Then I should see the reminder to include my partners savings 
-
-    
-
-
- 

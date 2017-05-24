@@ -22,11 +22,6 @@ When(/^I select married$/) do
   step_three_page.content.form_group[2].continue_button.click
 end
 
-Then(/^I should see the step three header$/) do
-  page_header = step_three_page.content.page_header.text
-  expect(page_header).to eq 'Are you single, married or living with someone and sharing an income?'
-end
-
 Then(/^I should see step three label$/) do
   form_group = step_one_page.content.new_form_name.form_group[0]
   expect(form_group.label.text).to eq 'Form name or number'

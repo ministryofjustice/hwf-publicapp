@@ -19,6 +19,10 @@ When(/^I click on no, return to current application$/) do
   common_page.restart_confirm.button[1].click
 end
 
+When(/^I click the continue button$/) do
+  common_page.content.form_group[2].continue_button.click
+end
+
 And(/^I click on yes, cancel$/) do
   common_page.restart_confirm.button[0].click
 end

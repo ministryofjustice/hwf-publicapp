@@ -2,6 +2,9 @@ class CommonPage < BasePage
   section :content, '#content' do
     element :p, 'p'
     element :page_header, 'h1'
+    sections :form_group, '.form-group' do
+      element :continue_button, '.button'
+    end
   end
 
   elements :block, '.block'

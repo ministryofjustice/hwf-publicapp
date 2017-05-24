@@ -14,10 +14,6 @@ When(/^I select yes to have you already paid the fee\?$/) do
   step_two_page.content.form_group[0].fee_paid_true.click
 end
 
-When(/^I click the continue button$/) do
-  step_two_page.content.form_group[2].continue_button.click
-end
-
 Then(/^I should see step two hint$/) do
   expect(step_two_page.content.text.p.text).to have_content 'apply for a refund for a fee paid'
 end

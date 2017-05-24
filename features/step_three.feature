@@ -7,7 +7,7 @@ Feature: Step three page
     Then I should see step '3' of 20
 
   Scenario: Displays header
-    Then I should see the step three header
+    Then I should see 'Are you single, married or living with someone and sharing an income?' header
 
   Scenario: Selecting single
     When I select single

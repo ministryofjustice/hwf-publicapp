@@ -7,7 +7,7 @@ Feature: Step one page
       Then I should see step '1' of 20
 
     Scenario: Displays header
-      Then I should see the step one header
+      Then I should see 'What court or tribunal fee do you need help with?' header
 
     Scenario: Displays hint
       Then I should see step one hint
@@ -25,7 +25,7 @@ Feature: Step one page
 
     Scenario: Leaving form name or number blank
       When I leave the form name or number blank
-      Then I see error message telling me I need to fix the errors
+      Then I should see 'Enter the form name or number' error message
 
     Scenario: Selecting I don’t know the form name or number
       When I select I don’t know the form name or number

@@ -1,3 +1,8 @@
+Then(/^I should see '([^\"]*)' header$/) do |header|
+  page_header = common_page.content.page_header.text
+  expect(page_header).to have_content header
+end
+
 When(/^I click on cancel application$/) do
   restart_app = common_page.restart_application
   expect(restart_app['value']).to eq 'Cancel application'
@@ -38,4 +43,11 @@ end
 
 Then(/^I should remain on the page$/) do
   expect(current_path).to eq '/questions/form_name'
+end
+
+Then(/^I should see '([^\"]*)' error message$/) do |error_message|
+  error_summary_group = common_page.error_summary
+  expect(error_summary_group).to have_error_summary_heading
+  expect(error_summary_group.link.text).to have_content error_message
+  expect(common_page.error_message.text).to have_content error_message
 end

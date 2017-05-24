@@ -18,38 +18,12 @@ When(/^I click the continue button$/) do
   step_two_page.content.form_group[2].continue_button.click
 end
 
-Then(/^I should see the step two header$/) do
-  expect(step_one_page.content.page_header.text).to eq 'Have you already paid the fee?'
-end
-
 Then(/^I should see step two hint$/) do
   expect(step_two_page.content.text.p.text).to have_content 'apply for a refund for a fee paid'
 end
 
 Then(/^I am taken to step three$/) do
   expect(current_path).to eq '/questions/marital_status'
-end
-
-Then(/^I should see date exceeding 3 months error message$/) do
-  error_summary_group = step_two_page.content.error_summary
-  expect(error_summary_group).to have_error_summary_heading
-  expect(error_summary_group.link.text).to have_content 'must have been made in the last 3 months'
-  expect(error_summary_group.link['href']).to end_with '#date_paid'
-end
-
-Then(/^I should see error message prompting a date$/) do
-  error_summary_group = step_two_page.content.error_summary
-  expect(error_summary_group.link.text).to eq 'Enter the date in this format DD/MM/YYYY'
-end
-
-Then(/^I should see error message prompting me to make a selection$/) do
-  error_summary_group = step_two_page.content.error_summary
-  expect(error_summary_group.link.text).to eq 'Select whether you\'ve already paid the fee'
-end
-
-Then(/^I should see date can't be in the future error message$/) do
-  error_summary_group = step_two_page.content.error_summary
-  expect(error_summary_group.link.text).to eq 'This date can\'t be in the future'
 end
 
 And(/^the date I enter is within the last three months$/) do

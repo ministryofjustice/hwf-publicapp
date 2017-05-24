@@ -43,17 +43,12 @@ When(/^I click on help with savings and investments$/) do
   step_four_page.content.form_group[1].help_with_savings_and_investments.click
 end
 
-Then(/^I should see the step four header$/) do
-  page_header = step_three_page.content.page_header.text
-  expect(page_header).to eq 'How much do you have in savings and investments?'
-end
-
 Then(/^I should see step four label$/) do
   form_group = step_one_page.content.new_form_name.form_group[0]
   expect(form_group.label.text).to eq 'Form name or number'
 end
 
-Then(/^I am taken to step six$/) do
+Then(/^I skip step five$/) do
   expect(current_path).to eq '/questions/benefit'
 end
 

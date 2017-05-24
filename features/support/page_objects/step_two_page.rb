@@ -17,10 +17,6 @@ class StepTwoPage < BasePage
     section :text, '.text ' do
       element :p, 'p'
     end
-    section :error_summary, '.error-summary' do
-      element :error_summary_heading, '#error-summary-heading-example-1'
-      element :link, 'a'
-    end
   end
 
   def load_page(page_version = nil)

@@ -6,12 +6,12 @@ Feature: Step four page
 
   Scenario: Displays header
     Given I am a single person on the step four page
-    Then I should see the step four header
+    Then I should see 'How much do you have in savings and investments?' header
 
   Scenario: Selecting £0 to £2,999
     Given I am a single person on the step four page
     When I select £0 to £2,999
-    Then I am taken to step six
+    Then I skip step five
 
   Scenario: Selecting £3,000 to £15,999
     Given I am a single person on the step four page
@@ -21,7 +21,7 @@ Feature: Step four page
   Scenario: Selecting £16,000 or more
     Given I am a single person on the step four page
     When I select £16,000 or more
-    Then I am taken to step six
+    Then I skip step five
 
   Scenario: Help with savings and investments
     Given I am a single person on the step four page

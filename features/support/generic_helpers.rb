@@ -68,4 +68,3 @@ end
 def common_page
   @common_page ||= CommonPage.new
 end
-    

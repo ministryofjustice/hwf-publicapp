@@ -23,8 +23,18 @@ When(/^I click the continue button$/) do
   common_page.content.form_group[2].continue_button.click
 end
 
+When(/^I press the continue button$/) do
+  common_page.continue_button.click
+end
+
 When(/^I click on help with '([^\"]*)'$/) do |help|
   help_with = common_page.content.form_group[1].help_with
+  expect(help_with.text).to have_content help
+  help_with.click
+end
+
+When(/^I open '([^\"]*)'$/) do |help|
+  help_with = common_page.content.form_group[2].help_with
   expect(help_with.text).to have_content help
   help_with.click
 end
@@ -90,6 +100,10 @@ end
 
 Then(/^I am taken to step seven$/) do
   expect(current_path).to eq '/questions/dependent'
+end
+
+Then(/^I am taken to step eight$/) do
+  expect(current_path).to eq '/questions/income_kind'
 end
 
 Then(/^I am taken to step eleven$/) do

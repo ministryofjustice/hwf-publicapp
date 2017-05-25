@@ -61,6 +61,10 @@ def step_five_page
   @step_five_page ||= StepFivePage.new
 end
 
+def step_six_page
+  @step_six_page ||= StepSixPage.new
+end
+
 def base_page
   @base_page ||= BasePage.new
 end

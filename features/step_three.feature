@@ -18,5 +18,5 @@ Feature: Step three page
     Then I am taken to step four
 
   Scenario: Help with status
-    When I click on help with status
+    When I click on help with 'status'
     Then I should see help with status copy

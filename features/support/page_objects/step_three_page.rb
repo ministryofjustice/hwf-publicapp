@@ -7,7 +7,6 @@ class StepThreePage < BasePage
       element :marital_status_married_false, '#marital_status_married_false'
       element :marital_status_married_true, '#marital_status_married_true'
       element :continue_button, '.button'
-      element :help_with_status_button, 'details > summary'
       section :details_content, '#details-content-0' do
         elements :heading_small, '.heading-small'
         sections :ul, 'ul' do

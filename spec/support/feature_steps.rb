@@ -137,7 +137,7 @@ module FeatureSteps
 
   def then_they_are_redirected_to_homepage_with_expiry_message
     expect(page).to have_text 'Apply for help with court and tribunal fees'
-    expect(page).to have_text "You didn't enter any information for more than 10 minutes so you need to start your application again."
+    expect(page).to have_text "You didn't enter any information for more than 60 minutes so you need to start your application again."
   end
 
   def then_they_are_on_the_first_question

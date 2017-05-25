@@ -8,6 +8,7 @@ RSpec.feature 'Session expires when inactive' do
   scenario 'When user is inactive for given time while answering questions, the session expires' do
     Timecop.freeze(time_started) do
       given_user_fills_in_few_questions
+      expect(page).to have_text('If you don’t enter any information for more than 60 minutes, then your session will time out and you’ll need to start again.')
     end
     Timecop.freeze(time_expired) do
       when_they_try_to_proceed_after_long_time

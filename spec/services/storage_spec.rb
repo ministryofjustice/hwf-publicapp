@@ -43,8 +43,8 @@ RSpec.describe Storage do
       context 'when the storage has been started' do
         let(:started_at) { current_time }
 
-        context 'when it was used more than 10 minutes ago' do
-          let(:used_at) { current_time - 11.minutes }
+        context 'when it was used more than 60 minutes ago' do
+          let(:used_at) { current_time - 61.minutes }
 
           before { allow(session).to receive(:destroy) }
           it 'raises an error and clears the session' do
@@ -52,8 +52,8 @@ RSpec.describe Storage do
           end
         end
 
-        context 'when it was used less than 10 minutes ago' do
-          let(:used_at) { current_time - 5.minutes }
+        context 'when it was used less than 60 minutes ago' do
+          let(:used_at) { current_time - 59.minutes }
 
           before { frozen_storage }
 

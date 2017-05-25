@@ -20,6 +20,7 @@ class CommonPage < BasePage
     element :link, 'a'
   end
   element :error_message, '.error-message'
+  element :continue_button, '.form-group > .button'
 
   def load_page(page_version = nil)
     load(v: page_version)

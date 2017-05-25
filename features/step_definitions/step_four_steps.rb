@@ -39,21 +39,9 @@ When(/^I select £16,000 or more$/) do
   step_four_page.content.form_group[2].continue_button.click
 end
 
-When(/^I click on help with savings and investments$/) do
-  step_four_page.content.form_group[1].help_with_savings_and_investments.click
-end
-
 Then(/^I should see step four label$/) do
   form_group = step_four_page.content.new_form_name.form_group[0]
   expect(form_group.label.text).to eq 'Form name or number'
-end
-
-Then(/^I skip step five$/) do
-  expect(current_path).to eq '/questions/benefit'
-end
-
-Then(/^I am taken to step five$/) do
-  expect(current_path).to eq '/questions/savings_and_investment_extra'
 end
 
 Then(/^I should see help with savings and investments copy$/) do

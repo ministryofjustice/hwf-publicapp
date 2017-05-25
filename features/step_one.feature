@@ -36,7 +36,7 @@ Feature: Step one page
       Then I am taken to step two
 
     Scenario: Help with form name or number
-      When I open help with form name or number
+      When I click on 'Help with form name or number'
       Then I see more information about the form name or number
 
     Scenario: Please note is displayed

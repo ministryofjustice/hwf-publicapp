@@ -42,16 +42,6 @@ When(/^I enter '(\d+)' into the input field$/) do |savings|
   step_five_page.content.form_group[2].continue_button.click
 end
 
-Then(/^I should see the step five header$/) do
-  page_header = ste
-  p_five_page.content.page_header.text
-  expect(page_header).to eq 'Are you 61 years old or over?'
-end
-
-Then(/^I am taken to step six$/) do
-  expect(current_path).to eq '/questions/benefit'
-end
-
 Then(/^I should be asked '([^\"]*)'$/) do |question|
   how_much_group = step_five_page.content.form_group[1]
   label = how_much_group.how_much_label.text

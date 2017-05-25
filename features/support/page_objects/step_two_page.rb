@@ -10,8 +10,8 @@ class StepTwoPage < BasePage
       element :fee_date_paid, '#fee_date_paid'
       element :fee_paid_false, '#fee_paid_false'
       element :fee_paid_true, '#fee_paid_true'
-      element :continue_button, '.button'
       elements :visuallyhidden, '.visuallyhidden'
+      element :continue_button, '.button'
     end
     elements :block_label, '.block-label'
     section :text, '.text ' do

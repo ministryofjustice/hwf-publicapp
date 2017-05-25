@@ -36,19 +36,9 @@ When(/^I select I need help with an employment tribunal fee$/) do
   form_name.form_group[4].continue_button.click
 end
 
-When(/^I open help with form name or number$/) do
-  form_group = step_one_page.content.new_form_name.form_group[3]
-  expect(form_group.summary.text).to eq 'Help with form name or number'
-  form_group.summary.click
-end
-
 When(/^I leave the form name or number blank$/) do
   form_group = step_one_page.content.new_form_name.form_group[4]
   form_group.continue_button.click
-end
-
-Then(/^I am taken to step two$/) do
-  expect(current_path).to eq '/questions/fee'
 end
 
 Then(/^I should see step one hint$/) do

@@ -27,14 +27,6 @@ Then(/^I should see step three label$/) do
   expect(form_group.label.text).to eq 'Form name or number'
 end
 
-Then(/^I am taken to step four$/) do
-  expect(current_path).to eq '/questions/savings_and_investment'
-end
-
-When(/^I click on help with status$/) do
-  step_three_page.content.form_group[1].help_with_status_button.click
-end
-
 Then(/^I should see help with status copy$/) do
   help_with_status_group = step_three_page.content.form_group[1].details_content
   first_heading = help_with_status_group.heading_small[0].text

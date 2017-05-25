@@ -4,6 +4,7 @@ class CommonPage < BasePage
     element :page_header, 'h1'
     sections :form_group, '.form-group' do
       element :continue_button, '.button'
+      element :help_with, 'details > summary'
     end
   end
 

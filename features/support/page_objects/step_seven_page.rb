@@ -13,7 +13,6 @@ class StepSevenPage < BasePage
       element :children_number, '#dependent_children_number'
       element :dependent_children_false, '#dependent_children_false'
       element :how_much_label, '#amount-panel > div > label'
-      element :extra_amount, '#savings_and_investment_extra_amount'
       section :details_content, '#details-content-0' do
         elements :p, 'p'
         sections :li, 'li' do

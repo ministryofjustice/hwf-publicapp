@@ -576,10 +576,10 @@ en:
       confirm_cancel: "Yes, cancel"
       return_to_application: "No, return to current application"
   session:
-    expired_message: You didn't enter any information for more than 10 minutes so you need to start your application again.
+    expired_message: You didn't enter any information for more than 60 minutes so you need to start your application again.
     note:
       heading: Please note
-      text: If you don’t enter any information for more than 10 minutes, then your session will time out and you’ll need to start again.
+      text: If you don’t enter any information for more than 60 minutes, then your session will time out and you’ll need to start again.
   start_application: Apply now
   submit_button: Continue
   summary:

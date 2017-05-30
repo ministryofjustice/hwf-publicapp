@@ -23,6 +23,10 @@ When(/^I click the continue button$/) do
   common_page.content.form_group[2].continue_button.click
 end
 
+When(/^I click continue$/) do
+  common_page.content.form_group[1].continue_button.click
+end
+
 When(/^I press the continue button$/) do
   common_page.continue_button.click
 end
@@ -104,6 +108,10 @@ end
 
 Then(/^I am taken to step eight$/) do
   expect(current_path).to eq '/questions/income_kind'
+end
+
+Then(/^I am taken to step nine$/) do
+  expect(current_path).to eq '/questions/income_range'
 end
 
 Then(/^I am taken to step eleven$/) do

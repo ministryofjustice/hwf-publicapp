@@ -28,6 +28,12 @@ When(/^I add I have '(\d+)' children$/) do |children|
   step_seven_page.content.continue_button.click
 end
 
+When(/^I add I have three children$/) do
+  num_children = step_seven_page.content.form_group[1]
+  num_children.children_number.set(3)
+  step_seven_page.content.continue_button.click
+end
+
 Then(/^I should see help with financially dependent children copy$/) do
   help_with_status_group = step_seven_page.content.form_group[2].details_content
   first_p = help_with_status_group.p[0].text

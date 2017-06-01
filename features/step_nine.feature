@@ -49,7 +49,7 @@ Feature: Step nine page
     And I should see medium income range 'Between £1,820 and £5,820'
     And I should see high income range 'More than £5,820'
 
-  Scenario: Selecting the lower range
+  Scenario: Selecting the less than range
     Given I am a single person, no children on step nine
     When I select less than
     Then I am taken to step eleven

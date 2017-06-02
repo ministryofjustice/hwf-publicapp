@@ -1,3 +1,7 @@
+def form_group_6(index)
+  step_six_page.content.form_group[index]
+end
+
 Given(/^I visit the page for step six$/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
@@ -7,17 +11,15 @@ Given(/^I visit the page for step six$/) do
 end
 
 When(/^I select yes to do you receive any of the following benefits\?$/) do
-  yes_no_group = step_six_page.content.form_group[0]
-  expect(yes_no_group.block_label[1].text).to eq 'Yes, I am receiving one of the benefits listed'
-  yes_no_group.benefits_true.click
-  step_six_page.content.form_group[2].continue_button.click
+  expect(form_group_6(0).block_label[1].text).to eq 'Yes, I am receiving one of the benefits listed'
+  form_group_6(0).benefits_true.click
+  form_group_6(2).continue_button.click
 end
 
 When(/^I select no to do you receive any of the following benefits\?$/) do
-  yes_no_group = step_six_page.content.form_group[0]
-  expect(yes_no_group.block_label[0].text).to eq 'No'
-  yes_no_group.benefits_false.click
-  step_six_page.content.form_group[2].continue_button.click
+  expect(form_group_6(0).block_label[0].text).to eq 'No'
+  form_group_6(0).benefits_false.click
+  form_group_6(2).continue_button.click
 end
 
 Then(/^I should see the benefits list$/) do
@@ -28,12 +30,11 @@ Then(/^I should see the benefits list$/) do
 end
 
 Then(/^I should see help with benefits copy$/) do
-  help_with_status_group = step_six_page.content.form_group[1].details_content
-  first_heading = help_with_status_group.heading_small[0].text
-  second_heading = help_with_status_group.heading_small[1].text
+  first_heading = form_group_6(1).details_content.heading_small[0].text
+  second_heading = form_group_6(1).details_content.heading_small[1].text
 
   expect(first_heading).to have_content 'recently started receiving one of these benefits'
   expect(second_heading).to have_content 'Benefits with similar names'
-  expect(help_with_status_group.ul[0].li.count).to eq 6
-  expect(help_with_status_group.ul[0].hint.count).to eq 4
+  expect(form_group_6(1).details_content.ul[0].li.count).to eq 6
+  expect(form_group_6(1).details_content.ul[0].hint.count).to eq 4
 end

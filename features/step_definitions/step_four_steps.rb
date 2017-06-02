@@ -1,4 +1,4 @@
-def form_group_4(index)
+def group_four(index)
   step_four_page.content.form_group[index]
 end
 
@@ -17,38 +17,38 @@ Given(/^I am a married person on the step four page$/) do
 end
 
 When(/^I select £0 to £2,999$/) do
-  expect(form_group_4(0).block_label[0].text).to eq '£0 to £2,999'
-  expect(form_group_4(0).savings_and_investment_choice_less['type']).to eq 'radio'
-  form_group_4(0).savings_and_investment_choice_less.click
-  form_group_4(2).continue_button.click
+  expect(group_four(0).block_label[0].text).to eq '£0 to £2,999'
+  expect(group_four(0).savings_and_investment_choice_less['type']).to eq 'radio'
+  group_four(0).savings_and_investment_choice_less.click
+  group_four(2).continue_button.click
 end
 
 When(/^I select £3,000 to £15,999$/) do
-  expect(form_group_4(0).block_label[1].text).to eq '£3,000 to £15,999'
-  expect(form_group_4(0).savings_and_investment_choice_between['type']).to eq 'radio'
-  form_group_4(0).savings_and_investment_choice_between.click
-  form_group_4(2).continue_button.click
+  expect(group_four(0).block_label[1].text).to eq '£3,000 to £15,999'
+  expect(group_four(0).savings_and_investment_choice_between['type']).to eq 'radio'
+  group_four(0).savings_and_investment_choice_between.click
+  group_four(2).continue_button.click
 end
 
 When(/^I select £16,000 or more$/) do
-  expect(form_group_4(0).block_label[2].text).to eq '£16,000 or more'
-  expect(form_group_4(0).savings_and_investment_choice_more['type']).to eq 'radio'
-  form_group_4(0).savings_and_investment_choice_more.click
-  form_group_4(2).continue_button.click
+  expect(group_four(0).block_label[2].text).to eq '£16,000 or more'
+  expect(group_four(0).savings_and_investment_choice_more['type']).to eq 'radio'
+  group_four(0).savings_and_investment_choice_more.click
+  group_four(2).continue_button.click
 end
 
 Then(/^I should see step four label$/) do
-  expect(form_group_4(0).label.text).to eq 'Form name or number'
+  expect(group_four(0).label.text).to eq 'Form name or number'
 end
 
 Then(/^I should see help with savings and investments copy$/) do
-  first_heading = form_group_4(1).details_content.heading_small[0].text
-  second_heading = form_group_4(1).details_content.heading_small[1].text
+  first_heading = group_four(1).details_content.heading_small[0].text
+  second_heading = group_four(1).details_content.heading_small[1].text
 
   expect(first_heading).to have_content 'What to include in savings and investments:'
   expect(second_heading).to have_content 'Don’t include the following in your savings total:'
-  expect(form_group_4(1).details_content.ul[0].li.count).to eq 8
-  expect(form_group_4(1).details_content.ul[1].li.count).to eq 9
+  expect(group_four(1).details_content.ul[0].li.count).to eq 8
+  expect(group_four(1).details_content.ul[1].li.count).to eq 9
 end
 
 Then(/^I should not see the reminder to include my partners savings$/) do

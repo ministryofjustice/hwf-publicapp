@@ -114,6 +114,20 @@ Then(/^I am taken to step nine$/) do
   expect(current_path).to eq '/questions/income_range'
 end
 
+Then(/^I am taken to step ten$/) do
+  expect(current_path).to eq '/questions/income_amount'
+end
+
 Then(/^I am taken to step eleven$/) do
   expect(current_path).to eq '/questions/probate'
+end
+
+Then(/^I should see single person hint '([^\"]*)'$/) do |hint|
+  hint_group = common_page.content.text.p[0]
+  expect(hint_group.text).to have_content hint
+end
+
+Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
+  hint_group = common_page.content.text.p[0]
+  expect(hint_group.text).to have_content hint
 end

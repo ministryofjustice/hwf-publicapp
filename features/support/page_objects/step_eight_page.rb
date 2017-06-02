@@ -8,7 +8,6 @@ class StepEightPage < BasePage
     end
     sections :form_group, '.form-group' do
       element :h3, 'h3'
-      element :applicant, '#applicant'
       elements :block_label, '.block-label'
       elements :input, '.block-label input'
       element :continue_button, '.button'

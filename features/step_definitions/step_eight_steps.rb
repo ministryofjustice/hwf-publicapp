@@ -18,33 +18,24 @@ Given(/^I am a married person on step eight$/) do
   step 'I select no to do you have any children'
 end
 
-When(/^I select wages from income list$/) do
-  your_income = step_eight_page.content.form_group[0]
-  expect(your_income.block_label[0].text).to eq 'Wages'
-  your_income.block_label[0].click
-end
-
-And(/^I select working tax credit from income list$/) do
-  your_income = step_eight_page.content.form_group[0]
-  expect(your_income.block_label[2].text).to eq 'Working Tax Credit'
-  your_income.block_label[2].click
-  step_eight_page.content.form_group[1].continue_button.click
-end
-
 When(/^I select no income$/) do
   your_income = step_eight_page.content.form_group[0]
   your_income.input[12].click
   step_eight_page.content.form_group[1].continue_button.click
 end
 
-Then(/^I should see single person hint$/) do
-  hint_group = step_eight_page.content.text.p
-  expect(hint_group.text).to eq 'Choose the different types of income you receive.'
+When(/^after selecting wages from income list on step eight$/) do
+  your_income = step_eight_page.content.form_group[0]
+  expect(your_income.block_label[0].text).to eq 'Wages'
+  your_income.block_label[0].click
 end
 
-Then(/^I should see married person hint$/) do
-  hint_group = step_eight_page.content.text.p
-  expect(hint_group.text).to eq 'Choose the different types of income you and your partner receive.'
+Then(/^I should see an income list:$/) do |incomes|
+  your_income = step_eight_page.content.form_group[0]
+  incomes.rows.each_with_index do |income, index|
+    expect(your_income.block_label[index].text).to eq income[0]
+    expect(your_income.input[index]['type']).to eq 'checkbox'
+  end
 end
 
 Then(/^I should see an income list for myself and my partner:$/) do |incomes|

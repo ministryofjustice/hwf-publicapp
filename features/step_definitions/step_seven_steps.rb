@@ -32,7 +32,7 @@ end
 Then(/^I should see help with financially dependent children copy$/) do
   content_group = form_group_7(2).details_content
 
-  expect(content_group.p[0].text).to have_content 'You need to give details of any children you support'
+  expect(content_group.p[0].text).to have_content 'You need to give details of any children'
   expect(content_group.p[1].text).to have_content 'This includes children who are:'
   expect(content_group.li.count).to eq 3
   expect(content_group.li[1].external['href']).to eq 'https://www.gov.uk/child-tax-credit-when-child-reaches-16'

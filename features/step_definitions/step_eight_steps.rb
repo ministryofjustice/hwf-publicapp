@@ -1,3 +1,7 @@
+def form_group_8(index)
+  step_eight_page.content.form_group[index]
+end
+
 Given(/^I am a single person on step eight$/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
@@ -19,22 +23,19 @@ Given(/^I am a married person on step eight$/) do
 end
 
 When(/^I select wages from income list$/) do
-  your_income = step_eight_page.content.form_group[0]
-  expect(your_income.block_label[0].text).to eq 'Wages'
-  your_income.block_label[0].click
+  expect(form_group_8(0).block_label[0].text).to eq 'Wages'
+  form_group_8(0).block_label[0].click
 end
 
 And(/^I select working tax credit from income list$/) do
-  your_income = step_eight_page.content.form_group[0]
-  expect(your_income.block_label[2].text).to eq 'Working Tax Credit'
-  your_income.block_label[2].click
-  step_eight_page.content.form_group[1].continue_button.click
+  expect(form_group_8(0).block_label[2].text).to eq 'Working Tax Credit'
+  form_group_8(0).block_label[2].click
+  form_group_8(1).continue_button.click
 end
 
 When(/^I select no income$/) do
-  your_income = step_eight_page.content.form_group[0]
-  your_income.input[12].click
-  step_eight_page.content.form_group[1].continue_button.click
+  form_group_8(0).input[12].click
+  form_group_8(1).continue_button.click
 end
 
 Then(/^I should see single person hint$/) do
@@ -48,18 +49,15 @@ Then(/^I should see married person hint$/) do
 end
 
 Then(/^I should see an income list for myself and my partner:$/) do |incomes|
-  your_income = step_eight_page.content.form_group[0]
-  partner_income = step_eight_page.content.form_group[1]
-
-  expect(your_income.h3.text).to eq 'Your income'
-  expect(partner_income.h3.text).to eq 'Your partner\'s income'
+  expect(form_group_8(0).h3.text).to eq 'Your income'
+  expect(form_group_8(1).h3.text).to eq 'Your partner\'s income'
   incomes.rows.each_with_index do |income, index|
-    expect(your_income.block_label[index].text).to eq income[0]
-    expect(your_income.input[index]['type']).to eq 'checkbox'
+    expect(form_group_8(0).block_label[index].text).to eq income[0]
+    expect(form_group_8(0).input[index]['type']).to eq 'checkbox'
   end
   incomes.rows.each_with_index do |income, index|
-    expect(partner_income.block_label[index].text).to eq income[0]
-    expect(partner_income.input[index]['type']).to eq 'checkbox'
+    expect(form_group_8(1).block_label[index].text).to eq income[0]
+    expect(form_group_8(1).input[index]['type']).to eq 'checkbox'
   end
 end
 

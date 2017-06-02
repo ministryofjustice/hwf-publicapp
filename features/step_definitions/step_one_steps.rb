@@ -28,7 +28,7 @@ end
 When(/^I select I need help with an employment tribunal fee$/) do
   label = form_group_1(2).block_label[0]
 
-  expect(label .text).to eq 'I need help with an employment tribunal fee'
+  expect(label.text).to eq 'I need help with an employment tribunal fee'
   expect(form_group_1(2).form_name_et['type']).to eq 'checkbox'
   form_group_1(2).form_name_et.click
   form_group_1(4).continue_button.click

@@ -36,21 +36,18 @@ When(/^I press the continue button$/) do
 end
 
 When(/^I click on help with '([^\"]*)'$/) do |help|
-  help_with = common_page.content.form_group[1].help_with
-  expect(help_with.text).to have_content help
-  help_with.click
+  expect(group_common(1).help_with.text).to have_content help
+  group_common(1).help_with.click
 end
 
 When(/^I open '([^\"]*)'$/) do |help|
-  help_with = group_common(2).help_with
-  expect(help_with.text).to have_content help
-  help_with.click
+  expect(group_common(2).help_with.text).to have_content help
+  group_common(2).help_with.click
 end
 
 When(/^I click on '([^\"]*)'$/) do |help|
-  help_with = group_common(3).help_with
-  expect(help_with.text).to have_content help
-  help_with.click
+  expect(group_common(3).help_with.text).to have_content help
+  group_common(3).help_with.click
 end
 
 And(/^I click on yes, cancel$/) do

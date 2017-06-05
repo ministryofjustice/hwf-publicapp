@@ -77,11 +77,6 @@ And(/^after selecting working tax credit from income list on step eight$/) do
   your_income.block_label[2].click
 end
 
-Then(/^I should see average monthly income copy$/) do
-  average_income = step_nine_page.content.text.p[1]
-  expect(average_income.text).to have_content 'work out an average monthly income'
-end
-
 Then(/^I should see low income range '([^\"]*)'$/) do |income|
   low_income = step_nine_page.content.form_group[0].block_label[0]
   expect(low_income.text).to eq income

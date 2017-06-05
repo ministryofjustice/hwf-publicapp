@@ -83,6 +83,11 @@ Then(/^I should see '([^\"]*)' error message$/) do |error_message|
   expect(common_page.error_message.text).to have_content error_message
 end
 
+Then(/^I should see average monthly income copy$/) do
+  average_income = common_page.content.text.p[1]
+  expect(average_income.text).to have_content 'work out an average monthly income'
+end
+
 Then(/^I am taken to step two$/) do
   expect(current_path).to eq '/questions/fee'
 end
@@ -120,6 +125,10 @@ Then(/^I am taken to step ten$/) do
 end
 
 Then(/^I am taken to step eleven$/) do
+  expect(current_path).to eq '/questions/probate'
+end
+
+Then(/^I am taken to step twelve$/) do
   expect(current_path).to eq '/questions/probate'
 end
 

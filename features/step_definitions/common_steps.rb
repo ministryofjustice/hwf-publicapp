@@ -1,3 +1,7 @@
+def group_common(index)
+  common_page.content.form_group[index]
+end
+
 Then(/^I should see '([^\"]*)' header$/) do |header|
   page_header = common_page.content.page_header.text
   expect(page_header).to have_content header
@@ -20,11 +24,11 @@ When(/^I click on no, return to current application$/) do
 end
 
 When(/^I click the continue button$/) do
-  common_page.content.form_group[2].continue_button.click
+  group_common(2).continue_button.click
 end
 
 When(/^I click continue$/) do
-  common_page.content.form_group[1].continue_button.click
+  group_common(1).continue_button.click
 end
 
 When(/^I press the continue button$/) do
@@ -32,21 +36,18 @@ When(/^I press the continue button$/) do
 end
 
 When(/^I click on help with '([^\"]*)'$/) do |help|
-  help_with = common_page.content.form_group[1].help_with
-  expect(help_with.text).to have_content help
-  help_with.click
+  expect(group_common(1).help_with.text).to have_content help
+  group_common(1).help_with.click
 end
 
 When(/^I open '([^\"]*)'$/) do |help|
-  help_with = common_page.content.form_group[2].help_with
-  expect(help_with.text).to have_content help
-  help_with.click
+  expect(group_common(2).help_with.text).to have_content help
+  group_common(2).help_with.click
 end
 
 When(/^I click on '([^\"]*)'$/) do |help|
-  help_with = common_page.content.form_group[3].help_with
-  expect(help_with.text).to have_content help
-  help_with.click
+  expect(group_common(3).help_with.text).to have_content help
+  group_common(3).help_with.click
 end
 
 And(/^I click on yes, cancel$/) do

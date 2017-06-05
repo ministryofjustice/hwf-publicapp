@@ -1,3 +1,7 @@
+def group_five(index)
+  step_five_page.content.form_group[index]
+end
+
 Given(/^I am a single person with £3,000 to £15,999 savings/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
@@ -23,28 +27,23 @@ Given(/^I am a married person with £3,000 to £15,999 savings$/) do
 end
 
 When(/^I select yes to are you 61 years old or over\?$/) do
-  yes_no_group = step_five_page.content.form_group[0]
-  expect(yes_no_group.block_label[0].text).to eq 'Yes'
-  yes_no_group.over_61_true.click
-  step_five_page.content.form_group[2].continue_button.click
+  expect(group_five(0).block_label[0].text).to eq 'Yes'
+  group_five(0).over_61_true.click
+  group_five(2).continue_button.click
 end
 
 When(/^I select no to are you 61 years old or over\?$/) do
-  yes_no_group = step_five_page.content.form_group[0]
-  expect(yes_no_group.block_label[1].text).to eq 'No'
-  yes_no_group.over_61_false.click
-  step_five_page.content.form_group[2].continue_button.click
+  expect(group_five(0).block_label[1].text).to eq 'No'
+  group_five(0).over_61_false.click
+  group_five(2).continue_button.click
 end
 
 When(/^I enter '(\d+)' into the input field$/) do |savings|
-  how_much_group = step_five_page.content.form_group[1]
-  how_much_group.extra_amount.set(savings)
-  step_five_page.content.form_group[2].continue_button.click
+  group_five(1).extra_amount.set(savings)
+  group_five(2).continue_button.click
 end
 
 Then(/^I should be asked '([^\"]*)'$/) do |question|
-  how_much_group = step_five_page.content.form_group[1]
-  label = how_much_group.how_much_label.text
-  expect(label).to have_content question
-  expect(how_much_group.extra_amount['type']).to eq 'number'
+  expect(group_five(1).how_much_label.text).to have_content question
+  expect(group_five(1).extra_amount['type']).to eq 'number'
 end

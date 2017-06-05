@@ -77,6 +77,10 @@ def step_nine_page
   @step_nine_page ||= StepNinePage.new
 end
 
+def step_ten_page
+  @step_ten_page ||= StepTenPage.new
+end
+
 def base_page
   @base_page ||= BasePage.new
 end

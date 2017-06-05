@@ -34,6 +34,8 @@ And(/^the date I enter exceeds three months$/) do
   group_two(2).continue_button.click
 end
 
+
+
 When(/^the date I enter is in the future$/) do
   group_two(1).fee_date_paid.set(Time.zone.today + 1.month)
   group_two(2).continue_button.click

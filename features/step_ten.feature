@@ -42,4 +42,3 @@ Feature: Step ten page
     Given I am a single person on step ten
     When I click continue
     Then I should see 'Enter how much income do you receive' error message
-

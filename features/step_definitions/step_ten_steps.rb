@@ -56,5 +56,3 @@ Then(/^I should see the income list on step ten page:$/) do |incomes|
     expect(your_income.li[index].text).to eq income[0]
   end
 end
-
-

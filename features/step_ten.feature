@@ -30,7 +30,7 @@ Feature: Step ten page
     Given I need help with an employment tribunal
     And I am on step ten
     When I enter a valid total monthly income
-    Then I am taken to step twelve
+    Then I am taken to probate step twelve
 
   Scenario: No help with an employment tribunal
     Given I do not need help with an employment tribunal

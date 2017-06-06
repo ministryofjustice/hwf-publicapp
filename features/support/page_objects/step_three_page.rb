@@ -1,7 +1,5 @@
 class StepThreePage < BasePage
   section :content, '#content' do
-    element :p, 'p'
-    element :page_header, 'h1'
     sections :form_group, '.form-group' do
       elements :block_label, '.block-label'
       element :marital_status_married_false, '#marital_status_married_false'

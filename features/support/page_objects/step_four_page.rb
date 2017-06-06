@@ -1,7 +1,6 @@
 class StepFourPage < BasePage
   section :content, '#content' do
     element :married_reminder, '#content > div:nth-child(3) > p'
-    element :page_header, 'h1'
     sections :form_group, '.form-group' do
       elements :block_label, '.block-label'
       element :savings_and_investment_choice_less, '#savings_and_investment_choice_less'

@@ -83,9 +83,31 @@ Then(/^I should see '([^\"]*)' error message$/) do |error_message|
   expect(common_page.error_message.text).to have_content error_message
 end
 
+Then(/^I should see error message '([^\"]*)'$/) do |error_message|
+  error_summary_group = common_page.error_summary
+  expect(error_summary_group).to have_error_summary_heading
+  expect(error_summary_group.link.text).to have_content error_message
+  expect(step_eleven_page.error_message[1].text).to have_content error_message
+end
+
 Then(/^I should see average monthly income copy$/) do
   average_income = common_page.content.text.p[1]
   expect(average_income.text).to have_content 'work out an average monthly income'
+end
+
+Then(/^I should see hint '([^\"]*)'$/) do |hint|
+  hint_group = common_page.content.text.p[0]
+  expect(hint_group.text).to have_content hint
+end
+
+Then(/^I should see single person hint '([^\"]*)'$/) do |hint|
+  hint_group = common_page.content.text.p[0]
+  expect(hint_group.text).to have_content hint
+end
+
+Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
+  hint_group = common_page.content.text.p[0]
+  expect(hint_group.text).to have_content hint
 end
 
 Then(/^I am taken to step two$/) do
@@ -128,16 +150,10 @@ Then(/^I am taken to step eleven$/) do
   expect(current_path).to eq '/questions/probate'
 end
 
-Then(/^I am taken to step twelve$/) do
+Then(/^I am taken to probate step twelve$/) do
   expect(current_path).to eq '/questions/probate'
 end
 
-Then(/^I should see single person hint '([^\"]*)'$/) do |hint|
-  hint_group = common_page.content.text.p[0]
-  expect(hint_group.text).to have_content hint
-end
-
-Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
-  hint_group = common_page.content.text.p[0]
-  expect(hint_group.text).to have_content hint
+Then(/^I am taken to step twelve$/) do
+  expect(current_path).to eq '/questions/claim'
 end

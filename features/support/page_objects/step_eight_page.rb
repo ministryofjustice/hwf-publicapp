@@ -1,10 +1,7 @@
 class StepEightPage < BasePage
   section :content, '#content' do
-    element :page_header, 'h1'
     section :text, '.text' do
-      element :p, 'p'
       elements :li, 'li'
-      elements :hint, '.hint'
     end
     sections :form_group, '.form-group' do
       element :h3, 'h3'

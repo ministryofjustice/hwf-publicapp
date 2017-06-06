@@ -44,7 +44,6 @@ When(/^I enter a date over twenty years ago$/) do
   step_eleven_page.continue_button.click
 end
 
-
 When(/^I enter a invalid date of death$/) do
   step_eleven_page.probate_case_true.click
   step_eleven_page.probate_deceased_name.set('John Smith')

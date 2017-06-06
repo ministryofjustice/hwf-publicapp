@@ -26,10 +26,12 @@ Feature: Step eleven page
     When I enter a future date of death
     Then I should see error message 'This date can't be in the future'
 
+  Scenario: Displays must have been in the last 20 years error message
+    When I enter a date over twenty years ago
+    Then I should see error message 'The date of death must have been in the last 20 years'
+
   Scenario: Displays invalid format error message
-    When I select yes to are you paying a fee for a probate case
-    And I enter the name of deceased
-    And I enter a invalid date of death
+    When I enter a invalid date of death
     Then I should see error message 'Enter the date in this format DD/MM/YYYY'
 
   Scenario: Displays make a selection error message

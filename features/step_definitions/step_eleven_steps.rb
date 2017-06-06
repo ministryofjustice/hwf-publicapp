@@ -37,7 +37,17 @@ When(/^I enter a valid date of death$/) do
   step_eleven_page.continue_button.click
 end
 
+When(/^I enter a date over twenty years ago$/) do
+  step_eleven_page.probate_case_true.click
+  step_eleven_page.probate_deceased_name.set('John Smith')
+  step_eleven_page.probate_date_of_death.set(Time.zone.today - 21.years)
+  step_eleven_page.continue_button.click
+end
+
+
 When(/^I enter a invalid date of death$/) do
+  step_eleven_page.probate_case_true.click
+  step_eleven_page.probate_deceased_name.set('John Smith')
   step_eleven_page.probate_date_of_death.set('hfdskghk')
   step_eleven_page.continue_button.click
 end

@@ -28,6 +28,7 @@ Rails:
 Metrics/LineLength:
   Max: 100
   Exclude:
+    - 'features/**/*'
     - 'spec/**/*'
     - 'Gemfile'
 

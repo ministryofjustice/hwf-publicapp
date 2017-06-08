@@ -6,7 +6,6 @@ class StepFourPage < BasePage
       element :savings_and_investment_choice_less, '#savings_and_investment_choice_less'
       element :savings_and_investment_choice_between, '#savings_and_investment_choice_between'
       element :savings_and_investment_choice_more, '#savings_and_investment_choice_more'
-      element :continue_button, '.button'
       section :details_content, '#details-content-0' do
         elements :heading_small, '.heading-small'
         sections :ul, 'ul' do

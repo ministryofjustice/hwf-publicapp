@@ -9,7 +9,6 @@ class StepSixPage < BasePage
       elements :block_label, '.block-label'
       element :benefits_true, '#benefit_on_benefits_true'
       element :benefits_false, '#benefit_on_benefits_false'
-      element :continue_button, '.button'
       section :details_content, '#details-content-0' do
         elements :heading_small, '.heading-small'
         sections :ul, 'ul' do

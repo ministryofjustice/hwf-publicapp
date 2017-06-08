@@ -2,9 +2,9 @@ def group_common(index)
   common_page.content.form_group[index]
 end
 
-Then(/^I should see '([^\"]*)' header$/) do |header|
-  page_header = common_page.content.page_header.text
-  expect(page_header).to have_content header
+Given(/^I need help with an employment tribunal$/) do
+  step 'I visit the page for step one'
+  step 'I select I need help with an employment tribunal fee'
 end
 
 When(/^I click on cancel application$/) do
@@ -23,15 +23,7 @@ When(/^I click on no, return to current application$/) do
   common_page.restart_confirm.button[1].click
 end
 
-When(/^I click the continue button$/) do
-  group_common(2).continue_button.click
-end
-
 When(/^I click continue$/) do
-  group_common(1).continue_button.click
-end
-
-When(/^I press the continue button$/) do
   common_page.continue_button.click
 end
 
@@ -52,6 +44,11 @@ end
 
 And(/^I click on yes, cancel$/) do
   common_page.restart_confirm.button[0].click
+end
+
+Then(/^I should see '([^\"]*)' header$/) do |header|
+  page_header = common_page.content.page_header.text
+  expect(page_header).to have_content header
 end
 
 Then(/^I am taken to the Help with Fees homepage$/) do
@@ -156,4 +153,8 @@ end
 
 Then(/^I am taken to step twelve$/) do
   expect(current_path).to eq '/questions/claim'
+end
+
+Then(/^I am taken to step thirteen$/) do
+  expect(current_path).to eq '/questions/national_insurance'
 end

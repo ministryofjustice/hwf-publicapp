@@ -19,20 +19,20 @@ end
 When(/^I select no to do you have any children$/) do
   expect(group_seven(0).block_label[0].text).to eq 'No'
   group_seven(0).dependent_children_false.click
-  step_seven_page.content.continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I add I have '(\d+)' children$/) do |children|
   expect(group_seven(1).text).to eq 'Number of children'
   expect(group_seven(1).children_number['type']).to eq 'number'
   group_seven(1).children_number.set(children)
-  step_seven_page.content.continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I add I have three children$/) do
   num_children = step_seven_page.content.form_group[1]
   num_children.children_number.set(3)
-  step_seven_page.content.continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should see help with financially dependent children copy$/) do

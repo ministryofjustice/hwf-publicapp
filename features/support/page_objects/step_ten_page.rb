@@ -5,7 +5,6 @@ class StepTenPage < BasePage
     end
     sections :form_group, '.form-group' do
       element :income_amount, '#income_amount_amount'
-      element :continue_button, '.button'
     end
   end
 

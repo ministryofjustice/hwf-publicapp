@@ -11,7 +11,6 @@ class StepOnePage < BasePage
         element :form_name_unknown, '#form_name_unknown'
         element :form_name_et, '#form_name_et'
         elements :details_content, '#details-content-0 > p'
-        element :continue_button, '.button'
       end
     end
   end

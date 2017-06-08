@@ -20,21 +20,21 @@ When(/^I select £0 to £2,999$/) do
   expect(group_four(0).block_label[0].text).to eq '£0 to £2,999'
   expect(group_four(0).savings_and_investment_choice_less['type']).to eq 'radio'
   group_four(0).savings_and_investment_choice_less.click
-  group_four(2).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select £3,000 to £15,999$/) do
   expect(group_four(0).block_label[1].text).to eq '£3,000 to £15,999'
   expect(group_four(0).savings_and_investment_choice_between['type']).to eq 'radio'
   group_four(0).savings_and_investment_choice_between.click
-  group_four(2).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select £16,000 or more$/) do
   expect(group_four(0).block_label[2].text).to eq '£16,000 or more'
   expect(group_four(0).savings_and_investment_choice_more['type']).to eq 'radio'
   group_four(0).savings_and_investment_choice_more.click
-  group_four(2).continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should see step four label$/) do

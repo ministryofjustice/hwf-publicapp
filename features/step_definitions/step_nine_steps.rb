@@ -56,19 +56,19 @@ end
 When(/^I select less than$/) do
   your_income = step_nine_page.content.form_group[0]
   your_income.income_range_less.click
-  step_nine_page.content.form_group[1].continue_button.click
+  common_page.continue_button.click
 end
 
 And(/^I select between$/) do
   your_income = step_nine_page.content.form_group[0]
   your_income.income_range_between.click
-  step_nine_page.content.form_group[1].continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select more than$/) do
   your_income = step_nine_page.content.form_group[0]
   your_income.income_range_more.click
-  step_nine_page.content.form_group[1].continue_button.click
+  common_page.continue_button.click
 end
 
 And(/^after selecting working tax credit from income list on step eight$/) do

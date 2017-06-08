@@ -13,7 +13,7 @@ end
 When(/^I select yes to do you receive any of the following benefits\?$/) do
   expect(group_six(0).block_label[1].text).to eq 'Yes, I am receiving one of the benefits listed'
   group_six(0).benefits_true.click
-  group_six(2).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select no to do you receive any of the following benefits\?$/) do

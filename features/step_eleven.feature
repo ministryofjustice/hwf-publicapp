@@ -35,5 +35,5 @@ Feature: Step eleven page
     Then I should see error message 'Enter the date in this format DD/MM/YYYY'
 
   Scenario: Displays make a selection error message
-    When I click the continue button on step eleven
+    When I click continue button
     Then I should see 'Select whether you're paying a fee for a probate case' error message

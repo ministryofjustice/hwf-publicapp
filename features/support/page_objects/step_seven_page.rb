@@ -15,8 +15,6 @@ class StepSevenPage < BasePage
           element :external, '.external'
         end
       end
-    end
-    element :continue_button, '.form-group > .button'
   end
 
   def load_page(page_version = nil)

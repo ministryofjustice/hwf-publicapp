@@ -8,7 +8,6 @@ class StepNinePage < BasePage
       element :income_range_less, '#income_range_choice_less'
       element :income_range_between, '#income_range_choice_between'
       element :income_range_more, '#income_range_choice_more'
-      element :continue_button, '.button'
     end
   end
 

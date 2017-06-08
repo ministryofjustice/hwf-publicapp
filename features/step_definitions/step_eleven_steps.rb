@@ -12,10 +12,6 @@ Given(/^I visit the page for step eleven$/) do
   step 'I enter a valid total monthly income'
 end
 
-When(/^I click the continue button on step eleven$/) do
-  step_eleven_page.continue_button.click
-end
-
 When(/^I select no to are you paying a fee for a probate case$/) do
   expect(step_eleven_page.block_label[0].text).to eq 'No'
   step_eleven_page.probate_case_false.click

@@ -8,7 +8,7 @@ end
 
 When(/^I enter a valid form number$/) do
   group_one(0).form_name_identifier.set('C100')
-  group_one(4).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I enter a valid form name$/) do

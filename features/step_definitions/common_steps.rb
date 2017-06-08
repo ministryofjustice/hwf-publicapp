@@ -23,19 +23,7 @@ When(/^I click on no, return to current application$/) do
   common_page.restart_confirm.button[1].click
 end
 
-When(/^I click continue button$/) do
-  group_common(3).continue_button.click
-end
-
-When(/^I click the continue button$/) do
-  group_common(2).continue_button.click
-end
-
 When(/^I click continue$/) do
-  group_common(1).continue_button.click
-end
-
-When(/^I press the continue button$/) do
   common_page.continue_button.click
 end
 
@@ -45,7 +33,6 @@ When(/^I click on help with '([^\"]*)'$/) do |help|
 end
 
 When(/^I open '([^\"]*)'$/) do |help|
-  binding.pry
   expect(group_common(2).help_with.text).to have_content help
   group_common(2).help_with.click
 end

@@ -28,24 +28,24 @@ end
 When(/^I select no to do you have a case, claim or notice to pay number$/) do
   expect(step_twelve_page.block_label[0].text).to eq 'No'
   step_twelve_page.number_false.click
-  step_twelve_page.continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select yes to do you have a case, claim or notice to pay number$/) do
   expect(step_twelve_page.block_label[1].text).to eq 'Yes'
-  step_twelve_page.number_true.click
+  common_page.continue_button.click
 end
 
 When(/^I enter a case, claim or notice to pay number$/) do
   expect(step_twelve_page.form_label.text).to eq 'The case, claim or ‘notice to pay’ number is'
   step_twelve_page.claim_default_identifier.set('012345678')
-  step_twelve_page.continue_button.click
+  common_page.continue_button.click
 end
 
 And(/^I enter a employment tribunal number$/) do
   expect(step_twelve_page.form_label.text).to eq 'Employment tribunal claim number'
   step_twelve_page.claim_et_identifier.set('012345678')
-  step_twelve_page.continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should see help with employment tribunal number copy$/) do

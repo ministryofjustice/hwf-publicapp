@@ -8,7 +8,6 @@ class CommonPage < BasePage
       elements :hint, '.hint'
     end
     sections :form_group, '.form-group' do
-      element :continue_button, '.button'
       element :help_with, 'details > summary'
     end
   end
@@ -18,7 +17,6 @@ class CommonPage < BasePage
   section :restart_confirm, '.restart-confirm' do
     elements :p, 'p'
     elements :button, 'button'
-    element :continue_button, '.button'
   end
   section :error_summary, '.error-summary' do
     element :error_summary_heading, '#error-summary-heading-example-1'

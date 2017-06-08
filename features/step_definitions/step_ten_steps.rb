@@ -42,7 +42,7 @@ end
 
 When(/^I enter a valid total monthly income$/) do
   step_ten_page.content.form_group[0].income_amount.set(1900)
-  step_ten_page.content.form_group[1].continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should see the income list on step ten page:$/) do |incomes|

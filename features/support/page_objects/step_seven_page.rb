@@ -15,6 +15,7 @@ class StepSevenPage < BasePage
           element :external, '.external'
         end
       end
+    end
   end
 
   def load_page(page_version = nil)

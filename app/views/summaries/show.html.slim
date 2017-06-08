@@ -182,7 +182,7 @@ table.summary
 - if @summary.income_validation_fails?
   .form-group.error.util_mt-small
     span.util_mt-small.error-message =t('summary.invalid_footer')
-    p = link_to 'Continue', question_path(:dependent), class: 'button'
+    p = link_to 'Continue', question_path(:dependent), class: 'button', id: 'continue-button'
 - else
   .text
     h2.heading-medium = t('heading', scope: 'summary.truth')

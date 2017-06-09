@@ -42,8 +42,8 @@ Feature: Step twelve page
   Scenario: Help with employment tribunal number
     Given I need help with an employment tribunal
     When I am on step step twelve
-    And I open 'Help with employment tribunal number'
-    Then I should see help with employment tribunal number copy
+    And I click on help with 'employment tribunal claim number'
+    Then I should see help with employment tribunal claim number copy
 
   Scenario: Help with case number
     Given I visit the page for step twelve
@@ -53,10 +53,10 @@ Feature: Step twelve page
   Scenario: Displays enter a number error message
     Given I visit the page for step twelve
     When I select yes to do you have a case, claim or notice to pay number
-    And I click continue button
+    And I click continue
     Then I should see 'Enter a case, claim or ‘notice to pay’ number' error message
 
   Scenario: Displays make a selection error message
     Given I visit the page for step twelve
-    When I click continue button
+    When I click continue
     Then I should see 'Select whether you have a case, claim or ‘notice to pay’' error message

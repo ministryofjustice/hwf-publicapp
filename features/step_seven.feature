@@ -19,7 +19,7 @@ Feature: Step seven page
     Then I am taken to step eight
 
   Scenario: Displays error message
-    When I press the continue button
+    When I click continue
     Then I should see 'financially dependent children' error message
 
   Scenario: Help with benefits

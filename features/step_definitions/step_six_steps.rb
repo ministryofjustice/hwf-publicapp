@@ -19,7 +19,7 @@ end
 When(/^I select no to do you receive any of the following benefits\?$/) do
   expect(group_six(0).block_label[0].text).to eq 'No'
   group_six(0).benefits_false.click
-  group_six(2).continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should see the benefits list$/) do

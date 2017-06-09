@@ -21,7 +21,7 @@ Feature: Step six page
     Then I am taken to step eleven
 
   Scenario: Displays error message
-    When I click the continue button
+    When I click continue
     Then I should see 'Select whether you're receiving one of the benefits listed' error message
 
   Scenario: Help with benefits

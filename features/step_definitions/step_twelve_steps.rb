@@ -5,7 +5,7 @@ And(/^I am on step step twelve$/) do
   step 'I select no to do you receive any of the following benefits?'
   step 'I select no to do you have any children'
   step 'after selecting wages from income list on step eight'
-  step 'I click the continue button'
+  step 'I click continue'
   step 'I select between'
   step 'I enter a valid total monthly income'
 end
@@ -33,7 +33,7 @@ end
 
 When(/^I select yes to do you have a case, claim or notice to pay number$/) do
   expect(step_twelve_page.block_label[1].text).to eq 'Yes'
-  common_page.continue_button.click
+  step_twelve_page.number_true.click
 end
 
 When(/^I enter a case, claim or notice to pay number$/) do
@@ -46,10 +46,11 @@ And(/^I enter a employment tribunal number$/) do
   expect(step_twelve_page.form_label.text).to eq 'Employment tribunal claim number'
   step_twelve_page.claim_et_identifier.set('012345678')
   common_page.continue_button.click
+  common_page.continue_button.click
 end
 
-Then(/^I should see help with employment tribunal number copy$/) do
-  case_number_copy = step_twelve_page.form_group[2].details_content
+Then(/^I should see help with employment tribunal claim number copy$/) do
+  case_number_copy = step_twelve_page.form_group[1].details_content
   expect(case_number_copy.p.count).to eq 3
 end
 

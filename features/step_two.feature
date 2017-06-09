@@ -13,7 +13,7 @@ Feature: Step two page
     Then I should see step two hint
 
   Scenario: Neither selecting yes or no
-    When I click the continue button
+    When I click continue
     Then I should see 'Select whether you've already paid the fee' error message
 
   Scenario: Selecting no to have you already paid the fee?
@@ -22,7 +22,7 @@ Feature: Step two page
 
   Scenario: Selecting yes but not providing a date
     When I select yes to have you already paid the fee?
-    And I click the continue button
+    And I click continue
     Then I should see 'Enter the date in this format DD/MM/YYYY' error message
 
   Scenario: Date within the last 3 months

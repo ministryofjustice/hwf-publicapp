@@ -20,7 +20,7 @@ Given(/^I am a married person on step ten$/) do
   step 'I select no to do you receive any of the following benefits?'
   step 'I select no to do you have any children'
   step 'after selecting wages from income list on step eight'
-  step 'I click the continue button'
+  step 'I click continue'
   step 'I select between'
 end
 
@@ -36,7 +36,7 @@ And(/^I am on step ten$/) do
   step 'I select no to do you receive any of the following benefits?'
   step 'I select no to do you have any children'
   step 'after selecting wages from income list on step eight'
-  step 'I click the continue button'
+  step 'I click continue'
   step 'I select between'
 end
 

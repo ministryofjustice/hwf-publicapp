@@ -1,28 +1,3 @@
-And(/^I am on step step twelve$/) do
-  step 'I select no to have you already paid the fee?'
-  step 'I select married'
-  step 'I select £0 to £2,999'
-  step 'I select no to do you receive any of the following benefits?'
-  step 'I select no to do you have any children'
-  step 'after selecting wages from income list on step eight'
-  step 'I click continue'
-  step 'I select between'
-  step 'I enter a valid total monthly income'
-  step 'I select no to are you paying a fee for a probate case'
-end
-
-And(/^I go to step twelve$/) do
-  step 'I select no to have you already paid the fee?'
-  step 'I select married'
-  step 'I select £0 to £2,999'
-  step 'I select no to do you receive any of the following benefits?'
-  step 'I select no to do you have any children'
-  step 'after selecting wages from income list on step eight'
-  step 'I click continue'
-  step 'I select between'
-  step 'I enter a valid total monthly income'
-end
-
 Given(/^I visit the page for step twelve$/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
@@ -36,6 +11,31 @@ Given(/^I visit the page for step twelve$/) do
   step 'I select between'
   step 'I enter a valid total monthly income'
   step 'I select no to are you paying a fee for a probate case'
+end
+
+And(/^I go to step twelve without skipping step eleven$/) do
+  step 'I select no to have you already paid the fee?'
+  step 'I select married'
+  step 'I select £0 to £2,999'
+  step 'I select no to do you receive any of the following benefits?'
+  step 'I select no to do you have any children'
+  step 'after selecting wages from income list on step eight'
+  step 'I click continue'
+  step 'I select between'
+  step 'I enter a valid total monthly income'
+  step 'I select no to are you paying a fee for a probate case'
+end
+
+And(/^I go to step twelve by skipping step eleven$/) do
+  step 'I select no to have you already paid the fee?'
+  step 'I select married'
+  step 'I select £0 to £2,999'
+  step 'I select no to do you receive any of the following benefits?'
+  step 'I select no to do you have any children'
+  step 'after selecting wages from income list on step eight'
+  step 'I click continue'
+  step 'I select between'
+  step 'I enter a valid total monthly income'
 end
 
 When(/^I select no to do you have a case, claim or notice to pay number$/) do

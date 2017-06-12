@@ -24,11 +24,6 @@ Given(/^I am a married person on step ten$/) do
   step 'I select between'
 end
 
-Given(/^I do not need help with an employment tribunal$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
-end
-
 And(/^I am on step ten$/) do
   step 'I select no to have you already paid the fee?'
   step 'I select married'

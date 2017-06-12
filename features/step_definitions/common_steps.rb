@@ -7,6 +7,11 @@ Given(/^I need help with an employment tribunal$/) do
   step 'I select I need help with an employment tribunal fee'
 end
 
+Given(/^I do not need help with an employment tribunal$/) do
+  step 'I visit the page for step one'
+  step 'I enter a valid form number'
+end
+
 When(/^I click on cancel application$/) do
   restart_app = common_page.restart_application
   expect(restart_app['value']).to eq 'Cancel application'

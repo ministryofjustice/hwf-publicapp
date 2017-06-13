@@ -42,5 +42,5 @@ Feature: Step five page
   Scenario: Displays how much error message when left blank
     Given I am a single person with £3,000 to £15,999 savings
     And I select no to are you 61 years old or over?
-    When I click the continue button
+    When I click continue
     Then I should see 'Enter how much you have in savings and investments' error message

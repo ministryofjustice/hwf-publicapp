@@ -29,18 +29,18 @@ end
 When(/^I select yes to are you 61 years old or over\?$/) do
   expect(group_five(0).block_label[0].text).to eq 'Yes'
   group_five(0).over_61_true.click
-  group_five(2).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select no to are you 61 years old or over\?$/) do
   expect(group_five(0).block_label[1].text).to eq 'No'
   group_five(0).over_61_false.click
-  group_five(2).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I enter '(\d+)' into the input field$/) do |savings|
   group_five(1).extra_amount.set(savings)
-  group_five(2).continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should be asked '([^\"]*)'$/) do |question|

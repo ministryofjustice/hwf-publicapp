@@ -7,7 +7,6 @@ class StepEightPage < BasePage
       element :h3, 'h3'
       elements :block_label, '.block-label'
       elements :input, '.block-label input'
-      element :continue_button, '.button'
     end
   end
 

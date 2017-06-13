@@ -20,18 +20,8 @@ Given(/^I am a married person on step ten$/) do
   step 'I select no to do you receive any of the following benefits?'
   step 'I select no to do you have any children'
   step 'after selecting wages from income list on step eight'
-  step 'I click the continue button'
+  step 'I click continue'
   step 'I select between'
-end
-
-Given(/^I need help with an employment tribunal$/) do
-  step 'I visit the page for step one'
-  step 'I select I need help with an employment tribunal fee'
-end
-
-Given(/^I do not need help with an employment tribunal$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
 end
 
 And(/^I am on step ten$/) do
@@ -41,13 +31,13 @@ And(/^I am on step ten$/) do
   step 'I select no to do you receive any of the following benefits?'
   step 'I select no to do you have any children'
   step 'after selecting wages from income list on step eight'
-  step 'I click the continue button'
+  step 'I click continue'
   step 'I select between'
 end
 
 When(/^I enter a valid total monthly income$/) do
   step_ten_page.content.form_group[0].income_amount.set(1900)
-  step_ten_page.content.form_group[1].continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should see the income list on step ten page:$/) do |incomes|

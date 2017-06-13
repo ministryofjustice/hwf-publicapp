@@ -30,12 +30,12 @@ end
 And(/^I select working tax credit from income list$/) do
   expect(group_eight(0).block_label[2].text).to eq 'Working Tax Credit'
   group_eight(0).block_label[2].click
-  group_eight(1).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select no income$/) do
   group_eight(0).input[12].click
-  group_eight(1).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^after selecting wages from income list on step eight$/) do

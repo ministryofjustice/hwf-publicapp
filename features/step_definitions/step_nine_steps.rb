@@ -24,7 +24,7 @@ Given(/^I am a married person, no children on step nine$/) do
   step 'I select no to do you receive any of the following benefits?'
   step 'I select no to do you have any children'
   step 'after selecting wages from income list on step eight'
-  step 'I click the continue button'
+  step 'I click continue'
 end
 
 Given(/^I am a married person with three children on step nine$/) do
@@ -37,7 +37,7 @@ Given(/^I am a married person with three children on step nine$/) do
   step 'I select yes to do you have any children'
   step 'I add I have three children'
   step 'after selecting wages from income list on step eight'
-  step 'I click the continue button'
+  step 'I click continue'
 end
 
 Given(/^I am a single person with three children on step nine$/) do
@@ -50,25 +50,25 @@ Given(/^I am a single person with three children on step nine$/) do
   step 'I select yes to do you have any children'
   step 'I add I have three children'
   step 'after selecting wages from income list on step eight'
-  step 'I press the continue button'
+  step 'I click continue'
 end
 
 When(/^I select less than$/) do
   your_income = step_nine_page.content.form_group[0]
   your_income.income_range_less.click
-  step_nine_page.content.form_group[1].continue_button.click
+  common_page.continue_button.click
 end
 
 And(/^I select between$/) do
   your_income = step_nine_page.content.form_group[0]
   your_income.income_range_between.click
-  step_nine_page.content.form_group[1].continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select more than$/) do
   your_income = step_nine_page.content.form_group[0]
   your_income.income_range_more.click
-  step_nine_page.content.form_group[1].continue_button.click
+  common_page.continue_button.click
 end
 
 And(/^after selecting working tax credit from income list on step eight$/) do

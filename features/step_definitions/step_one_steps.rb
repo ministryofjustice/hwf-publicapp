@@ -8,12 +8,12 @@ end
 
 When(/^I enter a valid form number$/) do
   group_one(0).form_name_identifier.set('C100')
-  group_one(4).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I enter a valid form name$/) do
   group_one(0).form_name_identifier.set('notice to appeal')
-  group_one(4).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select I don’t know the form name or number$/) do
@@ -22,7 +22,7 @@ When(/^I select I don’t know the form name or number$/) do
   expect(label.text).to eq 'I don’t know the form name or number'
   expect(group_one(1).form_name_unknown['type']).to eq 'checkbox'
   group_one(1).form_name_unknown.click
-  group_one(4).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select I need help with an employment tribunal fee$/) do
@@ -31,11 +31,11 @@ When(/^I select I need help with an employment tribunal fee$/) do
   expect(label .text).to eq 'I need help with an employment tribunal fee'
   expect(group_one(2).form_name_et['type']).to eq 'checkbox'
   group_one(2).form_name_et.click
-  group_one(4).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I leave the form name or number blank$/) do
-  group_one(4).continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should see step one hint$/) do

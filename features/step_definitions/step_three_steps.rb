@@ -12,14 +12,14 @@ When(/^I select single$/) do
   expect(group_three(0).block_label[0].text).to eq 'Single'
   expect(group_three(0).marital_status_married_false['type']).to eq 'radio'
   group_three(0).marital_status_married_false.click
-  group_three(2).continue_button.click
+  common_page.continue_button.click
 end
 
 When(/^I select married$/) do
   expect(group_three(0).block_label[1].text).to have_content 'Married'
   expect(group_three(0).marital_status_married_true['type']).to eq 'radio'
   group_three(0).marital_status_married_true.click
-  group_three(2).continue_button.click
+  common_page.continue_button.click
 end
 
 Then(/^I should see step three label$/) do

@@ -1,6 +1,6 @@
 Feature: Step thirteen page
 
-  Background: Navigating to the page for step two
+  Background: Navigating to the page for step thirteen
     Given I visit the page for step thirteen
 
   Scenario: Displays step number

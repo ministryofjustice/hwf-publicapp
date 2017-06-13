@@ -3,7 +3,7 @@ Feature: Step thirteen page
   Background: Navigating to the page for step two
     Given I visit the page for step thirteen
 
-  Scenario: Displays thirteen number
+  Scenario: Displays step number
     Then I should see step '13' of 20
   
   Scenario: Displays header

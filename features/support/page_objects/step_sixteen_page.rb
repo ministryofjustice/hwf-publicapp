@@ -3,7 +3,6 @@ class StepSixteenPage < BasePage
   element :postcode, '#applicant_address_postcode'
   sections :form_group, '.form-group' do
     element :form_label, 'form-label'
-    element :hint, '.hint'
   end
 
   def load_page(page_version = nil)

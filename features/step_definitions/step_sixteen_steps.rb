@@ -1,4 +1,4 @@
-Given(/^I visit the page for step fifteen$/) do
+Given(/^I visit the page for step sixteen$/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
   step 'I select no to have you already paid the fee?'
@@ -14,28 +14,25 @@ Given(/^I visit the page for step fifteen$/) do
   step 'I select no to do you have a case, claim or notice to pay number'
   step 'I enter a valid national insurance number'
   step 'I enter a valid date of birth'
+  step 'I enter my full name'
 end
 
-When(/^I enter my title$/) do
-  expect(step_fifteen_page.form_group[0].text).to eq 'Title (Optional)'
-  step_fifteen_page.title.set('Ms')
-end
-
-When(/^I enter my first name$/) do
-  expect(step_fifteen_page.form_group[1].text).to eq 'First name'
-  step_fifteen_page.first_name.set('Sally')
-end
-
-When(/^I enter my last name$/) do
-  expect(step_fifteen_page.form_group[2].text).to eq 'Last name'
-  step_fifteen_page.last_name.set('Smith')
+When(/^I enter my address with postcode$/) do
+  expect(step_sixteen_page.form_group[0].text).to eq 'Address'
+  step_sixteen_page.address.set('102 Petty France, London')
+  expect(step_sixteen_page.form_group[1].text).to eq 'Postcode'
+  step_sixteen_page.postcode.set('SW1H 9AJ')
   common_page.continue_button.click
 end
 
-When(/^I enter my full name$/) do
-  expect(step_fifteen_page.form_group[1].text).to eq 'First name'
-  step_fifteen_page.first_name.set('Sally')
-  expect(step_fifteen_page.form_group[2].text).to eq 'Last name'
-  step_fifteen_page.last_name.set('Smith')
+When(/^I enter my address$/) do
+  expect(step_sixteen_page.form_group[0].text).to eq 'Address'
+  step_sixteen_page.address.set('102 Petty France, London')
+  common_page.continue_button.click
+end
+
+When(/^I enter my postcode$/) do
+  expect(step_sixteen_page.form_group[0].text).to eq 'Address'
+  step_sixteen_page.postcode.set('102 Petty France, London')
   common_page.continue_button.click
 end

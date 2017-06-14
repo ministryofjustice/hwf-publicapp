@@ -173,5 +173,5 @@ Then(/^I am taken to step fifteen$/) do
 end
 
 Then(/^I am taken to step sixteen$/) do
-  expect(current_path).to eq '/questions/applicant_address'
+  expect(current_path).to eq '/questions/contact'
 end

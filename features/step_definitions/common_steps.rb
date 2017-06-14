@@ -82,14 +82,14 @@ Then(/^I should see '([^\"]*)' error message$/) do |error_message|
   error_summary_group = common_page.error_summary
   expect(error_summary_group).to have_error_summary_heading
   expect(error_summary_group.link.text).to have_content error_message
-  expect(common_page.error_message.text).to have_content error_message
+  expect(common_page.error_message[0].text).to have_content error_message
 end
 
 Then(/^I should see error message '([^\"]*)'$/) do |error_message|
   error_summary_group = common_page.error_summary
   expect(error_summary_group).to have_error_summary_heading
   expect(error_summary_group.link.text).to have_content error_message
-  expect(step_eleven_page.error_message[1].text).to have_content error_message
+  expect(common_page.error_message[1].text).to have_content error_message
 end
 
 Then(/^I should see average monthly income copy$/) do
@@ -166,4 +166,8 @@ end
 
 Then(/^I am taken to step fourteen$/) do
   expect(current_path).to eq '/questions/dob'
+end
+
+Then(/^I am taken to step fifteen$/) do
+  expect(current_path).to eq '/questions/personal_detail'
 end

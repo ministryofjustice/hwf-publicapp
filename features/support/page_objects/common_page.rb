@@ -22,7 +22,7 @@ class CommonPage < BasePage
     element :error_summary_heading, '#error-summary-heading-example-1'
     element :link, 'a'
   end
-  element :error_message, '.error-message'
+  elements :error_message, '.error-message'
   element :continue_button, '#continue-button'
 
   def load_page(page_version = nil)

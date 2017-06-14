@@ -93,6 +93,10 @@ def step_thirteen_page
   @step_thirteen_page ||= StepThirteenPage.new
 end
 
+def step_fourteen_page
+  @step_fourteen_page ||= StepFourteenPage.new
+end
+
 def base_page
   @base_page ||= BasePage.new
 end

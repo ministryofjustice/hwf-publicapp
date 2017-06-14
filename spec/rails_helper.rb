@@ -61,5 +61,9 @@ RSpec.configure do |config|
   # Setting this allows you to use `--seed` to deterministically reproduce
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
+
+  config.before(:all) do
+    Rails.configuration.i18n.locale = :en
+  end
   Kernel.srand config.seed
 end

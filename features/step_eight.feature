@@ -59,7 +59,7 @@ Feature: Step eight page
   Scenario: No income
     Given I am a single person on step eight
     When I select no income
-    Then I am taken to step eleven
+    Then I am taken to step '11''probate'
 
   Scenario: Displays error message
     Given I am a single person on step eight

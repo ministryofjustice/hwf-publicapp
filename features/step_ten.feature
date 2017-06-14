@@ -36,7 +36,7 @@ Feature: Step ten page
     Given I do not need help with an employment tribunal
     And I am on step ten
     When I enter a valid total monthly income
-    Then I am taken to step eleven
+    Then I am taken to step '11''probate'
 
   Scenario: Displays error message
     Given I am a single person on step ten

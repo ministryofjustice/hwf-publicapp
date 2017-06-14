@@ -11,17 +11,17 @@ Feature: Step four page
   Scenario: Selecting £0 to £2,999
     Given I am a single person on the step four page
     When I select £0 to £2,999
-    Then I am taken to step six
+    Then I am taken to step '6''benefit'
 
   Scenario: Selecting £3,000 to £15,999
     Given I am a single person on the step four page
     When I select £3,000 to £15,999
-    Then I am taken to step five
+    Then I am taken to step '5''savings_and_investment_extra'
 
   Scenario: Selecting £16,000 or more
     Given I am a single person on the step four page
     When I select £16,000 or more
-    Then I am taken to step six
+    Then I am taken to step '6''benefit'
 
   Scenario: Help with savings and investments
     Given I am a single person on the step four page

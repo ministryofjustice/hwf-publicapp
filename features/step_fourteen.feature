@@ -14,7 +14,7 @@ Feature: Step fourteen page
 
   Scenario: Entering a valid date of birth
     When I enter a valid date of birth
-    Then I am taken to step fifteen
+    Then I am taken to step '15''personal_detail'
 
   Scenario: Displays you must be over 15 to use this service error message
     When I enter a date of less than fifteen years

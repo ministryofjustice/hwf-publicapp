@@ -12,11 +12,11 @@ Feature: Step seven page
   Scenario: Yes to do you have any children
     When I select yes to do you have any children
     And I add I have '4' children
-    Then I am taken to step eight
+    Then I am taken to step '8''income_kind'
 
   Scenario: No to do you have any children
     When I select no to do you have any children
-    Then I am taken to step eight
+    Then I am taken to step '8''income_kind'
 
   Scenario: Displays error message
     When I click continue

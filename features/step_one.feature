@@ -17,11 +17,11 @@ Feature: Step one page
 
     Scenario: Entering valid form number
       When I enter a valid form number
-      Then I am taken to step two
+      Then I am taken to step '2''fee'
 
     Scenario: Entering a valid form name
       When I enter a valid form name
-      Then I am taken to step two
+      Then I am taken to step '2''fee'
 
     Scenario: Leaving form name or number blank
       When I leave the form name or number blank
@@ -29,11 +29,11 @@ Feature: Step one page
 
     Scenario: Selecting I don’t know the form name or number
       When I select I don’t know the form name or number
-      Then I am taken to step two
+      Then I am taken to step '2''fee'
 
     Scenario: Selecting I need help with an employment tribunal fee
       When I select I need help with an employment tribunal fee
-      Then I am taken to step two
+      Then I am taken to step '2''fee'
 
     Scenario: Help with form name or number
       When I click on 'Help with form name or number'

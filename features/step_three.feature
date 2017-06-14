@@ -11,11 +11,11 @@ Feature: Step three page
 
   Scenario: Selecting single
     When I select single
-    Then I am taken to step four
+    Then I am taken to step '4''savings_and_investment'
 
   Scenario: Selecting married
     When I select married
-    Then I am taken to step four
+    Then I am taken to step '4''savings_and_investment'
 
   Scenario: Help with status
     When I click on help with 'status'

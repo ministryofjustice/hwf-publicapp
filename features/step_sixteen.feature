@@ -11,7 +11,7 @@ Feature: Step sixteen page
 
   Scenario: Entering address with postcode
     When I enter my address with postcode
-    Then I am taken to step sixteen
+    Then I am taken to step seventeen
 
   Scenario: Displays enter your postcode error message
     When I enter my address

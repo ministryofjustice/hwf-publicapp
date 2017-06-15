@@ -21,5 +21,9 @@ Feature: Step seventeen page
     And I click continue
     Then I remain on step 17
 
-  Scenario: Share your experience
+  Scenario: Displays share your experience
     Then I should see share your experience checkbox
+
+  Scenario: Continuing without supplying an email address
+    When I click continue
+    Then I am taken to step 18 summary

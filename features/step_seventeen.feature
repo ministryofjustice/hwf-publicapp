@@ -4,7 +4,7 @@ Feature: Step seventeen page
     Given I visit the page for step seventeen
 
   Scenario: Displays step number
-    Then I should see step '17' of 20
+    Then I should see step 17 of 20
   
   Scenario: Displays header
     Then I should see 'What's your email address?' header

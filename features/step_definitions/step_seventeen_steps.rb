@@ -28,6 +28,17 @@ When(/^I enter a valid email address$/) do
   common_page.continue_button.click
 end
 
+When(/^I enter a invalid email address$/) do
+  step_seventeen_page.contact_email.set('testhmctsnet')
+  common_page.continue_button.click
+end
+
 Then(/^I should see share your experience checkbox$/) do
-  binding.pry
+  checkbox_group = step_seventeen_page.form_checkbox
+  expect(checkbox_group.contact_feedback_opt_in['type']).to eq 'checkbox'
+  expect(checkbox_group.span.text).to have_content 'Check this box if you\'re willing to share your experience'
+end
+
+Then(/^I remain on step 17$/) do
+  expect(current_path).to eq '/questions/contact'
 end

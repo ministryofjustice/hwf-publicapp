@@ -16,5 +16,10 @@ Feature: Step seventeen page
     When I enter a valid email address
     Then I should be taken to step 18 summary
 
+  Scenario: Entering a invalid email address
+    When I enter a invalid email address
+    And I click continue
+    Then I remain on step 17
+
   Scenario: Share your experience
     Then I should see share your experience checkbox

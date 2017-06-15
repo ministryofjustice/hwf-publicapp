@@ -2,7 +2,7 @@ Feature: Step five page
 
   Scenario: Displays step number
     Given I am a single person with £3,000 to £15,999 savings
-    Then I should see step '5' of 20
+    Then I should see step 5 of 20
   
   Scenario: Displays single header
     Given I am a single person with £3,000 to £15,999 savings
@@ -15,7 +15,7 @@ Feature: Step five page
   Scenario: Selecting yes to are you 61 years old or over?
     Given I am a single person with £3,000 to £15,999 savings
     When I select yes to are you 61 years old or over?
-    Then I am taken to step '6''benefit'
+    Then I am taken to step 6 benefit
 
   Scenario: Single and not 61 years old or over
     Given I am a single person with £3,000 to £15,999 savings
@@ -31,7 +31,7 @@ Feature: Step five page
     Given I am a single person with £3,000 to £15,999 savings
     And I select no to are you 61 years old or over?
     When I enter '5000' into the input field
-    Then I am taken to step '6''benefit'
+    Then I am taken to step 6 benefit
 
   Scenario: Displays out of the range error message
     Given I am a single person with £3,000 to £15,999 savings

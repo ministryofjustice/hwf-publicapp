@@ -4,7 +4,7 @@ Feature: Step fourteen page
     Given I visit the page for step fourteen
 
   Scenario: Displays step number
-    Then I should see step '14' of 20
+    Then I should see step 14 of 20
   
   Scenario: Displays header
     Then I should see 'What is your date of birth?' header
@@ -14,7 +14,7 @@ Feature: Step fourteen page
 
   Scenario: Entering a valid date of birth
     When I enter a valid date of birth
-    Then I am taken to step '15''personal_detail'
+    Then I am taken to step 15 personal_detail
 
   Scenario: Displays you must be over 15 to use this service error message
     When I enter a date of less than fifteen years

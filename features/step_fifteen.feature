@@ -4,7 +4,7 @@ Feature: Step fifteen page
     Given I visit the page for step fifteen
 
   Scenario: Displays step number
-    Then I should see step '15' of 20
+    Then I should see step 15 of 20
   
   Scenario: Displays header
     Then I should see 'What is your full name?' header
@@ -13,12 +13,12 @@ Feature: Step fifteen page
     When I enter my title
     And I enter my first name
     And I enter my last name
-    Then I am taken to step '16''applicant_address'
+    Then I am taken to step 16 applicant_address
 
   Scenario: Entering a full name without a title
     When I enter my first name
     And I enter my last name
-    Then I am taken to step '16''applicant_address'
+    Then I am taken to step 16 applicant_address
 
   Scenario: Displays enter your first name error message
     When I enter my last name

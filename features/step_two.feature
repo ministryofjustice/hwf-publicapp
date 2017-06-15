@@ -4,7 +4,7 @@ Feature: Step two page
     Given I visit the page for step two
 
   Scenario: Displays step number
-    Then I should see step '2' of 20
+    Then I should see step 2 of 20
 
   Scenario: Displays header
     Then I should see 'Have you already paid the fee?' header
@@ -18,7 +18,7 @@ Feature: Step two page
 
   Scenario: Selecting no to have you already paid the fee?
     When I select no to have you already paid the fee?
-    Then I am taken to step '3''marital_status'
+    Then I am taken to step 3 marital_status
 
   Scenario: Selecting yes but not providing a date
     When I select yes to have you already paid the fee?
@@ -28,7 +28,7 @@ Feature: Step two page
   Scenario: Date within the last 3 months
     When I select yes to have you already paid the fee?
     And the date I enter is within the last three months
-    Then I am taken to step '3''marital_status'
+    Then I am taken to step 3 marital_status
 
   Scenario: Date exceeding 3 months
     When I select yes to have you already paid the fee?

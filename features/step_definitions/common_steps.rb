@@ -60,7 +60,7 @@ Then(/^I am taken to the Help with Fees homepage$/) do
   expect(current_path).to eq '/'
 end
 
-Then(/^I should see step '(\d+)' of 20$/) do |step_number|
+Then(/^I should see step (\d+) of 20$/) do |step_number|
   expect(common_page.content.p.text).to have_content 'Step ' + step_number + ' of 20'
 end
 
@@ -112,7 +112,7 @@ Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
   expect(hint_group.text).to have_content hint
 end
 
-Then(/^I am taken to step '(\d+)''([^\"]*)'$/) do |step, url|
+Then(/^I am taken to step (\d+) ([^\"]*)$/) do |step, url|
   expect(common_page.content.p.text).to have_content step
   expect(current_path).to eq '/questions/' + url
 end

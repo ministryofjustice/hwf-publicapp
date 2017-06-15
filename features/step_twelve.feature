@@ -3,7 +3,7 @@ Feature: Step twelve page
   Scenario: Displays step number
     Given I do not need help with an employment tribunal
     When I go to step twelve without skipping step eleven
-    Then I should see step '12' of 20
+    Then I should see step 12 of 20
   
   Scenario: Displays header for people that do not need help with an employment tribunal fee
     Given I do not need help with an employment tribunal
@@ -29,19 +29,19 @@ Feature: Step twelve page
     Given I do not need help with an employment tribunal
     And I go to step twelve without skipping step eleven
     When I select no to do you have a case, claim or notice to pay number
-    Then I am taken to step thirteen
+    Then I am taken to step 13 national_insurance
 
   Scenario: Entering a employment tribunal number
     Given I need help with an employment tribunal
     And I go to step twelve by skipping step eleven
     When I enter a employment tribunal number
-    Then I am taken to step thirteen
+    Then I am taken to step 13 national_insurance
 
   Scenario: Entering a case, claim or notice to pay number
     Given I visit the page for step twelve
     When I select yes to do you have a case, claim or notice to pay number
     And I enter a case, claim or notice to pay number
-    Then I am taken to step thirteen
+    Then I am taken to step 13 national_insurance
 
   Scenario: Help with employment tribunal number
     Given I need help with an employment tribunal

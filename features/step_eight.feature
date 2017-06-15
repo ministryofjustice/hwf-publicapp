@@ -2,7 +2,7 @@ Feature: Step eight page
 
   Scenario: Displays step number
     Given I am a single person on step eight
-    Then I should see step '8' of 20
+    Then I should see step 8 of 20
   
   Scenario: Displays single person header
     Given I am a single person on step eight
@@ -59,7 +59,7 @@ Feature: Step eight page
   Scenario: No income
     Given I am a single person on step eight
     When I select no income
-    Then I am taken to step eleven
+    Then I am taken to step 11 probate
 
   Scenario: Displays error message
     Given I am a single person on step eight

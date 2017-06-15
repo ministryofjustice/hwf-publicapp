@@ -4,7 +4,7 @@ Feature: Step thirteen page
     Given I visit the page for step thirteen
 
   Scenario: Displays step number
-    Then I should see step '13' of 20
+    Then I should see step 13 of 20
   
   Scenario: Displays header
     Then I should see 'What is your National Insurance number?' header
@@ -14,7 +14,7 @@ Feature: Step thirteen page
 
   Scenario: Entering a valid national insurance number
     When I enter a valid national insurance number
-    Then I am taken to step fourteen
+    Then I am taken to step 14 dob
 
   Scenario: If you don't know your national insurance number
     When I click on if you don't know your national insurance number

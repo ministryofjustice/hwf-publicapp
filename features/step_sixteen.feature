@@ -4,14 +4,14 @@ Feature: Step sixteen page
     Given I visit the page for step sixteen
 
   Scenario: Displays step number
-    Then I should see step '16' of 20
+    Then I should see step 16 of 20
   
   Scenario: Displays header
     Then I should see 'What is your address?' header
 
   Scenario: Entering address with postcode
     When I enter my address with postcode
-    Then I am taken to step seventeen
+    Then I am taken to step 17 contact
 
   Scenario: Displays enter your postcode error message
     When I enter my address
@@ -26,4 +26,4 @@ Feature: Step sixteen page
   Scenario: Displays error message when no address is entered
     And I click continue
     Then I should see 'Enter your address' error message
-
+    

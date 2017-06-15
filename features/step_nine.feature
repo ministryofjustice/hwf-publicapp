@@ -2,7 +2,7 @@ Feature: Step nine page
 
   Scenario: Displays step number
     Given I am a single person, no children on step nine
-    Then I should see step '9' of 20
+    Then I should see step 9 of 20
   
   Scenario: Displays single person header
     Given I am a single person, no children on step nine
@@ -52,17 +52,17 @@ Feature: Step nine page
   Scenario: Selecting the less than range
     Given I am a single person, no children on step nine
     When I select less than
-    Then I am taken to step eleven
+    Then I am taken to step 11 probate
 
   Scenario: Selecting the between range
     Given I am a single person, no children on step nine
     When I select between
-    Then I am taken to step ten
+    Then I am taken to step 10 income_amount
 
   Scenario: Selecting the more than range
     Given I am a single person, no children on step nine
     When I select more than
-    Then I am taken to step eleven
+    Then I am taken to step 11 probate
 
   Scenario: Displays error message
     Given I am a single person, no children on step nine

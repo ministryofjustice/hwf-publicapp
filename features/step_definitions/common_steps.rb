@@ -60,7 +60,7 @@ Then(/^I am taken to the Help with Fees homepage$/) do
   expect(current_path).to eq '/'
 end
 
-Then(/^I should see step '(\d+)' of 20$/) do |step_number|
+Then(/^I should see step (\d+) of 20$/) do |step_number|
   expect(common_page.content.p.text).to have_content 'Step ' + step_number + ' of 20'
 end
 
@@ -112,74 +112,11 @@ Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
   expect(hint_group.text).to have_content hint
 end
 
-Then(/^I am taken to step two$/) do
-  expect(current_path).to eq '/questions/fee'
-end
-
-Then(/^I am taken to step three$/) do
-  expect(current_path).to eq '/questions/marital_status'
-end
-
-Then(/^I am taken to step four$/) do
-  expect(current_path).to eq '/questions/savings_and_investment'
-end
-
-Then(/^I am taken to step five$/) do
-  expect(current_path).to eq '/questions/savings_and_investment_extra'
-end
-
-Then(/^I am taken to step six$/) do
-  expect(current_path).to eq '/questions/benefit'
-end
-
-Then(/^I am taken to step seven$/) do
-  expect(current_path).to eq '/questions/dependent'
-end
-
-Then(/^I am taken to step eight$/) do
-  expect(current_path).to eq '/questions/income_kind'
-end
-
-Then(/^I am taken to step nine$/) do
-  expect(current_path).to eq '/questions/income_range'
-end
-
-Then(/^I am taken to step ten$/) do
-  expect(current_path).to eq '/questions/income_amount'
-end
-
-Then(/^I am taken to step eleven$/) do
-  expect(current_path).to eq '/questions/probate'
+Then(/^I am taken to step (\d+) ([^\"]*)$/) do |step, url|
+  expect(common_page.content.p.text).to have_content step
+  expect(current_path).to eq '/questions/' + url
 end
 
 Then(/^I am taken to probate step twelve$/) do
   expect(current_path).to eq '/questions/probate'
-end
-
-Then(/^I am taken to step twelve$/) do
-  expect(current_path).to eq '/questions/claim'
-end
-
-Then(/^I am taken to step thirteen$/) do
-  expect(current_path).to eq '/questions/national_insurance'
-end
-
-Then(/^I am taken to step fourteen$/) do
-  expect(current_path).to eq '/questions/dob'
-end
-
-Then(/^I am taken to step fifteen$/) do
-  expect(current_path).to eq '/questions/personal_detail'
-end
-
-Then(/^I am taken to step sixteen$/) do
-  expect(current_path).to eq '/questions/applicant_address'
-end
-
-Then(/^I am taken to step seventeen$/) do
-  expect(current_path).to eq '/questions/contact'
-end
-
-Then(/^I should be taken to step 18 summary$/) do
-  expect(current_path).to eq '/summary'
 end

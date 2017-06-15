@@ -4,7 +4,7 @@ Feature: Step six page
     Given I visit the page for step six
 
   Scenario: Displays step number
-    Then I should see step '6' of 20
+    Then I should see step 6 of 20
   
   Scenario: Displays header
     Then I should see 'Do you receive any of the following benefits?' header
@@ -14,11 +14,11 @@ Feature: Step six page
 
   Scenario: No I am not receiving any benefits from list
     When I select no to do you receive any of the following benefits?
-    Then I am taken to step seven
+    Then I am taken to step 7 dependent
 
   Scenario: Yes I am receiving benefits from list
     When I select yes to do you receive any of the following benefits?
-    Then I am taken to step eleven
+    Then I am taken to step 11 probate
 
   Scenario: Displays error message
     When I click continue

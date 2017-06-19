@@ -52,5 +52,4 @@ Feature: Step eighteen page
   @step54
   Scenario: Continue button
     When I click submit application and continue
-    # Need to stub application /Users/alexaballantine/moj/hwf-publicapp/spec/services/submit_application_spec.rb
     Then I taken to step 19 of 20 confirmation

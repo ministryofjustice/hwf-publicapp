@@ -14,7 +14,7 @@ Feature: Step seventeen page
 
   Scenario: Entering a valid email address
     When I enter a valid email address
-    Then I am go to step 18 summary
+    Then I go to step 18 summary
 
   Scenario: Entering a invalid email address
     When I enter a invalid email address

@@ -53,6 +53,5 @@ When(/^I click submit application and continue$/) do
 end
 
 Then(/^I taken to step 19 of 20 confirmation$/) do
-  binding.pry
   expect(current_path).to eq '/confirmation'
 end

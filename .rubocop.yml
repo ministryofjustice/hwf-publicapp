@@ -19,6 +19,9 @@ AllCops:
     - 'features/support/env.rb'
     - 'script/cucumber'
     - 'lib/log_stuff.rb'
+    - 'config/routes.rb'
+    - 'Gemfile'
+
 
 Rails:
   Enabled: true
@@ -166,6 +169,9 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'config/**/*'
     - 'lib/tasks/**/*'
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
 
 # ---------------
 # HttpPositionalArguments is rails 5 only

@@ -49,6 +49,7 @@ Feature: Step eighteen page
   Scenario: Displays declaration of truth
     Then I should see declaration of truth
 
+  @step54
   Scenario: Continue button
     When I click submit application and continue
     # Need to stub application /Users/alexaballantine/moj/hwf-publicapp/spec/services/submit_application_spec.rb

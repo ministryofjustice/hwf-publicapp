@@ -42,3 +42,7 @@ end
 Then(/^I remain on step 17$/) do
   expect(current_path).to eq '/questions/contact'
 end
+
+Then(/^I am go to step 18 summary$/) do
+  expect(current_path).to eq '/summary'
+end

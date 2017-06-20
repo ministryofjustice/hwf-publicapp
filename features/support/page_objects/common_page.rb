@@ -12,6 +12,7 @@ class CommonPage < BasePage
     end
   end
 
+  element :heading_secondary, '.heading-secondary'
   elements :block, '.block'
   element :restart_application, '.restart-application'
   section :restart_confirm, '.restart-confirm' do
@@ -23,6 +24,7 @@ class CommonPage < BasePage
     element :link, 'a'
   end
   elements :error_message, '.error-message'
+  element :js_print, '.js-print'
   element :continue_button, '#continue-button'
 
   def load_page(page_version = nil)

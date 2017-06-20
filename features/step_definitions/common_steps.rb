@@ -61,7 +61,11 @@ Then(/^I am taken to the Help with Fees homepage$/) do
 end
 
 Then(/^I should see step (\d+) of 20$/) do |step_number|
-  expect(common_page.content.p.text).to have_content 'Step ' + step_number + ' of 20'
+  expect(common_page.content.p.text).to eq 'Step ' + step_number + ' of 20'
+end
+
+Then(/^I see step (\d+) of 20$/) do |step_number|
+  expect(common_page.heading_secondary.text).to eq 'Step ' + step_number + ' of 20'
 end
 
 Then(/^I should see the please note copy$/) do
@@ -119,4 +123,9 @@ end
 
 Then(/^I am taken to probate step twelve$/) do
   expect(current_path).to eq '/questions/probate'
+end
+
+Then(/^I should see save or print this page$/) do
+  expect(steps_panel.js_print['href']).to eq '#'
+  expect(steps_panel.js_print.text).to eq 'Save or print this page'
 end

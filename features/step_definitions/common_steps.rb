@@ -56,6 +56,10 @@ Then(/^I should see '([^\"]*)' header$/) do |header|
   expect(page_header).to have_content header
 end
 
+Then(/^I should see header '([^\"]*)'$/) do |header|
+  expect(steps_panel.h2.text).to eq header
+end
+
 Then(/^I am taken to the Help with Fees homepage$/) do
   expect(current_path).to eq '/'
 end

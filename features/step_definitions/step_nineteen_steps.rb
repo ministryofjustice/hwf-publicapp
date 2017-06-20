@@ -32,13 +32,9 @@ Then(/^I see step 19 of 20$/) do
   expect(step_nineteen_page.heading_secondary.text).to eq 'Step 19 of 20'
 end
 
-Then(/^I should see header 'Your application for help with fees is not finished yet'$/) do
-  expect(steps_panel.h2.text).to eq 'Your application for help with fees is not finished yet'
-end
-
 Then(/^I should see directions$/) do
   expect(steps_panel.li.count).to eq 4
-  expect(steps_panel.hwf_ref.text).to have_content 'HWF-'
+  expect(steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
 end
 
 Then(/^I should see save or print this page$/) do

@@ -5,6 +5,7 @@ class StepSeventeenPage < BasePage
     element :span, 'span'
   end
   elements :form_group, '.form-group'
+  element :hint, '.hint'
 
   def load_page(page_version = nil)
     load(v: page_version)

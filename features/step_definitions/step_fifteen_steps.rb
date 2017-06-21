@@ -17,7 +17,8 @@ Given(/^I visit the page for step fifteen$/) do
 end
 
 When(/^I enter my title$/) do
-  expect(step_fifteen_page.form_group[0].text).to eq 'Title(Optional)'
+  expect(step_fifteen_page.form_group[0].text).to have_content 'Title'
+  expect(step_fifteen_page.hint.text).to eq '(Optional)'
   step_fifteen_page.title.set('Ms')
 end
 

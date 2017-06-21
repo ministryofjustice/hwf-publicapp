@@ -21,7 +21,7 @@ Given(/^I visit the page for step nineteen$/) do
   step 'I enter my full name'
   step 'I enter my address with postcode'
   step 'I click continue'
-  step 'I taken to step 19 of 20 confirmation'
+  step 'I click submit application and continue'
 end
 
 When(/^I press the continue button$/) do

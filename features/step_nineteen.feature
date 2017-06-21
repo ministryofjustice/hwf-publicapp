@@ -1,3 +1,4 @@
+@step54
 Feature: Step nineteen page
 
   Background: Navigating to the page for step nineteen
@@ -10,7 +11,7 @@ Feature: Step nineteen page
     Then I should see header 'Your application for help with fees is not finished yet'
 
   Scenario: Displays directions
-    Then I should see directions
+    Then I should see direction points 1 to 4
 
   Scenario: Save or print this page
     Then I should see save or print this page

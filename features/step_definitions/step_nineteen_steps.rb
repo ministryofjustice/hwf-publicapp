@@ -1,7 +1,3 @@
-def steps_panel
-  delegate step_nineteen_page.steps_panel
-end
-
 Given(/^I visit the page for step nineteen$/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
@@ -29,19 +25,23 @@ When(/^I press the continue button$/) do
 end
 
 Then(/^I see step 19 of 20$/) do
-  expect(step_nineteen_page.heading_secondary.text).to eq 'Step 19 of 20'
+  expect(step_nineteen_page.heading_secondary[0].text).to eq 'Step 19 of 20'
 end
 
-Then(/^I should see directions$/) do
-  expect(steps_panel.li.count).to eq 4
-  expect(steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
+Then(/^I should see direction points 1 to 4$/) do
+  expect(step_nineteen_page.steps_panel.li.count).to eq 4
+  expect(step_nineteen_page.steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
 end
 
 Then(/^I should see save or print this page$/) do
-  expect(steps_panel.js_print['href']).to eq '#'
-  expect(steps_panel.js_print.text).to eq 'Save or print this page'
+  expect(step_nineteen_page.js_print['href']).to end_with '#'
+  expect(step_nineteen_page.js_print.text).to eq 'Save or print this page'
 end
 
 Then(/^I go to step twenty$/) do
-  expect(current_path).to eq ''
+  expect(current_path).to eq '/confirmation/done'
+end
+
+Then(/^I should see header '([^\"]*)'$/) do |header|
+  expect(step_nineteen_page.steps_panel.h2.text).to eq header
 end

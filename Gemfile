@@ -15,7 +15,7 @@ gem 'govuk_elements_rails', '0.3.0'
 gem 'govuk_frontend_toolkit', '4.7.0'
 gem 'jquery-rails'
 gem 'moj_template', '~> 0.23.2'
-gem 'nokogiri', '~> 1.7.2'
+gem 'nokogiri', '~> 1.8.0'
 gem 'sass-rails'
 gem 'slim-rails'
 gem 'uglifier', '3.0.0'
@@ -25,7 +25,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
-  gem 'rubocop', '~>0.47.1', require: true
+  gem 'rubocop', '~>0.49.1', require: true
   gem 'rubocop-rspec', '~>1.10', require: false
 end
 
@@ -42,7 +42,7 @@ group :test do
   gem 'chromedriver-helper', '~> 1.1'
   gem 'codeclimate-test-reporter', require: nil
   gem 'cucumber-rails', '~> 1.5'
-  gem 'poltergeist', '1.10.0'
+  gem 'poltergeist', '1.15.0'
   gem 'selenium-webdriver', '~> 3.4'
   gem 'shoulda-matchers'
   gem 'site_prism', '~> 2.9'

@@ -39,7 +39,7 @@ Then(/^I should be able to go back and change my details:$/) do |urls|
   urls.rows.each_with_index do |url, index|
     your_details = step_eighteen_page.tbody.tr[index]
     expect(your_details.right_link['href']).to have_content url[0]
-    expect(your_details.right_link.text).to eq 'Change'
+    expect(your_details.right_link.text).to have_content 'Change'
   end
 end
 

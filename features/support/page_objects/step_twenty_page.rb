@@ -7,7 +7,6 @@ class StepTwentyPage < BasePage
     element :h2, 'h2'
     elements :li, 'ol > li'
   end
-  element :finish_button, '.button'
   sections :li, 'li' do
     section :inset, '.inset' do
       elements :li, 'ul > li'
@@ -29,7 +28,6 @@ class StepTwentyPage < BasePage
   sections :list, '.list' do
     elements :li, 'li'
   end
-  element :submit_button, 'input.button'
 
   def load_page(page_version = nil)
     load(v: page_version)

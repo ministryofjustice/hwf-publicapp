@@ -38,24 +38,12 @@ Given(/^I go to step twenty by skipping step nineteen$/) do
   step 'I press the continue button'
 end
 
-When(/^I press the continue button$/) do
-  step_twenty_page.finish_button.click
-end
-
-When(/^I click submit application and continue$/) do
-  step_twenty_page.submit_button.click
-end
-
 When(/^I click the finish application button$/) do
-  step_twenty_page.finish_button.click
+  common_page.button.click
 end
 
 Then(/^I am taken to the thank you page$/) do
   expect(current_path).to eq '/'
-end
-
-Then(/^I should see header '([^\"]*)'$/) do |h2|
-  expect(step_twenty_page.h2.text).to have_content h2
 end
 
 Then(/^I should see deliver your paperwork copy$/) do

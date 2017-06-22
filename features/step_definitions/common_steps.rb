@@ -52,8 +52,11 @@ And(/^I click on yes, cancel$/) do
 end
 
 Then(/^I should see '([^\"]*)' header$/) do |header|
-  page_header = common_page.content.page_header.text
-  expect(page_header).to have_content header
+  expect(common_page.content.h1.text).to have_content header
+end
+
+Then(/^I should see header '([^\"]*)'$/) do |header|
+  expect(common_page.content.h2.text).to have_content header
 end
 
 Then(/^I am taken to the Help with Fees homepage$/) do

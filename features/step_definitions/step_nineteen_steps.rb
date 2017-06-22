@@ -21,11 +21,7 @@ Given(/^I visit the page for step nineteen$/) do
 end
 
 When(/^I press the continue button$/) do
-  step_nineteen_page.continue_button.click
-end
-
-Then(/^I see step 19 of 20$/) do
-  expect(step_nineteen_page.heading_secondary[0].text).to eq 'Step 19 of 20'
+  common_page.button.click
 end
 
 Then(/^I should see direction points 1 to 4$/) do
@@ -33,15 +29,6 @@ Then(/^I should see direction points 1 to 4$/) do
   expect(step_nineteen_page.steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
 end
 
-Then(/^I should see save or print this page$/) do
-  expect(step_nineteen_page.js_print['href']).to end_with '#'
-  expect(step_nineteen_page.js_print.text).to eq 'Save or print this page'
-end
-
 Then(/^I go to step twenty$/) do
   expect(current_path).to eq '/confirmation/done'
-end
-
-Then(/^I should see header '([^\"]*)'$/) do |header|
-  expect(step_nineteen_page.steps_panel.h2.text).to eq header
 end

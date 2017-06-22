@@ -1,5 +1,4 @@
 class StepTwentyPage < BasePage
-  element :h2, 'h2'
   section :post, '.post' do
     element :p, 'p'
   end

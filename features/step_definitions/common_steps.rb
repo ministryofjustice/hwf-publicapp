@@ -126,6 +126,6 @@ Then(/^I am taken to probate step twelve$/) do
 end
 
 Then(/^I should see save or print this page$/) do
-  expect(steps_panel.js_print['href']).to eq '#'
-  expect(steps_panel.js_print.text).to eq 'Save or print this page'
+  expect(common_page.js_print['href']).to end_with '#'
+  expect(common_page.js_print.text).to eq 'Save or print this page'
 end

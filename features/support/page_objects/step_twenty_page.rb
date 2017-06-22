@@ -12,21 +12,24 @@ class StepTwentyPage < BasePage
     section :inset, '.inset' do
       elements :li, 'ul > li'
     end
-    element :addresses_panel, '.addresses-panel'
-    section :grid_row, '.grid-row' do
-      sections :column_half, '.column-half' do
-        element :heading_small, '.heading-small'
-        section :ul, 'ul' do
-          section :email, '.email' do
-            elements :li, 'ul > li'
-          end
-          section :postal_address, '.postal-address' do
-            elements :li, 'ul > li'
-          end
-        end
+  end
+
+  sections :column_half, '.column-half' do
+    element :heading_small, '.heading-small'
+    section :ul, 'ul' do
+      section :email, '.email' do
+        elements :li, 'ul > li'
+      end
+      section :postal_address, '.postal-address' do
+        elements :li, 'ul > li'
       end
     end
   end
+
+  sections :list, '.list' do
+    elements :li, 'li'
+  end
+  element :submit_button, 'input.button'
 
   def load_page(page_version = nil)
     load(v: page_version)

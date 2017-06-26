@@ -64,11 +64,11 @@ Then(/^I am taken to the Help with Fees homepage$/) do
 end
 
 Then(/^I should see step (\d+) of 20$/) do |step_number|
-  expect(common_page.content.p.text).to eq 'Step ' + step_number + ' of 20'
+  expect(common_page.content.p.text).to eq "Step #{step_number} of 20"
 end
 
 Then(/^I see step (\d+) of 20$/) do |step_number|
-  expect(common_page.heading_secondary.text).to eq 'Step ' + step_number + ' of 20'
+  expect(common_page.heading_secondary.text).to eq "Step #{step_number} of 20"
 end
 
 Then(/^I should see the please note copy$/) do
@@ -121,7 +121,7 @@ end
 
 Then(/^I am taken to step (\d+) ([^\"]*)$/) do |step, url|
   expect(common_page.content.p.text).to have_content step
-  expect(current_path).to eq '/questions/' + url
+  expect(current_path).to eq "/questions/#{url}"
 end
 
 Then(/^I am taken to probate step twelve$/) do

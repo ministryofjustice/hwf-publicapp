@@ -52,8 +52,11 @@ And(/^I click on yes, cancel$/) do
 end
 
 Then(/^I should see '([^\"]*)' header$/) do |header|
-  page_header = common_page.content.page_header.text
-  expect(page_header).to have_content header
+  expect(common_page.content.h1.text).to have_content header
+end
+
+Then(/^I should see header '([^\"]*)'$/) do |header|
+  expect(common_page.content.h2.text).to have_content header
 end
 
 Then(/^I am taken to the Help with Fees homepage$/) do
@@ -61,7 +64,11 @@ Then(/^I am taken to the Help with Fees homepage$/) do
 end
 
 Then(/^I should see step (\d+) of 20$/) do |step_number|
-  expect(common_page.content.p.text).to have_content 'Step ' + step_number + ' of 20'
+  expect(common_page.content.p.text).to eq "Step #{step_number} of 20"
+end
+
+Then(/^I see step (\d+) of 20$/) do |step_number|
+  expect(common_page.heading_secondary.text).to eq "Step #{step_number} of 20"
 end
 
 Then(/^I should see the please note copy$/) do
@@ -114,9 +121,14 @@ end
 
 Then(/^I am taken to step (\d+) ([^\"]*)$/) do |step, url|
   expect(common_page.content.p.text).to have_content step
-  expect(current_path).to eq '/questions/' + url
+  expect(current_path).to eq "/questions/#{url}"
 end
 
 Then(/^I am taken to probate step twelve$/) do
   expect(current_path).to eq '/questions/probate'
+end
+
+Then(/^I should see save or print this page$/) do
+  expect(common_page.js_print['href']).to end_with '#'
+  expect(common_page.js_print.text).to eq 'Save or print this page'
 end

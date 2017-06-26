@@ -1,7 +1,8 @@
 class CommonPage < BasePage
   section :content, '#content' do
     element :p, 'p'
-    element :page_header, 'h1'
+    element :h1, 'h1'
+    element :h2, 'h2'
     section :text, '.text' do
       elements :p, 'p'
       elements :li, 'li'
@@ -12,6 +13,7 @@ class CommonPage < BasePage
     end
   end
 
+  element :heading_secondary, '.heading-secondary'
   elements :block, '.block'
   element :restart_application, '.restart-application'
   section :restart_confirm, '.restart-confirm' do
@@ -23,7 +25,9 @@ class CommonPage < BasePage
     element :link, 'a'
   end
   elements :error_message, '.error-message'
+  element :js_print, '.js-print'
   element :continue_button, '#continue-button'
+  element :button, '.button'
 
   def load_page(page_version = nil)
     load(v: page_version)

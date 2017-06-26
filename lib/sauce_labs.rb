@@ -1,0 +1,2 @@
+driver = Selenium::WebDriver.for :remote, :url => sauce_endpoint, :desired_capabilities => caps
+sauce_endpoint = "http://aballantine:c09c4ae6-c68f-419d-b09a-922404c5bb23@ondemand.saucelabs.com:80/wd/hub"

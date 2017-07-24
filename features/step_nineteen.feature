@@ -1,4 +1,5 @@
-@step54
+@hwf_submit_application
+
 Feature: Step nineteen page
 
   Background: Navigating to the page for step nineteen

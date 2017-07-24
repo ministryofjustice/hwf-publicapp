@@ -15,7 +15,9 @@ Given(/^I go to step twenty without skipping step nineteen$/) do
   step 'I enter my full name'
   step 'I enter my address with postcode'
   step 'I click continue'
+  binding.pry
   step 'I click submit application and continue'
+  binding.pry
   step 'I press the continue button'
 end
 
@@ -34,7 +36,9 @@ Given(/^I go to step twenty by skipping step nineteen$/) do
   step 'I enter a valid date of birth'
   step 'I enter my full name'
   step 'I enter my address with postcode'
+  binding.pry
   step 'I click submit application and continue'
+  binding.pry
   step 'I press the continue button'
 end
 

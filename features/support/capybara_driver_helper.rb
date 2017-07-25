@@ -45,12 +45,3 @@ Capybara.current_driver = Capybara.default_driver
 Capybara.app_host = 'http://localhost:3000'
 Capybara.server_host = 'localhost'
 Capybara.server_port = '3000'
-
-# Zap security
-Capybara.register_driver :selenium do |app|
-  profile = Selenium::WebDriver::Firefox::Profile.new
-  profile["network.proxy.type"] = 1
-  profile["network.proxy.http"] = "localhost"
-  profile["network.proxy.http_port"] = 8095
-  Capybara::Selenium::Driver.new(app, :profile => profile)
-end

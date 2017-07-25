@@ -23,8 +23,8 @@ When(/^I take the happy path through steps 1 to 20$/) do
   step 'I click continue'
   step 'I click submit application and continue'
   step 'I press the continue button'
-  step 'common_page.button.click'
-  step 'expect(current_path).to eq '/''
+  step 'I click the finish application button'
+  step 'I am taken to the thank you page'
   sleep 20
 end
 

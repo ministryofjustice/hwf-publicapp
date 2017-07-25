@@ -24,10 +24,7 @@ For UI testing, we use:
 [Capybara](https://github.com/jnicklas/capybara)
 
 To run the standard Cucumber test suite headlessly, use:
-$ cucumber features 
-
-To run the standard Cucumber test suite in Chrome, use:
-$ DRIVER=chrome cucumber
+$ cucumber features
 
 To run the all scenarios in a particular feature file:
 $ cucumber features/landing_page.feature  

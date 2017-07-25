@@ -3,15 +3,12 @@
 ##Dependances
 
 You need to install:
-
 Ruby
-
 [Bundler](http://bundler.io/)
+[PhantomJS](https://github.com/teampoltergeist/poltergeist#installing-phantomjs)
 
 To install all of the required gems:
 $ bundle install
-
-[PhantomJS](https://github.com/teampoltergeist/poltergeist#installing-phantomjs)
 
 ###Rubocop
 
@@ -20,24 +17,29 @@ To assess Ruby code quality across the application we use
 To run the tool, use:
 $ rubocop
 
-###Running Cucumber scenarios
+###Running Cucumber Feature files
 
-For integration and UI testing, we use [Cucumber](http://cukes.info/),
+For UI testing, we use:
+[Cucumber](http://cukes.info/)
 [Capybara](https://github.com/jnicklas/capybara)
 
-To run the standard Cucumber test suite, use:
-$ cucumber features 
+To run the standard Cucumber test suite headlessly, use:
+$ cucumber features
 
 To run the all scenarios in a particular feature file:
 $ cucumber features/landing_page.feature  
 
-To run a particular scenario:
+To run a particular scenario using line number:
 $ cucumber features/landing_page.feature:10 
 
 To run in a browser:
 $ DRIVER=chrome cucumber
 $ DRIVER=firefox cucumber
 
+###Running smoke tests
+
+To run smoke tests:
+$ cucumber --tags @smoke
 
 ###Screenshots and html
 

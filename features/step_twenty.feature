@@ -1,4 +1,5 @@
-@step54
+@hwf_submit_application
+
 Feature: Step twenty page
 
   Scenario: Displays step number

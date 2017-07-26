@@ -1,6 +1,7 @@
 def security_warnings
   # Classify the alerts
-  events = JSON.parse RestClient.get "http://#{$zap_proxy}:#{$zap_proxy_port}/json/core/view/alerts"['alerts']
+  events = JSON.parse RestClient.get("http://#{$zap_proxy}:#{$zap_proxy_port}/json/core/view/alerts")
+  p events
   high_risks = events.select { |x| x['risk'] == 'High' }
   high_count = high_risks.size
 
@@ -23,14 +24,7 @@ def launch_owasp_zap
   # Go to ZAP Path
   Dir.chdir($zap_path) do
     # Determine Operating System, kill JAVA instances and Start ZAP in deamon mode.
-    if determine_os == 'windows'
-      system("taskkill /im java.exe /f")
-      system("taskkill /im javaw.exe /f")
-      IO.popen("zap.bat -daemon")
-    else
-      system("pkill java")
-      IO.popen("./zap.sh -daemon")
-    end
+    IO.popen("./zap.sh -daemon -config view.mode=attack -config api.disablekey=true -addoninstall pscanrulesBeta -addoninstall ascanrulesAlpha")
     sleep 5
   end
   p "Owasp Zap launch completed"

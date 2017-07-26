@@ -9,6 +9,7 @@ require 'capybara/dsl'
 require 'capybara/poltergeist'
 require 'capybara-screenshot/cucumber'
 require 'rest-client'
+require 'selenium-webdriver'
 
 
 Dir[File.dirname(__FILE__) + '/page_objects/**/*.rb'].each { |f| require f }
@@ -37,7 +38,7 @@ ActionController::Base.allow_rescue = false
 
 #Define global variables
 $zap_proxy = "localhost"
-$zap_proxy_port = 8095
+$zap_proxy_port = 8099
 
 #Below lines are our driver profile settings to reach internet through a proxy
 #You can set security=true as environment variable or declare it on command window
@@ -58,7 +59,3 @@ if ENV['APP_HOST']
     Capybara.app_host += '/'
   end
 end
-
-FIRST_ACCOUNT_SUFFIX = 5001
-$delete_enabled = true
-$environment = 'qa'

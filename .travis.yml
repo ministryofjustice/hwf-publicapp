@@ -18,6 +18,6 @@ addons:
 script:
 - bundle exec rubocop
 - bundle exec rspec
-- bundle exec rake cucumber
+- bundle exec rake cucumber features/*.feature
 after_success:
 - bundle exec codeclimate-test-reporter

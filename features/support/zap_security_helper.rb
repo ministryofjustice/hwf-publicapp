@@ -4,7 +4,7 @@ def security_warnings
   print_high_alerts(high_risks) if high_count.positive?
 
   # Expect high alert count equal to 0
-  check_hight_count
+  check_high_count
 
   # Print alerts with risk levels
   rest_response = RestClient.get(rest_client_url, params: { zapapiformat: 'JSON', baseurl: site })
@@ -52,7 +52,7 @@ def print_alerts(response)
   response['alerts'].each { |x| p "# {x['alert']} risk level: #{x['risk']}" }
 end
 
-def pring_high_alerts(high_risks)
+def print_high_alerts(high_risks)
   high_risks.each { |x| p x['alert'] }
 end
 
@@ -64,6 +64,6 @@ def high_count
   high_risks.size
 end
 
-def check_hight_count
+def check_high_count
   expect(high_count).to eq 0
 end

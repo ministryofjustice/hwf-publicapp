@@ -2,6 +2,7 @@ Given(/^I launch owasp zap for a scan$/) do
   launch_owasp_zap
 end
 
+# rubocop:disable Metrics/BlockLength
 When(/^I take the happy path through steps 1 to 20$/) do
   # step one
   step_one_page.load_page
@@ -65,6 +66,7 @@ When(/^I take the happy path through steps 1 to 20$/) do
   expect(current_path).to eq '/'
   sleep 20
 end
+# rubocop:enable Metrics/BlockLength
 
 Then(/^I should be able to see security warnings$/) do
   security_warnings

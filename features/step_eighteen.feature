@@ -49,7 +49,7 @@ Feature: Step eighteen page
   Scenario: Displays declaration of truth
     Then I should see declaration of truth
 
-  @step54
+  @hwf_submit_application
   Scenario: Continue button
     When I click submit application and continue
     Then I taken to step 19 of 20 confirmation

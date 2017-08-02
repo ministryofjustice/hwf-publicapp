@@ -1,0 +1,58 @@
+[
+  {
+    "type": "desktop",
+    "human": "Safari 7 on OS X Mavericks",
+    "key_name": "mavericks-safari-7",
+    "browser_version": "7.0",
+    "browser": "Safari",
+    "os": "OS X",
+    "os_version": "Mavericks",
+    "resolution": "1920x1080",
+    "index": "1"
+  },
+  {
+    "type": "desktop",
+    "human": "Chrome 39 on Windows 7",
+    "key_name": "windows-7-chrome-39",
+    "browser_version": "39.0",
+    "browser": "Chrome",
+    "os": "Windows",
+    "os_version": "7",
+    "resolution": "browse2048x1536",
+    "index": "2"
+  },
+  {
+    "type": "desktop",
+    "human": "Firefox 35 on Windows 7",
+    "key_name": "windows-7-firefox-35",
+    "browser_version": "35.0",
+    "browser": "Firefox",
+    "os": "Windows",
+    "os_version": "7",
+    "resolution": "2048x1536",
+    "index": "3"
+  },
+  {
+    "type": "desktop",
+    "human": "IE 11 on Windows 8",
+    "key_name": "windows-8-ie-11",
+    "browser_version": "11.0",
+    "browser": "IE",
+    "os": "Windows",
+    "os_version": "8.1",
+    "resolution": "2048x1536",
+    "nativeEvents": true,
+    "index": "4"
+  },
+  {
+    "type": "hd_desktop",
+    "human": "HD Chrome 39 on Windows 7",
+    "key_name": "windows-7-hd-chrome-39",
+    "browser_version": "39.0",
+    "browser": "Chrome",
+    "os": "Windows",
+    "os_version": "7",
+    "resolution": "1920x1080",
+    "index": "5"
+  }
+]

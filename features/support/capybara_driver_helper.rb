@@ -12,14 +12,8 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 Capybara.register_driver :saucelabs do |app|
-  caps = {
-    :platform => "Windows 10",
-    :browser_name => "Chrome",
-    :version => "59"
-  }
-  Capybara::Selenium::Driver.new(app, browser: :remote, :url => "http://aballantine:c09c4ae6-c68f-419d-b09a-922404c5bb23@ondemand.saucelabs.com:80/wd/hub", :desired_capabilities => caps)
+  Capybara::Selenium::Driver.new(app, browser: :remote, url: SauceDriver.sauce_endpoint, desired_capabilities: SauceDriver.browser)
 end
-
 
 Capybara.register_driver :firefox do |app|
   profile = Selenium::WebDriver::Firefox::Profile.new

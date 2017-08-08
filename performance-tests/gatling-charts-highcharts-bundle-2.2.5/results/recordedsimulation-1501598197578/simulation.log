@@ -1,0 +1,4 @@
+RUN	RecordedSimulation		recordedsimulation	1501598197578	 	2.0
+USER	RecordedSimulation	1	START	1501598198101	1501598198101
+REQUEST	RecordedSimulation	1		step_one	1501598198126	1501598198291	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+USER	RecordedSimulation	1	END	1501598198101	1501598198315

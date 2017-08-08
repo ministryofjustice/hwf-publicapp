@@ -1,0 +1,45 @@
+RUN	RecordedSimulation		recordedsimulation	1502188630613	 	2.0
+USER	RecordedSimulation	1	START	1502188631167	1502188631167
+REQUEST	RecordedSimulation	1		request_0	1502188631194	1502188631308	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_2	1502188636335	1502188636359	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_4	1502188641353	1502188641375	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_6	1502188646374	1502188646397	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_8	1502188651403	1502188651441	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_10	1502188656443	1502188656464	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_12	1502188661464	1502188661489	OK	 
+REQUEST	RecordedSimulation	1		request_15	1502188666503	1502188666525	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_17	1502188671523	1502188671529	OK	 
+REQUEST	RecordedSimulation	1		request_18	1502188676534	1502188676560	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_20	1502188681564	1502188681586	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_22	1502188686583	1502188686603	OK	 
+REQUEST	RecordedSimulation	1		request_22 Redirect 1	1502188686611	1502188686630	OK	 
+REQUEST	RecordedSimulation	1		request_22 Redirect 2	1502188686632	1502188686691	OK	 
+REQUEST	RecordedSimulation	1		govuk-template-2775f99eaec64ff8121bfbfb3eb67b0c2b4b7c3fc78d25da30e12db2a09d30d6.css Redirect 2	1502188686756	1502188686807	OK	 
+REQUEST	RecordedSimulation	1		favicon-8d811b8c3badbc0b0e2f6e25d3660a96cc0cca7993e6f32e98785f205fc40907.ico Redirect 2	1502188686763	1502188686808	OK	 
+REQUEST	RecordedSimulation	1		govuk-template-print-1076519521c2fffbbf75ab3b0d3b32ee2d96ac7e9778f1cdfac1771eefd1a1c0.css Redirect 2	1502188686762	1502188686819	OK	 
+REQUEST	RecordedSimulation	1		static-print-fed203592005ce001885cca545c05cc3fda58a9b9f27fe3775dcff2f50875b09.css Redirect 2	1502188686764	1502188686819	OK	 
+REQUEST	RecordedSimulation	1		static-0455f4d93f26a5f6ef9f8e9c9b98ebd1d91bdbfd7324515cb9c2ee0035d896f7.css Redirect 2	1502188686763	1502188686824	OK	 
+REQUEST	RecordedSimulation	1		application-2be09ffde1b84a4d9e89b13201415a16a02b189939d3b730a103ff79952a5a8e.css Redirect 2	1502188686808	1502188686839	OK	 
+REQUEST	RecordedSimulation	1		gov.uk_logotype_crown_invert_trans-203e1db49d3eff430d7dc450ce723c1002542fe1d2bce661b6d8571f14c1043c.png Redirect 2	1502188686833	1502188686845	OK	 
+REQUEST	RecordedSimulation	1		fonts-5ff8c53913434afd0072a480d7cfca67cace4c8d03f6ef96b78a4455728ce745.css Redirect 2	1502188686762	1502188686846	OK	 
+REQUEST	RecordedSimulation	1		govuk-template-c4f303154d2a238bdda4d5cf1ebd8d4487822e4cbc3e4c83e743da869443ce72.js Redirect 2	1502188686840	1502188686846	OK	 
+REQUEST	RecordedSimulation	1		jquery-1.12.4-cb0decd18b4b0abbece3cfc180d9adc8e11dfa693cf34c2ff1ffcda86e725301.js Redirect 2	1502188686841	1502188686860	OK	 
+REQUEST	RecordedSimulation	1		surveys-b18efa45d0ff3dfd07638aad58b9964e510c8d4ef9c4a8a2d315683f55501ddd.js Redirect 2	1502188686862	1502188686870	OK	 
+REQUEST	RecordedSimulation	1		frontend-14e4f2d6cc1ab40e744180b4f52d0786e7edf6038edd70286f6261863f751faf.js Redirect 2	1502188686863	1502188686870	OK	 
+REQUEST	RecordedSimulation	1		application-e19a28914ac8aa97357a2b0954a539cce71b1e00cf13469322124fc80e9c6c2e.js Redirect 2	1502188686861	1502188686878	OK	 
+REQUEST	RecordedSimulation	1		request_24	1502188691874	1502188691880	OK	 
+REQUEST	RecordedSimulation	1		request_25	1502188691882	1502188691903	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_27	1502188696913	1502188696940	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_29	1502188701934	1502188701971	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_31	1502188706985	1502188707018	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_33	1502188712003	1502188712028	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_35	1502188717033	1502188717102	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_37	1502188722104	1502188722131	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_39	1502188727124	1502188727149	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_41	1502188732153	1502188732177	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_43	1502188737185	1502188737206	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_45	1502188742203	1502188742214	OK	 
+REQUEST	RecordedSimulation	1		request_46	1502188747224	1502188747249	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_48	1502188752233	1502188752255	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+REQUEST	RecordedSimulation	1		request_50	1502188757264	1502188757272	OK	 
+USER	RecordedSimulation	1	END	1502188631167	1502188757274

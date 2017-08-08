@@ -1,0 +1,10 @@
+{
+  "simulation": "Sim",
+  "simulationId": "sim",
+  "start": 1502186375096,
+  "description": "",
+  "scenarios": ["Step one - I need help with Employment Tribunal"],
+  "assertions": [
+
+  ]
+}

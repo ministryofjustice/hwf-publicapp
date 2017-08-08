@@ -1,0 +1,4 @@
+RUN	Sim		sim	1502186375096	 	2.0
+USER	Step one - I need help with Employment Tribunal	1	START	1502186375656	1502186375656
+REQUEST	Step one - I need help with Employment Tribunal	1		Step one page	1502186375682	1502186375844	KO	status.find.in(200,304,201,202,203,204,205,206,207,208,209), but actually found 422
+USER	Step one - I need help with Employment Tribunal	1	END	1502186375656	1502186375867

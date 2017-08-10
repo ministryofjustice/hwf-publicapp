@@ -59,7 +59,6 @@ And(/^I enter a employment tribunal number$/) do
   expect(step_twelve_page.form_label.text).to eq 'Employment tribunal claim number'
   step_twelve_page.claim_et_identifier.set('012345678')
   common_page.continue_button.click
-  common_page.continue_button.click
 end
 
 Then(/^I should see help with employment tribunal claim number copy$/) do

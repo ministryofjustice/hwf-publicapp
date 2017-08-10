@@ -16,7 +16,7 @@ Dependencies
 
 3. Run below to run gatling scripts against docker images
     ```
-   > docker run --net=host --rm -it  -e E2E_FRONTEND_URL -e USE_IDAM -v `pwd`/src/test/resources:/opt/gatling/conf -v `pwd`/src/test/scala/simulations:/opt/gatling/user-files/simulations -v `pwd`/results:/opt/gatling/results -v `pwd`/data:/opt/gatling/data reformgatling:local -s simulations.HelpWithFeesPerformance
+   > docker run --add-host localhost:<IP> --rm -it -v `pwd`/src/test/resources:/opt/gatling/conf -v `pwd`/src/test/scala/simulations:/opt/gatling/user-files/simulations -v `pwd`/results:/opt/gatling/results -v `pwd`/data:/opt/gatling/data hwfgatling:local -s simulations.HelpWithFeesPerformance
 
    or
 

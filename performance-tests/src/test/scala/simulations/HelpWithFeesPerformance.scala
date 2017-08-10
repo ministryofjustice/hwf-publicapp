@@ -11,179 +11,189 @@ class HelpWithFeesPerformance extends Simulation
 with HttpConfiguration
 {
   val conf = ConfigFactory.load()
-  val baseurl = "http://localhost:3000"
+  val baseurl = conf.getString("baseUrl")
   val httpconf = httpProtocol.baseURL(baseurl).disableCaching
 
-  val scenario1 = scenario("Happy Path")
+  val scenario1 = scenario("Happy Path for Help with Fees")
 
-    //////  Landing Page  //////
-
-    .exec(http("/get-help-with-court-fees")
-        .get("/get-help-with-court-fees")
-        .check(status.is(200))
-        .check(regex("Start now").exists))
-
-    {
-        exec(http("/start")
-            .get("/start")
-            .check(status.is(200))
-            .check( currentLocation.is(baseurl + "/questions/form_name?locale=en") ))
-    }
+    .exec(http("Start Session")
+        .get("/session/start?locale=en"))
 
     //////  Step One  //////
 
-    .exec(http("/questions/form_name?locale=en")
-        .post("/questions/form_name?locale=en")
+    .exec(http("Store authenticity token")
+        .get("/questions/form_name?locale=en")
+        .check(css("input[name='authenticity_token']", "value").saveAs("csrfCookie")))
+
+    .exec(http("Step One")
+        .put("/questions/form_name?locale=en")
         .formParam("form_name[et]", "1")
-        .formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/marital_status?locale=en")))
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
+        .check(status.is(200)))
+
 
     //////  Step Two  //////
 
-    .exec(http("/questions/fee?locale=en")
-        .post("/questions/fee?locale=en")
+    .exec(http("Step Two")
+        .put("/questions/fee?locale=en")
         .formParam("fee[paid]", "false")
-        .formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/marital_status?locale=en")))
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
+        .check(status.is(200)))
 
     //////  Step Three  //////
 
-    .exec(http("/questions/marital_status?locale=en")
-        .post("/questions/marital_status?locale=en")
+    .exec(http("Step Three")
+        .put("/questions/marital_status?locale=en")
         .formParam("marital_status[married]", "false")
-        .formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/savings_and_investment?locale=en")))
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
+        .check(status.is(200)))
 
     //////  Step Four  //////        
 
-    .exec(http("/questions/savings_and_investment?locale=en")
-        .post("/questions/savings_and_investment?locale=en")
+    .exec(http("Step Four")
+        .put("/questions/savings_and_investment?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("savings_and_investment[choice]", "between")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/savings_and_investment_extra?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Five  //////
 
-    .exec(http("/questions/savings_and_investment_extra?locale=en")
-        .post("/questions/savings_and_investment_extra?locale=en")
+    .exec(http("Step Five")
+        .put("/questions/savings_and_investment_extra?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("savings_and_investment_extra[over_61]", "false")
 		.formParam("savings_and_investment_extra[amount]", "3000")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/benefit?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Six  //////
 
-    .exec(http("/questions/benefit?locale=en")
-        .post("/questions/benefit?locale=en")
+    .exec(http("Step Six")
+        .put("/questions/benefit?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("benefit[on_benefits]", "false")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/dependent?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Seven  //////    
 
-    .exec(http("/questions/dependent?locale=en")
-        .post("/questions/dependent?locale=en")
+    .exec(http("Step Seven")
+        .put("/questions/dependent?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("dependent[children]", "false")
-        .formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/income_kind?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Eight  //////    
 
-    .exec(http("/questions/income_kind?locale=en")
-        .post("/questions/income_kind?locale=en")
-        .formParam("income_kind[applicant][]", "1")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/income_range?locale=en")))
+    .exec(http("Step Eight")
+        .put("/questions/income_kind?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
+        .formParam("income_kind[applicant][]", "3")
+        .check(status.is(200)))
 
     //////  Step Nine  //////
 
-    .exec(http("/questions/income_range?locale=en")
-        .post("/questions/income_range?locale=en")
+    .exec(http("Step Nine")
+        .put("/questions/income_range?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("income_range[choice]", "between")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/income_amount?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Ten  //////
 
-    .exec(http("/questions/income_amount?locale=en")
-        .post("/questions/income_amount?locale=en")
-        .formParam(" ")
-        .formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/probate?locale=en")))
+    .exec(http("Step Ten")
+        .put("/questions/income_amount?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
+        .formParam("income_amount[amount]", "1000")
+        .check(status.is(200)))
 
     //////  Step Twelve  //////    
 
-    .exec(http("/questions/probate?locale=en")
-        .post("/questions/probate?locale=en")
+    .exec(http("Step Twelve")
+        .put("/questions/claim?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("claim/et[identifier]", "HFHEBCDHI")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/national_insurance?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Thirteen  //////    
 
-    .exec(http("/questions/national_insurance?locale=en")
-        .post("/questions/national_insurance?locale=en")
+    .exec(http("Step Thirteen")
+        .put("/questions/national_insurance?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("national_insurance[number]", "JR043907D")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/dob?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Fourteen  //////
 
-    .exec(http("/questions/dob?locale=en")
-        .post("/questions/dob?locale=en")
+    .exec(http("Step Fourteen")
+        .put("/questions/dob?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("dob[date_of_birth]", "07/01/1955")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/personal_detail?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Fifteen  //////    
 
-    .exec(http("/questions/personal_detail?locale=en")
-        .post("/questions/personal_detail?locale=en")
+    .exec(http("Step Fifteen")
+        .put("/questions/personal_detail?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("personal_detail[title]", "Ms")
 		.formParam("personal_detail[first_name]", "Jenny")
 		.formParam("personal_detail[last_name]", "Smith")
-		.formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/applicant_address?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Sixteen  ////// 
 
-    .exec(http("/questions/applicant_address?locale=en")
-        .post("/questions/applicant_address?locale=en")
+    .exec(http("Step Sixteen")
+        .put("/questions/applicant_address?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
         .formParam("applicant_address[address]", "14 Springfield Court Ilford")
         .formParam("applicant_address[postcode]", "IG1 2BN")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/questions/contact?locale=en")))
+        .check(status.is(200)))
 
     //////  Step Seventeen  //////
 
-    .exec(http("/questions/contact?locale=en")
-        .post("/questions/contact?locale=en")
-        .formParam("commit", "Continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/summary?locale=en")))
+    .exec(http("Step Seventeen")
+        .put("/questions/contact?locale=en")
+        .formParam("authenticity_token", session => {
+              session("csrfCookie").as[String]
+            })
+        .formParam("contact[email]", "johndoe@example.com")
+        .check(status.is(200)))
 
     //////  Step Eighteen  //////    
 
-    .exec(http("/summary?locale=en")
-        .post("/summary?locale=en")
-        .formParam("commit", "Submit application and continue")
-        .check(status.is(200))
-        .check(currentLocation.is(baseurl + "/submission?locale=en")))
-       
+    .exec(http("Step Eighteen")
+        .get("/summary?locale=en")
+        .check(status.is(200)))
+
   val userCount = conf.getInt("users")
   val durationInSeconds  = conf.getLong("duration")
 

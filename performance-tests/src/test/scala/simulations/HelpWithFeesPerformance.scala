@@ -11,6 +11,7 @@ class HelpWithFeesPerformance extends Simulation
 with HttpConfiguration
 {
   val conf = ConfigFactory.load()
+<<<<<<< HEAD
   val baseurl = conf.getString("baseUrl")
   val httpconf = httpProtocol.baseURL(baseurl).disableCaching
 

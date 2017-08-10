@@ -6,7 +6,7 @@ MAINTAINER alexa ballantine <alexa.ballantine@gmail.com>
 WORKDIR /opt
 
 # gating version
-ENV GATLING_VERSION 2.2.2
+ENV GATLING_VERSION 2.2.5
 
 # create directory for gatling install
 RUN mkdir -p gatling

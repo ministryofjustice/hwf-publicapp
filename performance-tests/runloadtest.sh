@@ -1,1 +1,0 @@
-docker run --add-host localhost:<IP> --rm -it -v `pwd`/src/test/resources:/opt/gatling/conf -v `pwd`/src/test/scala/simulations:/opt/gatling/user-files/simulations -v `pwd`/results:/opt/gatling/results -v `pwd`/data:/opt/gatling/data hwfgatling:local -s simulations.HelpWithFeesPerformance

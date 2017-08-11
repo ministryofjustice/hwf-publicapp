@@ -11,9 +11,12 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, js_errors: false, timeout: 60)
 end
 
+Capybara.register_driver :saucelabs do |app|
+  Capybara::Selenium::Driver.new(app, browser: :remote, url: SauceDriver.sauce_endpoint, desired_capabilities: SauceDriver.browser)
+end
+
 Capybara.register_driver :firefox do |app|
   profile = Selenium::WebDriver::Firefox::Profile.new
-  profile.enable_firebug
   profile['browser.cache.disk.enable'] = false
   profile['browser.cache.memory.enable'] = false
   Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)

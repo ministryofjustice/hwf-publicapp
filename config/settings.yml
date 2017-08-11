@@ -30,3 +30,7 @@ income:
   max_threshold_base: 5085
   per_child_increment: 245
   married_supplement: 160
+saucelabs:
+  username: <%= ENV['SAUCELABS_USERNAME'] %>
+  auth_key: <%= ENV['SAUCELABS_AUTH_KEY'] %>
+  

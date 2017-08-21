@@ -62,7 +62,7 @@ Run tunnel:
 $ ~/sc-4.4.7-osx/bin/sc -u <SAUCELABS_USERNAME> -k <SAUCELABS_AUTH_KEY> --se-port 4449
 Replace <SAUCELABS_USERNAME> and <SAUCELABS_AUTH_KEY> with your account details
 
-Wait for 'Sauce Connect is up, you may start your tests.
+Wait for 'Sauce Connect is up, you may start your tests.'
 
 To run Sauce Labs feature using specific browser:
 $ DRIVER=saucelabs SAUCELABS_BROWSER=ie11_win7 cucumber --tags @saucelabs

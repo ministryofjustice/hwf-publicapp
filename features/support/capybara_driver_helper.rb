@@ -12,7 +12,9 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 Capybara.register_driver :saucelabs do |app|
-  Capybara::Selenium::Driver.new(app, browser: :remote, url: SauceDriver.sauce_endpoint, desired_capabilities: SauceDriver.browser)
+  browser = Settings.saucelabs.browsers.send(ENV['SAUCELABS_BROWSER']).to_h
+
+  Capybara::Selenium::Driver.new(app, browser: :remote, url: Settings.saucelabs.url, desired_capabilities: browser)
 end
 
 Capybara.register_driver :firefox do |app|

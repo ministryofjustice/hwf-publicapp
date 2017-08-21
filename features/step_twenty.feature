@@ -52,6 +52,7 @@ Feature: Step twenty page
     When I go to step twenty without skipping step nineteen
     Then I should see save or print this page
 
+  @saucelabs
   Scenario: Finish application
     Given I do not need help with an employment tribunal
     And I go to step twenty without skipping step nineteen

@@ -28,6 +28,4 @@ selenium-debug.log
 # Ignore IDE configurations
 .idea/
 
-# Saucelabs
 .DS_Store
-.config/saucelabs.yml

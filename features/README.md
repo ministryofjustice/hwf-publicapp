@@ -52,10 +52,23 @@ $ DRIVER=firefox cucumber
 
 ###Running smoke tests
 
-To run smoke tests:
-
 $ cucumber --tags @smoke
 
+###Running cross browser and device tests using Sauce Labs
+
+Replace 'saucelabs_username' and 'saucelabs_auth_key' in hwf-publicapp/.env.test with your account details
+
+Run tunnel:
+$ ~/sc-4.4.7-osx/bin/sc -u <SAUCELABS_USERNAME> -k <SAUCELABS_AUTH_KEY> --se-port 4449
+Replace <SAUCELABS_USERNAME> and <SAUCELABS_AUTH_KEY> with your account details
+
+Wait for 'Sauce Connect is up, you may start your tests.'
+
+To run Sauce Labs feature using specific browser:
+$ DRIVER=saucelabs SAUCELABS_BROWSER=ie11_win7 cucumber --tags @saucelabs
+
+To run Sauce Labs feature on all devices and browsers:
+$ bin/run_saucelabs
 
 ###Screenshots and html
 

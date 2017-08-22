@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+browsers = YAML.load_file('features/support/saucelabs/browsers.yml')
+
+browsers = browsers['saucelabs']['browsers']
+ENV['DRIVER'] = 'saucelabs'
+
+failed = []
+passed = []
+
+browsers.each do |browser|
+  ENV['SAUCELABS_BROWSER'] = browser.first
+
+  puts
+  puts "Running tests on #{browser.first}"
+  $stdout.sync = true
+  system("cucumber --tags @saucelabs", out: $stdout, err: :out)
+  puts
+
+  if $?.success?
+    puts "[DEBUG]: Adding #{browser.first} in the passed array"
+    passed << browser.first
+  else
+    puts "[DEBUG]: Adding #{browser.first} in the failed array"
+    failed << browser.first
+  end
+end
+
+puts "\n\n"
+puts "#{succeeded.count} passed browsers:\n #{succeeded.inspect}"
+puts "#{failed.count} failed browsers:\n #{failed.inspect}"

@@ -72,7 +72,7 @@ When(/^I select more than$/) do
 end
 
 And(/^after selecting working tax credit from income list on step eight$/) do
-  your_income = step_eight_page.content.form_group[0]
+  your_income = step_nine_page.content.form_group[0]
   expect(your_income.block_label[2].text).to eq 'Working Tax Credit'
   your_income.block_label[2].click
 end

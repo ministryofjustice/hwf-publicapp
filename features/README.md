@@ -1,6 +1,6 @@
 # Automated testing
 
-## Dependances
+## Dependencies
 
 You need to install:
 

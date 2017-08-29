@@ -8,3 +8,7 @@ Help with fees app for public
 Using this command `docker build moj/hwf-publicapp:vX.Y`
 
 (Where `X` & `Y` are version numbers)
+
+## Feature tests
+
+See the [feature testing README](https://github.com/https://github.com/ministryofjustice/hwf-publicapp/blob/master/features/README.md).

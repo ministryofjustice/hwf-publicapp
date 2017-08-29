@@ -1,6 +1,6 @@
-##Automated testing
+# Automated testing
 
-##Dependances
+## Dependances
 
 You need to install:
 
@@ -14,7 +14,7 @@ To install all of the required gems:
 
 $ bundle install
 
-###Rubocop
+### Rubocop
 
 To assess Ruby code quality across the application we use:
 
@@ -24,7 +24,7 @@ To run the tool, use:
 
 $ rubocop
 
-###Running Cucumber scenarios
+### Running Cucumber scenarios
 
 For integration and UI testing, we use:
 
@@ -50,11 +50,11 @@ $ DRIVER=chrome cucumber
 
 $ DRIVER=firefox cucumber
 
-###Running smoke tests
+### Running smoke tests
 
 $ cucumber --tags @smoke
 
-###Running cross browser and device tests using Sauce Labs
+### Running cross browser and device tests using Sauce Labs
 
 Replace 'saucelabs_username' and 'saucelabs_auth_key' in hwf-publicapp/.env.test with your account details
 
@@ -70,7 +70,7 @@ $ DRIVER=saucelabs SAUCELABS_BROWSER=ie11_win7 cucumber --tags @saucelabs
 To run Sauce Labs feature on all devices and browsers:
 $ bin/run_saucelabs
 
-###Screenshots and html
+### Screenshots and HTML
 
 To open screenshot or html:
 

@@ -92,7 +92,7 @@ saucelabs:
             browserName: 'safari'		
             name: 'SAFARI_10'		
             platform: 'OS X 10.12'		
-            version: '10.0'   
+            version: '10.0'  
         iPhone6s_iOS9:
             browserName: 'safari'
             appiumVersion: '1.6.4'

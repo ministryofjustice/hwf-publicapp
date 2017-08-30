@@ -1,4 +1,4 @@
-@step54 @smoke
+@hwf_submit_application @smoke
 
 Feature: Smoke Tests
 

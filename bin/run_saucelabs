@@ -29,5 +29,5 @@ browsers.each do |browser|
 end
 
 puts "\n\n"
-puts "#{succeeded.count} passed browsers:\n #{succeeded.inspect}"
+puts "#{passed.count} passed browsers:\n #{passed.inspect}"
 puts "#{failed.count} failed browsers:\n #{failed.inspect}"

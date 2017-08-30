@@ -128,3 +128,7 @@ end
 def common_page
   @common_page ||= CommonPage.new
 end
+
+def saucelabs_page
+  @saucelabs_page ||= SaucelabsPage.new
+end

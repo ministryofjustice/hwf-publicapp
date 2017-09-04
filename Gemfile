@@ -38,13 +38,12 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'capybara-accessible'
   gem 'capybara-screenshot'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'codeclimate-test-reporter', require: nil
   gem 'cucumber-rails', '~> 1.5'
-  gem 'jekyll', '~> 3.4'
   gem 'poltergeist', '1.15.0'
-  gem 'ra11y'
   gem 'selenium-webdriver', '~> 3.4'
   gem 'shoulda-matchers'
   gem 'site_prism', '~> 2.9'

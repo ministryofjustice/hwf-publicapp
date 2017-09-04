@@ -28,6 +28,10 @@ Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
+Capybara.register_driver :accessible_selenium do |app|
+  Capybara::Accessible::Driver.new(app)
+end
+
 if ENV.key?('CIRCLE_ARTIFACTS')
   Capybara.save_and_open_page_path = ENV['CIRCLE_ARTIFACTS']
 end

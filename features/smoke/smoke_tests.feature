@@ -1,4 +1,4 @@
-@hwf_submit_application @smoke
+@hwf_submit_application @smoke @accessible
 
 Feature: Smoke Tests
 

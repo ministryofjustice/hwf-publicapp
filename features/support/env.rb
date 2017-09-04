@@ -4,9 +4,11 @@
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 
+require 'capybara/accessible'
 require 'cucumber/rails'
 require 'capybara/dsl'
 require 'capybara/poltergeist'
+require 'capybara/rspec'
 require 'capybara-screenshot/cucumber'
 require 'rest-client'
 require 'selenium-webdriver'

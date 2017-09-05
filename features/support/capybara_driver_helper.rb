@@ -1,5 +1,5 @@
 Capybara.configure do |config|
-  driver = ENV['DRIVER']&.to_sym || :accessible_poltergeist
+  driver = ENV['DRIVER']&.to_sym || :poltergeist
   config.default_driver = driver
   config.default_max_wait_time = 30
   config.match = :prefer_exact
@@ -8,24 +8,28 @@ Capybara.configure do |config|
 end
 
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_errors: false, timeout: 60)
+  driver = Capybara::Selenium::Driver.new(app)
+  adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
+  Capybara::Accessible.setup(driver, adaptor)
 end
 
 Capybara.register_driver :saucelabs do |app|
   browser = Settings.saucelabs.browsers.send(ENV['SAUCELABS_BROWSER']).to_h
-
-  Capybara::Selenium::Driver.new(app, browser: :remote, url: Settings.saucelabs.url, desired_capabilities: browser)
+  driver = Capybara::Selenium::Driver.new(app, browser: :remote, url: Settings.saucelabs.url, desired_capabilities: browser)
+  adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
+  Capybara::Accessible.setup(driver, adaptor)
 end
 
 Capybara.register_driver :firefox do |app|
-  profile = Selenium::WebDriver::Firefox::Profile.new
-  profile['browser.cache.disk.enable'] = false
-  profile['browser.cache.memory.enable'] = false
-  Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
+  driver = Capybara::Selenium::Driver.new(app, browser: :firefox)
+  adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
+  Capybara::Accessible.setup(driver, adaptor)
 end
 
 Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
+  driver = Capybara::Selenium::Driver.new(app, browser: :chrome)
+  adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
+  Capybara::Accessible.setup(driver, adaptor)
 end
 
 if ENV.key?('CIRCLE_ARTIFACTS')
@@ -34,10 +38,6 @@ end
 
 Capybara::Screenshot.register_driver(:chrome) do |driver, path|
   driver.browser.save_screenshot(path)
-end
-
-Capybara.register_driver :safari do |app|
-  Capybara::Selenium::Driver.new(app, browser: :safari)
 end
 
 Capybara::Screenshot.register_filename_prefix_formatter(:cucumber) do |scenario|

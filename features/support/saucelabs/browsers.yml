@@ -1,7 +1,7 @@
 saucelabs: 
-    username: <%= ENV['SAUCELABS_USERNAME'] %>
-    auth_key: <%= ENV['SAUCELABS_AUTH_KEY'] %>
-    url: <%= ENV['SAUCELABS_URL'] %>
+    username: <%= ENV['SAUCE_USERNAME'] %>
+    auth_key: <%= ENV['SAUCE_ACCESS_KEY'] %>
+    url: <%= ENV['SAUCE_URL'] %>
     browsers:
         ie8:		
             browserName: 'internet explorer'		

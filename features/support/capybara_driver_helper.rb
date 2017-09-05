@@ -1,5 +1,5 @@
 Capybara.configure do |config|
-  driver = ENV['DRIVER']&.to_sym || :poltergeist
+  driver = ENV['DRIVER']&.to_sym || :accessible_poltergeist
   config.default_driver = driver
   config.default_max_wait_time = 30
   config.match = :prefer_exact
@@ -26,10 +26,6 @@ end
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
-end
-
-Capybara.register_driver :accessible_selenium do |app|
-  Capybara::Accessible::Driver.new(app)
 end
 
 if ENV.key?('CIRCLE_ARTIFACTS')

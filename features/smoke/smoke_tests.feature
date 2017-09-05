@@ -1,4 +1,4 @@
-@hwf_submit_application @smoke @accessible
+@hwf_submit_application @smoke @accessible_selenium
 
 Feature: Smoke Tests
 

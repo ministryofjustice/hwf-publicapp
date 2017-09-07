@@ -8,6 +8,6 @@ Before('@zap') do
   IO.popen('/Applications/ZAP\ 2.6.0.app/Contents/Java/zap.sh -daemon')
 end
 
-Around('@inaccessible') do |scenario, block|
+Around('@inaccessible') do |block|
   Capybara::Accessible.skip_audit { block.call }
 end

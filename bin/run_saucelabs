@@ -1,33 +1,34 @@
 #!/usr/bin/env ruby
-
 require 'yaml'
 
-browsers = YAML.load_file('features/support/saucelabs/browsers.yml')
+# Display cucumber's output immediately to STDOUT
+$stdout.sync = true
 
-browsers = browsers['saucelabs']['browsers']
+# Use the saucelabs capybara driver
 ENV['DRIVER'] = 'saucelabs'
 
+# Load the saucelabs settings
+settings = YAML.load_file('features/support/saucelabs/browsers.yml')
+browsers = settings['saucelabs']['browsers'].keys
+
+# Run the tests for each supported browser
 failed = []
 passed = []
 
 browsers.each do |browser|
-  ENV['SAUCELABS_BROWSER'] = browser.first
+  ENV['SAUCELABS_BROWSER'] = browser
 
-  puts
-  puts "Running tests on #{browser.first}"
-  $stdout.sync = true
+  p "Running tests on #{browser}"
   system("cucumber --tags @saucelabs", out: $stdout, err: :out)
-  puts
 
   if $?.success?
-    puts "[DEBUG]: Adding #{browser.first} in the passed array"
-    passed << browser.first
+    passed << browser
   else
-    puts "[DEBUG]: Adding #{browser.first} in the failed array"
-    failed << browser.first
+    failed << browser
   end
 end
 
+# Display results
 puts "\n\n"
-puts "#{passed.count} passed browsers:\n #{passed.inspect}"
-puts "#{failed.count} failed browsers:\n #{failed.inspect}"
+p "#{passed.count} passed browsers: #{passed.join(', ')}"
+p "#{failed.count} failed browsers: #{failed.join(', ')}"

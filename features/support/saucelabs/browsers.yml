@@ -1,11 +1,12 @@
 saucelabs:
   username: <%= ENV['SAUCE_USERNAME'] %>
-  auth_key: <%= ENV['SAUCE_ACCESS_KEY'] %>
-  url: <%= ENV['SAUCE_URL'] %>
+  access_key: <%= ENV['SAUCE_ACCESS_KEY'] %>
+  url: <%= "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub" %>
+  browser: <%= ENV['SAUCELABS_BROWSER'] || 'chrome_win_latest' %>
   browsers:
-    ie8:
+    ie8_win7:
       browserName: internet explorer
-      name: IE_8
+      name: IE8_Win7
       platform: Windows 7
       version: '8'
     ie9_win7:

@@ -28,6 +28,9 @@ COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
 RUN bundle install
 
+# Expose the port the tests are running on
+EXPOSE 3000
+
 # Copy the app files
 COPY . /usr/src/app
 

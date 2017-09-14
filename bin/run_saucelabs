@@ -30,5 +30,7 @@ end
 
 # Display results
 puts "\n\n"
+p "=== Saucelabs Results ==="
 p "#{passed.count} passed browsers: #{passed.join(', ')}"
 p "#{failed.count} failed browsers: #{failed.join(', ')}"
+puts "\n\n"

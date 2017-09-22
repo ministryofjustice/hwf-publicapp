@@ -13,15 +13,7 @@ RSpec.describe Forms::FormName, type: :model do
 
         context 'when the unknown field is false' do
           context 'when the et field is false' do
-            let(:et) { false }
-
             it { is_expected.not_to be_valid }
-          end
-
-          context 'when the et field is true' do
-            let(:et) { true }
-
-            it { is_expected.to be_valid }
           end
         end
 
@@ -71,8 +63,8 @@ RSpec.describe Forms::FormName, type: :model do
       context 'when the et field is true' do
         let(:et) { true }
 
-        it 'returns hash with form_name prefixed with ET' do
-          is_expected.to eql(form_name: "ET #{identifier}")
+        it 'returns hash with form_name' do
+          is_expected.to eql(form_name: "#{identifier}")
         end
       end
     end
@@ -84,7 +76,7 @@ RSpec.describe Forms::FormName, type: :model do
         let(:et) { true }
 
         it 'returns hash with form_name being ET' do
-          is_expected.to eql(form_name: 'ET')
+          is_expected.to eql(form_name: nil)
         end
       end
 
@@ -102,7 +94,7 @@ RSpec.describe Forms::FormName, type: :model do
         let(:et) { true }
 
         it 'returns hash with form_name being ET' do
-          is_expected.to eql(form_name: 'ET')
+          is_expected.to eql(form_name: nil)
         end
       end
 

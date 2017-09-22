@@ -64,7 +64,7 @@ RSpec.describe Forms::FormName, type: :model do
         let(:et) { true }
 
         it 'returns hash with form_name' do
-          is_expected.to eql(form_name: "#{identifier}")
+          is_expected.to eql(form_name: identifier.to_s)
         end
       end
     end

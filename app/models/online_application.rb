@@ -36,10 +36,6 @@ class OnlineApplication
     %i[title first_name last_name].map { |field| send(field) }.compact.join(' ')
   end
 
-  def et?
-    form_name.present? && !(form_name =~ /^ET/).nil?
-  end
-
   def savings_and_investment_extra_required?
     min_threshold_exceeded? && !max_threshold_exceeded?
   end

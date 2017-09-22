@@ -19,12 +19,6 @@ RSpec.describe QuestionFormFactory do
     context 'claim question' do
       let(:id) { :claim }
 
-      context 'when the online_application is an ET one' do
-        let(:online_application) { build(:online_application, :et) }
-
-        it { is_expected.to be_a(Forms::Claim::Et) }
-      end
-
       context 'when the online_application is not an ET one' do
         it { is_expected.to be_a(Forms::Claim::Default) }
       end
@@ -32,12 +26,6 @@ RSpec.describe QuestionFormFactory do
 
     context 'probate question' do
       let(:id) { :probate }
-
-      context 'when the online_application is an ET one' do
-        let(:online_application) { build(:online_application, :et) }
-
-        it { is_expected.to be_a(Forms::Claim::Et) }
-      end
 
       context 'when the online_application is not an ET one' do
         it { is_expected.to be_a(Forms::Probate) }

@@ -25,15 +25,6 @@ When(/^I select I don’t know the form name or number$/) do
   common_page.continue_button.click
 end
 
-When(/^I select I need help with an employment tribunal fee$/) do
-  label = group_one(2).block_label[0]
-
-  expect(label.text).to eq 'I need help with an employment tribunal fee'
-  expect(group_one(2).form_name_et['type']).to eq 'checkbox'
-  group_one(2).form_name_et.click
-  common_page.continue_button.click
-end
-
 When(/^I leave the form name or number blank$/) do
   common_page.continue_button.click
 end

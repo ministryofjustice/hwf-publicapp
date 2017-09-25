@@ -55,18 +55,6 @@ When(/^I enter a case, claim or notice to pay number$/) do
   common_page.continue_button.click
 end
 
-And(/^I enter a employment tribunal number$/) do
-  expect(step_twelve_page.form_label.text).to eq 'Employment tribunal claim number'
-  step_twelve_page.claim_et_identifier.set('012345678')
-  common_page.continue_button.click
-  common_page.continue_button.click
-end
-
-Then(/^I should see help with employment tribunal claim number copy$/) do
-  case_number_copy = step_twelve_page.form_group[1].details_content
-  expect(case_number_copy.p.count).to eq 3
-end
-
 Then(/^I should see help with case number copy$/) do
   case_number_copy = step_twelve_page.form_group[2].details_content
   expect(case_number_copy.p.count).to eq 3

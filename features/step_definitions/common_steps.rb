@@ -43,8 +43,8 @@ When(/^I open '([^\"]*)'$/) do |help|
 end
 
 When(/^I click on '([^\"]*)'$/) do |help|
-  expect(group_common(3).help_with.text).to have_content help
-  group_common(3).help_with.click
+  expect(group_common(2).help_with.text).to have_content help
+  group_common(2).help_with.click
 end
 
 And(/^I click on yes, cancel$/) do

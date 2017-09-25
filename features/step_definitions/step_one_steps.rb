@@ -47,5 +47,5 @@ Then(/^I should see step one label$/) do
 end
 
 Then(/^I see more information about the form name or number$/) do
-  expect(group_one(3).details_content.count).to eq 2
+  expect(group_one(2).details_content.count).to eq 2
 end

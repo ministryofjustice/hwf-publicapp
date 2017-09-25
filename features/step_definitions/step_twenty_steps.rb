@@ -58,29 +58,3 @@ end
 Then(/^I should see point 1 with HWF number$/) do
   expect(step_twenty_page.li[0].text).to have_content 'reference number HWF-000-000'
 end
-
-And(/^I should see point 2 with letter$/) do
-  expect(step_twenty_page.li[1].text).to have_content 'You can copy the letter below'
-  expect(step_twenty_page.li[1].inset.li.count).to eq 5
-  expect(step_twenty_page.li[1].inset.li[0].text).to eq 'Reference: HWF-000-000'
-  expect(step_twenty_page.li[1].inset.li[2].text).to eq 'My employment tribunal claim number is: 012345678.'
-end
-
-And(/^I should see point 3 with addresses$/) do
-  en_cy = step_twenty_page.column_half[0]
-  scotland = step_twenty_page.column_half[1]
-
-  expect(step_twenty_page.list[0].li[7].text).to have_content 'Email or send your letter'
-
-  expect(en_cy.heading_small.text).to eq 'England & Wales'
-  expect(en_cy.ul.email.li[0].text).to eq 'ETHelpwithfees@hmcts.gsi.gov.uk'
-  expect(en_cy.ul.email.li[1].text).to eq '(click for preformatted email)'
-  expect(en_cy.ul.postal_address.text).to have_content 'Post your letter to:'
-  expect(en_cy.ul.postal_address.li.count).to eq 4
-
-  expect(scotland.heading_small.text).to eq 'Scotland'
-  expect(scotland.ul.email.li[0].text).to eq 'GLASGOWET@hmcts.gsi.gov.uk'
-  expect(scotland.ul.email.li[1].text).to eq '(click for preformatted email)'
-  expect(scotland.ul.postal_address.text).to have_content 'Post your letter to:'
-  expect(scotland.ul.postal_address.li.count).to eq 5
-end

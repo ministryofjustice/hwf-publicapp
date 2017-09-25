@@ -10,11 +10,6 @@ Feature: Step twelve page
     When I go to step twelve without skipping step eleven
     Then I should see 'Do you have a case, claim or ‘notice to pay' header
 
-  Scenario: Displays header for people that do need help with an employment tribunal fee
-    Given I need help with an employment tribunal
-    When I go to step twelve by skipping step eleven
-    Then I should see 'Enter your employment tribunal claim number' header
-
   Scenario: Hint for people that do not need help with an employment tribunal fee
     Given I do not need help with an employment tribunal
     When I go to step twelve without skipping step eleven

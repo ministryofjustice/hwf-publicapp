@@ -12,9 +12,7 @@ RSpec.describe QuestionFormFactory do
   end
 
   describe '.get_form' do
-    subject(:get_form) { described_class.get_form(id, online_application) }
-
-    let(:online_application) { build(:online_application) }
+    subject(:get_form) { described_class.get_form(id) }
 
     context 'claim question' do
       let(:id) { :claim }

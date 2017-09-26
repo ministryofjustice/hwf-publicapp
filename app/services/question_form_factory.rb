@@ -26,7 +26,7 @@ class QuestionFormFactory
     IDS.index(id)
   end
 
-  def self.get_form(id, _online_application)
+  def self.get_form(id)
     raise QuestionDoesNotExist unless IDS.include?(id)
 
     class_name = "Forms::#{form_class_name(id)}".constantize

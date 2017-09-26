@@ -2,7 +2,6 @@ module Forms
   class FormName < Base
     attribute :identifier, String
     attribute :unknown, Boolean
-    attribute :et, Boolean
 
     validates :identifier, length: { maximum: 49 }
     validates :identifier, presence: true, unless: 'unknown?'

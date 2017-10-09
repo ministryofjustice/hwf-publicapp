@@ -31,10 +31,6 @@ Feature: Step one page
       When I select I don’t know the form name or number
       Then I am taken to step 2 fee
 
-    Scenario: Selecting I need help with an employment tribunal fee
-      When I select I need help with an employment tribunal fee
-      Then I am taken to step 2 fee
-
     Scenario: Help with form name or number
       When I click on 'Help with form name or number'
       Then I see more information about the form name or number

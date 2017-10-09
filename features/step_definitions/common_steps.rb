@@ -2,11 +2,6 @@ def group_common(index)
   common_page.content.form_group[index]
 end
 
-Given(/^I need help with an employment tribunal$/) do
-  step 'I visit the page for step one'
-  step 'I select I need help with an employment tribunal fee'
-end
-
 Given(/^I do not need help with an employment tribunal$/) do
   step 'I visit the page for step one'
   step 'I enter a valid form number'
@@ -43,8 +38,8 @@ When(/^I open '([^\"]*)'$/) do |help|
 end
 
 When(/^I click on '([^\"]*)'$/) do |help|
-  expect(group_common(3).help_with.text).to have_content help
-  group_common(3).help_with.click
+  expect(group_common(2).help_with.text).to have_content help
+  group_common(2).help_with.click
 end
 
 And(/^I click on yes, cancel$/) do

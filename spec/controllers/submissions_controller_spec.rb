@@ -30,14 +30,6 @@ RSpec.describe SubmissionsController, type: :controller do
         expect(storage).to have_received(:submission_result=).with(response)
       end
 
-      context 'when it is an et application' do
-        let(:online_application) { build(:online_application, :et) }
-
-        it 'redirects to the et confirmation page' do
-          expect(response).to redirect_to(et_confirmation_path)
-        end
-      end
-
       context 'when it is a refund application' do
         let(:online_application) { build(:online_application, :refund) }
 

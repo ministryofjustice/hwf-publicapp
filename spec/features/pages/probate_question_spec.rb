@@ -87,24 +87,4 @@ RSpec.feature 'As a user' do
       end
     end
   end
-
-  context 'when completing an ET application' do
-    before do
-      when_they_go_back_to_homepage_and_start_again
-      fill_et_form_name
-      fill_fee
-      fill_marital_status
-      fill_savings_and_investment
-      fill_savings_and_investment_extra
-      fill_benefit
-      fill_dependent
-      fill_income_kind
-      fill_income_range
-      fill_income_amount
-    end
-
-    scenario 'the probate page is not rendered' do
-      expect(page).to have_content 'Enter your employment tribunal claim number'
-    end
-  end
 end

@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
   end
 
   def form
-    @form ||= QuestionFormFactory.get_form(question, online_application)
+    @form ||= QuestionFormFactory.get_form(question)
   end
 
   def form_params

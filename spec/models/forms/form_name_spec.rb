@@ -1,10 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Forms::FormName, type: :model do
-  subject(:form) { described_class.new(identifier: identifier, unknown: unknown, et: et) }
+  subject(:form) { described_class.new(identifier: identifier, unknown: unknown) }
 
   let(:unknown) { false }
-  let(:et) { false }
 
   describe 'validations' do
     describe 'identifier' do
@@ -13,15 +12,7 @@ RSpec.describe Forms::FormName, type: :model do
 
         context 'when the unknown field is false' do
           context 'when the et field is false' do
-            let(:et) { false }
-
             it { is_expected.not_to be_valid }
-          end
-
-          context 'when the et field is true' do
-            let(:et) { true }
-
-            it { is_expected.to be_valid }
           end
         end
 
@@ -67,26 +58,10 @@ RSpec.describe Forms::FormName, type: :model do
           is_expected.to eql(form_name: identifier)
         end
       end
-
-      context 'when the et field is true' do
-        let(:et) { true }
-
-        it 'returns hash with form_name prefixed with ET' do
-          is_expected.to eql(form_name: "ET #{identifier}")
-        end
-      end
     end
 
     context 'when identifier is nil' do
       let(:identifier) { nil }
-
-      context 'when the et field is true' do
-        let(:et) { true }
-
-        it 'returns hash with form_name being ET' do
-          is_expected.to eql(form_name: 'ET')
-        end
-      end
 
       context 'when the et field is false' do
         it 'returns hash with form_name nil' do
@@ -97,14 +72,6 @@ RSpec.describe Forms::FormName, type: :model do
 
     context 'when identifier is blank' do
       let(:identifier) { '  ' }
-
-      context 'when the et field is true' do
-        let(:et) { true }
-
-        it 'returns hash with form_name being ET' do
-          is_expected.to eql(form_name: 'ET')
-        end
-      end
 
       context 'when the et field is false' do
         it 'returns hash with form_name nil' do

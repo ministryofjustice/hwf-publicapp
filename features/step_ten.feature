@@ -3,7 +3,7 @@ Feature: Step ten page
   Scenario: Displays step number
     Given I am a single person on step ten
     Then I should see step 10 of 20
-  
+
   Scenario: Displays header
     Given I am a single person on step ten
     Then I should see 'What’s your total monthly income?' header
@@ -25,12 +25,6 @@ Feature: Step ten page
     And I should see the income list on step ten page:
       | income name                                               |
       | Wages                                                     |
-
-  Scenario: Help with an employment tribunal
-    Given I need help with an employment tribunal
-    And I am on step ten
-    When I enter a valid total monthly income
-    Then I am taken to probate step twelve
 
   Scenario: No help with an employment tribunal
     Given I do not need help with an employment tribunal

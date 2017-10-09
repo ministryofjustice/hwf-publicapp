@@ -119,13 +119,36 @@ module FeatureSteps
     fill_dependent
     fill_income_kind
     fill_income_range(true)
-    fill_et_claim
+    fill_probate
+    fill_claim
     fill_national_insurance
     fill_dob
     fill_personal_detail
     fill_applicant_address
     fill_contact
     when_they_submit_the_application
+  end
+
+  def when_they_apply_for_help_with_et_case_up_to_step_12
+    fill_et_form_name
+    fill_fee
+    fill_marital_status
+    fill_savings_and_investment
+    fill_savings_and_investment_extra
+    fill_benefit
+    fill_dependent
+    fill_income_kind
+    fill_income_range(true)
+    fill_probate
+  end
+
+  def when_they_continue_from_step12_up_to_summary
+    fill_claim
+    fill_national_insurance
+    fill_dob
+    fill_personal_detail
+    fill_applicant_address
+    fill_contact
   end
 
   def then_their_data_is_not_persisted
@@ -192,17 +215,12 @@ module FeatureSteps
   end
 
   def fill_et_form_name
-    check 'form_name_et'
+    fill_in 'form_name_identifier', with: 'ET'
     click_button 'Continue'
   end
 
   def fill_claim
     choose 'claim_default_number_false'
-    click_button 'Continue'
-  end
-
-  def fill_et_claim
-    fill_in 'claim_et_identifier', with: '12345'
     click_button 'Continue'
   end
 

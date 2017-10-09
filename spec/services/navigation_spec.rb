@@ -42,13 +42,6 @@ RSpec.describe Navigation do
         it 'routes to the probate question (skips dependent and income)' do
           is_expected.to eql(question_path(:probate, locale: :en))
         end
-
-        context 'when the application is for ET' do
-          let(:form_name) { 'ET1' }
-          it 'routes to the claim question (skips dependent and income)' do
-            is_expected.to eql(question_path(:claim, locale: :en))
-          end
-        end
       end
 
       context 'when the application is not a benefit one' do

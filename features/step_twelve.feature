@@ -4,26 +4,16 @@ Feature: Step twelve page
     Given I do not need help with an employment tribunal
     When I go to step twelve without skipping step eleven
     Then I should see step 12 of 20
-  
+
   Scenario: Displays header for people that do not need help with an employment tribunal fee
     Given I do not need help with an employment tribunal
     When I go to step twelve without skipping step eleven
     Then I should see 'Do you have a case, claim or ‘notice to pay' header
 
-  Scenario: Displays header for people that do need help with an employment tribunal fee
-    Given I need help with an employment tribunal
-    When I go to step twelve by skipping step eleven
-    Then I should see 'Enter your employment tribunal claim number' header
-
   Scenario: Hint for people that do not need help with an employment tribunal fee
     Given I do not need help with an employment tribunal
     When I go to step twelve without skipping step eleven
     Then I should see hint 'Find this number on letters from the court or tribunal.'
-
-  Scenario: Hint for people that do need help with an employment tribunal fee
-    Given I need help with an employment tribunal
-    When I go to step twelve by skipping step eleven
-    Then I should see hint 'digital submission or letters from the court or tribunal.'
 
   Scenario: Selecting no to do you have a case, claim or notice to pay number
     Given I do not need help with an employment tribunal
@@ -31,23 +21,11 @@ Feature: Step twelve page
     When I select no to do you have a case, claim or notice to pay number
     Then I am taken to step 13 national_insurance
 
-  Scenario: Entering a employment tribunal number
-    Given I need help with an employment tribunal
-    And I go to step twelve by skipping step eleven
-    When I enter a employment tribunal number
-    Then I am taken to step 13 national_insurance
-
   Scenario: Entering a case, claim or notice to pay number
     Given I visit the page for step twelve
     When I select yes to do you have a case, claim or notice to pay number
     And I enter a case, claim or notice to pay number
     Then I am taken to step 13 national_insurance
-
-  Scenario: Help with employment tribunal number
-    Given I need help with an employment tribunal
-    And I go to step twelve by skipping step eleven
-    When I click on help with 'employment tribunal claim number'
-    Then I should see help with employment tribunal claim number copy
 
   Scenario: Help with case number
     Given I do not need help with an employment tribunal

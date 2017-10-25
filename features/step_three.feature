@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Step three page
 
   Background: Navigating to the page for step three

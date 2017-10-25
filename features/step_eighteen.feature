@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Step eighteen page
 
   Background: Navigating to the page for step eighteen

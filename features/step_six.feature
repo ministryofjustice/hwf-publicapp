@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Step six page
 
   Background: Navigating to the page for step six

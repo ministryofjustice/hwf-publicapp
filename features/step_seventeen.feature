@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Step seventeen page
 
   Background: Navigating to the page for step seventeen

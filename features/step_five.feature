@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Step five page
 
   Scenario: Displays step number

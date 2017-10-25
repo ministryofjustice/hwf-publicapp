@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Step seven page
 
   Background: Navigating to the page for step seven

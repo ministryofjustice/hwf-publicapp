@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Step eight page
 
   Scenario: Displays step number

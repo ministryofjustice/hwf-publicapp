@@ -1,4 +1,4 @@
-@hwf_submit_application
+@hwf_submit_application @e2e
 
 Feature: Step twenty page
 

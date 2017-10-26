@@ -11,6 +11,10 @@ Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, js_errors: false, timeout: 60)
 end
 
+Capybara.register_driver :accessibility do |app|
+  Capybara::Accessible::Driver.new(app)
+end
+
 Capybara.register_driver :saucelabs do |app|
   browser = Settings.saucelabs.browsers.send(Settings.saucelabs.browser).to_h
 
@@ -46,7 +50,7 @@ Capybara::Screenshot.register_filename_prefix_formatter(:cucumber) do |scenario|
 end
 
 Capybara.javascript_driver = Capybara.default_driver
-Capybara.current_driver = Capybara.default_driver
+Capybara.current_driver = Capybara.default_driver = :accessible
 Capybara.app_host = 'http://localhost:3000'
 Capybara.server_host = 'localhost'
 Capybara.server_port = '3000'

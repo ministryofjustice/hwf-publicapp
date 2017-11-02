@@ -1,3 +1,41 @@
+require 'capybara/accessible' if ENV['ACCESSIBLE'] == 'true'
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, js_errors: false, timeout: 60)
+end
+
+Capybara.register_driver :saucelabs do |app|
+  browser = Settings.saucelabs.browsers.send(Settings.saucelabs.browser).to_h
+  accessible_selenium_adapter_for do
+    Capybara::Selenium::Driver.new(app, browser: :remote, url: Settings.saucelabs.url, desired_capabilities: browser)
+  end
+end
+
+Capybara.register_driver :firefox do |app|
+  profile = Selenium::WebDriver::Firefox::Profile.new
+  profile['browser.cache.disk.enable'] = false
+  profile['browser.cache.memory.enable'] = false
+  accessible_selenium_adapter_for do
+    Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
+  end
+end
+
+Capybara.register_driver :chrome do |app|
+  accessible_selenium_adapter_for do
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+  end
+end
+
+def accessible_selenium_adapter_for
+  driver = yield
+  if ENV['ACCESSIBLE'] == 'true'
+    adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
+    Capybara::Accessible.setup(driver, adaptor)
+  else
+    driver
+  end
+end
+
 Capybara.configure do |config|
   driver = ENV['DRIVER']&.to_sym || :poltergeist
   config.default_driver = driver
@@ -5,31 +43,6 @@ Capybara.configure do |config|
   config.match = :prefer_exact
   config.ignore_hidden_elements = false
   config.visible_text_only = true
-end
-
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_errors: false, timeout: 60)
-end
-
-Capybara.register_driver :accessibility do |app|
-  Capybara::Accessible::Driver.new(app)
-end
-
-Capybara.register_driver :saucelabs do |app|
-  browser = Settings.saucelabs.browsers.send(Settings.saucelabs.browser).to_h
-
-  Capybara::Selenium::Driver.new(app, browser: :remote, url: Settings.saucelabs.url, desired_capabilities: browser)
-end
-
-Capybara.register_driver :firefox do |app|
-  profile = Selenium::WebDriver::Firefox::Profile.new
-  profile['browser.cache.disk.enable'] = false
-  profile['browser.cache.memory.enable'] = false
-  Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
-end
-
-Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
 if ENV.key?('CIRCLE_ARTIFACTS')
@@ -50,7 +63,7 @@ Capybara::Screenshot.register_filename_prefix_formatter(:cucumber) do |scenario|
 end
 
 Capybara.javascript_driver = Capybara.default_driver
-Capybara.current_driver = Capybara.default_driver = :accessible
+Capybara.current_driver = Capybara.default_driver
 Capybara.app_host = 'http://localhost:3000'
 Capybara.server_host = 'localhost'
 Capybara.server_port = '3000'

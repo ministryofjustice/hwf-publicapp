@@ -37,7 +37,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara-accessible', '~> 0.2.1'
+  gem 'capybara-accessible', '~> 0.2.1', require: false
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'chromedriver-helper', '~> 1.1'

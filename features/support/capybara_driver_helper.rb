@@ -1,11 +1,4 @@
-Capybara.configure do |config|
-  driver = ENV['DRIVER']&.to_sym || :poltergeist
-  config.default_driver = driver
-  config.default_max_wait_time = 30
-  config.match = :prefer_exact
-  config.ignore_hidden_elements = false
-  config.visible_text_only = true
-end
+require 'capybara/accessible' if ENV['ACCESSIBLE'] == 'true'
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, js_errors: false, timeout: 60)
@@ -13,19 +6,43 @@ end
 
 Capybara.register_driver :saucelabs do |app|
   browser = Settings.saucelabs.browsers.send(Settings.saucelabs.browser).to_h
-
-  Capybara::Selenium::Driver.new(app, browser: :remote, url: Settings.saucelabs.url, desired_capabilities: browser)
+  accessible_selenium_adapter_for do
+    Capybara::Selenium::Driver.new(app, browser: :remote, url: Settings.saucelabs.url, desired_capabilities: browser)
+  end
 end
 
 Capybara.register_driver :firefox do |app|
   profile = Selenium::WebDriver::Firefox::Profile.new
   profile['browser.cache.disk.enable'] = false
   profile['browser.cache.memory.enable'] = false
-  Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
+  accessible_selenium_adapter_for do
+    Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
+  end
 end
 
 Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
+  accessible_selenium_adapter_for do
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+  end
+end
+
+def accessible_selenium_adapter_for
+  driver = yield
+  if ENV['ACCESSIBLE'] == 'true'
+    adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
+    Capybara::Accessible.setup(driver, adaptor)
+  else
+    driver
+  end
+end
+
+Capybara.configure do |config|
+  driver = ENV['DRIVER']&.to_sym || :poltergeist
+  config.default_driver = driver
+  config.default_max_wait_time = 30
+  config.match = :prefer_exact
+  config.ignore_hidden_elements = false
+  config.visible_text_only = true
 end
 
 if ENV.key?('CIRCLE_ARTIFACTS')

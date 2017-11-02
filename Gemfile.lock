@@ -54,6 +54,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-accessible (0.2.1)
+      capybara (~> 2.0)
     capybara-screenshot (1.0.14)
       capybara (>= 1.0, < 3)
       launchy
@@ -328,6 +330,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  capybara-accessible (~> 0.2.1)
   capybara-screenshot
   chromedriver-helper (~> 1.1)
   codeclimate-test-reporter
@@ -366,4 +369,4 @@ DEPENDENCIES
   zendesk_api
 
 BUNDLED WITH
-   1.15.1
+   1.16.0.pre.2

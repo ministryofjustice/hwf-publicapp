@@ -1,0 +1,20 @@
+version: "3.1"
+services:
+  zap:
+    image: owasp/zap2docker-stable
+    command: ./zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true -config 'api.addrs.addr.name=.*' -config 'api.addrs.addr.regex=true'
+
+  test-security:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    environment:
+      APP_HOST: "http://zap:8080"
+      ZAP_PROXY: "zap"
+      ZAP_PROXY_PORT: "8080"
+      CAPYBARA_SERVER_HOST: test-security
+    command: ./run_zap_tests.sh
+    links:
+      - zap
+    ports:
+      - 3000:3000

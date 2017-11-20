@@ -1,11 +1,6 @@
-Given(/^I launch owasp zap for a scan$/) do
-  launch_owasp_zap
-end
-
 # rubocop:disable Metrics/BlockLength
 When(/^I take the happy path through steps 1 to 20$/) do
   # step one
-  step_one_page.load_page
   group_one(0).form_name_identifier.set('C100')
   common_page.continue_button.click
   # step two
@@ -63,11 +58,5 @@ When(/^I take the happy path through steps 1 to 20$/) do
   common_page.button.click
   # step twenty
   common_page.button.click
-  expect(current_path).to eq '/'
-  sleep 20
 end
 # rubocop:enable Metrics/BlockLength
-
-Then(/^I should be able to see security warnings$/) do
-  security_warnings
-end

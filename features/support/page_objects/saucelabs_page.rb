@@ -3,8 +3,4 @@ class SaucelabsPage < BasePage
   section :income_sources, '.income-sources' do
     elements :block_label, '.block-label'
   end
-
-  def load_page(page_version = nil)
-    load(v: page_version)
-  end
 end

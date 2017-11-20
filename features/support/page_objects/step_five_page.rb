@@ -8,8 +8,4 @@ class StepFivePage < BasePage
       element :extra_amount, '#savings_and_investment_extra_amount'
     end
   end
-
-  def load_page(page_version = nil)
-    load(v: page_version)
-  end
 end

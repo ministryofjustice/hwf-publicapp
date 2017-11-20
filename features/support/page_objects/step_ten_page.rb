@@ -7,8 +7,4 @@ class StepTenPage < BasePage
       element :income_amount, '#income_amount_amount'
     end
   end
-
-  def load_page(page_version = nil)
-    load(v: page_version)
-  end
 end

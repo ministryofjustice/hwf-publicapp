@@ -11,8 +11,4 @@ class StepTwelvePage < BasePage
       elements :p, 'p'
     end
   end
-
-  def load_page(page_version = nil)
-    load(v: page_version)
-  end
 end

@@ -12,8 +12,4 @@ class StepEighteenPage < BasePage
     end
   end
   element :submit_button, 'input.button'
-
-  def load_page(page_version = nil)
-    load(v: page_version)
-  end
 end

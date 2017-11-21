@@ -12,8 +12,7 @@ Then(/^I should see the content for step one$/) do
   expect(step_one_page.content).to have_hint
   expect(group_one(0)).to have_label
   expect(group_one(1)).to have_block_label
-  expect(group_one(2)).to have_block_label
-  expect(group_common(3)).to have_help_with
+  expect(group_common(2)).to have_help_with
   group_one(0).form_name_identifier.set('C100')
   common_page.continue_button.click
 end

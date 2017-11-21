@@ -5,8 +5,4 @@ class StepNineteenPage < BasePage
     elements :li, 'ol > li'
     element :hwf_ref, '.hwf-ref'
   end
-
-  def load_page(page_version = nil)
-    load(v: page_version)
-  end
 end

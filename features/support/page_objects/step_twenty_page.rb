@@ -27,8 +27,4 @@ class StepTwentyPage < BasePage
   sections :list, '.list' do
     elements :li, 'li'
   end
-
-  def load_page(page_version = nil)
-    load(v: page_version)
-  end
 end

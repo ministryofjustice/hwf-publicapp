@@ -28,8 +28,4 @@ class CommonPage < BasePage
   element :js_print, '.js-print'
   element :continue_button, '#continue-button'
   element :button, '.button'
-
-  def load_page(page_version = nil)
-    load(v: page_version)
-  end
 end

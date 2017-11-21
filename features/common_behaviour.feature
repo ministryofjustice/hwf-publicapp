@@ -1,7 +1,7 @@
 Feature: Common behaviour
 
   Background: Navigating to the page for step one
-    Given I visit the page for step one
+    Given I am on the page for step one
 
   Scenario: Please note is displayed
     Then I should see the please note copy

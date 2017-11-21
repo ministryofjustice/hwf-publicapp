@@ -3,24 +3,24 @@ def group_five(index)
 end
 
 Given(/^I am a single person with £3,000 to £15,999 savings/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I select single'
   step 'I select £3,000 to £15,999'
 end
 
 Given(/^I am a single person with over £16,000 savings$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I select single'
   step 'I select £16,000 or more'
 end
 
 Given(/^I am a married person with £3,000 to £15,999 savings$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I select married'
   step 'I select £3,000 to £15,999'

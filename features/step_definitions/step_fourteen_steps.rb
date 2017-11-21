@@ -1,6 +1,6 @@
 Given(/^I visit the page for step fourteen$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I select single'
   step 'I select £0 to £2,999'

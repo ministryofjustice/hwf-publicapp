@@ -3,8 +3,8 @@ def group_common(index)
 end
 
 Given(/^I do not need help with an employment tribunal$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
 end
 
 When(/^I click on cancel application$/) do

@@ -1,6 +1,6 @@
 Given(/^I am a single person on step ten$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I select single'
   step 'I select £0 to £2,999'
@@ -12,8 +12,8 @@ Given(/^I am a single person on step ten$/) do
 end
 
 Given(/^I am a married person on step ten$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I select married'
   step 'I select £0 to £2,999'

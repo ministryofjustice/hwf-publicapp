@@ -3,8 +3,8 @@ def group_two(index)
 end
 
 Given(/^I visit the page for step two$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
 end
 
 When(/^I select no to have you already paid the fee\?$/) do

@@ -1,5 +1,5 @@
 class StepOnePage < BasePage
-  set_url 'session/start'
+  set_url '/session/start'
 
   section :content, '#content' do
     element :hint, '.text'

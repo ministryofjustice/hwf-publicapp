@@ -12,11 +12,11 @@ Feature: Step three page
     Then I should see 'Are you single, married or living with someone and sharing an income?' header
 
   Scenario: Selecting single
-    When I select single
+    When I submit the form as single
     Then I am taken to step 4 savings_and_investment
 
   Scenario: Selecting married
-    When I select married
+    When I submit the form as married
     Then I am taken to step 4 savings_and_investment
 
   Scenario: Help with status

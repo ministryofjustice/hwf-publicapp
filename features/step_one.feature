@@ -12,7 +12,7 @@ Feature: Step one page
       Then I should see 'What court or tribunal fee do you need help with?' header
 
     Scenario: Displays hint
-      Then I should see form hint 'Enter the court or tribunal form number'
+      Then I should see page one hint 'Enter the court or tribunal form number'
 
     Scenario: Displays label
       Then I should see form label 'Form name or number'

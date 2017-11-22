@@ -2,8 +2,8 @@
 
 Feature: Step two page
 
-  Background: Navigating to the page for step two
-    Given I visit the page for step two
+  Background: Page two
+    Given I am on the page for step two
 
   Scenario: Displays step number
     Then I should see step 2 of 20
@@ -12,7 +12,7 @@ Feature: Step two page
     Then I should see 'Have you already paid the fee?' header
 
   Scenario: Displays hint
-    Then I should see step two hint
+    Then I should see step two hint 'apply for a refund for a fee paid'
 
   Scenario: Neither selecting yes or no
     When I click continue
@@ -20,6 +20,7 @@ Feature: Step two page
 
   Scenario: Selecting no to have you already paid the fee?
     When I select no to have you already paid the fee?
+    And I click continue
     Then I am taken to step 3 marital_status
 
   Scenario: Selecting yes but not providing a date

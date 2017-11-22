@@ -6,16 +6,17 @@ Given(/^I visit the page for step three$/) do
   step 'I am on the page for step one'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
+  step 'I click continue'
 end
 
-When(/^I select single$/) do
+When(/^I submit the form as single$/) do
   expect(group_three(0).block_label[0].text).to eq 'Single'
   expect(group_three(0).marital_status_married_false['type']).to eq 'radio'
   group_three(0).marital_status_married_false.click
   common_page.continue_button.click
 end
 
-When(/^I select married$/) do
+When(/^I submit the form as married$/) do
   expect(group_three(0).block_label[1].text).to have_content 'Married'
   expect(group_three(0).marital_status_married_true['type']).to eq 'radio'
   group_three(0).marital_status_married_true.click

@@ -2,7 +2,7 @@ def group_two(index)
   step_two_page.content.form_group[index]
 end
 
-Given(/^I visit the page for step two$/) do
+Given(/^I am on the page for step two$/) do
   step 'I am on the page for step one'
   step 'I submit the form with a valid form number'
 end
@@ -10,7 +10,6 @@ end
 When(/^I select no to have you already paid the fee\?$/) do
   expect(step_two_page.content.block_label[0].text).to eq 'No'
   group_two(0).fee_paid_false.click
-  common_page.continue_button.click
 end
 
 When(/^I select yes to have you already paid the fee\?$/) do
@@ -18,8 +17,8 @@ When(/^I select yes to have you already paid the fee\?$/) do
   group_two(0).fee_paid_true.click
 end
 
-Then(/^I should see step two hint$/) do
-  expect(step_two_page.content.text.p.text).to have_content 'apply for a refund for a fee paid'
+Then(/^I should see step two hint '([^\"]*)'$/) do |hint|
+  expect(step_two_page.content.text.p.text).to have_content hint
 end
 
 And(/^the date I enter is within the last three months$/) do

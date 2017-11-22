@@ -29,7 +29,7 @@ When(/^I try to submit the form with the form name or number left blank$/) do
   common_page.continue_button.click
 end
 
-Then(/^I should see form hint '([^\"]*)'$/) do |hint|
+Then(/^I should see page one hint '([^\"]*)'$/) do |hint|
   expect(step_one_page.content.hint.text).to have_content hint
 end
 

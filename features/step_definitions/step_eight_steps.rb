@@ -10,7 +10,7 @@ Given(/^I am a single person on step eight$/) do
   step 'I submit the form as single'
   step 'I submit the form with £0 to £2,999 checked'
   step 'I submit the form with no I do not receive one of the benefits listed'
-  step 'I select no to do you have any children'
+  step 'I submit the form with no I do not have any children'
 end
 
 Given(/^I am a married person on step eight$/) do
@@ -21,7 +21,7 @@ Given(/^I am a married person on step eight$/) do
   step 'I submit the form as married'
   step 'I submit the form with £0 to £2,999 checked'
   step 'I submit the form with no I do not receive one of the benefits listed'
-  step 'I select no to do you have any children'
+  step 'I submit the form with no I do not have any children'
 end
 
 When(/^I select wages from income list$/) do

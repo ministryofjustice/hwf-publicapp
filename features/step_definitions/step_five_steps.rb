@@ -32,12 +32,12 @@ And(/^I am on the page for step five with £3,000 to £15,999 in savings$/) do
 end
 
 When(/^I select yes to are you 61 years old or over\?$/) do
-  expect(group_five(0).block_label[0].text).to eq 'Yes'
+  expect(group_five(0)).to have_yes
   group_five(0).over_61_true.click
 end
 
 When(/^I select no to are you 61 years old or over\?$/) do
-  expect(group_five(0).block_label[1].text).to eq 'No'
+  expect(group_five(0)).to have_no
   group_five(0).over_61_false.click
 end
 

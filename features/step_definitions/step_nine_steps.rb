@@ -10,7 +10,7 @@ Given(/^I am a single person, no children on step nine$/) do
   step 'I submit the form as single'
   step 'I submit the form with £0 to £2,999 checked'
   step 'I submit the form with no I do not receive one of the benefits listed'
-  step 'I select no to do you have any children'
+  step 'I submit the form with no I do not have any children'
   step 'after selecting wages from income list on step eight'
   step 'after selecting working tax credit from income list on step eight'
   step 'I click continue'
@@ -24,7 +24,7 @@ Given(/^I am a married person, no children on step nine$/) do
   step 'I submit the form as married'
   step 'I submit the form with £0 to £2,999 checked'
   step 'I submit the form with no I do not receive one of the benefits listed'
-  step 'I select no to do you have any children'
+  step 'I submit the form with no I do not have any children'
   step 'after selecting wages from income list on step eight'
   step 'I click continue'
 end

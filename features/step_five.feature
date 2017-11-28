@@ -20,7 +20,7 @@ Feature: Step five page
     Given I am on the page for step five
     When I select yes to are you 61 years old or over?
     And I click continue
-    Then I am taken to step 6 benefit
+    Then I am taken to step 6 - Do you receive any of the following benefits?
 
   Scenario: Single and not 61 years old or over
     Given I am a single person
@@ -40,7 +40,7 @@ Feature: Step five page
     And I select no to are you 61 years old or over?
     And I enter '5000' into the input field
     And I click continue
-    Then I am taken to step 6 benefit
+    Then I am taken to step 6 - Do you receive any of the following benefits?
 
   Scenario: Displays out of the range error message
     Given I am a single person

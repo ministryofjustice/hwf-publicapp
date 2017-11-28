@@ -23,11 +23,11 @@ Feature: Step six page
 
   Scenario: No I am not receiving any benefits from list
     When I submit the form with no I do not receive one of the benefits listed
-    Then I am taken to step 7 dependent
+    Then I am taken to step 7 - Do you have any children living with you, or who you support financially?
 
   Scenario: Yes I am receiving benefits from list
     When I submit the form with yes I am receiving one of the benefits listed
-    Then I am taken to step 11 probate
+    Then I am taken to step 11 - Are you paying a fee for a probate case?
 
   Scenario: Displays error message
     When I click continue

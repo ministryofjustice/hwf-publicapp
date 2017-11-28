@@ -11,7 +11,6 @@ class StepTwentyPage < BasePage
       elements :li, 'ul > li'
     end
   end
-
   sections :column_half, '.column-half' do
     element :heading_small, '.heading-small'
     section :ul, 'ul' do
@@ -23,8 +22,8 @@ class StepTwentyPage < BasePage
       end
     end
   end
-
   sections :list, '.list' do
     elements :li, 'li'
   end
+  element :finish_application_button, 'input[value="Finish application"]'
 end

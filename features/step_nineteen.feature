@@ -18,5 +18,5 @@ Feature: Step nineteen page
     Then I should see save or print this page
 
   Scenario: Continue to step twenty
-    When I press the continue button
+    When I click continue
     Then I go to step twenty

@@ -4,7 +4,7 @@ Given(/^I go to step twenty without skipping step nineteen$/) do
   step 'I submit the form as single'
   step 'I submit the form with £0 to £2,999 checked'
   step 'I submit the form with no I do not receive one of the benefits listed'
-  step 'I select no to do you have any children'
+  step 'I submit the form with no I do not have any children'
   step 'after selecting working tax credit from income list on step eight'
   step 'I click continue'
   step 'I select between'
@@ -17,7 +17,7 @@ Given(/^I go to step twenty without skipping step nineteen$/) do
   step 'I enter my address with postcode'
   step 'I click continue'
   step 'I click submit application and continue'
-  step 'I press the continue button'
+  step 'I click continue'
 end
 
 Given(/^I go to step twenty by skipping step nineteen$/) do
@@ -26,7 +26,7 @@ Given(/^I go to step twenty by skipping step nineteen$/) do
   step 'I submit the form as single'
   step 'I submit the form with £0 to £2,999 checked'
   step 'I submit the form with no I do not receive one of the benefits listed'
-  step 'I select no to do you have any children'
+  step 'I submit the form with no I do not have any children'
   step 'after selecting working tax credit from income list on step eight'
   step 'I click continue'
   step 'I select between'
@@ -37,11 +37,11 @@ Given(/^I go to step twenty by skipping step nineteen$/) do
   step 'I enter my full name'
   step 'I enter my address with postcode'
   step 'I click submit application and continue'
-  step 'I press the continue button'
+  step 'I click continue'
 end
 
 When(/^I click the finish application button$/) do
-  common_page.button.click
+  step_twenty_page.finish_application_button.click
 end
 
 Then(/^I am taken to the thank you page$/) do

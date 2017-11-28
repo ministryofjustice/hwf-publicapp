@@ -52,7 +52,7 @@ Feature: Step nine page
   Scenario: Selecting the less than range
     Given I am a single person, no children on step nine
     When I select less than
-    Then I am taken to step 11 probate
+    Then I am taken to step 11 - Are you paying a fee for a probate case?
 
   Scenario: Selecting the between range
     Given I am a single person, no children on step nine
@@ -62,7 +62,7 @@ Feature: Step nine page
   Scenario: Selecting the more than range
     Given I am a single person, no children on step nine
     When I select more than
-    Then I am taken to step 11 probate
+    Then I am taken to step 11 - Are you paying a fee for a probate case?
 
   Scenario: Displays error message
     Given I am a single person, no children on step nine

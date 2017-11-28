@@ -114,9 +114,9 @@ Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
   expect(hint_group.text).to have_content hint
 end
 
-Then(/^I am taken to step (\d+) ([^\"]*)$/) do |step, url|
+Then(/^I am taken to step (\d+) - ([^\"]*)$/) do |step, title|
   expect(common_page.content.p.text).to have_content step
-  expect(current_path).to eq "/questions/#{url}"
+  expect(common_page.content.h1.text).to eq title
 end
 
 Then(/^I am taken to probate step twelve$/) do

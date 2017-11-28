@@ -61,7 +61,7 @@ Feature: Step eight page
   Scenario: No income
     Given I am a single person on step eight
     When I select no income
-    Then I am taken to step 11 probate
+    Then I am taken to step 11 - Are you paying a fee for a probate case?
 
   Scenario: Displays error message
     Given I am a single person on step eight

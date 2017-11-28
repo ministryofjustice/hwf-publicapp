@@ -16,7 +16,7 @@ Feature: Step thirteen page
 
   Scenario: Entering a valid national insurance number
     When I enter a valid national insurance number
-    Then I am taken to step 14 dob
+    Then I am taken to step 14 - What is your date of birth?
 
   Scenario: If you don't know your national insurance number
     When I click on if you don't know your national insurance number

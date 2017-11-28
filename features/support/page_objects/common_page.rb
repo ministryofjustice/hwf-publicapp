@@ -26,6 +26,5 @@ class CommonPage < BasePage
   end
   elements :error_message, '.error-message'
   element :js_print, '.js-print'
-  element :continue_button, '#continue-button'
-  element :button, '.button'
+  element :continue_button, 'input[value="Continue"]'
 end

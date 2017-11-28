@@ -12,18 +12,15 @@ Feature: Step one page
       Then I should see 'What court or tribunal fee do you need help with?' header
 
     Scenario: Displays hint
-      Then I should see page one hint 'Enter the court or tribunal form number'
-
-    Scenario: Displays label
-      Then I should see form label 'Form name or number'
+      Then I should see hint 'Enter the court or tribunal form number'
 
     Scenario: Entering valid form number
       When I submit the form with a valid form number
-      Then I am taken to step 2 fee
+      Then I am taken to step 2 - Have you already paid the fee?
 
     Scenario: Entering a valid form name
       When I submit the form with a valid form name
-      Then I am taken to step 2 fee
+      Then I am taken to step 2 - Have you already paid the fee?
 
     Scenario: Leaving form name or number blank
       When I try to submit the form with the form name or number left blank
@@ -31,7 +28,7 @@ Feature: Step one page
 
     Scenario: Selecting I don’t know the form name or number
       When I submit the form with I don’t know the form name or number checked
-      Then I am taken to step 2 fee
+      Then I am taken to step 2 - Have you already paid the fee?
 
     Scenario: Help with form name or number
       When I click on 'Help with form name or number'

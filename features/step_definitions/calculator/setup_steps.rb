@@ -17,5 +17,5 @@ And(/^savings and investment amount of (.*)$/) do |capital|
 end
 
 And(/^civil partnership status is (.*)$/) do |status|
-  user.civil_partnership_status = status
+  user.marital_status = status
 end

@@ -11,3 +11,8 @@ end
 def calculator_start_page
   @calculator_start_page ||= ::Calculator::StartPage.new
 end
+
+def calculator_marital_status_page
+  @calculator_marital_status_page ||= ::Calculator::MaritalStatusPage.new
+end
+

@@ -37,7 +37,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
+  gem 'capybara', '~> 2.15'
   gem 'capybara-screenshot'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'codeclimate-test-reporter', require: nil

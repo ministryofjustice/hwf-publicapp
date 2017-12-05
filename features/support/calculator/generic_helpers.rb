@@ -9,10 +9,10 @@ end
 # rubocop:enable Style/TrivialAccessors
 
 def calculator_start_page
-  @calculator_start_page ||= ::Calculator::StartPage.new
+  @calculator_start_page ||= ::AppTest::En::Calculator::StartPage.new
 end
 
 def calculator_marital_status_page
-  @calculator_marital_status_page ||= ::Calculator::MaritalStatusPage.new
+  @calculator_marital_status_page ||= ::AppTest::En::Calculator::MaritalStatusPage.new
 end
 

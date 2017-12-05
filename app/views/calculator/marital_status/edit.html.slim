@@ -1,8 +1,7 @@
 div.calculator.marital_status
   h1 How much help with fees will I receive?
-  = form_for @form, as: :marital_status, url: calculator_marital_status_url, method: :patch do |f|
+  = form_for @form, as: :calculation, url: calculator_marital_status_url, method: :patch do |f|
     .form-group class=('error' if @form.errors.any?)
-      = f.hidden_field :married, value: nil
       - if true
         span.error-message#married = 'errors'
       fieldset
@@ -22,11 +21,11 @@ div.calculator.marital_status
                 li = 'item_1'
 
         label.block-label for="marital_status_married_false"
-          = f.radio_button :married, 'false'
+          = f.radio_button :marital_status, 'single'
           = 'Single'
 
         label.block-label for="marital_status_married_true"
-          = f.radio_button :married, 'true'
+          = f.radio_button :marital_status, 'sharing_income'
           = 'Married or living with someone'
     .form-groupq
       = f.submit 'Next step', class: 'button'

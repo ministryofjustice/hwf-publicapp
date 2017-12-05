@@ -10,5 +10,11 @@ module Calculator
       end
     end
 
+    describe 'PATCH #update' do
+      it 'has not been written yet' do
+        boom!
+      end
+    end
+
   end
 end

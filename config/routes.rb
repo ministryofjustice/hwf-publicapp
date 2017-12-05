@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resource :help_request, only: %i[new create], path: 'ask-for-help'
 
   namespace :calculator do
-    root 'home#index'
+    root controller: :marital_status, action: :home
     resource :marital_status, controller: :marital_status, only: [:edit, :update]
   end
 

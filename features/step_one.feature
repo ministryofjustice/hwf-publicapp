@@ -11,9 +11,6 @@ Feature: Step one page
     Scenario: Displays header
       Then I should see 'What court or tribunal fee do you need help with?' header
 
-    Scenario: Displays hint
-      Then I should see hint 'Enter the court or tribunal form number'
-
     Scenario: Entering valid form number
       When I submit the form with a valid form number
       Then I am taken to step 2 - Have you already paid the fee?
@@ -34,5 +31,5 @@ Feature: Step one page
       When I click on 'Help with form name or number'
       Then I see more information about the form name or number
 
-    Scenario: Please note is displayed
-      Then I should see the please note copy
+    Scenario: Displays please note timeout
+      Then I should see the please note timeout

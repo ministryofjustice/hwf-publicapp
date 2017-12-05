@@ -14,14 +14,6 @@ Feature: Step eight page
     Given I am a married person on step eight
     Then I should see 'What kind of income do you and your partner receive?' header
 
-  Scenario: Displays single person hint
-    Given I am a single person on step eight
-    Then I should see single person hint 'Choose the different types of income you receive.'
-
-  Scenario: Displays married person hint
-    Given I am a married person on step eight
-    Then I should see married person hint 'Choose the different types of income you and your partner receive.'
-
   Scenario: Displays income lists for a single person
     Given I am a single person on step eight
     Then I should see an income list:
@@ -60,7 +52,7 @@ Feature: Step eight page
 
   Scenario: No income
     Given I am a single person on step eight
-    When I select no income
+    When I submit the form with no income checked
     Then I am taken to step 11 - Are you paying a fee for a probate case?
 
   Scenario: Displays error message

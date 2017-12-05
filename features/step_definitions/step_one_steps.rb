@@ -4,6 +4,12 @@ end
 
 Given(/^I am on the page for step one$/) do
   step_one_page.load_page
+  expect(step_one_page.content).to have_enter_court_hint
+end
+
+Then(/^I should see the please note timeout$/) do
+  expect(step_one_page.content).to have_please_note
+  expect(step_one_page.content).to have_timeout
 end
 
 When(/^I submit the form with a valid form number$/) do

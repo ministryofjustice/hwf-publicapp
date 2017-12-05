@@ -12,31 +12,34 @@ Given(/^I am on the page for step six$/) do
 end
 
 When(/^I submit the form with yes I am receiving one of the benefits listed$/) do
-  expect(group_six(0).block_label[1].text).to eq 'Yes, I am receiving one of the benefits listed'
+  expect(group_six(0)).to have_yes
   group_six(0).benefits_true.click
   common_page.continue_button.click
 end
 
 When(/^I submit the form with no I do not receive one of the benefits listed$/) do
-  expect(group_six(0).block_label[0].text).to eq 'No'
+  expect(group_six(0)).to have_no
   group_six(0).benefits_false.click
   common_page.continue_button.click
 end
 
 Then(/^I should see the benefits list:$/) do |benefits|
-  benefit_group = step_six_page.content.text[0]
-  expect(benefit_group.p[0].text).to have_content 'contact the Department for Work and Pensions'
+  expect(step_six_page.content).to have_benefits_text
   benefits.rows.each_with_index do |benefit, index|
-    expect(benefit_group.li[index].text).to eq benefit[0]
+    expect(step_six_page.content.li[index].text).to eq benefit[0]
   end
 end
 
 Then(/^I should see help with benefits copy$/) do
-  first_heading = group_six(1).details_content.heading_small[0].text
-  second_heading = group_six(1).details_content.heading_small[1].text
-
-  expect(first_heading).to have_content 'recently started receiving one of these benefits'
-  expect(second_heading).to have_content 'Benefits with similar names'
-  expect(group_six(1).details_content.ul[0].li.count).to eq 6
-  expect(group_six(1).details_content.ul[0].hint.count).to eq 4
+  expect(group_six(1)).to have_help_with_benefits
+  expect(group_six(1)).to have_recently_receiving_heading
+  expect(group_six(1)).to have_provide_a_letter
+  expect(group_six(1)).to have_similar_names_heading
+  expect(group_six(1)).to have_benefits_with_similar_names
+  expect(group_six(1)).to have_job_seekers
+  expect(group_six(1)).to have_employment_support
+  expect(group_six(1)).to have_pension_credit
+  expect(group_six(1)).to have_universal_credit
+  expect(group_six(1)).to have_laa_assistance
+  expect(group_six(1)).to have_laa_representation
 end

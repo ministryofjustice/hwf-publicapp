@@ -11,6 +11,7 @@ Given(/^I am a single person on step eight$/) do
   step 'I submit the form with £0 to £2,999 checked'
   step 'I submit the form with no I do not receive one of the benefits listed'
   step 'I submit the form with no I do not have any children'
+  expect(step_eight_page.content).to have_choose_income_single
 end
 
 Given(/^I am a married person on step eight$/) do
@@ -22,28 +23,16 @@ Given(/^I am a married person on step eight$/) do
   step 'I submit the form with £0 to £2,999 checked'
   step 'I submit the form with no I do not receive one of the benefits listed'
   step 'I submit the form with no I do not have any children'
+  expect(step_eight_page.content).to have_choose_income_married
 end
 
-When(/^I select wages from income list$/) do
-  expect(group_eight(0).block_label[0].text).to eq 'Wages'
-  group_eight(0).block_label[0].click
-end
-
-And(/^I select working tax credit from income list$/) do
-  expect(group_eight(0).block_label[2].text).to eq 'Working Tax Credit'
-  group_eight(0).block_label[2].click
-  common_page.continue_button.click
-end
-
-When(/^I select no income$/) do
-  group_eight(0).input[12].click
+When(/^I submit the form with no income checked$/) do
+  group_eight(0).no_income.click
   common_page.continue_button.click
 end
 
 When(/^after selecting wages from income list on step eight$/) do
-  your_income = step_eight_page.content.form_group[0]
-  expect(your_income.block_label[0].text).to eq 'Wages'
-  your_income.block_label[0].click
+  group_eight(0).wages.click
 end
 
 Then(/^I should see an income list:$/) do |incomes|
@@ -55,8 +44,8 @@ Then(/^I should see an income list:$/) do |incomes|
 end
 
 Then(/^I should see an income list for myself and my partner:$/) do |incomes|
-  expect(group_eight(0).h3.text).to eq 'Your income'
-  expect(group_eight(1).h3.text).to eq 'Your partner\'s income'
+  expect(group_eight(0)).to have_your_income
+  expect(group_eight(1)).to have_partners_income
   incomes.rows.each_with_index do |income, index|
     expect(group_eight(0).block_label[index].text).to eq income[0]
     expect(group_eight(0).input[index]['type']).to eq 'checkbox'
@@ -64,12 +53,5 @@ Then(/^I should see an income list for myself and my partner:$/) do |incomes|
   incomes.rows.each_with_index do |income, index|
     expect(group_eight(1).block_label[index].text).to eq income[0]
     expect(group_eight(1).input[index]['type']).to eq 'checkbox'
-  end
-end
-
-Then(/^I should see the income list on step nine page:$/) do |incomes|
-  your_income = step_nine_page.content.text
-  incomes.rows.each_with_index do |income, index|
-    expect(your_income.li[index].text).to eq income[0]
   end
 end

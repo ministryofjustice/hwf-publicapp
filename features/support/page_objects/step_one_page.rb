@@ -1,5 +1,6 @@
 class StepOnePage < BasePage
-  set_url 'session/start'
+  set_url '/session/start'
+
   section :content, '#content' do
     element :enter_court_hint, '.text', text: 'Enter the court or tribunal form number for the court business you need help with, for example ‘C100’, ‘D8’ or ‘notice to appeal’ form.'
     element :please_note, '.text', text: 'Please note'

@@ -27,17 +27,8 @@ if ENV.key?('CIRCLE_ARTIFACTS')
   Capybara.save_and_open_page_path = ENV['CIRCLE_ARTIFACTS']
 end
 
-Capybara::Screenshot.register_driver(:chrome) do |driver, path|
-  driver.browser.save_screenshot(path)
-end
-
 Capybara.register_driver :safari do |app|
   Capybara::Selenium::Driver.new(app, browser: :safari)
-end
-
-Capybara::Screenshot.register_filename_prefix_formatter(:cucumber) do |scenario|
-  title = scenario.title.tr(' ', '-').gsub(%r{/^.*\/cucumber\//}, '')
-  "screenshot_cucumber_#{title}"
 end
 
 Capybara.javascript_driver = Capybara.default_driver

@@ -27,8 +27,8 @@ Rails.application.routes.draw do
   resource :help_request, only: %i[new create], path: 'ask-for-help'
 
   namespace :calculator do
-    root controller: :marital_status, action: :home
-    resource :marital_status, controller: :marital_status, only: [:edit, :update]
+    root controller: :calculation, action: :home
+    resource :calculation, controller: :calculation, only: [:edit, :update]
   end
 
   get 'ping' => 'health_status/ping#show'

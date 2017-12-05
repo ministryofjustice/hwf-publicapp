@@ -1,5 +1,5 @@
 module Calculator
-  class MaritalStatusController < ::ApplicationController
+  class CalculationController < ::ApplicationController
     def edit
       @form = Forms::Calculator::MaritalStatus.new
     end
@@ -16,7 +16,7 @@ module Calculator
     private
 
     def calculation_params
-      params.require(:calculation).permit(:marital_status)
+      params.require(:calculation).permit(:calculation)
     end
   end
 end

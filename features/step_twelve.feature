@@ -21,13 +21,13 @@ Feature: Step twelve page
     Given I do not need help with an employment tribunal
     And I go to step twelve without skipping step eleven
     When I select no to do you have a case, claim or notice to pay number
-    Then I am taken to step 13 national_insurance
+    Then I am taken to step 13 - What is your National Insurance number?
 
   Scenario: Entering a case, claim or notice to pay number
     Given I visit the page for step twelve
     When I select yes to do you have a case, claim or notice to pay number
     And I enter a case, claim or notice to pay number
-    Then I am taken to step 13 national_insurance
+    Then I am taken to step 13 - What is your National Insurance number?
 
   Scenario: Help with case number
     Given I do not need help with an employment tribunal

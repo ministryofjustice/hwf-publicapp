@@ -2,45 +2,47 @@ def group_five(index)
   step_five_page.content.form_group[index]
 end
 
-Given(/^I am a single person with £3,000 to £15,999 savings/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+Given(/^I am on the page for step five$/) do
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
-  step 'I select single'
-  step 'I select £3,000 to £15,999'
+  step 'I click continue'
+  step 'I submit the form as single'
+  step 'I submit the form with £3,000 to £15,999 checked'
 end
 
-Given(/^I am a single person with over £16,000 savings$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+Given(/^I am a single person$/) do
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
-  step 'I select single'
-  step 'I select £16,000 or more'
+  step 'I click continue'
+  step 'I submit the form as single'
 end
 
-Given(/^I am a married person with £3,000 to £15,999 savings$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+Given(/^I am a married person$/) do
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
-  step 'I select married'
-  step 'I select £3,000 to £15,999'
+  step 'I click continue'
+  step 'I submit the form as married'
+end
+
+And(/^I am on the page for step five with £3,000 to £15,999 in savings$/) do
+  step 'I submit the form with £3,000 to £15,999 checked'
 end
 
 When(/^I select yes to are you 61 years old or over\?$/) do
-  expect(group_five(0).block_label[0].text).to eq 'Yes'
+  expect(group_five(0)).to have_yes
   group_five(0).over_61_true.click
-  common_page.continue_button.click
 end
 
 When(/^I select no to are you 61 years old or over\?$/) do
-  expect(group_five(0).block_label[1].text).to eq 'No'
+  expect(group_five(0)).to have_no
   group_five(0).over_61_false.click
-  common_page.continue_button.click
 end
 
 When(/^I enter '(\d+)' into the input field$/) do |savings|
   group_five(1).extra_amount.set(savings)
-  common_page.continue_button.click
 end
 
 Then(/^I should be asked '([^\"]*)'$/) do |question|

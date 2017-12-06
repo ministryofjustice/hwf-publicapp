@@ -2,8 +2,8 @@
 
 Feature: Step two page
 
-  Background: Navigating to the page for step two
-    Given I visit the page for step two
+  Background: Page two
+    Given I am on the page for step two
 
   Scenario: Displays step number
     Then I should see step 2 of 20
@@ -11,16 +11,14 @@ Feature: Step two page
   Scenario: Displays header
     Then I should see 'Have you already paid the fee?' header
 
-  Scenario: Displays hint
-    Then I should see step two hint
-
   Scenario: Neither selecting yes or no
     When I click continue
     Then I should see 'Select whether you've already paid the fee' error message
 
   Scenario: Selecting no to have you already paid the fee?
     When I select no to have you already paid the fee?
-    Then I am taken to step 3 marital_status
+    And I click continue
+    Then I am taken to step 3 - Are you single, married or living with someone and sharing an income?
 
   Scenario: Selecting yes but not providing a date
     When I select yes to have you already paid the fee?
@@ -29,15 +27,15 @@ Feature: Step two page
 
   Scenario: Date within the last 3 months
     When I select yes to have you already paid the fee?
-    And the date I enter is within the last three months
-    Then I am taken to step 3 marital_status
+    And I submit the form with a date thats within the last three months
+    Then I am taken to step 3 - Are you single, married or living with someone and sharing an income?
 
   Scenario: Date exceeding 3 months
     When I select yes to have you already paid the fee?
-    And the date I enter exceeds three months
+    And I submit the form with a date that exceeds three months
     Then I should see 'The application must have been made in the last 3 months' error message
 
   Scenario: Date is in the future
     When I select yes to have you already paid the fee?
-    And the date I enter is in the future
+    And I submit the form with a future date
     Then I should see 'This date can't be in the future' error message

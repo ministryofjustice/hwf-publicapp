@@ -2,8 +2,8 @@
 
 Feature: Step seven page
 
-  Background: Navigating to the page for step seven
-    Given I visit the page for step seven
+  Background: Page seven
+    Given I am on the page for step seven
 
   Scenario: Displays step number
     Then I should see step 7 of 20
@@ -13,12 +13,12 @@ Feature: Step seven page
 
   Scenario: Yes to do you have any children
     When I select yes to do you have any children
-    And I add I have '4' children
-    Then I am taken to step 8 income_kind
+    And I submit the form with '4' children entered into the input field
+    Then I am taken to step 8 - What kind of income do you receive?
 
   Scenario: No to do you have any children
-    When I select no to do you have any children
-    Then I am taken to step 8 income_kind
+    When I submit the form with no I do not have any children
+    Then I am taken to step 8 - What kind of income do you receive?
 
   Scenario: Displays error message
     When I click continue

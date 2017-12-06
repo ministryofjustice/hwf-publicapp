@@ -1,8 +1,8 @@
 class StepNinePage < BasePage
   section :content, '#content' do
-    section :text, '.text' do
-      elements :li, 'li'
-    end
+    element :select_single_income_text, '.text', text: 'Select the monthly amount you receive in income from:'
+    element :select_married_income_text, '.text', text: 'Select the monthly amount you and your partner receive in income from:'
+    elements :li, 'li'
     sections :form_group, '.form-group' do
       elements :block_label, '.block-label'
       element :income_range_less, '#income_range_choice_less'

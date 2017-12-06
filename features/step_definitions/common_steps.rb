@@ -3,8 +3,8 @@ def group_common(index)
 end
 
 Given(/^I do not need help with an employment tribunal$/) do
-  step 'I visit the page for step one'
-  step 'I enter a valid form number'
+  step 'I am on the page for step one'
+  step 'I submit the form with a valid form number'
 end
 
 When(/^I click on cancel application$/) do
@@ -114,9 +114,9 @@ Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
   expect(hint_group.text).to have_content hint
 end
 
-Then(/^I am taken to step (\d+) ([^\"]*)$/) do |step, url|
+Then(/^I am taken to step (\d+) - ([^\"]*)$/) do |step, title|
   expect(common_page.content.p.text).to have_content step
-  expect(current_path).to eq "/questions/#{url}"
+  expect(common_page.content.h1.text).to eq title
 end
 
 Then(/^I am taken to probate step twelve$/) do

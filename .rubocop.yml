@@ -169,6 +169,7 @@ Metrics/BlockLength:
     - 'spec/**/*'
     - 'config/**/*'
     - 'lib/tasks/**/*'
+    - 'features/support/page_objects/**/*'
 
 Layout/EmptyLineAfterMagicComment:
   Enabled: false

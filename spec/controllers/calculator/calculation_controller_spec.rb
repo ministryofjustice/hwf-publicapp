@@ -8,6 +8,9 @@ module Calculator
         get :edit
         expect(response).to have_http_status(:success)
       end
+
+      it 'renders a nil form if no form is provided'
+      it 'renders a defined form if specified'
     end
 
     describe 'PATCH #update' do

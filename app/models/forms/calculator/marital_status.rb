@@ -3,7 +3,7 @@ module Forms
     class MaritalStatus < Base
       attribute :marital_status, String
 
-      validates :marital_status, inclusion: { in: ['single', 'sharing_income'] }
+      validates :marital_status, inclusion: { in: ['single', 'sharing_income'] }, allow_blank: true
 
       private
 

@@ -26,6 +26,18 @@ module Forms
         end
       end
 
+      describe 'id' do
+        it 'returns calculator/marital_status' do
+          expect(form_marital_status.id).to eql 'calculator/marital_status'
+        end
+      end
+
+      describe 'type' do
+        it 'returns :marital_status' do
+          expect(form_marital_status.type).to be :marital_status
+        end
+      end
+
       describe '#export' do
         it 'should export the marital_status' do
           form_marital_status.marital_status = 'sharing_income'

@@ -1,15 +1,18 @@
 module Forms
   module Calculator
-    class Nil < Base
+    class Fee < Base
+      attribute :fee, Float
 
       def type
-        :nil
+        :fee
       end
 
       private
 
       def export_params
-        {}
+        {
+            fee: fee
+        }
       end
     end
   end

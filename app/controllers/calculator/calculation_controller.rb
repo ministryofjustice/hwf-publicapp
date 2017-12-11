@@ -2,7 +2,8 @@ module Calculator
   class CalculationController < ::ApplicationController
     FORM_CLASSES = {
         nil => Forms::Calculator::Nil,
-        marital_status: Forms::Calculator::MaritalStatus
+        marital_status: Forms::Calculator::MaritalStatus,
+        fee: Forms::Calculator::Fee
     }
 
 
@@ -35,7 +36,7 @@ module Calculator
     end
 
     def calculation_params
-      params.require(:calculation).permit(:calculation)
+      params.require(:calculation).permit(:marital_status)
     end
 
     def submit_service

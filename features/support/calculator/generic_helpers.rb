@@ -16,3 +16,7 @@ def calculator_marital_status_page
   @calculator_marital_status_page ||= ::AppTest::En::Calculator::MaritalStatusPage.new
 end
 
+def calculator_court_fee_page
+  @calculator_court_fee_page ||= ::AppTest::En::Calculator::CourtFeePage.new
+end
+

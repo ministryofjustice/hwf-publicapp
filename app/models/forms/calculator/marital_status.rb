@@ -5,6 +5,10 @@ module Forms
 
       validates :marital_status, inclusion: { in: ['single', 'sharing_income'] }, allow_blank: true
 
+      def type
+        :marital_status
+      end
+
       private
 
       def export_params

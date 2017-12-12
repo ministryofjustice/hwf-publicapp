@@ -20,3 +20,11 @@ def calculator_court_fee_page
   @calculator_court_fee_page ||= ::AppTest::En::Calculator::CourtFeePage.new
 end
 
+def calculator_date_of_birth_page
+  @calculator_date_of_birth_page ||= ::AppTest::En::Calculator::DateOfBirthPage.new
+end
+
+def calculator_total_savings_page
+  @calculator_total_savings_page ||= ::AppTest::En::Calculator::TotalSavingsPage.new
+end
+

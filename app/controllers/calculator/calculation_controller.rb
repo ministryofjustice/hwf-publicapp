@@ -3,7 +3,9 @@ module Calculator
     FORM_CLASSES = {
         nil => Forms::Calculator::Nil,
         marital_status: Forms::Calculator::MaritalStatus,
-        fee: Forms::Calculator::Fee
+        fee: Forms::Calculator::Fee,
+        date_of_birth: Forms::Calculator::DateOfBirth,
+        total_savings: Forms::Calculator::TotalSavings
     }
 
 
@@ -40,7 +42,7 @@ module Calculator
     end
 
     def calculation_params
-      params.require(:calculation).permit(:marital_status, :fee)
+      params.require(:calculation).permit(:marital_status, :fee, :date_of_birth, :total_savings)
     end
 
     def submit_service

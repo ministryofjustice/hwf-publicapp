@@ -36,4 +36,5 @@ Feature: Disposable Capital
       And savings and investment amount of 2999
       And civil partnership status is Married
       And I navigate to the calculator savings and investment page
+      And I fill in the calculator savings and investment page
       And I debug

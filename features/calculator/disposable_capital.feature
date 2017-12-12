@@ -52,12 +52,31 @@ Feature: Disposable Capital
     Examples:
       | Marital Status | Age | Court Fee | Capital | Response header 1                           | Response header 2                                                                                                                                                         |
       | Married        | 44  | 2001      | 6999    | You are likely to get help with fees        | With a fee of £2,001 and savings of £6,999 you and your partner should be able to get help with your fees, as long as you receive certain benefits or are on a low income |
-      | Married        | 35  | 2330      | 7001    | You are unlikely to get help with your fees | With a fee of £2,330 and savings of £7,001 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship            |
+      | Married        | 35  | 2330      | 7001    | You are unlikely to get help with your fees | With a fee of £2,330 and savings of £7,001 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship             |
       | Single         | 55  | 2000      | 5000    | You are likely to get help with fees        | With a fee of £2,000 and savings of £5,000 you should be able to get help with your fees, as long as you receive certain benefits or are on a low income                  |
       | Single         | 60  | 2329      | 6000    | You are likely to get help with fees        | With a fee of £2,329 and savings of £6,000 you should be able to get help with your fees, as long as you receive certain benefits or are on a low income                  |
-      | Married        | 44  | 700       | 3000    | You are unlikely to get help with your fees | With a fee of £700 and savings of £3,000 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship              |
+      | Married        | 44  | 700       | 3000    | You are unlikely to get help with your fees | With a fee of £700 and savings of £3,000 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship               |
       | Single         | 61  | 900       | 6500    | You are likely to get help with fees        | With a fee of £900 and savings of £6,500 you should be able to get help with your fees, as long as you receive certain benefits or are on a low income                    |
       | Single         | 70  | 2330      | 7000    | You are likely to get help with fees        | With a fee of £2,330 and savings of £7,000 you should be able to get help with your fees, as long as you receive certain benefits or are on a low income                  |
+
+  Scenario Outline:  61 year old and over test for disposable capital of less than £16,000 and fee band of any amount
+    Given I am <Age> years of age
+    And my court or tribunal fee is <Court Fee>
+    And savings and investment amount of <Capital>
+    And civil partnership status is <Marital Status>
+    And I navigate to the calculator savings and investment page
+    And I fill in the calculator savings and investment page
+    When I click on the Next step button on the calculator savings and investment page
+    Then the calculator response should be "<Response header 1> <Response header 2>"
+    And savings and investment question, answer appended to the calculator Previous answers section
+
+    Examples:
+      | Marital Status | Age | Court Fee | Capital | Response header 1                           | Response header 2                                                                                                                                                |
+      | Married        | 65  | 50000     | 16000   | You are unlikely to get help with your fees | With a fee of £50,000 and savings of £16,000 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship  |
+      | Married        | 80  | 100000    | 16001   | You are unlikely to get help with your fees | With a fee of £100,000 and savings of £16,001 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship |
+      | Single         | 70  | 45000     | 15999   | You are likely to get help with fees        | With a fee of £45,000 and savings of £15,999 you should be able to get help with your fees, as long as you receive certain benefits or are on a low income       |
+      | Single         | 80  | 100       | 15000   | You are likely to get help with fees        | With a fee of £100 and savings of £15,000 you should be able to get help with your fees, as long as you receive certain benefits or are on a low income          |
+      | Married        | 70  | 25000     | 25000   | You are unlikely to get help with your fees | With a fee of £25,000 and savings of £25,000 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship  |
 
   Scenario: DEVELOPMENT
     Given I am 60 years of age

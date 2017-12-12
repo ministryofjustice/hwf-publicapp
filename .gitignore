@@ -28,4 +28,4 @@ selenium-debug.log
 # Ignore IDE configurations
 .idea/
 
-**/.DS_Store
+._.DS_Store

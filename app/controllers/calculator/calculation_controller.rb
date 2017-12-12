@@ -5,25 +5,25 @@ module Calculator
         marital_status: Forms::Calculator::MaritalStatus,
         fee: Forms::Calculator::Fee,
         date_of_birth: Forms::Calculator::DateOfBirth,
-        total_savings: Forms::Calculator::TotalSavings
+        total_savings: Forms::Calculator::TotalSavings,
+        benefits_received: Forms::Calculator::BenefitsReceived
+
     }
 
 
     def home
-      @form = form_class.new
-      session[:calculator_inputs] = {}
+      render locals: { form: form_class.new, current_calculation: current_calculation }
     end
 
     def edit
-      @form = form_class.new
+      render locals: { form: form_class.new, current_calculation: current_calculation }
     end
 
     def update
       @form = form_class.new(calculation_params.to_h)
       if @form.valid?
-        session[:calculator_inputs].merge!(@form.export)
-        submit_service.call(session[:calculator_inputs])
-        handle_calculation
+        calculate(@form.export)
+        handle_calculation_response
       else
         render :new
       end
@@ -31,7 +31,22 @@ module Calculator
 
     private
 
-    def handle_calculation
+    def current_calculation
+      @current_calculation = Calculation.new(session.fetch(:calculation) { {} })
+    end
+
+    def expire_current_calculation
+      @current_calculation = nil
+    end
+
+    def calculate(input_data)
+      data = current_calculation.inputs.merge(input_data)
+      submit_service.call(data)
+      expire_current_calculation
+      session[:calculation] = submit_service.response.as_json
+    end
+
+    def handle_calculation_response
       redirect_to edit_calculator_calculation_url(form: submit_service.response.fields_required.first)
     end
 

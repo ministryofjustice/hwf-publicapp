@@ -28,3 +28,7 @@ def calculator_total_savings_page
   @calculator_total_savings_page ||= ::AppTest::En::Calculator::TotalSavingsPage.new
 end
 
+def any_calculator_page
+  @any_calculator_page ||= ::AppTest::En::Calculator::BasePage.new
+end
+

@@ -1,11 +1,11 @@
 div.calculator.marital_status
   h1 How much help with fees will I receive?
-  = form_for @form, as: :calculation, url: calculator_calculation_url(form: @form.type), method: :patch do |f|
-    .form-group class=('error' if @form.errors.any?)
+  = form_for form, as: :calculation, url: calculator_calculation_url(form: form.type), method: :patch do |f|
+    .form-group class=('error' if form.errors.any?)
       - if true
         span.error-message = 'errors'
       fieldset
-        legend = 'How much do you have in savings and investment combined?'
+        legend = t('calculator.calculation.field_labels.total_savings')
 
         details
           summary = 'Click to reveal more information'

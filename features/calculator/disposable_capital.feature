@@ -30,7 +30,7 @@ Feature: Disposable Capital
     Examples:
       | Marital Status | Age | Court Fee | Capital | Response header 1                           | Response header 2                                                                                                                                                       |
       | Single         | 20  | 500       | 2999    | You are likely to get help with fees        | With a fee of £500 and savings of £2,999 you should be able to get help with your fees, as long as you receive certain benefits or are on a low income                  |
-      | Single         | 60  | 1000      | 3000    | You are unlikely to get help with your fees | With a fee of £1000 and savings of £3,000 it is unlikely that you'll be able to get financial help,  unless you are likely to experience exceptional hardship           |
+      | Single         | 60  | 1000      | 3000    | You are unlikely to get help with your fees | With a fee of £1,000 and savings of £3,000 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship           |
       | Married        | 39  | 600       | 2400    | You are likely to get help with fees        | With a fee of £600 and savings of £2,400 you and your partner should be able to get help with your fees, as long as you receive certain benefits or are on a low income |
 
   Scenario: DEVELOPMENT
@@ -41,5 +41,5 @@ Feature: Disposable Capital
     And I navigate to the calculator savings and investment page
     And I fill in the calculator savings and investment page
     When I click on the Next step button on the calculator savings and investment page
-    Then the calculator response should be "You are unlikely to get help with your fees With a fee of £1000 and savings of £3,000 it is unlikely that you'll be able to get financial help,  unless you are likely to experience exceptional hardship"
+    Then the calculator response should be "You are unlikely to get help with your fees With a fee of £1,000 and savings of £3,000 it is unlikely that you'll be able to get financial help, unless you are likely to experience exceptional hardship"
     And savings and investment question, answer appended to the calculator Previous answers section

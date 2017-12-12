@@ -9,6 +9,12 @@ module Calculator
     # @return [String] The feedback text
     def calculator_feedback_for(calculation)
       if calculation.should_not_get_help
+        [
+            I18n.t('calculator.calculation.feedback.should_not_get_help'),
+            I18n.t('calculator.calculation.feedback.explanation_prefix', fee: number_to_currency(calculation.inputs['fee'], precision: 0, unit: '£'),
+                   total_savings: number_to_currency(calculation.inputs['total_savings'], precision: 0, unit: '£')),
+            I18n.t('calculator.calculation.feedback.explanation.negative')
+        ].join(' ')
 
       elsif calculation.should_get_help
         txt = [
@@ -16,7 +22,7 @@ module Calculator
             I18n.t('calculator.calculation.feedback.explanation_prefix', fee: number_to_currency(calculation.inputs['fee'], precision: 0, unit: '£'),
                    total_savings: number_to_currency(calculation.inputs['total_savings'], precision: 0, unit: '£')),
             I18n.t("calculator.calculation.feedback.subject.#{calculation.inputs['marital_status']}"),
-            I18n.t('calculator.calculation.feedback.explanation')
+            I18n.t('calculator.calculation.feedback.explanation.positive')
         ] + calculator_feedback_explanation(calculation)
         txt.join(' ')
       end

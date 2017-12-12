@@ -9,6 +9,7 @@ module Calculator
 
     def home
       @form = form_class.new
+      session[:calculator_inputs] = {}
     end
 
     def edit
@@ -18,7 +19,8 @@ module Calculator
     def update
       @form = form_class.new(calculation_params.to_h)
       if @form.valid?
-        submit_service.call(@form.export)
+        session[:calculator_inputs].merge!(@form.export)
+        submit_service.call(session[:calculator_inputs])
         handle_calculation
       else
         render :new
@@ -32,11 +34,13 @@ module Calculator
     end
 
     def form_class
-      FORM_CLASSES[params[:form].try(:to_sym)]
+      klass = FORM_CLASSES[params[:form].try(:to_sym)]
+      raise "Unknown form class for '#{params[:form]}'" if klass.nil?
+      klass
     end
 
     def calculation_params
-      params.require(:calculation).permit(:marital_status)
+      params.require(:calculation).permit(:marital_status, :fee)
     end
 
     def submit_service

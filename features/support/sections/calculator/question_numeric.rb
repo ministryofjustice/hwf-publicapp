@@ -2,9 +2,7 @@ module AppTest
   module Calculator
     class QuestionNumeric < ::SitePrism::Section
       element :field, 'input'
-      def set(value)
-        field.set(value)
-      end
+      delegate :set, to: :field
     end
   end
 end

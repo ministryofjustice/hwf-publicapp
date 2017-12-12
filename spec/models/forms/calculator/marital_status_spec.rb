@@ -39,7 +39,7 @@ module Forms
       end
 
       describe '#export' do
-        it 'should export the marital_status' do
+        it 'exports the marital_status' do
           form_marital_status.marital_status = 'sharing_income'
           expect(form_marital_status.export).to eql(marital_status: 'sharing_income')
         end

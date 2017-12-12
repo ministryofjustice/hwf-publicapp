@@ -11,8 +11,8 @@ module Forms
       end
 
       describe '#export' do
-        it 'should export an empty hash' do
-          expect(form.export).to(be_empty.and(be_a Hash))
+        it 'exports an empty hash' do
+          expect(form.export).to(be_empty.and(be_a(Hash)))
         end
       end
     end

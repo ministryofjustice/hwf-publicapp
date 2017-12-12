@@ -15,7 +15,7 @@ module Forms
       end
 
       describe '#export' do
-        it 'should export the benefits' do
+        it 'exports the benefits' do
           form.benefits_received = ['benefit 1', 'benefit 2']
           expect(form.export).to eql(benefits_received: ['benefit 1', 'benefit 2'])
         end

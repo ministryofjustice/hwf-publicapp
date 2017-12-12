@@ -1,15 +1,14 @@
 module Calculator
   class CalculationController < ::ApplicationController
     FORM_CLASSES = {
-        nil => Forms::Calculator::Nil,
-        marital_status: Forms::Calculator::MaritalStatus,
-        fee: Forms::Calculator::Fee,
-        date_of_birth: Forms::Calculator::DateOfBirth,
-        total_savings: Forms::Calculator::TotalSavings,
-        benefits_received: Forms::Calculator::BenefitsReceived
+      nil => Forms::Calculator::Nil,
+      marital_status: Forms::Calculator::MaritalStatus,
+      fee: Forms::Calculator::Fee,
+      date_of_birth: Forms::Calculator::DateOfBirth,
+      total_savings: Forms::Calculator::TotalSavings,
+      benefits_received: Forms::Calculator::BenefitsReceived
 
-    }
-
+    }.freeze
 
     def home
       render locals: { form: form_class.new, current_calculation: current_calculation }

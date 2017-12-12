@@ -11,7 +11,7 @@ module Forms
 
       def export_params
         {
-            fee: fee
+          fee: fee
         }
       end
     end

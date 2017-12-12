@@ -23,7 +23,7 @@ module Forms
 
       def export_params
         {
-            date_of_birth: date_of_birth
+          date_of_birth: date_of_birth
         }
       end
     end

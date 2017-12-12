@@ -3,7 +3,7 @@ module Forms
     class MaritalStatus < Base
       attribute :marital_status, String
 
-      validates :marital_status, inclusion: { in: ['single', 'sharing_income'] }, allow_blank: true
+      validates :marital_status, inclusion: { in: %w[single sharing_income] }, allow_blank: true
 
       def type
         :marital_status
@@ -13,7 +13,7 @@ module Forms
 
       def export_params
         {
-            marital_status: marital_status
+          marital_status: marital_status
         }
       end
     end

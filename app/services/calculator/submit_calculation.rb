@@ -17,8 +17,8 @@ module Calculator
 
     def call(data)
       @cached_response = nil
-      result = RestClient.post "#{@url}/api/calculator/calculation", {calculation: {inputs: data}}.to_json, accept: 'application/json', content_type: 'application/json'
-      if (200..201).include?(result.code)
+      result = RestClient.post "#{@url}/api/calculator/calculation", { calculation: { inputs: data } }.to_json, accept: 'application/json', content_type: 'application/json'
+      if (200..201).cover?(result.code)
         @response = JSON.parse(result.body)
       else
         raise "Something went wrong with the API call"

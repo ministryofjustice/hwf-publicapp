@@ -11,7 +11,7 @@ module Forms
 
       def export_params
         {
-            benefits_received: benefits_received
+          benefits_received: benefits_received
         }
       end
     end

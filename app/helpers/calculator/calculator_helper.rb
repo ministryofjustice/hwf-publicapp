@@ -10,19 +10,19 @@ module Calculator
     def calculator_feedback_for(calculation)
       if calculation.should_not_get_help
         [
-            I18n.t('calculator.calculation.feedback.should_not_get_help'),
-            I18n.t('calculator.calculation.feedback.explanation_prefix', fee: number_to_currency(calculation.inputs['fee'], precision: 0, unit: '£'),
-                   total_savings: number_to_currency(calculation.inputs['total_savings'], precision: 0, unit: '£')),
-            I18n.t('calculator.calculation.feedback.explanation.negative')
+          I18n.t('calculator.calculation.feedback.should_not_get_help'),
+          I18n.t('calculator.calculation.feedback.explanation_prefix', fee: number_to_currency(calculation.inputs['fee'], precision: 0, unit: '£'),
+                                                                       total_savings: number_to_currency(calculation.inputs['total_savings'], precision: 0, unit: '£')),
+          I18n.t('calculator.calculation.feedback.explanation.negative')
         ].join(' ')
 
       elsif calculation.should_get_help
         txt = [
-            I18n.t('calculator.calculation.feedback.should_get_help'),
-            I18n.t('calculator.calculation.feedback.explanation_prefix', fee: number_to_currency(calculation.inputs['fee'], precision: 0, unit: '£'),
-                   total_savings: number_to_currency(calculation.inputs['total_savings'], precision: 0, unit: '£')),
-            I18n.t("calculator.calculation.feedback.subject.#{calculation.inputs['marital_status']}"),
-            I18n.t('calculator.calculation.feedback.explanation.positive')
+          I18n.t('calculator.calculation.feedback.should_get_help'),
+          I18n.t('calculator.calculation.feedback.explanation_prefix', fee: number_to_currency(calculation.inputs['fee'], precision: 0, unit: '£'),
+                                                                       total_savings: number_to_currency(calculation.inputs['total_savings'], precision: 0, unit: '£')),
+          I18n.t("calculator.calculation.feedback.subject.#{calculation.inputs['marital_status']}"),
+          I18n.t('calculator.calculation.feedback.explanation.positive')
         ] + calculator_feedback_explanation(calculation)
         txt.join(' ')
       end
@@ -36,9 +36,9 @@ module Calculator
     # @param [String] field The field that this value is from
     def calculator_auto_format_for(value, field:)
       case value
-        when Float then number_to_currency(value, precision: 0, unit: '£')
-        when Date then value.strftime('%d/%m/%Y')
-        else value
+      when Float then number_to_currency(value, precision: 0, unit: '£')
+      when Date then value.strftime('%d/%m/%Y')
+      else value
       end
     end
 
@@ -47,7 +47,7 @@ module Calculator
     def calculator_feedback_explanation(calculation)
       remaining_fields = calculation.required_fields_affecting_likelyhood
       return [] if remaining_fields.empty?
-      a = [ I18n.t('calculator.calculation.feedback.explanation_suffix') ]
+      a = [I18n.t('calculator.calculation.feedback.explanation_suffix')]
       remaining = remaining_fields.map do |field|
         I18n.t("calculator.calculation.feedback.explanation_suffix_fields.#{field}")
       end

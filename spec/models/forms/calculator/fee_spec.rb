@@ -15,7 +15,7 @@ module Forms
       end
 
       describe '#export' do
-        it 'should export the fee' do
+        it 'exports the fee' do
           form.fee = '10000'
           expect(form.export).to eql(fee: 10000.0)
         end

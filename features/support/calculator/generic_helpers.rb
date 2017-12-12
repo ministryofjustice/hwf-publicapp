@@ -31,4 +31,3 @@ end
 def any_calculator_page
   @any_calculator_page ||= ::AppTest::En::Calculator::BasePage.new
 end
-

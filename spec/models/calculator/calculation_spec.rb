@@ -59,8 +59,8 @@ module Calculator
 
     context '#fields' do
       it 'stores a provided value of any type' do
-        subject = described_class.new fields: { name: :any}
-        expect(subject.fields).to eql({ name: :any })
+        subject = described_class.new fields: { name: :any }
+        expect(subject.fields).to eql(name: :any)
       end
     end
 

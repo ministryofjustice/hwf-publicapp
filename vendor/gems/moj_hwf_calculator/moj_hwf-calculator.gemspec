@@ -18,4 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.2.7.1"
   s.add_dependency "virtus", "~> 1.0"
+  s.add_dependency "slim-rails", "~> 3.1"
+  s.add_dependency "rest-client", "~> 2.0"
+
 end

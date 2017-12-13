@@ -3,6 +3,8 @@ PATH
   specs:
     moj_hwf-calculator (0.0.1)
       rails (~> 4.2.7.1)
+      rest-client (~> 2.0)
+      slim-rails (~> 3.1)
       virtus (~> 1.0)
 
 GEM

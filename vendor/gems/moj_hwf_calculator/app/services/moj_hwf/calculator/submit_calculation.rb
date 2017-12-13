@@ -1,3 +1,4 @@
+require 'rest-client'
 module MojHwf
   module Calculator
     class SubmitCalculation

@@ -12,11 +12,11 @@ module MojHwf
       }.freeze
 
       def home
-        render locals: { form: form_class.new, current_calculation: current_calculation }
+        render locals: {form: form_class.new, current_calculation: current_calculation}
       end
 
       def edit
-        render locals: { form: form_class.new, current_calculation: current_calculation }
+        render locals: {form: form_class.new, current_calculation: current_calculation}
       end
 
       def update
@@ -32,7 +32,7 @@ module MojHwf
       private
 
       def current_calculation
-        @current_calculation = Calculation.new(session.fetch(:calculation) { {} })
+        @current_calculation = Calculation.new(session.fetch(:calculation) {{}})
       end
 
       def expire_current_calculation
@@ -61,8 +61,8 @@ module MojHwf
       end
 
       def submit_service
-        @submit_service ||= SubmitCalculation.new(Config.instance.api_root, Settings.submission.token)
+        @submit_service ||= SubmitCalculation.new(Config.instance.api_root, Config.instance.api_token)
       end
     end
   end
-  end
+end

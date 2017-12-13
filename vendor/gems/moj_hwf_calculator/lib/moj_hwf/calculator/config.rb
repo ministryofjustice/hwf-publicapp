@@ -4,7 +4,7 @@ module MojHwf
     class Config
       include Singleton
 
-      attr_accessor :api_root
+      attr_accessor :api_root, :api_token
     end
   end
 end

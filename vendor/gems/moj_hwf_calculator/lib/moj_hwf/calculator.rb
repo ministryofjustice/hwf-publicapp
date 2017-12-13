@@ -1,4 +1,4 @@
-require 'active_model'
+require "slim-rails"
 require "moj_hwf/calculator/engine"
 require "moj_hwf/calculator/config"
 

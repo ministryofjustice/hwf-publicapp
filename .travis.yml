@@ -17,7 +17,7 @@ addons:
     repo_token: ca58e966ca9664d66925f6837f4b2092de2b5eab7580591e955d3bb8be3b40fa
 script:
 - bundle exec rubocop
-- cd vendor/gems/moj_hwf_calculator; bundle install; bundle exec rspec
+- bash -c "cd vendor/gems/moj_hwf_calculator && bundle install && bundle exec rspec"
 - bundle exec rspec
 - bundle exec cucumber features/*.feature
 after_success:

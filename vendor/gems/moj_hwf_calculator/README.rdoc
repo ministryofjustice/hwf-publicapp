@@ -1,3 +1,27 @@
 = MojHwfCalculator
 
+== Application Testing Using Page Objects
+
+This gem exposes its page objects for use by your application using the following :-
+
+```ruby
+
+require 'moj_hwf/calculator/page_objects'
+
+```
+
+Which then defines the following :-
+
+```
+MojHwf::Calculator::Test::En::BasePage
+MojHwf::Calculator::Test::En::CourtFeePage
+MojHwf::Calculator::Test::En::DateOfBirthPage
+MojHwf::Calculator::Test::En::MaritalStatusPage
+MojHwf::Calculator::Test::En::StartPage
+MojHwf::Calculator::Test::En::TotalSavingsPage
+
+```
+
+along with welsh equivalents coming soon...
+
 This project rocks and uses MIT-LICENSE.

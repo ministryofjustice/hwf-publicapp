@@ -1,3 +1,9 @@
+PATH
+  remote: vendor/gems/moj_hwf_calculator
+  specs:
+    moj_hwf-calculator (0.0.1)
+      rails (~> 4.2.7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -348,6 +354,7 @@ DEPENDENCIES
   govuk_frontend_toolkit (= 4.7.0)
   jquery-rails
   launchy
+  moj_hwf-calculator!
   moj_template (~> 0.23.2)
   nokogiri (~> 1.8.0)
   poltergeist (= 1.15.0)

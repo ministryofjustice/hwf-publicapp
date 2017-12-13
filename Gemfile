@@ -20,6 +20,7 @@ gem 'sass-rails'
 gem 'slim-rails'
 gem 'uglifier', '3.0.0'
 gem 'unicorn'
+gem 'moj_hwf-calculator', path: 'vendor/gems/moj_hwf_calculator', require: 'moj_hwf/calculator'
 
 group :development, :test do
   gem 'factory_girl_rails'

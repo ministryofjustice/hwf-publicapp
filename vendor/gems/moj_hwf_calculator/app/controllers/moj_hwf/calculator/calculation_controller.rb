@@ -61,7 +61,7 @@ module MojHwf
       end
 
       def submit_service
-        @submit_service ||= SubmitCalculation.new(Settings.submission.url, Settings.submission.token)
+        @submit_service ||= SubmitCalculation.new(Config.instance.api_root, Settings.submission.token)
       end
     end
   end

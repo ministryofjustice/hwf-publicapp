@@ -9,16 +9,9 @@ module MojHwf
         @response = nil
       end
 
-      def available?
-        response = RestClient.get "#{@url}/ping.json"
-        response.code == 200
-      rescue
-        false
-      end
-
       def call(data)
         @cached_response = nil
-        result = RestClient.post "#{@url}/api/calculator/calculation", { calculation: { inputs: data } }.to_json, accept: 'application/json', content_type: 'application/json'
+        result = RestClient.post "#{@url}/calculation", { calculation: { inputs: data } }.to_json, accept: 'application/json', content_type: 'application/json'
         if (200..201).cover?(result.code)
           @response = JSON.parse(result.body)
         else

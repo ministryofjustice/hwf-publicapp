@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount MojHwfCalculator::Engine => "/moj_hwf_calculator"
+  mount MojHwf::Calculator::Engine => "/moj_hwf_calculator"
 end

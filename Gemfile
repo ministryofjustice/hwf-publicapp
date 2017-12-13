@@ -28,8 +28,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rubocop', '~>0.49.1', require: true
   gem 'rubocop-rspec', '~>1.10', require: false
-  gem 'ruby-debug-ide'
-  gem 'debase'
 end
 
 group :development do

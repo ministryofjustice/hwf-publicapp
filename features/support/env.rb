@@ -13,7 +13,6 @@ require 'selenium-webdriver'
 
 require_relative './page_objects/base_page'
 
-Dir[File.dirname(__FILE__) + '/sections/**/*.rb'].each { |f| require f }
 Dir[File.dirname(__FILE__) + '/page_objects/**/*.rb'].each { |f| require f }
 
 # Capybara defaults to CSS3 selectors rather than XPath.

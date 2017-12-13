@@ -4,7 +4,7 @@ module MojHwf
       module En
         module Calculator
           class TotalSavingsPage < BasePage
-            section :total_savings, ::AppTest::Calculator::QuestionNumeric, :calculator_question, 'How much do you have in savings and investment combined?'
+            section :total_savings, ::MojHwf::Calculator::Test::QuestionNumericSection, :calculator_question, 'How much do you have in savings and investment combined?'
             element :next_button, :button, 'Next step'
 
             def next

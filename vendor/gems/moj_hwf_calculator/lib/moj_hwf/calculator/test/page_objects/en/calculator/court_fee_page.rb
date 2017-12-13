@@ -3,8 +3,8 @@ module MojHwf
     module Test
       module En
         module Calculator
-          class DateOfBirthPage < BasePage
-            section :date_of_birth, ::AppTest::Calculator::QuestionDate, :calculator_question, 'What is your date of birth?'
+          class CourtFeePage < BasePage
+            section :fee, ::MojHwf::Calculator::Test::QuestionNumericSection, :calculator_question, 'How much is the court or tribunal fee you have to pay (or have paid within the last 3 months)?'
             element :next_button, :button, 'Next step'
 
             def next

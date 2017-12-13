@@ -3,8 +3,8 @@ module MojHwf
     module Test
       module En
         module Calculator
-          class MaritalStatusPage < BasePage
-            section :marital_status, ::AppTest::Calculator::QuestionRadioList, :calculator_question, 'Are you single, married or living with someone and sharing an income?'
+          class DateOfBirthPage < BasePage
+            section :date_of_birth, ::MojHwf::Calculator::Test::QuestionDateSection, :calculator_question, 'What is your date of birth?'
             element :next_button, :button, 'Next step'
 
             def next

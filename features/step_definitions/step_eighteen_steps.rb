@@ -16,7 +16,7 @@ Given(/^I visit the page for step eighteen$/) do
   step 'I enter a valid date of birth'
   step 'I enter my full name'
   step 'I enter my address with postcode'
-  step 'I click continue'
+  step 'I enter a valid email address'
 end
 
 Then(/^I should see '([^\"]*)'$/) do |step|

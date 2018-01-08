@@ -86,7 +86,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect confirmation ' do
-        expect(page).to have_content 'ContactContact details not provided'
+        expect(page).to have_content 'Enter a valid email address'
       end
     end
 

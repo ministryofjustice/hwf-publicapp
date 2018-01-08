@@ -28,4 +28,4 @@ Feature: Step seventeen page
 
   Scenario: Continuing without supplying an email address
     When I click continue
-    Then I go to step 18 summary
+    Then I remain on step 17

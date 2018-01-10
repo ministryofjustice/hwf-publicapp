@@ -5,7 +5,7 @@ module Forms
 
     email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     validates :email,
-      format: { with: email_regex, allow_nil: true, allow_blank: true },
+      format: { with: email_regex },
       length: { maximum: 99 }
     validates :feedback_opt_in, inclusion: { in: [true, false] }
 

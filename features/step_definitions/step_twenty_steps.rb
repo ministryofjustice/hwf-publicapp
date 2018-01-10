@@ -15,7 +15,7 @@ Given(/^I go to step twenty without skipping step nineteen$/) do
   step 'I enter a valid date of birth'
   step 'I enter my full name'
   step 'I enter my address with postcode'
-  step 'I click continue'
+  step 'I enter a valid email address'
   step 'I click submit application and continue'
   step 'I click continue'
 end

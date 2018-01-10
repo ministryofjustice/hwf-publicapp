@@ -27,10 +27,16 @@ RSpec.describe Forms::Contact, type: :model do
         it { is_expected.not_to be_valid }
       end
 
-      context 'when email is not given' do
+      context 'when email is empty string' do
         let(:email) { '' }
 
-        it { is_expected.to be_valid }
+        it { is_expected.not_to be_valid }
+      end
+
+      context 'when email is nil' do
+        let(:email) { nil }
+
+        it { is_expected.not_to be_valid }
       end
     end
 

@@ -30,7 +30,7 @@ Feature: Step eighteen page
     | Date of birth             |
     | Full name                 |
     | Address                   |
-    | Contact                   |
+    | Email                     |
     And I should be able to go back and change my details:
     | url                    |
     | form_name              |

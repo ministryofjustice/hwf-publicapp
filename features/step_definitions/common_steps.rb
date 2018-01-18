@@ -8,19 +8,17 @@ Given(/^I do not need help with an employment tribunal$/) do
 end
 
 When(/^I click on cancel application$/) do
-  restart_app = common_page.restart_application
-  expect(restart_app['value']).to eq 'Cancel application'
-  restart_app.click
+  common_page.restart_application.click
 end
 
 When(/^I see the are you sure copy$/) do
-  confirm = common_page.restart_confirm
-  expect(confirm.p.count).to eq 2
-  expect(confirm.p[0].text).to eq 'Are you sure you want to cancel your application?'
+  expect(common_page.restart_confirm).to have_yes_button
+  expect(common_page.restart_confirm).to have_are_you_sure
+  expect(common_page.restart_confirm).to have_if_you_cancel
 end
 
 When(/^I click on no, return to current application$/) do
-  common_page.restart_confirm.button[1].click
+  common_page.restart_confirm.no_button.click
 end
 
 When(/^I click continue$/) do
@@ -33,7 +31,7 @@ When(/^I click on '([^\"]*)'$/) do |help|
 end
 
 And(/^I click on yes, cancel$/) do
-  common_page.restart_confirm.button[0].click
+  common_page.restart_confirm.yes_button.click
 end
 
 Then(/^I should see '([^\"]*)' header$/) do |header|
@@ -62,8 +60,7 @@ Then(/^I should see the please note copy$/) do
 end
 
 Then(/^I should not see the cancel application options$/) do
-  expect(common_page.restart_confirm.button[0]).to_not be_visible
-  expect(common_page.restart_confirm.button[1]).to_not be_visible
+  expect(common_page).to_not have_restart_confirm
 end
 
 Then(/^I should remain on the page$/) do

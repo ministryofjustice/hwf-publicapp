@@ -8,10 +8,8 @@ class CommonPage < BasePage
       elements :li, 'li'
       elements :hint, '.hint'
     end
-    sections :form_group, '.form-group' do
-      element :help_with, 'details > summary'
-    end
   end
+  element :help_with, 'details > summary'
 
   element :heading_secondary, '.heading-secondary'
   elements :block, '.block'

@@ -27,19 +27,9 @@ When(/^I click continue$/) do
   common_page.continue_button.click
 end
 
-When(/^I click on help with '([^\"]*)'$/) do |help|
-  expect(group_common(1).help_with.text).to have_content help
-  group_common(1).help_with.click
-end
-
-When(/^I open '([^\"]*)'$/) do |help|
-  expect(group_common(2).help_with.text).to have_content help
-  group_common(2).help_with.click
-end
-
 When(/^I click on '([^\"]*)'$/) do |help|
-  expect(group_common(2).help_with.text).to have_content help
-  group_common(2).help_with.click
+  expect(common_page.help_with.text).to have_content help
+  common_page.help_with.click
 end
 
 And(/^I click on yes, cancel$/) do

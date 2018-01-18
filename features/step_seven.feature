@@ -25,5 +25,5 @@ Feature: Step seven page
     Then I should see 'financially dependent children' error message
 
   Scenario: Help with benefits
-    When I open 'Help with financially dependent children'
+    When I click on 'Help with financially dependent children'
     Then I should see help with financially dependent children copy

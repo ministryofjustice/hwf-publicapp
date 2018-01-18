@@ -20,5 +20,5 @@ Feature: Step three page
     Then I am taken to step 4 - How much do you have in savings and investments?
 
   Scenario: Help with status
-    When I click on help with 'status'
+    When I click on 'Help with status'
     Then I should see help with status copy

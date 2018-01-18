@@ -34,5 +34,5 @@ Feature: Step six page
     Then I should see 'Select whether you're receiving one of the benefits listed' error message
 
   Scenario: Help with benefits
-    When I click on help with 'benefits'
+    When I click on 'Help with benefits'
     Then I should see help with benefits copy

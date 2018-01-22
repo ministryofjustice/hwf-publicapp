@@ -19,7 +19,7 @@ Feature: Step thirteen page
     Then I am taken to step 14 - What is your date of birth?
 
   Scenario: If you don't know your national insurance number
-    When I click on if you don't know your national insurance number
+    When I click on 'If you don’t know your National Insurance number'
     Then I should see if you don't know your national insurance number copy
 
   Scenario: Displays error message enter a valid national insurance number

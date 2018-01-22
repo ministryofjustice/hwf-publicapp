@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Step four page
 
   Scenario: Displays step number
@@ -25,7 +27,7 @@ Feature: Step four page
 
   Scenario: Help with savings and investments
     Given I am a single person on the step four page
-    When I click on help with 'savings and investments'
+    When I click on 'Help with savings and investments'
     Then I should see help with savings and investments copy
 
   Scenario: Does not display reminder for single people

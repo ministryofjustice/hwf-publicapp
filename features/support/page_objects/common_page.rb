@@ -8,17 +8,17 @@ class CommonPage < BasePage
       elements :li, 'li'
       elements :hint, '.hint'
     end
-    sections :form_group, '.form-group' do
-      element :help_with, 'details > summary'
-    end
   end
+  element :help_with, 'details > summary'
 
   element :heading_secondary, '.heading-secondary'
   elements :block, '.block'
-  element :restart_application, '.restart-application'
+  element :restart_application, 'input[value="Cancel application"]'
   section :restart_confirm, '.restart-confirm' do
-    elements :p, 'p'
-    elements :button, 'button'
+    element :are_you_sure, 'p', text: 'Are you sure you want to cancel your application?'
+    element :if_you_cancel, 'p', text: 'If you cancel, details for your current application will be deleted.'
+    element :yes_button, '.button', text: 'Yes, cancel'
+    element :no_button, '.button', text: 'No, return to current application'
   end
   section :error_summary, '.error-summary' do
     element :error_summary_heading, '#error-summary-heading-example-1'

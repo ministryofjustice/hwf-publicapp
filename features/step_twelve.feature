@@ -32,7 +32,7 @@ Feature: Step twelve page
   Scenario: Help with case number
     Given I do not need help with an employment tribunal
     And I go to step twelve without skipping step eleven
-    When I open 'Help with case number'
+    When I click on 'Help with case number'
     Then I should see help with case number copy
 
   Scenario: Displays enter a number error message

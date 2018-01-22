@@ -59,6 +59,7 @@ When(/^I enter a case, claim or notice to pay number$/) do
 end
 
 Then(/^I should see help with case number copy$/) do
-  case_number_copy = step_twelve_page.form_group[2].details_content
-  expect(case_number_copy.p.count).to eq 3
+  expect(step_twelve_page).to have_creates_reference_number_copy
+  expect(step_twelve_page).to have_ongoing_case_copy
+  expect(step_twelve_page).to have_dont_have_reference_number_copy
 end

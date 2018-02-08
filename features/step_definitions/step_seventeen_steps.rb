@@ -25,6 +25,7 @@ end
 
 When(/^I enter a valid email address$/) do
   expect(step_seventeen_page.form_group[1].text).to have_content 'Email address'
+  expect(step_seventeen_page.hint.text).to eq '(Optional)'
   step_seventeen_page.contact_email.set('test@hmcts.net')
   common_page.continue_button.click
 end

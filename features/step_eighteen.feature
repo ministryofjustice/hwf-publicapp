@@ -7,7 +7,7 @@ Feature: Step eighteen page
 
   Scenario: Displays step number
     Then I should see 'Step 18 of 20'
-  
+
   Scenario: Displays header
     Then I should see 'Check details' header
 
@@ -30,7 +30,7 @@ Feature: Step eighteen page
     | Date of birth             |
     | Full name                 |
     | Address                   |
-    | Email                     |
+    | Contact                   |
     And I should be able to go back and change my details:
     | url                    |
     | form_name              |

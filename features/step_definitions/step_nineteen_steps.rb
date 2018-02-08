@@ -17,7 +17,7 @@ Given(/^I visit the page for step nineteen$/) do
   step 'I enter a valid date of birth'
   step 'I enter my full name'
   step 'I enter my address with postcode'
-  step 'I enter a valid email address'
+  step 'I click continue'
   step 'I click submit application and continue'
 end
 

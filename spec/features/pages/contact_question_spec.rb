@@ -7,7 +7,6 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        fill_in :contact_email, with: 'foo@bar.com'
         click_button 'Continue'
       end
 

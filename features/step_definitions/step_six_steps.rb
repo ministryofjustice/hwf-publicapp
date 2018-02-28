@@ -30,6 +30,14 @@ Then(/^I should see the benefits list:$/) do |benefits|
   end
 end
 
+Then(/^I should see the benefits table:$/) do |table|
+  table.raw.each_with_index do |item, index|
+    first = index * 2
+    expect(step_six_page.content.td[first].text).to eq item[0]
+    expect(step_six_page.content.td[first + 1].text).to eq item[1]
+  end
+end
+
 Then(/^I should see help with benefits copy$/) do
   expect(group_six(1)).to have_help_with_benefits
   expect(group_six(1)).to have_recently_receiving_heading

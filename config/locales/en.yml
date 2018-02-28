@@ -307,8 +307,8 @@ en:
       list:
         header: "Please carefully check the table below to identify if you are (or were at the time you paid your fee) receiving any of the following benefits:"
         check_1: "If you are receiving one of the benefits listed in column 1, select ‘Yes’."
-        check_2: "There are some benefits with similar names listed in column 2. If you are receiving one of these benefits, select 'No'"
-        check_3: "If you are not receiving any of benefits listed on this page, select 'No'"
+        check_2: "There are some benefits with similar names listed in column 2. If you are receiving one of these benefits, select 'No'."
+        check_3: "If you are not receiving any of benefits listed on this page, select 'No'."
         column_1:
           name: "Column 1:"
           header: Select ‘Yes’ if you are receiving one of these benefits

@@ -3,6 +3,7 @@ class StepSixPage < BasePage
     element :benefits_text, '.text', text: 'contact the Department for Work and Pensions'
     element :benefit, '.text'
     elements :li, 'li'
+    elements :td, 'td'
     sections :form_group, '.form-group' do
       element :no, '.block-label', text: 'No'
       element :yes, '.block-label', text: 'Yes, I am receiving one of the benefits listed'

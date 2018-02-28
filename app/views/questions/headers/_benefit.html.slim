@@ -2,19 +2,40 @@ p = t('header', scope:"#{@form.i18n_scope}.list")
 
 ul.list.list-bullet
   li
-    = t('name', scope: "#{@form.i18n_scope}.list.item_1")
-    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_1")}
+    = t('check_1', scope: "#{@form.i18n_scope}.list")
   li
-    = t('name', scope: "#{@form.i18n_scope}.list.item_2")
-    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_2")}
+    = t('check_2', scope: "#{@form.i18n_scope}.list")
   li
-    = t('name', scope: "#{@form.i18n_scope}.list.item_3")
-  li
-    = t('name', scope: "#{@form.i18n_scope}.list.item_4")
-    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_4")}
-  li
-    = t('name', scope: "#{@form.i18n_scope}.list.item_5")
-    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_5")}
-  li
-    = t('name', scope: "#{@form.i18n_scope}.list.item_6")
-    span.hint &nbsp; #{t('hint', scope: "#{@form.i18n_scope}.list.item_6")}
+    = t('check_3', scope: "#{@form.i18n_scope}.list")
+
+table
+  tr
+    th
+      = t('name', scope: "#{@form.i18n_scope}.list.column_1")
+      br
+      = t('header', scope: "#{@form.i18n_scope}.list.column_1")
+
+    th
+      = t('name', scope: "#{@form.i18n_scope}.list.column_2")
+      br
+      = t('header', scope: "#{@form.i18n_scope}.list.column_2")
+  tr
+    td = t('item_1', scope: "#{@form.i18n_scope}.list.column_1")
+    td = t('item_1', scope: "#{@form.i18n_scope}.list.column_2")
+  tr
+    td = t('item_2', scope: "#{@form.i18n_scope}.list.column_1")
+    td = t('item_2', scope: "#{@form.i18n_scope}.list.column_2")
+  tr
+    td = t('item_3', scope: "#{@form.i18n_scope}.list.column_1")
+    td = t('item_3', scope: "#{@form.i18n_scope}.list.column_2")
+  tr
+    td = t('item_4', scope: "#{@form.i18n_scope}.list.column_1")
+    td = t('item_4', scope: "#{@form.i18n_scope}.list.column_2")
+  tr
+    td = t('item_5', scope: "#{@form.i18n_scope}.list.column_1")
+    td = t('item_5', scope: "#{@form.i18n_scope}.list.column_2")
+  tr
+    td = t('item_6', scope: "#{@form.i18n_scope}.list.column_1")
+    td &nbsp;
+
+br

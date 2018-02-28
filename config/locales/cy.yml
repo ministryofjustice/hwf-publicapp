@@ -297,52 +297,37 @@ cy:
       breadcrumb: Cam 6 o 20
       details:
         section_1:
-          details: "(er enghraifft, yn y dyddiau diwethaf), mae'n bosibl na fydd ein staff yn gallu cadarnhau'ch bod yn gymwys gyda'r Adran Gwaith a Phensiynau. Os felly, dylech chi ddarparu llythyr oddi wrth y Ganolfan Waith."
-          heading: Os mai dim ond yn ddiweddar rydych chi wedi dechrau derbyn un o'r budd-daliadau hyn
+          details: "efallai na fydd ein staff yn gallu cadarnhau eich cymhwysedd gyda’r Adran Gwaith a Phensiynau.  Yn yr achos hwn, dylech ddarparu llythyr gan y Ganolfan Waith."
+          heading: Os mai dim ond yn ddiweddar rydych chi wedi dechrau derbyn un o'r budd-daliadau hyn,
         section_2:
-          details: Mae rhai budd-daliadau ag enwau tebyg. Os ydych chi'n derbyn un o'r budd-daliadau yn y rhestr isod, dewiswch 'Na'.
-          heading: Budd-daliadau ag enwau tebyg
-          item_1:
-            hint: "(JSA)"
-            name: Lwfans Ceisio Gwaith yn Seiliedig ar Gyfraniadau
-          item_2:
-            hint: "(ESA)"
-            name: Lwfans Cyflogaeth a Chymorth yn Seiliedig ar Gyfraniadau
-          item_3:
-            hint: ""
-            name: Credyd Pensiwn a Chredyd Cynilion
-          item_4:
-            hint: "(a'ch bod yn ennill mwy na £6,000 y flwyddyn)"
-            name: Credyd Cynhwysol
-          item_5:
-            hint: ""
-            name: Scottish Legal Aid Advice and Assistance
-          item_6:
-            hint: "(ABWOR)"
-            name: Scottish Legal Aid Advice by Way of Representation
+          details: Byddwn yn cysylltu â’r Adran Gwaith a Phensiynau i gadarnhau eich bod (neu yr oeddech) yn cael un o’r budd-daliadau hyn. Efallai y byddwn hefyd yn cysylltu â chi os ydym angen gweld tystiolaeth bellach.
+          heading: Cymorth gyda budd-daliadau
         summary: Help gyda budd-daliadau
       list:
-        header: Byddwn ni'n cysylltu â'r Adran Gwaith a Phensiynau i gadarnhau eich bod (neu wedi bod) yn derbyn un o'r budd-daliadau hyn.
-        item_1:
-          hint: "(JSA)"
-          name: Lwfans Ceisio Gwaith yn Seiliedig ar Incwm
-        item_2:
-          hint: "(ESA)"
-          name: Lwfans Cyflogaeth a Chymorth yn Seiliedig ar Incwm
-        item_3:
-          name: Cymhorthdal Incwm
-        item_4:
-          hint: "(a'ch bod yn ennill llai na £6,000 y flwyddyn)"
-          name: Credyd Cynhwysol
-        item_5:
-          hint: "(Credyd Gwarant)"
-          name: Credyd Pensiwn
-        item_6:
-          hint: "(nid Advice and Assistance neu Advice by Way of Representation)"
-          name: Scottish Civil Legal Aid
+        header: "Gwiriwch y tabl isod yn ofalus i ganfod a ydych (neu a oeddech adeg talu’ch ffi) yn cael unrhyw un o’r budd-daliadau canlynol:"
+        check_1: "Os ydych yn cael un o’r budd-daliadau a restrir yng ngholofn 1, dewiswch ‘Ydw’."
+        check_2: "Mae yna rai budd-daliadau gydag enwau tebyg wedi’u rhestru yng ngholofn 2. Os ydych yn cael un o’r budd-daliadau hyn, dewiswch ‘Nac ydw’."
+        check_3: "Os nad ydych yn cael unrhyw un o’r budd-daliadau a restrir ar y dudalen hon, dewiswch ‘Nac ydw’."
+        column_1:
+          name: "Colofn 1:"
+          header: Dewiswch ‘Ydw’ os ydych yn cael un o'r budd-daliadau hyn
+          item_1: Lwfans Ceisio Gwaith yn seiliedig ar Incwm (JSA)
+          item_2: Lwfans Cyflogaeth a Chymorth yn seiliedig ar Incwm (ESA)
+          item_3: Credyd Pensiwn (Credyd Gwarant)
+          item_4: Credyd Cynhwysol (a’ch bod yn ennill llai na £6,000 y flwyddyn)
+          item_5: Cymorth Cyfreithiol Sifil Yr Alban (nid Cyngor a Chymorth neu Gyngor drwy Gynrychiolaeth)
+          item_6: Cymhorthdal Incwm
+        column_2:
+          name: "Colofn 2:"
+          header: Dewiswch ‘Nac ydw’ os ydych yn cael un o'r budd-daliadau hyn
+          item_1: Lwfans Ceisio Gwaith yn seiliedig ar Gyfraniadau (JSA)
+          item_2: Lwfans Cyflogaeth a Chymorth yn seiliedig ar Gyfraniadau (ESA)
+          item_3: Credyd Pensiwn a Chredyd Cynilion
+          item_4: Credyd Cynhwysol (a’ch bod yn ennill mwy na £6,000 y flwyddyn)
+          item_5: Cymorth Cyfreithiol Yr Alban (Cyngor a Chymorth neu Gyngor drwy Gynrychiolaeth ABWOR)
       on_benefits_false: Nac ydw
       on_benefits_true: Ydw, rydw i'n derbyn un o'r budd-daliadau yn y rhestr
-      text: Ydych chi'n derbyn unrhyw un o'r budd-daliadau isod?
+      text: A ydych chi’n cael unrhyw un o’r budd-daliadau canlynol?
       text_refund: Oeddech chi'n derbyn unrhyw un o'r budd-daliadau canlynol?
       title: Budd-daliadau
     claim/default:

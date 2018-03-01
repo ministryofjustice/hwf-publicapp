@@ -23,7 +23,7 @@ When(/^I submit the form with no I do not receive one of the benefits listed$/) 
   common_page.continue_button.click
 end
 
-Then(/^I should see the benefits list:$/) do |benefits|
+Then(/^I should see the instruction bullet points:$/) do |benefits|
   expect(step_six_page.content).to have_benefits_text
   benefits.rows.each_with_index do |benefit, index|
     expect(step_six_page.content.li[index].text).to eq benefit[0]

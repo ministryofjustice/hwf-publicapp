@@ -11,13 +11,14 @@ Feature: Step six page
   Scenario: Displays header
     Then I should see 'Do you receive any of the following benefits?' header
 
-  Scenario: Displays benefits list
-    Then I should see the benefits list:
+  Scenario: Displays instruction bullet points
+    Then I should see the instruction bullet points:
     | benefit                                                                                                                   |
     | If you are receiving one of the benefits listed in column 1, select ‘Yes’.                                                |
     | There are some benefits with similar names listed in column 2. If you are receiving one of these benefits, select 'No'.   |
     | If you are not receiving any of benefits listed on this page, select 'No'.                                                |
 
+  Scenario: Displays benefits table
     Then I should see the benefits table:
     | Income-based Jobseeker’s Allowance (JSA)                                                | Contribution-based Job Seekers Allowance (JSA)                                       |
     | Income-related Employment and Support Allowance (ESA)                                   | Contribution-based Employment and Support Allowance (ESA)                            |

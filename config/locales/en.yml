@@ -298,51 +298,36 @@ en:
       breadcrumb: Step 6 of 20
       details:
         section_1:
-          details: "(for example, in the last few days), our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the Jobcentre."
-          heading: If you’ve only recently started receiving one of these benefits
+          heading: If you’ve only recently started receiving one of these benefits,
+          details: "our staff may not be able to confirm your eligibility with the Department for Work and Pensions. In this case you should provide a letter from the Jobcentre."
         section_2:
-          details: There are some benefits with similar names. If you are receiving one of the benefits listed below, select 'No'.
-          heading: Benefits with similar names
-          item_1:
-            hint: "(JSA)"
-            name: Contribution-based Job Seekers Allowance
-          item_2:
-            hint: "(ESA)"
-            name: Contribution-based Employment and Support Allowance
-          item_3:
-            hint: ''
-            name: Pension Credit and Savings Credit
-          item_4:
-            hint: "(and you're earning more than £6,000 a year)"
-            name: Universal Credit
-          item_5:
-            hint: ''
-            name: Scottish Legal Aid Advice and Assistance
-          item_6:
-            hint: "(ABWOR)"
-            name: Scottish Legal Aid Advice by Way of Representation
+          heading: Help with benefits
+          details: "We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits. We may also contact you if we need to see additional evidence."
         summary: Help with benefits
       list:
-        header: We’ll contact the Department for Work and Pensions to confirm that you are (or were) getting one of these benefits.
-        item_1:
-          hint: "(JSA)"
-          name: Income-based Jobseeker’s Allowance
-        item_2:
-          hint: "(ESA)"
-          name: Income-related Employment and Support Allowance
-        item_3:
-          name: Income Support
-        item_4:
-          hint: "(and you’re earning less than £6,000 a year)"
-          name: Universal Credit
-        item_5:
-          hint: "(Guarantee Credit)"
-          name: Pension Credit
-        item_6:
-          hint: "(not Advice and Assistance or Advice by Way of Representation)"
-          name: Scottish Civil Legal Aid
+        header: "Please carefully check the table below to identify if you are (or were at the time you paid your fee) receiving any of the following benefits:"
+        check_1: "If you are receiving one of the benefits listed in column 1, select ‘Yes’."
+        check_2: "There are some benefits with similar names listed in column 2. If you are receiving one of these benefits, select 'No'."
+        check_3: "If you are not receiving any of benefits listed on this page, select 'No'."
+        column_1:
+          name: "Column 1:"
+          header: Select ‘Yes’ if you are receiving one of these benefits
+          item_1: Income-based Jobseeker’s Allowance (JSA)
+          item_2: Income-related Employment and Support Allowance (ESA)
+          item_3: Pension Credit (Guarantee Credit)
+          item_4: Universal Credit (and you’re earning less than £6,000 a year)
+          item_5: Scottish Civil Legal Aid (not Advice and Assistance or Advice by Way of Representation)
+          item_6: Income Support
+        column_2:
+          name: "Column 2:"
+          header: "Select ‘No’ if you are receiving one of these benefits"
+          item_1: Contribution-based Job Seekers Allowance (JSA)
+          item_2: Contribution-based Employment and Support Allowance (ESA)
+          item_3: Pension Credit and Savings Credit
+          item_4: Universal Credit  (and you're earning £6,000 or more a year)
+          item_5: Scottish Legal Aid  (Advice and Assistance or Advice by Way of Representation ABWOR)
       on_benefits_false: 'No'
-      on_benefits_true: Yes, I am receiving one of the benefits listed
+      on_benefits_true: Yes, I am receiving one of the benefits listed in Column 1
       text: Do you receive any of the following benefits?
       text_refund: Did you receive any of the following benefits?
       title: Benefits

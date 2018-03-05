@@ -311,20 +311,20 @@ cy:
         column_1:
           name: "Colofn 1:"
           header: Dewiswch ‘Ydw’ os ydych yn cael un o'r budd-daliadau hyn
-          item_1: Lwfans Ceisio Gwaith yn seiliedig ar Incwm (JSA)
-          item_2: Lwfans Cyflogaeth a Chymorth yn seiliedig ar Incwm (ESA)
+          item_1: Lwfans Ceisio Gwaith yn seiliedig ar <strong>Incwm</strong> (JSA)
+          item_2: Lwfans Cyflogaeth a Chymorth yn seiliedig ar <strong>Incwm</strong> (ESA)
           item_3: Credyd Pensiwn (Credyd Gwarant)
-          item_4: Credyd Cynhwysol (a’ch bod yn ennill llai na £6,000 y flwyddyn)
-          item_5: Cymorth Cyfreithiol Sifil Yr Alban (nid Cyngor a Chymorth neu Gyngor drwy Gynrychiolaeth)
+          item_4: Credyd Cynhwysol (a’ch bod yn ennill <strong>llai na £6,000</strong> y flwyddyn)
+          item_5: Cymorth Cyfreithiol <strong>Sifil</strong> Yr Alban (nid Cyngor a Chymorth neu Gyngor drwy Gynrychiolaeth)
           item_6: Cymhorthdal Incwm
         column_2:
           name: "Colofn 2:"
           header: Dewiswch ‘Nac ydw’ os ydych yn cael un o'r budd-daliadau hyn
-          item_1: Lwfans Ceisio Gwaith yn seiliedig ar Gyfraniadau (JSA)
-          item_2: Lwfans Cyflogaeth a Chymorth yn seiliedig ar Gyfraniadau (ESA)
-          item_3: Credyd Pensiwn a Chredyd Cynilion
-          item_4: Credyd Cynhwysol (a’ch bod yn ennill mwy na £6,000 y flwyddyn)
-          item_5: Cymorth Cyfreithiol Yr Alban (Cyngor a Chymorth neu Gyngor drwy Gynrychiolaeth ABWOR)
+          item_1: Lwfans Ceisio Gwaith yn seiliedig ar <strong>Gyfraniadau</strong> (JSA)
+          item_2: Lwfans Cyflogaeth a Chymorth yn seiliedig ar <strong>Gyfraniadau</strong> (ESA)
+          item_3: Credyd Pensiwn a Chredyd <strong>Cynilion</strong>
+          item_4: Credyd Cynhwysol (a’ch bod yn ennill <strong>mwy na £6,000</strong> y flwyddyn)
+          item_5: Cymorth Cyfreithiol Yr Alban (Cyngor a Chymorth neu Gyngor drwy Gynrychiolaeth <strong>ABWOR</strong>)
       on_benefits_false: Nac ydw
       on_benefits_true: Ydw, rydw i'n derbyn un o'r budd-daliadau yn y rhestr
       text: A ydych chi’n cael unrhyw un o’r budd-daliadau canlynol?

@@ -16,6 +16,19 @@ services:
     image: owasp/zap2docker-stable
     command: ./zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true -config 'api.addrs.addr.name=.*' -config 'api.addrs.addr.regex=true'
 
+  test-specs:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    command: bundle exec rspec
+
+  test-cucumber:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    # Ignore the saucelabs tests as they require 3rd party integration
+    command: bundle exec cucumber --tags ~@saucelabs
+
   test-security:
     build:
       context: .

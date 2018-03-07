@@ -14,7 +14,14 @@ define container-id-for
 	$(shell docker ps -f 'label=com.docker.compose.project=$(1)' -f 'label=com.docker.compose.service=$(2)' -q)
 endef
 
+basic-tests: test-specs test-features
 clean: stop rm
+
+test-specs:
+	docker-compose -p publicapp up --build test-specs
+
+test-features:
+	docker-compose -p publicapp up --build test-cucumber
 
 test-security-cucumber: run-passive-zap-test export-zap-report
 

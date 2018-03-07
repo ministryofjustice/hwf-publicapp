@@ -15,7 +15,8 @@ RUN wget -q --continue -P $PHANTOMJS_DIR "https://bitbucket.org/ariya/phantomjs/
     tar -xaf $PHANTOMJS_DIR/phantomjs* --strip-components=1 --directory $PHANTOMJS_DIR
 ENV PATH $PHANTOMJS_DIR/bin:$PATH
 
-# Config bundler
+# Throw errors if Gemfile has been modified since Gemfile.lock
+# and make the gem tree standalone.
 RUN bundle config --global frozen 1 && \
     bundle config --global disable_shared_gems 1
 

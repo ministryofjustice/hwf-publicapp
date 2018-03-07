@@ -28,6 +28,9 @@ export-zap-report:
 run-passive-zap-test:
 	docker-compose -p test up --build test-security
 
+start-web-app:
+	docker-compose -p publicapp up -d --build web
+
 stop: ## Stop all dev and test containers
 	docker-compose -p test stop
 

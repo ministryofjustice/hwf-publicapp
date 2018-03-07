@@ -4,6 +4,7 @@ db/*.sqlite3-journal
 log/*
 tmp/*
 Dockerfile
+Dockerfile.dev
 Dockerfile.saucelabs
 README
 Makefile

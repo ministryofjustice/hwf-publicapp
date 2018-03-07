@@ -26,16 +26,16 @@ export-zap-report:
 	@echo "Open test-security-cucumber-result.html in your browser"
 
 run-passive-zap-test:
-	docker-compose -p test up --build test-security
+	docker-compose -p publicapp up --build test-security
 
 start-web-app:
 	docker-compose -p publicapp up -d --build web
 
 stop: ## Stop all dev and test containers
-	docker-compose -p test stop
+	docker-compose -p publicapp stop
 
 rm: ## Remove all dev and test containers
-	docker-compose -p test rm -f
+	docker-compose -p publicapp rm -f
 
 	./nightwatch -c tests/nightwatch/local.json ${environment} ${specific_test}
 test-chrome:

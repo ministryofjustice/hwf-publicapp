@@ -52,8 +52,10 @@ stop: ## Stop all dev and test containers
 rm: ## Remove all dev and test containers
 	docker-compose -p publicapp rm -f
 
+# running nightwatch tests on local env
+test-nightwatch:
 	./nightwatch -c tests/nightwatch/local.json ${environment} ${specific_test}
-test-chrome:
+test-nightwatch-chrome:
 	./nightwatch -c tests/nightwatch/local.json --env chrome ${specific_test}
-test-firefox:
+test-nightwatch-firefox:
 	./nightwatch -c tests/nightwatch/local.json --env firefox ${specific_test}

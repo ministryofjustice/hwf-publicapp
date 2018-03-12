@@ -39,7 +39,7 @@ start-web-app:
 	docker-compose -p publicapp up -d --build web
 
 run-crawl-zap: start-web-app
-	docker-compose -p publicapp up -d zap-crawl-scan
+	docker-compose -p publicapp up -d test-security
 	docker exec ${call container-id-for,test,zap} zap-cli -p 8080 quick-scan --spider --recursive --alert-level Medium --start-options '-config api.disablekey=true' http://web:3000
 	docker exec ${call container-id-for,test,zap} zap-cli -p 8080 report -f html -o /tmp/test-security-scan-result.html
 	docker exec ${call container-id-for,test,zap} zap-cli -p 8080 session new

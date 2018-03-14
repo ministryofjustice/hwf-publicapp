@@ -55,8 +55,8 @@ When(/^I take the happy path through steps 1 to 20$/) do
   # step eighteen
   step_eighteen_page.submit_button.click
   # step nineteen
-  common_page.button.click
+  common_page.continue_button.click
   # step twenty
-  common_page.button.click
+  step_twenty_page.finish_application_button.click
 end
 # rubocop:enable Metrics/BlockLength

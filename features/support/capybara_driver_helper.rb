@@ -34,7 +34,7 @@ Capybara.register_driver :safari do |app|
 end
 
 Capybara::Screenshot.register_filename_prefix_formatter(:cucumber) do |scenario|
-  title = scenario.title.tr(' ', '-').gsub(%r{/^.*\/cucumber\//}, '')
+  title = scenario.name.tr(' ', '-').gsub(%r{/^.*\/cucumber\//}, '')
   "screenshot_cucumber_#{title}"
 end
 

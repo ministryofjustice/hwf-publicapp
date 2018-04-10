@@ -27,7 +27,8 @@ class ZendeskSender
   end
 
   def subject(help_request)
-    "#{help_request.name} has requested assistance, please email them back on: #{help_request.email}"
+    "#{help_request.name} has requested assistance, " \
+    "please email them back on: #{help_request.email}"
   end
 
   def custom_fields(help_request)

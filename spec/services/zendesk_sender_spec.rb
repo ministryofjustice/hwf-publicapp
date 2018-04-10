@@ -8,7 +8,7 @@ RSpec.describe ZendeskSender do
 
     let(:config) { double(:url= => nil, :username= => nil, :token= => nil) }
     let(:client) { double }
-    let(:help_request) { double(name: 'NAME', phone: 'PHONE', description: 'DESCRIPTION') }
+    let(:help_request) { double(name: 'NAME', email: 'EMAIL', description: 'DESCRIPTION') }
 
     before do
       Settings.zendesk.enabled = true
@@ -40,14 +40,14 @@ RSpec.describe ZendeskSender do
     describe 'the Zendesk ticket content' do
       let(:attributes) do
         {
-          subject: 'NAME has requested assistance, please call them back on: PHONE',
+          subject: 'NAME has requested assistance, please email them back on: EMAIL',
           description: 'DESCRIPTION',
           requester: {
             name: 'NAME'
           },
           custom_fields: [
             { id: '32342378', value: 'test' },
-            { id: '24041286', value: 'PHONE' },
+            { id: '24041286', value: 'EMAIL' },
             { id: '23757677', value: 'help_with_fees_technical_support' }
           ]
         }

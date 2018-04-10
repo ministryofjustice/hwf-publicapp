@@ -19,7 +19,7 @@ en:
         identifier: Form name or number
       forms/help_request:
         description: Describe what you'd like to talk about
-        phone: Telephone number
+        email: Email address
         name: Name
       forms/income:
         child_benefit: Child Benefit
@@ -113,8 +113,8 @@ en:
               blank: Describe what you'd like to talk about.
             name:
               blank: Enter a valid name.
-            phone:
-              blank: Enter a valid phone number.
+            email:
+              blank: Please provide a valid email address.
         forms/income_amount:
           attributes:
             amount:
@@ -276,8 +276,8 @@ en:
     connection_refused: Connection refused
   help_requests:
     description:
-      line_1: Enter your name, telephone number and a brief description of what you need help with. We'll get back to you during the next working day between 9am and 5pm.
-      line_2: We’ll only use your details to call you back. Don’t include any personal information, for example address or date of birth.
+      line_1: Enter your name, e-mail address and a brief description of what you need help with. We’ll get back to you by email during the next working day between 9am and 5pm.
+      line_2: We will always try and assist by email, but if you would like us to telephone you, please provide your telephone number in the description box. We’ll only use your details to contact you. Don’t include any personal information, for example address or date of birth.
     heading: Ask for technical help
     layout_nudge:
       link: technical help

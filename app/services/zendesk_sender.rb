@@ -27,13 +27,13 @@ class ZendeskSender
   end
 
   def subject(help_request)
-    "#{help_request.name} has requested assistance, please call them back on: #{help_request.phone}"
+    "#{help_request.name} has requested assistance, please email them back on: #{help_request.email}"
   end
 
   def custom_fields(help_request)
     [
       { id: '32342378', value: Settings.env },
-      { id: '24041286', value: help_request.phone },
+      { id: '24041286', value: help_request.email },
       { id: '23757677', value: 'help_with_fees_technical_support' }
     ]
   end

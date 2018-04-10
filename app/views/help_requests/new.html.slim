@@ -19,10 +19,10 @@ p =t('help_requests.description.line_2')
       span.error-message#name = @form.errors[:name].join(' ') if @form.errors[:name].any?
       = f.text_field :name, class: 'form-control'
 
-    .form-group class=('error' if @form.errors[:phone].any?)
-      = f.label :phone, class: 'form-label'
-      span.error-message#phone = @form.errors[:phone].join(' ') if @form.errors[:phone].any?
-      = f.text_field :phone, class: 'form-control'
+    .form-group class=('error' if @form.errors[:email].any?)
+      = f.label :email, class: 'form-label'
+      span.error-message#email = @form.errors[:email].join(' ') if @form.errors[:email].any?
+      = f.text_field :email, class: 'form-control'
 
     .form-group class=('error' if @form.errors[:description].any?)
       = f.label :description, class: 'form-label'

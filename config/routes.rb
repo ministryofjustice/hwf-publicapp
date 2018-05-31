@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   end
 
   resource :help_request, only: %i[new create], path: 'ask-for-help'
+  get 'ask-for-help' => 'help_requests#new'
 
   get 'ping' => 'health_status/ping#show'
   get 'healthcheck' => 'health_status/health_check#show'

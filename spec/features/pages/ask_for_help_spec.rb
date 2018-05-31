@@ -10,10 +10,15 @@ RSpec.feature 'As a user' do
       expect(page).to have_text "Ask for technical help"
       click_button "Continue"
       expect(page).to have_text "You need to fix the errors on this page before continuing."
+
       within(:xpath, ".//div[@class='language-picker']") do
         click_link 'Cymraeg'
       end
       expect(page).to have_text "Gofynnwch am help technegol"
+
+      within(:xpath, ".//div[@class='language-picker']") do
+        click_link 'English'
+      end
     end
   end
 end

@@ -83,5 +83,3 @@ RSpec.feature 'As a user' do
     end
   end
 end
-
-

@@ -621,82 +621,135 @@ en:
     sections:
     - title:
       parts:
-      - p: By using this ‘apply for help with fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.
+        - ul:
+          - li: <a href="#general_terms_and_conditions">General terms and conditions</a>
+          - li: <a href="#information_provided_by_this_service">Information provided by this service</a>
+          - li: <a href="#applicable_law">Applicable law</a>
+          - li: <a href="#responsible_use_of_this_service">Responsible use of this service</a>
+          - li: <a href="#general_data_protection_regulations_gdpr">General Data Protection Regulations (GDPR)</a>
+          - li: <a href="#hmcts_privacy_notice">HMCTS privacy notice</a>
+          - li: <a href="#disclaimer">Disclaimer</a>
+        - p: By using this ‘Help with Fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.
     - title: General terms and conditions
       parts:
-      - p: These terms and conditions affect your rights and liabilities under the law. They govern your use of, and relationship with, this ‘apply for help with fees’ service. They do not apply to other Ministry of Justice (HM Courts and Tribunals Service) services, or to any department or service that is linked to in this service.
-      - p: We may occasionally update these terms and conditions. This might happen if there is a change in the law or to the way the service works.
-      - p: If you do not agree to the terms and conditions and privacy policy set out in this document, do not use this service.
+      - p: These terms and conditions affect your rights and liabilities under the law. They govern your use of, and relationship with, this ‘Help with Fees’ service. They do not apply to other Ministry of Justice (HM Courts and Tribunals Service) services, or to any department or service that is linked to in this service.
+      - p: You should check these terms and conditions regularly. We may update them at any time without notice. If you continue to use this service after the terms and conditions have changed, you are deemed to have agreed to the changes. If you do not agree to the terms and conditions and privacy notice set out in this document, do not use this service.
+    - title: Information provided by this service
+      parts:
+      - p: This service provides information to support your claim or application. We cannot give legal advice on individual cases. You should answer the questions in the service based on your circumstances and seek legal advice if you need it.
     - title: Applicable law
       parts:
       - p: 'Your use of this service and any dispute arising from its use will be governed by and construed in accordance with the laws of England and Wales, including but not limited to the:'
       - ul:
         - li: Computer Misuse Act 1990
-        - li: Data Protection Act 1998
         - li: Mental Capacity Act 2005
+        - li: Data Protection Act 2018
+        - li: General Data Protection Regulations
     - title: Responsible use of this service
       parts:
-      - p: The service is intended for use by applicants, or by others on their behalf and only with their consent.
-      - p: There are risks in using a shared computer (eg in an internet café), to access this service. It is your responsibility to be aware of these risks and to avoid using any computer which may leave your personal information accessible to others. You’re responsible if you choose to leave a computer unprotected while using this service.
-      - p: We make every effort to check and test this service whenever we amend or update it. However, you must take your own precautions to ensure that the way you access this service does not expose you to the risk of viruses, malicious computer code or other forms of interference which may damage your computer system.
-      - p: You must not misuse this service by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful. You must not attempt to gain unauthorised access to this service, the system on which it is stored or any server, computer or database connected to it. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack.
-    - title: Privacy policy
+      - p: The service is intended for use by claimants.
+      - p: There are risks in using a shared computer (e.g. in an internet café), to access this service. It is your responsibility to be aware of these risks and to avoid using any computer which may leave your personal information accessible to others. You’re responsible if you choose to leave a computer unprotected while signed in to the service. We make every effort to check and test this service whenever we amend or update it. However, you must take your own precautions to ensure that the way you access this service does not expose you to the risk of viruses, malicious computer code or other forms of interference which may damage your computer system.
+      - p: You must not misuse this service by knowingly introducing viruses, trojans, worms, logic bombs or other material which is malicious or technologically harmful. You must not attempt to gain unauthorised access to this service, the system on which it is stored, or any server, computer or database connected to it. You must not attack our site via a denial-of-service attack or a distributed denial-of-service attack.
+    - title: General Data Protection Regulations (GDPR)
       parts:
-      - p: Ministry Of Justice (MOJ) work hard to ensure that information within the service is accurate. However, we cannot guarantee the accuracy and completeness of any information at all times. Guidance contained within this service should not be considered legal advice.
-      - p: This service provides information to support you in applying for financial help with court or tribunal fees. However, we cannot give legal advice on individual cases. You should answer questions based on consideration of the specific circumstances, seeking advice from a legal professional if needed.
-      - p: MOJ are not responsible for the content or reliability of any linked services or websites, and do not necessarily endorse any views expressed within them.
-      - p: While we make every effort to ensure this service is accessible at all times, we are not liable if the service is unavailable for any period of time.
-    - title: How we keep your information safe
-      parts:
-      - p: MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA).
-      - p: MOJ use the Amazon Web Services (AWS) to store your data. By submitting your information, you consent to the <a href="http://aws.amazon.com/service-terms/"> AWS Terms and Conditions </a>
-      - p: This service uses Sendgrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos"> Sendgrid terms and conditions </a>.
-      - p: We’ll never share your information with other organisations for their marketing, market research or commercial purposes.
+      - p: This service complies with all principles of the GDPR. Ministry of Justice (MoJ) is the 'data controller' for the purposes of the Act.
+      - p: You have the right, as the user of this service, to delete any or all personal data and information at any point.
+      - p: After submitting your claim, you will not be able to see it any more or amend it online. Anyone who believes their personal data is kept within the service has the right to submit a subject access request to the MoJ, who will give details of the information stored on the server. If a subject access request shows that the information is inaccurate, the MoJ will amend or delete the information in the database as requested within 5 days. In these circumstances, we will warn the registered user first by email.
+      - p: Our hosting provider, and HMCTS staff responsible for supporting the service, will have access to the server in which all personal information entered into the site is stored.
+
+
+    - title: HMCTS privacy notice
       sections:
-      - title: How we use your personal information
+      - title: Purpose
         parts:
-        - p: In order to use this service, you will need to enter personal information. We use this information to complete your application for help with fees. Any email address you supply to us will be used by HMCTS to contact you with regards to your claim. We may also use your details to contact you for research purposes.
-        - p: This online service contains several free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive information into these free-text fields. Sensitive information may include, but is not limited to, details of religious beliefs and financial information. Entering sensitive information is done so at your own risk.
-      - title: How we use non-personal information
+        - p: This privacy notice sets out the standards that you can expect from the Ministry of Justice and Her Majesty’s Courts and Tribunals Service (HMCTS) when we process personal information (‘personal data’) about you in the context of court or tribunal proceedings; how you can get access to a copy of your personal data; and what you can do if you think the standards are not being met.
+        - p: HMCTS is an Executive Agency of the Ministry of Justice (MoJ). MoJ is the data controller for the personal data held, although it may act jointly with HMCTS. HMCTS also collects and processes personal data for the exercise of its own and associated public functions and legal obligations.
+        - p: This privacy notice does not apply to the processing of personal data which is collected and controlled by the tribunal and its judges when they are acting in their judicial capacity. The judiciary are independent from MoJ and HMCTS and data protection law applies differently to them as a result. For more information, see <a href="http://www.judiciary.gov.uk" target="_blank">www.judiciary.gov.uk.</a>
+      - title: About personal data
         parts:
-        - p: Separately from the information entered by those using this service, we also collect site-usage information from this service, which allows us to see how the service is being used in order to allow us to improve it. This information does not contain any personal data.
-        - p: We’ll only ever collect information that will help us make the site work better for you; information that will let us contact you if you’ve asked us to, let us give you accurate information if you need it, and give us a sense of how people are using this service, so we can keep improving it.
+        - p: Personal data is information that relates to a living individual who can be identified from the data.
+        - p: It does not include information relating to dead people, groups or communities of people, organisations or businesses. It can be your name, address or telephone number. It can also include information about your gender, your financial circumstances, your cultural background or your social status.
+        - p: We know how important it is to protect the privacy of all individuals involved in proceedings and to comply with data protection laws. We will safeguard your personal data and will only disclose it where it is lawful to do so, or with your consent.
+      - title: Personal data that we collect
+        parts:
+          - p: 'We collect the following data when you use this service:'
+          - ul:
+            - li: your full name
+            - li: your postal address
+            - li: your email address
+            - li: your National Insurance number
+            - li: your marital status
+            - li: your date of birth and that of your partner
+            - li: how much you and your partner have in savings and investments
+            - li: whether you receive qualifying benefits for Help with Fees
+            - li: the number of dependent children you have
+            - li: the type and amount of total monthly income you and your partner receive
+      - title: How we use your personal data
+        parts:
+        - p: We use your personal data to complete a claim to for Help with Fees. Any email address you supply to us will be used by HMCTS to contact you with regards to your application. We may also use your details to contact you for research purposes. Your personal data may be shared with Other Government Departments for the purpose of validating or assisting you in progressing your application.
+        - p: This online service contains free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive data into these free-text fields or upload documents containing sensitive data unless necessary to your application or specifically requested. Sensitive data may include, but is not limited to, details of religious beliefs and financial data. Entering or uploading sensitive data is done so at your own risk.
+      - title: How we use non-personal data
+        parts:
+        - p: Separately from the data entered by those using this service, we also collect site-usage data from this service, which allows us to see how the service is being used in order to allow us to improve it. This data does not contain any personal data.
+        - p: We’ll only ever collect data that will help us make the site work better for you; data that will let us contact you if you’ve asked us to, let us give you accurate data if you need it, and give us a sense of how people are using this service, so we can keep improving it.
         - p: 'It includes:'
         - ul:
           - li: questions, queries or feedback you leave, including your email address if you send a message via feedback
           - li: your truncated IP address (with the trailing octet removed), and details of which version of web browser you used
-          - li: information on how you use the site, using cookies and page tagging techniques to help us improve the website
+          - li: data on how you use the site, using cookies and page tagging techniques to help us improve the website
         - p: 'This helps us to:'
         - ul:
           - li: improve the site by monitoring how you use it
           - li: respond to any feedback you send us, if you’ve asked us to
           - li: provide you with information about local services if you want it
         - p: We cannot identify you personally using your site usage data.
-    - title: How we manage sessions
-      parts:
-      - p: This service can be used to apply for financial help with court or tribunal fees. When you use this service, personal information about you may be visible to anyone with access to your computer.
-      - p: We store your data temporarily using cookies, and all your data is encrypted.
-    - title: Data Protection Act 1998
-      parts:
-      - p: This service complies with all principles of the DPA 1998. Ministry of Justice (MoJ) is the 'data controller' for the purposes of the Act.
-      - p: You have the right, as the user of this service, to delete your data or any and all information at any point. We will keep data secure for 12 months from the date you submit your claim. You will be able to manually update the information you have entered for up to six months from when you first use this service.
-      - p: After submitting your application, you will not be able to see it anymore or amend it online. Anyone who believes their personal data is kept within the service has the right to submit a subject access request to the MoJ, who will give details of the information stored on the server. If a subject access request shows that the information is inaccurate, the MoJ will amend or delete the information in the database as requested within 5 days. In these circumstances, we will warn the registered user first by email.
-      - p: Our hosting provider, and MOJ staff responsible for supporting the service, will have access to the server in which all personal information entered into the site is stored.
-      sections:
       - title: How your personal data is stored
         parts:
-        - p: Personal data submitted via the online service is stored for 12 months on our secure servers within EEA. Any data is deleted after this period.
+        - p: MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA).
+        - p: MOJ use the Amazon Web Services (AWS) to store your data. By submitting your data, you consent to the <a href="http://aws.amazon.com/service-terms/" target="_blank">AWS Terms and Conditions</a>.
+        - p: This service uses SendGrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos" target="_blank">SendGrid terms and conditions</a>.
+        - p: We’ll never share your data with other organisations for their marketing, market research or commercial purposes, and we don’t pass on your personal data to any other websites.
       - title: How non-personal data is stored
         parts:
-        - p: Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html"> Google Analytics terms and conditions </a>.
+        - p: Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html" target="_blank">Google Analytics terms and conditions</a>.
       - title: Keeping your data secure
         parts:
         - p: Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use SSL to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it.
-      - title: Disclosing your information
+      - title: Disclosing your data
         parts:
-        - p: We may pass on your personal information if we have a legal obligation to do so.
+        - p: We may pass on your personal data if we have a legal obligation to do so.
+      - title: Access to personal information
+        parts:
+        - p: 'You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: <a href="mailto:data.access@justice.gsi.gov.uk">data.access@justice.gsi.gov.uk</a>'
+        - p: 'You can get more details on:'
+        - ul:
+          - li: Agreements we have with other organisations for sharing personal data;
+          - li: Circumstances where we can pass on personal data without telling you, for example, to help with the prevention or detection of crime or to produce anonymised statistics;
+          - li: Our instructions to staff on how to collect, use or delete your personal data;
+          - li: How we check that the personal data we hold is accurate and up-to-date;
+          - li: How to make a complaint.
+        - p: 'For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: <a href="mailto:data.compliance@justice.gov.uk">data.compliance@justice.gov.uk</a>'
+      - title: Complaints
+        parts:
+        - p: 'When we ask you for information, we will keep to the law. If you consider that your information has been handled incorrectly by MoJ or HMCTS, you can contact the Information Commissioner for independent advice about data protection. You can contact the Information Commissioner here:'
+        - span: "Information Commissioner's Office<br/>"
+        - span: 'Wycliffe House<br/>'
+        - span: 'Water Lane<br/>'
+        - span: 'Wilmslow<br/>'
+        - span: 'Cheshire<br/>'
+        - span: 'SK9 5AF<br/>'
+        - span: 'Tel: 0303 123 1113<br/>'
+        - span: '<a href="http://www.ico.org.uk" target="_blank">www.ico.org.uk</a>'
     - title: Disclaimer
       parts:
+      - p: 'While we make every effort to keep information up to date, we don’t provide any guarantees, conditions or warranties that it will be:'
+      - ul:
+        - li: current
+        - li: secure
+        - li: accurate
+        - li: complete
+        - li: free from bugs or viruses
+      - p: We don’t publish advice. You should get professional or specialist advice before doing anything on the basis of the information in the service.
       - p: We do not accept liability for loss or damage incurred by users of this service, whether direct, indirect or consequential, whether caused by tort, breach of contract or otherwise. This includes loss of income or revenue, business, profits or contracts, anticipated savings, data, goodwill, tangible property or wasted time in connection with this service or any websites linked to it and any materials posted on it. This condition shall not prevent claims for loss of or damage to your tangible property or any other claims for direct financial loss that are not excluded by any of the categories set out above.
       - p: This does not affect our liability for death or personal injury arising from our negligence, nor our liability for fraudulent misrepresentation or misrepresentation as to a fundamental matter, nor any other liability which cannot be excluded or limited under applicable law.
     title: Terms and conditions

@@ -43,7 +43,7 @@ module YamlHelper
   end
 
   def li_tag(item)
-    content_tag('li', item)
+    content_tag('li', item.html_safe)
   end
 
   def collection_exists?(name)

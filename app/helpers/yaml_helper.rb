@@ -17,7 +17,7 @@ module YamlHelper
   def add_header
     if @this_section[:title].present?
       @result << header_block do
-        header_text + anchor_tag
+        anchor_tag + header_text
       end
     end
   end

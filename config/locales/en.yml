@@ -629,7 +629,7 @@ en:
           - li: <a href="#general_data_protection_regulations_gdpr">General Data Protection Regulations (GDPR)</a>
           - li: <a href="#hmcts_privacy_notice">HMCTS privacy notice</a>
           - li: <a href="#disclaimer">Disclaimer</a>
-        - p: By using this ‘Help with Fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.
+        - p: <i>By using this ‘Help with Fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.</i>
     - title: General terms and conditions
       parts:
       - p: These terms and conditions affect your rights and liabilities under the law. They govern your use of, and relationship with, this ‘Help with Fees’ service. They do not apply to other Ministry of Justice (HM Courts and Tribunals Service) services, or to any department or service that is linked to in this service.

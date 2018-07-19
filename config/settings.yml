@@ -3,8 +3,7 @@ submission:
   url: <%= ENV['SUBMISSION_URL'] %>
   token: <%= ENV['SUBMISSION_TOKEN'] %>
 analytics:
-  id: <%= ENV['GA_ID'] || 'UA-37377084-52' %>
-  domain: <%= ENV['GA_DOMAIN'] || 'auto' %>
+  id: <%= ENV['GTM_ID'] || 'GTM-MBQ9L9X' %>
 health_status:
   deployment:
     version_number: <%= ENV['APPVERSION'] || 'unknown' %>
@@ -30,4 +29,4 @@ income:
   max_threshold_base: 5085
   per_child_increment: 245
   married_supplement: 160
-  
+

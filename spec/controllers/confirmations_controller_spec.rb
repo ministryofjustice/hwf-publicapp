@@ -5,7 +5,7 @@ RSpec.describe ConfirmationsController, type: :controller do
   let(:online_application) { instance_double(OnlineApplication, benefits: true) }
   let(:result) { { result: true, message: 'HWF-010101' } }
   let(:storage_started) { true }
-  let(:storage) { instance_double(Storage, submission_result: result, time_taken: 600, started?: storage_started) }
+  let(:storage) { instance_double(Storage, submission_result: result, started?: storage_started) }
   let(:builder) { instance_double(OnlineApplicationBuilder, online_application: online_application) }
 
   before do

@@ -45,15 +45,6 @@
 
 - content_for :javascripts
   = javascript_include_tag('application.js')
-  javascript:
-    $(document).ready(function () {
-      if ("#{@ga_events}" != "") {
-        var events = JSON.parse("#{@ga_events}".replace(/&quot;/g, '"').replace(/&#39;/g, '\''));
-        $(events).each(function (_index, event) {
-           eval(event);
-        });
-      }
-    });
 
 - content_for :footer_support_links
   li =link_to 'Help', 'http://www.gov.uk/help'

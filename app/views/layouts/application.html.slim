@@ -21,7 +21,7 @@
 
 - content_for :after_header
   noscript
-    iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBQ9L9X" height="0" width="0" style="display:none;visibility:hidden"
+    iframe src="https://www.googletagmanager.com/ns.html?id=#{Settings.analytics.id}" height="0" width="0" style="display:none;visibility:hidden"
 
 - content_for :content_override
   #wrapper.group

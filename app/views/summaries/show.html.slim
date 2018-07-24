@@ -17,7 +17,7 @@ table.summary
     tr
       th scope="row" =t('form_name', scope: 'summary.labels')
       td=@summary.form_name
-      td.right= link_to question_path(:form_name) do
+      td.right= link_to question_path(:form_name), onclick: "dataLayer.push({'sectionName': 'form_name'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -25,7 +25,7 @@ table.summary
     tr
       th scope="row" = t('fee', scope: 'summary.labels')
       td = @summary.refund_text
-      td.right= link_to question_path(:fee) do
+      td.right= link_to question_path(:fee), onclick: "dataLayer.push({'sectionName': 'fee'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -33,7 +33,7 @@ table.summary
     tr
       th scope="row" =t('married', scope: 'summary.labels')
       td= t("marital_status_#{@summary.married}", scope: 'summary')
-      td.right= link_to question_path(:marital_status) do
+      td.right= link_to question_path(:marital_status), onclick: "dataLayer.push({'sectionName': 'marital_status'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -41,7 +41,7 @@ table.summary
     tr
       th scope="row" =t('savings', scope: 'summary.labels')
       td= @summary.savings
-      td.right= link_to question_path(:savings_and_investment) do
+      td.right= link_to question_path(:savings_and_investment), onclick: "dataLayer.push({'sectionName': 'savings_and_investment'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -49,7 +49,7 @@ table.summary
     tr
       th scope="row" =t('benefits', scope: 'summary.labels')
       td= t("applicant_on_benefits_#{@summary.benefits}", scope: 'summary')
-      td.right= link_to question_path(:benefit) do
+      td.right= link_to question_path(:benefit), onclick: "dataLayer.push({'sectionName': 'benefit'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -60,7 +60,7 @@ table.summary
           span.error-message = t('children', scope: 'summary.labels')
         td.error
           span.error-message =t('summary.missing_answer.dependents')
-        td.right= link_to question_path(:dependent) do
+        td.right= link_to question_path(:dependent), onclick: "dataLayer.push({'sectionName': 'dependent'});" do
           =t('summary.change')
           span.visuallyhidden
             | &nbsp;
@@ -70,7 +70,7 @@ table.summary
           span.error-message = t('income', scope: 'summary.labels')
         td.error
           span.error-message =t('summary.missing_answer.income')
-        td.right= link_to question_path(:income_kind) do
+        td.right= link_to question_path(:income_kind), onclick: "dataLayer.push({'sectionName': 'income_kind'});" do
           =t('summary.change')
           span.visuallyhidden
             | &nbsp;
@@ -80,7 +80,7 @@ table.summary
         tr
           th scope="row" =t('children', scope: 'summary.labels')
           td =@summary.children_text
-          td.right= link_to question_path(:dependent) do
+          td.right= link_to question_path(:dependent), onclick: "dataLayer.push({'sectionName': 'dependent'});" do
             =t('summary.change')
             span.visuallyhidden
               | &nbsp;
@@ -89,7 +89,7 @@ table.summary
         tr
           th scope="row" =t('income', scope: 'summary.labels')
           td =@summary.income_text
-          td.right= link_to question_path(:income_kind) do
+          td.right= link_to question_path(:income_kind), onclick: "dataLayer.push({'sectionName': 'income_kind'});" do
             =t('summary.change')
             span.visuallyhidden
               | &nbsp;
@@ -98,7 +98,7 @@ table.summary
       tr
         th scope="row" = t('deceased_name', scope: 'summary.labels')
         td =@summary.deceased_name
-        td.right= link_to question_path(:probate) do
+        td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate'});" do
           =t('summary.change')
           span.visuallyhidden
             | &nbsp;
@@ -106,7 +106,7 @@ table.summary
       tr
         th scope="row" = t('date_of_death', scope: 'summary.labels')
         td =@summary.date_of_death
-        td.right= link_to question_path(:probate) do
+        td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate'});" do
           =t('summary.change')
           span.visuallyhidden
             | &nbsp;
@@ -115,7 +115,7 @@ table.summary
       tr
         th scope="row" =t('probate', scope: 'summary.labels')
         td =t("probate_case_#{@summary.probate}", scope: 'summary')
-        td.right= link_to question_path(:probate) do
+        td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate'});" do
           =t('summary.change')
           span.visuallyhidden
             | &nbsp;
@@ -123,7 +123,7 @@ table.summary
     tr
       th scope="row" =t('claim', scope: 'summary.labels')
       td =t("claim_number_#{@summary.case_number?}", scope: 'summary')
-      td.right= link_to question_path(:claim) do
+      td.right= link_to question_path(:claim), onclick: "dataLayer.push({'sectionName': 'claim'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -131,7 +131,7 @@ table.summary
     tr
       th scope="row" =t('ni_number', scope: 'summary.labels')
       td =@summary.ni_number
-      td.right= link_to question_path(:national_insurance) do
+      td.right= link_to question_path(:national_insurance), onclick: "dataLayer.push({'sectionName': 'national_insurance'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -139,7 +139,7 @@ table.summary
     tr
       th scope="row" =t('date_of_birth', scope: 'summary.labels')
       td =@summary.date_of_birth
-      td.right= link_to question_path(:dob) do
+      td.right= link_to question_path(:dob), onclick: "dataLayer.push({'sectionName': 'dob'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -147,7 +147,7 @@ table.summary
     tr
       th scope="row" =t('personal', scope: 'summary.labels')
       td =@summary.full_name
-      td.right= link_to question_path(:personal_detail) do
+      td.right= link_to question_path(:personal_detail), onclick: "dataLayer.push({'sectionName': 'personal_detail'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -155,7 +155,7 @@ table.summary
     tr
       th scope="row" =t('address', scope: 'summary.labels')
       td =@summary.full_address
-      td.right= link_to question_path(:applicant_address) do
+      td.right= link_to question_path(:applicant_address), onclick: "dataLayer.push({'sectionName': 'applicant_address'});" do
         =t('summary.change')
         span.visuallyhidden
           | &nbsp;
@@ -164,7 +164,7 @@ table.summary
       tr
         th scope="row" =t('contact_email', scope: 'summary.labels')
         td =@summary.email_address
-        td.right= link_to question_path(:contact) do
+        td.right= link_to question_path(:contact), onclick: "dataLayer.push({'sectionName': 'contact'});" do
           =t('summary.change')
           span.visuallyhidden
             | &nbsp;
@@ -173,7 +173,7 @@ table.summary
       tr
         th scope="row" = t('contact', scope: 'summary.labels')
         td = t('summary.contact_none')
-        td.right= link_to question_path(:contact) do
+        td.right= link_to question_path(:contact), onclick: "dataLayer.push({'sectionName': 'contact'});" do
           =t('summary.change')
           span.visuallyhidden
             | &nbsp;

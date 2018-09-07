@@ -3,7 +3,7 @@ def group_six(index)
 end
 
 Given(/^I am on the page for step six$/) do
-  step 'I am on the page for step one'
+  step 'I am on the page for step one - form name'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'

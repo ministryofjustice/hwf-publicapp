@@ -1,11 +1,11 @@
 def group_two(index)
-  step_two_page.content.form_group[index]
+  fee_page.content.form_group[index]
 end
 
 Given(/^I am on the page for step two$/) do
-  step 'I am on the page for step one'
+  step 'I am on the page for step one - form name'
   step 'I submit the form with a valid form number'
-  expect(step_two_page.content).to have_apply_for_refund
+  expect(fee_page.content).to have_apply_for_refund
 end
 
 When(/^I select no to have you already paid the fee\?$/) do

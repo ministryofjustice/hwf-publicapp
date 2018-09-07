@@ -4,12 +4,12 @@ def common_step_header
 end
 
 Given(/^I have started my application$/) do
-  step_one_page.load_page
+  form_name_page.load_page
 end
 
 Then(/^I should see the content for step one$/) do
   common_step_header
-  expect(step_one_page.content).to have_hint
+  expect(form_name_page.content).to have_hint
   expect(group_one(0)).to have_label
   expect(group_one(1)).to have_block_label
   expect(group_common(2)).to have_help_with
@@ -19,8 +19,8 @@ end
 
 And(/^I should see the content for step two$/) do
   common_step_header
-  expect(step_two_page.content.text).to have_p
-  expect(step_two_page.content.block_label.count).to eq 2
+  expect(fee_page.content.text).to have_p
+  expect(fee_page.content.block_label.count).to eq 2
   group_two(0).fee_paid_false.click
   common_page.continue_button.click
 end

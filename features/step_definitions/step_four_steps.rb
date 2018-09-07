@@ -3,7 +3,7 @@ def group_four(index)
 end
 
 Given(/^I am a single person on the step four page$/) do
-  step 'I am on the page for step one'
+  step 'I am on the page for step one - form name'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
@@ -11,7 +11,7 @@ Given(/^I am a single person on the step four page$/) do
 end
 
 Given(/^I am a married person on the step four page$/) do
-  step 'I am on the page for step one'
+  step 'I am on the page for step one - form name'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'

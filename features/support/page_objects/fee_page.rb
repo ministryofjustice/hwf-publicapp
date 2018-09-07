@@ -1,4 +1,4 @@
-class StepTwoPage < BasePage
+class FeePage < BasePage
   set_url '/questions/fee'
 
   section :content, '#content' do

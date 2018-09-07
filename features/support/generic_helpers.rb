@@ -8,20 +8,8 @@ def wait_for
   end
 end
 
-def wait_for_ajax
-  wait_for { page.evaluate_script('jQuery.active').zero? }
-end
-
 def wait_for_document_ready
   wait_for { page.evaluate_script('document.readyState').eql? 'complete' }
-end
-
-def wait_for_dropdown_change(dropdown, expected_value)
-  wait_for { dropdown.value == expected_value }
-end
-
-def scroll_down
-  Capybara.execute_script('window.scrollBy(0,1000)')
 end
 
 def scroll_to_bottom
@@ -41,12 +29,12 @@ module WaitUntil
   end
 end
 
-def step_one_page
-  @step_one_page ||= StepOnePage.new
+def form_name_page
+  @form_name_page ||= FormNamePage.new
 end
 
-def step_two_page
-  @step_two_page ||= StepTwoPage.new
+def fee_page
+  @fee_page ||= FeePage.new
 end
 
 def step_three_page

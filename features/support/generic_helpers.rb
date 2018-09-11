@@ -29,6 +29,11 @@ module WaitUntil
   end
 end
 
+def answer_up_to_fee_page
+  step 'I am on the page for step one - form name'
+  step 'I submit the form with a valid form number'
+end
+
 def form_name_page
   @form_name_page ||= FormNamePage.new
 end

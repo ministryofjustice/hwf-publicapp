@@ -19,4 +19,23 @@ class FeePage < BasePage
     element :fee_date_paid, '#fee_date_paid'
     element :date_fee_paid, '.form-label', text: 'Date fee paid'
   end
+
+  def expired_date
+    fee_page.content.fee_date_paid.set(Time.zone.today - 4.months)
+    continue
+  end
+
+  def future_date
+    fee_page.content.fee_date_paid.set(Time.zone.today + 1.month)
+    continue
+  end
+
+  def valid_date
+    fee_page.content.fee_date_paid.set(Time.zone.today - 1.month)
+    continue
+  end
+
+
+
+
 end

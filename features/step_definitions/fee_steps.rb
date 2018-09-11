@@ -11,23 +11,20 @@ end
 
 When(/^I select yes to have you already paid the fee\?$/) do
   fee_page.content.yes.click
+  expect(fee_page.content).to have_date_fee_paid
+  expect(fee_page.content).to have_use_this_date
 end
 
 And(/^I submit the form with a date thats within the last three months$/) do
-  expect(fee_page.content).to have_date_fee_paid
-  expect(fee_page.content).to have_use_this_date
-  fee_page.content.fee_date_paid.set(Time.zone.today - 1.month)
-  continue
+  fee_page.valid_date
 end
 
 And(/^I submit the form with a date that exceeds three months$/) do
-  fee_page.content.fee_date_paid.set(Time.zone.today - 4.months)
-  continue
+  fee_page.expired_date
 end
 
 When(/^I submit the form with a future date$/) do
-  fee_page.content.fee_date_paid.set(Time.zone.today + 1.month)
-  continue
+  fee_page.future_date
 end
 
 When(/^I should see enter the date in this format error message$/) do

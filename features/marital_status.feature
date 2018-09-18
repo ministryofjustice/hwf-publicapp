@@ -3,13 +3,7 @@
 Feature: Step three page
 
   Background: Navigating to the page for step three
-    Given I visit the page for step three
-
-  Scenario: Displays step number
-    Then I should see step 3 of 20
-
-  Scenario: Displays header
-    Then I should see 'Are you single, married or living with someone and sharing an income?' header
+    Given I am on the page for step three - marital status
 
   Scenario: Selecting single
     When I submit the form as single

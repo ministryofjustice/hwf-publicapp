@@ -34,6 +34,47 @@ def answer_up_to_fee_page
   step 'I submit the form with a valid form number'
 end
 
+def answer_up_to_marital_status_page
+  step 'I am on the page for step one - form name'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+end
+
+def answer_up_to_savings_and_investment_single
+  step 'I am on the page for step one - form name'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+  step 'I submit the form as single'
+end
+ 
+def answer_up_to_savings_and_investment_married
+  step 'I am on the page for step one - form name'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+  step 'I submit the form as married'
+end
+
+def answer_up_to_over_61_single
+  step 'I am on the page for step one - form name'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+  step 'I submit the form as single'
+  step 'I submit the form with £3,000 to £15,999 checked'
+end
+ 
+def answer_up_to_over_61_married
+  step 'I am on the page for step one - form name'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+  step 'I submit the form as married'
+  step 'I submit the form with £3,000 to £15,999 checked'
+end
+
 def form_name_page
   @form_name_page ||= FormNamePage.new
 end
@@ -42,16 +83,16 @@ def fee_page
   @fee_page ||= FeePage.new
 end
 
-def step_three_page
-  @step_three_page ||= StepThreePage.new
+def marital_status_page
+  @marital_status_page ||= MaritalStatusPage.new
 end
 
-def step_four_page
-  @step_four_page ||= StepFourPage.new
+def savings_and_investment_page
+  @savings_and_investment_page ||= SavingsAndInvestmentPage.new
 end
 
-def step_five_page
-  @step_five_page ||= StepFivePage.new
+def over_61_page
+  @over_61_page ||= Over61Page.new
 end
 
 def step_six_page

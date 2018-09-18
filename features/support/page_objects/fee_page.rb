@@ -34,8 +34,4 @@ class FeePage < BasePage
     fee_page.content.fee_date_paid.set(Time.zone.today - 1.month)
     continue
   end
-
-
-
-
 end

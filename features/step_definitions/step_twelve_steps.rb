@@ -1,5 +1,5 @@
 Given(/^I visit the page for step twelve$/) do
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'

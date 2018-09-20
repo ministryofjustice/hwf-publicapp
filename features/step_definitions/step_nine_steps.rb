@@ -3,7 +3,7 @@ def form_group(index)
 end
 
 Given(/^I am a single person with no children on step nine$/) do
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
@@ -18,7 +18,7 @@ Given(/^I am a single person with no children on step nine$/) do
 end
 
 Given(/^I am a married person with no children on step nine$/) do
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
@@ -32,7 +32,7 @@ Given(/^I am a married person with no children on step nine$/) do
 end
 
 Given(/^I am a married person with three children on step nine$/) do
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
@@ -46,7 +46,7 @@ Given(/^I am a married person with three children on step nine$/) do
 end
 
 Given(/^I am a single person with three children on step nine$/) do
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'

@@ -1,15 +1,9 @@
 @e2e
 
-Feature: Step six page
+Feature: Benefit page
 
-  Background: Page six
-    Given I am on the page for step six
-
-  Scenario: Displays step number
-    Then I should see step 6 of 20
-
-  Scenario: Displays header
-    Then I should see 'Do you receive any of the following benefits?' header
+  Background: Benefit page
+    Given I am on the page for step six - Do you receive any of the following benefits?
 
   Scenario: Displays instruction bullet points
     Then I should see the instruction bullet points:
@@ -38,4 +32,4 @@ Feature: Step six page
 
   Scenario: Displays error message
     When I click continue
-    Then I should see 'Select whether you're receiving one of the benefits listed' error message
+    Then I should see select whether you're receiving one of the benefits listed error message

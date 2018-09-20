@@ -1,4 +1,4 @@
-Given(/^I am on the page for step three - marital status$/) do
+Given(/^I am on the page for step three - Are you single, married or living with someone and sharing an income\?$/) do
   answer_up_to_marital_status_page
   expect(marital_status_page.content).to have_step_info
   expect(marital_status_page.content).to have_fee_header
@@ -9,7 +9,7 @@ When(/^I submit the form as single$/) do
 end
 
 When(/^I submit the form as married$/) do
-   marital_status_page.married
+  marital_status_page.married
 end
 
 Then(/^I should see help with status copy$/) do

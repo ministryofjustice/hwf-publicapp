@@ -1,4 +1,4 @@
-Given(/^I am on the page for step one - form name$/) do
+Given(/^I am on the page for step one - What court or tribunal fee do you need help with\?$/) do
   form_name_page.load_page
   expect(form_name_page.content).to have_step_info
   expect(form_name_page.content).to have_form_name_header
@@ -34,7 +34,7 @@ Then(/^I see more information about the form name or number$/) do
   expect(form_name_page.content).to have_no_form_name
 end
 
-Then(/^I should be taken to step two - fee$/) do
+Then(/^I should be taken to step two - Have you already paid the fee\?$/) do
   expect(fee_page).to be_displayed
 end
 

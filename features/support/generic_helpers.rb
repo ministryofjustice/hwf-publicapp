@@ -30,19 +30,19 @@ module WaitUntil
 end
 
 def answer_up_to_fee_page
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
 end
 
 def answer_up_to_marital_status_page
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
 end
 
 def answer_up_to_savings_and_investment_single
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
@@ -50,7 +50,7 @@ def answer_up_to_savings_and_investment_single
 end
  
 def answer_up_to_savings_and_investment_married
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
@@ -58,7 +58,7 @@ def answer_up_to_savings_and_investment_married
 end
 
 def answer_up_to_over_61_single
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
@@ -67,12 +67,31 @@ def answer_up_to_over_61_single
 end
  
 def answer_up_to_over_61_married
-  step 'I am on the page for step one - form name'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
   step 'I submit the form as married'
   step 'I submit the form with £3,000 to £15,999 checked'
+end
+
+def answer_up_to_benefit
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+  step 'I submit the form as single'
+  step 'I submit the form with £0 to £2,999 checked'
+end
+
+def answer_up_to_dependent
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+  step 'I submit the form as single'
+  step 'I submit the form with £0 to £2,999 checked'
+  step 'I submit the form with no I do not receive one of the benefits listed'
 end
 
 def form_name_page
@@ -95,12 +114,12 @@ def over_61_page
   @over_61_page ||= Over61Page.new
 end
 
-def step_six_page
-  @step_six_page ||= StepSixPage.new
+def benefit_page
+  @benefit_page ||= BenefitPage.new
 end
 
-def step_seven_page
-  @step_seven_page ||= StepSevenPage.new
+def dependent_page
+  @dependent_page ||= DependentPage.new
 end
 
 def step_eight_page

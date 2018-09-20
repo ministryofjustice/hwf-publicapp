@@ -1,19 +1,13 @@
 @e2e
 
-Feature: Step seven page
+Feature: Dependent page
 
-  Background: Page seven
-    Given I am on the page for step seven
-
-  Scenario: Displays step number
-    Then I should see step 7 of 20
-  
-  Scenario: Displays header
-    Then I should see 'Do you have any children living with you' header
+  Background: Dependent page
+    Given I am on the page for step seven - Do you have any children living with you, or who you support financially?
 
   Scenario: Yes to do you have any children
     When I select yes to do you have any children
-    And I submit the form with '4' children entered into the input field
+    And I submit the form with '4' children
     Then I am taken to step 8 - What kind of income do you receive?
 
   Scenario: No to do you have any children
@@ -22,7 +16,7 @@ Feature: Step seven page
 
   Scenario: Displays error message
     When I click continue
-    Then I should see 'financially dependent children' error message
+    Then I should see you need to say whether you have financially dependent children error message
 
   Scenario: Help with benefits
     When I click on 'Help with financially dependent children'

@@ -1,4 +1,4 @@
-Given(/^I am on the page for step two - fee$/) do
+Given(/^I am on the page for step two - Have you already paid the fee\?$/) do
   answer_up_to_fee_page
   expect(fee_page.content).to have_step_info
   expect(fee_page.content).to have_fee_header
@@ -34,7 +34,7 @@ end
 
 When(/^I should see select whether you've already paid the fee error message$/) do
   expect(fee_page.content).to have_blank_error_message
-  expect(fee_page.content).to have_blank_error_link 
+  expect(fee_page.content).to have_blank_error_link
 end
 
 Then(/^I should see this date can't be in the future error message$/) do

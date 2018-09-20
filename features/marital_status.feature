@@ -1,9 +1,9 @@
 @e2e
 
-Feature: Step three page
+Feature: Marital status page
 
-  Background: Navigating to the page for step three
-    Given I am on the page for step three - marital status
+  Background: Marital status page
+    Given I am on the page for step three - Are you single, married or living with someone and sharing an income?
 
   Scenario: Selecting single
     When I submit the form as single

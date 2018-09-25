@@ -94,6 +94,28 @@ def answer_up_to_dependent
   step 'I submit the form with no I do not receive one of the benefits listed'
 end
 
+def answer_up_to_income_kind_single
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+  step 'I submit the form as single'
+  step 'I submit the form with £0 to £2,999 checked'
+  step 'I submit the form with no I do not receive one of the benefits listed'
+  step 'I submit the form with no I do not have any children'
+end
+
+def answer_up_to_income_kind_married
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
+  step 'I submit the form with a valid form number'
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
+  step 'I submit the form as married'
+  step 'I submit the form with £0 to £2,999 checked'
+  step 'I submit the form with no I do not receive one of the benefits listed'
+  step 'I submit the form with no I do not have any children'
+end
+
 def form_name_page
   @form_name_page ||= FormNamePage.new
 end
@@ -122,8 +144,8 @@ def dependent_page
   @dependent_page ||= DependentPage.new
 end
 
-def step_eight_page
-  @step_eight_page ||= StepEightPage.new
+def income_kind_page
+  @income_kind_page ||= IncomeKindPage.new
 end
 
 def step_nine_page

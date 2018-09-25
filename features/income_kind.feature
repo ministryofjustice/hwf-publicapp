@@ -2,18 +2,6 @@
 
 Feature: Step eight page
 
-  Scenario: Displays step number
-    Given I am a single person on step eight
-    Then I should see step 8 of 20
-  
-  Scenario: Displays single person header
-    Given I am a single person on step eight
-    Then I should see 'What kind of income do you receive?' header
-
-  Scenario: Displays married person header
-    Given I am a married person on step eight
-    Then I should see 'What kind of income do you and your partner receive?' header
-
   Scenario: Displays income lists for a single person
     Given I am a single person on step eight
     Then I should see an income list:
@@ -58,4 +46,4 @@ Feature: Step eight page
   Scenario: Displays error message
     Given I am a single person on step eight
     When I click continue
-    Then I should see 'Select your kinds of income' error message
+    Then I should see select your kinds of income error message

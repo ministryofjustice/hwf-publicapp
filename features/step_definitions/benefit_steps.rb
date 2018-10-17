@@ -1,5 +1,5 @@
 Given(/^I am on the page for step six - Do you receive any of the following benefits\?$/) do
-  answer_up_to_benefit
+  answer_up_to_benefit_single
   expect(benefit_page.content).to have_step_info
   expect(benefit_page.content).to have_benefit_header
 end

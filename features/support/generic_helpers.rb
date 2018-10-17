@@ -35,85 +35,100 @@ def answer_up_to_fee_page
 end
 
 def answer_up_to_marital_status_page
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
+  answer_up_to_fee_page
   step 'I select no to have you already paid the fee?'
   step 'I click continue'
 end
 
 def answer_up_to_savings_and_investment_single
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
+  answer_up_to_marital_status_page
   step 'I submit the form as single'
 end
- 
+
 def answer_up_to_savings_and_investment_married
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
+  answer_up_to_marital_status_page
   step 'I submit the form as married'
 end
 
 def answer_up_to_over_61_single
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-  step 'I submit the form as single'
+  answer_up_to_savings_and_investment_single
   step 'I submit the form with £3,000 to £15,999 checked'
 end
- 
+
 def answer_up_to_over_61_married
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-  step 'I submit the form as married'
+  answer_up_to_savings_and_investment_married
   step 'I submit the form with £3,000 to £15,999 checked'
 end
 
-def answer_up_to_benefit
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-  step 'I submit the form as single'
+def answer_up_to_benefit_single
+  answer_up_to_savings_and_investment_single
   step 'I submit the form with £0 to £2,999 checked'
 end
 
-def answer_up_to_dependent
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-  step 'I submit the form as single'
+def answer_up_to_benefit_married
+  answer_up_to_savings_and_investment_married
   step 'I submit the form with £0 to £2,999 checked'
+end
+
+def answer_up_to_dependent_single
+  answer_up_to_benefit_single
+  step 'I submit the form with no I do not receive one of the benefits listed'
+end
+
+def answer_up_to_dependent_married
+  answer_up_to_benefit_married
   step 'I submit the form with no I do not receive one of the benefits listed'
 end
 
 def answer_up_to_income_kind_single
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-  step 'I submit the form as single'
-  step 'I submit the form with £0 to £2,999 checked'
-  step 'I submit the form with no I do not receive one of the benefits listed'
+  answer_up_to_dependent_single
   step 'I submit the form with no I do not have any children'
 end
 
+def single_with_three_children
+  answer_up_to_dependent_single
+  step 'I select yes to do you have any children'
+  step 'I add I have three children'
+end
+
 def answer_up_to_income_kind_married
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
-  step 'I submit the form with a valid form number'
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-  step 'I submit the form as married'
-  step 'I submit the form with £0 to £2,999 checked'
-  step 'I submit the form with no I do not receive one of the benefits listed'
+  answer_up_to_dependent_married
   step 'I submit the form with no I do not have any children'
+end
+
+def answer_up_to_income_range_single_no_children
+  answer_up_to_income_kind_single
+  step 'after selecting wages from income list on step eight'
+  step 'after selecting working tax credit from income list on step eight'
+  step 'I click continue'
+end
+
+def answer_up_to_income_range_married_no_children
+  answer_up_to_income_kind_married
+  step 'after selecting wages from income list on step eight'
+  step 'I click continue'
+end
+
+def answer_up_to_income_range_married_with_children
+  answer_up_to_income_kind_married
+  step 'after selecting wages from income list on step eight'
+  step 'I click continue'
+end
+
+def answer_up_to_income_range_single_with_children
+  single_with_three_children
+  step 'after selecting wages from income list on step eight'
+  step 'I click continue'
+end
+
+def answer_up_to_income_amount_single
+  answer_up_to_income_range_single_with_children
+  step 'I select between'
+end
+
+def answer_up_to_income_amount_married
+  answer_up_to_income_range_married_with_children
+  step 'I select between'
 end
 
 def form_name_page
@@ -148,12 +163,12 @@ def income_kind_page
   @income_kind_page ||= IncomeKindPage.new
 end
 
-def step_nine_page
-  @step_nine_page ||= StepNinePage.new
+def income_range_page
+  @income_range_page ||= IncomeRangePage.new
 end
 
-def step_ten_page
-  @step_ten_page ||= StepTenPage.new
+def income_amount_page
+  @income_amount_page ||= IncomeAmountPage.new
 end
 
 def step_eleven_page

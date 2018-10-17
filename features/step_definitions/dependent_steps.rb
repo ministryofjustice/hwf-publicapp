@@ -1,5 +1,5 @@
 Given(/^I am on the page for step seven - Do you have any children living with you, or who you support financially\?$/) do
-  answer_up_to_dependent
+  answer_up_to_dependent_single
   expect(dependent_page.content).to have_step_info
   expect(dependent_page.content).to have_dependent_header
 end

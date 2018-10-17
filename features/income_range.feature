@@ -7,10 +7,6 @@ Feature: Step nine page
       | Wages                                                     |
       | Working Tax Credit                                        |
 
-  Scenario: Displays average monthly income copy
-    Given I am a single person with no children on step nine - What kind of income do you receive?
-    Then I should see average monthly income copy
-
   Scenario: Income range for single with no children
     Given I am a single person with no children on step nine - What kind of income do you receive?
     Then I should see low income range 'Less than £1,085'
@@ -19,9 +15,9 @@ Feature: Step nine page
 
   Scenario: Income range for married with three children
     Given I am a married person with three children on step nine - What kind of income do you receive?
-    Then I should see low income range 'Less than £1,980'
-    And I should see medium income range 'Between £1,980 and £5,980'
-    And I should see high income range 'More than £5,980'
+    Then I should see low income range 'Less than £1,245'
+    And I should see medium income range 'Between £1,245 and £5,245'
+    And I should see high income range 'More than £5,245'
 
   Scenario: Income range for single with three children
     Given I am a single person with three children on step nine - What kind of income do you receive?

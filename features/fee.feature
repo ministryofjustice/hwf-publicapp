@@ -2,7 +2,7 @@
 
 Feature: Fee page
 
-  Background: Fee page
+  Background: Navigating to the fee page
     Given I am on the page for step two - Have you already paid the fee?
 
   Scenario: Neither selecting yes or no

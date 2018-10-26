@@ -1,11 +1,11 @@
-Given(/^I am a single person on the step four - savings and investment page$/) do
+Given(/^I am a single person on the step four - How much do you have in savings and investments\?$/) do
   answer_up_to_savings_and_investment_single
   expect(savings_and_investment_page.content).to have_step_info
   expect(savings_and_investment_page.content).to have_fee_header
   expect(savings_and_investment_page.content).to have_no_married_reminder
 end
 
-Given(/^I am a married person on the step four - savings and investment page$/) do
+Given(/^I am a married person on the step four - How much do you have in savings and investments\?$/) do
   answer_up_to_savings_and_investment_married
   expect(savings_and_investment_page.content).to have_step_info
   expect(savings_and_investment_page.content).to have_fee_header

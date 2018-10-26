@@ -1,14 +1,6 @@
-Given(/^I go to step twenty without skipping step nineteen$/) do
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-  step 'I submit the form as single'
-  step 'I submit the form with £0 to £2,999 checked'
-  step 'I submit the form with no I do not receive one of the benefits listed'
-  step 'I submit the form with no I do not have any children'
-  step 'after selecting working tax credit from income list on step eight'
-  step 'I click continue'
-  step 'I select between'
-  step 'I enter a valid total monthly income'
+Given(/^I am on the page for step twenty$/) do
+  answer_up_to_income_amount_married
+  step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'
   step 'I select no to do you have a case, claim or notice to pay number'
   step 'I enter a valid national insurance number'
@@ -17,27 +9,7 @@ Given(/^I go to step twenty without skipping step nineteen$/) do
   step 'I enter my address with postcode'
   step 'I click continue'
   step 'I click submit application and continue'
-  step 'I click continue'
-end
-
-Given(/^I go to step twenty by skipping step nineteen$/) do
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-  step 'I submit the form as single'
-  step 'I submit the form with £0 to £2,999 checked'
-  step 'I submit the form with no I do not receive one of the benefits listed'
-  step 'I submit the form with no I do not have any children'
-  step 'after selecting working tax credit from income list on step eight'
-  step 'I click continue'
-  step 'I select between'
-  step 'I enter a valid total monthly income'
-  step 'I enter a employment tribunal number'
-  step 'I enter a valid national insurance number'
-  step 'I enter a valid date of birth'
-  step 'I enter my full name'
-  step 'I enter my address with postcode'
-  step 'I click submit application and continue'
-  step 'I click continue'
+  continue
 end
 
 When(/^I click the finish application button$/) do

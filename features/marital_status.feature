@@ -2,7 +2,7 @@
 
 Feature: Marital status page
 
-  Background: Marital status page
+  Background: Navigating to the marital status page
     Given I am on the page for step three - Are you single, married or living with someone and sharing an income?
 
   Scenario: Selecting single

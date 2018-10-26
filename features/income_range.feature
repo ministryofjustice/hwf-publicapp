@@ -1,4 +1,4 @@
-Feature: Step nine page   
+Feature: Income range page
 
   Scenario: Income list
     Given I am a single person with no children on step nine - What kind of income do you receive?

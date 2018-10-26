@@ -2,11 +2,6 @@ def group_common(index)
   common_page.content.form_group[index]
 end
 
-Given(/^I do not need help with an employment tribunal$/) do
-  step 'I am on the page for step one'
-  step 'I submit the form with a valid form number'
-end
-
 When(/^I click on cancel application$/) do
   common_page.restart_application.click
 end
@@ -22,7 +17,7 @@ When(/^I click on no, return to current application$/) do
 end
 
 When(/^I click continue$/) do
-  common_page.continue_button.click
+  continue
 end
 
 When(/^I click on '([^\"]*)'$/) do |help|
@@ -67,25 +62,6 @@ Then(/^I should remain on the page$/) do
   expect(current_path).to eq '/questions/form_name'
 end
 
-Then(/^I should see '([^\"]*)' error message$/) do |error_message|
-  error_summary_group = common_page.error_summary
-  expect(error_summary_group).to have_error_summary_heading
-  expect(error_summary_group.link.text).to have_content error_message
-  expect(common_page.error_message[0].text).to have_content error_message
-end
-
-Then(/^I should see error message '([^\"]*)'$/) do |error_message|
-  error_summary_group = common_page.error_summary
-  expect(error_summary_group).to have_error_summary_heading
-  expect(error_summary_group.link.text).to have_content error_message
-  expect(common_page.error_message[1].text).to have_content error_message
-end
-
-Then(/^I should see average monthly income copy$/) do
-  average_income = common_page.content.text.p[1]
-  expect(average_income.text).to have_content 'work out an average monthly income'
-end
-
 Then(/^I should see hint '([^\"]*)'$/) do |hint|
   hint_group = common_page.content.text.p[0]
   expect(hint_group.text).to have_content hint
@@ -113,4 +89,23 @@ end
 Then(/^I should see save or print this page$/) do
   expect(common_page.js_print['href']).to end_with '#'
   expect(common_page.js_print.text).to eq 'Save or print this page'
+end
+
+Then(/^I should see '([^\"]*)' error message$/) do |error_message|
+  error_summary_group = common_page.error_summary
+  expect(error_summary_group).to have_error_summary_heading
+  expect(error_summary_group.link.text).to have_content error_message
+  expect(common_page.error_message[0].text).to have_content error_message
+end
+
+Then(/^I should see error message '([^\"]*)'$/) do |error_message|
+  error_summary_group = common_page.error_summary
+  expect(error_summary_group).to have_error_summary_heading
+  expect(error_summary_group.link.text).to have_content error_message
+  expect(common_page.error_message[1].text).to have_content error_message
+end
+
+Then(/^I should see average monthly income copy$/) do
+  average_income = common_page.content.text.p[1]
+  expect(average_income.text).to have_content 'work out an average monthly income'
 end

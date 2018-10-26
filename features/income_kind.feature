@@ -1,6 +1,6 @@
 @e2e
 
-Feature: Step eight page
+Feature: Income kind page
 
   Scenario: Displays income lists for a single person
     Given I am a single person on step eight - What kind of income do you receive?

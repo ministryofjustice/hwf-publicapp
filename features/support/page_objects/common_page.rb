@@ -8,6 +8,7 @@ class CommonPage < BasePage
       elements :li, 'li'
       elements :hint, '.hint'
     end
+    element :continue_button, 'input[value="Continue"]'
   end
   element :help_with, 'details > summary'
 
@@ -26,5 +27,8 @@ class CommonPage < BasePage
   end
   elements :error_message, '.error-message'
   element :js_print, '.js-print'
-  element :continue_button, 'input[value="Continue"]'
+end
+
+def continue
+  common_page.content.continue_button.click
 end

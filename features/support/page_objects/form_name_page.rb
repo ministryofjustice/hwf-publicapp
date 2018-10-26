@@ -28,7 +28,3 @@ def submit_valid_form_name
   form_name_page.content.form_name.set('notice to appeal')
   continue
 end
-
-def continue
-  form_name_page.content.continue_button.click
-end

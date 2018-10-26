@@ -131,6 +131,23 @@ def answer_up_to_income_amount_married
   step 'I select between'
 end
 
+def answer_up_to_claim_page
+  answer_up_to_income_amount_single
+  step 'I submit the form with my monthly income'
+  step 'I select no to are you paying a fee for a probate case'
+end
+
+def answer_up_to_national_insurance_page
+  answer_up_to_claim_page
+  claim_page.content.no.click
+  continue
+end
+
+def answer_up_to_dob
+  answer_up_to_national_insurance_page
+  step 'I enter a valid national insurance number'
+end
+
 def form_name_page
   @form_name_page ||= FormNamePage.new
 end
@@ -171,20 +188,20 @@ def income_amount_page
   @income_amount_page ||= IncomeAmountPage.new
 end
 
-def step_eleven_page
-  @step_eleven_page ||= StepElevenPage.new
+def probate_page
+  @probate_page ||= ProbatePage.new
 end
 
-def step_twelve_page
-  @step_twelve_page ||= StepTwelvePage.new
+def claim_page
+  @claim_page ||= ClaimPage.new
 end
 
-def step_thirteen_page
-  @step_thirteen_page ||= StepThirteenPage.new
+def national_insurance_page
+  @national_insurance_page ||= NationalInsurancePage.new
 end
 
-def step_fourteen_page
-  @step_fourteen_page ||= StepFourteenPage.new
+def dob_page
+  @dob_page ||= DOBPage.new
 end
 
 def step_fifteen_page

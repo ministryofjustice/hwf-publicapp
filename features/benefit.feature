@@ -2,7 +2,7 @@
 
 Feature: Benefit page
 
-  Background: Benefit page
+  Background: Navigating to the benefit page
     Given I am on the page for step six - Do you receive any of the following benefits?
 
   Scenario: Displays instruction bullet points

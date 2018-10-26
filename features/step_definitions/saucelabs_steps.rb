@@ -77,15 +77,15 @@ end
 And(/^I should see the content for step nine$/) do
   common_step_header
   expect(common_page.content).to have_text
-  expect(step_nine_page.content.form_group[0].block_label.count).to eq 3
-  step_nine_page.content.form_group[0].income_range_between.click
+  expect(income_range_page.content.form_group[0].block_label.count).to eq 3
+  income_range_page.content.form_group[0].income_range_between.click
   common_page.continue_button.click
 end
 
 And(/^I should see the content for step ten$/) do
   common_step_header
   expect(common_page.content).to have_text
-  step_ten_page.content.form_group[0].income_amount.set(1900)
+  income_amount_page.content.form_group[0].income_amount.set(1900)
   common_page.continue_button.click
 end
 
@@ -157,8 +157,8 @@ end
 And(/^I should see the content for step nineteen$/) do
   expect(common_page).to have_heading_secondary
   expect(common_page.content).to have_h2
-  expect(step_nineteen_page.steps_panel.li.count).to eq 4
-  expect(step_nineteen_page.steps_panel).to have_hwf_ref
+  expect(income_rangeteen_page.steps_panel.li.count).to eq 4
+  expect(income_rangeteen_page.steps_panel).to have_hwf_ref
   common_page.button.click
 end
 

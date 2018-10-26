@@ -1,16 +1,7 @@
-Feature: Step eleven page
+Feature: Probate page
 
-  Background: Navigating to the page for step eleven
-    Given I visit the page for step eleven
-
-  Scenario: Displays step number
-    Then I should see step 11 of 20
-  
-  Scenario: Displays header
-    Then I should see 'Are you paying a fee for a probate case?' header
-
-  Scenario: Displays hint
-    Then I should see hint 'property and belongings of someone who has died.'
+  Background: Navigating to the probate page
+    Given I visit the page for step eleven - Are you paying a fee for a probate case?
 
   Scenario: Selecting no to are you paying a fee for a probate case
     When I select no to are you paying a fee for a probate case
@@ -24,16 +15,16 @@ Feature: Step eleven page
 
   Scenario: Displays date can't be in the future error message
     When I enter a future date of death
-    Then I should see error message 'This date can't be in the future'
+    Then I should see error message this date can't be in the future
 
   Scenario: Displays must have been in the last 20 years error message
     When I enter a date over twenty years ago
-    Then I should see error message 'The date of death must have been in the last 20 years'
+    Then I should see error message the date of death must have been in the last 20 years
 
   Scenario: Displays invalid format error message
     When I enter a invalid date of death
-    Then I should see error message 'Enter the date in this format DD/MM/YYYY'
+    Then I should see enter the date in this format error message
 
   Scenario: Displays make a selection error message
     When I click continue
-    Then I should see 'Select whether you're paying a fee for a probate case' error message
+    Then I should see select whether you're paying a fee for a probate case error message

@@ -2,7 +2,7 @@
 
 Feature: Dependent page
 
-  Background: Dependent page
+  Background: Navigating to the dependent page
     Given I am on the page for step seven - Do you have any children living with you, or who you support financially?
 
   Scenario: Yes to do you have any children

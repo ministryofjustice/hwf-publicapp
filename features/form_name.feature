@@ -2,7 +2,7 @@
 
 Feature: Form name page
 
-  Background: Form name page
+  Background: Navigating to the form name page
     Given I am on the page for step one - What court or tribunal fee do you need help with?
 
     Scenario: Entering valid form number

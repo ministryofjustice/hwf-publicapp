@@ -17,4 +17,4 @@ Feature: Date of birth page
 
   Scenario: Displays error message enter your national insurance number
     When I click continue
-    Then I should see enter the date in this format DD/MM/YYYY error message
+    Then I should see enter the date in this format error message

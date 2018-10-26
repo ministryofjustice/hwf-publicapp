@@ -27,7 +27,7 @@ When(/^I submit the form with a future date$/) do
   fee_page.future_date
 end
 
-When(/^I should see enter the date in this format error message$/) do
+When(/^I should see enter the fee date in this format error message$/) do
   expect(fee_page.content).to have_format_error_message
   expect(fee_page.content).to have_format_error_link
 end

@@ -17,7 +17,7 @@ Feature: Fee page
   Scenario: Selecting yes but not providing a date
     When I select yes to have you already paid the fee?
     And I click continue
-    Then I should see enter the date in this format error message
+    Then I should see enter the fee date in this format error message
 
   Scenario: Date within the last 3 months
     When I select yes to have you already paid the fee?

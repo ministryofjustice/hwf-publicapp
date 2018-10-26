@@ -31,7 +31,7 @@ Then(/^I should see check this date of birth is correct error message$/) do
   expect(dob_page.content).to have_over_age_error_message
 end
 
-Then(/^I should see enter the date in this format error message$/) do
+Then(/^I should see enter the date of birth in this format error message$/) do
   expect(dob_page.content).to have_blank_error_link
   expect(dob_page.content).to have_blank_error_message
 end

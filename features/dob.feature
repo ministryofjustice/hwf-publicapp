@@ -15,6 +15,6 @@ Feature: Date of birth page
     When I enter a invalid date of birth
     Then I should see check this date of birth is correct error message
 
-  Scenario: Displays error message enter your national insurance number
+  Scenario: Displays error message enter the date in this format
     When I click continue
-    Then I should see enter the date in this format error message
+    Then I should see enter the date of birth in this format error message

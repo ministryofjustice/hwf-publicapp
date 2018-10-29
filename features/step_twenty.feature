@@ -12,7 +12,7 @@ Feature: Step twenty page
     Then I should see deliver your paperwork copy
 
   Scenario: Displays what happens next for people that do not need help with an employment tribunal fee
-    Then I should see what happens next with 3 points
+    Then I should see what happens next
 
   Scenario: Save or print this page
     Then I should see save or print this page

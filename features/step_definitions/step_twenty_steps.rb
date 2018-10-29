@@ -24,9 +24,9 @@ Then(/^I should see deliver your paperwork copy$/) do
   expect(step_twenty_page.post.p.text).to have_content 'Deliver your paperwork to the court'
 end
 
-Then(/^I should see what happens next with (\d+) points$/) do |point|
+Then(/^I should see what happens next$/) do
   expect(step_twenty_page.steps_panel.h2.text).to eq 'What happens next?'
-  expect(step_twenty_page.steps_panel.li.count.to_s).to eq point
+  expect(step_twenty_page.steps_panel.li.count).to eq 3
 end
 
 Then(/^I should see point 1 with HWF number$/) do

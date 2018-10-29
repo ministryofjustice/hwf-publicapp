@@ -4,12 +4,12 @@ def common_step_header
 end
 
 Given(/^I have started my application$/) do
-  step_one_page.load_page
+  form_name_page.load_page
 end
 
 Then(/^I should see the content for step one$/) do
   common_step_header
-  expect(step_one_page.content).to have_hint
+  expect(form_name_page.content).to have_hint
   expect(group_one(0)).to have_label
   expect(group_one(1)).to have_block_label
   expect(group_common(2)).to have_help_with
@@ -19,8 +19,8 @@ end
 
 And(/^I should see the content for step two$/) do
   common_step_header
-  expect(step_two_page.content.text).to have_p
-  expect(step_two_page.content.block_label.count).to eq 2
+  expect(fee_page.content.text).to have_p
+  expect(fee_page.content.block_label.count).to eq 2
   group_two(0).fee_paid_false.click
   common_page.continue_button.click
 end
@@ -77,15 +77,15 @@ end
 And(/^I should see the content for step nine$/) do
   common_step_header
   expect(common_page.content).to have_text
-  expect(step_nine_page.content.form_group[0].block_label.count).to eq 3
-  step_nine_page.content.form_group[0].income_range_between.click
+  expect(income_range_page.content.form_group[0].block_label.count).to eq 3
+  income_range_page.content.form_group[0].income_range_between.click
   common_page.continue_button.click
 end
 
 And(/^I should see the content for step ten$/) do
   common_step_header
   expect(common_page.content).to have_text
-  step_ten_page.content.form_group[0].income_amount.set(1900)
+  income_amount_page.content.form_group[0].income_amount.set(1900)
   common_page.continue_button.click
 end
 
@@ -157,8 +157,8 @@ end
 And(/^I should see the content for step nineteen$/) do
   expect(common_page).to have_heading_secondary
   expect(common_page.content).to have_h2
-  expect(step_nineteen_page.steps_panel.li.count).to eq 4
-  expect(step_nineteen_page.steps_panel).to have_hwf_ref
+  expect(income_rangeteen_page.steps_panel.li.count).to eq 4
+  expect(income_rangeteen_page.steps_panel).to have_hwf_ref
   common_page.button.click
 end
 

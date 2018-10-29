@@ -8,20 +8,8 @@ def wait_for
   end
 end
 
-def wait_for_ajax
-  wait_for { page.evaluate_script('jQuery.active').zero? }
-end
-
 def wait_for_document_ready
   wait_for { page.evaluate_script('document.readyState').eql? 'complete' }
-end
-
-def wait_for_dropdown_change(dropdown, expected_value)
-  wait_for { dropdown.value == expected_value }
-end
-
-def scroll_down
-  Capybara.execute_script('window.scrollBy(0,1000)')
 end
 
 def scroll_to_bottom
@@ -41,60 +29,179 @@ module WaitUntil
   end
 end
 
-def step_one_page
-  @step_one_page ||= StepOnePage.new
+def answer_up_to_fee_page
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
+  step 'I submit the form with a valid form number'
 end
 
-def step_two_page
-  @step_two_page ||= StepTwoPage.new
+def answer_up_to_marital_status_page
+  answer_up_to_fee_page
+  step 'I select no to have you already paid the fee?'
+  step 'I click continue'
 end
 
-def step_three_page
-  @step_three_page ||= StepThreePage.new
+def answer_up_to_savings_and_investment_single
+  answer_up_to_marital_status_page
+  step 'I submit the form as single'
 end
 
-def step_four_page
-  @step_four_page ||= StepFourPage.new
+def answer_up_to_savings_and_investment_married
+  answer_up_to_marital_status_page
+  step 'I submit the form as married'
 end
 
-def step_five_page
-  @step_five_page ||= StepFivePage.new
+def answer_up_to_over_61_single
+  answer_up_to_savings_and_investment_single
+  step 'I submit the form with £3,000 to £15,999 checked'
 end
 
-def step_six_page
-  @step_six_page ||= StepSixPage.new
+def answer_up_to_over_61_married
+  answer_up_to_savings_and_investment_married
+  step 'I submit the form with £3,000 to £15,999 checked'
 end
 
-def step_seven_page
-  @step_seven_page ||= StepSevenPage.new
+def answer_up_to_benefit_single
+  answer_up_to_savings_and_investment_single
+  step 'I submit the form with £0 to £2,999 checked'
 end
 
-def step_eight_page
-  @step_eight_page ||= StepEightPage.new
+def answer_up_to_benefit_married
+  answer_up_to_savings_and_investment_married
+  step 'I submit the form with £0 to £2,999 checked'
 end
 
-def step_nine_page
-  @step_nine_page ||= StepNinePage.new
+def answer_up_to_dependent_single
+  answer_up_to_benefit_single
+  step 'I submit the form with no I do not receive one of the benefits listed'
 end
 
-def step_ten_page
-  @step_ten_page ||= StepTenPage.new
+def answer_up_to_dependent_married
+  answer_up_to_benefit_married
+  step 'I submit the form with no I do not receive one of the benefits listed'
 end
 
-def step_eleven_page
-  @step_eleven_page ||= StepElevenPage.new
+def answer_up_to_income_kind_single
+  answer_up_to_dependent_single
+  step 'I submit the form with no I do not have any children'
 end
 
-def step_twelve_page
-  @step_twelve_page ||= StepTwelvePage.new
+def single_with_three_children
+  answer_up_to_dependent_single
+  step 'I select yes to do you have any children'
+  step 'I add I have three children'
 end
 
-def step_thirteen_page
-  @step_thirteen_page ||= StepThirteenPage.new
+def answer_up_to_income_kind_married
+  answer_up_to_dependent_married
+  step 'I submit the form with no I do not have any children'
 end
 
-def step_fourteen_page
-  @step_fourteen_page ||= StepFourteenPage.new
+def answer_up_to_income_range_single_no_children
+  answer_up_to_income_kind_single
+  step 'after selecting wages from income list on step eight'
+  step 'after selecting working tax credit from income list on step eight'
+  step 'I click continue'
+end
+
+def answer_up_to_income_range_married_no_children
+  answer_up_to_income_kind_married
+  step 'after selecting wages from income list on step eight'
+  step 'I click continue'
+end
+
+def answer_up_to_income_range_married_with_children
+  answer_up_to_income_kind_married
+  step 'after selecting wages from income list on step eight'
+  step 'I click continue'
+end
+
+def answer_up_to_income_range_single_with_children
+  single_with_three_children
+  step 'after selecting wages from income list on step eight'
+  step 'I click continue'
+end
+
+def answer_up_to_income_amount_single
+  answer_up_to_income_range_single_with_children
+  step 'I select between'
+end
+
+def answer_up_to_income_amount_married
+  answer_up_to_income_range_married_with_children
+  step 'I select between'
+end
+
+def answer_up_to_claim_page
+  answer_up_to_income_amount_single
+  step 'I submit the form with my monthly income'
+  step 'I select no to are you paying a fee for a probate case'
+end
+
+def answer_up_to_national_insurance_page
+  answer_up_to_claim_page
+  claim_page.content.no.click
+  continue
+end
+
+def answer_up_to_dob
+  answer_up_to_national_insurance_page
+  step 'I enter a valid national insurance number'
+end
+
+def form_name_page
+  @form_name_page ||= FormNamePage.new
+end
+
+def fee_page
+  @fee_page ||= FeePage.new
+end
+
+def marital_status_page
+  @marital_status_page ||= MaritalStatusPage.new
+end
+
+def savings_and_investment_page
+  @savings_and_investment_page ||= SavingsAndInvestmentPage.new
+end
+
+def over_61_page
+  @over_61_page ||= Over61Page.new
+end
+
+def benefit_page
+  @benefit_page ||= BenefitPage.new
+end
+
+def dependent_page
+  @dependent_page ||= DependentPage.new
+end
+
+def income_kind_page
+  @income_kind_page ||= IncomeKindPage.new
+end
+
+def income_range_page
+  @income_range_page ||= IncomeRangePage.new
+end
+
+def income_amount_page
+  @income_amount_page ||= IncomeAmountPage.new
+end
+
+def probate_page
+  @probate_page ||= ProbatePage.new
+end
+
+def claim_page
+  @claim_page ||= ClaimPage.new
+end
+
+def national_insurance_page
+  @national_insurance_page ||= NationalInsurancePage.new
+end
+
+def dob_page
+  @dob_page ||= DOBPage.new
 end
 
 def step_fifteen_page

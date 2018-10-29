@@ -25,10 +25,10 @@ When(/^I take the happy path through steps 1 to 20$/) do
   step_eight_page.content.form_group[0].block_label[2].click
   common_page.continue_button.click
   # step nine
-  step_nine_page.content.form_group[0].income_range_between.click
+  income_range_page.content.form_group[0].income_range_between.click
   common_page.continue_button.click
   # step ten
-  step_ten_page.content.form_group[0].income_amount.set(1900)
+  income_amount_page.content.form_group[0].income_amount.set(1900)
   common_page.continue_button.click
   # step eleven
   step_eleven_page.probate_case_false.click

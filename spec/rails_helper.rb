@@ -63,7 +63,7 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
 
   config.before(:all) do
-    Rails.configuration.i18n.locale = :en
+    I18n.locale = :en
   end
   Kernel.srand config.seed
 end

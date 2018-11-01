@@ -34,15 +34,18 @@ For integration and UI testing, we use:
 
 To run the standard Cucumber test suite, use:
 
-$ cucumber features 
+$ cucumber features
+
+## check your ENV['HOSTNAME'] if you have an issues with "Real HTTP connections are disabled. Unregistered request"
+## from webmock
 
 To run the all scenarios in a particular feature file:
 
-$ cucumber features/landing_page.feature  
+$ cucumber features/landing_page.feature
 
 To run a particular scenario using line number:
 
-$ cucumber features/landing_page.feature:10 
+$ cucumber features/landing_page.feature:10
 
 To run in a browser:
 

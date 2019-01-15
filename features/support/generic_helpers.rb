@@ -1,10 +1,8 @@
 def wait_for
   Timeout.timeout(Capybara.default_max_wait_time) do
-    begin
-      loop until yield
-    rescue # rubocop:disable Lint/HandleExceptions
-      # ignored
-    end
+    loop until yield
+  rescue StandardError # rubocop:disable Lint/HandleExceptions
+    # ignored
   end
 end
 

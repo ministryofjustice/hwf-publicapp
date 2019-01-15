@@ -51,7 +51,7 @@ module Forms
       end
 
       it 'returns parameters from export_params method overriden by subclassing' do
-        is_expected.to eql(params)
+        expect(subject).to eql(params)
       end
     end
 

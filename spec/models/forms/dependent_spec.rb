@@ -61,7 +61,7 @@ RSpec.describe Forms::Dependent, type: :model do
       let(:children) { true }
 
       it 'returns hash with children parameter containing children_number' do
-        is_expected.to eql(children: children_number)
+        expect(subject).to eql(children: children_number)
       end
     end
 
@@ -69,7 +69,7 @@ RSpec.describe Forms::Dependent, type: :model do
       let(:children) { false }
 
       it 'returns hash with children parameter containing 0' do
-        is_expected.to eql(children: 0)
+        expect(subject).to eql(children: 0)
       end
     end
 
@@ -77,7 +77,7 @@ RSpec.describe Forms::Dependent, type: :model do
       let(:children) { nil }
 
       it 'returns hash with children parameter being nil' do
-        is_expected.to eql(children: nil)
+        expect(subject).to eql(children: nil)
       end
     end
   end

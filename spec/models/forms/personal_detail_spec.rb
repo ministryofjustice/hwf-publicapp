@@ -71,7 +71,7 @@ RSpec.describe Forms::PersonalDetail, type: :model do
     subject { form.export }
 
     it 'returns hash with title, first_name and last_name' do
-      is_expected.to eql(title: title, first_name: first_name, last_name: last_name)
+      expect(subject).to eql(title: title, first_name: first_name, last_name: last_name)
     end
   end
 

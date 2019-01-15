@@ -37,7 +37,7 @@ module HealthStatus
     def staff_app_health_check_result
       json = JSON.parse(RestClient.get("#{Settings.submission.url}/healthcheck.json"))
       json['ok']
-    rescue
+    rescue StandardError
       false
     end
   end

@@ -15,7 +15,7 @@ module Forms
     end
 
     def name
-      identifier.blank? ? nil : identifier
+      identifier.presence
     end
 
   end

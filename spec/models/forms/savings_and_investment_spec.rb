@@ -10,7 +10,7 @@ RSpec.describe Forms::SavingsAndInvestment, type: :model do
       let(:choice) { :less }
 
       it 'returns hash with min_threshold_exceeded parameter false' do
-        is_expected.to eql(min_threshold_exceeded: false)
+        expect(subject).to eql(min_threshold_exceeded: false)
       end
     end
 
@@ -18,7 +18,7 @@ RSpec.describe Forms::SavingsAndInvestment, type: :model do
       let(:choice) { :between }
 
       it 'returns hash with min_threshold_exceeded parameter true and max_threshold_exceeded parameter false' do
-        is_expected.to eql(min_threshold_exceeded: true, max_threshold_exceeded: false)
+        expect(subject).to eql(min_threshold_exceeded: true, max_threshold_exceeded: false)
       end
     end
 
@@ -26,7 +26,7 @@ RSpec.describe Forms::SavingsAndInvestment, type: :model do
       let(:choice) { :more }
 
       it 'returns hash with min_threshold_exceeded parameter true and max_threshold_exceeded parameter true' do
-        is_expected.to eql(min_threshold_exceeded: true, max_threshold_exceeded: true)
+        expect(subject).to eql(min_threshold_exceeded: true, max_threshold_exceeded: true)
       end
     end
 
@@ -34,7 +34,7 @@ RSpec.describe Forms::SavingsAndInvestment, type: :model do
       let(:choice) { nil }
 
       it 'returns an empty hash' do
-        is_expected.to eql({})
+        expect(subject).to eql({})
       end
     end
   end

@@ -54,7 +54,7 @@ RSpec.describe Forms::Claim::Default, type: :model do
       let(:number) { true }
 
       it 'returns hash with case_number set' do
-        is_expected.to eql(case_number: identifier)
+        expect(subject).to eql(case_number: identifier)
       end
     end
 
@@ -62,7 +62,7 @@ RSpec.describe Forms::Claim::Default, type: :model do
       let(:number) { false }
 
       it 'returns hash with case_number nil' do
-        is_expected.to eql(case_number: nil)
+        expect(subject).to eql(case_number: nil)
       end
     end
   end

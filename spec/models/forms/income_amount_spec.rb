@@ -42,7 +42,7 @@ RSpec.describe Forms::IncomeAmount, type: :model do
       let(:amount) { 2452 }
 
       it 'returns hash with income parameter set' do
-        is_expected.to eql(income: amount)
+        expect(subject).to eql(income: amount)
       end
     end
 
@@ -50,7 +50,7 @@ RSpec.describe Forms::IncomeAmount, type: :model do
       let(:amount) { nil }
 
       it 'returns an ampty hash' do
-        is_expected.to eql({})
+        expect(subject).to eql({})
       end
     end
   end

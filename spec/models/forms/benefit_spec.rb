@@ -32,7 +32,7 @@ RSpec.describe Forms::Benefit, type: :model do
       let(:on_benefits) { true }
 
       it 'returns hash with benefits parameter true' do
-        is_expected.to eql(benefits: true)
+        expect(subject).to eql(benefits: true)
       end
     end
 
@@ -40,7 +40,7 @@ RSpec.describe Forms::Benefit, type: :model do
       let(:on_benefits) { false }
 
       it 'returns hash with on_benefits parameter true' do
-        is_expected.to eql(benefits: false)
+        expect(subject).to eql(benefits: false)
       end
     end
   end

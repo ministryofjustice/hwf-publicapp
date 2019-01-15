@@ -23,6 +23,7 @@ RSpec.describe Forms::Probate, type: :model do
 
         context 'time set to past' do
           before { Timecop.freeze(Time.zone.parse("2016-11-01")) }
+
           after { Timecop.return }
 
           let(:date_of_death) { 2.days.from_now }
@@ -32,6 +33,7 @@ RSpec.describe Forms::Probate, type: :model do
 
         context 'time limit probate' do
           before { Timecop.freeze(Time.zone.parse("1940-01-01")) }
+
           after { Timecop.return }
 
           it { is_expected.to be_valid }
@@ -100,7 +102,7 @@ RSpec.describe Forms::Probate, type: :model do
       let(:kase) { true }
 
       it 'returns hash with probate true and details set' do
-        is_expected.to eql(probate: true, deceased_name: deceased_name, date_of_death: date_of_death)
+        expect(subject).to eql(probate: true, deceased_name: deceased_name, date_of_death: date_of_death)
       end
     end
 
@@ -108,7 +110,7 @@ RSpec.describe Forms::Probate, type: :model do
       let(:kase) { false }
 
       it 'returns hash with probate false and details nil' do
-        is_expected.to eql(probate: false, deceased_name: nil, date_of_death: nil)
+        expect(subject).to eql(probate: false, deceased_name: nil, date_of_death: nil)
       end
     end
   end

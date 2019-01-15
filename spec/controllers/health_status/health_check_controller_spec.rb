@@ -15,7 +15,7 @@ RSpec.describe HealthStatus::HealthCheckController, type: :controller do
       let(:healthy?) { true }
 
       it 'responds with 200 status' do
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(:ok)
       end
 
       it 'renders the health check json' do
@@ -27,7 +27,7 @@ RSpec.describe HealthStatus::HealthCheckController, type: :controller do
       let(:healthy?) { false }
 
       it 'responds with 500 status' do
-        expect(response).to have_http_status(500)
+        expect(response).to have_http_status(:internal_server_error)
       end
 
       it 'renders the health check json' do

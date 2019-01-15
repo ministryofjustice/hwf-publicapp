@@ -14,6 +14,7 @@ RSpec.describe Forms::Contact, type: :model do
 
           it { is_expected.not_to be_valid }
         end
+
         context 'when the email is maximum 99 characters' do
           let(:email) { "#{'A' * 89}@domain.co" }
 
@@ -58,7 +59,7 @@ RSpec.describe Forms::Contact, type: :model do
 
     context 'when email is set' do
       it 'the returned hash includes email_contact true and email_address' do
-        is_expected.to include(email_contact: true, email_address: email)
+        expect(subject).to include(email_contact: true, email_address: email)
       end
     end
 
@@ -66,21 +67,21 @@ RSpec.describe Forms::Contact, type: :model do
       let(:email) { nil }
 
       it 'the returned hash includes email_contact false and email_address is nil' do
-        is_expected.to include(email_contact: false, email_address: email)
+        expect(subject).to include(email_contact: false, email_address: email)
       end
     end
 
     it 'the returned hash always returns phone_contact as false' do
-      is_expected.to include(phone_contact: false)
+      expect(subject).to include(phone_contact: false)
     end
 
     it 'the returned hash includesreturns post_contact as false' do
-      is_expected.to include(post_contact: false)
+      expect(subject).to include(post_contact: false)
     end
 
     context 'when feedback_opt_in is true' do
       it 'the returned hash includes feedback_opt_in true' do
-        is_expected.to include(feedback_opt_in: true)
+        expect(subject).to include(feedback_opt_in: true)
       end
     end
 
@@ -88,7 +89,7 @@ RSpec.describe Forms::Contact, type: :model do
       let(:feedback_opt_in) { false }
 
       it 'the returned hash includes feedback_opt_in false' do
-        is_expected.to include(feedback_opt_in: false)
+        expect(subject).to include(feedback_opt_in: false)
       end
     end
   end

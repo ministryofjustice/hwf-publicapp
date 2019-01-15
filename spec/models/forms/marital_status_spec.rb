@@ -32,7 +32,7 @@ RSpec.describe Forms::MaritalStatus, type: :model do
       let(:married) { true }
 
       it 'returns hash with married parameter true' do
-        is_expected.to eql(married: true)
+        expect(subject).to eql(married: true)
       end
     end
 
@@ -40,7 +40,7 @@ RSpec.describe Forms::MaritalStatus, type: :model do
       let(:married) { false }
 
       it 'returns hash with married parameter true' do
-        is_expected.to eql(married: false)
+        expect(subject).to eql(married: false)
       end
     end
   end

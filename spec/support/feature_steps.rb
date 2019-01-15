@@ -1,4 +1,3 @@
-# rubocop:disable ModuleLength
 module FeatureSteps
   def given_user_answers_questions_up_to(question)
     visit '/'

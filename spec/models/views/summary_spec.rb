@@ -88,7 +88,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :savings_less_than_threshold }
 
       it 'returns the correct text - less than minimum threshold' do
-        is_expected.to eql('£0 to £2,999')
+        expect(subject).to eql('£0 to £2,999')
       end
     end
 
@@ -97,7 +97,7 @@ RSpec.describe Views::Summary do
         let(:online_application) { build :online_application, :savings_between_threshold, over_61: true }
 
         it 'returns the correct text - between thresholds' do
-          is_expected.to eql('£3,000 to £15,999')
+          expect(subject).to eql('£3,000 to £15,999')
         end
       end
 
@@ -105,7 +105,7 @@ RSpec.describe Views::Summary do
         let(:online_application) { build :online_application, :savings_between_threshold, over_61: false, amount: 6000 }
 
         it 'returns the correct text - exact amount' do
-          is_expected.to eql('£6,000')
+          expect(subject).to eql('£6,000')
         end
       end
     end
@@ -114,7 +114,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :savings_more_than_threshold }
 
       it 'returns the correct text - more than maximum threshold' do
-        is_expected.to eql('£16,000 or more')
+        expect(subject).to eql('£16,000 or more')
       end
     end
   end
@@ -128,7 +128,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :income_between_thresholds, income: 1600 }
 
       it 'returns the exact income amount formatted as a currency' do
-        is_expected.to eql('£1,600')
+        expect(subject).to eql('£1,600')
       end
     end
 
@@ -136,7 +136,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :income_below_thresholds, threshold_attributes }
 
       it 'returns copy saying the applicant earns less than the calculated threshold' do
-        is_expected.to eql('Less than £1,980')
+        expect(subject).to eql('Less than £1,980')
       end
     end
 
@@ -144,7 +144,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, :income_above_thresholds, threshold_attributes }
 
       it 'returns copy saying the applicant earns more than the calculated threshold' do
-        is_expected.to eql('More than £5,980')
+        expect(subject).to eql('More than £5,980')
       end
     end
 
@@ -162,7 +162,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, refund: true, date_fee_paid: '01/02/2016' }
 
       it 'returns Yes with date paid' do
-        is_expected.to eql('Yes, on 01/02/2016')
+        expect(subject).to eql('Yes, on 01/02/2016')
       end
     end
 
@@ -182,7 +182,7 @@ RSpec.describe Views::Summary do
       let(:online_application) { build :online_application, children: 3 }
 
       it 'returns the number of children' do
-        is_expected.to eql('3')
+        expect(subject).to eql('3')
       end
     end
   end

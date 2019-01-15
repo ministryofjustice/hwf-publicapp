@@ -7,7 +7,7 @@ RSpec.describe QuestionFormFactory do
     let(:id) { :benefit }
 
     it 'returns the position of the given question' do
-      is_expected.to eq 5
+      expect(subject).to eq 5
     end
   end
 
@@ -34,7 +34,7 @@ RSpec.describe QuestionFormFactory do
       let(:id) { :marital_status }
 
       it 'returns an instance of the form' do
-        is_expected.to be_a(Forms::MaritalStatus)
+        expect(subject).to be_a(Forms::MaritalStatus)
       end
     end
 

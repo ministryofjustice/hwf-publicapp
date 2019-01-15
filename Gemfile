@@ -25,7 +25,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
-  gem 'rubocop', '~>0.49.1', require: true
+  gem 'rubocop', '~>0.60', require: false
   gem 'rubocop-rspec', '~>1.10', require: false
 end
 
@@ -41,7 +41,7 @@ group :test do
   gem 'capybara-screenshot'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'codeclimate-test-reporter', require: nil
-  gem 'cucumber-rails', '~> 1.5'
+  gem 'cucumber-rails', '~> 1.5', require: false
   gem 'geckodriver-helper', '~> 0.0'
   gem 'poltergeist', '1.15.0'
   gem 'selenium-webdriver', '~> 3.10'

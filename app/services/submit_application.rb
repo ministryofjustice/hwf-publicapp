@@ -7,7 +7,7 @@ class SubmitApplication
   def available?
     response = RestClient.get "#{@url}/ping.json"
     response.code == 200
-  rescue
+  rescue StandardError
     false
   end
 

@@ -4,12 +4,11 @@ RSpec.describe Storage do
   subject(:storage) { described_class.new(session, options) }
 
   let(:current_time) { Time.zone.now }
+  let(:options) { {} }
 
   class MockSession < Hash
     def destroy; end
   end
-
-  let(:options) { {} }
 
   describe '#initialize' do
     subject(:frozen_storage) do
@@ -47,6 +46,7 @@ RSpec.describe Storage do
           let(:used_at) { current_time - 61.minutes }
 
           before { allow(session).to receive(:destroy) }
+
           it 'raises an error and clears the session' do
             expect { frozen_storage }.to raise_error(Storage::Expired)
           end
@@ -222,6 +222,7 @@ RSpec.describe Storage do
 
       it { is_expected.to eql(result) }
     end
+
     context 'when there is no submission_result stored in the session' do
       let(:session) { {} }
 

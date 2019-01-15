@@ -20,6 +20,7 @@ RSpec.describe Forms::Dob, type: :model do
 
           context 'when a string is provided' do
             before { form_dob.valid? }
+
             let(:error) { ['Enter the date in this format DD/MM/YYYY'] }
 
             it { expect(form_dob.errors.messages[:date_of_birth]).to eq error }
@@ -78,7 +79,7 @@ RSpec.describe Forms::Dob, type: :model do
     let(:date_of_birth) { Date.parse('01/01/1980') }
 
     it 'returns hash with date_of_birth' do
-      is_expected.to eql(date_of_birth: date_of_birth)
+      expect(subject).to eql(date_of_birth: date_of_birth)
     end
   end
 

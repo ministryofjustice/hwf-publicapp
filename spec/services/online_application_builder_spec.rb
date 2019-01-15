@@ -32,7 +32,7 @@ RSpec.describe OnlineApplicationBuilder do
     subject(:online_application) { builder.online_application }
 
     it 'returns an online_application' do
-      is_expected.to be_a(OnlineApplication)
+      expect(subject).to be_a(OnlineApplication)
     end
 
     it 'assigns the correct values to each field' do # rubocop:disable RSpec/MultipleExpectations

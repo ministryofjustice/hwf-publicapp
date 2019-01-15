@@ -61,7 +61,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
     subject { described_class.allowed_kinds }
 
     it 'returns an array of indexes of allowed income kinds' do
-      is_expected.to eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
+      expect(subject).to eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13])
     end
   end
 
@@ -82,7 +82,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:partner) { [13] }
 
         it 'returns hash with income parameter set to 0' do
-          is_expected.to eql(income: 0)
+          expect(subject).to eql(income: 0)
         end
       end
 
@@ -91,7 +91,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:partner) { [1] }
 
         it 'returns an empty hash' do
-          is_expected.to eql({})
+          expect(subject).to eql({})
         end
       end
 
@@ -100,7 +100,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:partner) { [5, 13] }
 
         it 'returns an empty hash' do
-          is_expected.to eql({})
+          expect(subject).to eql({})
         end
       end
     end
@@ -112,7 +112,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:applicant) { [13] }
 
         it 'returns hash with income parameter set to 0' do
-          is_expected.to eql(income: 0)
+          expect(subject).to eql(income: 0)
         end
       end
 
@@ -120,7 +120,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:applicant) { [1, 5] }
 
         it 'returns an empty hash' do
-          is_expected.to eql({})
+          expect(subject).to eql({})
         end
       end
 
@@ -128,7 +128,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:applicant) { [1, 13] }
 
         it 'returns an empty hash' do
-          is_expected.to eql({})
+          expect(subject).to eql({})
         end
       end
     end
@@ -138,7 +138,7 @@ RSpec.describe Forms::IncomeKind, type: :model do
     subject { form.permitted_attributes }
 
     it 'permits the applicant and partner attributes as an array' do
-      is_expected.to eql([applicant: [], partner: []])
+      expect(subject).to eql([applicant: [], partner: []])
     end
   end
 

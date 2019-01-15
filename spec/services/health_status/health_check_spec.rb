@@ -22,7 +22,7 @@ RSpec.describe HealthStatus::HealthCheck, type: :service do
         let(:submit_application_available?) { true }
 
         it 'returns hash with all services ok' do
-          is_expected.to eql(
+          expect(subject).to eql(
             submission_api: {
               description: 'Submission API',
               ok: true
@@ -40,7 +40,7 @@ RSpec.describe HealthStatus::HealthCheck, type: :service do
         let(:submit_application_available?) { false }
 
         it 'returns hash with services unavailable' do
-          is_expected.to eql(
+          expect(subject).to eql(
             submission_api: {
               description: 'Submission API',
               ok: false
@@ -54,6 +54,7 @@ RSpec.describe HealthStatus::HealthCheck, type: :service do
         end
       end
     end
+
     context 'when there are issues with the downstream health check' do
       let(:downstream_api_ok?) { false }
 
@@ -61,7 +62,7 @@ RSpec.describe HealthStatus::HealthCheck, type: :service do
         let(:submit_application_available?) { true }
 
         it 'returns hash with all services ok' do
-          is_expected.to eql(
+          expect(subject).to eql(
             submission_api: {
               description: 'Submission API',
               ok: true
@@ -79,7 +80,7 @@ RSpec.describe HealthStatus::HealthCheck, type: :service do
         let(:submit_application_available?) { false }
 
         it 'returns hash with services unavailable' do
-          is_expected.to eql(
+          expect(subject).to eql(
             submission_api: {
               description: 'Submission API',
               ok: false

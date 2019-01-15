@@ -51,7 +51,7 @@ RSpec.describe SubmitApplication do
       end
 
       it 'returns the response with symbilised keys' do
-        is_expected.to eql(expected_response)
+        expect(subject).to eql(expected_response)
       end
     end
   end

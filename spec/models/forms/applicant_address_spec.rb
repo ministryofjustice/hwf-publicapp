@@ -58,7 +58,7 @@ RSpec.describe Forms::ApplicantAddress, type: :model do
     subject { form.export }
 
     it 'returns hash with address and postcode' do
-      is_expected.to eql(address: address, postcode: postcode)
+      expect(subject).to eql(address: address, postcode: postcode)
     end
   end
 

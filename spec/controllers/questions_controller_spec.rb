@@ -59,7 +59,7 @@ RSpec.describe QuestionsController, type: :controller do
       let(:id) { invalid_id }
 
       it 'responds with 404' do
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(:not_found)
       end
     end
   end
@@ -129,7 +129,7 @@ RSpec.describe QuestionsController, type: :controller do
       let(:id) { invalid_id }
 
       it 'responds with 404' do
-        expect(response).to have_http_status(404)
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

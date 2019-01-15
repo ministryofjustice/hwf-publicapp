@@ -33,7 +33,7 @@ RSpec.describe Forms::Claim::Et, type: :model do
     let(:identifier) { 'IDENTIFIER' }
 
     it 'returns hash with case_number set and probate set to false' do
-      is_expected.to eql(case_number: identifier, probate: false)
+      expect(subject).to eql(case_number: identifier, probate: false)
     end
   end
 end

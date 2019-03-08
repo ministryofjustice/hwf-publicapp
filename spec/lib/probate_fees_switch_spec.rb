@@ -12,7 +12,12 @@ RSpec.describe ProbateFeesSwitch do
       let(:current_time) { probate_fees_release_date }
 
       it { is_expected.to be true }
+    end
 
+    context 'when called before the set date' do
+      let(:current_time) { a_day_before_disable_probate_fees }
+
+      it { is_expected.to be false }
     end
   end
 end

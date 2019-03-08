@@ -3,9 +3,12 @@ require 'rails_helper'
 RSpec.feature 'As a user' do
   context 'I should not to be able to apply for help with fees for with ET' do
     before do
+      Timecop.freeze { a_day_before_disable_probate_fees }
       given_the_submission_service_is_available
       when_they_go_back_to_homepage_and_start_again
     end
+
+    after { Timecop.return }
 
     scenario "can't select ET option in step 1" do
       expect(page).not_to have_text('I need help with an employment tribunal fee')

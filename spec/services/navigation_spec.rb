@@ -5,6 +5,10 @@ RSpec.describe Navigation do
 
   let(:online_application) { build :online_application }
 
+  before { Timecop.freeze(a_day_before_disable_probate_fees) }
+
+  after { Timecop.return }
+
   describe '#next' do
     subject { described_class.new(online_application, current_question).next }
 
@@ -41,6 +45,16 @@ RSpec.describe Navigation do
 
         it 'routes to the probate question (skips dependent and income)' do
           expect(subject).to eql(question_path(:probate, locale: :en))
+        end
+
+        context 'probate switch is active' do
+          let(:a_day_after_disable_probate_fees) { probate_fees_release_date + 1.day }
+
+          before { Timecop.freeze(a_day_after_disable_probate_fees) }
+
+          it 'does not routes to the probate question' do
+            expect(subject).not_to eql(question_path(:probate, locale: :en))
+          end
         end
       end
 

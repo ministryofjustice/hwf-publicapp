@@ -140,7 +140,7 @@ module FeatureSteps
     fill_dependent
     fill_income_kind
     fill_income_range(true)
-    fill_probate
+    fill_probate unless ProbateFeesSwitch.disable_probate_fees?
   end
 
   def when_they_continue_from_step12_up_to_summary

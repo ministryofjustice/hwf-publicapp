@@ -18,10 +18,10 @@ end
 
 RSpec.feature 'As a user' do
 
-  before { Timecop.freeze(a_day_before_disable_probate_fees) }
+  before { travel_to a_day_before_disable_probate_fees }
 
   after do
-    Timecop.return
+    travel_back
     I18n.locale = :en
   end
 

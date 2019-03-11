@@ -27,11 +27,11 @@ RSpec.feature 'As a user' do
 
     context 'when probate fees are still supported' do
       before do
-        Timecop.freeze(a_day_before_disable_probate_fees)
+        travel_to a_day_before_disable_probate_fees
         given_user_answers_questions_up_to(:form_name)
       end
 
-      after { Timecop.return }
+      after { travel_back }
 
       scenario 'I do not expect the warning message to be displayed' do
         expect(page).not_to have_css('#probate-warning')
@@ -40,7 +40,7 @@ RSpec.feature 'As a user' do
 
     context 'when probate fees are no longer supported' do
       scenario 'I expect a warning message to be displayed' do
-        Timecop.freeze(probate_fees_release_date) do
+        travel_to(probate_fees_release_date) do
           expect(page).to have_css('#probate-warning')
         end
       end

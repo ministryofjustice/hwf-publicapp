@@ -17,8 +17,8 @@ class Navigation
   private
 
   def next_question_id
-    if enable_probate? && (skip_income? || skip_income_range? || skip_income_amount?)
-      :probate
+    if skip_income_questions?
+      probate_or_claim
     elsif skip_savings_and_investment_extra?
       :benefit
     else
@@ -31,10 +31,18 @@ class Navigation
     next_id = QuestionFormFactory::IDS[current_question_index + 1]
 
     if next_id == :probate && !enable_probate?
-      QuestionFormFactory::IDS[current_question_index + 2]
+      :claim
     else
       next_id
     end
+  end
+
+  def skip_income_questions?
+    skip_income? || skip_income_range? || skip_income_amount?
+  end
+
+  def probate_or_claim
+    enable_probate? ? :probate : :claim
   end
 
   def enable_probate?

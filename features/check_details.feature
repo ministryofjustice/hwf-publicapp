@@ -24,7 +24,6 @@ Feature: Check details page
     | Benefits                  |
     | Children                  |
     | Income                    |
-    | Probate case              |
     | Claim number              |
     | National Insurance number |
     | Date of birth             |
@@ -40,7 +39,6 @@ Feature: Check details page
     | benefit                |
     | dependent              |
     | income_kind            |
-    | probate                |
     | claim                  |
     | national_insurance     |
     | dob                    |

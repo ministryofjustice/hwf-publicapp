@@ -5,6 +5,9 @@ Feature: Form number page
   Background: Navigating to the form number page
     Given I am on the page for step one - What number is on your court or tribunal form?
 
+    Scenario: Displays probate applications not available warning message
+      Then I should see probate applications not available warning message
+
     Scenario: Entering valid form number
       When I submit the form with a valid form number
       Then I should be taken to step two - Have you already paid the fee?

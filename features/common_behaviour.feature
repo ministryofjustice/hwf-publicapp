@@ -1,3 +1,5 @@
+@e2e
+
 Feature: Common behaviour
 
   Background: Navigating to the page for step one

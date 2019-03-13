@@ -163,7 +163,7 @@ module FeatureSteps
   end
 
   def then_they_are_on_the_first_question
-    expect(page).to have_text 'What court or tribunal fee do you need help with?'
+    expect(page).to have_text 'What number is on your court or tribunal form?'
   end
 
   def then_they_cannot_procced

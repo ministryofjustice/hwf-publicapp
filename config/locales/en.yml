@@ -392,14 +392,13 @@ en:
     form_name:
       breadcrumb: Step 1 of 20
       details:
-        item_1: You can usually find the form name at the top of the form, and the number at the bottom.
-        item_2: If you don’t have a form name or number, for example if you’re applying for help with a hearing fee, then write ‘hearing fee’ as the answer to this question.
+        item_1: Instead of form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'.
         summary: Help with form name or number
       et: I need help with an employment tribunal fee
-      example: Enter the court or tribunal form number for the court business you need help with, for example ‘C100’, ‘D8’ or ‘notice to appeal’ form.
-      text: What court or tribunal fee do you need help with?
-      title: Form name or number
-      unknown: I don’t know the form name or number
+      example: You'll find a number at the bottom of paper forms, form example C100 or ADM1A.
+      text: What number is on your court or tribunal form?
+      title: Form number
+      unknown: I don’t have a form
     income_amount:
       amount:
         married: Enter the total monthly amount you and your partner receive in income.

@@ -41,7 +41,7 @@ Feature: Income kind page
   Scenario: No income
     Given I am a single person on step eight - What kind of income do you receive?
     When I submit the form with no income checked
-    Then I am taken to step 11 - Are you paying a fee for a probate case?
+    Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
   Scenario: Displays error message
     Given I am a single person on step eight - What kind of income do you receive?

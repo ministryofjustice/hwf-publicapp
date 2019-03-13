@@ -28,7 +28,7 @@ Feature: Benefit page
 
   Scenario: Yes I am receiving benefits from list
     When I submit the form with yes I am receiving one of the benefits listed
-    Then I am taken to step 11 - Are you paying a fee for a probate case?
+    Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
   Scenario: Displays error message
     When I click continue

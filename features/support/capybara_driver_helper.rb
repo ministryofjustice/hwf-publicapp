@@ -11,10 +11,8 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 Capybara.register_driver :firefox do |app|
-  profile = Selenium::WebDriver::Firefox::Profile.new
-  profile['browser.cache.disk.enable'] = false
-  profile['browser.cache.memory.enable'] = false
-  Capybara::Selenium::Driver.new(app, browser: :firefox, profile: profile)
+  options = Selenium::WebDriver::Firefox::Options.new
+  Capybara::Selenium::Driver.new(app, browser: :firefox, marionette: true, options: options)
 end
 
 Capybara.register_driver :chrome do |app|

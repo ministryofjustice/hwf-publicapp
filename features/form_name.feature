@@ -5,6 +5,9 @@ Feature: Form name page
   Background: Navigating to the form name page
     Given I am on the page for step one - What court or tribunal fee do you need help with?
 
+    Scenario: Displays probate applications not available warning message
+      Then I should see probate applications not available warning message
+
     Scenario: Entering valid form number
       When I submit the form with a valid form number
       Then I should be taken to step two - Have you already paid the fee?

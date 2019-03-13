@@ -7,7 +7,7 @@ class BenefitPage < BasePage
     elements :li, 'li'
     elements :td, 'td'
     element :no, '.block-label', text: 'No'
-    element :yes, '.block-label', text: 'Yes, I am receiving one of the benefits listed'
+    element :yes, '.block-label', text: 'Yes, I am receiving one of the benefits listed in Column 1'
     element :help_with_benefits, 'summary', text: 'Help with benefits'
     element :recently_receiving_heading, '.text', text: 'If you’ve only recently started receiving one of these benefits'
     element :provide_a_letter, '.text', text: 'In this case you should provide a letter from the Jobcentre.'

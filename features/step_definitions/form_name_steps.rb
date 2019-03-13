@@ -6,6 +6,11 @@ Given(/^I am on the page for step one - What court or tribunal fee do you need h
   expect(form_name_page.content).to have_form_label
 end
 
+Then(/^I should see probate applications not available warning message$/) do
+  expect(form_name_page.content).to have_probate_warning_message
+  expect(form_name_page.content).to have_probate_link
+end
+
 Then(/^I should see the please note timeout$/) do
   expect(form_name_page.content).to have_please_note
   expect(form_name_page.content).to have_timeout

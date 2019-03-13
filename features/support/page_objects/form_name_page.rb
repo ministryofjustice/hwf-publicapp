@@ -11,10 +11,9 @@ class FormNamePage < BasePage
     element :error_message, '.error-message', text: "Enter the form name or number, or select 'I don’t know the form name or number'"
     element :please_note, '.text', text: 'Please note'
     element :timeout, '.text', text: 'If you don’t enter any information for more than 60 minutes,'
-    element :form_name_unknown_label, '.block-label', text: 'I don’t know the form name or number'
+    element :form_name_unknown_label, '.block-label', text: 'I don’t have a form'
     element :form_name_unknown, '#form_name_unknown'
-    element :find_form_name, 'p', text: 'You can usually find the form name at the top of the form'
-    element :no_form_name, 'p', text: 'If you don’t have a form name or number'
+    element :find_form_name, 'p', text: "Instead of form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'."
     element :continue_button, 'input[value="Continue"]'
   end
 end

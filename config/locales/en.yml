@@ -16,7 +16,7 @@ en:
       forms/fee:
         date_paid: Date fee paid
       forms/form_name:
-        identifier: Form name or number
+        identifier: Form number
       forms/help_request:
         description: Describe what you'd like to talk about
         email: Email address

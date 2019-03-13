@@ -3,7 +3,7 @@
 Feature: Form name page
 
   Background: Navigating to the form name page
-    Given I am on the page for step one - What court or tribunal fee do you need help with?
+    Given I am on the page for step one - What number is on your court or tribunal form?
 
     Scenario: Entering valid form number
       When I submit the form with a valid form number

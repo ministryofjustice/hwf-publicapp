@@ -3,10 +3,10 @@ class FormNamePage < BasePage
 
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 1 of 20'
-    element :form_name_header, 'h1', text: 'What court or tribunal fee do you need help with?'
-    element :form_label, '.form-label', text: 'Form name or number'
+    element :form_name_header, 'h1', text: 'What number is on your court or tribunal form?'
+    element :form_label, '.form-label', text: 'Form number'
     element :form_name, '#form_name_identifier'
-    element :enter_court_hint, '.text', text: 'Enter the court or tribunal form number for the court business you need help with, for example ‘C100’, ‘D8’ or ‘notice to appeal’ form.'
+    element :enter_court_hint, '.text', text: "You'll find a number at the bottom of paper forms, form example C100 or ADM1A."
     element :error_link, 'a', text: "Enter the form name or number, or select 'I don’t know the form name or number'"
     element :error_message, '.error-message', text: "Enter the form name or number, or select 'I don’t know the form name or number'"
     element :please_note, '.text', text: 'Please note'

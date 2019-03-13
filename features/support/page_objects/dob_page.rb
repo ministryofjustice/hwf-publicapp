@@ -27,5 +27,3 @@ class DobPage < BasePage
     continue
   end
 end
-
-

@@ -2,7 +2,6 @@ Given(/^I visit the page for step fifteen$/) do
   answer_up_to_income_amount_married
   income_amount_page.submit_income_amount
   probate_page.submit_no
-  binding.pry
   claim_page.submit_no
   national_insurance_page.submit_valid_ni
   step 'I enter a valid date of birth'

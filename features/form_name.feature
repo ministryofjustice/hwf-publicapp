@@ -21,8 +21,8 @@ Feature: Form name page
       When I submit the form with I don’t know the form name or number checked
       Then I should be taken to step two - Have you already paid the fee?
 
-    Scenario: Help with form name or number
-      When I click on 'Help with form name or number'
+    Scenario: Applying for help with hearing fees
+      When I click on 'Applying for help with hearing fees'
       Then I see more information about the form name or number
 
     Scenario: Displays please note timeout

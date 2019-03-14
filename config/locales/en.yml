@@ -105,8 +105,8 @@ en:
         forms/form_name:
           attributes:
             identifier:
-              blank: Enter the form name or number, or select 'I don’t know the form name or number'
-              too_long: The form name must be less than 50 characters
+              blank: Enter a valid form number or select 'I don't have a form'
+              too_long: The form number must be less than 50 characters
         forms/help_request:
           attributes:
             description:
@@ -392,10 +392,10 @@ en:
     form_name:
       breadcrumb: Step 1 of 20
       details:
-        item_1: Instead of form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'.
+        item_1: Instead of a form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'.
         summary: Help with form name or number
       et: I need help with an employment tribunal fee
-      example: You'll find a number at the bottom of paper forms, form example C100 or ADM1A.
+      example: You'll find a number at the bottom of paper forms, for example C100 or ADM1A.
       text: What number is on your court or tribunal form?
       title: Form number
       unknown: I don’t have a form

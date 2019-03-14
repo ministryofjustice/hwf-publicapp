@@ -1,7 +1,7 @@
 Feature: Step fifteen page
 
   Background: Navigating to the page for step fifteen
-    Given I visit the page for step fifteen
+    Given I visit the page for step fifteen with probate enabled
 
   Scenario: Displays step number
     Then I should see step 15 of 20

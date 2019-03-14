@@ -1,10 +1,11 @@
-Given(/^I visit the page for step fifteen$/) do
+Given(/^I visit the page for step fifteen with probate enabled$/) do
+  travel_to a_day_before_disable_probate_fees
   answer_up_to_income_amount_married
-  income_amount_page.submit_income_amount
+  step 'I submit the form with my monthly income'
   probate_page.submit_no
   claim_page.submit_no
   national_insurance_page.submit_valid_ni
-  step 'I enter a valid date of birth'
+  dob_page.valid_dob
 end
 
 When(/^I enter my title$/) do

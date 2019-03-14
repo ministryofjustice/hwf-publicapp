@@ -3,7 +3,7 @@
 Feature: Step twenty page
 
   Background:
-    Given I am on the page for step twenty
+    Given I am on the page for step twenty with probate enabled
 
   Scenario: Displays header for people that do not need help with an employment tribunal fee
     Then I should see header 'Send your C100 form with your HWF-000-000 reference'

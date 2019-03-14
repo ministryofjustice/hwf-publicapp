@@ -1,6 +1,8 @@
-Given(/^I visit the page for step sixteen$/) do
+Given(/^I visit the page for step sixteen with probate enabled$/) do
+  travel_to a_day_before_disable_probate_fees
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
+  probate_page.submit_no
   claim_page.submit_no
   national_insurance_page.submit_valid_ni
   dob_page.valid_dob

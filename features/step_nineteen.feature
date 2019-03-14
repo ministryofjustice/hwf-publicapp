@@ -3,7 +3,7 @@
 Feature: Step nineteen page
 
   Background: Navigating to the page for step nineteen
-    Given I visit the page for step nineteen
+    Given I visit the page for step nineteen with probate enabled
 
   Scenario: Displays step number
     Then I see step 19 of 20

@@ -1,3 +1,5 @@
+require Rails.root.join('spec', 'support', 'probate_fees_switchover_helper.rb')
+
 Given(/^I am on the page for step one - What court or tribunal fee do you need help with\?$/) do
   form_name_page.load_page
   expect(form_name_page.content).to have_step_info
@@ -9,6 +11,11 @@ end
 Then(/^I should see probate applications not available warning message$/) do
   expect(form_name_page.content).to have_probate_warning_message
   expect(form_name_page.content).to have_probate_link
+end
+
+Then(/^I should not see probate applications not available warning message$/) do
+  expect(form_name_page.content).to have_no_probate_warning_message
+  expect(form_name_page.content).to have_no_probate_link
 end
 
 Then(/^I should see the please note timeout$/) do

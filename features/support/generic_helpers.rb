@@ -185,6 +185,10 @@ def income_amount_page
   @income_amount_page ||= IncomeAmountPage.new
 end
 
+def probate_page
+  @probate_page ||= ProbatePage.new
+end
+
 def claim_page
   @claim_page ||= ClaimPage.new
 end

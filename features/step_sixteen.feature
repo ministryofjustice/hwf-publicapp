@@ -3,7 +3,7 @@
 Feature: Step sixteen page
 
   Background: Navigating to the page for step sixteen
-    Given I visit the page for step sixteen
+    Given I visit the page for step sixteen with probate enabled
 
   Scenario: Displays step number
     Then I should see step 16 of 20

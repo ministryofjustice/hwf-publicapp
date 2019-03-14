@@ -25,8 +25,15 @@ Feature: Income range page
     And I should see medium income range 'Between £1,820 and £5,820'
     And I should see high income range 'More than £5,820'
 
-  Scenario: Selecting the less than range
-    Given I am a single person with no children on step nine - What kind of income do you receive?
+  Scenario: Selecting the less than range - probate enabled
+    Given probate is enabled
+    And I am a single person with no children on step nine - What kind of income do you receive?
+    When I select less than
+    Then I am taken to step 11 - Are you paying a fee for a probate case? 
+  
+  Scenario: Selecting the less than range - probate disabled
+    Given probate is disabled
+    And I am a single person with no children on step nine - What kind of income do you receive?
     When I select less than
     Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
@@ -35,7 +42,14 @@ Feature: Income range page
     When I select between
     Then I am taken to step 10 - What’s your total monthly income?
 
-  Scenario: Selecting the more than range
+  Scenario: Selecting the more than range - probate enabled
+    Given probate is enabled
+    And I am a single person with no children on step nine - What kind of income do you receive?
+    When I select more than
+    Then I am taken to step 11 - Are you paying a fee for a probate case?
+    
+  Scenario: Selecting the more than range - probate disabled
+    Given probate is disabled
     Given I am a single person with no children on step nine - What kind of income do you receive?
     When I select more than
     Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?

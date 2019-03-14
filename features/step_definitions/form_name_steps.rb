@@ -19,9 +19,8 @@ When(/^I submit the form with a valid form name$/) do
   submit_valid_form_name
 end
 
-When(/^I submit the form with I don’t know the form name or number checked$/) do
-  expect(form_name_page.content).to have_form_name_unknown_label
-  form_name_page.content.form_name_unknown.click
+When(/^I submit the form with I don’t have a form checked$/) do
+  form_name_page.content.no_form.click
   continue
 end
 
@@ -29,8 +28,8 @@ When(/^I submit the form without a form name or number$/) do
   continue
 end
 
-Then(/^I see more information about the form name or number$/) do
-  expect(form_name_page.content).to have_find_form_name
+Then(/^I should see more information about what to put in the form number field$/) do
+  expect(form_name_page.content).to have_help_hearing_fees
 end
 
 Then(/^I should be taken to step two - Have you already paid the fee\?$/) do

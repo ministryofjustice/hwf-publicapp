@@ -21,7 +21,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect the form_name field to have an error' do
-        expect(page).to have_content 'Enter the form name or number, or select \'I don’t know the form name or number\''
+        expect(page).to have_content "Enter a valid form number or select 'I don't have a form'"
       end
     end
   end

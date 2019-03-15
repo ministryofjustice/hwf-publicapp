@@ -18,12 +18,12 @@ Feature: Form name page
       Then I should see enter the form name or number error message
 
     Scenario: Selecting I don’t know the form name or number
-      When I submit the form with I don’t know the form name or number checked
+      When I submit the form with I don’t have a form checked
       Then I should be taken to step two - Have you already paid the fee?
 
     Scenario: Applying for help with hearing fees
       When I click on 'Applying for help with hearing fees'
-      Then I see more information about the form name or number
+      Then I should see more information about what to put in the form number field
 
     Scenario: Displays please note timeout
       Then I should see the please note timeout

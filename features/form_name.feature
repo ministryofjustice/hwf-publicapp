@@ -9,13 +9,15 @@ Feature: Form name page
       When I submit the form with a valid form number
       Then I should be taken to step two - Have you already paid the fee?
 
-    Scenario: Entering a valid form name
-      When I submit the form with a valid form name
-      Then I should be taken to step two - Have you already paid the fee?
-
     Scenario: Leaving form name or number blank
       When I submit the form without a form name or number
       Then I should see enter the form name or number error message
+
+    Scenario: Entering a help with fees form number
+      When I submit the form with a help with fees form number 'COP44A'
+      Then I should see you entered the help with fees form number error message
+      And I submit the form with a help with fees form number 'EX160'
+      Then I should see you entered the help with fees form number error message
 
     Scenario: Selecting I don’t know the form name or number
       When I submit the form with I don’t have a form checked

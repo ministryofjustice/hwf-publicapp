@@ -9,6 +9,8 @@ class FormNamePage < BasePage
     element :enter_court_hint, '.text', text: "You'll find a number at the bottom of paper forms, for example C100 or ADM1A."
     element :error_link, 'a', text: "Enter a valid form number or select 'I don't have a form'"
     element :error_message, '.error-message', text: "Enter a valid form number or select 'I don't have a form'"
+    element :invalid_link, 'a', text: 'You entered the help with fees form number. Enter the number on your court or tribunal form'
+    element :invalid_message, '.error-message', text: 'You entered the help with fees form number. Enter the number on your court or tribunal form'
     element :please_note, '.text', text: 'Please note'
     element :timeout, '.text', text: 'If you don’t enter any information for more than 60 minutes,'
     element :no_form, '.block-label', text: 'I don’t have a form'
@@ -19,10 +21,5 @@ end
 
 def submit_valid_form_number
   form_name_page.content.form_name.set('C100')
-  continue
-end
-
-def submit_valid_form_name
-  form_name_page.content.form_name.set('notice to appeal')
   continue
 end

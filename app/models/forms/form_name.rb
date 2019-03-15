@@ -5,6 +5,7 @@ module Forms
 
     validates :identifier, length: { maximum: 49 }
     validates :identifier, presence: true, unless: 'unknown?'
+    validates :identifier, format: { with: /\A((?!EX160|COP44A).)*\z/i }, allow_nil: true
 
     private
 

@@ -1,4 +1,4 @@
-Given(/^I visit the page for step seventeen$/) do
+Given(/^I visit the contact page$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'
@@ -10,23 +10,23 @@ Given(/^I visit the page for step seventeen$/) do
 end
 
 Then(/^I should see confirmation copy$/) do
-  expect(step_seventeen_page.form_group[0].text).to have_content 'confirm your application has been received'
+  expect(contact_page.form_group[0].text).to have_content 'confirm your application has been received'
 end
 
 When(/^I enter a valid email address$/) do
-  expect(step_seventeen_page.form_group[1].text).to have_content 'Email address'
-  expect(step_seventeen_page.hint.text).to eq '(Optional)'
-  step_seventeen_page.contact_email.set('test@hmcts.net')
+  expect(contact_page.form_group[1].text).to have_content 'Email address'
+  expect(contact_page.hint.text).to eq '(Optional)'
+  contact_page.contact_email.set('test@hmcts.net')
   common_page.continue_button.click
 end
 
 When(/^I enter a invalid email address$/) do
-  step_seventeen_page.contact_email.set('testhmctsnet')
+  contact_page.contact_email.set('testhmctsnet')
   common_page.continue_button.click
 end
 
 Then(/^I should see share your experience checkbox$/) do
-  checkbox_group = step_seventeen_page.form_checkbox
+  checkbox_group = contact_page.form_checkbox
   expect(checkbox_group.contact_feedback_opt_in['type']).to eq 'checkbox'
   expect(checkbox_group.span.text).to have_content 'Check this box if you\'re willing to share your experience'
 end

@@ -1,9 +1,9 @@
 @hwf_submit_application @e2e
 
-Feature: Step nineteen page
+Feature: Confirmation page
 
-  Background: Navigating to the page for step nineteen
-    Given I visit the page for step nineteen
+  Background: Navigating to the confirmation page
+    Given I visit the confirmation page
 
   Scenario: Displays step number
     Then I see step 19 of 20

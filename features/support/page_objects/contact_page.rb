@@ -1,4 +1,4 @@
-class StepSeventeenPage < BasePage
+class ContactPage < BasePage
   element :contact_email, '#contact_email'
   section :form_checkbox, '.form-checkbox' do
     element :contact_feedback_opt_in, '#contact_feedback_opt_in'

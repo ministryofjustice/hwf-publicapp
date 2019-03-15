@@ -42,9 +42,9 @@ group :test do
   gem 'chromedriver-helper', '~> 1.1'
   gem 'codeclimate-test-reporter', require: nil
   gem 'cucumber-rails', '~> 1.5', require: false
-  gem 'geckodriver-helper', '~> 0.0'
+  gem 'geckodriver-helper', '~> 0.23.0'
   gem 'poltergeist', '1.15.0'
-  gem 'selenium-webdriver', '~> 3.10'
+  gem 'selenium-webdriver', '~> 3.141'
   gem 'shoulda-matchers'
   gem 'site_prism', '~> 2.9'
   gem 'timecop'

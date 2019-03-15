@@ -20,7 +20,7 @@ When(/^I submit the form with I don’t have a form checked$/) do
   continue
 end
 
-When(/^I submit the form without a form name or number$/) do
+When(/^I submit the form without a number$/) do
   continue
 end
 
@@ -32,7 +32,7 @@ Then(/^I should be taken to step two - Have you already paid the fee\?$/) do
   expect(fee_page).to be_displayed
 end
 
-Then(/^I should see enter the form name or number error message$/) do
+Then(/^I should see enter a number error message$/) do
   expect(form_name_page.content).to have_error_link
   expect(form_name_page.content).to have_error_message
 end

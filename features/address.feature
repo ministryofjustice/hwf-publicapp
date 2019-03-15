@@ -1,9 +1,9 @@
 @e2e
 
-Feature: Step sixteen page
+Feature: Address page
 
-  Background: Navigating to the page for step sixteen
-    Given I visit the page for step sixteen
+  Background: Navigating to the address page
+    Given I visit the address page
 
   Scenario: Displays step number
     Then I should see step 16 of 20

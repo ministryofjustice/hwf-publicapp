@@ -1,4 +1,4 @@
-Given(/^I visit the page for step nineteen$/) do
+Given(/^I visit the confirmation page$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'
@@ -9,11 +9,12 @@ Given(/^I visit the page for step nineteen$/) do
   step 'I enter my address with postcode'
   step 'I click continue'
   step 'I click submit application and continue'
+  # binding.pry
 end
 
 Then(/^I should see direction points 1 to 4$/) do
-  expect(step_nineteen_page.steps_panel.li.count).to eq 4
-  expect(step_nineteen_page.steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
+  expect(confirmation_page.steps_panel.li.count).to eq 4
+  expect(confirmation_page.steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
 end
 
 Then(/^I go to step twenty$/) do

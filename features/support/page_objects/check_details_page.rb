@@ -1,4 +1,4 @@
-class StepEighteenPage < BasePage
+class CheckDetailsPage < BasePage
   element :address, '#applicant_address_address'
   element :postcode, '#applicant_address_postcode'
   elements :copy, '.text > p'

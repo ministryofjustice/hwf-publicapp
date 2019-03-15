@@ -125,9 +125,9 @@ end
 
 And(/^I should see the content for step fifteen$/) do
   common_step_header
-  expect(step_fifteen_page.form_group.count).to eq 4
-  step_fifteen_page.first_name.set('Sally')
-  step_fifteen_page.last_name.set('Smith')
+  expect(personal_details_page.form_group.count).to eq 4
+  personal_details_page.first_name.set('Sally')
+  personal_details_page.last_name.set('Smith')
   common_page.continue_button.click
 end
 
@@ -149,9 +149,9 @@ end
 And(/^I should see the content for step eighteen$/) do
   common_step_header
   expect(common_page.content.text).to have_p
-  expect(step_eighteen_page.tbody.tr.count).to eq 14
-  expect(step_eighteen_page.h2[0].text).to eq 'Declaration and statement of truth'
-  step_eighteen_page.submit_button.click
+  expect(check_details_page.tbody.tr.count).to eq 14
+  expect(check_details_page.h2[0].text).to eq 'Declaration and statement of truth'
+  check_details_page.submit_button.click
 end
 
 And(/^I should see the content for step nineteen$/) do

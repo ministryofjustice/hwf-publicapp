@@ -1,4 +1,4 @@
-Given(/^I am on the page for step twenty$/) do
+Given(/^I am on the confirmation done page$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'
@@ -13,7 +13,7 @@ Given(/^I am on the page for step twenty$/) do
 end
 
 When(/^I click the finish application button$/) do
-  step_twenty_page.finish_application_button.click
+  confirmation_done_page.finish_application_button.click
 end
 
 Then(/^I am taken to the thank you page$/) do
@@ -21,14 +21,14 @@ Then(/^I am taken to the thank you page$/) do
 end
 
 Then(/^I should see deliver your paperwork copy$/) do
-  expect(step_twenty_page.post.p.text).to have_content 'Deliver your paperwork to the court'
+  expect(confirmation_done_page.post.p.text).to have_content 'Deliver your paperwork to the court'
 end
 
 Then(/^I should see what happens next$/) do
-  expect(step_twenty_page.steps_panel.h2.text).to eq 'What happens next?'
-  expect(step_twenty_page.steps_panel.li.count).to eq 3
+  expect(confirmation_done_page.steps_panel.h2.text).to eq 'What happens next?'
+  expect(confirmation_done_page.steps_panel.li.count).to eq 3
 end
 
 Then(/^I should see point 1 with HWF number$/) do
-  expect(step_twenty_page.li[0].text).to have_content 'reference number HWF-000-000'
+  expect(confirmation_done_page.li[0].text).to have_content 'reference number HWF-000-000'
 end

@@ -35,6 +35,30 @@ RSpec.describe Forms::FormName, type: :model do
 
           it { is_expected.to be_valid }
         end
+
+        context 'when user types EX160' do
+          let(:identifier) { 'EX160' }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when user types ex160' do
+          let(:identifier) { 'ex160' }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when user types COP44A' do
+          let(:identifier) { 'COP44A' }
+
+          it { is_expected.not_to be_valid }
+        end
+
+        context 'when user types COP45A' do
+          let(:identifier) { 'COP45A' }
+
+          it { is_expected.to be_valid }
+        end
       end
     end
   end

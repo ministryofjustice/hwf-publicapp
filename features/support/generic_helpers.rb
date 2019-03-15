@@ -215,7 +215,7 @@ def contact_page
 end
 
 def check_details_page
-  @scheck_details_page ||= CheckDetailsPage.new
+  @check_details_page ||= CheckDetailsPage.new
 end
 
 def confirmation_page

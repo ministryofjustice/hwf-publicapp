@@ -9,7 +9,6 @@ Given(/^I visit the confirmation page$/) do
   step 'I enter my address with postcode'
   step 'I click continue'
   step 'I click submit application and continue'
-  # binding.pry
 end
 
 Then(/^I should see direction points 1 to 4$/) do

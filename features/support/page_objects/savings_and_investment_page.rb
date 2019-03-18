@@ -1,4 +1,6 @@
 class SavingsAndInvestmentPage < BasePage
+  set_url '/questions/savings_and_investment'
+
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 4 of 20'
     element :fee_header, 'h1', text: 'How much do you have in savings and investments?'

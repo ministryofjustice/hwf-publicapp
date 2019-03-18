@@ -1,4 +1,4 @@
-Given(/^I am on the page for step three - Are you single, married or living with someone and sharing an income\?$/) do
+Given(/^I am on the marital status page$/) do
   answer_up_to_marital_status_page
   expect(marital_status_page.content).to have_step_info
   expect(marital_status_page.content).to have_fee_header
@@ -25,4 +25,8 @@ Then(/^I should see help with status copy$/) do
   expect(marital_status_page.content).to have_help_domestic_violence
   expect(marital_status_page.content).to have_help_forced_marriage
   expect(marital_status_page.content).to have_help_multiple_fee
+end
+
+Then(/^I am taken to savings and investments page$/) do
+  expect(savings_and_investment_page).to be_displayed
 end

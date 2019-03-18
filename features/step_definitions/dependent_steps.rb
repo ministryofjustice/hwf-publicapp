@@ -13,14 +13,9 @@ When(/^I submit the form with no I do not have any children$/) do
   continue
 end
 
-When(/^I submit the form with '(\d+)' children$/) do |children|
+When(/^I submit the form with four children$/) do
   expect(dependent_page.content).to have_num_of_children
-  dependent_page.content.children_number.set(children)
-  continue
-end
-
-When(/^I add I have three children$/) do
-  dependent_page.content.children_number.set(3)
+  dependent_page.content.children_number.set 4
   continue
 end
 

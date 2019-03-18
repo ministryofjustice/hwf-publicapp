@@ -7,7 +7,7 @@ Feature: Dependent page
 
   Scenario: Yes to do you have any children
     When I select yes to do you have any children
-    And I submit the form with '4' children
+    And I submit the form with four children
     Then I am taken to step 8 - What kind of income do you receive?
 
   Scenario: No to do you have any children

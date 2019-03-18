@@ -3,15 +3,15 @@
 Feature: Form name page
 
   Background: Navigating to the form name page
-    Given I am on the page for step one - What court or tribunal fee do you need help with?
+    Given I am on the form number page
 
     Scenario: Entering valid form number
       When I submit the form with a valid form number
-      Then I should be taken to step two - Have you already paid the fee?
+      Then I should be taken to fee page
 
     Scenario: Entering a valid form name
       When I submit the form with a valid form name
-      Then I should be taken to step two - Have you already paid the fee?
+      Then I should be taken to fee page
 
     Scenario: Leaving form name or number blank
       When I submit the form without a form name or number
@@ -19,7 +19,7 @@ Feature: Form name page
 
     Scenario: Selecting I don’t know the form name or number
       When I submit the form with I don’t know the form name or number checked
-      Then I should be taken to step two - Have you already paid the fee?
+      Then I should be taken to fee page
 
     Scenario: Help with form name or number
       When I click on 'Help with form name or number'

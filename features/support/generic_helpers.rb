@@ -28,7 +28,7 @@ module WaitUntil
 end
 
 def answer_up_to_fee_page
-  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
+  step 'I am on the form number page'
   step 'I submit the form with a valid form number'
 end
 

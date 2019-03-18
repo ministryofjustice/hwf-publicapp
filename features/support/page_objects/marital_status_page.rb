@@ -1,4 +1,6 @@
 class MaritalStatusPage < BasePage
+  set_url '/questions/marital_status'
+
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 3 of 20'
     element :fee_header, 'h1', text: 'Are you single, married or living with someone and sharing an income?'

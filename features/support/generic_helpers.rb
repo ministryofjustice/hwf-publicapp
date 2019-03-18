@@ -162,8 +162,8 @@ def savings_and_investment_page
   @savings_and_investment_page ||= SavingsAndInvestmentPage.new
 end
 
-def over_61_page
-  @over_61_page ||= Over61Page.new
+def savings_and_investment_extra_page
+  @savings_and_investment_extra_page ||= SavingsAndInvestmentExtraPage.new
 end
 
 def benefit_page

@@ -1,4 +1,6 @@
-class Over61Page < BasePage
+class SavingsAndInvestmentExtraPage < BasePage
+  set_url '/questions/savings_and_investment_extra'
+
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 5 of 20'
     element :single_header, 'h1', text: 'Are you 61 years old or over?'

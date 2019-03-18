@@ -3,7 +3,7 @@
 Feature: Benefit page
 
   Background: Navigating to the benefit page
-    Given I am on the page for step six - Do you receive any of the following benefits?
+    Given I am on the benefit page
 
   Scenario: Displays instruction bullet points
     Then I should see the instruction bullet points:
@@ -24,7 +24,7 @@ Feature: Benefit page
 
   Scenario: No I am not receiving any benefits from list
     When I submit the form with no I do not receive one of the benefits listed
-    Then I am taken to step 7 - Do you have any children living with you, or who you support financially?
+    Then I should be taken to dependent page
 
   Scenario: Yes I am receiving benefits from list
     When I submit the form with yes I am receiving one of the benefits listed

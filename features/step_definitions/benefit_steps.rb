@@ -1,4 +1,4 @@
-Given(/^I am on the page for step six - Do you receive any of the following benefits\?$/) do
+Given(/^I am on the benefit page$/) do
   answer_up_to_benefit_single
   expect(benefit_page.content).to have_step_info
   expect(benefit_page.content).to have_benefit_header
@@ -46,4 +46,8 @@ end
 Then(/^I should see select whether you're receiving one of the benefits listed error message$/) do
   expect(benefit_page.content).to have_blank_error_message
   expect(benefit_page.content).to have_blank_error_link
+end
+
+Then(/^I should be taken to dependent page$/) do
+  expect(dependent_page).to be_displayed
 end

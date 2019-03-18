@@ -19,6 +19,11 @@ When(/^I submit the form with four children$/) do
   continue
 end
 
+When(/^I add I have three children$/) do
+  dependent_page.content.children_number.set 3
+  continue
+end
+
 Then(/^I should see help with financially dependent children copy$/) do
   expect(dependent_page.content).to have_give_details
   expect(dependent_page.content).to have_includes_children

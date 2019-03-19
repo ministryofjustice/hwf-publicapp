@@ -1,4 +1,4 @@
-Given(/^I am on the page for step seven - Do you have any children living with you, or who you support financially\?$/) do
+Given(/^I am on the dependent page$/) do
   answer_up_to_dependent_single
   expect(dependent_page.content).to have_step_info
   expect(dependent_page.content).to have_dependent_header
@@ -36,4 +36,8 @@ end
 Then(/^I should see you need to say whether you have financially dependent children error message$/) do
   expect(dependent_page.content).to have_error_link
   expect(dependent_page.content).to have_error_message
+end
+
+Then(/^I should be taken to kind of income page$/) do
+  expect(income_kind_page).to be_displayed
 end

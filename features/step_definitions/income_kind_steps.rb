@@ -1,11 +1,11 @@
-Given(/^I am a single person on step eight - What kind of income do you receive\?$/) do
+Given(/^I am a single person on kind of income page$/) do
   answer_up_to_income_kind_single
   expect(income_kind_page.content).to have_choose_income_single
   expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_income_kind_header_single
 end
 
-Given(/^I am a married person on step eight - What kind of income do you receive\?$/) do
+Given(/^I am a married person on kind of income page$/) do
   answer_up_to_income_kind_married
   expect(income_kind_page.content).to have_choose_income_married
   expect(income_kind_page.content).to have_step_info

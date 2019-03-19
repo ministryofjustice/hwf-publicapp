@@ -1,25 +1,25 @@
-Given(/^I am a single person with no children on step nine - What kind of income do you receive\?$/) do
+Given(/^I am a single person with no children on income range page$/) do
   answer_up_to_income_range_single_no_children
   expect(income_range_page.content).to have_step_info
   expect(income_range_page.content).to have_income_range_header_single
   expect(income_range_page.content).to have_select_single_income_hint
 end
 
-Given(/^I am a married person with no children on step nine - What kind of income do you receive\?$/) do
+Given(/^I am a married person with no children on income range page$/) do
   answer_up_to_income_range_married_no_children
   expect(income_range_page.content).to have_step_info
   expect(income_range_page.content).to have_income_range_header_married
   expect(income_range_page.content).to have_select_married_income_hint
 end
 
-Given(/^I am a married person with three children on step nine - What kind of income do you receive\?$/) do
+Given(/^I am a married person with three children on income range page$/) do
   answer_up_to_income_range_married_with_children
   expect(income_range_page.content).to have_step_info
   expect(income_range_page.content).to have_income_range_header_married
   expect(income_range_page.content).to have_select_married_income_hint
 end
 
-Given(/^I am a single person with three children on step nine - What kind of income do you receive\?$/) do
+Given(/^I am a single person with three children on income range page$/) do
   answer_up_to_income_range_single_with_children
 end
 
@@ -64,4 +64,8 @@ end
 Then(/^I should see select your monthly income error message$/) do
   expect(income_range_page.content).to have_blank_error_message
   expect(income_range_page.content).to have_blank_error_link
+end
+
+Then(/^I should be taken to income amount page$/) do
+  expect(income_amount_page).to be_displayed
 end

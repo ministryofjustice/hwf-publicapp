@@ -3,7 +3,7 @@
 Feature: Income kind page
 
   Scenario: Displays income lists for a single person
-    Given I am a single person on step eight - What kind of income do you receive?
+    Given I am a single person on kind of income page
     Then I should see an income list:
       | income name                                               |
       | Wages                                                     |
@@ -21,7 +21,7 @@ Feature: Income kind page
       | No income                                                 |
 
   Scenario: Displays income lists for a couple
-    Given I am a married person on step eight - What kind of income do you receive?
+    Given I am a married person on kind of income page
     Then I should see an income list for myself and my partner:
       | income name                                               |
       | Wages                                                     |
@@ -39,11 +39,11 @@ Feature: Income kind page
       | No income                                                 |
 
   Scenario: No income
-    Given I am a single person on step eight - What kind of income do you receive?
+    Given I am a single person on kind of income page
     When I submit the form with no income checked
     Then I am taken to step 11 - Are you paying a fee for a probate case?
 
   Scenario: Displays error message
-    Given I am a single person on step eight - What kind of income do you receive?
+    Given I am a single person on kind of income page
     When I click continue
     Then I should see select your kinds of income error message

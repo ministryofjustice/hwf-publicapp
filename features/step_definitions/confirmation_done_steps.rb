@@ -16,7 +16,7 @@ When(/^I click the finish application button$/) do
   confirmation_done_page.finish_application_button.click
 end
 
-Then(/^I am taken to the thank you page$/) do
+Then(/^I should be taken to the thank you page$/) do
   expect(current_path).to eq '/'
 end
 

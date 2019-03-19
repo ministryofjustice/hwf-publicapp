@@ -27,6 +27,6 @@ Then(/^I should see help with status copy$/) do
   expect(marital_status_page.content).to have_help_multiple_fee
 end
 
-Then(/^I am taken to savings and investments page$/) do
+Then(/^I should be taken to savings and investments page$/) do
   expect(savings_and_investment_page).to be_displayed
 end

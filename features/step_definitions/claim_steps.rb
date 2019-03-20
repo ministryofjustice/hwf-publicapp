@@ -1,4 +1,4 @@
-Given(/^I visit the page for step twelve - Do you have a case, claim or ‘notice to pay’ number\?$/) do
+Given(/^I visit the claim page$/) do
   answer_up_to_claim_page
   expect(claim_page.content).to have_step_info
   expect(claim_page.content).to have_claim_header
@@ -34,4 +34,8 @@ end
 Then(/^I should see select whether you have a case, claim or ‘notice to pay’ error message$/) do
   expect(claim_page.content).to have_blank_error_message
   expect(claim_page.content).to have_blank_error_link
+end
+
+Then(/^I should be taken to national insurance page$/) do
+  expect(national_insurance_page).to be_displayed
 end

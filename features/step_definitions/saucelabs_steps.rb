@@ -165,9 +165,9 @@ end
 And(/^I should see the content for step twenty$/) do
   expect(common_page).to have_heading_secondary
   expect(common_page.content).to have_h2
-  expect(step_twenty_page.post).to have_p
-  expect(step_twenty_page.steps_panel).to have_h2
-  expect(step_twenty_page.steps_panel.li.count).to eq 3
+  expect(confirmation_done_page.post).to have_p
+  expect(confirmation_done_page.steps_panel).to have_h2
+  expect(confirmation_done_page.steps_panel.li.count).to eq 3
   expect(common_page).to have_js_print
   common_page.button.click
 end

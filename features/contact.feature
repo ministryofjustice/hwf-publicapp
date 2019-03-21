@@ -1,9 +1,9 @@
 @e2e
 
-Feature: Step seventeen page
+Feature: Contact page
 
-  Background: Navigating to the page for step seventeen
-    Given I visit the page for step seventeen
+  Background: Navigating to the contact page
+    Given I visit the contact page
 
   Scenario: Displays step number
     Then I should see step 17 of 20

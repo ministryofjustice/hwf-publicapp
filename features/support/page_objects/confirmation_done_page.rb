@@ -1,4 +1,4 @@
-class StepTwentyPage < BasePage
+class ConfirmationDonePage < BasePage
   section :post, '.post' do
     element :p, 'p'
   end

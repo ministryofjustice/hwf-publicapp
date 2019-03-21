@@ -202,28 +202,28 @@ def dob_page
   @dob_page ||= DOBPage.new
 end
 
-def step_fifteen_page
-  @step_fifteen_page ||= StepFifteenPage.new
+def personal_details_page
+  @personal_details_page ||= PersonalDetailsPage.new
 end
 
-def step_sixteen_page
-  @step_sixteen_page ||= StepSixteenPage.new
+def address_page
+  @address_page ||= AddressPage.new
 end
 
-def step_seventeen_page
-  @step_seventeen_page ||= StepSeventeenPage.new
+def contact_page
+  @contact_page ||= ContactPage.new
 end
 
-def step_eighteen_page
-  @step_eighteen_page ||= StepEighteenPage.new
+def check_details_page
+  @check_details_page ||= CheckDetailsPage.new
 end
 
-def step_nineteen_page
-  @step_nineteen_page ||= StepNineteenPage.new
+def confirmation_page
+  @confirmation_page ||= ConfirmationPage.new
 end
 
-def step_twenty_page
-  @step_twenty_page ||= StepTwentyPage.new
+def confirmation_done_page
+  @confirmation_done_page ||= ConfirmationDonePage.new
 end
 
 def base_page

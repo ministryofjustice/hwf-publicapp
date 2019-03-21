@@ -43,8 +43,8 @@ When(/^I take the happy path through steps 1 to 20$/) do
   step_fourteen_page.dob_date_of_birth.set(Time.zone.today - 34.years)
   common_page.continue_button.click
   # step fifteen
-  step_fifteen_page.first_name.set('Sally')
-  step_fifteen_page.last_name.set('Smith')
+  personal_details_page.first_name.set('Sally')
+  personal_details_page.last_name.set('Smith')
   common_page.continue_button.click
   # step sixteen
   step_sixteen_page.address.set('102 Petty France, London')
@@ -53,10 +53,10 @@ When(/^I take the happy path through steps 1 to 20$/) do
   common_page.continue_button.click
   common_page.continue_button.click
   # step eighteen
-  step_eighteen_page.submit_button.click
+  check_details_page.submit_button.click
   # step nineteen
   common_page.continue_button.click
   # step twenty
-  step_twenty_page.finish_application_button.click
+  confirmation_done_page.finish_application_button.click
 end
 # rubocop:enable Metrics/BlockLength

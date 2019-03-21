@@ -1,9 +1,9 @@
 @e2e
 
-Feature: Step eighteen page
+Feature: Check details page
 
-  Background: Navigating to the page for step eighteen
-    Given I visit the page for step eighteen
+  Background: Navigating to the check details page
+    Given I visit the check details page
 
   Scenario: Displays step number
     Then I should see 'Step 18 of 20'

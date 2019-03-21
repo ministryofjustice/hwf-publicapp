@@ -32,5 +32,5 @@ Feature: Saucelabs cross browser and device tests
 
   Scenario: Help with is displayed on multiple browsers and devices
     Given I have started my application
-    When I click on 'Help with form name or number'
+    When I click on 'Applying for help with hearing fees'
     Then I see more information about the form name or number

@@ -214,8 +214,8 @@ def contact_page
   @contact_page ||= ContactPage.new
 end
 
-def check_details_page
-  @check_details_page ||= CheckDetailsPage.new
+def summary_page
+  @summary_page ||= SummaryPage.new
 end
 
 def confirmation_page

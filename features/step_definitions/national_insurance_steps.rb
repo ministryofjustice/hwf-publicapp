@@ -32,3 +32,7 @@ Then(/^I should see enter your National Insurance number error message$/) do
   expect(national_insurance_page.content).to have_blank_error_message
   expect(national_insurance_page.content).to have_blank_error_link
 end
+
+Then(/^I should be taken to date of birth page$/) do
+  expect(dob_page).to be_displayed
+end

@@ -19,4 +19,4 @@ Feature: Confirmation page
 
   Scenario: Continue to step twenty
     When I click continue
-    Then I go to step twenty
+    Then I should go to the confirmation done page

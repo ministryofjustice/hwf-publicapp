@@ -13,12 +13,12 @@ Feature: Personal details page
     When I enter my title
     And I enter my first name
     And I enter my last name
-    Then I am taken to step 16 - What is your address?
+    Then I should be taken to contact page
 
   Scenario: Entering a full name without a title
     When I enter my first name
     And I enter my last name
-    Then I am taken to step 16 - What is your address?
+    Then I should be taken to contact page
 
   Scenario: Displays enter your first name error message
     When I enter my last name

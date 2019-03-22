@@ -53,7 +53,7 @@ When(/^I take the happy path through steps 1 to 20$/) do
   common_page.continue_button.click
   common_page.continue_button.click
   # step eighteen
-  check_details_page.submit_button.click
+  summary_page.submit_button.click
   # step nineteen
   common_page.continue_button.click
   # step twenty

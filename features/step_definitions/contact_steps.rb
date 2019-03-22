@@ -31,10 +31,10 @@ Then(/^I should see share your experience checkbox$/) do
   expect(checkbox_group.span.text).to have_content 'Check this box if you\'re willing to share your experience'
 end
 
-Then(/^I remain on step 17$/) do
-  expect(current_path).to eq '/questions/contact'
+Then(/^I remain on this page$/) do
+  expect(contact_page).to be_displayed
 end
 
-Then(/^I go to step 18 summary$/) do
-  expect(current_path).to eq '/summary'
+Then(/^I should be taken to summary page$/) do
+  expect(summary_page).to be_displayed
 end

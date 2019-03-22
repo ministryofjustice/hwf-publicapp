@@ -1,9 +1,9 @@
 @e2e
 
-Feature: Check details page
+Feature: Summary page
 
-  Background: Navigating to the check details page
-    Given I visit the check details page
+  Background: Navigating to the summary page
+    Given I visit the summary page
 
   Scenario: Displays step number
     Then I should see 'Step 18 of 20'
@@ -54,4 +54,4 @@ Feature: Check details page
   @hwf_submit_application
   Scenario: Continue button
     When I click submit application and continue
-    Then I taken to step 19 of 20 confirmation
+    Then I should be taken to confirmation page

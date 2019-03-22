@@ -1,4 +1,6 @@
-class CheckDetailsPage < BasePage
+class SummaryPage < BasePage
+  set_url '/summary'
+
   element :address, '#applicant_address_address'
   element :postcode, '#applicant_address_postcode'
   elements :copy, '.text > p'

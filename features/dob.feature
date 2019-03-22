@@ -1,11 +1,11 @@
 Feature: Date of birth page
 
   Background: Navigating to the date of birth page
-    Given I visit the page for step fourteen - What is your date of birth?
+    Given I visit the date of birth page
 
   Scenario: Entering a valid date of birth
     When I enter a valid date of birth
-    Then I am taken to step 15 - What is your full name?
+    Then I should be taken to contact page
 
   Scenario: Displays you must be over 15 to use this service error message
     When I enter a date of less than fifteen years

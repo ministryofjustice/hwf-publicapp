@@ -1,4 +1,6 @@
 class DOBPage < BasePage
+  set_url '/questions/dob'
+
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 14 of 20'
     element :dob_header, 'h1', text: 'What is your date of birth?'

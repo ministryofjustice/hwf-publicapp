@@ -13,7 +13,7 @@ Feature: Address page
 
   Scenario: Entering address with postcode
     When I enter my address with postcode
-    Then I am taken to step 17 - What's your email address?
+    Then I should be taken to contact page
 
   Scenario: Displays enter your postcode error message
     When I enter my address

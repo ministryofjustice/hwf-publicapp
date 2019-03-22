@@ -132,6 +132,7 @@ end
 def answer_up_to_claim_page
   answer_up_to_income_amount_single
   step 'I submit the form with my monthly income'
+  step 'I select no to are you paying a fee for a probate case'
 end
 
 def answer_up_to_national_insurance_page
@@ -185,6 +186,10 @@ def income_amount_page
   @income_amount_page ||= IncomeAmountPage.new
 end
 
+def probate_page
+  @probate_page ||= ProbatePage.new
+end
+
 def claim_page
   @claim_page ||= ClaimPage.new
 end
@@ -194,7 +199,7 @@ def national_insurance_page
 end
 
 def dob_page
-  @dob_page ||= DobPage.new
+  @dob_page ||= DOBPage.new
 end
 
 def personal_details_page

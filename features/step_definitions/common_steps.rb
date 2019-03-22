@@ -82,9 +82,9 @@ Then(/^I am taken to step (\d+) - ([^\"]*)$/) do |step, title|
   expect(common_page.content.h1.text).to eq title
 end
 
-Then(/^I am taken to probate step twelve$/) do
-  expect(current_path).to eq '/questions/probate'
-end
+# Then(/^I am taken to probate step twelve$/) do
+#   expect(current_path).to eq '/questions/probate'
+# end
 
 Then(/^I should see save or print this page$/) do
   expect(common_page.js_print['href']).to end_with '#'

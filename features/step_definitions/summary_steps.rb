@@ -43,6 +43,6 @@ When(/^I click submit application and continue$/) do
   summary_page.submit_button.click
 end
 
-Then(/^I should be taken to confirmation page$/) do
-  expect(confirmation_page).to be_displayed
+Then(/^I should be taken to summary page$/) do
+  expect(summary_page).to be_displayed
 end

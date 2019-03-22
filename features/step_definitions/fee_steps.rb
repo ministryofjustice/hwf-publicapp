@@ -46,7 +46,3 @@ Then(/^I should see the application must have been made in the last 3 months err
   expect(fee_page.content).to have_expired_error_message
   expect(fee_page.content).to have_expired_error_link
 end
-
-Then(/^I should be taken to marital status page$/) do
-  expect(marital_status_page).to be_displayed
-end

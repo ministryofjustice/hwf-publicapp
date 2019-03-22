@@ -47,7 +47,3 @@ Then(/^I should see select whether you're receiving one of the benefits listed e
   expect(benefit_page.content).to have_blank_error_message
   expect(benefit_page.content).to have_blank_error_link
 end
-
-Then(/^I should be taken to dependent page$/) do
-  expect(dependent_page).to be_displayed
-end

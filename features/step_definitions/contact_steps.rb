@@ -35,6 +35,6 @@ Then(/^I remain on this page$/) do
   expect(contact_page).to be_displayed
 end
 
-Then(/^I should be taken to summary page$/) do
-  expect(summary_page).to be_displayed
+Then(/^I should be taken to contact page$/) do
+  expect(contact_page).to be_displayed
 end

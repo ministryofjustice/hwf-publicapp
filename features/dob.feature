@@ -5,7 +5,7 @@ Feature: Date of birth page
 
   Scenario: Entering a valid date of birth
     When I enter a valid date of birth
-    Then I should be taken to contact page
+    Then I should be taken to personal details page
 
   Scenario: Displays you must be over 15 to use this service error message
     When I enter a date of less than fifteen years

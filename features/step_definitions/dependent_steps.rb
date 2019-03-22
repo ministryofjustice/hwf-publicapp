@@ -38,6 +38,6 @@ Then(/^I should see you need to say whether you have financially dependent child
   expect(dependent_page.content).to have_error_message
 end
 
-Then(/^I should be taken to kind of income page$/) do
-  expect(income_kind_page).to be_displayed
+Then(/^I should be taken to dependent page$/) do
+  expect(dependent_page).to be_displayed
 end

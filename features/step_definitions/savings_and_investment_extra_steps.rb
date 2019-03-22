@@ -36,3 +36,7 @@ Then(/^I should see enter how much you have in savings and investments error mes
   expect(savings_and_investment_extra_page.content).to have_blank_error_message
   expect(savings_and_investment_extra_page.content).to have_blank_error_link
 end
+
+Then(/^I should be taken to savings and investment extra page$/) do
+  expect(savings_and_investment_extra_page).to be_displayed
+end

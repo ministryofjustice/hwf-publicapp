@@ -35,7 +35,3 @@ Then(/^I should see select whether you have a case, claim or ‘notice to pay’
   expect(claim_page.content).to have_blank_error_message
   expect(claim_page.content).to have_blank_error_link
 end
-
-Then(/^I should be taken to national insurance page$/) do
-  expect(national_insurance_page).to be_displayed
-end

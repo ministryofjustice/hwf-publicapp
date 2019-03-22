@@ -65,7 +65,3 @@ Then(/^I should see select your monthly income error message$/) do
   expect(income_range_page.content).to have_blank_error_message
   expect(income_range_page.content).to have_blank_error_link
 end
-
-Then(/^I should be taken to income amount page$/) do
-  expect(income_amount_page).to be_displayed
-end

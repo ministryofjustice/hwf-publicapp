@@ -32,6 +32,6 @@ Then(/^I should be taken to benefits page$/) do
   expect(benefit_page).to be_displayed
 end
 
-Then(/^I should be taken to savings and investment extra page$/) do
-  expect(savings_and_investment_extra_page).to be_displayed
+Then(/^I should be taken to savings and investments page$/) do
+  expect(savings_and_investment_page).to be_displayed
 end

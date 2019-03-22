@@ -16,10 +16,6 @@ When(/^I click the finish application button$/) do
   confirmation_done_page.finish_application_button.click
 end
 
-Then(/^I should be taken to the thank you page$/) do
-  expect(current_path).to eq '/'
-end
-
 Then(/^I should see deliver your paperwork copy$/) do
   expect(confirmation_done_page.post.p.text).to have_content 'Deliver your paperwork to the court'
 end
@@ -31,4 +27,12 @@ end
 
 Then(/^I should see point 1 with HWF number$/) do
   expect(confirmation_done_page.li[0].text).to have_content 'reference number HWF-000-000'
+end
+
+Then(/^I should be taken to the confirmation done page$/) do
+  expect(confirmation_done_page).to be_displayed
+end
+
+Then(/^I should be taken to the thank you page$/) do
+  expect(current_path).to eq '/'
 end

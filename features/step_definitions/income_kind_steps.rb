@@ -45,3 +45,7 @@ When(/^I should see select your kinds of income error message$/) do
   expect(income_kind_page.content).to have_blank_error_message
   expect(income_kind_page.content).to have_blank_error_link
 end
+
+Then(/^I should be taken to kind of income page$/) do
+  expect(income_kind_page).to be_displayed
+end

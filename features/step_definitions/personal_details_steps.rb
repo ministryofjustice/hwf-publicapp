@@ -31,3 +31,7 @@ When(/^I enter my full name$/) do
   personal_details_page.last_name.set('Smith')
   common_page.continue_button.click
 end
+
+Then(/^I should be taken to personal details page$/) do
+  expect(personal_details_page).to be_displayed
+end

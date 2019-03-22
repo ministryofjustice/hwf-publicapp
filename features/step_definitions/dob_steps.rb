@@ -36,6 +36,6 @@ Then(/^I should see enter the date of birth in this format error message$/) do
   expect(dob_page.content).to have_blank_error_message
 end
 
-Then(/^I should be taken to contact page$/) do
-  expect(contact_page).to be_displayed
+Then(/^I should be taken to date of birth page$/) do
+  expect(dob_page).to be_displayed
 end

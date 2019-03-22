@@ -27,3 +27,7 @@ When(/^I enter my postcode$/) do
   address_page.postcode.set('102 Petty France, London')
   common_page.continue_button.click
 end
+
+Then(/^I should be taken to address page$/) do
+  expect(address_page).to be_displayed
+end

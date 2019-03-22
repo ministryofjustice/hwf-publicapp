@@ -1,7 +1,9 @@
 Given(/^I visit the personal details page$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
-  step 'I select no to are you paying a fee for a probate case'
+  unless ProbateFeesSwitch.disable_probate_fees?
+    step 'I select no to are you paying a fee for a probate case'
+  end
   step 'I select no to do you have a case, claim or notice to pay number'
   step 'I enter a valid national insurance number'
   step 'I enter a valid date of birth'

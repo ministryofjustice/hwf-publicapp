@@ -1,7 +1,7 @@
 Feature: Personal details page
 
   Background: Navigating to the personal details page
-    Given I visit the personal details page
+    Given I am on the personal details page
 
   Scenario: Displays step number
     Then I should see step 15 of 20

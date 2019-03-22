@@ -3,7 +3,7 @@
 Feature: Summary page
 
   Background: Navigating to the summary page
-    Given I visit the summary page
+    Given I am on the summary page
 
   Scenario: Displays step number
     Then I should see 'Step 18 of 20'

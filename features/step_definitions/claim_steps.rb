@@ -1,4 +1,4 @@
-Given(/^I visit the claim page$/) do
+Given(/^I am on the claim page$/) do
   answer_up_to_claim_page
   expect(claim_page.content).to have_step_info
   expect(claim_page.content).to have_claim_header

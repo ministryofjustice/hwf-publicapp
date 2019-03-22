@@ -3,7 +3,7 @@
 Feature: National insurance page
 
   Background: Navigating to the page for step thirteen
-    Given I visit the page for step thirteen - What is your National Insurance number?
+    Given I am on the national insurance page
 
   Scenario: Entering a valid national insurance number
     When I enter a valid national insurance number

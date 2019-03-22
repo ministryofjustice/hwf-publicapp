@@ -1,4 +1,4 @@
-Given(/^I visit the confirmation page$/) do
+Given(/^I am on the confirmation page$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'

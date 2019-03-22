@@ -3,7 +3,7 @@
 Feature: Claim page
 
   Background: Navigating to the claim page
-    Given I visit the claim page
+    Given I am on the claim page
  
   Scenario: Selecting no to do you have a case, claim or notice to pay number
     When I select no to do you have a case, claim or notice to pay number

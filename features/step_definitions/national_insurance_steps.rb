@@ -1,4 +1,4 @@
-Given(/^I visit the page for step thirteen - What is your National Insurance number\?$/) do
+Given(/^I am on the national insurance page$/) do
   answer_up_to_national_insurance_page
   expect(national_insurance_page.content).to have_step_info
   expect(national_insurance_page.content).to have_national_insurance_header

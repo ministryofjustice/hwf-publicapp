@@ -16,6 +16,6 @@ Then(/^I should see direction points 1 to 4$/) do
   expect(confirmation_page.steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
 end
 
-Then(/^I should go to the confirmation done page$/) do
+Then(/^I should be taken to the confirmation done page$/) do
   expect(confirmation_done_page).to be_displayed
 end

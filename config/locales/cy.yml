@@ -16,7 +16,7 @@ cy:
       forms/fee:
         date_paid: Dyddiad y talwyd y ffi
       forms/form_name:
-        identifier: Enw neu rif y ffurflen
+        identifier: Rhif ffurflen
       forms/help_request:
         description: Disgrifiwch beth hoffech chi siarad amdano
         email: Cyfeiriad e-bost
@@ -107,6 +107,7 @@ cy:
             identifier:
               blank: Rhowch enw neu rif y ffurflen, neu dewiswch 'Dydw i ddim yn gwybod beth yw enw neu rif y ffurflen'
               too_long: Rhaid i enw'r ffurflen fod yn llai na 50 o nodau
+              invalid: Rydych wedi nodi rhif y ffurflen gymorth gyda ffioedd. Nodwch y rhif ar eich ffurflen llys neu dribiwnlys.
         forms/help_request:
           attributes:
             description:
@@ -391,14 +392,13 @@ cy:
     form_name:
       breadcrumb: Cam 1 o 20
       details:
-        item_1: Fel arfer mae enw'r ffurflen ar ben y ffurflen, a'r rhif ar y gwaelod.
-        item_2: Os nad oes enw neu rif ffurflen gennych chi, er enghraifft os ydych chi'n gwneud cais am help gyda ffi gwrandawiad, yna rhowch 'ffi gwrandawiad' yn ateb i'r cwestiwn hwn.
-        summary: Help gydag enw neu rif y ffurflen
+        item_1: "Yn hytrach na rhif y ffurflen nodwch ‘ffi gwrandawiad’ wedi ei ddilyn gan eglurhad byr, er enghraifft 'ffi gwrandawiad ar gyfer ‘hawliadau bychain’ neu ‘ffi gwrandawiad ar gyfer trac cyflym’."
+        summary: Gwneud cais am gymorth gyda ffioedd gwrandawiad
       et: Rwyf angen help gyda ffi tribiwnlys cyflogaeth
-      example: Rhowch rif y ffurflen llys neu dribiwnlys ar gyfer y busnes llys y mae arnoch angen help gydag ef, er enghraifft ffurflen ‘C100’, ‘D8’ neu 'Hysbysiad o Apêl'
-      text: Pa ffi llys neu dribiwnlys y mae arnoch angen help gyda hi?
-      title: Enw neu rif y ffurflen
-      unknown: Dydw i ddim yn gwybod beth yw enw neu rif y ffurflen
+      example: Fe ddowch o hyd i rif ar waelod ffurflenni papur, er enghraifft C100 neu ADM1A
+      text: Pa rif sydd ar eich ffurflen llys neu dribiwnlys?
+      title: Rhif ffurflen
+      unknown: Nid oes gen i ffurflen
     income_amount:
       amount:
         married: Rhowch gyfanswm yr incwm rydych chi a'ch partner yn ei gael bob mis.
@@ -592,7 +592,7 @@ cy:
       date_of_death: Dyddiad marwolaeth
       deceased_name: Enw'r ymadawedig
       fee: Ffi a dalwyd
-      form_name: Enw neu rif y ffurflen
+      form_name: Rhif ffurflen
       income: Incwm
       married: Statws
       ni_number: Rhif Yswiriant Gwladol

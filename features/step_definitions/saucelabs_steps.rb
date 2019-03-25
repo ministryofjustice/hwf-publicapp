@@ -149,9 +149,9 @@ end
 And(/^I should see the content for step eighteen$/) do
   common_step_header
   expect(common_page.content.text).to have_p
-  expect(check_details_page.tbody.tr.count).to eq 14
-  expect(check_details_page.h2[0].text).to eq 'Declaration and statement of truth'
-  check_details_page.submit_button.click
+  expect(summary_page.tbody.tr.count).to eq 14
+  expect(summary_page.h2[0].text).to eq 'Declaration and statement of truth'
+  summary_page.submit_button.click
 end
 
 And(/^I should see the content for step nineteen$/) do
@@ -165,9 +165,9 @@ end
 And(/^I should see the content for step twenty$/) do
   expect(common_page).to have_heading_secondary
   expect(common_page.content).to have_h2
-  expect(step_twenty_page.post).to have_p
-  expect(step_twenty_page.steps_panel).to have_h2
-  expect(step_twenty_page.steps_panel.li.count).to eq 3
+  expect(confirmation_done_page.post).to have_p
+  expect(confirmation_done_page.steps_panel).to have_h2
+  expect(confirmation_done_page.steps_panel.li.count).to eq 3
   expect(common_page).to have_js_print
   common_page.button.click
 end

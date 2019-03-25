@@ -1,4 +1,6 @@
 class IncomeAmountPage < BasePage
+  set_url '/questions/income_amount'
+
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 10 of 20'
     element :income_amount_single_header, 'h1', text: 'What’s your total monthly income?'

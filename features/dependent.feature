@@ -3,16 +3,16 @@
 Feature: Dependent page
 
   Background: Navigating to the dependent page
-    Given I am on the page for step seven - Do you have any children living with you, or who you support financially?
+    Given I am on the dependent page
 
   Scenario: Yes to do you have any children
     When I select yes to do you have any children
-    And I submit the form with '4' children
-    Then I am taken to step 8 - What kind of income do you receive?
+    And I submit the form with four children
+    Then I should be taken to kind of income page
 
   Scenario: No to do you have any children
     When I submit the form with no I do not have any children
-    Then I am taken to step 8 - What kind of income do you receive?
+    Then I should be taken to kind of income page
 
   Scenario: Displays error message
     When I click continue

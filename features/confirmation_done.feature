@@ -2,7 +2,7 @@
 
 Feature: Confirmation done page
 
-  Background:
+  Background: Navigating to the confirmation done page
     Given I am on the confirmation done page
 
   Scenario: Displays header for people that do not need help with an employment tribunal fee
@@ -19,4 +19,4 @@ Feature: Confirmation done page
 
   Scenario: Finish application
     When I click the finish application button
-    Then I am taken to the thank you page
+    Then I should be taken to the thank you page

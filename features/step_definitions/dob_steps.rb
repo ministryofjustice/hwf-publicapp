@@ -1,4 +1,4 @@
-Given(/^I visit the page for step fourteen - What is your date of birth\?$/) do
+Given(/^I am on the date of birth page$/) do
   answer_up_to_dob
   expect(dob_page.content).to have_step_info
   expect(dob_page.content).to have_dob_header
@@ -34,4 +34,8 @@ end
 Then(/^I should see enter the date of birth in this format error message$/) do
   expect(dob_page.content).to have_blank_error_link
   expect(dob_page.content).to have_blank_error_message
+end
+
+Then(/^I should be taken to date of birth page$/) do
+  expect(dob_page).to be_displayed
 end

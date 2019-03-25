@@ -1,7 +1,7 @@
 Feature: Personal details page
 
   Background: Navigating to the personal details page
-    Given I visit the personal details page
+    Given I am on the personal details page
 
   Scenario: Displays step number
     Then I should see step 15 of 20
@@ -13,12 +13,12 @@ Feature: Personal details page
     When I enter my title
     And I enter my first name
     And I enter my last name
-    Then I am taken to step 16 - What is your address?
+    Then I should be taken to address page
 
   Scenario: Entering a full name without a title
     When I enter my first name
     And I enter my last name
-    Then I am taken to step 16 - What is your address?
+    Then I should be taken to address page
 
   Scenario: Displays enter your first name error message
     When I enter my last name

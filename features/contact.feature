@@ -3,7 +3,7 @@
 Feature: Contact page
 
   Background: Navigating to the contact page
-    Given I visit the contact page
+    Given I am on the contact page
 
   Scenario: Displays step number
     Then I should see step 17 of 20
@@ -16,16 +16,16 @@ Feature: Contact page
 
   Scenario: Entering a valid email address
     When I enter a valid email address
-    Then I go to step 18 summary
+    Then I should be taken to summary page
 
   Scenario: Entering a invalid email address
     When I enter a invalid email address
     And I click continue
-    Then I remain on step 17
+    Then I remain on this page
 
   Scenario: Displays share your experience
     Then I should see share your experience checkbox
 
   Scenario: Continuing without supplying an email address
     When I click continue
-    Then I go to step 18 summary
+    Then I should be taken to summary page

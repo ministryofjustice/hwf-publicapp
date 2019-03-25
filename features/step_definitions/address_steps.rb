@@ -1,4 +1,4 @@
-Given(/^I visit the address page$/) do
+Given(/^I am on the address page$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'
@@ -26,4 +26,8 @@ When(/^I enter my postcode$/) do
   expect(address_page.form_group[0].text).to eq 'Address'
   address_page.postcode.set('102 Petty France, London')
   common_page.continue_button.click
+end
+
+Then(/^I should be taken to address page$/) do
+  expect(address_page).to be_displayed
 end

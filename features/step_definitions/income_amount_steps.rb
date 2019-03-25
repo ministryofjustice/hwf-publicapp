@@ -30,3 +30,7 @@ Then(/^I should see enter how much income do you receive error message$/) do
   expect(income_amount_page.content).to have_blank_error_link
   expect(income_amount_page.content).to have_blank_error_message
 end
+
+Then(/^I should be taken to income amount page$/) do
+  expect(income_amount_page).to be_displayed
+end

@@ -1,4 +1,4 @@
-Given(/^I am on the page for step seven - Do you have any children living with you, or who you support financially\?$/) do
+Given(/^I am on the dependent page$/) do
   answer_up_to_dependent_single
   expect(dependent_page.content).to have_step_info
   expect(dependent_page.content).to have_dependent_header
@@ -13,14 +13,14 @@ When(/^I submit the form with no I do not have any children$/) do
   continue
 end
 
-When(/^I submit the form with '(\d+)' children$/) do |children|
+When(/^I submit the form with four children$/) do
   expect(dependent_page.content).to have_num_of_children
-  dependent_page.content.children_number.set(children)
+  dependent_page.content.children_number.set 4
   continue
 end
 
 When(/^I add I have three children$/) do
-  dependent_page.content.children_number.set(3)
+  dependent_page.content.children_number.set 3
   continue
 end
 
@@ -36,4 +36,8 @@ end
 Then(/^I should see you need to say whether you have financially dependent children error message$/) do
   expect(dependent_page.content).to have_error_link
   expect(dependent_page.content).to have_error_message
+end
+
+Then(/^I should be taken to dependent page$/) do
+  expect(dependent_page).to be_displayed
 end

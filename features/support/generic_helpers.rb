@@ -28,7 +28,7 @@ module WaitUntil
 end
 
 def answer_up_to_fee_page
-  step 'I am on the page for step one - What number is on your court or tribunal form?'
+  step 'I am on the form number page'
   step 'I submit the form with a valid form number'
 end
 
@@ -162,8 +162,8 @@ def savings_and_investment_page
   @savings_and_investment_page ||= SavingsAndInvestmentPage.new
 end
 
-def over_61_page
-  @over_61_page ||= Over61Page.new
+def savings_and_investment_extra_page
+  @savings_and_investment_extra_page ||= SavingsAndInvestmentExtraPage.new
 end
 
 def benefit_page
@@ -214,8 +214,8 @@ def contact_page
   @contact_page ||= ContactPage.new
 end
 
-def check_details_page
-  @check_details_page ||= CheckDetailsPage.new
+def summary_page
+  @summary_page ||= SummaryPage.new
 end
 
 def confirmation_page

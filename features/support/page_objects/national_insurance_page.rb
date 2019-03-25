@@ -1,4 +1,6 @@
 class NationalInsurancePage < BasePage
+  set_url '/questions/national_insurance'
+
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 13 of 20'
     element :national_insurance_header, 'h1', text: 'What is your National Insurance number?'

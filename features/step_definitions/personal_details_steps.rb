@@ -1,4 +1,4 @@
-Given(/^I visit the personal details page$/) do
+Given(/^I am on the personal details page$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'
@@ -30,4 +30,8 @@ When(/^I enter my full name$/) do
   expect(personal_details_page.form_group[2].text).to eq 'Last name'
   personal_details_page.last_name.set('Smith')
   common_page.continue_button.click
+end
+
+Then(/^I should be taken to personal details page$/) do
+  expect(personal_details_page).to be_displayed
 end

@@ -3,7 +3,7 @@
 Feature: Fee page
 
   Background: Navigating to the fee page
-    Given I am on the page for step two - Have you already paid the fee?
+    Given I am on the fee page
 
   Scenario: Neither selecting yes or no
     When I click continue
@@ -12,7 +12,7 @@ Feature: Fee page
   Scenario: Selecting no to have you already paid the fee?
     When I select no to have you already paid the fee?
     And I click continue
-    Then I am taken to step 3 - Are you single, married or living with someone and sharing an income?
+    Then I should be taken to marital status page
 
   Scenario: Selecting yes but not providing a date
     When I select yes to have you already paid the fee?
@@ -22,7 +22,7 @@ Feature: Fee page
   Scenario: Date within the last 3 months
     When I select yes to have you already paid the fee?
     And I submit the form with a date thats within the last three months
-    Then I am taken to step 3 - Are you single, married or living with someone and sharing an income?
+    Then I should be taken to marital status page
 
   Scenario: Date exceeding 3 months
     When I select yes to have you already paid the fee?

@@ -3,11 +3,11 @@
 Feature: National insurance page
 
   Background: Navigating to the page for step thirteen
-    Given I visit the page for step thirteen - What is your National Insurance number?
+    Given I am on the national insurance page
 
   Scenario: Entering a valid national insurance number
     When I enter a valid national insurance number
-    Then I am taken to step 14 - What is your date of birth?
+    Then I should be taken to date of birth page
 
   Scenario: If you don't know your national insurance number
     When I click on if you don't know your national insurance number

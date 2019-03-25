@@ -1,4 +1,6 @@
 class BenefitPage < BasePage
+  set_url '/questions/benefit'
+
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 6 of 20'
     element :benefit_header, 'h1', text: 'Do you receive any of the following benefits?'

@@ -1,4 +1,6 @@
 class ConfirmationDonePage < BasePage
+  set_url '/confirmation/done'
+
   section :post, '.post' do
     element :p, 'p'
   end

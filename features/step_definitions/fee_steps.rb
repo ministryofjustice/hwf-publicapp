@@ -1,4 +1,4 @@
-Given(/^I am on the page for step two - Have you already paid the fee\?$/) do
+Given(/^I am on the fee page$/) do
   answer_up_to_fee_page
   expect(fee_page.content).to have_step_info
   expect(fee_page.content).to have_fee_header

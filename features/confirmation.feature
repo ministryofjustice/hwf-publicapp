@@ -3,7 +3,7 @@
 Feature: Confirmation page
 
   Background: Navigating to the confirmation page
-    Given I visit the confirmation page
+    Given I am on the confirmation page
 
   Scenario: Displays step number
     Then I see step 19 of 20
@@ -19,4 +19,4 @@ Feature: Confirmation page
 
   Scenario: Continue to step twenty
     When I click continue
-    Then I go to step twenty
+    Then I should be taken to the confirmation done page

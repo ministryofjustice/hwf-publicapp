@@ -1,4 +1,4 @@
-Given(/^I am on the page for step six - Do you receive any of the following benefits\?$/) do
+Given(/^I am on the benefit page$/) do
   answer_up_to_benefit_single
   expect(benefit_page.content).to have_step_info
   expect(benefit_page.content).to have_benefit_header

@@ -1,4 +1,4 @@
-Given(/^I visit the confirmation page$/) do
+Given(/^I am on the confirmation page$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'
@@ -16,6 +16,6 @@ Then(/^I should see direction points 1 to 4$/) do
   expect(confirmation_page.steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
 end
 
-Then(/^I go to step twenty$/) do
-  expect(current_path).to eq '/confirmation/done'
+Then(/^I should be taken to confirmation page$/) do
+  expect(confirmation_page).to be_displayed
 end

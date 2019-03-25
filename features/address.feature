@@ -3,7 +3,7 @@
 Feature: Address page
 
   Background: Navigating to the address page
-    Given I visit the address page
+    Given I am on the address page
 
   Scenario: Displays step number
     Then I should see step 16 of 20
@@ -13,7 +13,7 @@ Feature: Address page
 
   Scenario: Entering address with postcode
     When I enter my address with postcode
-    Then I am taken to step 17 - What's your email address?
+    Then I should be taken to contact page
 
   Scenario: Displays enter your postcode error message
     When I enter my address

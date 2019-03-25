@@ -3,7 +3,7 @@
 Feature: Address page
 
   Background: Navigating to the address page
-    Given I visit the address page
+    Given I visit the address page with probate enabled
 
   Scenario: Displays step number
     Then I should see step 16 of 20

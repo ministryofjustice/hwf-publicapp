@@ -6,6 +6,16 @@ Given(/^I visit the page for step eleven - Are you paying a fee for a probate ca
   expect(probate_page.content).to have_probate_hint
 end
 
+And(/^probate is disabled$/) do
+  puts ProbateFeesSwitch.disable_probate_fees?
+  travel_to probate_fees_release_date + 1.day
+  puts ProbateFeesSwitch.disable_probate_fees?
+end
+
+And(/^probate is enabled$/) do
+  travel_to a_day_before_disable_probate_fees
+end
+
 When(/^I select no to are you paying a fee for a probate case$/) do
   probate_page.submit_no
 end

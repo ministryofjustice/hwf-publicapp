@@ -1,12 +1,11 @@
-Given(/^I visit the personal details page$/) do
+Given(/^I visit the personal details page with probate enabled$/) do
+  travel_to a_day_before_disable_probate_fees
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
-  unless ProbateFeesSwitch.disable_probate_fees?
-    step 'I select no to are you paying a fee for a probate case'
-  end
-  step 'I select no to do you have a case, claim or notice to pay number'
-  step 'I enter a valid national insurance number'
-  step 'I enter a valid date of birth'
+  probate_page.submit_no
+  claim_page.submit_no
+  national_insurance_page.submit_valid_ni
+  dob_page.valid_dob
 end
 
 When(/^I enter my title$/) do

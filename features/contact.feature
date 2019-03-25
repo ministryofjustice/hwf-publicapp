@@ -3,7 +3,7 @@
 Feature: Contact page
 
   Background: Navigating to the contact page
-    Given I visit the contact page
+    Given I visit the contact page with probate enabled
 
   Scenario: Displays step number
     Then I should see step 17 of 20

@@ -28,7 +28,8 @@ module WaitUntil
 end
 
 def answer_up_to_fee_page
-  step 'I am on the page for step one - What number is on your court or tribunal form?'
+  step 'probate is enabled'
+  step 'I am on the page for step one - What court or tribunal fee do you need help with?'
   step 'I submit the form with a valid form number'
 end
 

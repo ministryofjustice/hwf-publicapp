@@ -3,7 +3,7 @@
 Feature: Common behaviour
 
   Background: Navigating to the page for step one
-    Given I am on the page for step one - What number is on your court or tribunal form?
+    Given I am on the page for step one - What court or tribunal fee do you need help with?
 
   Scenario: Please note is displayed
     Then I should see the please note copy

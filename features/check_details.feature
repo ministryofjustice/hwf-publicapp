@@ -3,7 +3,7 @@
 Feature: Check details page
 
   Background: Navigating to the check details page
-    Given I visit the check details page
+    Given I visit the check details page with probate enabled
 
   Scenario: Displays step number
     Then I should see 'Step 18 of 20'

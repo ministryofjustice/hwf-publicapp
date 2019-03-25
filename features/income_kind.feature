@@ -38,8 +38,15 @@ Feature: Income kind page
       | Other monthly income                                      |
       | No income                                                 |
 
-  Scenario: No income
-    Given I am a single person on step eight - What kind of income do you receive?
+  Scenario: No income - probate enabled
+    Given probate is enabled
+    And I am a single person on step eight - What kind of income do you receive?
+    When I submit the form with no income checked
+    Then I am taken to step 11 - Are you paying a fee for a probate case?
+
+  Scenario: No income - probate disabled
+    Given probate is disabled
+    And I am a single person on step eight - What kind of income do you receive?
     When I submit the form with no income checked
     Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 

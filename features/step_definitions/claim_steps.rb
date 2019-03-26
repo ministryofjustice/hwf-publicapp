@@ -1,5 +1,5 @@
 Given(/^I visit the page for step twelve - Do you have a case, claim or ‘notice to pay’ number\?$/) do
-  answer_up_to_claim_page
+  answer_up_to_claim_page_probate_enabled
   expect(claim_page.content).to have_step_info
   expect(claim_page.content).to have_claim_header
   expect(claim_page.content).to have_claim_text

@@ -1,7 +1,7 @@
 Feature: Date of birth page
 
   Background: Navigating to the date of birth page
-    Given probate is disabled
+    Given probate is enabled
     And I visit the page for step fourteen - What is your date of birth?
 
   Scenario: Entering a valid date of birth

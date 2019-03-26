@@ -129,14 +129,14 @@ def answer_up_to_income_amount_married
   step 'I select between'
 end
 
-def answer_up_to_claim_page_probate_enabled
+def answer_up_to_claim_page
   answer_up_to_income_amount_single
   step 'I submit the form with my monthly income'
   step 'I select no to are you paying a fee for a probate case'
 end
 
 def answer_up_to_national_insurance_page
-  answer_up_to_claim_page_probate_enabled
+  answer_up_to_claim_page
   claim_page.content.no.click
   continue
 end

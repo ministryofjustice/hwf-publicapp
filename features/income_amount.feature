@@ -15,14 +15,14 @@ Feature: Income amount page
     Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
   Scenario: Income list
-    Given probate is disabled
+    Given probate is enabled
     When I am a married person on step ten - Whats your total monthly income?
     And I should see the income list on step ten page:
       | income name                                               |
       | Wages                                                     |
 
   Scenario: Displays error message
-    Given probate is disabled
+    Given probate is enabled
     When I am a married person on step ten - Whats your total monthly income?
     When I click continue
     Then I should see enter how much income do you receive error message

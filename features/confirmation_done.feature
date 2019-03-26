@@ -2,7 +2,7 @@
 
 Feature: Confirmation done page
 
-  Background:
+  Background: Navigating to the confirmation done page
     Given I am on the confirmation done page with probate enabled
 
   Scenario: Displays header for people that do not need help with an employment tribunal fee

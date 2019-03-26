@@ -7,13 +7,13 @@ Given(/^I visit the page for step eleven - Are you paying a fee for a probate ca
 end
 
 And(/^probate is disabled$/) do
-  puts ProbateFeesSwitch.disable_probate_fees?
   travel_to probate_fees_release_date + 1.day
-  puts ProbateFeesSwitch.disable_probate_fees?
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
 end
 
 And(/^probate is enabled$/) do
   travel_to a_day_before_disable_probate_fees
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
 end
 
 When(/^I select no to are you paying a fee for a probate case$/) do

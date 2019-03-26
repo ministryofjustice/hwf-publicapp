@@ -1,5 +1,6 @@
 Given(/^I visit the check details page with probate enabled$/) do
   travel_to a_day_before_disable_probate_fees
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   probate_page.submit_no
@@ -13,6 +14,7 @@ end
 
 Given(/^I visit the check details page with probate disabled$/) do
   travel_to probate_fees_release_date + 1.day
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   claim_page.submit_no

@@ -1,7 +1,8 @@
 Feature: Personal details page
 
   Background: Navigating to the personal details page
-    Given I visit the personal details page with probate enabled
+    Given probate is enabled
+    And I visit the personal details page with probate enabled
 
   Scenario: Displays step number
     Then I should see step 15 of 20

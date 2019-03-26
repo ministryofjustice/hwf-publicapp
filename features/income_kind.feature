@@ -3,7 +3,8 @@
 Feature: Income kind page
 
   Scenario: Displays income lists for a single person
-    Given I am a single person on step eight - What kind of income do you receive?
+    Given probate is enabled
+    When I am a single person on step eight - What kind of income do you receive?
     Then I should see an income list:
       | income name                                               |
       | Wages                                                     |
@@ -21,7 +22,8 @@ Feature: Income kind page
       | No income                                                 |
 
   Scenario: Displays income lists for a couple
-    Given I am a married person on step eight - What kind of income do you receive?
+    Given probate is enabled 
+    And I am a married person on step eight - What kind of income do you receive?
     Then I should see an income list for myself and my partner:
       | income name                                               |
       | Wages                                                     |
@@ -51,6 +53,7 @@ Feature: Income kind page
     Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
   Scenario: Displays error message
-    Given I am a single person on step eight - What kind of income do you receive?
+    Given probate is enabled
+    And I am a single person on step eight - What kind of income do you receive?
     When I click continue
     Then I should see select your kinds of income error message

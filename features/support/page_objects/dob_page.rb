@@ -1,4 +1,4 @@
-class DOBPage < BasePage
+class DobPage < BasePage
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 14 of 20'
     element :dob_header, 'h1', text: 'What is your date of birth?'
@@ -11,19 +11,19 @@ class DOBPage < BasePage
     element :over_age_error_link, 'a', text: 'Check this date of birth is correct'
     element :over_age_error_message, '.error-message', text: 'Check this date of birth is correct'
   end
-end
 
-def valid_dob
-  dob_page.content.dob_date_of_birth.set(Time.zone.today - 34.years)
-  continue
-end
+  def valid_dob
+    content.dob_date_of_birth.set(Time.zone.today - 34.years)
+    continue
+  end
 
-def under_age_dob
-  dob_page.content.dob_date_of_birth.set(Time.zone.today - 14.years)
-  continue
-end
+  def under_age_dob
+    content.dob_date_of_birth.set(Time.zone.today - 14.years)
+    continue
+  end
 
-def over_age_dob
-  dob_page.content.dob_date_of_birth.set(Time.zone.today - 150.years)
-  continue
+  def over_age_dob
+    content.dob_date_of_birth.set(Time.zone.today - 150.years)
+    continue
+  end
 end

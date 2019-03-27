@@ -1,9 +1,25 @@
+require Rails.root.join('spec', 'support', 'probate_fees_switchover_helper.rb')
+
 Given(/^I am on the page for step one - What number is on your court or tribunal form\?$/) do
   form_name_page.load_page
   expect(form_name_page.content).to have_step_info
   expect(form_name_page.content).to have_form_name_header
   expect(form_name_page.content).to have_enter_court_hint
   expect(form_name_page.content).to have_form_label
+end
+
+Then(/^I should see probate applications not available warning message$/) do
+  expect(form_name_page.content).to have_probate_warning_message
+  expect(form_name_page.content).to have_probate_link
+end
+
+Then(/^I should not see probate applications not available warning message$/) do
+  expect(form_name_page.content).to have_no_probate_warning_message
+  expect(form_name_page.content).to have_no_probate_link
+end
+
+When(/^I submit the form with a valid form name$/) do
+  submit_valid_form_name
 end
 
 Then(/^I should see the please note timeout$/) do
@@ -28,7 +44,7 @@ Then(/^I should see more information about what to put in the form number field$
   expect(form_name_page.content).to have_help_hearing_fees
 end
 
-Then(/^I should be taken to step two - Have you already paid the fee\?$/) do
+Then(/^I should be taken to fee page$/) do
   expect(fee_page).to be_displayed
 end
 

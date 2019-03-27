@@ -1,7 +1,8 @@
 Feature: Date of birth page
 
   Background: Navigating to the date of birth page
-    Given I visit the page for step fourteen - What is your date of birth?
+    Given probate is enabled
+    And I visit the page for step fourteen - What is your date of birth?
 
   Scenario: Entering a valid date of birth
     When I enter a valid date of birth

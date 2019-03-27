@@ -2,10 +2,9 @@
 
 Feature: Benefit page
 
-  Background: Navigating to the benefit page
-    Given I am on the page for step six - Do you receive any of the following benefits?
-
   Scenario: Displays instruction bullet points
+    Given probate is enabled
+    And I am on the page for step six - Do you receive any of the following benefits?
     Then I should see the instruction bullet points:
     | benefit                                                                                                                   |
     | If you are receiving one of the benefits listed in column 1, select ‘Yes’.                                                |
@@ -13,6 +12,8 @@ Feature: Benefit page
     | If you are not receiving any of benefits listed on this page, select 'No'.                                                |
 
   Scenario: Displays benefits table
+    Given probate is enabled
+    And I am on the page for step six - Do you receive any of the following benefits?
     Then I should see the benefits table:
     | Income-based Jobseeker’s Allowance (JSA)                                                | Contribution-based Job Seekers Allowance (JSA)                                       |
     | Income-related Employment and Support Allowance (ESA)                                   | Contribution-based Employment and Support Allowance (ESA)                            |
@@ -23,13 +24,25 @@ Feature: Benefit page
 
 
   Scenario: No I am not receiving any benefits from list
+    Given probate is enabled
+    And I am on the page for step six - Do you receive any of the following benefits?
     When I submit the form with no I do not receive one of the benefits listed
     Then I am taken to step 7 - Do you have any children living with you, or who you support financially?
 
-  Scenario: Yes I am receiving benefits from list
+  Scenario: Yes I am receiving benefits from list - probate enabled
+    Given probate is enabled
+    And I am on the page for step six - Do you receive any of the following benefits?
     When I submit the form with yes I am receiving one of the benefits listed
     Then I am taken to step 11 - Are you paying a fee for a probate case?
+  
+  Scenario: Yes I am receiving benefits from list - probate disabled
+    Given probate is disabled
+    And I am on the page for step six - Do you receive any of the following benefits?
+    When I submit the form with yes I am receiving one of the benefits listed
+    Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
   Scenario: Displays error message
+    Given probate is enabled
+    And I am on the page for step six - Do you receive any of the following benefits?
     When I click continue
     Then I should see select whether you're receiving one of the benefits listed error message

@@ -3,7 +3,8 @@
 Feature: Claim page
 
   Background: Navigating to the claim page
-    Given I visit the page for step twelve - Do you have a case, claim or ‘notice to pay’ number?
+    Given probate is enabled
+    And I visit the page for step twelve - Do you have a case, claim or ‘notice to pay’ number?
  
   Scenario: Selecting no to do you have a case, claim or notice to pay number
     When I select no to do you have a case, claim or notice to pay number

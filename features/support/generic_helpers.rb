@@ -199,7 +199,7 @@ def national_insurance_page
 end
 
 def dob_page
-  @dob_page ||= DOBPage.new
+  @dob_page ||= DobPage.new
 end
 
 def personal_details_page

@@ -1,7 +1,8 @@
 Feature: Personal details page
 
   Background: Navigating to the personal details page
-    Given I am on the personal details page
+    Given probate is enabled
+    And I am on the personal details page with probate enabled
 
   Scenario: Displays step number
     Then I should see step 15 of 20
@@ -29,4 +30,3 @@ Feature: Personal details page
     When I enter my first name
     And I click continue
     Then I should see 'Enter your last name' error message
-

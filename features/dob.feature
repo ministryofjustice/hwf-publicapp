@@ -1,7 +1,8 @@
 Feature: Date of birth page
 
   Background: Navigating to the date of birth page
-    Given I am on the date of birth page
+    Given probate is enabled
+    And I am on the date of birth page
 
   Scenario: Entering a valid date of birth
     When I enter a valid date of birth

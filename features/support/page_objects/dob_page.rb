@@ -1,4 +1,4 @@
-class DOBPage < BasePage
+class DobPage < BasePage
   set_url '/questions/dob'
 
   section :content, '#content' do
@@ -13,19 +13,19 @@ class DOBPage < BasePage
     element :over_age_error_link, 'a', text: 'Check this date of birth is correct'
     element :over_age_error_message, '.error-message', text: 'Check this date of birth is correct'
   end
-end
 
-def valid_dob
-  dob_page.content.dob_date_of_birth.set(Time.zone.today - 34.years)
-  continue
-end
+  def valid_dob
+    content.dob_date_of_birth.set(Time.zone.today - 34.years)
+    continue
+  end
 
-def under_age_dob
-  dob_page.content.dob_date_of_birth.set(Time.zone.today - 14.years)
-  continue
-end
+  def under_age_dob
+    content.dob_date_of_birth.set(Time.zone.today - 14.years)
+    continue
+  end
 
-def over_age_dob
-  dob_page.content.dob_date_of_birth.set(Time.zone.today - 150.years)
-  continue
+  def over_age_dob
+    content.dob_date_of_birth.set(Time.zone.today - 150.years)
+    continue
+  end
 end

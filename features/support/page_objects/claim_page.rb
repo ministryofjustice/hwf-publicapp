@@ -15,4 +15,9 @@ class ClaimPage < BasePage
     element :enter_number_error_link, 'a', text: 'Enter a case, claim or ‘notice to pay’ number'
     element :enter_number_error_message, '.error-message', text: 'Enter a case, claim or ‘notice to pay’ number'
   end
+
+  def submit_no
+    content.no.click
+    continue
+  end
 end

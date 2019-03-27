@@ -94,32 +94,33 @@ table.summary
             span.visuallyhidden
               | &nbsp;
               =t('income', scope: 'summary.labels').downcase
-    -if @summary.probate
-      tr
-        th scope="row" = t('deceased_name', scope: 'summary.labels')
-        td =@summary.deceased_name
-        td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate', 'event': 'summary_page'});" do
-          =t('summary.change')
-          span.visuallyhidden
-            | &nbsp;
-            =t('deceased_name', scope: 'summary.labels').downcase
-      tr
-        th scope="row" = t('date_of_death', scope: 'summary.labels')
-        td =@summary.date_of_death
-        td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate', 'event': 'summary_page'});" do
-          =t('summary.change')
-          span.visuallyhidden
-            | &nbsp;
-            =t('date_of_death', scope: 'summary.labels').downcase
-    -else
-      tr
-        th scope="row" =t('probate', scope: 'summary.labels')
-        td =t("probate_case_#{@summary.probate}", scope: 'summary')
-        td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate', 'event': 'summary_page'});" do
-          =t('summary.change')
-          span.visuallyhidden
-            | &nbsp;
-            =t('probate', scope: 'summary.labels').downcase
+    -unless ProbateFeesSwitch.disable_probate_fees?
+      -if @summary.probate
+        tr
+          th scope="row" = t('deceased_name', scope: 'summary.labels')
+          td =@summary.deceased_name
+          td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate', 'event': 'summary_page'});" do
+            =t('summary.change')
+            span.visuallyhidden
+              | &nbsp;
+              =t('deceased_name', scope: 'summary.labels').downcase
+        tr
+          th scope="row" = t('date_of_death', scope: 'summary.labels')
+          td =@summary.date_of_death
+          td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate', 'event': 'summary_page'});" do
+            =t('summary.change')
+            span.visuallyhidden
+              | &nbsp;
+              =t('date_of_death', scope: 'summary.labels').downcase
+      -else
+        tr
+          th scope="row" =t('probate', scope: 'summary.labels')
+          td =t("probate_case_#{@summary.probate}", scope: 'summary')
+          td.right= link_to question_path(:probate), onclick: "dataLayer.push({'sectionName': 'probate', 'event': 'summary_page'});" do
+            =t('summary.change')
+            span.visuallyhidden
+              | &nbsp;
+              =t('probate', scope: 'summary.labels').downcase
     tr
       th scope="row" =t('claim', scope: 'summary.labels')
       td =t("claim_number_#{@summary.case_number?}", scope: 'summary')

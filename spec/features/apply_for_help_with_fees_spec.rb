@@ -18,7 +18,12 @@ end
 
 RSpec.feature 'As a user' do
 
-  after { I18n.locale = :en }
+  before { travel_to a_day_before_disable_probate_fees }
+
+  after do
+    travel_back
+    I18n.locale = :en
+  end
 
   I18n.available_locales.each do |locale|
     context "using the #{locale.upcase} language" do

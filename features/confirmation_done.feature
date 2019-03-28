@@ -17,6 +17,7 @@ Feature: Confirmation done page
   Scenario: Save or print this page
     Then I should see save or print this page
 
+  @smoke
   Scenario: Finish application
     When I click the finish application button
     Then I should be taken to the thank you page

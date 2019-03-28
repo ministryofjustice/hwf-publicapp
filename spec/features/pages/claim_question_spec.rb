@@ -21,7 +21,7 @@ RSpec.feature 'As a user' do
         before { click_button 'Continue' }
 
         scenario 'I expect to be shown the "claim" page with error block' do
-          expect(page).to have_content 'You need to fix the errors on this page before continuing.'
+          expect(page).to have_content 'There is a problem'
         end
 
         scenario 'I expect the fields to have specific errors' do

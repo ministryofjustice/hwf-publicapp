@@ -270,7 +270,7 @@ en:
         two: Your application will be assessed by court or tribunal staff
       title: Send your reference number to complete the process
   error_block:
-    heading: You need to fix the errors on this page before continuing.
+    heading: There is a problem
     visuallyhidden: Errors are listed as links below, click to select the field that needs correcting.
   errors:
     combined_other_payments_invalid: Enter the amount of your income

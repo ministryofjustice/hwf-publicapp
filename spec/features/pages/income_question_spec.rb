@@ -37,7 +37,7 @@ RSpec.feature 'As a user' do
 
       scenario 'I expect to be shown the "income_kind" page with error block' do
         expect(page).to have_content 'What kind of income do you receive?'
-        expect(page).to have_content 'You need to fix the errors on this page before continuing.'
+        expect(page).to have_content 'There is a problem'
         expect(page).to have_xpath('//span[@class="error-message"]', text: 'Select your kinds of income')
       end
     end
@@ -65,7 +65,7 @@ RSpec.feature 'As a user' do
 
       scenario 'I expect to be shown the "income_range" page with error block' do
         expect(page).to have_content 'How much income do you receive each month?'
-        expect(page).to have_content 'You need to fix the errors on this page before continuing.'
+        expect(page).to have_content 'There is a problem'
         expect(page).to have_xpath('//span[@class="error-message"]', text: 'Select your monthly income')
       end
     end
@@ -92,7 +92,7 @@ RSpec.feature 'As a user' do
 
       scenario 'I expect to be shown the "income_amount" page with error block' do
         expect(page).to have_content 'What’s your total monthly income?'
-        expect(page).to have_content 'You need to fix the errors on this page before continuing.'
+        expect(page).to have_content 'There is a problem'
         expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter how much income do you receive')
       end
     end

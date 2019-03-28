@@ -269,7 +269,7 @@ cy:
         two: Bydd eich cais yn cael ei asesu gan staff y llys neu dribiwnlys
       title: Anfonwch eich cyfeirnod i gwblhau'r broses
   error_block:
-    heading: Bydd angen i chi gywiro'r gwallau ar y dudalen hon cyn mynd ymlaen.
+    heading: Mae problem wedi codi
     visuallyhidden: Mae'r gwallau wedi'u rhestru fel dolenni isod, cliciwch i ddewis y maes sydd angen ei gywiro.
   errors:
     combined_other_payments_invalid: Rhowch swm eich incwm

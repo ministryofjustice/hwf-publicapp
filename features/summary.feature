@@ -19,7 +19,7 @@ Feature: Summary page
     Then I should see probate in the check details table
     
   Scenario: Displays your details table - probate disabled
-    Given I visit the check details page with probate disabled
+    Given I am on the check details page with probate disabled
     Then I should see my details:
     | scope                     |
     | Form name or number       |

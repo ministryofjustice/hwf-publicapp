@@ -1,6 +1,6 @@
 @e2e
 
-Feature: Form number page
+Feature: Form name page
 
     Scenario: Does not display probate applications not available warning message - probate enabled
       Given probate is enabled

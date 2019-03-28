@@ -1,4 +1,4 @@
-Given(/^I visit the contact page with probate enabled$/) do
+Given(/^I am on the contact page with probate enabled$/) do
   travel_to a_day_before_disable_probate_fees
   puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
   answer_up_to_income_amount_married

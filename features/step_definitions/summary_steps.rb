@@ -12,7 +12,7 @@ Given(/^I am on the summary page with probate enabled$/) do
   step 'I click continue'
 end
 
-Given(/^I visit the check details page with probate disabled$/) do
+Given(/^I am on the check details page with probate disabled$/) do
   travel_to probate_fees_release_date + 1.day
   puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
   answer_up_to_income_amount_married

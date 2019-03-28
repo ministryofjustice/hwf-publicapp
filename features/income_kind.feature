@@ -3,7 +3,6 @@
 Feature: Income kind page
 
   Scenario: Displays income lists for a single person
-    Given I am a single person on kind of income page
     Given probate is enabled
     When I am a single person on kind of income page
     Then I should see an income list:

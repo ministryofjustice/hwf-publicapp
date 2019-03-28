@@ -24,5 +24,26 @@ RSpec.feature 'As a user' do
         expect(page).to have_content "Enter a valid form number or select 'I don't have a form'"
       end
     end
+
+    context 'when probate fees are still supported' do
+      before do
+        Timecop.freeze(a_day_before_disable_probate_fees)
+        given_user_answers_questions_up_to(:form_name)
+      end
+
+      after { Timecop.return }
+
+      scenario 'I do not expect the warning message to be displayed' do
+        expect(page).not_to have_css('#probate-warning')
+      end
+    end
+
+    context 'when probate fees are no longer supported' do
+      scenario 'I expect a warning message to be displayed' do
+        Timecop.freeze(probate_fees_release_date) do
+          expect(page).to have_css('#probate-warning')
+        end
+      end
+    end
   end
 end

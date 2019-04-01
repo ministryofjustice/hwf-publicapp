@@ -487,7 +487,7 @@ cy:
       breadcrumb: Cam 13 o 20
       details:
         section_1:
-          detail: Os na allwch chi ddarparu rhif Yswiriant Gwladol, bydd angen i chi ddarparu llythyr oddi wrth y Ganolfan Waith.
+          detail_html: Os na allwch chi ddarparu rhif Yswiriant Gwladol, bydd angen i chi ddarparu llythyr oddi wrth y Ganolfan Waith.
           item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
           item_2: gofynnwch am nodyn atgoffa drwy'r post
         summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol

@@ -21,6 +21,7 @@ Then(/^I should see if you don't know your national insurance number copy$/) do
   expect(national_insurance_page.content).to have_look_for_ni_text
   expect(national_insurance_page.content.ask_for_reminder_link['href']).to eq 'https://www.gov.uk/lost-national-insurance-number'
   expect(national_insurance_page.content).to have_no_ni_number_text
+  expect(national_insurance_page.content).to have_no_ni_number_link
 end
 
 Then(/^I should see enter a valid National Insurance number error message$/) do

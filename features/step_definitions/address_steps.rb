@@ -1,10 +1,12 @@
-Given(/^I am on the address page$/) do
+Given(/^I am on the address page with probate enabled$/) do
+  travel_to a_day_before_disable_probate_fees
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
-  step 'I select no to are you paying a fee for a probate case'
-  step 'I select no to do you have a case, claim or notice to pay number'
-  step 'I enter a valid national insurance number'
-  step 'I enter a valid date of birth'
+  probate_page.submit_no
+  claim_page.submit_no
+  national_insurance_page.submit_valid_ni
+  dob_page.valid_dob
   step 'I enter my full name'
 end
 

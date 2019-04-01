@@ -3,7 +3,8 @@
 Feature: Dependent page
 
   Background: Navigating to the dependent page
-    Given I am on the dependent page
+    Given probate is enabled
+    And I am on the dependent page
 
   Scenario: Yes to do you have any children
     When I select yes to do you have any children

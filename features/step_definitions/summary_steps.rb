@@ -1,10 +1,25 @@
-Given(/^I am on the summary page$/) do
+Given(/^I am on the summary page with probate enabled$/) do
+  travel_to a_day_before_disable_probate_fees
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
-  step 'I select no to are you paying a fee for a probate case'
-  step 'I select no to do you have a case, claim or notice to pay number'
-  step 'I enter a valid national insurance number'
-  step 'I enter a valid date of birth'
+  probate_page.submit_no
+  claim_page.submit_no
+  national_insurance_page.submit_valid_ni
+  dob_page.valid_dob
+  step 'I enter my full name'
+  step 'I enter my address with postcode'
+  step 'I click continue'
+end
+
+Given(/^I am on the check details page with probate disabled$/) do
+  travel_to probate_fees_release_date + 1.day
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+  answer_up_to_income_amount_married
+  step 'I submit the form with my monthly income'
+  claim_page.submit_no
+  national_insurance_page.submit_valid_ni
+  dob_page.valid_dob
   step 'I enter my full name'
   step 'I enter my address with postcode'
   step 'I click continue'
@@ -26,12 +41,20 @@ Then(/^I should see my details:$/) do |scopes|
   end
 end
 
+And(/^I should not see probate in the check details table$/) do
+  expect(summary_page.tbody.text).to_not include 'Probate case No'
+end
+
 Then(/^I should be able to go back and change my details:$/) do |urls|
   urls.rows.each_with_index do |url, index|
     your_details = summary_page.tbody.tr[index]
     expect(your_details.right_link['href']).to have_content url[0]
     expect(your_details.right_link.text).to have_content 'Change'
   end
+end
+
+Then(/^I should see probate in the check details table$/) do
+  expect(summary_page.tbody.text).to include 'Probate case No'
 end
 
 Then(/^I should see declaration of truth$/) do

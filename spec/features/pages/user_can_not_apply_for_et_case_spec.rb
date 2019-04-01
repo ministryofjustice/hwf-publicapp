@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature 'As a user' do
+  before { travel_to a_day_before_disable_probate_fees }
+
+  after { travel_back }
+
   context 'I should not to be able to apply for help with fees for with ET' do
     before do
       given_the_submission_service_is_available

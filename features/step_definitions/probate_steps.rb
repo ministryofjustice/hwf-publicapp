@@ -1,9 +1,19 @@
-Given(/^I visit the page for step eleven - Are you paying a fee for a probate case\?$/) do
+Given(/^I am on the page for step eleven - Are you paying a fee for a probate case\?$/) do
   answer_up_to_income_amount_married
   step 'I submit the form with my monthly income'
   expect(probate_page.content).to have_step_info
   expect(probate_page.content).to have_probate_header
   expect(probate_page.content).to have_probate_hint
+end
+
+And(/^probate is disabled$/) do
+  travel_to probate_fees_release_date + 1.day
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+end
+
+And(/^probate is enabled$/) do
+  travel_to a_day_before_disable_probate_fees
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
 end
 
 When(/^I select no to are you paying a fee for a probate case$/) do

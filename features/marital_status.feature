@@ -3,7 +3,8 @@
 Feature: Marital status page
 
   Background: Navigating to the marital status page
-    Given I am on the marital status page
+    Given probate is enabled
+    And I am on the marital status page
 
   Scenario: Selecting single
     When I submit the form as single

@@ -6,15 +6,15 @@ Given(/^I am on the date of birth page$/) do
 end
 
 When(/^I enter a valid date of birth$/) do
-  valid_dob
+  dob_page.valid_dob
 end
 
 When(/^I enter a date of less than fifteen years$/) do
-  under_age_dob
+  dob_page.under_age_dob
 end
 
 And(/^I enter a invalid date of birth$/) do
-  over_age_dob
+  dob_page.over_age_dob
 end
 
 Then(/^I should see this format hint$/) do

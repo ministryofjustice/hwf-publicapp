@@ -3,7 +3,8 @@
 Feature: National insurance page
 
   Background: Navigating to the page for step thirteen
-    Given I am on the national insurance page
+    Given probate is enabled
+    And I am on the national insurance page
 
   Scenario: Entering a valid national insurance number
     When I enter a valid national insurance number

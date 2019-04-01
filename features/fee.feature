@@ -3,7 +3,8 @@
 Feature: Fee page
 
   Background: Navigating to the fee page
-    Given I am on the fee page
+    Given probate is enabled
+    And I am on the fee page
 
   Scenario: Neither selecting yes or no
     When I click continue

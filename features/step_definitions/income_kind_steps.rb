@@ -42,6 +42,7 @@ Then(/^I should see an income list for myself and my partner:$/) do |incomes|
 end
 
 When(/^I should see select your kinds of income error message$/) do
+  expect(common_page.content).to have_there_is_a_problem
   expect(income_kind_page.content).to have_blank_error_message
   expect(income_kind_page.content).to have_blank_error_link
 end

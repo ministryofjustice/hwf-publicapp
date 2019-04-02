@@ -3,6 +3,7 @@ class CommonPage < BasePage
     element :p, 'p'
     element :h1, 'h1'
     element :h2, 'h2'
+    element :there_is_a_problem, '.error-summary', text: 'There is a problem'
     section :text, '.text' do
       elements :p, 'p'
       elements :li, 'li'

@@ -8,12 +8,14 @@ RSpec.feature 'As a user' do
       click_on 'technical help'
       expect(page).to have_text "Ask for technical help"
       click_button "Continue"
-      expect(page).to have_text "You need to fix the errors on this page before continuing."
+      expect(page).to have_text "There is a problem"
 
       within(:xpath, ".//div[@class='language-picker']") do
         click_link 'Cymraeg'
       end
       expect(page).to have_text "Gofynnwch am help technegol"
+      click_button "Parhau"
+      expect(page).to have_text "Mae problem wedi codi"
 
       within(:xpath, ".//div[@class='language-picker']") do
         click_link 'English'

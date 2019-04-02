@@ -16,7 +16,7 @@ Feature: Probate page
 
   Scenario: Displays date can't be in the future error message
     When I enter a future date of death
-    Then I should see error message this date can't be in the future
+    Then I should see this date can't be in the future error message
 
   Scenario: Displays must have been in the last 20 years error message
     When I enter a date over twenty years ago

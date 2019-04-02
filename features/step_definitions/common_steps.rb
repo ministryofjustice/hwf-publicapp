@@ -95,14 +95,6 @@ Then(/^I should see '([^\"]*)' error message$/) do |error_message|
   expect(common_page.error_message[0].text).to have_content error_message
 end
 
-Then(/^I should see error message '([^\"]*)'$/) do |error_message|
-  expect(common_page.content).to have_there_is_a_problem
-  error_summary_group = common_page.error_summary
-  expect(error_summary_group).to have_error_summary_heading
-  expect(error_summary_group.link.text).to have_content error_message
-  expect(common_page.error_message[1].text).to have_content error_message
-end
-
 Then(/^I should see average monthly income copy$/) do
   average_income = common_page.content.text.p[1]
   expect(average_income.text).to have_content 'work out an average monthly income'

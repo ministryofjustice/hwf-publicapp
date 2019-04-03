@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "form-name" page for "Help with fees"' do
-    before { given_user_answers_questions_up_to(:form_name) }
 
     context 'completing the form correctly' do
       before do
+        given_user_answers_questions_up_to(:form_name)
         fill_in :form_name_identifier, with: 'N1'
         click_button 'Continue'
       end
@@ -17,6 +17,7 @@ RSpec.feature 'As a user' do
 
     context 'not completing the page correctly' do
       before do
+        given_user_answers_questions_up_to(:form_name)
         click_button 'Continue'
       end
 
@@ -39,10 +40,15 @@ RSpec.feature 'As a user' do
     end
 
     context 'when probate fees are no longer supported' do
+      before do
+        travel_to(probate_fees_release_date)
+        given_user_answers_questions_up_to(:form_name)
+      end
+
+      after { travel_back }
+
       scenario 'I expect a warning message to be displayed' do
-        travel_to(probate_fees_release_date) do
-          expect(page).to have_css('#probate-warning')
-        end
+        expect(page).to have_css('#probate-warning')
       end
     end
 
@@ -62,6 +68,7 @@ RSpec.feature 'As a user' do
     context 'when probate fees are no longer supported' do
       scenario 'I expect a warning message to be displayed' do
         Timecop.freeze(probate_fees_release_date) do
+          given_user_answers_questions_up_to(:form_name)
           expect(page).to have_css('#probate-warning')
         end
       end

@@ -30,5 +30,5 @@ income:
   per_child_increment: 245
   married_supplement: 160
 probate_fees:
-  release_date: <%= ENV['PROBATE_FEES_RELEASE_DATE'] || '2019-03-01' %>
+  release_date: <%= ENV['PROBATE_FEES_RELEASE_DATE'] || '2025-04-01' %>
 

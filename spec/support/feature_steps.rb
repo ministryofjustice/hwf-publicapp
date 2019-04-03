@@ -233,7 +233,9 @@ module FeatureSteps
   def fill_fee(refund = false)
     if refund
       choose 'fee_paid_true'
-      fill_in :fee_date_paid, with: 3.weeks.ago
+      fill_in :fee_day_date_paid, with: 3.weeks.ago.day
+      fill_in :fee_month_date_paid, with: 3.weeks.ago.month
+      fill_in :fee_year_date_paid, with: 3.weeks.ago.year
     else
       choose 'fee_paid_false'
     end

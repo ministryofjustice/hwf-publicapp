@@ -9,15 +9,39 @@ RSpec.describe Forms::Fee, type: :model do
         before { form_fee.paid = true }
 
         context 'and date_paid is completed' do
-          before { form_fee.date_paid = Time.zone.yesterday }
+          before do
+            form_fee.day_date_paid = Time.zone.yesterday.day
+            form_fee.month_date_paid = Time.zone.yesterday.month
+            form_fee.year_date_paid = Time.zone.yesterday.year
+          end
 
           it { expect(form_fee.valid?).to be true }
         end
 
-        context 'and date_paid is not completed' do
-          before { form_fee.date_paid = nil }
+        context 'incomplete date' do
+          before do
+            form_fee.day_date_paid = Time.zone.yesterday.day
+            form_fee.month_date_paid = Time.zone.yesterday.month
+            form_fee.year_date_paid = Time.zone.yesterday.year
+          end
 
-          it { expect(form_fee.valid?).to be false }
+          context 'and day_date_paid is not completed' do
+            before { form_fee.day_date_paid = nil }
+
+            it { expect(form_fee.valid?).to be false }
+          end
+
+          context 'and month_date_paid is not completed' do
+            before { form_fee.month_date_paid = nil }
+
+            it { expect(form_fee.valid?).to be false }
+          end
+
+          context 'and year_date_paid is not completed' do
+            before { form_fee.year_date_paid = nil }
+
+            it { expect(form_fee.valid?).to be false }
+          end
         end
       end
 
@@ -36,7 +60,12 @@ RSpec.describe Forms::Fee, type: :model do
   end
 
   describe '#export' do
-    subject { described_class.new(paid: paid, date_paid: date_paid).export }
+    subject do
+      described_class.new(paid: paid,
+                          day_date_paid: date_paid.day,
+                          month_date_paid: date_paid.month,
+                          year_date_paid: date_paid.year).export
+    end
 
     let(:date_paid) { Date.parse('12/12/2015') }
 

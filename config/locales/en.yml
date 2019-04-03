@@ -15,6 +15,9 @@ en:
         children_number: Number of children
       forms/fee:
         date_paid: Date fee paid
+        day_date_paid: Day
+        month_date_paid: Month
+        year_date_paid: Year
       forms/form_name:
         identifier: Form number
       forms/help_request:

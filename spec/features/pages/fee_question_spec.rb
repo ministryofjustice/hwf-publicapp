@@ -41,7 +41,9 @@ RSpec.feature 'As a user' do
 
         describe 'providing an invalid date' do
           before do
-            fill_in 'fee_date_paid', with: '1/45/2016'
+            fill_in 'fee_day_date_paid', with: '30'
+            fill_in 'fee_month_date_paid', with: '2'
+            fill_in 'fee_year_date_paid', with: '2016'
             click_button 'Continue'
           end
 
@@ -50,13 +52,19 @@ RSpec.feature 'As a user' do
           end
 
           scenario 'I expect the incorrect data to be shown' do
-            expect(page).to have_xpath('//input[@id="fee_date_paid" and @value="1/45/2016"]')
+            expect(page).to have_xpath('//input[@id="fee_day_date_paid" and @value="30"]')
+            expect(page).to have_xpath('//input[@id="fee_month_date_paid" and @value="2"]')
+            expect(page).to have_xpath('//input[@id="fee_year_date_paid" and @value="2016"]')
           end
         end
 
         describe 'when the date is too old' do
+          let(:old_date) { 4.months.ago }
+
           before do
-            fill_in 'fee_date_paid', with: 4.months.ago
+            fill_in 'fee_day_date_paid', with: old_date.day
+            fill_in 'fee_month_date_paid', with: old_date.month
+            fill_in 'fee_year_date_paid', with: old_date.year
             click_button 'Continue'
           end
 
@@ -65,13 +73,19 @@ RSpec.feature 'As a user' do
           end
 
           scenario 'I expect the incorrect data to be shown' do
-            expect(page).to have_xpath("//input[@id='fee_date_paid' and @value='#{4.months.ago.strftime('%d/%m/%Y')}']")
+            expect(page).to have_xpath("//input[@id='fee_day_date_paid' and @value='#{old_date.day}']")
+            expect(page).to have_xpath("//input[@id='fee_month_date_paid' and @value='#{old_date.month}']")
+            expect(page).to have_xpath("//input[@id='fee_year_date_paid' and @value='#{old_date.year}']")
           end
         end
 
         describe 'when the date is in the future' do
+          let(:future_date) { 4.months.from_now }
+
           before do
-            fill_in 'fee_date_paid', with: Time.zone.now + 1.month
+            fill_in 'fee_day_date_paid', with: future_date.day
+            fill_in 'fee_month_date_paid', with: future_date.month
+            fill_in 'fee_year_date_paid', with: future_date.year
             click_button 'Continue'
           end
 
@@ -80,7 +94,9 @@ RSpec.feature 'As a user' do
           end
 
           scenario 'I expect the incorrect data to be shown' do
-            expect(page).to have_xpath("//input[@id='fee_date_paid' and @value='#{(Time.zone.now + 1.month).strftime('%d/%m/%Y')}']")
+            expect(page).to have_xpath("//input[@id='fee_day_date_paid' and @value='#{future_date.day}']")
+            expect(page).to have_xpath("//input[@id='fee_month_date_paid' and @value='#{future_date.month}']")
+            expect(page).to have_xpath("//input[@id='fee_year_date_paid' and @value='#{future_date.year}']")
           end
         end
       end

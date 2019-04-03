@@ -12,7 +12,7 @@ RSpec.describe OnlineApplicationBuilder do
         'savings_and_investment_extra' => { 'over_61' => false, 'amount' => 6000 },
         'benefit' => { 'on_benefits' => true },
         'dependent' => { 'children' => true, 'children_number' => 2 },
-        'fee' => { 'paid' => true, 'date_paid' => '12/12/2015' },
+        'fee' => { 'paid' => true, 'day_date_paid' => '12', 'month_date_paid' => '12', 'year_date_paid' => '2015' },
         'income_amount' => { 'amount' => 550 },
         'probate' => { 'kase' => true, 'deceased_name' => 'Mr. Deceased', 'date_of_death' => '01/08/2015' },
         'claim/default' => { 'number' => true, 'identifier' => 'CL001' },

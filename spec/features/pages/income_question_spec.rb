@@ -4,35 +4,6 @@ RSpec.feature 'As a user' do
   context 'when accessing the "income_kind" page for "Help with fees"' do
     before { given_user_answers_questions_up_to(:income_kind) }
 
-    context 'completing the form correctly' do
-      context 'when "no income" selected' do
-        before do
-          travel_to a_day_before_disable_probate_fees
-          check :income_kind_applicant_13
-          click_button 'Continue'
-        end
-
-        after { travel_back }
-
-        scenario 'I expect to be routed to the "probate" page' do
-          expect(page).to have_content 'Are you paying a fee for a probate case?'
-        end
-
-      end
-
-      context 'when some income sources selected' do
-        before do
-          check :income_kind_applicant_2
-          check :income_kind_applicant_8
-          click_button 'Continue'
-        end
-
-        scenario 'I expect to be routed to the "income_range" page' do
-          expect(page).to have_content 'How much income do you receive each month?'
-        end
-      end
-    end
-
     context 'not completing the page correctly' do
       before do
         click_button 'Continue'
@@ -102,6 +73,38 @@ RSpec.feature 'As a user' do
         expect(page).to have_content 'What’s your total monthly income?'
         expect(page).to have_content 'There is a problem'
         expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter how much income do you receive')
+      end
+    end
+  end
+
+  context 'when accessing the "income_kind" before probate is disabled' do
+    context 'completing the form correctly' do
+      context 'when "no income" selected' do
+        before do
+          travel_to a_day_before_disable_probate_fees
+          given_user_answers_questions_up_to(:income_kind)
+          check :income_kind_applicant_13
+          click_button 'Continue'
+        end
+
+        after { travel_back }
+
+        scenario 'I expect to be routed to the "probate" page' do
+          expect(page).to have_content 'Are you paying a fee for a probate case?'
+        end
+      end
+
+      context 'when some income sources selected' do
+        before do
+          given_user_answers_questions_up_to(:income_kind)
+          check :income_kind_applicant_2
+          check :income_kind_applicant_8
+          click_button 'Continue'
+        end
+
+        scenario 'I expect to be routed to the "income_range" page' do
+          expect(page).to have_content 'How much income do you receive each month?'
+        end
       end
     end
   end

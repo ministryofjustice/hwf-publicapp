@@ -4,7 +4,6 @@
     span.hint = t('hint_html', scope: @form.i18n_scope)
     - if @form.errors[:date_of_birth].any?
       span.error-message#date_of_birth = @form.errors[:date_of_birth].join(' ')
-  / = f.text_field :date_of_birth, class: 'form-control'
   .form-date
     .form-group.form-group-day
       = f.label :day_date_of_birth, class: 'form-label'

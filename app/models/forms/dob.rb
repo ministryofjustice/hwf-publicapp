@@ -26,6 +26,7 @@ module Forms
 
     def dob_age_valid?
       return false if date_not_recognized?
+
       validate_dob
       validate_dob_ranges unless errors.include?(:date_of_birth)
     end
@@ -65,6 +66,7 @@ module Forms
 
     def dob_dates
       return if date_not_recognized? || blank_dates?
+
       @date_of_birth ||= concat_dob_dates.to_date
     rescue ArgumentError
       errors.add(:date_of_birth, :not_a_date)

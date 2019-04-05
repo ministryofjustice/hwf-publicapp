@@ -48,6 +48,7 @@ module Forms
 
     def date_of_death_dates
       return if date_not_recognized? || blank_dates?
+
       @date_of_death ||= concat_date_of_death_dates.to_date
     rescue ArgumentError
       errors.add(:date_of_death, :not_a_date)

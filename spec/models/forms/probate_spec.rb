@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe Forms::Probate, type: :model do
   subject(:form) { described_class.new(params) }
 
-  let(:params) do { kase: kase, deceased_name: deceased_name,
-    day_date_of_death: day_date_of_death,
-    month_date_of_death: month_date_of_death,
-    year_date_of_death: year_date_of_death
-    }
+  let(:params) do
+    { kase: kase, deceased_name: deceased_name,
+      day_date_of_death: day_date_of_death,
+      month_date_of_death: month_date_of_death,
+      year_date_of_death: year_date_of_death }
   end
 
   describe 'validations' do

@@ -39,11 +39,15 @@ RSpec.feature 'As a user' do
       after { travel_back }
 
       context 'after answering yes to the probate question' do
+        let(:month_ago) { Time.zone.today - 1.month }
+
         before do
           given_user_answers_questions_up_to(:probate)
           choose 'probate_kase_true'
           fill_in :probate_deceased_name, with: 'Foo'
-          fill_in :probate_date_of_death, with: Time.zone.today - 1.month
+          fill_in :probate_day_date_of_death, with: month_ago.day
+          fill_in :probate_month_date_of_death, with: month_ago.month
+          fill_in :probate_year_date_of_death, with: month_ago.year
           click_button 'Continue'
           page.visit '/summary'
         end
@@ -51,7 +55,7 @@ RSpec.feature 'As a user' do
         scenario 'I expect to see my answers' do
           expect(page).to have_no_content 'Probate case'
           expect(page).to have_content 'Name of deceasedFooChange'
-          expect(page).to have_content "Date of death#{(Time.zone.today - 1.month).strftime(Date::DATE_FORMATS[:default])}Change"
+          expect(page).to have_content "Date of death#{month_ago.strftime(Date::DATE_FORMATS[:default])}Change"
         end
       end
 

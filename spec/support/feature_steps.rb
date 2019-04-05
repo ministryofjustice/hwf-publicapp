@@ -201,7 +201,9 @@ module FeatureSteps
   end
 
   def fill_dob
-    fill_in 'dob_date_of_birth', with: '01/01/1980'
+    fill_in 'dob_day_date_of_birth', with: '01'
+    fill_in 'dob_month_date_of_birth', with: '01'
+    fill_in 'dob_year_date_of_birth', with: '1980'
     click_button 'Continue'
   end
 

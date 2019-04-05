@@ -3,11 +3,18 @@ require 'rails_helper'
 RSpec.describe Forms::Probate, type: :model do
   subject(:form) { described_class.new(params) }
 
-  let(:params) { { kase: kase, deceased_name: deceased_name, date_of_death: date_of_death } }
+  let(:params) do { kase: kase, deceased_name: deceased_name,
+    day_date_of_death: day_date_of_death,
+    month_date_of_death: month_date_of_death,
+    year_date_of_death: year_date_of_death
+    }
+  end
 
   describe 'validations' do
     let(:deceased_name) { nil }
-    let(:date_of_death) { nil }
+    let(:day_date_of_death) { nil }
+    let(:month_date_of_death) { nil }
+    let(:year_date_of_death) { nil }
 
     describe 'kase' do
       context 'when false' do
@@ -20,6 +27,9 @@ RSpec.describe Forms::Probate, type: :model do
         let(:kase) { true }
         let(:deceased_name) { 'foo' }
         let(:date_of_death) { Time.zone.today - 1.month }
+        let(:day_date_of_death) { date_of_death.day }
+        let(:month_date_of_death) { date_of_death.month }
+        let(:year_date_of_death) { date_of_death.year }
 
         context 'time set to past' do
           before { Timecop.freeze(Time.zone.parse("2016-11-01")) }
@@ -27,6 +37,9 @@ RSpec.describe Forms::Probate, type: :model do
           after { Timecop.return }
 
           let(:date_of_death) { 2.days.from_now }
+          let(:day_date_of_death) { date_of_death.day }
+          let(:month_date_of_death) { date_of_death.month }
+          let(:year_date_of_death) { date_of_death.year }
 
           it { is_expected.not_to be_valid }
         end
@@ -41,7 +54,7 @@ RSpec.describe Forms::Probate, type: :model do
 
         describe 'date of death' do
           describe 'when missing' do
-            let(:date_of_death) { nil }
+            let(:day_date_of_death) { nil }
 
             it { is_expected.not_to be_valid }
           end
@@ -49,12 +62,18 @@ RSpec.describe Forms::Probate, type: :model do
           describe 'range' do
             context 'exceeds upper bound' do
               let(:date_of_death) { Time.zone.tomorrow }
+              let(:day_date_of_death) { date_of_death.day }
+              let(:month_date_of_death) { date_of_death.month }
+              let(:year_date_of_death) { date_of_death.year }
 
               it { is_expected.not_to be_valid }
             end
 
             context 'exceeds lower bound' do
               let(:date_of_death) { Time.zone.today - 21.years }
+              let(:day_date_of_death) { date_of_death.day }
+              let(:month_date_of_death) { date_of_death.month }
+              let(:year_date_of_death) { date_of_death.year }
 
               it { is_expected.not_to be_valid }
             end
@@ -97,6 +116,9 @@ RSpec.describe Forms::Probate, type: :model do
 
     let(:deceased_name) { 'Mr. Deceased' }
     let(:date_of_death) { Date.parse('01/01/2016') }
+    let(:day_date_of_death) { date_of_death.day }
+    let(:month_date_of_death) { date_of_death.month }
+    let(:year_date_of_death) { date_of_death.year }
 
     context 'when kase is true' do
       let(:kase) { true }

@@ -32,6 +32,10 @@ RSpec.describe Forms::Dob, type: :model do
 
           context 'when a recent date is provided' do
             let(:today) { Time.zone.today }
+            let(:young_error) do
+              [I18n.t('activemodel.errors.models.forms/dob.attributes.date_of_birth.too_young', minimum_age: Forms::Dob::MINIMUM_AGE)]
+            end
+
             before do
               form_dob.day_date_of_birth = today.day
               form_dob.month_date_of_birth = today.month
@@ -39,15 +43,14 @@ RSpec.describe Forms::Dob, type: :model do
               form_dob.valid?
             end
 
-            let(:error) do
-              [I18n.t('activemodel.errors.models.forms/dob.attributes.date_of_birth.too_young', minimum_age: Forms::Dob::MINIMUM_AGE)]
-            end
-
-            it { expect(form_dob.errors.messages[:date_of_birth]).to eq error }
+            it { expect(form_dob.errors.messages[:date_of_birth]).to eq young_error }
           end
 
           context 'when a date too far in the past is provided' do
             let(:old_date) { 121.years.ago }
+            let(:old_error) do
+              [I18n.t('activemodel.errors.models.forms/dob.attributes.date_of_birth.too_old')]
+            end
 
             before do
               form_dob.day_date_of_birth = old_date.day
@@ -57,11 +60,7 @@ RSpec.describe Forms::Dob, type: :model do
               form_dob.valid?
             end
 
-            let(:error) do
-              [I18n.t('activemodel.errors.models.forms/dob.attributes.date_of_birth.too_old')]
-            end
-
-            it { expect(form_dob.errors.messages[:date_of_birth]).to eq error }
+            it { expect(form_dob.errors.messages[:date_of_birth]).to eq old_error }
           end
         end
       end
@@ -103,7 +102,7 @@ RSpec.describe Forms::Dob, type: :model do
 
   describe '#export' do
     subject do
-      described_class.new(day_date_of_birth: '01', month_date_of_birth: '01', year_date_of_birth: '1980' ).export
+      described_class.new(day_date_of_birth: '01', month_date_of_birth: '01', year_date_of_birth: '1980').export
     end
 
     let(:date_of_birth) { Date.parse('01/01/1980') }

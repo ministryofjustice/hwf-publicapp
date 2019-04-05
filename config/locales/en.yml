@@ -39,6 +39,11 @@ en:
         working_tax_credit: Working Tax Credit
       forms/income_amount:
         amount: Enter the total monthly amount you receive in income.
+      forms/dob:
+        day_date_of_birth: Day
+        month_date_of_birth: Month
+        year_date_of_birth: Year
+
       forms/personal_detail:
         first_name: First name
         last_name: Last name

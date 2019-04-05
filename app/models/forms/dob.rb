@@ -1,9 +1,16 @@
 module Forms
   class Dob < Base
-    attribute :date_of_birth, Date
+    include ActiveModel::Validations::Callbacks
+
+    attr_reader :date_of_birth
+    attribute :day_date_of_birth, Integer
+    attribute :month_date_of_birth, Integer
+    attribute :year_date_of_birth, Integer
 
     MINIMUM_AGE = 15
     MAXIMUM_AGE = 120
+
+    before_validation :dob_dates
 
     validate :dob_age_valid?
 
@@ -18,6 +25,7 @@ module Forms
     end
 
     def dob_age_valid?
+      return false if date_not_recognized?
       validate_dob
       validate_dob_ranges unless errors.include?(:date_of_birth)
     end
@@ -51,8 +59,29 @@ module Forms
 
     def export_params
       {
-        date_of_birth: date_of_birth
+        date_of_birth: dob_dates
       }
     end
+
+    def dob_dates
+      return if date_not_recognized? || blank_dates?
+      @date_of_birth ||= concat_dob_dates.to_date
+    rescue ArgumentError
+      errors.add(:date_of_birth, :not_a_date)
+      @date_of_birth = concat_dob_dates
+    end
+
+    def concat_dob_dates
+      "#{day_date_of_birth}/#{month_date_of_birth}/#{year_date_of_birth}"
+    end
+
+    def date_not_recognized?
+      errors.messages.key?(:date_of_birth)
+    end
+
+    def blank_dates?
+      day_date_of_birth.blank? || month_date_of_birth.blank? || year_date_of_birth.blank?
+    end
+
   end
 end

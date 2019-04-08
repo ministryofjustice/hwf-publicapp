@@ -390,7 +390,7 @@ en:
       title: Number of children living with you
     dob:
       breadcrumb: Step 14 of 20
-      hint_html: Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      hint_html: For example, 01 08 2007
       text: What is your date of birth?
       title: Date of birth
     fee:
@@ -398,7 +398,7 @@ en:
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
-      hint_html: Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      hint_html: For example, 01 08 2007
       text: Have you already paid the fee?
       title: Refund
     form_name:

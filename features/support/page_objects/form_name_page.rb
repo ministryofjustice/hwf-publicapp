@@ -19,16 +19,15 @@ class FormNamePage < BasePage
     element :find_form_name, 'p', text: 'You can usually find the form name at the top of the form'
     element :no_form, '.block-label', text: 'I don’t have a form'
     element :help_hearing_fees, 'p', text: "Instead of a form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'."
-    element :continue_button, 'input[value="Continue"]'
   end
-end
 
-def submit_valid_form_number
-  form_name_page.content.form_name.set('C100')
-  continue
-end
+  def submit_valid_form_number
+    content.form_name.set('C100')
+    continue
+  end
 
-def submit_valid_form_name
-  form_name_page.content.form_name.set('notice to appeal')
-  continue
+  def submit_valid_form_name
+    content.form_name.set('notice to appeal')
+    continue
+  end
 end

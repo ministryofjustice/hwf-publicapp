@@ -1,23 +1,34 @@
 Given(/^I am on the confirmation page with probate enabled$/) do
-  travel_to a_day_before_disable_probate_fees
-  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
-  answer_up_to_income_amount_married
-  step 'I submit the form with my monthly income'
-  probate_page.submit_no
-  claim_page.submit_no
-  national_insurance_page.submit_valid_ni
-  dob_page.valid_dob
-  step 'I enter my full name'
-  step 'I enter my address with postcode'
-  step 'I click continue'
-  step 'I click submit application and continue'
+  probate_enabled
+  confirmation_page.to_confirmation_page
+  expect(confirmation_page).to be_displayed
+  expect(confirmation_page).to have_step_info
+  expect(confirmation_page).to have_confirmation_header
 end
 
-Then(/^I should see direction points 1 to 4$/) do
-  expect(confirmation_page.steps_panel.li.count).to eq 4
-  expect(confirmation_page.steps_panel.hwf_ref.text).to have_content 'HWF-000-000'
+Then(/^I should see instruction points$/) do
+  expect(confirmation_page.list).to have_one
+  expect(confirmation_page.list).to have_two
+  expect(confirmation_page.list).to have_three
+end
+
+When(/^I see letter template$/) do
+  expect(confirmation_page).to have_letter_hint
+  expect(confirmation_page).to have_letter_template
+end
+
+Then(/^I should see reference number$/) do
+  expect(confirmation_page).to have_hwf_reference
+end
+
+Then(/^I should see warning notice$/) do
+  expect(confirmation_page).to have_warning_notice
 end
 
 Then(/^I should be taken to confirmation page$/) do
   expect(confirmation_page).to be_displayed
+end
+
+When(/^I click finish application$/) do
+  confirmation_page.finish_application
 end

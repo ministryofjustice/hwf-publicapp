@@ -1,24 +1,23 @@
 Given(/^I am a single person on kind of income page$/) do
-  answer_up_to_income_kind_single
+  income_kind_page.to_income_kind_single
   expect(income_kind_page.content).to have_choose_income_single
   expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_income_kind_header_single
 end
 
 Given(/^I am a married person on kind of income page$/) do
-  answer_up_to_income_kind_married
+  income_kind_page.to_income_kind_married
   expect(income_kind_page.content).to have_choose_income_married
   expect(income_kind_page.content).to have_step_info
   expect(income_kind_page.content).to have_income_kind_header_married
 end
 
 When(/^I submit the form with no income checked$/) do
-  income_kind_page.content.no_income.click
-  common_page.continue_button.click
+  income_kind_page.submit_no_income
 end
 
-When(/^after selecting wages from income list on step eight$/) do
-  income_kind_page.content.wages.click
+When(/^I submit the form with wages checked$/) do
+  income_kind_page.submit_single_income_wages_tax_credit
 end
 
 Then(/^I should see an income list:$/) do |incomes|
@@ -29,7 +28,7 @@ Then(/^I should see an income list:$/) do |incomes|
 end
 
 Then(/^I should see an income list for myself and my partner:$/) do |incomes|
-  expect(income_kind_page.content).to have_your_income
+  expect(income_kind_page.content.my_income).to have_your_income
   expect(income_kind_page.content).to have_partners_income
   incomes.rows.each_with_index do |income, index|
     expect(income_kind_page.content.income_label[index].text).to eq income[0]

@@ -3,7 +3,7 @@ class BenefitPage < BasePage
 
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 6 of 20'
-    element :benefit_header, 'h1', text: 'Do you receive any of the following benefits?'
+    element :benefit_header, 'h1', text: 'Did you receive any of the following benefits?'
     element :benefits_text, '.text', text: 'contact the Department for Work and Pensions'
     element :benefit, '.text'
     elements :li, 'li'
@@ -23,5 +23,23 @@ class BenefitPage < BasePage
     element :laa_representation, 'li', text: 'Scottish Legal Aid Advice by Way of Representation (ABWOR)'
     element :blank_error_link, 'a', text: 'Select whether you\'re receiving one of the benefits listed'
     element :blank_error_message, '.error-message', text: 'Select whether you\'re receiving one of the benefits listed'
+  end
+
+  def to_benefit_page
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
+    marital_status_page.submit_single
+    savings_investment_page.low_amount_checked
+  end
+
+  def submit_benefit_no
+    benefit_page.content.no.click
+    continue
+  end
+
+  def submit_benefit_yes
+    benefit_page.content.yes.click
+    continue
   end
 end

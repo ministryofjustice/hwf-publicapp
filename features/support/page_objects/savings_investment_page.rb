@@ -1,4 +1,4 @@
-class SavingsAndInvestmentPage < BasePage
+class SavingsInvestmentPage < BasePage
   set_url '/questions/savings_and_investment'
 
   section :content, '#content' do
@@ -11,18 +11,32 @@ class SavingsAndInvestmentPage < BasePage
     element :help_text, '.text', text: 'What to include in savings and investments: money in ISAs and any other savings account'
   end
 
+  def to_married_savings
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
+    marital_status_page.submit_married
+  end
+
+  def to_single_savings
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
+    marital_status_page.submit_single
+  end
+
   def low_amount_checked
-    savings_and_investment_page.content.low_amount.click
+    savings_investment_page.content.low_amount.click
     continue
   end
 
   def medium_amount_checked
-    savings_and_investment_page.content.medium_amount.click
+    savings_investment_page.content.medium_amount.click
     continue
   end
 
   def high_amount_checked
-    savings_and_investment_page.content.high_amount.click
+    savings_investment_page.content.high_amount.click
     continue
   end
 end

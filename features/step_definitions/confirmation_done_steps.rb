@@ -1,16 +1,6 @@
 Given(/^I am on the confirmation done page with probate enabled$/) do
-  travel_to a_day_before_disable_probate_fees
-  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
-  answer_up_to_income_amount_married
-  step 'I submit the form with my monthly income'
-  probate_page.submit_no
-  claim_page.submit_no
-  national_insurance_page.submit_valid_ni
-  dob_page.valid_dob
-  step 'I enter my full name'
-  step 'I enter my address with postcode'
-  step 'I click continue'
-  step 'I click submit application and continue'
+  probate_enabled
+  confirmation_done_page.to_confirmation_done_page
   continue
 end
 

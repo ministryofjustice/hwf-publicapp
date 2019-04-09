@@ -1,3 +1,44 @@
+require Rails.root.join('spec', 'support', 'probate_fees_switchover_helper.rb')
+
+def probate_disabled
+  travel_to probate_fees_release_date + 1.day
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+end
+
+def probate_enabled
+  travel_to a_day_before_disable_probate_fees
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+end
+
+def wait_for
+  Timeout.timeout(Capybara.default_max_wait_time) do
+    loop until yield
+  rescue StandardError # rubocop:disable Lint/HandleExceptions
+    # ignored
+  end
+end
+
+def wait_for_document_ready
+  wait_for { page.evaluate_script('document.readyState').eql? 'complete' }
+end
+
+def scroll_to_bottom
+  WaitUntil.wait_until(3, 'Failed as browser hasnt reached bottom of window') do
+    page.execute_script 'window.scrollTo(0,$(document).height())'
+    y_position = page.evaluate_script 'window.scrollY'
+    browser_height = page.evaluate_script '$(window).height();'
+    doc_height = page.evaluate_script '$(document).height();'
+    (y_position + browser_height).eql?(doc_height)
+  end
+end
+
+module WaitUntil
+  def self.wait_until(timeout = 10, message = nil, &block)
+    wait = Selenium::WebDriver::Wait.new(timeout: timeout, message: message)
+    wait.until(&block)
+  end
+end
+
 def form_name_page
   @form_name_page ||= FormNamePage.new
 end

@@ -20,13 +20,19 @@ class MaritalStatusPage < BasePage
     element :help_multiple_fee, '.text', text: 'you and your partner are both part of a multiple fee group'
   end
 
-  def single
-    marital_status_page.content.single.click
+  def submit_single
+    content.single.click
     common_page.continue_button.click
   end
 
-  def married
-    marital_status_page.content.married.click
+  def submit_married
+    content.married.click
     common_page.continue_button.click
+  end
+
+  def to_marital_status
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
   end
 end

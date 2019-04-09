@@ -13,6 +13,7 @@ module SitePrism
 
         visit expanded_url
       end
+      wait_for_document_ready
     end
   end
 end

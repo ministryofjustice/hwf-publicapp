@@ -39,6 +39,7 @@ Metrics/LineLength:
 Metrics/AbcSize:
   Exclude:
     - 'spec/**/*'
+    - 'features/**/*'
 
 # Allow expect {}.to blocks in specs
 # but not in the code
@@ -51,6 +52,7 @@ Style/BlockDelimiters:
 Metrics/MethodLength:
   Exclude:
     - 'spec/**/*'
+    - 'features/**/*'
     - 'app/models/ability.rb'
     - 'config/initializers/markdown_handler.rb'
 

@@ -1,4 +1,4 @@
-class SavingsAndInvestmentExtraPage < BasePage
+class SavingsInvestmentExtraPage < BasePage
   set_url '/questions/savings_and_investment_extra'
 
   section :content, '#content' do
@@ -14,5 +14,21 @@ class SavingsAndInvestmentExtraPage < BasePage
     element :error_message, '.error-message', text: 'Enter an amount between £3,000 and £15,999, or go back to the previous question about your savings'
     element :blank_error_link, 'a', text: 'Enter how much you have in savings and investments'
     element :blank_error_message, '.error-message', text: 'Enter how much you have in savings and investments'
+  end
+
+  def to_single_savings_extra
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
+    marital_status_page.submit_single
+    savings_investment_page.medium_amount_checked
+  end
+
+  def to_married_savings_extra
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
+    marital_status_page.submit_married
+    savings_investment_page.medium_amount_checked
   end
 end

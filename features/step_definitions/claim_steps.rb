@@ -1,17 +1,17 @@
 Given(/^I am on the claim page$/) do
-  answer_up_to_claim_page
+  claim_page.to_claim_page
+  expect(claim_page).to be_displayed
   expect(claim_page.content).to have_step_info
   expect(claim_page.content).to have_claim_header
   expect(claim_page.content).to have_claim_text
 end
 
 When(/^I select no to do you have a case, claim or notice to pay number$/) do
-  claim_page.content.no.click
-  continue
+  claim_page.submit_claim_no
 end
 
 When(/^I select yes to do you have a case, claim or notice to pay number$/) do
-  claim_page.content.yes.click
+  claim_page.submit_claim_yes
 end
 
 When(/^I enter a case, claim or notice to pay number$/) do

@@ -1,4 +1,6 @@
 class ClaimPage < BasePage
+  set_url '/questions/claim'
+
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 12 of 20'
     element :claim_header, 'h1', text: 'Do you have a case, claim or ‘notice to pay’ number?'
@@ -16,8 +18,23 @@ class ClaimPage < BasePage
     element :enter_number_error_message, '.error-message', text: 'Enter a case, claim or ‘notice to pay’ number'
   end
 
-  def submit_no
+  def to_claim_page
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
+    marital_status_page.submit_married
+    savings_investment_page.low_amount_checked
+    benefit_page.submit_benefit_yes
+    probate_page.submit_probate_no
+  end
+
+  def submit_claim_no
     content.no.click
+    continue
+  end
+
+  def submit_claim_yes
+    content.yes.click
     continue
   end
 end

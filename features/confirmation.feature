@@ -8,16 +8,9 @@ Feature: Confirmation page
   Scenario: Displays instructions
     Then I should see instruction points
 
-  Scenario: Displays letter template
-    When I see letter template
-    Then I should see reference number
-
-  Scenario: Displays warning message
-    Then I should see warning notice
-
   Scenario: Save or print this page
     Then I should see save or print this page
 
   Scenario: Finish application
-    When I click finish application
+    When I click continue
     Then I should be taken to the confirmation done page

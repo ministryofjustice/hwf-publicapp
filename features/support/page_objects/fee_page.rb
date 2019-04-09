@@ -45,4 +45,9 @@ class FeePage < BasePage
     content.fee_date_paid.set(Time.zone.today - 1.month)
     continue
   end
+
+  def submit_fee_no
+    content.no.click
+    continue
+  end
 end

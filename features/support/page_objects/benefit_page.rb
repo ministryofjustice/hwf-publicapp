@@ -34,12 +34,12 @@ class BenefitPage < BasePage
   end
 
   def submit_benefit_no
-    benefit_page.content.no.click
+    content.no.click
     continue
   end
 
   def submit_benefit_yes
-    benefit_page.content.yes.click
+    content.yes.click
     continue
   end
 end

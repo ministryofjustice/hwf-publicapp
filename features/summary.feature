@@ -1,4 +1,4 @@
-@hwf_submit_application @e2e
+@e2e
 
 Feature: Summary page
 
@@ -40,6 +40,7 @@ Feature: Summary page
     Given I am on the summary page with probate enabled
     Then I should see declaration of truth
 
+  @hwf_submit_application
   Scenario: Continue button
     Given I am on the summary page with probate enabled
     When I click submit application and continue

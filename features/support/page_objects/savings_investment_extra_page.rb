@@ -31,4 +31,14 @@ class SavingsInvestmentExtraPage < BasePage
     marital_status_page.submit_married
     savings_investment_page.medium_amount_checked
   end
+
+  def submit_yes
+    content.yes.click
+    continue
+  end
+
+  def submit_no
+    content.no.click
+    continue
+  end
 end

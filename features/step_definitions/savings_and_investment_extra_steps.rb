@@ -11,12 +11,11 @@ And(/^I am married with £3,000 to £15,999 in savings$/) do
 end
 
 When(/^I submit yes I am 61 years old or over$/) do
-  savings_investment_extra_page.content.yes.click
-  continue
+  savings_investment_extra_page.submit_yes
 end
 
 When(/^I submit no to are you 61 years old or over$/) do
-  savings_investment_extra_page.content.no.click
+  savings_investment_extra_page.submit_no
 end
 
 When(/^I enter £5000 as my savings and investments$/) do

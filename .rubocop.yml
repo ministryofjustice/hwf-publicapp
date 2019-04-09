@@ -39,6 +39,7 @@ Metrics/LineLength:
 Metrics/AbcSize:
   Exclude:
     - 'spec/**/*'
+    - 'features/**/*'
 
 # Allow expect {}.to blocks in specs
 # but not in the code

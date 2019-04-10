@@ -1,31 +1,36 @@
 class ConfirmationDonePage < BasePage
   set_url '/confirmation/done'
 
-  section :post, '.post' do
-    element :p, 'p'
-  end
-  section :steps_panel, '.steps-panel' do
-    element :h2, 'h2'
-    elements :li, 'ol > li'
-  end
-  sections :li, 'li' do
-    section :inset, '.inset' do
-      elements :li, 'ul > li'
+  section :content, '#content' do
+    element :step_info, 'h1', text: 'Step 20 of 20'
+    element :confirmation_done_header, 'h2', text: 'Send your C100 form with your HWF-000-000 reference on it to complete the process'
+    element :post, '.post', text: 'Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.'
+    section :what_happens_next, '.steps-panel' do
+      element :one, 'li', text: 'Your application will be assessed by court or tribunal staff. This usually takes no longer than 21 days.'
+      element :two, 'li', text: 'You\'ll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.'
+      element :three, 'li', text: 'If your application is successful you\'ll hear directly from the court or tribunal dealing with your case.'
     end
+    element :finish_application_button, 'input[value="Finish application"]'
   end
-  sections :column_half, '.column-half' do
-    element :heading_small, '.heading-small'
-    section :ul, 'ul' do
-      section :email, '.email' do
-        elements :li, 'ul > li'
-      end
-      section :postal_address, '.postal-address' do
-        elements :li, 'ul > li'
-      end
-    end
+
+  def to_confirmation_done_page
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_no
+    marital_status_page.submit_married
+    savings_investment_page.medium_amount_checked
+    savings_investment_extra_page.submit_yes
+    benefit_page.submit_benefit_no
+    dependent_page.submit_dependent_no
+    income_kind_page.submit_no_income
+    probate_page.submit_probate_no
+    claim_page.submit_claim_no
+    national_insurance_page.submit_valid_ni
+    dob_page.valid_dob
+    personal_details_page.submit_full_name
+    address_page.submit_full_address
+    contact_page.valid_email
+    summary_page.submit_application
+    continue
   end
-  sections :list, '.list' do
-    elements :li, 'li'
-  end
-  element :finish_application_button, 'input[value="Finish application"]'
 end

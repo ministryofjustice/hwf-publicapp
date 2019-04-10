@@ -29,7 +29,3 @@ class CommonPage < BasePage
   elements :error_message, '.error-message'
   element :js_print, '.js-print'
 end
-
-def continue
-  common_page.content.continue_button.click
-end

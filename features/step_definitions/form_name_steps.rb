@@ -1,11 +1,9 @@
-require Rails.root.join('spec', 'support', 'probate_fees_switchover_helper.rb')
-
 Given(/^I am on the form number page$/) do
   form_name_page.load_page
+  expect(current_url).to have_content '/questions/form_name'
   expect(form_name_page.content).to have_step_info
   expect(form_name_page.content).to have_form_name_header
   expect(form_name_page.content).to have_enter_court_hint
-  expect(form_name_page.content).to have_form_label
 end
 
 Then(/^I should see probate applications not available warning message$/) do
@@ -28,7 +26,8 @@ Then(/^I should see the please note timeout$/) do
 end
 
 When(/^I submit the form with a valid form number$/) do
-  submit_valid_form_number
+  expect(form_name_page.content).to have_form_label
+  form_name_page.submit_valid_form_number
 end
 
 When(/^I submit the form with I don’t have a form checked$/) do

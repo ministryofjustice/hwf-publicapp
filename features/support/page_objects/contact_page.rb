@@ -1,11 +1,38 @@
 class ContactPage < BasePage
   set_url '/questions/contact'
 
-  element :contact_email, '#contact_email'
-  section :form_checkbox, '.form-checkbox' do
-    element :contact_feedback_opt_in, '#contact_feedback_opt_in'
-    element :span, 'span'
+  section :content, '#content' do
+    element :step_info, '.step-info', text: 'Step 17 of 20'
+    element :email_header, 'h1', text: 'What\'s your email address?'
+    element :email_label, '.form-label', text: 'Email address'
+    element :optional_hint, '.hint', text: '(Optional)'
+    element :contact_email, '#contact_email'
+    element :confirmation_email, 'p', text: 'We will email you to confirm your application has been received.'
+    element :share_experience, '.form-checkbox', text: 'Check this box if you\'re willing to share your experience of this service.'
   end
-  elements :form_group, '.form-group'
-  element :hint, '.hint'
+
+  def to_contact_page
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
+    marital_status_page.submit_married
+    savings_investment_page.low_amount_checked
+    benefit_page.submit_benefit_yes
+    probate_page.submit_probate_no
+    claim_page.submit_claim_no
+    national_insurance_page.submit_valid_ni
+    dob_page.valid_dob
+    personal_details_page.submit_full_name
+    address_page.submit_full_address
+  end
+
+  def valid_email
+    content.contact_email.set 'test@hmcts.net'
+    continue
+  end
+
+  def invalid_email
+    content.contact_email.set 'testhmctsnet'
+    continue
+  end
 end

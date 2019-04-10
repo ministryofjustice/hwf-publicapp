@@ -18,9 +18,9 @@ Feature: Income range page
   Scenario: Income range for married with three children
     Given probate is enabled
     And I am a married person with three children on income range page
-    Then I should see low income range 'Less than £1,245'
-    And I should see medium income range 'Between £1,245 and £5,245'
-    And I should see high income range 'More than £5,245'
+    Then I should see low income range 'Less than £1,980'
+    And I should see medium income range 'Between £1,980 and £5,980'
+    And I should see high income range 'More than £5,980'
 
   Scenario: Income range for single with three children
     Given probate is enabled
@@ -32,31 +32,31 @@ Feature: Income range page
   Scenario: Selecting the less than range - probate enabled
     Given probate is enabled
     And I am a single person with no children on income range page
-    When I select less than
+    When I submit less than
     Then I am taken to step 11 - Are you paying a fee for a probate case? 
   
   Scenario: Selecting the less than range - probate disabled
     Given probate is disabled
     And I am a single person with no children on income range page
-    When I select less than
+    When I submit less than
     Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
   Scenario: Selecting the between range
     Given probate is enabled
     And I am a single person with no children on income range page
-    When I select between
+    When I submit between
     Then I should be taken to income amount page
 
   Scenario: Selecting the more than range - probate enabled
     Given probate is enabled
     And I am a single person with no children on income range page
-    When I select more than
+    When I submit more than
     Then I am taken to step 11 - Are you paying a fee for a probate case?
     
   Scenario: Selecting the more than range - probate disabled
     Given probate is disabled
     Given I am a single person with no children on income range page
-    When I select more than
+    When I submit more than
     Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
   Scenario: Displays error message

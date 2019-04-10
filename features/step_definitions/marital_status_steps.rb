@@ -1,15 +1,15 @@
 Given(/^I am on the marital status page$/) do
-  answer_up_to_marital_status_page
+  marital_status_page.to_marital_status
   expect(marital_status_page.content).to have_step_info
   expect(marital_status_page.content).to have_fee_header
 end
 
 When(/^I submit the form as single$/) do
-  marital_status_page.single
+  marital_status_page.submit_single
 end
 
 When(/^I submit the form as married$/) do
-  marital_status_page.married
+  marital_status_page.submit_married
 end
 
 Then(/^I should see help with status copy$/) do

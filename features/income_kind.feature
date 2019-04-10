@@ -52,6 +52,12 @@ Feature: Income kind page
     When I submit the form with no income checked
     Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
 
+  Scenario: Submit the page with wages
+    Given probate is disabled
+    And I am a single person on kind of income page
+    When I submit the form with wages checked
+    Then I should be taken to income range page
+
   Scenario: Displays error message
     Given probate is enabled
     And I am a single person on kind of income page

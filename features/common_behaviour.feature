@@ -3,7 +3,8 @@
 Feature: Common behaviour
 
   Background: Navigating to the page for step one
-    Given I am on the form number page
+    Given probate is enabled
+    And I am on the form number page
 
   Scenario: Please note is displayed
     Then I should see the please note copy

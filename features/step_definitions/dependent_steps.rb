@@ -1,5 +1,5 @@
 Given(/^I am on the dependent page$/) do
-  answer_up_to_dependent_single
+  dependent_page.to_dependent_page
   expect(dependent_page.content).to have_step_info
   expect(dependent_page.content).to have_dependent_header
 end

@@ -1,5 +1,5 @@
 Given(/^I am on the date of birth page$/) do
-  answer_up_to_dob
+  dob_page.to_dob_page
   expect(dob_page.content).to have_step_info
   expect(dob_page.content).to have_dob_header
   expect(dob_page.content).to have_dob_hint

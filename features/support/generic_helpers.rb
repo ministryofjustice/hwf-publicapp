@@ -1,3 +1,15 @@
+require Rails.root.join('spec', 'support', 'probate_fees_switchover_helper.rb')
+
+def probate_disabled
+  travel_to probate_fees_release_date + 1.day
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+end
+
+def probate_enabled
+  travel_to a_day_before_disable_probate_fees
+  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+end
+
 def wait_for
   Timeout.timeout(Capybara.default_max_wait_time) do
     loop until yield
@@ -27,125 +39,6 @@ module WaitUntil
   end
 end
 
-def answer_up_to_fee_page
-  step 'I am on the form number page'
-  step 'I submit the form with a valid form number'
-end
-
-def answer_up_to_marital_status_page
-  answer_up_to_fee_page
-  step 'I select no to have you already paid the fee?'
-  step 'I click continue'
-end
-
-def answer_up_to_savings_and_investment_single
-  answer_up_to_marital_status_page
-  step 'I submit the form as single'
-end
-
-def answer_up_to_savings_and_investment_married
-  answer_up_to_marital_status_page
-  step 'I submit the form as married'
-end
-
-def answer_up_to_over_61_single
-  answer_up_to_savings_and_investment_single
-  step 'I submit the form with £3,000 to £15,999 checked'
-end
-
-def answer_up_to_over_61_married
-  answer_up_to_savings_and_investment_married
-  step 'I submit the form with £3,000 to £15,999 checked'
-end
-
-def answer_up_to_benefit_single
-  answer_up_to_savings_and_investment_single
-  step 'I submit the form with £0 to £2,999 checked'
-end
-
-def answer_up_to_benefit_married
-  answer_up_to_savings_and_investment_married
-  step 'I submit the form with £0 to £2,999 checked'
-end
-
-def answer_up_to_dependent_single
-  answer_up_to_benefit_single
-  step 'I submit the form with no I do not receive one of the benefits listed'
-end
-
-def answer_up_to_dependent_married
-  answer_up_to_benefit_married
-  step 'I submit the form with no I do not receive one of the benefits listed'
-end
-
-def answer_up_to_income_kind_single
-  answer_up_to_dependent_single
-  step 'I submit the form with no I do not have any children'
-end
-
-def single_with_three_children
-  answer_up_to_dependent_single
-  step 'I select yes to do you have any children'
-  step 'I add I have three children'
-end
-
-def answer_up_to_income_kind_married
-  answer_up_to_dependent_married
-  step 'I submit the form with no I do not have any children'
-end
-
-def answer_up_to_income_range_single_no_children
-  answer_up_to_income_kind_single
-  step 'after selecting wages from income list on step eight'
-  step 'after selecting working tax credit from income list on step eight'
-  step 'I click continue'
-end
-
-def answer_up_to_income_range_married_no_children
-  answer_up_to_income_kind_married
-  step 'after selecting wages from income list on step eight'
-  step 'I click continue'
-end
-
-def answer_up_to_income_range_married_with_children
-  answer_up_to_income_kind_married
-  step 'after selecting wages from income list on step eight'
-  step 'I click continue'
-end
-
-def answer_up_to_income_range_single_with_children
-  single_with_three_children
-  step 'after selecting wages from income list on step eight'
-  step 'I click continue'
-end
-
-def answer_up_to_income_amount_single
-  answer_up_to_income_range_single_with_children
-  step 'I select between'
-end
-
-def answer_up_to_income_amount_married
-  answer_up_to_income_range_married_with_children
-  step 'I select between'
-end
-
-def answer_up_to_claim_page
-  answer_up_to_income_amount_single
-  step 'I submit the form with my monthly income'
-  step 'I select no to are you paying a fee for a probate case'
-end
-
-def answer_up_to_national_insurance_page
-  answer_up_to_claim_page
-  claim_page.content.no.click
-  continue
-end
-
-def answer_up_to_dob
-  answer_up_to_national_insurance_page
-  step 'I enter a valid national insurance number'
-end
-
 def form_name_page
   @form_name_page ||= FormNamePage.new
 end
@@ -158,12 +51,12 @@ def marital_status_page
   @marital_status_page ||= MaritalStatusPage.new
 end
 
-def savings_and_investment_page
-  @savings_and_investment_page ||= SavingsAndInvestmentPage.new
+def savings_investment_page
+  @savings_investment_page ||= SavingsInvestmentPage.new
 end
 
-def savings_and_investment_extra_page
-  @savings_and_investment_extra_page ||= SavingsAndInvestmentExtraPage.new
+def savings_investment_extra_page
+  @savings_investment_extra_page ||= SavingsInvestmentExtraPage.new
 end
 
 def benefit_page
@@ -236,4 +129,8 @@ end
 
 def saucelabs_page
   @saucelabs_page ||= SaucelabsPage.new
+end
+
+def continue
+  common_page.content.continue_button.click
 end

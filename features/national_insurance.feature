@@ -2,7 +2,7 @@
 
 Feature: National insurance page
 
-  Background: Navigating to the page for step thirteen
+  Background: Navigating to the national insurance page
     Given probate is enabled
     And I am on the national insurance page
 

@@ -1,33 +1,22 @@
 Given(/^I am on the address page with probate enabled$/) do
-  travel_to a_day_before_disable_probate_fees
-  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
-  answer_up_to_income_amount_married
-  step 'I submit the form with my monthly income'
-  probate_page.submit_no
-  claim_page.submit_no
-  national_insurance_page.submit_valid_ni
-  dob_page.valid_dob
-  step 'I enter my full name'
+  probate_enabled
+  address_page.to_address_page
+  expect(address_page.content).to have_step_info
+  expect(address_page.content).to have_address_header
 end
 
 When(/^I enter my address with postcode$/) do
-  expect(address_page.form_group[0].text).to eq 'Address'
-  address_page.address.set('102 Petty France, London')
-  expect(address_page.form_group[1].text).to eq 'Postcode'
-  address_page.postcode.set('SW1H 9AJ')
-  common_page.continue_button.click
+  expect(address_page.content).to have_address
+  expect(address_page.content).to have_postcode
+  address_page.submit_full_address
 end
 
 When(/^I enter my address$/) do
-  expect(address_page.form_group[0].text).to eq 'Address'
-  address_page.address.set('102 Petty France, London')
-  common_page.continue_button.click
+  address_page.address
 end
 
 When(/^I enter my postcode$/) do
-  expect(address_page.form_group[0].text).to eq 'Address'
-  address_page.postcode.set('102 Petty France, London')
-  common_page.continue_button.click
+  address_page.postcode
 end
 
 Then(/^I should be taken to address page$/) do

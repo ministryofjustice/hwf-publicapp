@@ -1,18 +1,16 @@
 Given(/^I am on the fee page$/) do
-  answer_up_to_fee_page
+  fee_page.to_fee_page
   expect(fee_page.content).to have_step_info
   expect(fee_page.content).to have_fee_header
   expect(fee_page.content).to have_apply_for_refund
 end
 
-When(/^I select no to have you already paid the fee\?$/) do
-  fee_page.content.no.click
+When(/^I submit no to have you already paid the fee$/) do
+  fee_page.submit_fee_no
 end
 
-When(/^I select yes to have you already paid the fee\?$/) do
+When(/^I select yes to have you already paid the fee$/) do
   fee_page.content.yes.click
-  expect(fee_page.content).to have_date_fee_paid
-  expect(fee_page.content).to have_use_this_date
 end
 
 And(/^I submit the form with a date thats within the last three months$/) do

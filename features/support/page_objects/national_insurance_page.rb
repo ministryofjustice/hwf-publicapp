@@ -17,6 +17,17 @@ class NationalInsurancePage < BasePage
     element :invalid_error_message, '.error-message', text: 'Enter a valid National Insurance number'
   end
 
+  def to_national_insurance_page
+    form_name_page.load_page
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_yes
+    marital_status_page.submit_married
+    savings_investment_page.low_amount_checked
+    benefit_page.submit_benefit_yes
+    probate_page.submit_probate_no
+    claim_page.submit_claim_no
+  end
+
   def submit_valid_ni
     national_insurance_page.content.national_insurance_number.set('JL806367D')
     continue

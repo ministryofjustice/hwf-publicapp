@@ -1,17 +1,16 @@
 Given(/^I am on the benefit page$/) do
-  answer_up_to_benefit_single
+  benefit_page.to_benefit_page
+  expect(benefit_page).to be_displayed
   expect(benefit_page.content).to have_step_info
   expect(benefit_page.content).to have_benefit_header
 end
 
 When(/^I submit the form with yes I am receiving one of the benefits listed$/) do
-  benefit_page.content.yes.click
-  continue
+  benefit_page.submit_benefit_yes
 end
 
 When(/^I submit the form with no I do not receive one of the benefits listed$/) do
-  benefit_page.content.no.click
-  continue
+  benefit_page.submit_benefit_no
 end
 
 Then(/^I should see the instruction bullet points:$/) do |benefits|

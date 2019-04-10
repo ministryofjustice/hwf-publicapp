@@ -1,27 +1,24 @@
 Given(/^I am on the page for step eleven - Are you paying a fee for a probate case\?$/) do
-  answer_up_to_income_amount_married
-  step 'I submit the form with my monthly income'
+  probate_page.to_probate_page
   expect(probate_page.content).to have_step_info
   expect(probate_page.content).to have_probate_header
   expect(probate_page.content).to have_probate_hint
 end
 
 And(/^probate is disabled$/) do
-  travel_to probate_fees_release_date + 1.day
-  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+  probate_disabled
 end
 
 And(/^probate is enabled$/) do
-  travel_to a_day_before_disable_probate_fees
-  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+  probate_enabled
 end
 
 When(/^I select no to are you paying a fee for a probate case$/) do
-  probate_page.submit_no
+  probate_page.submit_probate_no
 end
 
 When(/^I select yes to are you paying a fee for a probate case$/) do
-  probate_page.answer_yes
+  probate_page.answer_probate_yes
   continue
 end
 
@@ -35,19 +32,19 @@ When(/^I enter a valid date of death$/) do
 end
 
 When(/^I enter a date over twenty years ago$/) do
-  probate_page.answer_yes
+  probate_page.answer_probate_yes
   probate_page.deceased_name
   probate_page.date_of_death_over_20_years
 end
 
 When(/^I enter a invalid date of death$/) do
-  probate_page.answer_yes
+  probate_page.answer_probate_yes
   probate_page.deceased_name
   probate_page.invalid_date_of_death
 end
 
 When(/^I enter a future date of death$/) do
-  probate_page.answer_yes
+  probate_page.answer_probate_yes
   probate_page.deceased_name
   probate_page.future_date_of_death
 end

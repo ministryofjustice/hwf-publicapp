@@ -5,13 +5,10 @@ Feature: Confirmation done page
   Background: Navigating to the confirmation done page
     Given I am on the confirmation done page with probate enabled
 
-  Scenario: Displays header for people that do not need help with an employment tribunal fee
-    Then I should see header 'Send your C100 form with your HWF-000-000 reference'
+  Scenario: Displays deliver your paperwork instructions
+    Then I should see deliver your paperwork instructions
 
-  Scenario: Displays deliver your paperwork copy
-    Then I should see deliver your paperwork copy
-
-  Scenario: Displays what happens next for people that do not need help with an employment tribunal fee
+  Scenario: Displays what happens next
     Then I should see what happens next
 
   Scenario: Save or print this page

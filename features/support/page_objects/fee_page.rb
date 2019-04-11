@@ -53,8 +53,12 @@ class FeePage < BasePage
   end
 
   def submit_fee_yes
+    date = Time.zone.today - 1.month
     content.yes.click
-    content.fee_date_paid.set(Time.zone.today - 1.month)
+    content.fee_day_date_paid.set(date.day)
+    content.fee_month_date_paid.set(date.month)
+    content.fee_year_date_paid.set(date.year)
+
     continue
   end
 

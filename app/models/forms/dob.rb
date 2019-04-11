@@ -3,9 +3,9 @@ module Forms
     include ActiveModel::Validations::Callbacks
 
     attr_reader :date_of_birth
-    attribute :day_date_of_birth, Integer
-    attribute :month_date_of_birth, Integer
-    attribute :year_date_of_birth, Integer
+    attribute :day, Integer
+    attribute :month, Integer
+    attribute :year, Integer
 
     MINIMUM_AGE = 15
     MAXIMUM_AGE = 120
@@ -74,7 +74,7 @@ module Forms
     end
 
     def concat_dob_dates
-      "#{day_date_of_birth}/#{month_date_of_birth}/#{year_date_of_birth}"
+      "#{day}/#{month}/#{year}"
     end
 
     def date_not_recognized?
@@ -82,7 +82,7 @@ module Forms
     end
 
     def blank_dates?
-      day_date_of_birth.blank? || month_date_of_birth.blank? || year_date_of_birth.blank?
+      day.blank? || month.blank? || year.blank?
     end
 
   end

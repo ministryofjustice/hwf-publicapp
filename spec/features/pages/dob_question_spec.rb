@@ -6,9 +6,9 @@ RSpec.feature 'As a user' do
 
     context 'completing the form correctly' do
       before do
-        fill_in :dob_day_date_of_birth, with: '01'
-        fill_in :dob_month_date_of_birth, with: '01'
-        fill_in :dob_year_date_of_birth, with: '1990'
+        fill_in :dob_day, with: '01'
+        fill_in :dob_month, with: '01'
+        fill_in :dob_year, with: '1990'
         click_button 'Continue'
       end
 
@@ -34,9 +34,9 @@ RSpec.feature 'As a user' do
         let(:too_young) { Time.zone.yesterday }
 
         before do
-          fill_in :dob_day_date_of_birth, with: too_young.day
-          fill_in :dob_month_date_of_birth, with: too_young.month
-          fill_in :dob_year_date_of_birth, with: too_young.year
+          fill_in :dob_day, with: too_young.day
+          fill_in :dob_month, with: too_young.month
+          fill_in :dob_year, with: too_young.year
           click_button 'Continue'
         end
 
@@ -49,9 +49,9 @@ RSpec.feature 'As a user' do
         let(:too_old) { Time.zone.today - 125.years }
 
         before do
-          fill_in :dob_day_date_of_birth, with: too_old.day
-          fill_in :dob_month_date_of_birth, with: too_old.month
-          fill_in :dob_year_date_of_birth, with: too_old.year
+          fill_in :dob_day, with: too_old.day
+          fill_in :dob_month, with: too_old.month
+          fill_in :dob_year, with: too_old.year
           click_button 'Continue'
         end
 
@@ -62,9 +62,9 @@ RSpec.feature 'As a user' do
 
       describe 'by entering data that is not a date' do
         before do
-          fill_in :dob_day_date_of_birth, with: 'foo'
-          fill_in :dob_month_date_of_birth, with: 'foo'
-          fill_in :dob_year_date_of_birth, with: 'foo'
+          fill_in :dob_day, with: 'foo'
+          fill_in :dob_month, with: 'foo'
+          fill_in :dob_year, with: 'foo'
           click_button 'Continue'
         end
 

@@ -19,7 +19,7 @@ RSpec.describe OnlineApplicationBuilder do
         'form_name' => { 'identifier' => 'EX47' },
         'national_insurance' => { 'number' => 'AA123456A' },
         'personal_detail' => { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' },
-        'dob' => { 'day_date_of_birth' => '10', 'month_date_of_birth' => '03', 'year_date_of_birth' => '1967' },
+        'dob' => { 'day' => '10', 'month' => '03', 'year' => '1967' },
         'applicant_address' => { 'address' => '1 Blue Fields, Shine Town', 'postcode' => 'SH01 TW0' },
         'contact' => { 'email_option' => true, 'email' => 'mary@jones.com', 'phone_option' => false, 'post_option' => false, 'feedback_opt_in' => true }
       }

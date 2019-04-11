@@ -7,16 +7,16 @@ RSpec.describe Forms::Dob, type: :model do
     describe 'date_of_birth' do
       context 'when not blank' do
         before do
-          form_dob.day_date_of_birth = '23'
-          form_dob.month_date_of_birth = '01'
-          form_dob.year_date_of_birth = '1980'
+          form_dob.day = '23'
+          form_dob.month = '01'
+          form_dob.year = '1980'
         end
 
         it { expect(form_dob.valid?).to be true }
       end
 
       context 'when a non date value' do
-        before { form_dob.day_date_of_birth = 'some string' }
+        before { form_dob.day = 'some string' }
 
         it { expect(form_dob.valid?).not_to be true }
 
@@ -37,9 +37,9 @@ RSpec.describe Forms::Dob, type: :model do
             end
 
             before do
-              form_dob.day_date_of_birth = today.day
-              form_dob.month_date_of_birth = today.month
-              form_dob.year_date_of_birth = today.year
+              form_dob.day = today.day
+              form_dob.month = today.month
+              form_dob.year = today.year
               form_dob.valid?
             end
 
@@ -53,9 +53,9 @@ RSpec.describe Forms::Dob, type: :model do
             end
 
             before do
-              form_dob.day_date_of_birth = old_date.day
-              form_dob.month_date_of_birth = old_date.month
-              form_dob.year_date_of_birth = old_date.year
+              form_dob.day = old_date.day
+              form_dob.month = old_date.month
+              form_dob.year = old_date.year
 
               form_dob.valid?
             end
@@ -67,9 +67,9 @@ RSpec.describe Forms::Dob, type: :model do
 
       context 'when passed a two digit year' do
         before do
-          form_dob.day_date_of_birth = '1'
-          form_dob.month_date_of_birth = '11'
-          form_dob.year_date_of_birth = '80'
+          form_dob.day = '1'
+          form_dob.month = '11'
+          form_dob.year = '80'
         end
 
         it { expect(form_dob.valid?).not_to be true }
@@ -81,19 +81,19 @@ RSpec.describe Forms::Dob, type: :model do
       end
 
       context 'when day blank' do
-        before { form_dob.day_date_of_birth = '' }
+        before { form_dob.day = '' }
 
         it { expect(form_dob.valid?).to be false }
       end
 
       context 'when month blank' do
-        before { form_dob.month_date_of_birth = '' }
+        before { form_dob.month = '' }
 
         it { expect(form_dob.valid?).to be false }
       end
 
       context 'when year blank' do
-        before { form_dob.year_date_of_birth = '' }
+        before { form_dob.year = '' }
 
         it { expect(form_dob.valid?).to be false }
       end
@@ -102,7 +102,7 @@ RSpec.describe Forms::Dob, type: :model do
 
   describe '#export' do
     subject do
-      described_class.new(day_date_of_birth: '01', month_date_of_birth: '01', year_date_of_birth: '1980').export
+      described_class.new(day: '01', month: '01', year: '1980').export
     end
 
     let(:date_of_birth) { Date.parse('01/01/1980') }

@@ -70,9 +70,9 @@ RSpec.feature 'As a user' do
         fill_in 'national_insurance_number', with: 'AB123456A'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.dob.text')
-        fill_in 'dob_day_date_of_birth', with: '01'
-        fill_in 'dob_month_date_of_birth', with: '01'
-        fill_in 'dob_year_date_of_birth', with: '1980'
+        fill_in 'dob_day', with: '01'
+        fill_in 'dob_month', with: '01'
+        fill_in 'dob_year', with: '1980'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.personal_detail.text')
         fill_in 'personal_detail_title', with: 'Sir'

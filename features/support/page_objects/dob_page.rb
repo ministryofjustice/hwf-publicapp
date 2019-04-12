@@ -4,7 +4,7 @@ class DobPage < BasePage
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 14 of 20'
     element :dob_header, 'h1', text: 'What is your date of birth?'
-    element :dob_hint, '.hint', text: 'For example, 01 08 2007'
+    element :dob_hint, '.hint', text: 'For example, 04 10 2018'
     element :dob_day, '#dob_day'
     element :dob_month, '#dob_month'
     element :dob_year, '#dob_year'

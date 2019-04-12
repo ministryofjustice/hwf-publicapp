@@ -390,7 +390,7 @@ en:
       title: Number of children living with you
     dob:
       breadcrumb: Step 14 of 20
-      hint_html: For example, 01 08 2007
+      hint_html: For example, 04 10 2018
       text: What is your date of birth?
       title: Date of birth
     fee:
@@ -398,7 +398,7 @@ en:
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
-      hint_html: For example, 01 08 2007
+      hint_html: For example, 04 10 2018
       text: Have you already paid the fee?
       title: Refund
     form_name:
@@ -518,7 +518,7 @@ en:
     probate:
       breadcrumb: Step 11 of 20
       details: These cases are usually about the property and belongings of someone who has died.
-      hint_html: For example, 01 08 2007
+      hint_html: For example, 04 10 2018
       probate_case_false: 'No'
       probate_case_true: 'Yes'
       text: Are you paying a fee for a probate case?

@@ -15,7 +15,7 @@ class FeePage < BasePage
     element :blank_error_message, '.error-message', text: 'Select whether you\'ve already paid the fee'
     element :no, '.block-label', text: 'No'
     element :yes, '.block-label', text: 'Yes'
-    element :use_this_date, '.hint', text: 'For example, 01 08 2007'
+    element :use_this_date, '.hint', text: 'For example, 04 10 2018'
     element :fee_day_date_paid, '#fee_day_date_paid'
     element :fee_month_date_paid, '#fee_month_date_paid'
     element :fee_year_date_paid, '#fee_year_date_paid'

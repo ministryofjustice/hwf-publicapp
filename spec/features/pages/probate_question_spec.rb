@@ -12,7 +12,9 @@ RSpec.feature 'As a user' do
       before do
         choose 'probate_kase_true'
         fill_in :probate_deceased_name, with: 'foo'
-        fill_in :probate_date_of_death, with: Time.zone.yesterday
+        fill_in :probate_day_date_of_death, with: Time.zone.yesterday.day
+        fill_in :probate_month_date_of_death, with: Time.zone.yesterday.month
+        fill_in :probate_year_date_of_death, with: Time.zone.yesterday.year
         click_button 'Continue'
       end
 
@@ -57,7 +59,9 @@ RSpec.feature 'As a user' do
 
         context 'entering date_of_death that is not a date' do
           before do
-            fill_in :probate_date_of_death, with: 'foo'
+            fill_in :probate_day_date_of_death, with: 'foo'
+            fill_in :probate_month_date_of_death, with: 'foo'
+            fill_in :probate_year_date_of_death, with: 'foo'
             click_button 'Continue'
           end
 
@@ -67,8 +71,12 @@ RSpec.feature 'As a user' do
         end
 
         context 'entering date_of_death that is too old' do
+          let(:long_ago) { Time.zone.today - 21.years }
+
           before do
-            fill_in :probate_date_of_death, with: Time.zone.today - 21.years
+            fill_in :probate_day_date_of_death, with: long_ago.day
+            fill_in :probate_month_date_of_death, with: long_ago.month
+            fill_in :probate_year_date_of_death, with: long_ago.year
             click_button 'Continue'
           end
 
@@ -78,8 +86,13 @@ RSpec.feature 'As a user' do
         end
 
         context 'entering date_of_death that is in the future' do
+          let(:future_date) { Time.zone.tomorrow }
+
           before do
-            fill_in :probate_date_of_death, with: Time.zone.tomorrow
+            fill_in :probate_day_date_of_death, with: future_date.day
+            fill_in :probate_month_date_of_death, with: future_date.month
+            fill_in :probate_year_date_of_death, with: future_date.year
+
             click_button 'Continue'
           end
 

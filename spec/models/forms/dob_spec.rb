@@ -6,13 +6,17 @@ RSpec.describe Forms::Dob, type: :model do
   describe 'validations' do
     describe 'date_of_birth' do
       context 'when not blank' do
-        before { form_dob.date_of_birth = '23/01/1980' }
+        before do
+          form_dob.day = '23'
+          form_dob.month = '01'
+          form_dob.year = '1980'
+        end
 
         it { expect(form_dob.valid?).to be true }
       end
 
       context 'when a non date value' do
-        before { form_dob.date_of_birth = 'some string' }
+        before { form_dob.day = 'some string' }
 
         it { expect(form_dob.valid?).not_to be true }
 
@@ -27,35 +31,46 @@ RSpec.describe Forms::Dob, type: :model do
           end
 
           context 'when a recent date is provided' do
-            before do
-              form_dob.date_of_birth = Time.zone.today.strftime("%d/%m/%Y")
-              form_dob.valid?
-            end
-
-            let(:error) do
+            let(:today) { Time.zone.today }
+            let(:young_error) do
               [I18n.t('activemodel.errors.models.forms/dob.attributes.date_of_birth.too_young', minimum_age: Forms::Dob::MINIMUM_AGE)]
             end
 
-            it { expect(form_dob.errors.messages[:date_of_birth]).to eq error }
-          end
-
-          context 'when a date too far in the past is provided' do
             before do
-              form_dob.date_of_birth = (Time.zone.today - 121.years).strftime("%d/%m/%Y")
+              form_dob.day = today.day
+              form_dob.month = today.month
+              form_dob.year = today.year
               form_dob.valid?
             end
 
-            let(:error) do
+            it { expect(form_dob.errors.messages[:date_of_birth]).to eq young_error }
+          end
+
+          context 'when a date too far in the past is provided' do
+            let(:old_date) { 121.years.ago }
+            let(:old_error) do
               [I18n.t('activemodel.errors.models.forms/dob.attributes.date_of_birth.too_old')]
             end
 
-            it { expect(form_dob.errors.messages[:date_of_birth]).to eq error }
+            before do
+              form_dob.day = old_date.day
+              form_dob.month = old_date.month
+              form_dob.year = old_date.year
+
+              form_dob.valid?
+            end
+
+            it { expect(form_dob.errors.messages[:date_of_birth]).to eq old_error }
           end
         end
       end
 
       context 'when passed a two digit year' do
-        before { form_dob.date_of_birth = '1/11/80' }
+        before do
+          form_dob.day = '1'
+          form_dob.month = '11'
+          form_dob.year = '80'
+        end
 
         it { expect(form_dob.valid?).not_to be true }
 
@@ -65,8 +80,20 @@ RSpec.describe Forms::Dob, type: :model do
         end
       end
 
-      context 'when blank' do
-        before { form_dob.date_of_birth = '' }
+      context 'when day blank' do
+        before { form_dob.day = '' }
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
+      context 'when month blank' do
+        before { form_dob.month = '' }
+
+        it { expect(form_dob.valid?).to be false }
+      end
+
+      context 'when year blank' do
+        before { form_dob.year = '' }
 
         it { expect(form_dob.valid?).to be false }
       end
@@ -74,7 +101,9 @@ RSpec.describe Forms::Dob, type: :model do
   end
 
   describe '#export' do
-    subject { described_class.new(date_of_birth: date_of_birth).export }
+    subject do
+      described_class.new(day: '01', month: '01', year: '1980').export
+    end
 
     let(:date_of_birth) { Date.parse('01/01/1980') }
 

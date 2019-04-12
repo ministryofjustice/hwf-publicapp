@@ -201,7 +201,9 @@ module FeatureSteps
   end
 
   def fill_dob
-    fill_in 'dob_date_of_birth', with: '01/01/1980'
+    fill_in 'dob_day', with: '01'
+    fill_in 'dob_month', with: '01'
+    fill_in 'dob_year', with: '1980'
     click_button 'Continue'
   end
 
@@ -233,7 +235,9 @@ module FeatureSteps
   def fill_fee(refund = false)
     if refund
       choose 'fee_paid_true'
-      fill_in :fee_date_paid, with: 3.weeks.ago
+      fill_in :fee_day_date_paid, with: 3.weeks.ago.day
+      fill_in :fee_month_date_paid, with: 3.weeks.ago.month
+      fill_in :fee_year_date_paid, with: 3.weeks.ago.year
     else
       choose 'fee_paid_false'
     end

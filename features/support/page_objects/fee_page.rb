@@ -15,8 +15,10 @@ class FeePage < BasePage
     element :blank_error_message, '.error-message', text: 'Select whether you\'ve already paid the fee'
     element :no, '.block-label', text: 'No'
     element :yes, '.block-label', text: 'Yes'
-    element :use_this_date, '.hint', text: 'Use this format D D / M M / Y Y Y Y'
-    element :fee_date_paid, '#fee_date_paid'
+    element :use_this_date, '.hint', text: 'For example, 04 10 2018'
+    element :fee_day_date_paid, '#fee_day_date_paid'
+    element :fee_month_date_paid, '#fee_month_date_paid'
+    element :fee_year_date_paid, '#fee_year_date_paid'
     element :date_fee_paid, '.form-label', text: 'Date fee paid'
   end
 
@@ -26,23 +28,37 @@ class FeePage < BasePage
   end
 
   def expired_date
-    content.fee_date_paid.set(Time.zone.today - 4.months)
+    date = Time.zone.today - 4.months
+    content.fee_day_date_paid.set(date.day)
+    content.fee_month_date_paid.set(date.month)
+    content.fee_year_date_paid.set(date.year)
     continue
   end
 
   def future_date
-    content.fee_date_paid.set(Time.zone.today + 1.month)
+    date = Time.zone.today + 1.month
+    content.fee_day_date_paid.set(date.day)
+    content.fee_month_date_paid.set(date.month)
+    content.fee_year_date_paid.set(date.year)
     continue
   end
 
   def valid_date
-    content.fee_date_paid.set(Time.zone.today - 1.month)
+    date = Time.zone.today - 1.month
+    content.fee_day_date_paid.set(date.day)
+    content.fee_month_date_paid.set(date.month)
+    content.fee_year_date_paid.set(date.year)
+
     continue
   end
 
   def submit_fee_yes
+    date = Time.zone.today - 1.month
     content.yes.click
-    content.fee_date_paid.set(Time.zone.today - 1.month)
+    content.fee_day_date_paid.set(date.day)
+    content.fee_month_date_paid.set(date.month)
+    content.fee_year_date_paid.set(date.year)
+
     continue
   end
 

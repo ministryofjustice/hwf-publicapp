@@ -16,4 +16,13 @@
           span.error-message#date_paid = @form.errors[:date_paid].join(' ')
         = f.label :date_paid, class: 'form-label'
         .hint = t('hint_html', scope: @form.i18n_scope)
-        = f.text_field :date_paid, class: 'form-control'
+        .form-date
+          .form-group.form-group-day
+            = f.label :day_date_paid, class: 'form-label'
+            = f.text_field :day_date_paid, class: 'form-control', type:"number", pattern: "[0-9]*", min: "0", max: "31"
+          .form-group.form-group-month
+            = f.label :month_date_paid, class: 'form-label'
+            = f.text_field :month_date_paid, class: 'form-control', type:"number", pattern: "[0-9]*", min: "0", max: "12"
+          .form-group.form-group-year
+            = f.label :year_date_paid, class: 'form-label'
+            = f.text_field :year_date_paid, class: 'form-control', type:"number", pattern: "[0-9]*"

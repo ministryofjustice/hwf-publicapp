@@ -15,6 +15,9 @@ en:
         children_number: Number of children
       forms/fee:
         date_paid: Date fee paid
+        day_date_paid: Day
+        month_date_paid: Month
+        year_date_paid: Year
       forms/form_name:
         identifier: Form number
       forms/help_request:
@@ -36,12 +39,20 @@ en:
         working_tax_credit: Working Tax Credit
       forms/income_amount:
         amount: Enter the total monthly amount you receive in income.
+      forms/dob:
+        day: Day
+        month: Month
+        year: Year
       forms/personal_detail:
         first_name: First name
         last_name: Last name
         title: Title
       forms/probate:
         date_of_death: Date of death
+        day_date_of_death: Day
+        month_date_of_death: Month
+        year_date_of_death: Year
+
         deceased_name: Name of deceased
       forms/savings_and_investment_extra:
         amount: How much do you and your partner have in savings and investments?
@@ -379,7 +390,7 @@ en:
       title: Number of children living with you
     dob:
       breadcrumb: Step 14 of 20
-      hint_html: Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      hint_html: For example, 04 10 2018
       text: What is your date of birth?
       title: Date of birth
     fee:
@@ -387,7 +398,7 @@ en:
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
-      hint_html: Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      hint_html: For example, 04 10 2018
       text: Have you already paid the fee?
       title: Refund
     form_name:
@@ -507,7 +518,7 @@ en:
     probate:
       breadcrumb: Step 11 of 20
       details: These cases are usually about the property and belongings of someone who has died.
-      hint_html: Use this format <span class="dateFormatAccessible">D D / M M / Y Y Y Y</span>
+      hint_html: For example, 04 10 2018
       probate_case_false: 'No'
       probate_case_true: 'Yes'
       text: Are you paying a fee for a probate case?

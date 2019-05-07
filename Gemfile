@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv-rails', groups: [:development, :test] # this has to be here because of load order
 
-gem 'rails', '~> 4.2.10'
+gem 'rails', '~> 4.2.11'
 
 gem 'config'
 gem 'date_validator'

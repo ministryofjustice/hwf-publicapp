@@ -32,6 +32,8 @@ RSpec.feature 'As a user' do
 
         visit "/?locale=#{locale}"
         click_link_or_button I18n.t('start_application')
+        expect(page).to have_content I18n.t('home.checklist.heading')
+        click_link_or_button I18n.t('submit_button')
         expect(page).to have_content I18n.t('questions.form_name.text')
         fill_in 'form_name_identifier', with: 'N1'
         find_continue_button.click

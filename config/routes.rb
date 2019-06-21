@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     root 'home#index'
   end
 
+  get 'checklist' => 'home#checklist'
+
   get 'terms_and_conditions' => 'home#terms_and_conditions'
 
   resources :questions, only: [:edit, :update], path_names: { edit: '' }

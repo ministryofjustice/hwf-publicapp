@@ -1,0 +1,20 @@
+- content_for :page_title
+  = t('.title')
+  = ' - '
+
+h1.heading-large =t('.heading')
+
+- t('.sections').each do |section|
+  =display_section(section)
+
+details.util_mt-small.util_mb-small
+  summary =t('.details.summary')
+  .panel-indent
+    ul.list.list-bullet
+      li =t('.details.item_1')
+      li =t('.details.item_2').html_safe
+
+p
+  =t('.paper_form').html_safe
+
+= link_to(t('submit_button'), start_session_path, role: :button, class: 'button')

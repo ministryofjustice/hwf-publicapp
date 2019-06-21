@@ -751,3 +751,26 @@ cy:
       - p: Nid ydym yn derbyn cyfrifoldeb am golled neu ddifrod sy’n dod i ran defnyddwyr y gwasanaeth hwn, naill ai’n uniongyrchol, yn anuniongyrchol neu’n ganlyniadol, pa un ai a yw’n cael ei achosi drwy gamwedd, tor-cytundeb neu fel arall. Mae hyn yn cynnwys colli incwm neu refeniw, busnes, elw neu gontractau, arbedion a ragwelwyd, data, ewyllys da, eiddo diriaethol neu wastraff amser sy’n gysylltiedig â’r gwasanaeth hwn neu unrhyw wefannau sy’n gysylltiedig ag ef ac unrhyw ddeunydd sy’n cael ei bostio arni. Ni fydd yr amod hwn yn atal hawliadau am golled neu ddifrod i’ch eiddo diriaethol nac unrhyw hawliadau eraill am golled ariannol uniongyrchol nad ydynt wedi’i heithrio gan unrhyw rai o’r categorïau uchod.
       - p: Nid yw hyn yn effeithio ar ein hatebolrwydd am farwolaeth neu anaf personol sy’n codi o’n hesgeuluster, nac ar ein hatebolrwydd am gamliwio twyllodrus neu gamliwio mewn perthynas â mater sylfaenol, nac unrhyw atebolrwydd arall na ellir ei eithrio neu ei gyfyngu dan y gyfraith berthnasol.
     title: Telerau ac amodau
+  home:
+    checklist:
+      title: What you will need
+      heading: What you will need
+      sections:
+      - parts:
+          - p: 'Before you continue, make sure you have:'
+          - ul:
+            - li: your National Insurance number
+            - li: the court or tribunal form number
+            - li: your case number, claim number or notice to pay ­ if you have one
+      - title:
+        parts:
+          - p: "You'll also need details of your:"
+          - ul:
+            - li: income, including wages
+            - li: savings and investments
+            - li: partner's income, savings and investments ­ if you have one
+      paper_form: If you don't have a National Insurance number, you need to  <a class="external" rel="external" href="https://www.gov.uk/government/publications/apply­for­help­with­court­and­tribunal­fees#details">use the paper form</a>
+      details:
+        summary: If you don't know your National Insurance number
+        item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
+        item_2: <a target="_blank" class="external" rel="external" href="http://localhost:3000/">ask for a reminder through the post</a>

@@ -488,7 +488,10 @@ cy:
       breadcrumb: Cam 13 o 20
       details:
         section_1:
-          detail_html: Os na allwch chi ddarparu rhif Yswiriant Gwladol, bydd angen i chi ddarparu llythyr oddi wrth y Ganolfan Waith.
+          detail_html: "Os nad oes gennych rif Yswiriant Gwladol, bydd angen ichi
+            <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+            class='external' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+            target='_blank'>ddefnyddio’r ffurflen bapur</a>."
           item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
           item_2: gofynnwch am nodyn atgoffa drwy'r post
         summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol

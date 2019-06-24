@@ -753,22 +753,22 @@ cy:
     title: Telerau ac amodau
   home:
     checklist:
-      title: What you will need
-      heading: What you will need
+      title: Beth fydd arnoch ei angen?
+      heading: Beth fydd arnoch ei angen?
       sections:
       - parts:
-          - p: 'Before you continue, make sure you have:'
+          - p: 'Cyn i chi barhau, gwnewch yn siŵr fod gennych:'
           - ul:
-            - li: your National Insurance number
-            - li: the court or tribunal form number
-            - li: your case number, claim number or notice to pay ­ if you have one
+            - li: eich Rhif Yswiriant Gwladol
+            - li: rhif y ffurflen llys neu dribiwnlys
+            - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu – os oes gennych un
       - title:
         parts:
-          - p: "You'll also need details of your:"
+          - p: 'Hefyd bydd arnoch angen manylion eich:'
           - ul:
-            - li: income, including wages
-            - li: savings and investments
-            - li: partner's income, savings and investments ­ if you have one
+            - li: incwm, yn cynnwys cyflog
+            - li: cynilion a buddsoddiadau
+            - li: incwm, cynilion a buddsoddiadau eich partner – os oes gennych un
       paper_form: If you don't have a National Insurance number, you need to  <a class="external" rel="external" href="https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees#details">use the paper form</a>
       details:
         summary: If you don't know your National Insurance number

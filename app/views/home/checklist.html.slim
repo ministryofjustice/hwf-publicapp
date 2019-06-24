@@ -1,0 +1,20 @@
+- content_for :page_title
+  = t('.title')
+  = ' - '
+
+h1.heading-large =t('.heading')
+
+- t('.sections').each do |section|
+  =display_section(section)
+
+details.util_mt-small.util_mb-small
+  summary =t('questions.national_insurance.details.summary')
+  .panel-indent
+    .text
+      ul.list.list-bullet
+        li =t('item_1', scope: 'questions.national_insurance.details.section_1')
+        li =link_to t('item_2', scope: 'questions.national_insurance.details.section_1'), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
+
+p =t('detail_html', scope: 'questions.national_insurance.details.section_1')
+
+= link_to(t('submit_button'), start_session_path, role: :button, class: 'button')

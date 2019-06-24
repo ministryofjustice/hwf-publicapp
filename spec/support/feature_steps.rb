@@ -2,6 +2,7 @@ module FeatureSteps
   def given_user_answers_questions_up_to(question)
     visit '/'
     click_link_or_button 'Apply now'
+    click_link_or_button 'Continue'
 
     QuestionFormFactory::IDS.take_while { |id| id != question }.each do |id|
       next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
@@ -18,6 +19,7 @@ module FeatureSteps
   def given_user_provides_all_data_for_refund
     visit '/'
     click_link_or_button 'Apply now'
+    click_link_or_button 'Continue'
     fill_form_name
     fill_fee(true)
     fill_marital_status
@@ -40,6 +42,7 @@ module FeatureSteps
   def given_user_provides_all_data_for_below_threshold_income
     visit '/'
     click_link_or_button 'Apply now'
+    click_link_or_button 'Continue'
     fill_form_name
     fill_fee(true)
     fill_marital_status
@@ -61,6 +64,7 @@ module FeatureSteps
   def given_user_provides_all_data_for_benefit
     visit '/'
     click_link_or_button 'Apply now'
+    click_link_or_button 'Continue'
     fill_form_name
     fill_fee
     fill_marital_status
@@ -94,6 +98,7 @@ module FeatureSteps
 
   def when_they_start_new_application
     click_link_or_button 'Apply now'
+    click_link_or_button 'Continue'
   end
 
   def when_they_go_back_to_homepage_and_start_again

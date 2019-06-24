@@ -488,7 +488,10 @@ cy:
       breadcrumb: Cam 13 o 20
       details:
         section_1:
-          detail_html: Os na allwch chi ddarparu rhif Yswiriant Gwladol, bydd angen i chi ddarparu llythyr oddi wrth y Ganolfan Waith.
+          detail_html: "Os nad oes gennych rif Yswiriant Gwladol, bydd angen ichi
+            <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+            class='external' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+            target='_blank'>ddefnyddio’r ffurflen bapur</a>."
           item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
           item_2: gofynnwch am nodyn atgoffa drwy'r post
         summary: Os nad ydych chi'n gwybod eich rhif Yswiriant Gwladol
@@ -751,3 +754,21 @@ cy:
       - p: Nid ydym yn derbyn cyfrifoldeb am golled neu ddifrod sy’n dod i ran defnyddwyr y gwasanaeth hwn, naill ai’n uniongyrchol, yn anuniongyrchol neu’n ganlyniadol, pa un ai a yw’n cael ei achosi drwy gamwedd, tor-cytundeb neu fel arall. Mae hyn yn cynnwys colli incwm neu refeniw, busnes, elw neu gontractau, arbedion a ragwelwyd, data, ewyllys da, eiddo diriaethol neu wastraff amser sy’n gysylltiedig â’r gwasanaeth hwn neu unrhyw wefannau sy’n gysylltiedig ag ef ac unrhyw ddeunydd sy’n cael ei bostio arni. Ni fydd yr amod hwn yn atal hawliadau am golled neu ddifrod i’ch eiddo diriaethol nac unrhyw hawliadau eraill am golled ariannol uniongyrchol nad ydynt wedi’i heithrio gan unrhyw rai o’r categorïau uchod.
       - p: Nid yw hyn yn effeithio ar ein hatebolrwydd am farwolaeth neu anaf personol sy’n codi o’n hesgeuluster, nac ar ein hatebolrwydd am gamliwio twyllodrus neu gamliwio mewn perthynas â mater sylfaenol, nac unrhyw atebolrwydd arall na ellir ei eithrio neu ei gyfyngu dan y gyfraith berthnasol.
     title: Telerau ac amodau
+  home:
+    checklist:
+      title: Beth fydd arnoch ei angen?
+      heading: Beth fydd arnoch ei angen?
+      sections:
+      - parts:
+          - p: 'Cyn i chi barhau, gwnewch yn siŵr fod gennych:'
+          - ul:
+            - li: eich Rhif Yswiriant Gwladol
+            - li: rhif y ffurflen llys neu dribiwnlys
+            - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu - os oes gennych un
+      - title:
+        parts:
+          - p: 'Hefyd bydd arnoch angen manylion eich:'
+          - ul:
+            - li: incwm, yn cynnwys cyflog
+            - li: cynilion a buddsoddiadau
+            - li: incwm, cynilion a buddsoddiadau eich partner - os oes gennych un

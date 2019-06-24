@@ -761,11 +761,11 @@ cy:
           - ul:
             - li: eich Rhif Yswiriant Gwladol
             - li: rhif y ffurflen llys neu dribiwnlys
-            - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu – os oes gennych un
+            - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu - os oes gennych un
       - title:
         parts:
           - p: 'Hefyd bydd arnoch angen manylion eich:'
           - ul:
             - li: incwm, yn cynnwys cyflog
             - li: cynilion a buddsoddiadau
-            - li: incwm, cynilion a buddsoddiadau eich partner – os oes gennych un
+            - li: incwm, cynilion a buddsoddiadau eich partner - os oes gennych un

@@ -8,13 +8,13 @@ h1.heading-large =t('.heading')
   =display_section(section)
 
 details.util_mt-small.util_mb-small
-  summary =t('.details.summary')
+  summary =t('questions.national_insurance.details.summary')
   .panel-indent
-    ul.list.list-bullet
-      li =t('.details.item_1')
-      li =t('.details.item_2').html_safe
+    .text
+      ul.list.list-bullet
+        li =t('item_1', scope: 'questions.national_insurance.details.section_1')
+        li =link_to t('item_2', scope: 'questions.national_insurance.details.section_1'), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
 
-p
-  =t('.paper_form').html_safe
+p =t('detail_html', scope: 'questions.national_insurance.details.section_1')
 
 = link_to(t('submit_button'), start_session_path, role: :button, class: 'button')

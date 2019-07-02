@@ -1,5 +1,5 @@
 class FormNamePage < BasePage
-  set_url '/session/start'
+  set_url '/questions/form_name'
 
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 1 of 20'
@@ -29,5 +29,10 @@ class FormNamePage < BasePage
   def submit_valid_form_name
     content.form_name.set('notice to appeal')
     continue
+  end
+
+  def to_form_name
+    checklist_page.load_page
+    checklist_page.continue
   end
 end

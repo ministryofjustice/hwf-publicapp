@@ -18,7 +18,7 @@ class SummaryPage < BasePage
   end
 
   def to_summary_page_probate_enabled
-    form_name_page.load_page
+    form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_no
     marital_status_page.submit_married
@@ -37,7 +37,7 @@ class SummaryPage < BasePage
   end
 
   def to_summary_page_probate_disabled
-    form_name_page.load_page
+    form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
     marital_status_page.submit_married

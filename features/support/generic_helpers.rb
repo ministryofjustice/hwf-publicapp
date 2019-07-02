@@ -39,6 +39,10 @@ module WaitUntil
   end
 end
 
+def checklist_page
+  @checklist_page ||= ChecklistPage.new
+end
+
 def form_name_page
   @form_name_page ||= FormNamePage.new
 end

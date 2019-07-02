@@ -67,7 +67,7 @@ class ProbatePage < BasePage
   end
 
   def to_probate_page
-    form_name_page.load_page
+    form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
     marital_status_page.submit_married

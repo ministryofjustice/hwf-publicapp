@@ -23,7 +23,7 @@ class FeePage < BasePage
   end
 
   def to_fee_page
-    form_name_page.load_page
+    form_name_page.to_form_name
     form_name_page.submit_valid_form_number
   end
 

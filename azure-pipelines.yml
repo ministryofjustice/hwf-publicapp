@@ -19,7 +19,7 @@ pr:
       - feature/*
 
 variables:
-  application.name: 'hwf-pubapp'
+  application.name: 'hwf-publicapp'
   azure.subscription.endpoint: 'hmcts-pet'
   manual.branch.prefix: 'develop'
 
@@ -34,24 +34,18 @@ jobs:
         versionSpec: '>= 2.5'
 
     - script: |
-        # sudo apt-get update
-        # sudo apt-get install libpq-dev
-        # chmod +x ./bin/wait-for-it.sh
         gem install bundler -v 1.17.3
       displayName: 'before install'
 
     - script: |
         bundle install --retry=3 --jobs=4
-        # RAILS_ENV=test bundle exec rake parallel:create parallel:migrate
-        # RAILS_ENV=test bundle exec rake webdrivers:chromedriver:update
-        # RAILS_ENV=test bundle exec rake webdrivers:geckodriver:update
       displayName: 'before script'
 
-    - script: |
-        RAILS_ENV=test bundle exec rubocop
-        RAILS_ENV=test bundle exec rspec
-        RAILS_ENV=test bundle exec cucumber features/*.feature
-      displayName: 'script'
+    # - script: |
+    #     RAILS_ENV=test bundle exec rubocop
+    #     RAILS_ENV=test bundle exec rspec
+    #     RAILS_ENV=test bundle exec cucumber features/*.feature
+    #   displayName: 'script'
 
   - job: BuildAndPushImage
     dependsOn: TestApplication

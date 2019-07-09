@@ -48,9 +48,9 @@ jobs:
       displayName: 'before script'
 
     - script: |
-        bundle exec rubocop --fast-fail
-        bundle exec rspec --fail-fast
-        bundle exec cucumber --fail-fast features/*.feature
+        bundle exec rubocop
+        bundle exec rspec
+        bundle exec cucumber features/*.feature
       displayName: 'script'
 
   - job: BuildAndPushImage

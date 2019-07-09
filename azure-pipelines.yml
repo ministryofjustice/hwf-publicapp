@@ -19,7 +19,7 @@ pr:
       - feature/*
 
 variables:
-  application.name: 'hwf-public-app'
+  application.name: 'hwf-public'
   azure.subscription.endpoint: 'hmcts-pet'
   manual.branch.prefix: 'develop'
 

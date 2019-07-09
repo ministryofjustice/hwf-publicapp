@@ -48,9 +48,9 @@ jobs:
       displayName: 'before script'
 
     - script: |
-        bundle exec rubocop
-        bundle exec rspec
-        bundle exec cucumber features/*.feature
+        RAILS_ENV=test bundle exec rubocop
+        RAILS_ENV=test bundle exec rspec
+        RAILS_ENV=test bundle exec cucumber features/*.feature
       displayName: 'script'
 
   - job: BuildAndPushImage

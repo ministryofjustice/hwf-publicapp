@@ -31,7 +31,7 @@ jobs:
 
     - task: UseRubyVersion@0
       inputs:
-        versionSpec: '>= 2.5'
+        versionSpec: '= 2.5.5'
 
     - script: |
         gem install bundler -v 1.17.3
@@ -41,11 +41,11 @@ jobs:
         bundle install --retry=3 --jobs=4
       displayName: 'before script'
 
-    # - script: |
-    #     RAILS_ENV=test bundle exec rubocop
-    #     RAILS_ENV=test bundle exec rspec
-    #     RAILS_ENV=test bundle exec cucumber features/*.feature
-    #   displayName: 'script'
+    - script: |
+        bundle exec rubocop
+        bundle exec rspec
+        bundle exec cucumber features/*.feature
+      displayName: 'script'
 
   - job: BuildAndPushImage
     dependsOn: TestApplication

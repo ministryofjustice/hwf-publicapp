@@ -11,6 +11,9 @@ gem 'sentry-raven'
 gem 'virtus'
 gem 'zendesk_api'
 
+# Azure deployment so we need this
+gem 'azure_env_secrets', git: 'https://github.com/ministryofjustice/azure_env_secrets.git', tag: 'v0.1.3'
+
 gem 'govuk_elements_rails', '0.3.0'
 gem 'govuk_frontend_toolkit', '4.7.0'
 gem 'jquery-rails'

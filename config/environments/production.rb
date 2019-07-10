@@ -46,7 +46,7 @@ Rails.application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = ENV.fetch("LOG_LEVEL", 'info').to_sym
 
   # Send logs to STDOUT
   if ENV["RAILS_LOG_TO_STDOUT"].present?

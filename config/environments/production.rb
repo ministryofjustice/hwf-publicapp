@@ -48,6 +48,11 @@ Rails.application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  # Send logs to STDOUT
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    config.logger = Logger.new(STDOUT)
+  end
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

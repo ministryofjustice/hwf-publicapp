@@ -52,4 +52,5 @@ group :test do
   gem 'site_prism', '~> 2.9'
   gem 'timecop'
   gem 'webmock', require: false
+  gem 'rspec_junit_formatter', '~> 0.4.1'
 end

@@ -43,9 +43,15 @@ jobs:
 
     - script: |
         bundle exec rubocop
-        bundle exec rspec
+        bundle exec rspec --format documentation --format RspecJunitFormatter --out test-rspec.xml
         bundle exec cucumber features/*.feature
       displayName: 'script'
+
+    - task: PublishTestResults@2
+      condition: succeededOrFailed()
+      inputs:
+        testResultsFiles: '**/test-*.xml'
+        testRunTitle: 'Ruby tests'
 
   - job: BuildAndPushImage
     dependsOn: TestApplication

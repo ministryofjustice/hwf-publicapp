@@ -13,8 +13,6 @@ class FormNamePage < BasePage
     element :error_message, '.error-message', text: "Enter a valid form number or select 'I don't have a form'"
     element :invalid_link, 'a', text: 'You entered the help with fees form number. Enter the number on your court or tribunal form'
     element :invalid_message, '.error-message', text: 'You entered the help with fees form number. Enter the number on your court or tribunal form'
-    element :please_note, '.text', text: 'Please note'
-    element :timeout, '.text', text: 'If you don’t enter any information for more than 60 minutes,'
     element :form_name_unknown, '.block-label', text: 'I don’t have a form'
     element :find_form_name, 'p', text: 'You can usually find the form name at the top of the form'
     element :no_form, '.block-label', text: 'I don’t have a form'

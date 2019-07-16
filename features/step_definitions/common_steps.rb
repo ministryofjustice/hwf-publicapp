@@ -49,11 +49,6 @@ Then(/^I see step (\d+) of 20$/) do |step_number|
   expect(common_page.heading_secondary.text).to eq "Step #{step_number} of 20"
 end
 
-Then(/^I should see the please note copy$/) do
-  expect(common_page.block.count).to eq 2
-  expect(common_page.block[0].text).to eq 'Please note'
-end
-
 Then(/^I should not see the cancel application options$/) do
   expect(common_page).to_not have_restart_confirm
 end

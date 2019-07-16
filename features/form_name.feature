@@ -43,8 +43,3 @@ Feature: Form name page
       And I am on the form number page
       When I click on 'Applying for help with hearing fees'
       Then I should see more information about what to put in the form number field
-
-    Scenario: Displays please note timeout
-      Given probate is enabled
-      And I am on the form number page
-      Then I should see the please note timeout

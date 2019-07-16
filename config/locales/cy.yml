@@ -15,6 +15,9 @@ cy:
         children_number: Nifer y plant
       forms/fee:
         date_paid: Dyddiad y talwyd y ffi
+        day_date_paid: Dydd
+        month_date_paid: Mis
+        year_date_paid: Flwyddyn
       forms/form_name:
         identifier: Rhif ffurflen
       forms/help_request:
@@ -45,6 +48,11 @@ cy:
         deceased_name: Enw'r ymadawedig
       forms/savings_and_investment_extra:
         amount: Beth yw swm y cynilion a buddsoddiadau sydd gennych chi a'ch partner?
+      forms/dob:
+        day: Dydd
+        month: Mis
+        year: Flwyddyn
+
     errors:
       models:
         forms/applicant_address:

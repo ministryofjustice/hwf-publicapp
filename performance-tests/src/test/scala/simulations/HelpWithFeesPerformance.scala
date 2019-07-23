@@ -27,7 +27,7 @@ with HttpConfiguration
 
     .exec(http("Step One")
         .put("/questions/form_name?locale=en")
-        .formParam("form_name[et]", "1")
+        .formParam("form_name[identifier]", "1")
         .formParam("authenticity_token", session => {
               session("csrfCookie").as[String]
             })
@@ -132,7 +132,7 @@ with HttpConfiguration
         .formParam("authenticity_token", session => {
               session("csrfCookie").as[String]
             })
-        .formParam("claim/et[identifier]", "HFHEBCDHI")
+        .formParam("claim/default[number]", "false")
         .check(status.is(200)))
 
     //////  Step Thirteen  //////    
@@ -152,7 +152,9 @@ with HttpConfiguration
         .formParam("authenticity_token", session => {
               session("csrfCookie").as[String]
             })
-        .formParam("dob[date_of_birth]", "07/01/1955")
+        .formParam("dob[day]", "07")
+        .formParam("dob[month]", "01")
+        .formParam("dob[year]", "1955")
         .check(status.is(200)))
 
     //////  Step Fifteen  //////    

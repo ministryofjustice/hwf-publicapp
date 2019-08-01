@@ -20,11 +20,6 @@ When(/^I submit the form with a valid form name$/) do
   submit_valid_form_name
 end
 
-Then(/^I should see the please note timeout$/) do
-  expect(form_name_page.content).to have_please_note
-  expect(form_name_page.content).to have_timeout
-end
-
 When(/^I submit the form with a valid form number$/) do
   expect(form_name_page.content).to have_form_label
   form_name_page.submit_valid_form_number

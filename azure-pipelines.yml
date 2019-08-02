@@ -34,13 +34,15 @@ jobs:
 
     steps:
     - template: ./pipeline-steps/test-application.yaml
+    - template: ./pipeline-steps/publish-tests.yaml
 
 
   - job: BuildAndPushImage
     dependsOn: TestApplication
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
     pool:
-      name: hmcts-pet  # name of the pool to run this job in
+      name: hmcts-pet
+
     steps:
     - template: ./pipeline-steps/build.yaml
       parameters:
@@ -53,7 +55,8 @@ jobs:
     dependsOn: TestApplication
     condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/develop'), eq(variables['Build.Reason'], 'Manual'))
     pool:
-      name: hmcts-pet  # name of the pool to run this job in
+      name: hmcts-pet
+
     steps:
     - template: ./pipeline-steps/manual-build.yaml
       parameters:

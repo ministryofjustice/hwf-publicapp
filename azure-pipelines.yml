@@ -23,8 +23,11 @@ variables:
   azure.subscription.endpoint: 'hmcts-pet'
   manual.branch.prefix: 'develop'
 
+
 jobs:
+
   - job: TestApplication
+
     pool:
       vmImage: 'Ubuntu-16.04'
 
@@ -38,6 +41,7 @@ jobs:
 
 
   - job: BuildAndPushImage
+
     dependsOn: TestApplication
     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
     pool:
@@ -52,6 +56,7 @@ jobs:
 
 
   - job: ManualBuildAndPushImage
+  
     dependsOn: TestApplication
     condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/develop'), eq(variables['Build.Reason'], 'Manual'))
     pool:

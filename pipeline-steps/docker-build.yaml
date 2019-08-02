@@ -12,6 +12,12 @@ steps:
   displayName: 'Get Docker Tag'
   name: 'getDockerTag'
 
+- bash: |
+    buildDate=$(date +"%Y-%m-%d %T")
+    echo "##vso[task.setvariable variable=Build_DT;isOutput=true]${buildDate}"
+  displayName: 'Get Build Date and Time'
+  name: 'getBuildDateTime'
+
 - task: Docker@1
   displayName: login
   inputs:
@@ -23,7 +29,7 @@ steps:
   displayName: 'Build an image'
   inputs:
     imageName: '${{ parameters.azureContainerRegistry }}/${{ parameters.applicationName }}:$(getDockerTag.DOCKER_TAG)'
-    arguments: '--build-arg APPVERSION=$(getDockerTag.DOCKER_TAG) --build-arg APP_BUILD_TAG=$(Build.SourceBranchName)-$(Build.SourceVersion) --build-arg APP_GIT_COMMIT=$(Build.SourceVersion)'
+    arguments: '--build-arg APPVERSION=$(getDockerTag.DOCKER_TAG) --build-arg "APP_BUILD_DATE=$(getBuildDateTime.Build_DT)" --build-arg APP_BUILD_TAG=$(Build.SourceBranchName)-$(Build.SourceVersion) --build-arg APP_GIT_COMMIT=$(Build.SourceVersion)'
       
 - task: Docker@1
   displayName: 'Push an image'

@@ -44,7 +44,7 @@ jobs:
       name: hmcts-pet
 
     steps:
-    - template: ./pipeline-steps/build.yaml
+    - template: ./pipeline-steps/docker-build.yaml
       parameters:
         azureContainerRegistry: $(azure.container.registry)
         azureSubscriptionEndpoint: $(azure.subscription.endpoint)
@@ -58,7 +58,7 @@ jobs:
       name: hmcts-pet
 
     steps:
-    - template: ./pipeline-steps/manual-build.yaml
+    - template: ./pipeline-steps/manual-docker-build.yaml
       parameters:
         azureContainerRegistry: $(azure.container.registry)
         azureSubscriptionEndpoint: $(azure.subscription.endpoint)

@@ -36,7 +36,7 @@
               =t('help_requests.survey_nudge.text_html', link: link_to(t('help_requests.survey_nudge.link'), Rails.application.config.feedback_url))
               =t('help_requests.layout_nudge.text_html', link: link_to(t('help_requests.layout_nudge.link'), new_help_request_path))
     .container
-      section#content.cf
+      main#content.cf
         - flash.each do |key, value|
           .alert class="alert-#{key}"
             | #{value}

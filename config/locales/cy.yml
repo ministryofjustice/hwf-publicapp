@@ -780,3 +780,5 @@ cy:
             - li: incwm, yn cynnwys cyflog
             - li: cynilion a buddsoddiadau
             - li: incwm, cynilion a buddsoddiadau eich partner - os oes gennych un
+  maintenance:
+    message: 'Hysbysiad ymlaen llaw: Ni fydd y gwasanaeth hwn ar gael ddydd Mercher y 4ydd o Fedi 2019 o 6am tan 11am gan y byddwn yn gwneud newidiadau hanfodol iddo.'

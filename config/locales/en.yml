@@ -784,3 +784,5 @@ en:
             - li: income, including wages
             - li: savings and investments
             - li: partner's income, savings and investments - if you have one
+  maintenance:
+    message: 'Advance notice: This service will be unavailable on Wednesday 4 September 2019 from 6am until 11am while we make essential upgrades.'

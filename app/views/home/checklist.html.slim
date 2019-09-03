@@ -2,6 +2,8 @@
   = t('.title')
   = ' - '
 
+= render "shared/maintenance_notice" if Settings.maintenance.show.present?
+
 h1.heading-large =t('.heading')
 
 - t('.sections').each do |section|

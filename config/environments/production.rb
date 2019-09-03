@@ -46,7 +46,12 @@ Rails.application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = ENV.fetch("LOG_LEVEL", 'info').to_sym
+
+  # Send logs to STDOUT
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    config.logger = Logger.new(STDOUT)
+  end
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -76,4 +81,8 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  Raven.configure do |config|
+    config.ssl_verification = Settings.sentry.ssl_verification == true
+  end
 end

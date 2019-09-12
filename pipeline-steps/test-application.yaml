@@ -17,12 +17,12 @@ steps:
   displayName: 'bundle install'
 
 - script: |
-    npm install
+    npm install --production
   displayName: 'npm install'
 
 - script: |
-    bundle exec rubocop
-    bundle exec rspec --format documentation --format RspecJunitFormatter --out test-rspec.xml
-    bundle exec cucumber features/*.feature
+    bundle exec rubocop --fail-fast
+    bundle exec rspec --fail-fast --format documentation --format RspecJunitFormatter --out test-rspec.xml
+    bundle exec cucumber features/*.feature --fail-fast
   displayName: 'tests'
 

@@ -1,4 +1,4 @@
-FROM employmenttribunal.azurecr.io/ruby25-onbuild:0.2
+FROM employmenttribunal.azurecr.io/ruby25-nodejs-onbuild:0.2
 
 # Adding argument support for ping.json
 ARG APPVERSION=unknown
@@ -23,7 +23,6 @@ RUN apt-get update -q && \
 ENV UNICORN_PORT 3000
 EXPOSE $UNICORN_PORT
 
-RUN bash -c "npm install --production"
 RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
 
 # running app as a servive

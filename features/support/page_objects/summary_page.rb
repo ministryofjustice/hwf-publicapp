@@ -9,7 +9,7 @@ class SummaryPage < BasePage
     element :declaration_of_truth, '.text', text: 'Declaration and statement of truth'
     section :summary, 'tbody' do
       sections :question, 'tr' do
-        element :page, 'th'
+        element :page, 'td'
         element :answer, 'td'
         element :change, '.right > a', text: 'Change'
       end

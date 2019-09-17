@@ -6,11 +6,12 @@
 
 - form_name = @online_application.form_name ? @online_application.form_name : t('confirmation.default_form_name')
 
+p.step-info.util_mt-large.util_mb-0
+  =t('confirmation.done.breadcrumb')
+h1.heading-large.util_mt-0
+  =t('confirmation.done.text')
+
 .text-panel
-  h1.heading-large
-    span.heading-secondary =t('confirmation.done.breadcrumb')
-    span.visuallyhidden
-      | :&nbsp;
   h2.heading-medium.util_mt-0.util_mb-medium =t('confirmation.done.heading', form_name: form_name, reference: @result['message'])
 
   .post.util_mb-large

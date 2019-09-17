@@ -3,6 +3,7 @@ Given(/^I am on the confirmation page with probate enabled$/) do
   confirmation_page.to_confirmation_page
   expect(confirmation_page).to be_displayed
   expect(confirmation_page.content).to have_step_info
+  expect(confirmation_page.content).to have_header
   expect(confirmation_page.content).to have_confirmation_header
 end
 

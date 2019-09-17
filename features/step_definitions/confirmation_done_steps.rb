@@ -3,7 +3,8 @@ Given(/^I am on the confirmation done page with probate enabled$/) do
   confirmation_done_page.to_confirmation_done_page
   expect(confirmation_done_page).to be_displayed
   expect(confirmation_done_page.content).to have_step_info
-  expect(confirmation_done_page.content).to have_confirmation_done_header
+  expect(confirmation_done_page.content).to have_header
+  expect(confirmation_done_page.content).to have_send_your_form
 end
 
 When(/^I click the finish application button$/) do

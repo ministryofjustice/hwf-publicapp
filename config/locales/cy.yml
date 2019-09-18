@@ -199,6 +199,7 @@ cy:
         one_html: Rhaid i chi ysgrifennu'r cyfeirnod hwn <strong>%{reference}</strong> ar eich ffurflen <strong>%{form_name}</strong>.
         three: Gallwch chi hefyd gadw neu argraffu'r dudalen hon a'i hatodi i'ch ffurflen %{form_name}.
         two: Ysgrifennwch y cyfeirnod yn y maes ‘cyfeirnod HWF’ os oes un. Os nad oes un, dylech chi ei ysgrifennu lle bynnag y mae lle ar eich ffurflen %{form_name}.
+      text: Y cyfeirnod i’w roi ar eich ffurflen hawlio
       title: Nid yw'ch cais wedi'i orffen eto
     done:
       breadcrumb: Cam 20 o 20
@@ -210,6 +211,7 @@ cy:
           one: Bydd eich cais yn cael ei asesu gan staff y llys neu dribiwnlys. Fel arfer ni fydd hyn yn cymryd mwy na 21 diwrnod.
           three: Os bydd eich cais yn llwyddiannus, byddwch chi'n clywed yn uniongyrchol gan y llys neu dribiwnlys sy'n delio â'ch achos.
           two: Byddwch chi'n clywed oddi wrth y llys neu dribiwnlys os nad yw'ch cais yn llwyddiannus neu os oes angen i chi roi gwybodaeth ychwanegol iddynt.
+      text: Anfonwch eich ffurflen hawlio
       title: Anfonwch eich ffurflen i gwblhau'r broses
     et:
       address:

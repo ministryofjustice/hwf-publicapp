@@ -2,7 +2,8 @@ class ConfirmationPage < BasePage
   set_url '/confirmation'
 
   section :content, '#content' do
-    element :step_info, '.heading-large', text: 'Step 19 of 20'
+    element :step_info, '.step-info', text: 'Step 19 of 20'
+    element :header, 'h1', text: 'Reference number to add to your claim form'
     element :confirmation_header, 'h2', text: 'Your application for help with fees is not finished yet'
     section :list, '.list' do
       element :one, 'li', text: 'You must write this reference number HWF-000-000 on your C100 form.'

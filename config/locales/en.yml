@@ -744,6 +744,7 @@ en:
           - li: How we check that the personal data we hold is accurate and up-to-date;
           - li: How to make a complaint.
         - p: 'For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: <a href="mailto:data.compliance@justice.gov.uk">data.compliance@justice.gov.uk</a>'
+        - p: 'Refer to <a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external">GOV.UK privacy policy</a> here.'
       - title: Complaints
         parts:
         - p: 'When we ask you for information, we will keep to the law. If you consider that your information has been handled incorrectly by MoJ or HMCTS, you can contact the Information Commissioner for independent advice about data protection. You can contact the Information Commissioner here:'

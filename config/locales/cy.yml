@@ -740,6 +740,7 @@ cy:
           - li: Sut rydym yn gwirio bod y data personol sydd gennym yn gywir ac yn gyfredol;
           - li: Sut i wneud cwyn
         - p: 'I gael rhagor o wybodaeth am y materion uchod neu ar gyfer unrhyw ymholiadau eraill, cysylltwch â’n Swyddog Diogelu Data drwy e-bost yn: <a href="mailto:data.compliance@justice.gov.uk">data.compliance@justice.gov.uk</a>'
+        - p: '<a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external">Gweler Polisi Preifatrwydd GOV.UK yma</a>'
       - title: Cwynion
         parts:
         - p: 'Pan ofynnwn i chi am wybodaeth, byddwn yn cadw at y gyfraith. Os ydych yn credu bod eich gwybodaeth wedi cael ei thrin yn anghywir gan MoJ neu GLlTEM, gallwch gysylltu â’r Comisiynydd Gwybodaeth am gyngor annibynnol ar ddiogelu data. Manylion cyswllt y Comisiynydd Gwybodaeth yw:'

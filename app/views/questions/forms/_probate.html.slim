@@ -3,7 +3,6 @@
   - if @form.errors.any?
     span.error-message#kase = @form.errors[:kase].join(' ')
   fieldset
-    legend.visuallyhidden= t('text', scope: @form.i18n_scope)
     label.block-label for='probate_kase_false'
       = f.radio_button :kase, 'false'
       = t('probate_case_false', scope: @form.i18n_scope)

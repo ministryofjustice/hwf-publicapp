@@ -348,7 +348,6 @@ cy:
         section_2: Os yw'ch achos yn mynd ymlaen ar hyn o bryd, bydd y cyfeirnod ar lythyrau oddi wrth y llys neu dribiwnlys.
         section_3: Rhowch 'nac oes' yn ateb i'r cwestiwn hwn os nad oes gennych chi gyfeirnod (efallai am nad yw'ch achos wedi dechrau eto).
         summary: Help gyda rhif achos
-      hidden_legend: Oes gennych chi rif achos, rhif hawliad neu rif 'hysbysiad talu'?
       identifier: Y rhif achos, hawliad neu 'hysbysiad talu' yw
       number_false: Nac oes
       number_true: Oes

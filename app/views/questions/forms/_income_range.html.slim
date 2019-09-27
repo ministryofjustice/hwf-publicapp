@@ -3,7 +3,6 @@
 - max_threshold = number_to_currency(income_thresholds.max_threshold, precision: 0, unit: '£')
 
 fieldset
-  legend.visuallyhidden = t("details.kinds_list#{i18n_status_refund_suffix}", scope: @form.i18n_scope)
   .form-group class=('error' if @form.errors.any?)
     = f.hidden_field :choice, value: nil
     - if @form.errors.any?

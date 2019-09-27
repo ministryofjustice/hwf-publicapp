@@ -2,7 +2,6 @@
   - if @form.errors[:children].any?
     span.error-message#dependents = @form.errors[:children].join(' ')
   fieldset
-    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
     label.block-label for='dependent_children_false'
       = f.radio_button :children, 'false'
       = t('children_false', scope: @form.i18n_scope)

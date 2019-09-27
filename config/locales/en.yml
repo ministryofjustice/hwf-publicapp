@@ -352,7 +352,6 @@ en:
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
         section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet).
         summary: Help with case number
-      hidden_legend: Do you have a case, claim or ‘notice to pay’ number?
       identifier: The case, claim or ‘notice to pay’ number is
       number_false: 'No'
       number_true: 'Yes'

@@ -2,7 +2,6 @@
   p = t('details', scope: @form.i18n_scope)
 
 fieldset
-  legend.visuallyhidden = t('text', scope: @form.i18n_scope)
   .form-group.optional.util_mb-0 class=('error' if @form.errors[:email].any?)
     - if @form.errors[:email].any?
       span.error-message#email = @form.errors[:email].join(' ')

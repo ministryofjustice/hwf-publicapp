@@ -2,7 +2,6 @@
 = hidden_field_tag 'income_kind[partner][]', nil
 
 fieldset
-  legend.visuallyhidden= t("details#{i18n_status_refund_suffix}", scope: @form.i18n_scope)
   .grid-row
     .column-half
       .form-group.income-sources class=('error' if @form.errors[:applicant].any?)

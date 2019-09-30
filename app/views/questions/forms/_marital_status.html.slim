@@ -3,7 +3,6 @@
   - if @form.errors.any?
     span.error-message#married = @form.errors[:married].join(' ')
   fieldset
-    legend.visuallyhidden =t('text', scope: @form.i18n_scope)
     label.block-label for="marital_status_married_false"
       = f.radio_button :married, 'false'
       = t('married_false', scope: @form.i18n_scope)

@@ -1,5 +1,4 @@
 fieldset
-  legend.visuallyhidden = t('text', scope: @form.i18n_scope)
   .form-group class=('error' if @form.errors[:address].any?)
     = f.label :address, class: 'form-label'
     - if @form.errors[:address].any?

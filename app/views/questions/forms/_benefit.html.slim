@@ -3,7 +3,6 @@
   - if @form.errors.any?
     span.error-message#on_benefits = @form.errors[:on_benefits].join(' ')
   fieldset
-    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
     label.block-label for='benefit_on_benefits_false'
       = f.radio_button :on_benefits, 'false'
       = t('on_benefits_false', scope: @form.i18n_scope)

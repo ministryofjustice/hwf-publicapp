@@ -3,7 +3,6 @@
   - if @form.errors.any?
     span.error-message#choice = @form.errors[:choice].join(' ')
   fieldset
-    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
     label.block-label for='savings_and_investment_choice_less'
       = f.radio_button :choice, :less
       = t('less', scope: @form.i18n_scope)

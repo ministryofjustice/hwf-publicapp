@@ -3,7 +3,6 @@
   - if @form.errors[:paid].any?
     span.error-message#paid = @form.errors[:paid].join(' ')
   fieldset
-    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
     label.block-label for='fee_paid_false'
       = f.radio_button :paid, 'false'
       = t('fee_paid_false', scope: @form.i18n_scope)

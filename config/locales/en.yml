@@ -397,6 +397,7 @@ en:
     fee:
       breadcrumb: Step 2 of 20
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
+      date_paid: Date fee paid
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
       hint_html: For example, 04 10 2018

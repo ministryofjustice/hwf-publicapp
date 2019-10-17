@@ -7,7 +7,7 @@ end
 
 gem 'dotenv-rails', groups: [:development, :test] # this has to be here because of load order
 
-gem 'rails', '~> 4.2.11'
+gem 'rails', '5.2.3'
 
 gem 'config'
 gem 'date_validator'
@@ -19,18 +19,15 @@ gem 'zendesk_api'
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'
 
-gem 'govuk_elements_rails', '0.3.0'
-gem 'govuk_frontend_toolkit', '4.7.0'
 gem 'jquery-rails'
-gem 'moj_template', '~> 0.23.2'
-gem 'nokogiri', '~> 1.10.5'
+gem 'nokogiri'
 gem 'sass-rails'
 gem 'slim-rails'
 gem 'uglifier', '3.0.0'
 gem 'unicorn'
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'rubocop', '~>0.60', require: false
@@ -53,6 +50,7 @@ group :test do
   gem 'geckodriver-helper', '~> 0.23.0'
   gem 'poltergeist', '1.15.0'
   gem 'rspec_junit_formatter', '~> 0.4.1'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver', '~> 3.141'
   gem 'shoulda-matchers'
   gem 'site_prism', '~> 2.9'

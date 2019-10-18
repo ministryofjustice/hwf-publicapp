@@ -9,6 +9,7 @@ gem 'dotenv-rails', groups: [:development, :test] # this has to be here because 
 
 gem 'rails', '5.2.3'
 
+gem 'bootsnap', require: false
 gem 'config'
 gem 'date_validator'
 gem 'rest-client'

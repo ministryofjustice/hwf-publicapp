@@ -61,6 +61,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     backports (3.15.0)
     bindex (0.8.1)
+    bootsnap (1.4.5)
+      msgpack (~> 1.0)
     builder (3.2.3)
     capybara (2.18.0)
       addressable
@@ -207,6 +209,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.12.2)
+    msgpack (1.3.1)
     multi_json (1.14.1)
     multi_test (0.1.2)
     multipart-post (2.1.1)
@@ -384,6 +387,7 @@ PLATFORMS
 
 DEPENDENCIES
   azure_env_secrets!
+  bootsnap
   capybara
   capybara-screenshot
   chromedriver-helper (~> 1.1)

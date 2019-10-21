@@ -10,7 +10,7 @@ module Forms
         less_than: 16000,
         greater_than_or_equal_to: 3000
       },
-      if: 'over_61? == false'
+      if: Proc.new { |c| c.over_61 == false }
 
     private
 

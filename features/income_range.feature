@@ -5,7 +5,7 @@ Feature: Income range page
     When I am a single person with no children on income range page
     Then I should see the income list on step nine page:
       | income name                                               |
-      | Wages                                                     |
+      | Wages before tax and National Insurance are taken off     |
       | Working Tax Credit                                        |
 
   Scenario: Income range for single with no children
@@ -33,8 +33,8 @@ Feature: Income range page
     Given probate is enabled
     And I am a single person with no children on income range page
     When I submit less than
-    Then I am taken to step 11 - Are you paying a fee for a probate case? 
-  
+    Then I am taken to step 11 - Are you paying a fee for a probate case?
+
   Scenario: Selecting the less than range - probate disabled
     Given probate is disabled
     And I am a single person with no children on income range page
@@ -52,7 +52,7 @@ Feature: Income range page
     And I am a single person with no children on income range page
     When I submit more than
     Then I am taken to step 11 - Are you paying a fee for a probate case?
-    
+
   Scenario: Selecting the more than range - probate disabled
     Given probate is disabled
     Given I am a single person with no children on income range page

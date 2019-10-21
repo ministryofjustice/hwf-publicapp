@@ -19,7 +19,7 @@ Feature: Income amount page
     When I am a married person on income amount page
     And I should see the income list on step ten page:
       | income name                                               |
-      | Wages                                                     |
+      | Wages before tax and National Insurance are taken off     |
 
   Scenario: Displays error message
     Given probate is enabled

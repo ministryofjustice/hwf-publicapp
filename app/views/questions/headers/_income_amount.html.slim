@@ -3,7 +3,7 @@ p = t("details.kinds_list#{i18n_status_refund_suffix}", scope: @form.i18n_scope)
 
 ul.list.list-bullet
   - Views::IncomeKinds.new(session).list.each do |kind|
-    li =kind
+    li = kinds_alternative_translation(kind)
 
 - if @online_application.refund?
   p = t('details.average_note_refund', scope: @form.i18n_scope)

@@ -31,7 +31,7 @@ class QuestionsController < ApplicationController
   end
 
   def form_params
-    params.require(@form.id).permit(*@form.permitted_attributes)
+    params.require(@form.id).permit(*@form.permitted_attributes).to_h
   end
 
   def process_form_and_online_application

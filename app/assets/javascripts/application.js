@@ -16,6 +16,7 @@
 
 //= require details.polyfill.iecompatible
 //= require is-nan.polyfill
+// = require govuk-frontend/govuk/all
 
 //= require_tree ./modules
 

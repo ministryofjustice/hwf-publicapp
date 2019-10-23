@@ -40,6 +40,7 @@ group :development do
   gem 'launchy'
   gem 'spring'
   gem 'web-console'
+  gem 'listen'
 end
 
 group :test do

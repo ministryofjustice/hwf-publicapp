@@ -26,7 +26,7 @@ h1.heading-large.util_mt-0
 
 = form_tag(done_confirmation_path, method: :get, class: 'util_mb-medium util_mt-medium') do
   = hidden_field_tag :locale, params['locale']
-  = submit_tag(t('continue', scope: 'confirmation.default'), class: 'button', role: 'button')
+  = submit_tag(t('continue', scope: 'confirmation.default'), class: 'govuk-button', role: 'button')
 
 .js-only.no-print
   p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')

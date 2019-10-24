@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 def find_button_by_label(label_text)
-  find(:xpath, "//form//input[@class='button' and @value='#{label_text}']")
+  find(:xpath, "//form//input[@class='govuk-button' and @value='#{label_text}']")
 end
 
 def find_continue_button

@@ -56,7 +56,7 @@ RSpec.feature 'As a user' do
 
     context 'Welsh' do
       scenario 'I expect to "What happens next?" instructions' do
-        within(:xpath, ".//div[@class='language-picker']") do
+        within(:xpath, ".//div[@class='govuk-phase-banner']") do
           click_link 'Cymraeg'
         end
 

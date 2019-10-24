@@ -61,16 +61,6 @@
     </div>
   </header>
 
-<!--           .phase-banner-inner
-          .language-picker
-            =link_to t('switch.language'), locale: t('switch.locale')
-          p
-            strong.phase-tag= Rails.application.config.phase.upcase
-            span
-              =t('help_requests.survey_nudge.text_html', link: link_to(t('help_requests.survey_nudge.link'), Rails.application.config.feedback_url))
-              =t('help_requests.layout_nudge.text_html', link: link_to(t('help_requests.layout_nudge.link'), new_help_request_path))
- -->
-
   <div class="govuk-width-container">
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
@@ -85,7 +75,19 @@
       </p>
     </div>
     <main class="govuk-main-wrapper " id="main-content" role="main">
-      <h1 class="govuk-heading-xl">Default page template</h1>
+        <% if content_for?(:content_override) %>
+          <%= yield(:content_override) %>
+        <% else %>
+        <%= yield :before_content %>
+
+        <div id="wrapper" class="group">
+          <section id="content" role="main">
+            <%= content_for?(:content) ? yield(:content) : yield %>
+          </section>
+        </div>
+        <% end %>
+
+
     </main>
   </div>
 

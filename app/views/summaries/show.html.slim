@@ -183,10 +183,10 @@ table.summary
 - if @summary.income_validation_fails?
   .form-group.error.util_mt-small
     span.util_mt-small.error-message =t('summary.invalid_footer')
-    p = link_to 'Continue', question_path(:dependent), class: 'button', id: 'continue-button'
+    p = link_to 'Continue', question_path(:dependent), class: 'govuk-button', id: 'continue-button'
 - else
   .text
     h2.heading-medium = t('heading', scope: 'summary.truth')
     p = t('statement', scope: 'summary.truth')
     = form_tag(submission_path, method: :post, class: 'util_mb-medium util_mt-medium') do
-      = submit_tag(t('button', scope: 'summary.truth'), class: 'button', role: 'button')
+      = submit_tag(t('button', scope: 'summary.truth'), class: 'govuk-button', role: 'button')

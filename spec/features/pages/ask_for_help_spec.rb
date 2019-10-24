@@ -10,14 +10,14 @@ RSpec.feature 'As a user' do
       click_button "Continue"
       expect(page).to have_text "There is a problem"
 
-      within(:xpath, ".//div[@class='language-picker']") do
+      within(:xpath, ".//div[@class='govuk-phase-banner']") do
         click_link 'Cymraeg'
       end
       expect(page).to have_text "Gofynnwch am help technegol"
       click_button "Parhau"
       expect(page).to have_text "Mae problem wedi codi"
 
-      within(:xpath, ".//div[@class='language-picker']") do
+      within(:xpath, ".//div[@class='govuk-phase-banner']") do
         click_link 'English'
       end
     end

@@ -24,24 +24,13 @@
     iframe src="https://www.googletagmanager.com/ns.html?id=#{Settings.analytics.id}" height="0" width="0" style="display:none;visibility:hidden"
 
 - content_for :content_override
-  #wrapper.group
-    .container
-      .phase-banner
-        .phase-banner-inner
-          .language-picker
-            =link_to t('switch.language'), locale: t('switch.locale')
-          p
-            strong.phase-tag= Rails.application.config.phase.upcase
-            span
-              =t('help_requests.survey_nudge.text_html', link: link_to(t('help_requests.survey_nudge.link'), Rails.application.config.feedback_url))
-              =t('help_requests.layout_nudge.text_html', link: link_to(t('help_requests.layout_nudge.link'), new_help_request_path))
-    .container
-      main#content.cf
-        - flash.each do |key, value|
-          .alert class="alert-#{key}"
-            | #{value}
+  .container
+    main#content.cf
+      - flash.each do |key, value|
+        .alert class="alert-#{key}"
+          | #{value}
 
-        = yield
+      = yield
 
 - content_for :javascripts
   = javascript_include_tag('application.js')

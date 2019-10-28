@@ -393,6 +393,7 @@ cy:
     fee:
       breadcrumb: Cam 2 o 20
       details: Gallwch chi wneud cais am ad-dalu ffi a dalwyd yn y 3 mis diwethaf. Os ydych chi'n gwneud cais am ad-daliad, cofiwch ateb yr holl gwestiynau am eich amgylchiadau pan oeddech chi wedi talu'r ffi.
+      date_paid: Dyddiad y talwyd y ffi
       fee_paid_false: Naddo
       fee_paid_true: Do
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>

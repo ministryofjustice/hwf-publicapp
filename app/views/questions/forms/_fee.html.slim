@@ -13,7 +13,8 @@
       .form-group class=('error' if @form.errors[:date_paid].any?)
         - if @form.errors[:date_paid].any?
           span.error-message#date_paid = @form.errors[:date_paid].join(' ')
-        = f.label :date_paid, class: 'form-label'
+        legend = t('date_paid', scope: @form.i18n_scope)
+
         .hint = t('hint_html', scope: @form.i18n_scope)
         .form-date
           .form-group.form-group-day

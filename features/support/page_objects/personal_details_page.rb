@@ -4,12 +4,12 @@ class PersonalDetailsPage < BasePage
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 15 of 20'
     element :personal_details_header, 'h1', text: 'What is your full name?'
-    element :title_label, '.form-label', text: 'Title'
+    element :title_label, '.govuk-label', text: 'Title'
     element :optional_hint, '.hint', text: 'Optional'
     element :title, '#personal_detail_title'
-    element :first_name_label, '.form-label', text: 'First name'
+    element :first_name_label, '.govuk-label', text: 'First name'
     element :first_name, '#personal_detail_first_name'
-    element :last_name_label, '.form-label', text: 'Last name'
+    element :last_name_label, '.govuk-label', text: 'Last name'
     element :last_name, '#personal_detail_last_name'
   end
 

@@ -1,7 +1,7 @@
 .form-group  class=('error' if @form.errors.any?)
-  = f.label :identifier, class: 'form-label'
+  = f.label :identifier, class: 'govuk-label'
   - if @form.errors[:identifier].any?
-    span.error-message#identifier = @form.errors[:identifier].join(' ')
+    span.govuk-error-message#identifier = @form.errors[:identifier].join(' ')
   = f.text_field :identifier, class: 'form-control'
 
 .form-group

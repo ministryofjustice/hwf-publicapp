@@ -2,9 +2,9 @@
   = t('title', scope: @form.i18n_scope)
   = ' - '
 
-p.step-info.util_mt-large.util_mb-0
+p.govuk-caption-l
   = t('breadcrumb', scope: @form.i18n_scope)
-h1.heading-large.util_mt-0
+h1.govuk-heading-l
   = t(@title_view.i18n_title, scope: @form.i18n_scope)
 
 = render('shared/error_block', form: @form) if @form.errors.any?

@@ -8,18 +8,18 @@
 
 p.step-info.util_mt-large.util_mb-0
   =t('confirmation.done.breadcrumb')
-h1.heading-large.util_mt-0
+h1.govuk-heading-l
   =t('confirmation.done.text')
 
 .text-panel
-  h2.heading-medium.util_mt-0.util_mb-medium =t('confirmation.done.heading', form_name: form_name, reference: @result['message'])
+  h2.govuk-heading-m.util_mt-0.util_mb-medium =t('confirmation.done.heading', form_name: form_name, reference: @result['message'])
 
   .post.util_mb-large
     p =t('confirmation.done.instructions')
 
 .steps-panel
-  h2.heading-medium.util_mt-0 =t('confirmation.done.next.heading')
-  ol.list.list-number.next-steps.util_mb-0
+  h2.govuk-heading-m =t('confirmation.done.next.heading')
+  ol.list.list-number.next-steps
     li
       =t('confirmation.done.next.steps.one')
     li =t('confirmation.done.next.steps.two')

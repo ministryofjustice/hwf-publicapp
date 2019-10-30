@@ -9,7 +9,7 @@ fieldset
           h3.heading-small =t('applicant_income', scope: @form.i18n_scope)
 
         - if @form.errors[:applicant].any?
-          span.error-message#applicant = @form.errors[:applicant].join(' ')
+          span.govuk-error-message#applicant = @form.errors[:applicant].join(' ')
 
         - @form.class.allowed_kinds.each do |kind|
           label.block-label for='income_kind_applicant_#{kind}'
@@ -22,7 +22,7 @@ fieldset
           h3.heading-small =t('partner_income', scope: @form.i18n_scope)
 
           - if @form.errors[:partner].any?
-            span.error-message#partner = @form.errors[:partner].join(' ')
+            span.govuk-error-message#partner = @form.errors[:partner].join(' ')
 
           - @form.class.allowed_kinds.each do |kind|
             label.block-label for='income_kind_partner_#{kind}'

@@ -20,10 +20,7 @@ gem 'zendesk_api'
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'
 
-# gem 'govuk_elements_rails', '0.3.0'
-# gem 'govuk_frontend_toolkit', '4.7.0'
 gem 'jquery-rails'
-# gem 'moj_template', '~> 0.23.2'
 gem 'nokogiri'
 gem 'sass-rails'
 gem 'slim-rails'

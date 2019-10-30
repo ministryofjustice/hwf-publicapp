@@ -15,18 +15,18 @@ p =t('help_requests.description.line_2')
 = form_for @form, as: @form.id, url: help_request_path do |f|
   fieldset
     .form-group class=('error' if @form.errors[:name].any?)
-      = f.label :name, class: 'form-label'
-      span.error-message#name = @form.errors[:name].join(' ') if @form.errors[:name].any?
+      = f.label :name, class: 'govuk-label'
+      span.govuk-error-message#name = @form.errors[:name].join(' ') if @form.errors[:name].any?
       = f.text_field :name, class: 'form-control'
 
     .form-group class=('error' if @form.errors[:email].any?)
-      = f.label :email, class: 'form-label'
-      span.error-message#email = @form.errors[:email].join(' ') if @form.errors[:email].any?
+      = f.label :email, class: 'govuk-label'
+      span.govuk-error-message#email = @form.errors[:email].join(' ') if @form.errors[:email].any?
       = f.text_field :email, class: 'form-control'
 
     .form-group class=('error' if @form.errors[:description].any?)
-      = f.label :description, class: 'form-label'
-      span.error-message#description = @form.errors[:description].join(' ') if @form.errors[:description].any?
+      = f.label :description, class: 'govuk-label'
+      span.govuk-error-message#description = @form.errors[:description].join(' ') if @form.errors[:description].any?
       = f.text_area :description, class: 'form-control', rows: 6
 
 

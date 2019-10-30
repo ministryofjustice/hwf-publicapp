@@ -19,7 +19,7 @@ class FeePage < BasePage
     element :fee_day_date_paid, '#fee_day_date_paid'
     element :fee_month_date_paid, '#fee_month_date_paid'
     element :fee_year_date_paid, '#fee_year_date_paid'
-    element :date_fee_paid, '.form-label', text: 'Date fee paid'
+    element :date_fee_paid, '.govuk-label', text: 'Date fee paid'
   end
 
   def to_fee_page

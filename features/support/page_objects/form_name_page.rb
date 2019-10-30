@@ -6,7 +6,7 @@ class FormNamePage < BasePage
     element :form_name_header, 'h1', text: 'What number is on your court or tribunal form?'
     element :probate_warning_message, '#probate-warning', text: 'Help with Fees is no longer available for probate applications.'
     element :probate_link, 'a', text: 'Find further details and apply for probate.'
-    element :form_label, '.form-label', text: 'Form number'
+    element :form_label, '.govuk-label', text: 'Form number'
     element :form_name, '#form_name_identifier'
     element :enter_court_hint, '.text', text: 'You\'ll find a number at the bottom of paper forms, for example C100 or ADM1A.'
     element :error_link, 'a', text: "Enter a valid form number or select 'I don't have a form'"

@@ -10,15 +10,23 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// (jquery served as part of moj_template)
 
-//= require jquery_ujs
+// = require jquery
+// = require jquery_ujs
 
-//= require details.polyfill.iecompatible
-//= require is-nan.polyfill
+// = require details.polyfill.iecompatible
+// = require is-nan.polyfill
 // = require govuk-frontend/govuk/all
 
-//= require_tree ./modules
+// = require ./modules/module_loader
+// = require ./modules/form-name
+// = require ./modules/income-sources
+// = require ./modules/print-page
+// = require ./modules/restart-application
+// = require ./modules/selection-buttons
+// = require ./modules/show-hide
+
 
 // overwrite annoying console message module
-moj.Modules.devs = {};
+// moj.Modules.devs = {};
+

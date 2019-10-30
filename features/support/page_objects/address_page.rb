@@ -4,9 +4,9 @@ class AddressPage < BasePage
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 16 of 20'
     element :address_header, 'h1', text: 'What is your address?'
-    element :address_label, '.form-label', text: 'Address'
+    element :address_label, '.govuk-label', text: 'Address'
     element :address, '#applicant_address_address'
-    element :postcode_label, '.form-label', text: 'Postcode'
+    element :postcode_label, '.govuk-label', text: 'Postcode'
     element :postcode, '#applicant_address_postcode'
   end
 

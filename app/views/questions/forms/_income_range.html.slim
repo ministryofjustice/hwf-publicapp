@@ -6,7 +6,7 @@ fieldset
   .form-group class=('error' if @form.errors.any?)
     = f.hidden_field :choice, value: nil
     - if @form.errors.any?
-      span.error-message#choice = @form.errors[:choice].join(' ')
+      span.govuk-error-message#choice = @form.errors[:choice].join(' ')
     label.block-label for='income_range_choice_less'
       = f.radio_button :choice, :less
       = t('less', scope: [@form.i18n_scope, 'range'], min_threshold: min_threshold)

@@ -4,7 +4,7 @@ class ContactPage < BasePage
   section :content, '#content' do
     element :step_info, '.step-info', text: 'Step 17 of 20'
     element :email_header, 'h1', text: 'What\'s your email address?'
-    element :email_label, '.form-label', text: 'Email address'
+    element :email_label, '.govuk-label', text: 'Email address'
     element :optional_hint, '.hint', text: '(Optional)'
     element :contact_email, '#contact_email'
     element :confirmation_email, 'p', text: 'We will email you to confirm your application has been received.'

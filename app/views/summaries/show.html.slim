@@ -57,9 +57,9 @@ table.summary
     - if @summary.income_validation_fails?
       tr
         td
-          span.error-message = t('children', scope: 'summary.labels')
+          span.govuk-error-message = t('children', scope: 'summary.labels')
         td.error
-          span.error-message =t('summary.missing_answer.dependents')
+          span.govuk-error-message =t('summary.missing_answer.dependents')
         td.right= link_to question_path(:dependent), onclick: "dataLayer.push({'sectionName': 'dependent', 'event': 'summary_page'});" do
           =t('summary.change')
           span.visuallyhidden
@@ -67,9 +67,9 @@ table.summary
             = t('children', scope: 'summary.labels').downcase
       tr
         td
-          span.error-message = t('income', scope: 'summary.labels')
+          span.govuk-error-message = t('income', scope: 'summary.labels')
         td.error
-          span.error-message =t('summary.missing_answer.income')
+          span.govuk-error-message =t('summary.missing_answer.income')
         td.right= link_to question_path(:income_kind), onclick: "dataLayer.push({'sectionName': 'income_kind', 'event': 'summary_page'});" do
           =t('summary.change')
           span.visuallyhidden
@@ -186,7 +186,7 @@ table.summary
     p = link_to 'Continue', question_path(:dependent), class: 'govuk-button', id: 'continue-button'
 - else
   .text
-    h2.heading-medium = t('heading', scope: 'summary.truth')
+    h2.govuk-heading-m = t('heading', scope: 'summary.truth')
     p = t('statement', scope: 'summary.truth')
     = form_tag(submission_path, method: :post, class: 'util_mb-medium util_mt-medium') do
       = submit_tag(t('button', scope: 'summary.truth'), class: 'govuk-button', role: 'button')

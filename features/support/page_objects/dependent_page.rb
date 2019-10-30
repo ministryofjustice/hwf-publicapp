@@ -6,7 +6,7 @@ class DependentPage < BasePage
     element :dependent_header, 'h1', text: 'Do you have any children living with you, or who you support financially?'
     element :no, '.block-label', text: 'No'
     element :yes, '.block-label', text: 'Yes'
-    element :num_of_children, '.form-label', text: 'Number of children'
+    element :num_of_children, '.govuk-label', text: 'Number of children'
     element :children_number, '#dependent_children_number'
     element :details_content, '#details-content-0'
     element :give_details, 'p', text: 'You need to give details of any children you support financially.'

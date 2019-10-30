@@ -1,7 +1,7 @@
 .form-group class=('error' if @form.errors.any?)
   = f.hidden_field :choice, value: nil
   - if @form.errors.any?
-    span.error-message#choice = @form.errors[:choice].join(' ')
+    span.govuk-error-message#choice = @form.errors[:choice].join(' ')
   fieldset
     label.block-label for='savings_and_investment_choice_less'
       = f.radio_button :choice, :less

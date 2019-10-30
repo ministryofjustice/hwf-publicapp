@@ -5,7 +5,7 @@ class ProbatePage < BasePage
     element :probate_hint, '.text', text: 'These cases are usually about the property and belongings of someone who has died.'
     element :yes, '.block-label', text: 'Yes'
     element :no, '.block-label', text: 'No'
-    element :name_of_deceased, '.form-label', text: 'Name of deceased'
+    element :name_of_deceased, '.govuk-label', text: 'Name of deceased'
     element :probate_deceased_name, '#probate_deceased_name'
     element :probate_day_date_of_death, '#probate_day_date_of_death'
     element :probate_month_date_of_death, '#probate_month_date_of_death'

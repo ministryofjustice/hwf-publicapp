@@ -10,9 +10,9 @@
         = f.radio_button :paid, 'false', class: 'govuk-radios__input'
         = f.label t('fee_paid_false', scope: @form.i18n_scope), for: 'fee_paid_false', class: 'govuk-label govuk-radios__label'
       .govuk-radios__item
-        = f.radio_button :paid, 'true', class: 'govuk-radios__input', 'data-module': "govuk-details"
-        = f.label t('fee_paid_true', scope: @form.i18n_scope), for: 'fee_paid_true', class: 'govuk-label govuk-radios__label'
-    #date-fee-paid-panel 'aria-hidden'= 'true'
+        = f.radio_button :paid, 'true', class: 'govuk-radios__input', 'data-target': "date-fee-paid-panel"
+        = f.label t('fee_paid_true', scope: @form.i18n_scope), for: 'fee_paid_true', class: 'govuk-label govuk-radios__label', 'data-target': "date-fee-paid-panel"
+    #date-fee-paid-panel.visuallyhidden
       .form-group class=('error' if @form.errors[:date_paid].any?)
         - if @form.errors[:date_paid].any?
           span.error-message#date_paid = @form.errors[:date_paid].join(' ')

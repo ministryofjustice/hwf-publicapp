@@ -6,12 +6,12 @@ fieldset
     - if @form.errors[:title].any?
       span.govuk-error-message#title = @form.errors[:title].join(' ')
     = f.text_field :title, class: 'form-control form-control-smaller'
-  .govuk-form-group class=('error' if @form.errors[:first_name].any?)
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:first_name].any?)
     = f.label :first_name, class: 'govuk-label'
     - if @form.errors[:first_name].any?
       span.govuk-error-message#first_name = @form.errors[:first_name].join(' ')
     = f.text_field :first_name, class: 'form-control'
-  .govuk-form-group class=('error' if @form.errors[:last_name].any?)
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:last_name].any?)
     = f.label :last_name, class: 'govuk-label'
     - if @form.errors[:last_name].any?
       span.govuk-error-message#last_name = @form.errors[:last_name].join(' ')

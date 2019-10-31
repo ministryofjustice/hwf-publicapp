@@ -1,4 +1,4 @@
-.govuk-form-group class=('error' if @form.errors[:paid].any?)
+.govuk-form-group class=('govuk-form-group--error' if @form.errors[:paid].any?)
   = f.hidden_field :paid, value: nil
 
   fieldset.govuk-fieldset

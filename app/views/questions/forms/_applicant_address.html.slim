@@ -1,10 +1,10 @@
 fieldset
-  .govuk-form-group class=('error' if @form.errors[:address].any?)
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:address].any?)
     = f.label :address, class: 'govuk-label'
     - if @form.errors[:address].any?
       span.govuk-error-message#address = @form.errors[:address].join(' ')
     = f.text_area :address, class: 'form-control', rows: 6
-  .govuk-form-group class=('error' if @form.errors[:postcode].any?)
+  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:postcode].any?)
     = f.label :postcode, class: 'govuk-label'
     - if @form.errors[:postcode].any?
       span.govuk-error-message#postcode = @form.errors[:postcode].join(' ')

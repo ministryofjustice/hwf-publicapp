@@ -9,7 +9,7 @@ h1.govuk-heading-l
 
 = render('shared/error_block', form: @form) if @form.errors.any?
 
-.text
+.govuk-body
   =render("questions/headers/#{@form.id}")
 
 = form_for @form, as: @form.id, url: question_path(@question), html: { autocomplete: @form.autocomplete, method: :put } do |f|

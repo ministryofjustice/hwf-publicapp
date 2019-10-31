@@ -181,7 +181,7 @@ table.summary
             =t('contact', scope: 'summary.labels').downcase
 
 - if @summary.income_validation_fails?
-  .form-group.error.util_mt-small
+  .govuk-form-group.error.util_mt-small
     span.util_mt-small.error-message =t('summary.invalid_footer')
     p = link_to 'Continue', question_path(:dependent), class: 'govuk-button', id: 'continue-button'
 - else

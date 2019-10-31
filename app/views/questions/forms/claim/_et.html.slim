@@ -1,10 +1,10 @@
-.form-group  class=('error' if @form.errors.any?)
+.govuk-form-group  class=('error' if @form.errors.any?)
   = f.label :identifier, class: 'govuk-label'
   - if @form.errors[:identifier].any?
     span.govuk-error-message#identifier = @form.errors[:identifier].join(' ')
   = f.text_field :identifier, class: 'form-control'
 
-.form-group
+.govuk-form-group
   details
     summary = t('details.summary', scope: @form.i18n_scope)
 

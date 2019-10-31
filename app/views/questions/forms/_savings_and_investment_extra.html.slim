@@ -1,4 +1,4 @@
-.form-group class=('error' if @form.errors[:over_61].any?)
+.govuk-form-group class=('error' if @form.errors[:over_61].any?)
   = f.hidden_field :over_61, value: nil
   - if @form.errors[:over_61].any?
     span.govuk-error-message#over_61 = @form.errors[:over_61].join(' ')
@@ -10,7 +10,7 @@
       = f.radio_button :over_61, 'false'
       = t("over_61_false#{i18n_status_refund_suffix}", scope: @form.i18n_scope)
     #amount-panel.panel-indent.util_mb-medium.js-hidden
-      .form-group class=('error' if @form.errors[:amount].any?)
+      .govuk-form-group class=('error' if @form.errors[:amount].any?)
         - if @form.errors[:amount].any?
           span.govuk-error-message#date_paid = @form.errors[:amount].join(' ')
         = f.label :amount, class: 'govuk-label text' do

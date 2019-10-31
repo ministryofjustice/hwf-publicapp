@@ -1,4 +1,4 @@
-.form-group class=('error' if @form.errors.any?)
+.govuk-form-group class=('error' if @form.errors.any?)
   = f.hidden_field :choice, value: nil
   - if @form.errors.any?
     span.govuk-error-message#choice = @form.errors[:choice].join(' ')
@@ -15,7 +15,7 @@
       = f.radio_button :choice, :more
       = t('more', scope: @form.i18n_scope)
 
-.form-group
+.govuk-form-group
   details
     summary = t('details.summary', scope: @form.i18n_scope)
 

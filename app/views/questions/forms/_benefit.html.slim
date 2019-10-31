@@ -1,4 +1,4 @@
-.form-group class=('error' if @form.errors.any?)
+.govuk-form-group class=('error' if @form.errors.any?)
   = f.hidden_field :on_benefits, value: nil
   - if @form.errors.any?
     span.govuk-error-message#on_benefits = @form.errors[:on_benefits].join(' ')
@@ -10,7 +10,7 @@
       = f.radio_button :on_benefits, 'true'
       = t('on_benefits_true', scope: @form.i18n_scope)
 
-.form-group
+.govuk-form-group
   .text
     h2.heading-small = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
     p = t('details', scope: "#{@form.i18n_scope}.details.section_2")

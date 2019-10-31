@@ -2,5 +2,5 @@
   - if @form.errors[:amount].any?
     span.govuk-error-message#amount = @form.errors[:amount].join(' ')
   = f.label :amount, class: 'govuk-label text visuallyhidden'
-  span.currency £
-  = f.text_field :amount, type: 'number', class: 'form-control form-control-smaller'
+  span.govuk-body.currency £
+  = f.text_field :amount, type: 'number', class: 'govuk-input govuk-!-width-one-quarter'

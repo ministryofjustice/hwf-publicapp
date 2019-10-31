@@ -1,4 +1,4 @@
-.govuk-form-group class=('error' if @form.errors[:number].any?)
+.govuk-form-group class=('govuk-form-group--error' if @form.errors[:number].any?)
   = f.hidden_field :number, value: nil
   - if @form.errors[:number].any?
     span.govuk-error-message#kase = @form.errors[:number].join(' ')
@@ -10,7 +10,7 @@
       = f.radio_button :number, 'true'
       = t('number_true', scope: @form.i18n_scope)
     #claim-identifier-panel.panel-indent.util_mb-medium.js-hidden
-      .govuk-form-group class=('error' if @form.errors[:identifier].any?)
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:identifier].any?)
         - if @form.errors[:identifier].any?
           span.govuk-error-message#identifier = @form.errors[:identifier].join(' ')
         label.govuk-label(for='claim_default_identifier')

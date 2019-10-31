@@ -1,4 +1,4 @@
-.govuk-form-group class=('error' if @form.errors.any?)
+.govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
   label.govuk-label for='national_insurance_number'
     span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
     - if @form.errors[:number].any?

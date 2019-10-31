@@ -8,34 +8,29 @@ ul.govuk-list.govuk-list--bullet
   li
     = t('check_3', scope: "#{@form.i18n_scope}.list")
 
-table
-  tr
-    th
-      = t('name', scope: "#{@form.i18n_scope}.list.column_1")
-      br
-      = t('header', scope: "#{@form.i18n_scope}.list.column_1")
+table.govuk-table
+  thead.govuk-table__head
+    tr.govuk-table__row
+      th.govuk-table__header scope="col" = t('header', scope: "#{@form.i18n_scope}.list.column_1")
+      th.govuk-table__header scope="col" = t('header', scope: "#{@form.i18n_scope}.list.column_2")
 
-    th
-      = t('name', scope: "#{@form.i18n_scope}.list.column_2")
-      br
-      = t('header', scope: "#{@form.i18n_scope}.list.column_2")
-  tr
-    td = raw t('item_1', scope: "#{@form.i18n_scope}.list.column_1")
-    td = raw t('item_1', scope: "#{@form.i18n_scope}.list.column_2")
-  tr
-    td = raw t('item_2', scope: "#{@form.i18n_scope}.list.column_1")
-    td = raw t('item_2', scope: "#{@form.i18n_scope}.list.column_2")
-  tr
-    td = raw t('item_3', scope: "#{@form.i18n_scope}.list.column_1")
-    td = raw t('item_3', scope: "#{@form.i18n_scope}.list.column_2")
-  tr
-    td = raw t('item_4', scope: "#{@form.i18n_scope}.list.column_1")
-    td = raw t('item_4', scope: "#{@form.i18n_scope}.list.column_2")
-  tr
-    td = raw t('item_5', scope: "#{@form.i18n_scope}.list.column_1")
-    td = raw t('item_5', scope: "#{@form.i18n_scope}.list.column_2")
-  tr
-    td = raw t('item_6', scope: "#{@form.i18n_scope}.list.column_1")
-    td &nbsp;
+  tbody.govuk-table__body
+    tr.govuk-table__row
+      td.govuk-table__cell = raw t('item_1', scope: "#{@form.i18n_scope}.list.column_1")
+      td.govuk-table__cell = raw t('item_1', scope: "#{@form.i18n_scope}.list.column_2")
+    tr.govuk-table__row
+      td.govuk-table__cell = raw t('item_2', scope: "#{@form.i18n_scope}.list.column_1")
+      td.govuk-table__cell = raw t('item_2', scope: "#{@form.i18n_scope}.list.column_2")
+    tr.govuk-table__row
+      td.govuk-table__cell = raw t('item_3', scope: "#{@form.i18n_scope}.list.column_1")
+      td.govuk-table__cell = raw t('item_3', scope: "#{@form.i18n_scope}.list.column_2")
+    tr.govuk-table__row
+      td.govuk-table__cell = raw t('item_4', scope: "#{@form.i18n_scope}.list.column_1")
+      td.govuk-table__cell = raw t('item_4', scope: "#{@form.i18n_scope}.list.column_2")
+    tr.govuk-table__row
+      td.govuk-table__cell = raw t('item_5', scope: "#{@form.i18n_scope}.list.column_1")
+      td.govuk-table__cell = raw t('item_5', scope: "#{@form.i18n_scope}.list.column_2")
+    tr.govuk-table__row
+      td.govuk-table__cell = raw t('item_6', scope: "#{@form.i18n_scope}.list.column_1")
+      td.govuk-table__cell &nbsp;
 
-br

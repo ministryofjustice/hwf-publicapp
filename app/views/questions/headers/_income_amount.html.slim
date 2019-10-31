@@ -1,7 +1,7 @@
 p = t("details.kinds_list#{i18n_status_refund_suffix}", scope: @form.i18n_scope)
 
 
-ul.list.list-bullet
+ul.govuk-list.govuk-list--bullet
   - Views::IncomeKinds.new(session).list.each do |kind|
     li = kinds_alternative_translation(kind)
 

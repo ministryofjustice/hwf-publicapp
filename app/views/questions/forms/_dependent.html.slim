@@ -1,4 +1,4 @@
-.form-group class=('error' if @form.errors[:children].any?)
+.govuk-form-group class=('error' if @form.errors[:children].any?)
   - if @form.errors[:children].any?
     span.govuk-error-message#dependents = @form.errors[:children].join(' ')
   fieldset
@@ -9,13 +9,13 @@
       = f.radio_button :children, 'true'
       = t('children_true', scope: @form.i18n_scope)
     #dependent-children_number-panel.panel-indent.util_mb-medium.js-hidden
-      .form-group class=('error' if @form.errors[:children_number].any?)
+      .govuk-form-group class=('error' if @form.errors[:children_number].any?)
         - if @form.errors[:children_number].any?
           span.govuk-error-message#children_number = @form.errors[:children_number].join(' ')
         = f.label :children_number, class: 'govuk-label'
         = f.text_field :children_number, type: 'number', class: 'form-control'
 
-.form-group
+.govuk-form-group
   details
     summary =t('details.summary', scope: @form.i18n_scope)
     .panel-indent

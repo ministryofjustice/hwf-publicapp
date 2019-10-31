@@ -1,4 +1,4 @@
-.form-group class=('error' if @form.errors[:amount].any?)
+.govuk-form-group class=('error' if @form.errors[:amount].any?)
   - if @form.errors[:amount].any?
     span.govuk-error-message#amount = @form.errors[:amount].join(' ')
   = f.label :amount, class: 'govuk-label text visuallyhidden'

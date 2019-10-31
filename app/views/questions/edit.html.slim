@@ -15,5 +15,5 @@ h1.govuk-heading-l
 = form_for @form, as: @form.id, url: question_path(@question), html: { autocomplete: @form.autocomplete, method: :put } do |f|
   =render("questions/forms/#{@form.id}", f: f)
 
-  .form-group
+  .govuk-form-group
     = f.submit t('submit_button'), class: 'govuk-button', id: 'continue-button'

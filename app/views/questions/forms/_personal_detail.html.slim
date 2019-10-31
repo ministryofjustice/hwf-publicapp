@@ -1,17 +1,17 @@
 fieldset
-  .form-group.optional class=('error' if @form.errors[:title].any?)
+  .govuk-form-group.optional class=('error' if @form.errors[:title].any?)
     = f.label :title, class: 'govuk-label'
     .hint
       = t('optional')
     - if @form.errors[:title].any?
       span.govuk-error-message#title = @form.errors[:title].join(' ')
     = f.text_field :title, class: 'form-control form-control-smaller'
-  .form-group class=('error' if @form.errors[:first_name].any?)
+  .govuk-form-group class=('error' if @form.errors[:first_name].any?)
     = f.label :first_name, class: 'govuk-label'
     - if @form.errors[:first_name].any?
       span.govuk-error-message#first_name = @form.errors[:first_name].join(' ')
     = f.text_field :first_name, class: 'form-control'
-  .form-group class=('error' if @form.errors[:last_name].any?)
+  .govuk-form-group class=('error' if @form.errors[:last_name].any?)
     = f.label :last_name, class: 'govuk-label'
     - if @form.errors[:last_name].any?
       span.govuk-error-message#last_name = @form.errors[:last_name].join(' ')

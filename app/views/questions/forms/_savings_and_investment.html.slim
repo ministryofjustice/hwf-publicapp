@@ -1,45 +1,42 @@
-.govuk-form-group class=('error' if @form.errors.any?)
+.govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
   = f.hidden_field :choice, value: nil
   - if @form.errors.any?
-    span.govuk-error-message#choice = @form.errors[:choice].join(' ')
-  fieldset
-    label.block-label for='savings_and_investment_choice_less'
-      = f.radio_button :choice, :less
-      = t('less', scope: @form.i18n_scope)
+    span.govuk-error-message = @form.errors[:choice].join(' ')
+  fieldset.govuk-fieldset
+    .govuk-form-group.govuk-radios.govuk-radios--small
+      .govuk-radios__item
+        = f.radio_button :choice, 'less', class: 'govuk-radios__input'
+        = f.label t('less', scope: @form.i18n_scope), for: 'savings_and_investment_choice_less', class: 'govuk-label govuk-radios__label'
+      .govuk-radios__item
+        = f.radio_button :choice, 'between', class: 'govuk-radios__input'
+        = f.label t('between', scope: @form.i18n_scope), for: 'savings_and_investment_choice_between', class: 'govuk-label govuk-radios__label'
+      .govuk-radios__item
+        = f.radio_button :choice, 'more', class: 'govuk-radios__input'
+        = f.label t('more', scope: @form.i18n_scope), for: 'savings_and_investment_choice_more', class: 'govuk-label govuk-radios__label'
 
-    label.block-label for='savings_and_investment_choice_between'
-      = f.radio_button :choice, :between
-      = t('between', scope: @form.i18n_scope)
 
-    label.block-label for='savings_and_investment_choice_more'
-      = f.radio_button :choice, :more
-      = t('more', scope: @form.i18n_scope)
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary = t('details.summary', scope: @form.i18n_scope)
+  .govuk-details__text
+    h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_1")
+    ul.govuk-list.govuk-list--bullet
+      li = t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
+      li = t('item_2', scope: "#{@form.i18n_scope}.details.section_1")
+      li = t('item_3', scope: "#{@form.i18n_scope}.details.section_1")
+      li = t('item_4', scope: "#{@form.i18n_scope}.details.section_1")
+      li = t('item_5', scope: "#{@form.i18n_scope}.details.section_1")
+      li = t('item_6', scope: "#{@form.i18n_scope}.details.section_1")
+      li = t('item_7', scope: "#{@form.i18n_scope}.details.section_1")
+      li = t('item_8', scope: "#{@form.i18n_scope}.details.section_1")
 
-.govuk-form-group
-  details
-    summary = t('details.summary', scope: @form.i18n_scope)
-
-    .panel-indent
-      .text
-        h2.heading-small = t('heading', scope: "#{@form.i18n_scope}.details.section_1")
-        ul.list.list-bullet
-          li = t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
-          li = t('item_2', scope: "#{@form.i18n_scope}.details.section_1")
-          li = t('item_3', scope: "#{@form.i18n_scope}.details.section_1")
-          li = t('item_4', scope: "#{@form.i18n_scope}.details.section_1")
-          li = t('item_5', scope: "#{@form.i18n_scope}.details.section_1")
-          li = t('item_6', scope: "#{@form.i18n_scope}.details.section_1")
-          li = t('item_7', scope: "#{@form.i18n_scope}.details.section_1")
-          li = t('item_8', scope: "#{@form.i18n_scope}.details.section_1")
-
-        h2.heading-small = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
-        ul.list.list-bullet
-          li = t('item_1', scope: "#{@form.i18n_scope}.details.section_2")
-          li = t('item_2', scope: "#{@form.i18n_scope}.details.section_2")
-          li = t('item_3', scope: "#{@form.i18n_scope}.details.section_2")
-          li = t('item_4', scope: "#{@form.i18n_scope}.details.section_2")
-          li = t('item_5', scope: "#{@form.i18n_scope}.details.section_2")
-          li = t('item_6', scope: "#{@form.i18n_scope}.details.section_2")
-          li = t('item_7', scope: "#{@form.i18n_scope}.details.section_2")
-          li = t('item_8', scope: "#{@form.i18n_scope}.details.section_2")
-          li = t('item_9', scope: "#{@form.i18n_scope}.details.section_2")
+    h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
+    ul.govuk-list.govuk-list--bullet
+      li = t('item_1', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_2', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_3', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_4', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_5', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_6', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_7', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_8', scope: "#{@form.i18n_scope}.details.section_2")
+      li = t('item_9', scope: "#{@form.i18n_scope}.details.section_2")

@@ -25,6 +25,7 @@
 // = require ./modules/restart-application
 // = require ./modules/selection-buttons
 // = require ./modules/show-hide
+// = require ./modules/uppercase-fields
 
 
 // overwrite annoying console message module

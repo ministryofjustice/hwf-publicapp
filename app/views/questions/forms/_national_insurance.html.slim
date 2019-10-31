@@ -3,16 +3,14 @@
     span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
     - if @form.errors[:number].any?
       span.govuk-error-message#number = @form.errors[:number].join(' ')
-    = f.text_field :number, class: 'form-control js-uppercase'
+    = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase'
 
-.govuk-form-group
-  details
-    summary =t('summary', scope: "#{@form.i18n_scope}.details")
 
-    .panel-indent
-      .text
-        ul.govuk-list.govuk-list--bullet
-          li =t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
-          li =link_to t('item_2', scope: "#{@form.i18n_scope}.details.section_1"), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary =t('summary', scope: "#{@form.i18n_scope}.details")
+  .govuk-details__text.govuk-body
+    ul.govuk-list.govuk-list--bullet
+      li =t('item_1', scope: "#{@form.i18n_scope}.details.section_1")
+      li =link_to t('item_2', scope: "#{@form.i18n_scope}.details.section_1"), 'https://www.gov.uk/lost-national-insurance-number', class: 'external govuk-link', rel: 'external'
 
-        p =t('detail_html', scope: "#{@form.i18n_scope}.details.section_1")
+    p =t('detail_html', scope: "#{@form.i18n_scope}.details.section_1")

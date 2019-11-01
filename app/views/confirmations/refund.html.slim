@@ -4,20 +4,20 @@
 
 =render('stylesheets')
 
+p.govuk-caption-l
+  =t('confirmation.refund.breadcrumb')
 h1.govuk-heading-l
-  span.heading-secondary = t('confirmation.refund.breadcrumb')
-  span.visuallyhidden
-    | :&nbsp;
-  = t('confirmation.refund.heading')
+  =t('confirmation.refund.heading')
+
 
 ol.govuk-list.govuk-list--number.next-steps
   li
-    ul
+    ul.govuk-list class='govuk-!-margin-top-4'
       li = t('confirmation.refund.steps.one.one')
       li
         = t('confirmation.refund.steps.one.two')
-        .inset
-          ul
+        .inset class='govuk-!-margin-top-4'
+          ul.govuk-list
             li = t('confirmation.refund.letter.one', reference: @result['message'])
             li = t('confirmation.refund.letter.two')
             li = t('confirmation.refund.letter.three', date_fee_paid: @online_application.date_fee_paid)
@@ -26,10 +26,10 @@ ol.govuk-list.govuk-list--number.next-steps
   li = t('confirmation.refund.steps.two')
   li = t('confirmation.refund.steps.three')
 
-.notice
-  h2.govuk-heading-m
-    i.icon.icon-important
-      span.visuallyhidden = t('confirmation.refund.notice.warning')
-    strong.bold-small = t('confirmation.refund.notice.text')
+.govuk-warning-text
+  span.govuk-warning-text__icon.no-print aria-hidden="true" !
+  strong.govuk-warning-text__text
+    span.govuk-warning-text__assistive.no-print = t('confirmation.refund.notice.warning')
+    = t('confirmation.refund.notice.text')
 
 =render('footer')

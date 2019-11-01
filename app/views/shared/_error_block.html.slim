@@ -1,8 +1,8 @@
-.error-summary role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1"
-  h2.govuk-heading-m.error-summary-heading#error-summary-heading-example-1 =t('error_block.heading')
-  span.visuallyhidden =t('error_block.visuallyhidden')
-  ul.error-summary-list
-    - form.errors.each do |field, message|
-      li
-        - message = message.is_a?(Array) ? message.first : message
-        = link_to message, "##{field}", class: 'error-link', data: { id: "##{field}" }
+.govuk-error-summary aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary"
+  h2.govuk-error-summary__title id="error-summary-title" =t('error_block.heading')
+  .govuk-error-summary__body
+    ul.govuk-list.govuk-error-summary__list
+      - form.errors.each do |field, message|
+        li
+          - message = message.is_a?(Array) ? message.first : message
+          = link_to message, "##{field}", class: 'error-link', data: { id: "##{field}" }

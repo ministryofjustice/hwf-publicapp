@@ -4,13 +4,13 @@
 
 =render('stylesheets')
 
-h1.heading-large
+h1.govuk-heading-l
   span.heading-secondary = t('confirmation.refund.breadcrumb')
   span.visuallyhidden
     | :&nbsp;
   = t('confirmation.refund.heading')
 
-ol.list.list-number.next-steps
+ol.govuk-list.govuk-list--number.next-steps
   li
     ul
       li = t('confirmation.refund.steps.one.one')

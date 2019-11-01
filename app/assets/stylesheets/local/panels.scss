@@ -1,8 +1,9 @@
 .steps-panel {
   max-width: 640px;
-  background-color: $grey-4;
-  border: 1px solid $grey-2;
+  background-color: govuk-colour("light-grey");
+  border: 1px solid govuk-colour("mid-grey");
   padding: 20px 10px;
+  margin-bottom: 30px;
 
   @media (min-width: 641px) {
     padding: 30px;
@@ -46,7 +47,7 @@
   background: asset-url('icon-important-red.png') 15px 15px no-repeat;
   background-size: 34px 34px;
   padding-left: 65px;
-  border-color: $error-colour;
+  border-color: $govuk-error-colour;
 
   p:first-child {
     padding-top: 5px;
@@ -75,7 +76,7 @@
 }
 
 .addresses-panel {
-  border: 1px solid $border-colour;
+  border: 1px solid $govuk-border-colour;
   margin-top: 20px;
   width: 640px;
   padding: 20px 0;
@@ -120,14 +121,14 @@
   }
 
   .email {
-    background-color: $grey-4;
+    background-color: govuk-colour("light-grey");
     padding-top: 5px;
     padding-bottom: 5px;
   }
 
   .inset-list {
     ul {
-      border-left: 2px solid $grey-3;
+      border-left: 2px solid govuk-colour("mid-grey");
       padding-left: 10px;
     }
 

@@ -40,6 +40,9 @@ $govuk-assets-path: 'govuk-frontend/govuk/assets/';
 
 // /*local*/
 @import 'local/phase-banner';
+@import 'local/panels';
+@import 'local/utilities';
+@import 'local/lists';
 // @import 'local/banners';
 // @import 'local/alerts';
 // @import 'local/tables';
@@ -48,9 +51,9 @@ $govuk-assets-path: 'govuk-frontend/govuk/assets/';
 // @import 'local/icons';
 // @import 'local/inputs';
 // @import 'local/buttons';
-// @import 'local/panels';
+
 // @import 'local/rules';
-// @import 'local/lists';
-@import 'local/utilities';
+
+
 
 

@@ -29,6 +29,8 @@
     <script src="/html5-shiv/html5shiv.js"></script>
   <![endif]-->
 
+  <%= yield :stylesheets %>
+
   <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
 </head>
 
@@ -38,7 +40,7 @@
 
   </script>
 
-  <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+  <a href="#main-content" class="govuk-skip-link no-print">Skip to main content</a>
 
   <header class="govuk-header " role="banner" data-module="govuk-header">
     <div class="govuk-header__container govuk-width-container">
@@ -65,7 +67,7 @@
   <%= yield :after_header %>
 
   <div class="govuk-width-container">
-    <div class="govuk-phase-banner">
+    <div class="govuk-phase-banner no-print">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
           beta
@@ -96,7 +98,7 @@
 
   <div id="global-app-error" class="app-error hidden"></div>
 
-  <footer class="govuk-footer " role="contentinfo">
+  <footer class="govuk-footer no-print" role="contentinfo">
     <div class="govuk-width-container ">
       <div class="govuk-footer__meta">
         <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">

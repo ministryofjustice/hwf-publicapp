@@ -4,7 +4,7 @@
 
 =render('stylesheets')
 
-h1.heading-large
+h1.govuk-heading-l
   span.heading-secondary = t('confirmation.et.breadcrumb')
   span.visuallyhidden
     | :&nbsp;
@@ -13,7 +13,7 @@ h1.heading-large
 - email_subject = t('confirmation.et.address.email.subject')
 - email_body = sanitize([t('confirmation.et.letter.one_html', reference: @result['message']),t('confirmation.et.letter.two'),t('confirmation.et.letter.three_html', case_number: @online_application.case_number),t('confirmation.et.letter.four'),t('confirmation.et.letter.five', full_name: @online_application.full_name)].join("\n\n"), tags: [])
 
-ol.list.list-number.next-steps
+ol.govuk-list.govuk-list--number.next-steps
   li = t('confirmation.et.steps.one_html', reference: @result['message'])
   li
     = t('confirmation.et.steps.two')
@@ -62,7 +62,7 @@ ol.list.list-number.next-steps
 
 .steps-panel
   h2.govuk-heading-m.util_mt-0 =t('confirmation.et.next.heading')
-  ol.list.list-number.next-steps.util_mb-0
+  ol.govuk-list.govuk-list--number.next-steps.util_mb-0
     li =t('confirmation.et.next.steps.one')
     li =t('confirmation.et.next.steps.two')
 

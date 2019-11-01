@@ -36,3 +36,10 @@
   display: inline-block;
   margin-right: 10px;
 }
+
+label {
+  span.optional {
+    padding-left: 5px;
+    color:  $govuk-secondary-text-colour;
+  }
+}

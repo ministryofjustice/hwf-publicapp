@@ -25,7 +25,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect the fields to have specific errors' do
-        expect(page).to have_xpath('//span[@class="error-message"]', text: 'Select how much you have in savings and investments')
+        expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Select how much you have in savings and investments')
       end
     end
   end

@@ -28,7 +28,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter your address')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter your address')
         end
       end
 
@@ -43,7 +43,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter your postcode')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter your postcode')
         end
       end
     end

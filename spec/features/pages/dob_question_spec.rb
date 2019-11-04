@@ -26,7 +26,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter the date in this format DD/MM/YYYY')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter the date in this format DD/MM/YYYY')
         end
       end
 
@@ -41,7 +41,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'You must be over 15 to use this service')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'You must be over 15 to use this service')
         end
       end
 
@@ -56,7 +56,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'Check this date of birth is correct')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Check this date of birth is correct')
         end
       end
 
@@ -69,7 +69,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter the date in this format DD/MM/YYYY')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter the date in this format DD/MM/YYYY')
         end
       end
     end

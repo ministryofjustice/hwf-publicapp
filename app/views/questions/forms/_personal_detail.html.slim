@@ -1,18 +1,17 @@
-fieldset.govuk-fieldset
-  .govuk-form-group.optional class=('govuk-form-group--error' if @form.errors[:title].any?)
-    = f.label :title, class: 'govuk-label'
-      = t('title', scope: @form.i18n_scope)
-      span.optional  = t('optional')
-    - if @form.errors[:title].any?
-      span.govuk-error-message#title = @form.errors[:title].join(' ')
-    = f.text_field :title, class: 'govuk-input govuk-!-width-one-quarter'
-  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:first_name].any?)
-    = f.label :first_name, class: 'govuk-label'
-    - if @form.errors[:first_name].any?
-      span.govuk-error-message#first_name = @form.errors[:first_name].join(' ')
-    = f.text_field :first_name, class: 'govuk-input govuk-!-width-one-half'
-  .govuk-form-group class=('govuk-form-group--error' if @form.errors[:last_name].any?)
-    = f.label :last_name, class: 'govuk-label'
-    - if @form.errors[:last_name].any?
-      span.govuk-error-message#last_name = @form.errors[:last_name].join(' ')
-    = f.text_field :last_name, class: 'govuk-input govuk-!-width-one-half'
+.govuk-form-group.optional class=('govuk-form-group--error' if @form.errors[:title].any?)
+  = f.label :title, class: 'govuk-label'
+    = t('title', scope: @form.i18n_scope)
+    span.optional  = t('optional')
+  - if @form.errors[:title].any?
+    span.govuk-error-message#title = @form.errors[:title].join(' ')
+  = f.text_field :title, class: 'govuk-input govuk-!-width-one-quarter'
+.govuk-form-group class=('govuk-form-group--error' if @form.errors[:first_name].any?)
+  = f.label :first_name, class: 'govuk-label'
+  - if @form.errors[:first_name].any?
+    span.govuk-error-message#first_name = @form.errors[:first_name].join(' ')
+  = f.text_field :first_name, class: 'govuk-input govuk-!-width-one-half'
+.govuk-form-group class=('govuk-form-group--error' if @form.errors[:last_name].any?)
+  = f.label :last_name, class: 'govuk-label'
+  - if @form.errors[:last_name].any?
+    span.govuk-error-message#last_name = @form.errors[:last_name].join(' ')
+  = f.text_field :last_name, class: 'govuk-input govuk-!-width-one-half'

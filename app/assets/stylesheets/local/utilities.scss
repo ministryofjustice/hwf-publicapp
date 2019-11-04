@@ -43,3 +43,8 @@ label {
     color:  $govuk-secondary-text-colour;
   }
 }
+
+label.govuk-checkboxes__label.long-label {
+  margin-top: -4px;
+  padding-top: 0px;
+}

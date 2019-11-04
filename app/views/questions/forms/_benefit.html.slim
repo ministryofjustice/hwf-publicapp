@@ -3,9 +3,9 @@
   - if @form.errors.any?
     span.govuk-error-message#on_benefits = @form.errors[:on_benefits].join(' ')
   fieldset.govuk-fieldset
-    legend.govuk-fieldset__legend.govuk-fieldset__legend--s
+    legend.govuk-fieldset__legend.govuk-fieldset__legend--s.visuallyhidden
       = t('text', scope: "#{@form.i18n_scope}")
-    .govuk-form-group.govuk-radios.govuk-radios--small
+    .govuk-form-group.govuk-radios
       .govuk-radios__item
         = f.radio_button :on_benefits, 'false', class: 'govuk-radios__input'
         = f.label t('on_benefits_false', scope: @form.i18n_scope), for: 'benefit_on_benefits_false', class: 'govuk-label govuk-radios__label'

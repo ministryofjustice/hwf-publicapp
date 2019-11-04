@@ -5,7 +5,7 @@
     - if @form.errors[:paid].any?
       span.govuk-error-message
        = f.label :paid, @form.errors[:paid].join(', '), class: 'error'
-    .govuk-form-group.govuk-radios.govuk-radios--small
+    .govuk-form-group.govuk-radios
       .govuk-radios__item
         = f.radio_button :paid, 'false', class: 'govuk-radios__input'
         = f.label t('fee_paid_false', scope: @form.i18n_scope), for: 'fee_paid_false', class: 'govuk-label govuk-radios__label'

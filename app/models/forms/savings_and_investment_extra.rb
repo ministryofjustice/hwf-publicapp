@@ -5,12 +5,12 @@ module Forms
 
     validates :over_61, inclusion: { in: [true, false] }
     validates :amount,
-      presence: true, numericality: {
-        allow_blank: true,
-        less_than: 16000,
-        greater_than_or_equal_to: 3000
-      },
-      if: Proc.new { |c| c.over_61 == false }
+              presence: true, numericality: {
+                allow_blank: true,
+                less_than: 16000,
+                greater_than_or_equal_to: 3000
+              },
+              if: proc { |c| c.over_61 == false }
 
     private
 

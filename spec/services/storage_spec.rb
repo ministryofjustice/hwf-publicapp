@@ -6,8 +6,10 @@ RSpec.describe Storage do
   let(:current_time) { Time.zone.now }
   let(:options) { {} }
 
-  class MockSession < Hash
-    def destroy; end
+  let(:mock_session) do
+    Class.new(Hash) do
+      def destroy; end
+    end
   end
 
   describe '#initialize' do
@@ -17,7 +19,7 @@ RSpec.describe Storage do
       end
     end
 
-    let(:session) { MockSession[used_at: used_at.to_s, started_at: started_at.to_s] }
+    let(:session) { mock_session[used_at: used_at.to_s, started_at: started_at.to_s] }
 
     context 'when the storage is requested to be cleared' do
       let(:started_at) { current_time - 5.minutes }
@@ -87,7 +89,7 @@ RSpec.describe Storage do
   end
 
   describe '#clear' do
-    let(:session) { MockSession.new }
+    let(:session) { mock_session.new }
 
     before do
       allow(session).to receive(:destroy)

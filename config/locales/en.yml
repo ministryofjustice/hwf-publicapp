@@ -589,7 +589,7 @@ en:
     applicant_on_benefits_false: Not receiving eligible benefits
     applicant_on_benefits_true: Receiving eligible benefits
     breadcrumb: Step 18 of 20
-    change: Change
+    change: 'Change '
     children_false: 'No'
     claim_number_false: 'No'
     claim_number_true: 'Yes'

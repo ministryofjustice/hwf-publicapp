@@ -12,7 +12,7 @@
         - if @form.errors[:applicant].any?
           span.govuk-error-message#applicant = @form.errors[:applicant].join(' ')
 
-        .govuk-checkboxes.govuk-checkboxes--small
+        .govuk-checkboxes
           - @form.class.allowed_kinds.each do |kind|
             .govuk-checkboxes__item
               = f.check_box :applicant, { multiple: true, class: 'govuk-checkboxes__input' }, kind, nil
@@ -27,7 +27,7 @@
 
           - if @form.errors[:partner].any?
             span.govuk-error-message#partner = @form.errors[:partner].join(' ')
-          .govuk-checkboxes.govuk-checkboxes--small
+          .govuk-checkboxes
             - @form.class.allowed_kinds.each do |kind|
               .govuk-checkboxes__item
                 = f.check_box :partner, { multiple: true, class: 'govuk-checkboxes__input' }, kind, nil

@@ -2,25 +2,24 @@
   = f.hidden_field :number, value: nil
   - if @form.errors[:number].any?
     span.govuk-error-message#kase = @form.errors[:number].join(' ')
-  fieldset.govuk-fieldset
-    .govuk-form-group
-      .govuk-radios.govuk-radios--small
-        .govuk-radios__item
-          = f.radio_button :number, 'false', class: 'govuk-radios__input'
-          label.govuk-label.govuk-radios__label for='claim_default_number_false'
-            = t('number_false', scope: @form.i18n_scope)
-        .govuk-radios__item
-          = f.radio_button :number, 'true', 'data-target': 'claim-identifier-panel', class: 'govuk-radios__input'
-          label.govuk-label.govuk-radios__label for='claim_default_number_true'
-            = t('number_true', scope: @form.i18n_scope)
-    .govuk-form-group
-      #claim-identifier-panel.panel-indent.js-hidden
-        .govuk-form-group class=('govuk-form-group--error' if @form.errors[:identifier].any?)
-          - if @form.errors[:identifier].any?
-            span.govuk-error-message#identifier = @form.errors[:identifier].join(' ')
-          label.govuk-label(for='claim_default_identifier')
-            = t('identifier', scope: @form.i18n_scope)
-          = f.text_field :identifier, class: 'govuk-input govuk-!-width-one-third'
+  .govuk-form-group
+    .govuk-radios
+      .govuk-radios__item
+        = f.radio_button :number, 'false', class: 'govuk-radios__input'
+        label.govuk-label.govuk-radios__label for='claim_default_number_false'
+          = t('number_false', scope: @form.i18n_scope)
+      .govuk-radios__item
+        = f.radio_button :number, 'true', 'data-target': 'claim-identifier-panel', class: 'govuk-radios__input'
+        label.govuk-label.govuk-radios__label for='claim_default_number_true'
+          = t('number_true', scope: @form.i18n_scope)
+  .govuk-form-group
+    #claim-identifier-panel.panel-indent.js-hidden
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:identifier].any?)
+        - if @form.errors[:identifier].any?
+          span.govuk-error-message#identifier = @form.errors[:identifier].join(' ')
+        label.govuk-label(for='claim_default_identifier')
+          = t('identifier', scope: @form.i18n_scope)
+        = f.text_field :identifier, class: 'govuk-input govuk-!-width-one-third'
 
 
 details.govuk-details data-module="govuk-details"

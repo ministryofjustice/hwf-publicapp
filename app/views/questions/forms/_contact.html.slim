@@ -1,18 +1,18 @@
 .govuk-form-group
   p.govuk-body = t('details', scope: @form.i18n_scope)
 
-fieldset.govuk-fieldset
-  .govuk-form-group.optional class=('govuk-form-group--error' if @form.errors[:email].any?)
-    - if @form.errors[:email].any?
-      span.govuk-error-message#email = @form.errors[:email].join(' ')
-    = f.label :email, class: 'govuk-label'
-      = t('email_label', scope: @form.i18n_scope)
-      span.optional = t('optional')
-    = f.text_field :email, type: 'email', class: 'govuk-input govuk-!-width-one-third'
 
-  .govuk-form-group
-    .govuk-checkboxes.govuk-checkboxes--small
-      .govuk-checkboxes__item
-        = f.check_box :feedback_opt_in, class: 'govuk-checkboxes__input'
-        label.govuk-label.govuk-checkboxes__label for='contact_feedback_opt_in'
-          = t('feedback_opt_in', scope: @form.i18n_scope)
+.govuk-form-group.optional class=('govuk-form-group--error' if @form.errors[:email].any?)
+  - if @form.errors[:email].any?
+    span.govuk-error-message#email = @form.errors[:email].join(' ')
+  = f.label :email, class: 'govuk-label'
+    = t('email_label', scope: @form.i18n_scope)
+    span.optional = t('optional')
+  = f.text_field :email, type: 'email', class: 'govuk-input govuk-!-width-one-third'
+
+.govuk-form-group
+  .govuk-checkboxes
+    .govuk-checkboxes__item
+      = f.check_box :feedback_opt_in, class: 'govuk-checkboxes__input'
+      label.govuk-label.govuk-checkboxes__label.long-label for='contact_feedback_opt_in'
+        = t('feedback_opt_in', scope: @form.i18n_scope)

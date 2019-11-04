@@ -2,17 +2,16 @@
   = f.hidden_field :choice, value: nil
   - if @form.errors.any?
     span.govuk-error-message = @form.errors[:choice].join(' ')
-  fieldset.govuk-fieldset
-    .govuk-form-group.govuk-radios.govuk-radios--small
-      .govuk-radios__item
-        = f.radio_button :choice, 'less', class: 'govuk-radios__input'
-        = f.label t('less', scope: @form.i18n_scope), for: 'savings_and_investment_choice_less', class: 'govuk-label govuk-radios__label'
-      .govuk-radios__item
-        = f.radio_button :choice, 'between', class: 'govuk-radios__input'
-        = f.label t('between', scope: @form.i18n_scope), for: 'savings_and_investment_choice_between', class: 'govuk-label govuk-radios__label'
-      .govuk-radios__item
-        = f.radio_button :choice, 'more', class: 'govuk-radios__input'
-        = f.label t('more', scope: @form.i18n_scope), for: 'savings_and_investment_choice_more', class: 'govuk-label govuk-radios__label'
+  .govuk-form-group.govuk-radios
+    .govuk-radios__item
+      = f.radio_button :choice, 'less', class: 'govuk-radios__input'
+      = f.label t('less', scope: @form.i18n_scope), for: 'savings_and_investment_choice_less', class: 'govuk-label govuk-radios__label'
+    .govuk-radios__item
+      = f.radio_button :choice, 'between', class: 'govuk-radios__input'
+      = f.label t('between', scope: @form.i18n_scope), for: 'savings_and_investment_choice_between', class: 'govuk-label govuk-radios__label'
+    .govuk-radios__item
+      = f.radio_button :choice, 'more', class: 'govuk-radios__input'
+      = f.label t('more', scope: @form.i18n_scope), for: 'savings_and_investment_choice_more', class: 'govuk-label govuk-radios__label'
 
 
 details.govuk-details data-module="govuk-details"

@@ -9,7 +9,7 @@
 
 
   .govuk-form-group
-    .govuk-checkboxes.govuk-checkboxes--small
+    .govuk-checkboxes
       .govuk-checkboxes__item
         = f.check_box :unknown, { class: 'govuk-checkboxes__input' }
         = f.label t('unknown', scope: @form.i18n_scope), class: 'govuk-label govuk-checkboxes__label', for: 'form_name_unknown'

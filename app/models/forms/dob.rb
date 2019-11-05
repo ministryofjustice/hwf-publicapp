@@ -38,12 +38,7 @@ module Forms
     end
 
     def validate_dob_ranges
-      too_young_error if too_young?
       too_old_error if too_old?
-    end
-
-    def too_young?
-      date_of_birth > minimum_date_of_birth
     end
 
     def too_young_error

@@ -40,10 +40,9 @@ RSpec.describe Forms::Dob, type: :model do
               form_dob.day = today.day
               form_dob.month = today.month
               form_dob.year = today.year
-              form_dob.valid?
             end
 
-            it { expect(form_dob.errors.messages[:date_of_birth]).to eq young_error }
+            it { expect(form_dob).to be_valid }
           end
 
           context 'when a date too far in the past is provided' do

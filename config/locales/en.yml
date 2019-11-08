@@ -66,6 +66,10 @@ en:
             postcode:
               blank: Enter your postcode
               too_long: Postcode must be less than 10 characters
+        forms/applicant_litigation_detail:
+          attributes:
+            litigation_friend_details:
+              blank: "Enter the applicant's litigation friend details"
         forms/benefit:
           attributes:
             on_benefits:
@@ -308,6 +312,11 @@ en:
       breadcrumb: Step 16 of 20
       text: What is your address?
       title: Your address
+    applicant_litigation_detail:
+      title: Litigation friend details
+      breadcrumb: Step 17 of 20
+      text: 'Litigation friend details'
+      label: 'As the applicant is under the age of 16, please provide the Litigation Friend details'
     benefit:
       breadcrumb: Step 6 of 20
       details:
@@ -608,6 +617,7 @@ en:
       contact_phone: Phone
       contact_post: Post
       date_of_birth: Date of birth
+      litigation_friend_details: Litigation friend details
       date_of_death: Date of death
       deceased_name: Name of deceased
       fee: Fee paid

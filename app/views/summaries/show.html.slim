@@ -146,6 +146,14 @@ table.summary
           | &nbsp;
           =t('date_of_birth', scope: 'summary.labels').downcase
     tr
+      td =t('litigation_friend_details', scope: 'summary.labels')
+      td =@summary.litigation_details
+      td.right= link_to question_path(:litigation_friend_details), onclick: "dataLayer.push({'sectionName': 'litigation_friend_details', 'event': 'summary_page'});" do
+        =t('summary.change')
+        span.visuallyhidden
+          | &nbsp;
+          =t('litigation_friend_details', scope: 'summary.labels').downcase
+    tr
       td =t('personal', scope: 'summary.labels')
       td =@summary.full_name
       td.right= link_to question_path(:personal_detail), onclick: "dataLayer.push({'sectionName': 'personal_detail', 'event': 'summary_page'});" do

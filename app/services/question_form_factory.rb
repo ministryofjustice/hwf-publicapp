@@ -17,6 +17,7 @@ class QuestionFormFactory
     claim
     national_insurance
     dob
+    applicant_litigation_detail
     personal_detail
     applicant_address
     contact

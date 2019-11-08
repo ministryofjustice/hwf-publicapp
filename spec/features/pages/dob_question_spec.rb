@@ -40,8 +40,24 @@ RSpec.feature 'As a user' do
           click_button 'Continue'
         end
 
-        scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'You must be over 15 to use this service')
+        describe 'I see litiation page' do
+          before do
+            expect(page).to have_text('Litigation Friend Details')
+            expect(page).to have_text("As the applicant is under the age of 16, please provide the Litigation Friend details")
+          end
+
+          scenario 'I expect to see next page after filling in litigation details' do
+            fill_in :litigation_friend_details, with: 'As a friend'
+            click_button 'Continue'
+            expect(page).to have_text 'What is your full name?'
+          end
+
+          scenario 'I expect to see error message if I skip litigation details' do
+            click_button 'Continue'
+            error_message = "Enter the applicant's litigation friend details"
+            expect(page).to have_xpath('//span[@class="error-message"]', text: error_message)
+          end
+
         end
       end
 

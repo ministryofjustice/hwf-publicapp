@@ -1,0 +1,6 @@
+fieldset
+  .form-group class=('error' if @form.errors[:litigation_friend_details].any?)
+    - if @form.errors[:litigation_friend_details].any?
+      span.error-message#litigation_friend_details = @form.errors[:litigation_friend_details].join(' ')
+    = f.label :litigation_friend_details, t('label', scope: @form.i18n_scope), class: 'form-label'
+    = f.text_area :litigation_friend_details, class: 'form-control', rows: 6

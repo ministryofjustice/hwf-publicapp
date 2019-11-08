@@ -54,6 +54,12 @@ module Views
       [address, postcode].join(' ')
     end
 
+    # def litigation_details
+    #   binding.pry
+    #   :a
+    #   litigation_friend_details
+    # end
+
     private
 
     def online_application

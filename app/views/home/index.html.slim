@@ -9,7 +9,7 @@ p.govuk-body-l You may not have to pay a #{link_to 'court or tribunal fee', 'htt
       | You (and your partner if you have one) have no savings or only a small amount
       details.govuk-details data-module= "govuk-details" class="govuk-!-margin-top-4"
         summary.govuk-details__summary More about maximum savings amounts
-        p.govuk-body
+        .govuk-details__text
           p In most cases you (and your partner if you have one) should have no savings or less than £3,000 in savings and investments if you’re under 61. If you (or your partner) are 61 or over and have less than £16,000 in savings, you may be able to get help with your fee.
           p Savings and investments don't include your main home, personal belongings, wages or benefits.
 
@@ -17,42 +17,43 @@ p.govuk-body-l You may not have to pay a #{link_to 'court or tribunal fee', 'htt
       | And you’re <strong>either</strong> on benefits
       details.govuk-details data-module= "govuk-details" class="govuk-!-margin-top-4"
         summary.govuk-details__summary There are 6 qualifying benefits
-        p.govuk-body
-          | If you receive 1 of these benefits (and have no savings or a small amount) you won't have to pay a fee:
-          ul.govuk-list.govuk-list--bullet
-            li Income-based Jobseeker’s Allowance (JSA)
-            li Income-related Employment and Support Allowance (ESA)
-            li Income Support
-            li Universal Credit (and you’re earning less than £6,000 a year)
-            li Pension Credit (Guarantee Credit)
-            li Scottish Civil Legal Aid (not Advice and Assistance or Advice by Way of Representation)
+        .govuk-details__text
+          p.govuk-body
+            | If you receive 1 of these benefits (and have no savings or a small amount) you won't have to pay a fee:
+            ul.govuk-list.govuk-list--bullet
+              li Income-based Jobseeker’s Allowance (JSA)
+              li Income-related Employment and Support Allowance (ESA)
+              li Income Support
+              li Universal Credit (and you’re earning less than £6,000 a year)
+              li Pension Credit (Guarantee Credit)
+              li Scottish Civil Legal Aid (not Advice and Assistance or Advice by Way of Representation)
 
     li
       | <strong>or</strong> have a low income.
       details.govuk-details data-module= "govuk-details" class="govuk-!-margin-top-4"
         summary.govuk-details__summary More about what qualifies as a low income
-        p.govuk-body
+        .govuk-details__text
           p If you earn less a month than the amounts in the table below (before tax and National Insurance have been taken off) then you won't have to pay a fee. This can include benefits, eg Working Tax Credit, Child Tax Credit.
 
-          table.util_mb-medium
-            thead
-              tr
-                th Number of children
-                th If you're single
-                th If you have a partner
-            tbody
-              tr
-                td 0
-                td £1,085
-                td £1,245
-              tr
-                td 1
-                td £1,330
-                td £1,490
-              tr
-                td 2
-                td £1,575
-                td £1,735
+          table.govuk-table
+            thead.govuk-table__head
+              tr.govuk-table__row
+                th.govuk-table__header scope="col" Number of children
+                th.govuk-table__header scope="col" If you're single
+                th.govuk-table__header scope="col" If you have a partner
+            tbody.govuk-table__body
+              tr.govuk-table__row
+                td.govuk-table__cell 0
+                td.govuk-table__cell £1,085
+                td.govuk-table__cell £1,245
+              tr.govuk-table__row
+                td.govuk-table__cell 1
+                td.govuk-table__cell £1,330
+                td.govuk-table__cell £1,490
+              tr.govuk-table__row
+                td.govuk-table__cell 2
+                td.govuk-table__cell £1,575
+                td.govuk-table__cell £1,735
 
           p If you have 3 or more children there’s an extra allowance of £245 for each child.
 
@@ -82,4 +83,4 @@ p.govuk-body-l You may not have to pay a #{link_to 'court or tribunal fee', 'htt
       =t('session.note.text')
 
   h2.govuk-heading-l Other ways to apply
-  p You can also apply by post using the #{link_to 'help with fees form (EX160) (PDF 123KB)', 'http://s3-eu-west-1.amazonaws.com/hmctsformfinder/ex160-eng.pdf', class: 'external', rel: 'external'}.
+  p.govuk-body You can also apply by post using the #{link_to 'help with fees form (EX160) (PDF 123KB)', 'http://s3-eu-west-1.amazonaws.com/hmctsformfinder/ex160-eng.pdf', class: 'external', rel: 'external'}.

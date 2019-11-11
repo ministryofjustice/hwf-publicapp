@@ -43,7 +43,7 @@ RSpec.feature 'As a user' do
         describe 'I see litiation page' do
           before do
             expect(page).to have_text('Litigation Friend Details')
-            expect(page).to have_text("As the applicant is under the age of 16, please provide the Litigation Friend details")
+            expect(page).to have_text("As the applicant is under the age of 16, please provide the Litigation Friend's name")
           end
 
           scenario 'I expect to see next page after filling in litigation details' do

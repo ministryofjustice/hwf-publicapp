@@ -316,7 +316,7 @@ en:
       title: Litigation friend details
       breadcrumb: Step 17 of 20
       text: 'Litigation friend details'
-      label: 'As the applicant is under the age of 16, please provide the Litigation Friend details'
+      label: "As the applicant is under the age of 16, please provide the Litigation Friend's name"
     benefit:
       breadcrumb: Step 6 of 20
       details:

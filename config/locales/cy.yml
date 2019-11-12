@@ -63,6 +63,10 @@ cy:
             postcode:
               blank: Rhowch eich cod post
               too_long: Rhaid i'r cod post fod yn llai na 10 o nodau
+        forms/applicant_litigation_detail:
+          attributes:
+            litigation_friend_details:
+              blank: "Enter the applicant's litigation friend details"
         forms/benefit:
           attributes:
             on_benefits:
@@ -390,6 +394,12 @@ cy:
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
       text: Beth yw eich dyddiad geni?
       title: Dyddiad geni
+    applicant_litigation_detail:
+      title: Enw’r Cyfaill Cyfreitha
+      breadcrumb: Cam 17 o 20
+      text: 'Enw’r Cyfaill Cyfreitha'
+      label: "Gan bod y ceisydd dan 16 oed, nodwch Enw’r Cyfaill Cyfreitha"
+
     fee:
       breadcrumb: Cam 2 o 20
       details: Gallwch chi wneud cais am ad-dalu ffi a dalwyd yn y 3 mis diwethaf. Os ydych chi'n gwneud cais am ad-daliad, cofiwch ateb yr holl gwestiynau am eich amgylchiadau pan oeddech chi wedi talu'r ffi.

@@ -69,7 +69,7 @@ en:
         forms/applicant_litigation_detail:
           attributes:
             litigation_friend_details:
-              blank: "Enter the applicant's litigation friend details"
+              blank: "Enter the applicant's litigation friend's name"
         forms/benefit:
           attributes:
             on_benefits:

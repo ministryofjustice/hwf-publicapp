@@ -2,7 +2,7 @@ class IncomeAmountPage < BasePage
   set_url '/questions/income_amount'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 10 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 10 of 20'
     element :income_amount_single_header, 'h1', text: 'What was your total monthly income?'
     element :income_amount_married_header, 'h1', text: 'What was your total monthly income?'
     element :hint_text_single, '.text', text: 'Enter the total monthly amount you received in income from:'

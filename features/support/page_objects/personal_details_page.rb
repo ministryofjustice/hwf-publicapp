@@ -2,7 +2,7 @@ class PersonalDetailsPage < BasePage
   set_url '/questions/personal_detail'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 15 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 15 of 20'
     element :personal_details_header, 'h1', text: 'What is your full name?'
     element :title_label, '.govuk-label', text: 'Title'
     element :optional_hint, '.hint', text: 'Optional'

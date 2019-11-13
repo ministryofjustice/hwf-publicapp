@@ -1,6 +1,6 @@
 class ProbatePage < BasePage
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 11 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 11 of 20'
     element :probate_header, 'h1', text: 'Are you paying a fee for a probate case?'
     element :probate_hint, '.text', text: 'These cases are usually about the property and belongings of someone who has died.'
     element :yes, '.block-label', text: 'Yes'

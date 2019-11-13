@@ -2,7 +2,7 @@ class MaritalStatusPage < BasePage
   set_url '/questions/marital_status'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 3 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 3 of 20'
     element :fee_header, 'h1', text: 'Are you single, married or living with someone and sharing an income?'
     element :single, '.block-label', text: 'Single'
     element :married, '.block-label', text: 'Married'
@@ -22,12 +22,12 @@ class MaritalStatusPage < BasePage
 
   def submit_single
     content.single.click
-    common_page.continue_button.click
+    base_page.continue_button.click
   end
 
   def submit_married
     content.married.click
-    common_page.continue_button.click
+    base_page.continue_button.click
   end
 
   def to_marital_status

@@ -43,7 +43,7 @@ Then(/^I should see help with benefits copy$/) do
 end
 
 Then(/^I should see select whether you're receiving one of the benefits listed error message$/) do
-  expect(common_page.content).to have_there_is_a_problem
+  expect(base_page.content).to have_there_is_a_problem
   expect(benefit_page.content).to have_blank_error_message
   expect(benefit_page.content).to have_blank_error_link
 end

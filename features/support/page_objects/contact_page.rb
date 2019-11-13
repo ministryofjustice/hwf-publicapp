@@ -2,7 +2,7 @@ class ContactPage < BasePage
   set_url '/questions/contact'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 17 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 17 of 20'
     element :email_header, 'h1', text: 'What\'s your email address?'
     element :email_label, '.govuk-label', text: 'Email address'
     element :optional_hint, '.hint', text: '(Optional)'

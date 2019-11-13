@@ -20,12 +20,12 @@ end
 When(/^I enter my last name$/) do
   expect(personal_details_page.content).to have_last_name_label
   personal_details_page.last_name
-  common_page.continue_button.click
+  continue
 end
 
 When(/^I enter my full name$/) do
   personal_details_page.submit_full_name
-  common_page.continue_button.click
+  continue
 end
 
 Then(/^I should be taken to personal details page$/) do

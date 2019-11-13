@@ -127,14 +127,14 @@ def base_page
   @base_page ||= BasePage.new
 end
 
-def common_page
-  @common_page ||= CommonPage.new
-end
-
 def saucelabs_page
   @saucelabs_page ||= SaucelabsPage.new
 end
 
+def checklist_continue
+  base_page.content.checklist_continue_button.click
+end
+
 def continue
-  common_page.content.continue_button.click
+  base_page.content.continue_button.click
 end

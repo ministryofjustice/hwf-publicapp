@@ -2,7 +2,7 @@ class BenefitPage < BasePage
   set_url '/questions/benefit'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 6 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 6 of 20'
     element :benefit_header, 'h1', text: 'Did you receive any of the following benefits?'
     element :benefits_text, '.text', text: 'contact the Department for Work and Pensions'
     element :benefit, '.text'

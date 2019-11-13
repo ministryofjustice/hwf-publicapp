@@ -2,7 +2,7 @@ class NationalInsurancePage < BasePage
   set_url '/questions/national_insurance'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 13 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 13 of 20'
     element :national_insurance_header, 'h1', text: 'What is your National Insurance number?'
     element :national_insurance_text, '.text', text: 'For example, QQ123456C'
     element :national_insurance_number, '#national_insurance_number'

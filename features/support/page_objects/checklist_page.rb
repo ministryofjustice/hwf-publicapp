@@ -11,10 +11,5 @@ class ChecklistPage < BasePage
     element :do_not_know_ni, 'summary', text: 'If you don’t know your National Insurance number'
     element :look_for_ni, 'li', text: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
     element :reminder, 'a', text: 'ask for a reminder through the post'
-    element :continue, '.button', text: 'Continue'
-  end
-
-  def continue
-    content.continue.click
   end
 end

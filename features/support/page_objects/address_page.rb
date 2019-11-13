@@ -2,7 +2,7 @@ class AddressPage < BasePage
   set_url '/questions/applicant_address'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 16 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 16 of 20'
     element :address_header, 'h1', text: 'What is your address?'
     element :address_label, '.govuk-label', text: 'Address'
     element :address, '#applicant_address_address'

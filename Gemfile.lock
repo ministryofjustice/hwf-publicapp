@@ -394,7 +394,7 @@ PLATFORMS
 DEPENDENCIES
   azure_env_secrets!
   bootsnap
-  capybara
+  capybara (~> 2.7)
   capybara-screenshot
   chromedriver-helper (~> 1.1)
   codeclimate-test-reporter

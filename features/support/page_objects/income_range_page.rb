@@ -2,7 +2,7 @@ class IncomeRangePage < BasePage
   set_url '/questions/income_range'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 9 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 9 of 20'
     element :income_range_header_single, 'h1', text: 'How much income did you receive each month?'
     element :income_range_header_married, 'h1', text: 'How much income do you and your partner receive each month?'
     element :select_single_income_hint, '.text', text: 'Select the monthly amount you received in income from:'

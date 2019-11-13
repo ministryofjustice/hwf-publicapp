@@ -34,7 +34,7 @@ Then(/^I see that I need to make sure that I have the case number, claim number 
 end
 
 When(/^I continue$/) do
-  checklist_page.continue
+  continue
 end
 
 Then(/^I should be taken to form number page$/) do

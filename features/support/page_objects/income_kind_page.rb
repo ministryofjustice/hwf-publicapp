@@ -5,18 +5,15 @@ class IncomeKindPage < BasePage
     element :step_info, '.govuk-caption-l', text: 'Step 8 of 20'
     element :income_kind_header_single, 'h1', text: 'What kind of income did you receive?'
     element :income_kind_header_married, 'h1', text: 'What kind of income did you and your partner receive?'
-    element :choose_income_single, '.text', text: 'Choose the different types of income you received at the time you paid the fee.'
-    element :choose_income_married, '.text', text: 'Choose the different types of income you and your partner received at the time you paid the fee.'
-    section :my_income, '.column-half:nth-child(1)' do
-      element :your_income, 'h3', text: 'Your income'
-      element :wages, '.block-label', text: 'Wages'
-      element :no_income, '.block-label', text: 'No income'
-      element :working_tax_credit, '.block-label', text: 'Working Tax Credit'
-    end
-
+    element :choose_income_single, 'p', text: 'Choose the different types of income you received at the time you paid the fee.'
+    element :choose_income_married, 'p', text: 'Choose the different types of income you and your partner received at the time you paid the fee.'
+    element :your_income, 'h3', text: 'Your income'
+    element :wages, 'label', text: 'Wages'
+    element :no_income, 'label', text: 'No income'
+    element :working_tax_credit, 'label', text: 'Working Tax Credit'
     element :partners_income, 'h3', text: 'Your partner\'s income'
-    elements :income_label, '.block-label'
-    elements :input, '.block-label input'
+    elements :income_label, 'label'
+    elements :input, 'label input'
     element :blank_error_link, 'a', text: 'Select your kinds of income'
     element :blank_error_message, '.error-message', text: 'Select your kinds of income'
   end
@@ -42,19 +39,19 @@ class IncomeKindPage < BasePage
   end
 
   def submit_no_income
-    content.my_income.no_income.click
+    content.no_income.click
     continue
   end
 
   def submit_single_income_wages_tax_credit
-    content.my_income.wages.click
-    content.my_income.working_tax_credit.click
+    content.wages.click
+    content.working_tax_credit.click
     continue
   end
 
   def submit_married_income_wages_tax_credit
-    content.my_income.wages.click
-    content.my_income.working_tax_credit.click
+    content.wages.click
+    content.working_tax_credit.click
     continue
   end
 end

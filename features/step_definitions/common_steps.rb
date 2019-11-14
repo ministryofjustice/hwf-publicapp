@@ -42,11 +42,7 @@ Then(/^I am taken to the Help with Fees homepage$/) do
 end
 
 Then(/^I should see step (\d+) of 20$/) do |step_number|
-  expect(base_page.content.p.text).to eq "Step #{step_number} of 20"
-end
-
-Then(/^I see step (\d+) of 20$/) do |step_number|
-  expect(base_page.heading_secondary.text).to eq "Step #{step_number} of 20"
+  expect(base_page.content.step_number.text).to eq "Step #{step_number} of 20"
 end
 
 Then(/^I should not see the cancel application options$/) do
@@ -73,7 +69,7 @@ Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
 end
 
 Then(/^I am taken to step (\d+) - ([^\"]*)$/) do |step, title|
-  expect(base_page.content.p.text).to have_content step
+  expect(base_page.content.step_number.text).to have_content step
   expect(base_page.content.h1.text).to eq title
 end
 

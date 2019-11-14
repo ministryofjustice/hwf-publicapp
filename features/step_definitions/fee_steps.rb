@@ -27,25 +27,20 @@ end
 
 When(/^I should see enter the fee date in this format error message$/) do
   expect(base_page.content).to have_there_is_a_problem
-  expect(fee_page.content).to have_format_error_message
   expect(fee_page.content).to have_format_error_link
 end
 
 When(/^I should see select whether you've already paid the fee error message$/) do
-  binding pry
   expect(base_page.content).to have_there_is_a_problem
-  expect(fee_page.content).to have_blank_error_message
   expect(fee_page.content).to have_blank_error_link
 end
 
 Then(/^I should see this date can't be in the future error message$/) do
   expect(base_page.content).to have_there_is_a_problem
-  expect(fee_page.content).to have_future_date_error_message
   expect(fee_page.content).to have_future_date_error_link
 end
 
 Then(/^I should see the application must have been made in the last 3 months error message$/) do
   expect(base_page.content).to have_there_is_a_problem
-  expect(fee_page.content).to have_expired_error_message
   expect(fee_page.content).to have_expired_error_link
 end

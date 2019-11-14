@@ -26,13 +26,11 @@ end
 
 Then(/^I should see enter a valid National Insurance number error message$/) do
   expect(base_page.content).to have_there_is_a_problem
-  expect(national_insurance_page.content).to have_invalid_error_message
   expect(national_insurance_page.content).to have_invalid_error_link
 end
 
 Then(/^I should see enter your National Insurance number error message$/) do
   expect(base_page.content).to have_there_is_a_problem
-  expect(national_insurance_page.content).to have_blank_error_message
   expect(national_insurance_page.content).to have_blank_error_link
 end
 

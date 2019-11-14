@@ -28,12 +28,10 @@ end
 
 Then(/^I should see enter a case, claim or ‘notice to pay’ number error message$/) do
   expect(base_page.content).to have_there_is_a_problem
-  expect(claim_page.content).to have_enter_number_error_message
   expect(claim_page.content).to have_enter_number_error_link
 end
 
 Then(/^I should see select whether you have a case, claim or ‘notice to pay’ error message$/) do
   expect(base_page.content).to have_there_is_a_problem
-  expect(claim_page.content).to have_blank_error_message
   expect(claim_page.content).to have_blank_error_link
 end

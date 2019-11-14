@@ -2,11 +2,11 @@ class SummaryPage < BasePage
   set_url '/summary'
 
   section :content, '#content' do
-    element :step_info, '.heading-large', text: 'Step 18 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 18 of 20'
     element :summary_header, 'h1', text: 'Check details'
-    element :check_details_hint, '.text', text: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
+    element :check_details_hint, 'p', text: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
     element :probate, '.summary', text: 'Probate case No'
-    element :declaration_of_truth, '.text', text: 'Declaration and statement of truth'
+    element :declaration_of_truth, 'p', text: 'Declaration and statement of truth'
     section :summary, 'tbody' do
       sections :question, 'tr' do
         element :page, 'td'

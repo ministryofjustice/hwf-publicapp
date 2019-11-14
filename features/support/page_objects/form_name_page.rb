@@ -12,7 +12,6 @@ class FormNamePage < BasePage
     element :error_link, 'a', text: "Enter a valid form number or select 'I don't have a form'"
     element :error_message, '.error-message', text: "Enter a valid form number or select 'I don't have a form'"
     element :invalid_link, 'a', text: 'You entered the help with fees form number. Enter the number on your court or tribunal form'
-    element :invalid_message, '.error-message', text: 'You entered the help with fees form number. Enter the number on your court or tribunal form'
     element :form_name_unknown, '.govuk-label', text: 'I don’t have a form'
     element :find_form_name, 'p', text: 'You can usually find the form name at the top of the form'
     element :help_hearing_fees, 'p', text: "Instead of a form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'."

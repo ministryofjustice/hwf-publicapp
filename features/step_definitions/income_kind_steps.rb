@@ -28,7 +28,7 @@ Then(/^I should see an income list:$/) do |incomes|
 end
 
 Then(/^I should see an income list for myself and my partner:$/) do |incomes|
-  expect(income_kind_page.content.my_income).to have_your_income
+  expect(income_kind_page.content).to have_your_income
   expect(income_kind_page.content).to have_partners_income
   incomes.rows.each_with_index do |income, index|
     expect(income_kind_page.content.income_label[index].text).to eq income[0]

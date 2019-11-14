@@ -5,10 +5,10 @@ class ContactPage < BasePage
     element :step_info, '.govuk-caption-l', text: 'Step 17 of 20'
     element :email_header, 'h1', text: 'What\'s your email address?'
     element :email_label, '.govuk-label', text: 'Email address'
-    element :optional_hint, '.hint', text: '(Optional)'
+    element :optional_hint, '.optional', text: '(Optional)'
     element :contact_email, '#contact_email'
     element :confirmation_email, 'p', text: 'We will email you to confirm your application has been received.'
-    element :share_experience, '.form-checkbox', text: 'Check this box if you\'re willing to share your experience of this service.'
+    element :share_experience, '.govuk-checkboxes', text: 'Check this box if you\'re willing to share your experience of this service.'
   end
 
   def to_contact_page

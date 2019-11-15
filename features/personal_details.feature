@@ -11,7 +11,7 @@ Feature: Personal details page
     Then I should see 'What is your full name?' header
 
   Scenario: Entering personal details
-    When I enter my title
+    # When I enter my title
     And I enter my first name
     And I enter my last name
     Then I should be taken to address page

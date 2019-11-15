@@ -5,14 +5,12 @@ class SummaryPage < BasePage
     element :step_info, '.govuk-caption-l', text: 'Step 18 of 20'
     element :summary_header, 'h1', text: 'Check details'
     element :check_details_hint, 'p', text: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
-    element :probate, '.summary', text: 'Probate case No'
+    element :probate, '.govuk-summary-list__row', text: 'Probate case No'
     element :declaration_of_truth, 'p', text: 'Declaration and statement of truth'
-    section :summary, 'tbody' do
-      sections :question, 'tr' do
-        element :page, 'td'
-        element :answer, 'td'
-        element :change, '.right > a', text: 'Change'
-      end
+    section :summary, '.govuk-summary-list' do
+      element :page, '.govuk-summary-list__key'
+      element :answer, '.govuk-summary-list__value'
+      element :change, 'a', text: 'Change'
     end
     element :submit_application_button, 'input[value="Submit application and continue"]'
   end

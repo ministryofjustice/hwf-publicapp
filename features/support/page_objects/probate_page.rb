@@ -11,7 +11,6 @@ class ProbatePage < BasePage
     element :probate_month_date_of_death, '#probate_month_date_of_death'
     element :probate_year_date_of_death, '#probate_year_date_of_death'
     element :blank_error_link, 'a', text: 'Select whether you\'re paying a fee for a probate case'
-    element :blank_error_message, '.error-message', text: 'Select whether you\'re paying a fee for a probate case'
     element :future_date_error_link, 'a', text: 'This date can\'t be in the future'
     element :expired_date_error_link, 'a', text: 'The date of death must have been in the last 20 years'
     element :invalid_date_error_link, 'a', text: 'Enter the date in this format DD/MM/YYYY'

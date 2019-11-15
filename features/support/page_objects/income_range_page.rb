@@ -13,10 +13,9 @@ class IncomeRangePage < BasePage
     elements :input, 'label input'
     elements :income, 'li'
     element :blank_error_link, 'a', text: 'Select your monthly income'
-    element :blank_error_message, '.error-message', text: 'Select your monthly income'
-    element :income_range_less, '.govuk-label', text: 'Less than £1,085'
-    element :income_range_between, '.govuk-label', text: 'Between £1,085 and £5,085'
-    element :income_range_more, '.govuk-label', text: 'More than £5,085'
+    element :income_range_less, '.govuk-label', text: 'Less than'
+    element :income_range_between, '.govuk-label', text: 'Between'
+    element :income_range_more, '.govuk-label', text: 'More than'
   end
 
   def to_income_range_page_single

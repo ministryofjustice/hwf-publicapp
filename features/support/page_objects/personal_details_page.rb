@@ -4,13 +4,7 @@ class PersonalDetailsPage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 15 of 20'
     element :personal_details_header, 'h1', text: 'What is your full name?'
-    element :title_label, '.govuk-label', text: 'Title'
-    element :optional_hint, '.hint', text: 'Optional'
-    element :title, '#personal_detail_title'
-    element :first_name_label, '.govuk-label', text: 'First name'
-    element :first_name, '#personal_detail_first_name'
-    element :last_name_label, '.govuk-label', text: 'Last name'
-    element :last_name, '#personal_detail_last_name'
+    element :optional_hint, '.optional', text: 'Optional'
   end
 
   def to_personal_details_page
@@ -26,22 +20,10 @@ class PersonalDetailsPage < BasePage
     dob_page.valid_dob
   end
 
-  def title
-    personal_details_page.content.title.set 'Ms'
-  end
-
-  def first_name
-    personal_details_page.content.first_name.set 'Sally'
-  end
-
-  def last_name
-    personal_details_page.content.last_name.set 'Smith'
-  end
-
   def submit_full_name
-    personal_details_page.content.title.set 'Ms'
-    personal_details_page.content.first_name.set 'Sally'
-    personal_details_page.content.last_name.set 'Smith'
+    # fill_in 'Title', with: 'Ms'
+    fill_in 'First name', with: 'Sally'
+    fill_in 'Last name', with: 'Smith'
     continue
   end
 end

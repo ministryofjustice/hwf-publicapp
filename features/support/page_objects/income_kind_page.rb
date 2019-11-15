@@ -7,15 +7,13 @@ class IncomeKindPage < BasePage
     element :income_kind_header_married, 'h1', text: 'What kind of income did you and your partner receive?'
     element :choose_income_single, 'p', text: 'Choose the different types of income you received at the time you paid the fee.'
     element :choose_income_married, 'p', text: 'Choose the different types of income you and your partner received at the time you paid the fee.'
-    element :your_income, 'h3', text: 'Your income'
+    element :your_income, 'h2', text: 'Your income'
     element :wages, 'label', text: 'Wages'
     element :no_income, 'label', text: 'No income'
     element :working_tax_credit, 'label', text: 'Working Tax Credit'
-    element :partners_income, 'h3', text: 'Your partner\'s income'
-    elements :income_label, 'label'
-    elements :input, 'label input'
+    element :partners_income, 'h2', text: 'Your partner\'s income'
+    elements :income_item, '.govuk-checkboxes__item'
     element :blank_error_link, 'a', text: 'Select your kinds of income'
-    element :blank_error_message, '.error-message', text: 'Select your kinds of income'
   end
 
   def to_income_kind_single

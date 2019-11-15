@@ -17,8 +17,8 @@ end
 
 Then(/^I should see my details:$/) do |scopes|
   scopes.rows.each_with_index do |scope, index|
-    expect(summary_page.content.summary.question[index].page.text).to eq scope[0]
-    expect(summary_page.content.summary.question[index]).to have_answer
+    expect(summary_page.content.summary.page[index].text).to eq scope[0]
+    expect(summary_page.content.summary.page[index]).to have_answer
   end
 end
 
@@ -28,15 +28,17 @@ end
 
 Then(/^I should be able to go back and change my details:$/) do |urls|
   urls.rows.each_with_index do |url, index|
-    expect(summary_page.content.summary.question[index].change['href']).to have_content url[0]
+    expect(summary_page.content.summary.page[index].change['href']).to have_content url[0]
   end
 end
 
 Then(/^I should see probate in the check details table$/) do
+  binding.pry
   expect(summary_page.content).to have_probate
 end
 
 Then(/^I should see declaration of truth$/) do
+  binding.pry
   expect(summary_page.content).to have_declaration_of_truth
 end
 

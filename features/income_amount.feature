@@ -20,6 +20,7 @@ Feature: Income amount page
     And I should see the income list on step ten page:
       | income name                                               |
       | Wages before tax and National Insurance are taken off     |
+      | Working Tax Credit                                        |
 
   Scenario: Displays error message
     Given probate is enabled

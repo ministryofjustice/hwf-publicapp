@@ -4,10 +4,6 @@ class AddressPage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 16 of 20'
     element :address_header, 'h1', text: 'What is your address?'
-    element :address_label, '.govuk-label', text: 'Address'
-    element :address, '#applicant_address_address'
-    element :postcode_label, '.govuk-label', text: 'Postcode'
-    element :postcode, '#applicant_address_postcode'
   end
 
   def to_address_page
@@ -24,17 +20,9 @@ class AddressPage < BasePage
     personal_details_page.submit_full_name
   end
 
-  def address
-    address_page.content.address.set('102 Petty France, London')
-  end
-
-  def postcode
-    address_page.content.postcode.set('SW1H 9AJ')
-  end
-
   def submit_full_address
-    address_page.address
-    address_page.postcode
+    fill_in 'Address', with: '102 Petty France, London'
+    fill_in 'Postcode', with:'SW1H 9AJ'
     continue
   end
 end

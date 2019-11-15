@@ -20,7 +20,7 @@ When(/^I submit the form with my monthly income$/) do
 end
 
 Then(/^I should see the income list on step ten page:$/) do |incomes|
-  your_income = income_amount_page.content.text
+  your_income = income_amount_page.content.income_list
   incomes.rows.each_with_index do |income, index|
     expect(your_income.li[index].text).to eq income[0]
   end
@@ -29,7 +29,6 @@ end
 Then(/^I should see enter how much income do you receive error message$/) do
   expect(base_page.content).to have_there_is_a_problem
   expect(income_amount_page.content).to have_blank_error_link
-  expect(income_amount_page.content).to have_blank_error_message
 end
 
 Then(/^I should be taken to income amount page$/) do

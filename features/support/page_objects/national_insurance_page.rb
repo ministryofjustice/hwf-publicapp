@@ -12,7 +12,6 @@ class NationalInsurancePage < BasePage
     element :no_ni_number_text, 'p', text: "If you don't have a National Insurance number, you need to"
     element :no_ni_number_link, 'a', text: "use the paper form"
     element :blank_error_link, 'a', text: 'Enter your National Insurance number'
-    element :blank_error_message, '.error-message', text: 'Enter your National Insurance number'
     element :invalid_error_link, 'a', text: 'Enter a valid National Insurance number'
   end
 

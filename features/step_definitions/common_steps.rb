@@ -6,11 +6,6 @@ When(/^I click on cancel application$/) do
   base_page.restart_application.click
 end
 
-When(/^I have started my application$/) do
-  checklist_page.load_page
-  checklist_continue
-end
-
 When(/^I see the are you sure copy$/) do
   expect(base_page.restart_confirm).to have_yes_button
   expect(base_page.restart_confirm).to have_are_you_sure
@@ -36,10 +31,6 @@ end
 
 Then(/^I should see '([^\"]*)' header$/) do |header|
   expect(base_page.content.h1.text).to have_content header
-end
-
-Then(/^I should see header '([^\"]*)'$/) do |header|
-  expect(base_page.content.h2.text).to have_content header
 end
 
 Then(/^I am taken to the Help with Fees homepage$/) do

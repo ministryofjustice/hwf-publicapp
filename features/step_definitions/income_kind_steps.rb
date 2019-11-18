@@ -28,7 +28,7 @@ end
 
 Then(/^I should see an income list for myself and my partner$/) do
   expect(income_kind_page.content).to have_your_income
-  expect(income_kind_page.content).to have_partners_income  
+  expect(income_kind_page.content).to have_partners_income
   expect(income_kind_page.content.income_item.count).to eq 26
 end
 

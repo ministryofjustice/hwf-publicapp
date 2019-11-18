@@ -6,11 +6,9 @@ class SummaryPage < BasePage
     element :summary_header, 'h1', text: 'Check details'
     element :check_details_hint, 'p', text: 'Please check your details are correct. If you make changes, you may have to answer new questions and confirm information you’ve already entered.'
     element :probate, '.govuk-summary-list__row', text: 'Probate case No'
-    element :declaration_of_truth, 'p', text: 'Declaration and statement of truth'
-    section :summary, '.govuk-summary-list' do
-      element :page, '.govuk-summary-list__key'
-      element :answer, '.govuk-summary-list__value'
-      element :change, 'a', text: 'Change'
+    element :declaration_of_truth, 'h2', text: 'Declaration and statement of truth'
+    sections :summary_row, '.govuk-summary-list__row' do
+      element :action, 'a', text: 'Change'
     end
     element :submit_application_button, 'input[value="Submit application and continue"]'
   end
@@ -28,7 +26,7 @@ class SummaryPage < BasePage
     probate_page.submit_probate_no
     claim_page.submit_claim_no
     national_insurance_page.submit_valid_ni
-    dob_page.valid_dob
+    dob_page.static_dob
     personal_details_page.submit_full_name
     address_page.submit_full_address
     contact_page.valid_email
@@ -37,13 +35,13 @@ class SummaryPage < BasePage
   def to_summary_page_probate_disabled
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
+    fee_page.submit_fee_no
     marital_status_page.submit_married
     savings_investment_page.low_amount_checked
     benefit_page.submit_benefit_yes
     claim_page.submit_claim_no
     national_insurance_page.submit_valid_ni
-    dob_page.valid_dob
+    dob_page.static_dob
     personal_details_page.submit_full_name
     address_page.submit_full_address
     contact_page.valid_email

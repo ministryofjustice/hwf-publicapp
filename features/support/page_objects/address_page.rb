@@ -22,7 +22,7 @@ class AddressPage < BasePage
 
   def submit_full_address
     fill_in 'Address', with: '102 Petty France, London'
-    fill_in 'Postcode', with:'SW1H 9AJ'
+    fill_in 'Postcode', with: 'SW1H 9AJ'
     continue
   end
 end

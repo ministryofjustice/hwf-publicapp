@@ -18,7 +18,7 @@ Feature: Summary page
     | Claim number No Change claim number                                       |
     | National Insurance number JL806367D Change national insurance number      |
     | Date of birth 23/07/1980 Change date of birth                             |
-    | Full name Sally Smith Change full name                                    |
+    | Full name Ms Sally Smith Change full name                                 |
     | Address 102 Petty France, London SW1H 9AJ Change address                  |
     | Email test@hmcts.net Change email                                         |
     And I should be able to go back and change my details:

@@ -4,7 +4,7 @@ class FormNamePage < BasePage
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 1 of 20'
     element :form_name_header, 'h1', text: 'What number is on your court or tribunal form?'
-    element :probate_warning_message, '#probate-warning', text: 'Help with Fees is no longer available for probate applications.'
+    element :probate_warning_message, '.govuk-warning-text', text: 'Help with Fees is no longer available for probate applications.'
     element :probate_link, 'a', text: 'Find further details and apply for probate.'
     element :form_label, '.govuk-label', text: 'Form number'
     element :form_name, '#form_name_identifier'

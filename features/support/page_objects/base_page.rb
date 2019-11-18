@@ -5,11 +5,6 @@ class BasePage < SitePrism::Page
     element :h2, 'h2'
     element :there_is_a_problem, 'h2', text: 'There is a problem'
     element :step_number, '.govuk-caption-l'
-    # section :text, '.text' do
-    #   elements :p, 'p'
-    #   elements :li, 'li'
-    #   elements :hint, '.hint'
-    # end
     element :checklist_continue_button, '.govuk-button', text: 'Continue'
     element :continue_button, 'input[value="Continue"]'
   end

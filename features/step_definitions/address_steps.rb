@@ -14,7 +14,7 @@ When(/^I enter my address$/) do
 end
 
 When(/^I enter my postcode$/) do
-  fill_in 'Postcode', with:'SW1H 9AJ'
+  fill_in 'Postcode', with: 'SW1H 9AJ'
 end
 
 Then(/^I should be taken to address page$/) do

@@ -13,12 +13,12 @@ steps:
   displayName: 'install bundler'
 
 - script: |
-    npm install --production
-  displayName: 'npm install'
-
-- script: |
     bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
+
+- script: |
+    npm install --production
+  displayName: 'npm install'
 
 - script: |
     bundle exec rubocop

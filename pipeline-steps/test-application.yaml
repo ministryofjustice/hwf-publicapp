@@ -21,8 +21,14 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    bundle exec rubocop
-    bundle exec rspec --format documentation --format RspecJunitFormatter --out test-rspec.xml
-    bundle exec cucumber features/*.feature
-  displayName: 'tests'
+    bundle exec rubocop --fail-fast
+  displayName: 'rubocop'
+
+- script: |
+    bundle exec rspec --fail-fast --format documentation --format RspecJunitFormatter --out test-rspec.xml
+  displayName: 'rspec'
+
+- script: |
+    bundle exec cucumber features/*.feature --fail-fast
+  displayName: 'cucumber'
 

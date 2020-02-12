@@ -14,7 +14,6 @@
 // = require jquery
 // = require jquery_ujs
 
-// = require details.polyfill.iecompatible
 // = require is-nan.polyfill
 // = require govuk-frontend/govuk/all
 

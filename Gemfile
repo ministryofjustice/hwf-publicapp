@@ -7,7 +7,7 @@ end
 
 gem 'dotenv-rails', groups: [:development, :test] # this has to be here because of load order
 
-gem 'rails', '5.2.3'
+gem 'rails', '5.2.4.1'
 
 gem 'bootsnap', require: false
 gem 'config'

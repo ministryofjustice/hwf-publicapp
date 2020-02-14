@@ -17,8 +17,7 @@ end
 
 Then(/^I should see my details:$/) do |scopes|
   scopes.rows.each_with_index do |scope, index|
-    expect(summary_page.content.summary.question[index].page.text).to eq scope[0]
-    expect(summary_page.content.summary.question[index]).to have_answer
+    expect(summary_page.content.summary_row[index].text).to eq scope[0]
   end
 end
 
@@ -28,7 +27,7 @@ end
 
 Then(/^I should be able to go back and change my details:$/) do |urls|
   urls.rows.each_with_index do |url, index|
-    expect(summary_page.content.summary.question[index].change['href']).to have_content url[0]
+    expect(summary_page.content.summary_row[index].action['href']).to have_content url[0]
   end
 end
 

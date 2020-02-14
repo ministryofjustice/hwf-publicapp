@@ -1,35 +1,6 @@
-.phase-banner {
-  @include phase-banner($state: beta);
-  max-width: 1020px;
-  margin: 0 auto;
-  border-bottom: none;
-
-  .phase-banner-inner {
-    margin: 0 30px;
-    border-bottom: 1px solid $grey-3;
-    padding-bottom: 10px;
-
-    @media (min-width: 0px) {
-      margin: 0 15px;
-    }
-
-    @media (min-width: 640px) {
-      margin: 0 30px;
-    }
-  }
-
-  p {
-    display: table;
-
-    & > * {
-      display: table-cell;
-      padding-right: 15px;
-    }
-  }
-
+.govuk-phase-banner__text {
+  width: 100%;
   .language-picker {
-    @include core-16;
-    line-height: inherit;
     float: right;
   }
 }

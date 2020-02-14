@@ -21,8 +21,9 @@ RSpec.feature 'As a user' do
       expect(page).not_to have_text('Enter your employment tribunal claim number')
 
       when_they_continue_from_step12_up_to_summary
-      expect(page).to have_text('Step 18 of 20: Check details')
-      claim_link = page.find(:xpath, './/table//tr[9]//a')
+      expect(page).to have_text('Step 18 of 20')
+      expect(page).to have_text('Check details')
+      claim_link = page.find(:xpath, './/dl//div[9]//a')
       expect(claim_link.text).to eql('Change claim number')
       claim_link.click
 
@@ -56,7 +57,7 @@ RSpec.feature 'As a user' do
 
     context 'Welsh' do
       scenario 'I expect to "What happens next?" instructions' do
-        within(:xpath, ".//div[@class='language-picker']") do
+        within(:xpath, ".//p[@class='govuk-phase-banner__content']") do
           click_link 'Cymraeg'
         end
 

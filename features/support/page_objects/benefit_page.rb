@@ -2,19 +2,19 @@ class BenefitPage < BasePage
   set_url '/questions/benefit'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 6 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 6 of 20'
     element :benefit_header, 'h1', text: 'Did you receive any of the following benefits?'
-    element :benefits_text, '.text', text: 'contact the Department for Work and Pensions'
-    element :benefit, '.text'
+    element :benefits_text, 'p', text: 'contact the Department for Work and Pensions'
+    element :benefit, 'p'
     elements :li, 'li'
     elements :td, 'td'
-    element :no, '.block-label', text: 'No'
-    element :yes, '.block-label', text: 'Yes, I am receiving one of the benefits listed in Column 1'
+    element :no, 'label', text: 'No'
+    element :yes, 'label', text: 'Yes, I am receiving one of the benefits listed in Column 1'
     element :help_with_benefits, 'summary', text: 'Help with benefits'
-    element :recently_receiving_heading, '.text', text: 'If you’ve only recently started receiving one of these benefits'
-    element :provide_a_letter, '.text', text: 'In this case you should provide a letter from the Jobcentre.'
-    element :similar_names_heading, '.text', text: 'Benefits with similar names'
-    element :benefits_with_similar_names, '.text', text: 'If you are receiving one of the benefits listed below, select \'No\'.'
+    element :recently_receiving_heading, 'p', text: 'If you’ve only recently started receiving one of these benefits'
+    element :provide_a_letter, 'p', text: 'In this case you should provide a letter from the Jobcentre.'
+    element :similar_names_heading, 'p', text: 'Benefits with similar names'
+    element :benefits_with_similar_names, 'p', text: 'If you are receiving one of the benefits listed below, select \'No\'.'
     element :job_seekers, 'li', text: 'Contribution-based Job Seekers Allowance (JSA)'
     element :employment_support, 'li', text: 'Contribution-based Employment and Support Allowance (ESA)'
     element :pension_credit, 'li', text: 'Pension Credit and Savings Credit'
@@ -22,7 +22,6 @@ class BenefitPage < BasePage
     element :laa_assistance, 'li', text: 'Scottish Legal Aid Advice and Assistance'
     element :laa_representation, 'li', text: 'Scottish Legal Aid Advice by Way of Representation (ABWOR)'
     element :blank_error_link, 'a', text: 'Select whether you\'re receiving one of the benefits listed'
-    element :blank_error_message, '.error-message', text: 'Select whether you\'re receiving one of the benefits listed'
   end
 
   def to_benefit_page

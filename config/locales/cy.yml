@@ -378,7 +378,7 @@ cy:
       children_true: Oes
       details:
         item_1: o dan 16 oed ac yn byw gartref gyda chi
-        item_2: rhwng 16 – 19, sengl, yn byw gartref gyda chi ac mewn addysg amser llawn (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall). Gweler <a class="external" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
+        item_2: rhwng 16 – 19, sengl, yn byw gartref gyda chi ac mewn addysg amser llawn (heb gynnwys astudio ar gyfer gradd neu gymhwyster addysg uwch arall). Gweler <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
         item_3: plentyn nad yw'n byw gyda chi, ond eich bod chi (neu'ch partner) yn gwneud taliadau cynhaliaeth rheolaidd ar ei gyfer
         section_1: Mae angen i chi roi manylion unrhyw blant rydych chi'n eu cynnal yn ariannol.
         section_2: 'Mae hyn yn cynnwys plant sydd:'
@@ -500,7 +500,7 @@ cy:
         section_1:
           detail_html: "Os nad oes gennych rif Yswiriant Gwladol, bydd angen ichi
             <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-            class='external' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+            class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
             target='_blank'>ddefnyddio’r ffurflen bapur</a>."
           item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
           item_2: gofynnwch am nodyn atgoffa drwy'r post
@@ -512,7 +512,7 @@ cy:
     personal_detail:
       breadcrumb: Cam 15 o 20
       text: Beth yw eich enw llawn?
-      title: Eich enw
+      title: Teitl
     probate:
       breadcrumb: Cam 11 o 20
       details: Fel arfer mae'r achosion hyn yn ymwneud ag eiddo rhywun sydd wedi marw.
@@ -635,13 +635,13 @@ cy:
     - title:
       parts:
         - ul:
-          - li: <a href="#telerau_ac_amodau_cyffredinol">Telerau ac amodau cyffredinol</a>
-          - li: <a href="#gwybodaeth_a_ddarperir_gan_y_gwasanaeth_hwn">Gwybodaeth a ddarperir gan y gwasanaeth hwn</a>
-          - li: <a href="#y_gyfraith_sy_n_berthnasol">Y gyfraith sy’n berthnasol</a>
-          - li: <a href="#defnyddio_r_gwasanaeth_hwn_yn_gyfrifol">Defnyddio’r gwasanaeth hwn yn gyfrifol</a>
-          - li: <a href="#rheoliadau_cyffredinol_diogelu_data_gdpr">Rheoliadau Cyffredinol Diogelu Data (GDPR)</a>
-          - li: <a href="#polisi_preifatrwydd_glltem">Polisi Preifatrwydd GLlTEM</a>
-          - li: <a href="#ymwrthodiad">Ymwrthodiad</a>
+          - li: <a href="#telerau_ac_amodau_cyffredinol" class="govuk-link">Telerau ac amodau cyffredinol</a>
+          - li: <a href="#gwybodaeth_a_ddarperir_gan_y_gwasanaeth_hwn" class="govuk-link">Gwybodaeth a ddarperir gan y gwasanaeth hwn</a>
+          - li: <a href="#y_gyfraith_sy_n_berthnasol" class="govuk-link">Y gyfraith sy’n berthnasol</a>
+          - li: <a href="#defnyddio_r_gwasanaeth_hwn_yn_gyfrifol" class="govuk-link">Defnyddio’r gwasanaeth hwn yn gyfrifol</a>
+          - li: <a href="#rheoliadau_cyffredinol_diogelu_data_gdpr" class="govuk-link">Rheoliadau Cyffredinol Diogelu Data (GDPR)</a>
+          - li: <a href="#polisi_preifatrwydd_glltem" class="govuk-link">Polisi Preifatrwydd GLlTEM</a>
+          - li: <a href="#ymwrthodiad" class="govuk-link">Ymwrthodiad</a>
         - p: <i>Trwy ddefnyddio’r gwasanaeth ‘Help i Dalu Ffioedd’ hwn, rydych yn cytuno i’n polisi preifatrwydd a’r telerau ac amodau hyn. Darllenwch nhw’n ofalus.</i>
     - title: Telerau ac amodau cyffredinol
       parts:
@@ -675,7 +675,7 @@ cy:
         parts:
         - p: Mae'r hysbysiad preifatrwydd hwn yn pennu’r safonau y gallwch eu disgwyl gan y Weinyddiaeth Cyfiawnder (MoJ) a Gwasanaeth Llysoedd a Thribiwnlysoedd Ei Mawrhydi (GLlTEM) pan fyddwn yn prosesu gwybodaeth bersonol (‘data personol’) amdanoch chi yng nghyd-destun achos llys neu dribiwnlys; sut gallwch gael gafael ar gopi o’ch data personol; a’r hyn gallwch ei wneud os ydych yn teimlo nad yw’r safonau’n cael eu bodloni.
         - p: Mae GLlTEM yn un o asiantaethau gweithredol y Weinyddiaeth Cyfiawnder (MoJ). MoJ yw’r rheolwr data ar gyfer y data personol a gedwir, er gall weithio ar y cyd gyda GLlTEM. Mae GLlTEM hefyd yn casglu a phrosesu data personol er mwyn gweithredu ei swyddogaethau cyhoeddus cysylltiedig a'i rwymedigaethau cyfreithiol.
-        - p: Nid yw’r hysbysiad preifatrwydd hwn yn berthnasol o ran prosesu data personol sy’n cael ei gasglu a’i reoli gan y tribiwnlys a’i farnwyr pan maent yn gweithredu mewn capasiti barnwrol. Mae’r farnwriaeth yn annibynnol o MoJ a GLlTEM ac mae’r ddeddfwriaeth diogelu data yn ei heffeithio'n wahanol o ganlyniad i hyn. Am ragor o wybodaeth, ewch i <a href="http://www.judiciary.gov.uk" target="_blank">www.judiciary.gov.uk.</a>
+        - p: Nid yw’r hysbysiad preifatrwydd hwn yn berthnasol o ran prosesu data personol sy’n cael ei gasglu a’i reoli gan y tribiwnlys a’i farnwyr pan maent yn gweithredu mewn capasiti barnwrol. Mae’r farnwriaeth yn annibynnol o MoJ a GLlTEM ac mae’r ddeddfwriaeth diogelu data yn ei heffeithio'n wahanol o ganlyniad i hyn. Am ragor o wybodaeth, ewch i <a href="http://www.judiciary.gov.uk" target="_blank" class="govuk-link">www.judiciary.gov.uk.</a>
       - title: Ynghylch data personol
         parts:
         - p: Mae data personol yn ymwneud ag unigolyn byw y gellir ei adnabod o’r data hwnnw.
@@ -717,12 +717,12 @@ cy:
       - title: Sut mae eich data personol yn cael ei storio?
         parts:
         - p: Mae MoJ yn cymryd diogelu data o ddifrif ac yn cymryd pob cam posib i sicrhau bod eich data yn aros yn breifat ac yn ddiogel.  Mae’r holl ddata a gesglir gan y gwasanaeth hwn ac sy'n cael ei storio ar ein cronfa ddata diogel yn cael ei gadw o fewn yr Ardal Economaidd Ewropeaidd (EEA).
-        - p: Mae MoJ yn defnyddio Amazon Web Services (AWS) i storio eich data.  Trwy gyflwyno eich gwybodaeth, rydych yn cytuno i <a href="http://aws.amazon.com/service-terms/" target="_blank">Delerau ac Amodau AWS</a>.
-        - p: Mae'r gwasanaeth hwn yn defnyddio SendGrid i lwybro negeseuon e-bost.  Oherwydd natur fyd-eang isadeiledd y rhyngrwyd, ni allwn warantu y bydd yr wybodaeth sy'n cael ei chynnwys mewn negeseuon e-bost a anfonir o'r gwasanaeth hwn yn cael eu llwybro o fewn yr EEA,  Trwy gyflwyno eich gwybodaeth, rydych yn cytuno i <a href="https://sendgrid.com/tos" target="_blank">Delerau ac Amodau SendGrid</a>.
+        - p: Mae MoJ yn defnyddio Amazon Web Services (AWS) i storio eich data.  Trwy gyflwyno eich gwybodaeth, rydych yn cytuno i <a href="http://aws.amazon.com/service-terms/" target="_blank" class="govuk-link">Delerau ac Amodau AWS</a>.
+        - p: Mae'r gwasanaeth hwn yn defnyddio SendGrid i lwybro negeseuon e-bost.  Oherwydd natur fyd-eang isadeiledd y rhyngrwyd, ni allwn warantu y bydd yr wybodaeth sy'n cael ei chynnwys mewn negeseuon e-bost a anfonir o'r gwasanaeth hwn yn cael eu llwybro o fewn yr EEA,  Trwy gyflwyno eich gwybodaeth, rydych yn cytuno i <a href="https://sendgrid.com/tos" target="_blank" class="govuk-link">Delerau ac Amodau SendGrid</a>.
         - p: Ni fyddwn yn rhannu eich data ag unrhyw sefydliad arall at ddibenion marchnata, ymchwil i’r farchnad na masnachol, ac nid ydym yn anfon eich data personol ymlaen i wefannau eraill.
       - title: Sut mae data nad yw’n bersonol yn cael ei storio?
         parts:
-        - p: Mae data nad yw’n bersonol a gesglir yn ystod sesiynau, fel y'i disgrifir yn y rhan uchod, yn cael ei storio ar ein gweinyddwyr diogel o fewn yr EEA.  Mae’n cael ei storio y tu allan i Ewrop hefyd, yn Unol Daleithiau America (UDA). Trwy ddefnyddio’r gwasanaeth hwn, rydych chi'n cytuno i <a href="http://www.google.co.uk/analytics/terms/us.html" target="_blank">Delerau ac Amodau Google Analytics</a>.
+        - p: Mae data nad yw’n bersonol a gesglir yn ystod sesiynau, fel y'i disgrifir yn y rhan uchod, yn cael ei storio ar ein gweinyddwyr diogel o fewn yr EEA.  Mae’n cael ei storio y tu allan i Ewrop hefyd, yn Unol Daleithiau America (UDA). Trwy ddefnyddio’r gwasanaeth hwn, rydych chi'n cytuno i <a href="http://www.google.co.uk/analytics/terms/us.html" target="_blank" class="govuk-link">Delerau ac Amodau Google Analytics</a>.
       - title: Cadw eich data’n ddiogel
         parts:
         - p: Yn gyffredinol, nid yw trosglwyddo gwybodaeth dros y rhyngrwyd yn hollol ddiogel, ac ni allwn warantu y bydd eich data’n ddiogel. Fodd bynnag, rydym yn defnyddio SSL (haen socedi diogel) i amgryptio'r holl ddata sy'n cael ei drosglwyddo i'n gweinydd ac allan ohono. Rydym yn cymryd diogelu data o ddifrif ac yn cymryd pob cam posib i sicrhau bod eich data yn aros yn breifat a diogel. Mae gennym weithdrefnau a nodweddion diogelwch mewn lle i geisio cadw’ch data’n ddiogel unwaith y byddwn wedi’i gael.
@@ -731,7 +731,7 @@ cy:
         - p:  Efallai y byddwn yn anfon eich gwybodaeth bersonol ymlaen os oes gennym ddyletswydd gyfreithiol i wneud hynny.
       - title: Mynediad at wybodaeth bersonol
         parts:
-        - p: 'Gallwch ganfod os oes gennym unrhyw ddata personol amdanoch drwy wneud ‘cais gwrthrych am wybodaeth’.  Gallwch wneud cais gwrthrych am wybodaeth trwy anfon e-bost i: <a href="mailto:data.access@justice.gsi.gov.uk">data.access@justice.gsi.gov.uk</a>'
+        - p: 'Gallwch ganfod os oes gennym unrhyw ddata personol amdanoch drwy wneud ‘cais gwrthrych am wybodaeth’.  Gallwch wneud cais gwrthrych am wybodaeth trwy anfon e-bost i: <a href="mailto:data.access@justice.gsi.gov.uk" class="govuk-link">data.access@justice.gsi.gov.uk</a>'
         - p: 'Gallwch gael rhagor o fanylion ynghylch:'
         - ul:
           - li: Cytundebau sydd gennym gyda sefydliadau eraill ar gyfer rhannu data personol;
@@ -739,8 +739,8 @@ cy:
           - li: Ein cyfarwyddiadau i staff ynghylch sut mae casglu, defnyddio neu ddileu eich data personol;
           - li: Sut rydym yn gwirio bod y data personol sydd gennym yn gywir ac yn gyfredol;
           - li: Sut i wneud cwyn
-        - p: 'I gael rhagor o wybodaeth am y materion uchod neu ar gyfer unrhyw ymholiadau eraill, cysylltwch â’n Swyddog Diogelu Data drwy e-bost yn: <a href="mailto:data.compliance@justice.gov.uk">data.compliance@justice.gov.uk</a>'
-        - p: '<a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external">Gweler Polisi Preifatrwydd GOV.UK yma</a>'
+        - p: 'I gael rhagor o wybodaeth am y materion uchod neu ar gyfer unrhyw ymholiadau eraill, cysylltwch â’n Swyddog Diogelu Data drwy e-bost yn: <a href="mailto:data.compliance@justice.gov.uk" class="govuk-link">data.compliance@justice.gov.uk</a>'
+        - p: '<a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external" class="govuk-link">Gweler Polisi Preifatrwydd GOV.UK yma</a>'
       - title: Cwynion
         parts:
         - p: 'Pan ofynnwn i chi am wybodaeth, byddwn yn cadw at y gyfraith. Os ydych yn credu bod eich gwybodaeth wedi cael ei thrin yn anghywir gan MoJ neu GLlTEM, gallwch gysylltu â’r Comisiynydd Gwybodaeth am gyngor annibynnol ar ddiogelu data. Manylion cyswllt y Comisiynydd Gwybodaeth yw:'
@@ -751,7 +751,7 @@ cy:
         - span: 'Swydd Gaer<br/>'
         - span: 'SK9 5AF<br/>'
         - span: 'Ffôn: 0303 123 1113<br/>'
-        - span: '<a href="http://www.ico.org.uk" target="_blank">www.ico.org.uk</a>'
+        - span: '<a href="http://www.ico.org.uk" target="_blank" class="govuk-link">www.ico.org.uk</a>'
     - title: Ymwrthodiad
       parts:
       - p: 'Er ein bod yn ymdrechu i gadw gwybodaeth yn gyfredol, nid ydym yn darparu unrhyw warantau, amodau neu sicrwydd y bydd:'

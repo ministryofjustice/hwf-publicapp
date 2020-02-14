@@ -5,17 +5,20 @@
   display: none;
 }
 
-.heading-large {
+.govuk-heading-l {
   font-size: 24pt;
+  font-family: 'GDS Transport', Arial, sans-serif
 }
 
 li {
-  font-size: 16pt;
+  font-size: 18pt;
   margin-bottom: 1em;
+  font-family: 'GDS Transport', Arial, sans-serif
 }
 
 .notice {
   font-size: 18pt;
+  font-family: 'GDS Transport', Arial, sans-serif
 }
 
 .number {
@@ -24,4 +27,8 @@ li {
   border: 1pt solid #000;
   display: table;
   margin-top: 1em;
+}
+
+.govuk-warning-text__text {
+  font-size: 24pt;
 }

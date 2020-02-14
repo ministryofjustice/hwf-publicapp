@@ -1,28 +1,32 @@
-.form-group class=('error' if @form.errors[:number].any?)
+.govuk-form-group class=('govuk-form-group--error' if @form.errors[:number].any?)
   = f.hidden_field :number, value: nil
   - if @form.errors[:number].any?
-    span.error-message#kase = @form.errors[:number].join(' ')
-  fieldset
-    label.block-label for='claim_default_number_false'
-      = f.radio_button :number, 'false'
-      = t('number_false', scope: @form.i18n_scope)
-    label.block-label for='claim_default_number_true' data-target='claim-identifier-panel'
-      = f.radio_button :number, 'true'
-      = t('number_true', scope: @form.i18n_scope)
-    #claim-identifier-panel.panel-indent.util_mb-medium.js-hidden
-      .form-group class=('error' if @form.errors[:identifier].any?)
+    span.govuk-error-message#kase = @form.errors[:number].join(' ')
+  .govuk-form-group
+    .govuk-radios
+      .govuk-radios__item
+        = f.radio_button :number, 'false', class: 'govuk-radios__input'
+        label.govuk-label.govuk-radios__label for='claim_default_number_false'
+          = t('number_false', scope: @form.i18n_scope)
+      .govuk-radios__item
+        = f.radio_button :number, 'true', 'data-target': 'claim-identifier-panel', class: 'govuk-radios__input'
+        label.govuk-label.govuk-radios__label for='claim_default_number_true'
+          = t('number_true', scope: @form.i18n_scope)
+  .govuk-form-group
+    #claim-identifier-panel.panel-indent.js-hidden
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors[:identifier].any?)
         - if @form.errors[:identifier].any?
-          span.error-message#identifier = @form.errors[:identifier].join(' ')
-        label.form-label(for='claim_default_identifier')
+          span.govuk-error-message#identifier = @form.errors[:identifier].join(' ')
+        label.govuk-label(for='claim_default_identifier')
           = t('identifier', scope: @form.i18n_scope)
-        = f.text_field :identifier, class: 'form-control'
+        = f.text_field :identifier, class: 'govuk-input govuk-!-width-one-third'
 
-.form-group
-  details
-    summary= t('details.summary', scope: @form.i18n_scope)
 
-    .panel-indent
-      .text
-        p= t('details.section_1', scope: @form.i18n_scope)
-        p= t('details.section_2', scope: @form.i18n_scope)
-        p= t('details.section_3', scope: @form.i18n_scope)
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary = t('details.summary', scope: @form.i18n_scope)
+  .govuk-details__text.govuk-body
+    p= t('details.section_1', scope: @form.i18n_scope)
+    p= t('details.section_2', scope: @form.i18n_scope)
+    p= t('details.section_3', scope: @form.i18n_scope)
+
+

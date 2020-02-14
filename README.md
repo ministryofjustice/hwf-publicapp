@@ -14,3 +14,6 @@ Using this command `docker build hmcts/hwf-publicapp:vX.Y`
 ## Feature tests
 
 See the [feature testing README](https://github.com/hmcts/hwf-publicapp/blob/master/README.md).
+
+## Frontend toolkit
+npm install --save govuk-frontend (https://github.com/alphagov/govuk-frontend/blob/master/docs/installation/installing-with-npm.md)

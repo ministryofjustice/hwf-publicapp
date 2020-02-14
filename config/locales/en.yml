@@ -382,7 +382,7 @@ en:
       children_true: 'Yes'
       details:
         item_1: under 16 and living at home with you
-        item_2: between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class="external" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
+        item_2: between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
         item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
         section_1: You need to give details of any children you support financially.
         section_2: 'This includes children who are:'
@@ -410,7 +410,7 @@ en:
         summary: Applying for help with hearing fees
       et: I need help with an employment tribunal fee
       example: You'll find a number at the bottom of paper forms, for example C100 or ADM1A.
-      probate_warning_html: Help with Fees is no longer available for probate applications. <a class="external" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Find further details and apply for probate.</a>
+      probate_warning_html: Help with Fees is no longer available for probate applications. <a class="external govuk-link" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Find further details and apply for probate.</a>
       text: What number is on your court or tribunal form?
       title: Form number
       unknown: I don’t have a form
@@ -505,7 +505,7 @@ en:
         section_1:
           detail_html: "If you don't have a National Insurance number, you need to
             <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-            class='external' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+            class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
             target='_blank'>use the paper form</a>."
           item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
           item_2: ask for a reminder through the post
@@ -517,7 +517,7 @@ en:
     personal_detail:
       breadcrumb: Step 15 of 20
       text: What is your full name?
-      title: Your name
+      title: Title
     probate:
       breadcrumb: Step 11 of 20
       details: These cases are usually about the property and belongings of someone who has died.
@@ -589,7 +589,7 @@ en:
     applicant_on_benefits_false: Not receiving eligible benefits
     applicant_on_benefits_true: Receiving eligible benefits
     breadcrumb: Step 18 of 20
-    change: Change
+    change: 'Change '
     children_false: 'No'
     claim_number_false: 'No'
     claim_number_true: 'Yes'
@@ -640,13 +640,13 @@ en:
     - title:
       parts:
         - ul:
-          - li: <a href="#general_terms_and_conditions">General terms and conditions</a>
-          - li: <a href="#information_provided_by_this_service">Information provided by this service</a>
-          - li: <a href="#applicable_law">Applicable law</a>
-          - li: <a href="#responsible_use_of_this_service">Responsible use of this service</a>
-          - li: <a href="#general_data_protection_regulations_gdpr">General Data Protection Regulations (GDPR)</a>
-          - li: <a href="#hmcts_privacy_notice">HMCTS privacy notice</a>
-          - li: <a href="#disclaimer">Disclaimer</a>
+          - li: <a href="#general_terms_and_conditions" class="govuk-link">General terms and conditions</a>
+          - li: <a href="#information_provided_by_this_service" class="govuk-link">Information provided by this service</a>
+          - li: <a href="#applicable_law" class="govuk-link">Applicable law</a>
+          - li: <a href="#responsible_use_of_this_service" class="govuk-link">Responsible use of this service</a>
+          - li: <a href="#general_data_protection_regulations_gdpr" class="govuk-link">General Data Protection Regulations (GDPR)</a>
+          - li: <a href="#hmcts_privacy_notice" class="govuk-link">HMCTS privacy notice</a>
+          - li: <a href="#disclaimer" class="govuk-link">Disclaimer</a>
         - p: <i>By using this ‘Help with Fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.</i>
     - title: General terms and conditions
       parts:
@@ -680,7 +680,7 @@ en:
         parts:
         - p: This privacy notice sets out the standards that you can expect from the Ministry of Justice and Her Majesty’s Courts and Tribunals Service (HMCTS) when we process personal information (‘personal data’) about you in the context of court or tribunal proceedings; how you can get access to a copy of your personal data; and what you can do if you think the standards are not being met.
         - p: HMCTS is an Executive Agency of the Ministry of Justice (MoJ). MoJ is the data controller for the personal data held, although it may act jointly with HMCTS. HMCTS also collects and processes personal data for the exercise of its own and associated public functions and legal obligations.
-        - p: This privacy notice does not apply to the processing of personal data which is collected and controlled by the tribunal and its judges when they are acting in their judicial capacity. The judiciary are independent from MoJ and HMCTS and data protection law applies differently to them as a result. For more information, see <a href="http://www.judiciary.gov.uk" target="_blank">www.judiciary.gov.uk.</a>
+        - p: This privacy notice does not apply to the processing of personal data which is collected and controlled by the tribunal and its judges when they are acting in their judicial capacity. The judiciary are independent from MoJ and HMCTS and data protection law applies differently to them as a result. For more information, see <a href="http://www.judiciary.gov.uk" target="_blank" class="govuk-link">www.judiciary.gov.uk.</a>
       - title: About personal data
         parts:
         - p: Personal data is information that relates to a living individual who can be identified from the data.
@@ -722,12 +722,12 @@ en:
       - title: How your personal data is stored
         parts:
         - p: MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA).
-        - p: MOJ use the Amazon Web Services (AWS) to store your data. By submitting your data, you consent to the <a href="http://aws.amazon.com/service-terms/" target="_blank">AWS Terms and Conditions</a>.
-        - p: This service uses SendGrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos" target="_blank">SendGrid terms and conditions</a>.
+        - p: MOJ use the Amazon Web Services (AWS) to store your data. By submitting your data, you consent to the <a href="http://aws.amazon.com/service-terms/" target="_blank" class="govuk-link">AWS Terms and Conditions</a>.
+        - p: This service uses SendGrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos" target="_blank" class="govuk-link">SendGrid terms and conditions</a>.
         - p: We’ll never share your data with other organisations for their marketing, market research or commercial purposes, and we don’t pass on your personal data to any other websites.
       - title: How non-personal data is stored
         parts:
-        - p: Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html" target="_blank">Google Analytics terms and conditions</a>.
+        - p: Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html" target="_blank" class="govuk-link">Google Analytics terms and conditions</a>.
       - title: Keeping your data secure
         parts:
         - p: Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use SSL to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it.
@@ -736,7 +736,7 @@ en:
         - p: We may pass on your personal data if we have a legal obligation to do so.
       - title: Access to personal information
         parts:
-        - p: 'You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: <a href="mailto:data.access@justice.gsi.gov.uk">data.access@justice.gsi.gov.uk</a>'
+        - p: 'You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: <a href="mailto:data.access@justice.gsi.gov.uk" class="govuk-link">data.access@justice.gsi.gov.uk</a>'
         - p: 'You can get more details on:'
         - ul:
           - li: Agreements we have with other organisations for sharing personal data;
@@ -744,8 +744,8 @@ en:
           - li: Our instructions to staff on how to collect, use or delete your personal data;
           - li: How we check that the personal data we hold is accurate and up-to-date;
           - li: How to make a complaint.
-        - p: 'For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: <a href="mailto:data.compliance@justice.gov.uk">data.compliance@justice.gov.uk</a>'
-        - p: 'Refer to <a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external">GOV.UK privacy policy</a> here.'
+        - p: 'For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: <a href="mailto:data.compliance@justice.gov.uk" class="govuk-link">data.compliance@justice.gov.uk</a>'
+        - p: 'Refer to <a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external" class="govuk-link">GOV.UK privacy policy</a> here.'
       - title: Complaints
         parts:
         - p: 'When we ask you for information, we will keep to the law. If you consider that your information has been handled incorrectly by MoJ or HMCTS, you can contact the Information Commissioner for independent advice about data protection. You can contact the Information Commissioner here:'
@@ -756,7 +756,7 @@ en:
         - span: 'Cheshire<br/>'
         - span: 'SK9 5AF<br/>'
         - span: 'Tel: 0303 123 1113<br/>'
-        - span: '<a href="http://www.ico.org.uk" target="_blank">www.ico.org.uk</a>'
+        - span: '<a href="http://www.ico.org.uk" target="_blank" class="govuk-link">www.ico.org.uk</a>'
     - title: Disclaimer
       parts:
       - p: 'While we make every effort to keep information up to date, we don’t provide any guarantees, conditions or warranties that it will be:'

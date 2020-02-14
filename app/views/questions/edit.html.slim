@@ -2,18 +2,23 @@
   = t('title', scope: @form.i18n_scope)
   = ' - '
 
-p.step-info.util_mt-large.util_mb-0
+.govuk-caption-l
   = t('breadcrumb', scope: @form.i18n_scope)
-h1.heading-large.util_mt-0
-  = t(@title_view.i18n_title, scope: @form.i18n_scope)
 
-= render('shared/error_block', form: @form) if @form.errors.any?
+.govuk-form-group
+  fieldset.govuk-fieldset
+    legend.govuk-fieldset__legend
+      h1.govuk-heading-l
+        = t(@title_view.i18n_title, scope: @form.i18n_scope)
 
-.text
-  =render("questions/headers/#{@form.id}")
 
-= form_for @form, as: @form.id, url: question_path(@question), html: { autocomplete: @form.autocomplete, method: :put } do |f|
-  =render("questions/forms/#{@form.id}", f: f)
+    = render('shared/error_block', form: @form) if @form.errors.any?
 
-  .form-group
-    = f.submit t('submit_button'), class: 'button', id: 'continue-button'
+
+    = render("questions/headers/#{@form.id}")
+
+    = form_for @form, as: @form.id, url: question_path(@question), html: { autocomplete: @form.autocomplete, method: :put } do |f|
+      =render("questions/forms/#{@form.id}", f: f)
+
+      .govuk-form-group
+        = f.submit t('submit_button'), class: 'govuk-button', id: 'continue-button'

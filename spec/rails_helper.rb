@@ -37,7 +37,7 @@ RSpec.configure do |config|
   end
 
   # Include Factory Girl syntax to simplify calls to factories
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include ActiveSupport::Testing::TimeHelpers
 
   # Run specs in random order to surface order dependencies. If you find an

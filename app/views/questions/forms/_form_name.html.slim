@@ -1,17 +1,22 @@
-.form-group  class=('error' if @form.errors.any?)
-  - if @form.errors[:identifier].any?
-    span.error-message#identifier = @form.errors[:identifier].join(' ')
-  = f.label :identifier, class: 'form-label'
-  = f.text_field :identifier, class: 'form-control'
+.govuk-fieldset
+  .govuk-form-group  class=('error' if @form.errors.any?)
+    = f.label :identifier, class: 'govuk-label'
+    - if @form.errors[:identifier].any?
+      span.govuk-error-message
+        = f.label :identifier, @form.errors[:identifier].join(', '), class: 'error'
 
-.form-group
-  label.block-label for="form_name_unknown"
-    = f.check_box :unknown
-    = t('unknown', scope: @form.i18n_scope)
+    = f.text_field :identifier, { class: 'govuk-input govuk-!-width-one-half' }
 
-.form-group
-  details
-    summary =t('details.summary', scope: @form.i18n_scope)
 
-    .panel-indent
-      p =t('details.item_1', scope: @form.i18n_scope)
+  .govuk-form-group
+    .govuk-checkboxes
+      .govuk-checkboxes__item
+        = f.check_box :unknown, { class: 'govuk-checkboxes__input' }
+        = f.label t('unknown', scope: @form.i18n_scope), class: 'govuk-label govuk-checkboxes__label', for: 'form_name_unknown'
+
+  .govuk-form-group
+    details.govuk-details data-module="govuk-details"
+      summary.govuk-details__summary =t('details.summary', scope: @form.i18n_scope)
+
+      .govuk-details__text
+        p =t('details.item_1', scope: @form.i18n_scope)

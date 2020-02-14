@@ -30,7 +30,7 @@ RSpec.describe HelpRequestsController, type: :controller do
     before do
       allow(ZendeskSender).to receive(:new).and_return(zendesk_sender)
 
-      post :create, id => params
+      post :create, params: { id => params }
     end
 
     context 'for valid parameters' do

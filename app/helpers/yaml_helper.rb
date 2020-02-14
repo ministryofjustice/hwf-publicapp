@@ -37,7 +37,7 @@ module YamlHelper
   end
 
   def ul_tag(&block)
-    content_tag(:ul, class: 'list list-bullet') do
+    content_tag(:ul, class: 'govuk-list govuk-list--bullet') do
       yield block
     end
   end
@@ -57,7 +57,7 @@ module YamlHelper
                      collect_list_items(part)
                    end
                  else
-                   content_tag(part.keys.first, part.values.first.html_safe)
+                   content_tag(part.keys.first, part.values.first.html_safe, class: 'govuk-body')
                  end
     end
   end

@@ -21,7 +21,7 @@ RSpec.describe OnlineApplicationBuilder do
         'personal_detail' => { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' },
         'dob' => { 'day' => '10', 'month' => '03', 'year' => '1967' },
         'applicant_address' => { 'address' => '1 Blue Fields, Shine Town', 'postcode' => 'SH01 TW0' },
-        'contact' => { 'email_option' => true, 'email' => 'mary@jones.com', 'phone_option' => false, 'post_option' => false, 'feedback_opt_in' => true }
+        'contact' => { 'email' => 'mary@jones.com', 'feedback_opt_in' => true }
       }
     }
   end

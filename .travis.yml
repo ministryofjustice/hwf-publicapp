@@ -15,6 +15,9 @@ before_install:
 addons:
   code_climate:
     repo_token: ca58e966ca9664d66925f6837f4b2092de2b5eab7580591e955d3bb8be3b40fa
+install:
+  - bundle install
+  - npm install
 script:
 - bundle exec rubocop
 - bundle exec rspec

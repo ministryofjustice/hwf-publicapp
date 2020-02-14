@@ -2,20 +2,24 @@
 - min_threshold = number_to_currency(income_thresholds.min_threshold, precision: 0, unit: '£')
 - max_threshold = number_to_currency(income_thresholds.max_threshold, precision: 0, unit: '£')
 
-fieldset
-  .form-group class=('error' if @form.errors.any?)
-    = f.hidden_field :choice, value: nil
-    - if @form.errors.any?
-      span.error-message#choice = @form.errors[:choice].join(' ')
-    label.block-label for='income_range_choice_less'
-      = f.radio_button :choice, :less
-      = t('less', scope: [@form.i18n_scope, 'range'], min_threshold: min_threshold)
 
-    label.block-label for='income_range_choice_between'
-      = f.radio_button :choice, :between
-      = t('between', scope: [@form.i18n_scope, 'range'], min_threshold: min_threshold, max_threshold: max_threshold)
+.govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
+  = f.hidden_field :choice, value: nil
+  - if @form.errors.any?
+    span.govuk-error-message#choice = @form.errors[:choice].join(' ')
+  .govuk-radios
+    .govuk-radios__item
+      = f.radio_button :choice, :less, class: 'govuk-radios__input'
+      label.govuk-label.govuk-radios__label for='income_range_choice_less'
+        = t('less', scope: [@form.i18n_scope, 'range'], min_threshold: min_threshold)
 
-    label.block-label for='income_range_choice_more'
-      = f.radio_button :choice, :more
-      = t('more', scope: [@form.i18n_scope, 'range'], max_threshold: max_threshold)
+    .govuk-radios__item
+      = f.radio_button :choice, :between, class: 'govuk-radios__input'
+      label.govuk-label.govuk-radios__label for='income_range_choice_between'
+        = t('between', scope: [@form.i18n_scope, 'range'], min_threshold: min_threshold, max_threshold: max_threshold)
+
+    .govuk-radios__item
+      = f.radio_button :choice, :more, class: 'govuk-radios__input'
+      label.govuk-label.govuk-radios__label for='income_range_choice_more'
+        = t('more', scope: [@form.i18n_scope, 'range'], max_threshold: max_threshold)
 

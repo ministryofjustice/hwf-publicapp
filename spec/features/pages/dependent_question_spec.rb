@@ -27,7 +27,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'You need to say whether you have financially dependent children')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'You need to say whether you have financially dependent children')
         end
       end
 
@@ -38,7 +38,7 @@ RSpec.feature 'As a user' do
           before { click_button 'Continue' }
 
           scenario 'I expect the fields to have specific errors' do
-            expect(page).to have_xpath('//span[@class="error-message"]', text: 'You must enter the number of financially dependent children')
+            expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'You must enter the number of financially dependent children')
           end
         end
 
@@ -49,7 +49,7 @@ RSpec.feature 'As a user' do
           end
 
           scenario 'I expect the fields to have specific errors' do
-            expect(page).to have_xpath('//span[@class="error-message"]', text: 'You must enter financially dependent children as a number')
+            expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'You must enter financially dependent children as a number')
           end
         end
       end

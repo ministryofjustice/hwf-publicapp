@@ -3,10 +3,13 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
-# Precompile additional assets.
-# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+# Add additional assets to the asset load path.
+# Rails.application.config.assets.paths << Emoji.images_path
+# Add Yarn node_modules folder to the asset load path.
+Rails.application.config.assets.paths << Rails.root.join('node_modules')
+Rails.application.config.assets.paths << Rails.root.join('assets', 'fonts')
 
+# Precompile additional assets.
 Rails.application.config.assets.precompile += %w[*.png *.ico]
 Rails.application.config.assets.precompile += %w[.svg .eot .woff .ttf]
 Rails.application.config.assets.precompile += %w[confirmation-print.css ie8.css ie7.css]

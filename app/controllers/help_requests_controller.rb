@@ -22,6 +22,6 @@ class HelpRequestsController < ApplicationController
   end
 
   def help_request_params
-    params.require(form.id).permit(*form.permitted_attributes)
+    params.require(form.id).permit(*form.permitted_attributes).to_h
   end
 end

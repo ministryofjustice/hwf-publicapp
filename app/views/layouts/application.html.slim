@@ -24,34 +24,24 @@
     iframe src="https://www.googletagmanager.com/ns.html?id=#{Settings.analytics.id}" height="0" width="0" style="display:none;visibility:hidden"
 
 - content_for :content_override
-  #wrapper.group
-    .container
-      .phase-banner
-        .phase-banner-inner
-          .language-picker
-            =link_to t('switch.language'), locale: t('switch.locale')
-          p
-            strong.phase-tag= Rails.application.config.phase.upcase
-            span
-              =t('help_requests.survey_nudge.text_html', link: link_to(t('help_requests.survey_nudge.link'), Rails.application.config.feedback_url))
-              =t('help_requests.layout_nudge.text_html', link: link_to(t('help_requests.layout_nudge.link'), new_help_request_path))
-    .container
-      main#content.cf
-        - flash.each do |key, value|
-          .alert class="alert-#{key}"
-            | #{value}
+  .container
+    main#content.cf
+      - flash.each do |key, value|
+        .alert class="alert-#{key}"
+          | #{value}
 
-        = yield
+      = yield
 
 - content_for :javascripts
   = javascript_include_tag('application.js')
 
 - content_for :footer_support_links
-  li =link_to 'Help', 'http://www.gov.uk/help'
-  li =link_to 'Cookies', 'http://www.gov.uk/help/cookies'
-  li =link_to 'Contact', 'http://www.gov.uk/contact'
-  li =link_to 'Terms and conditions', terms_and_conditions_path
-  li =link_to 'Cymraeg', 'http://www.gov.uk/cymraeg', lang: 'cy'
+  ul.govuk-footer__inline-list
+    li.govuk-footer__inline-list-item =link_to 'Help', 'http://www.gov.uk/help', class: 'govuk-footer__link'
+    li.govuk-footer__inline-list-item =link_to 'Cookies', 'http://www.gov.uk/help/cookies', class: 'govuk-footer__link'
+    li.govuk-footer__inline-list-item =link_to 'Contact', 'http://www.gov.uk/contact', class: 'govuk-footer__link'
+    li.govuk-footer__inline-list-item =link_to 'Terms and conditions', terms_and_conditions_path, class: 'govuk-footer__link'
+    li.govuk-footer__inline-list-item =link_to 'Cymraeg', 'http://www.gov.uk/cymraeg', lang: 'cy', class: 'govuk-footer__link'
 
 
 = render template: "layouts/moj_template"

@@ -20,8 +20,8 @@ class SubmitApplication
 
   def post_data(online_application)
     RestClient.post "#{@url}/api/submissions",
-      build_params(online_application),
-      build_headers
+                    build_params(online_application),
+                    build_headers
   end
 
   def build_params(online_application)

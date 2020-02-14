@@ -3,7 +3,7 @@ inherit_from:
 
 AllCops:
   TargetRubyVersion: 2.5
-  TargetRailsVersion: 4.2
+  TargetRailsVersion: 5.2
   # Exclude anything that isn't really part of our code.
   # rails_helper is excluded because it's full of solecisms, but it's mostly
   # generated code and copy-and-pasted snipets from READMEs.
@@ -177,10 +177,6 @@ Metrics/BlockLength:
 Layout/EmptyLineAfterMagicComment:
   Enabled: false
 
-# ---------------
-# HttpPositionalArguments is rails 5 only
-# https://github.com/bbatsov/rubocop/issues/3629
-# ---------------
 Rails/HttpPositionalArguments:
   Enabled: false
 

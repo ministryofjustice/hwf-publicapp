@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 def find_button_by_label(label_text)
-  find(:xpath, "//form//input[@class='button' and @value='#{label_text}']")
+  find(:xpath, "//form//input[contains(@class,'govuk-button') and @value='#{label_text}']")
 end
 
 def find_continue_button
@@ -27,6 +27,7 @@ RSpec.feature 'As a user' do
 
   I18n.available_locales.each do |locale|
     context "using the #{locale.upcase} language" do
+
       scenario 'I want to fill in all details, submit my application and see the confirmation' do
         given_the_submission_service_is_available('HWF-123-KLM')
 

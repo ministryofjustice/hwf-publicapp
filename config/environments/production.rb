@@ -89,4 +89,7 @@ Rails.application.configure do
   # config.serve_static_files = true
   # config.assets.prefix = '/myassets'
 
+  config.force_ssl = true
+  config.ssl_options = { hsts: { expires: 1.year, preload: true } }
+
 end

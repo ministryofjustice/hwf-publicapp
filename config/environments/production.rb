@@ -40,7 +40,10 @@ Rails.application.configure do
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
-  config.ssl_options = { hsts: { expires: 1.year, preload: true } }
+  config.ssl_options = {
+    hsts: { expires: 1.year, preload: true },
+    redirect: { exclude: -> request { /ping/.match?(request.path) } }
+  }
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.

@@ -2,32 +2,34 @@
   = t('help_requests.title')
   = ' - '
 
-h1.heading-xlarge.heading-with-lede =t('help_requests.heading')
-
-h2.govuk-heading-l =t('help_requests.subheading')
-
 = render('shared/error_block', form: @form) if @form.errors.any?
 
-p =t('help_requests.description.line_1')
-
-p =t('help_requests.description.line_2')
 
 = form_for @form, as: @form.id, url: help_request_path do |f|
-  fieldset
+  fieldset.govuk-fieldset
+    legend.govuk-fieldset__legend
+      h1.govuk-heading-xl.heading-with-lede =t('help_requests.heading')
+
+    h2.govuk-heading-l =t('help_requests.subheading')
+
+    p.govuk-body =t('help_requests.description.line_1')
+
+    p.govuk-body =t('help_requests.description.line_2')
+
     .govuk-form-group class=('govuk-form-group--error' if @form.errors[:name].any?)
       = f.label :name, class: 'govuk-label'
       span.govuk-error-message#name = @form.errors[:name].join(' ') if @form.errors[:name].any?
-      = f.text_field :name, class: 'form-control'
+      = f.text_field :name, class: 'govuk-input govuk-!-width-one-half'
 
     .govuk-form-group class=('govuk-form-group--error' if @form.errors[:email].any?)
       = f.label :email, class: 'govuk-label'
       span.govuk-error-message#email = @form.errors[:email].join(' ') if @form.errors[:email].any?
-      = f.text_field :email, class: 'form-control'
+      = f.text_field :email, class: 'govuk-input govuk-!-width-one-half'
 
     .govuk-form-group class=('govuk-form-group--error' if @form.errors[:description].any?)
       = f.label :description, class: 'govuk-label'
       span.govuk-error-message#description = @form.errors[:description].join(' ') if @form.errors[:description].any?
-      = f.text_area :description, class: 'form-control', rows: 6
+      = f.text_area :description, class: 'govuk-textarea', rows: 6
 
 
     .govuk-form-group

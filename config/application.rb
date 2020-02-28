@@ -30,6 +30,11 @@ module HwfPublicapp
     # OLD
     config.i18n.available_locales = %i[en cy]
 
+    config.middleware.use(
+      ApplicationInsights::Rack::TrackRequest,
+      ENV['AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY']
+    )
+
     config.app_title = 'Help with fees - MoJ'
     config.proposition_title = 'Help with fees'
     config.product_type = 'service'

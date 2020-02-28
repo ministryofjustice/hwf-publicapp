@@ -63,6 +63,10 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
 
+  config.before(:each) do |example|
+    stub_request(:any, 'https://dc.services.visualstudio.com/v2/track')
+  end
+
   config.before(:all) do
     I18n.locale = :en
   end

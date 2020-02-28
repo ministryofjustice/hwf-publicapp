@@ -51,6 +51,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    application_insights (0.5.6)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -394,6 +395,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  application_insights (~> 0.5.6)
   azure_env_secrets!
   bootsnap
   capybara (~> 2.7)

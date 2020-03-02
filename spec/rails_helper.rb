@@ -63,7 +63,7 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
 
-  config.before(:each) do |example|
+  config.before(:each) do
     stub_request(:any, 'https://dc.services.visualstudio.com/v2/track')
   end
 

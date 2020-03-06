@@ -195,6 +195,8 @@ GEM
     kgio (2.11.2)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.7.0)
+      launchy (~> 2.2)
     listen (3.2.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -411,6 +413,7 @@ DEPENDENCIES
   geckodriver-helper (~> 0.23.0)
   jquery-rails
   launchy
+  letter_opener
   listen
   nokogiri
   poltergeist (= 1.15.0)

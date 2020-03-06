@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rubocop', '~>0.60', require: false
   gem 'rubocop-rspec', '~>1.10', require: false
+  gem 'letter_opener'
 end
 
 group :development do

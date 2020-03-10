@@ -499,6 +499,19 @@ en:
       married_true: Married or living with someone and sharing an income
       text: Are you single, married or living with someone and sharing an income?
       title: Your marital status
+    national_insurance_presence:
+      breadcrumb: Step 13 of 20
+      details:
+        section_1:
+          item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
+          item_2: ask for a reminder through the post
+        summary: Where to find my National Insurance number
+      example: Select one
+      ni_number_present_false: 'No'
+      ni_number_present_true: 'Yes'
+      prompt: Do you have a National Insurance number?
+      text: Do you have a National Insurance number?
+      title: Do you have a National Insurance number?
     national_insurance:
       breadcrumb: Step 13 of 20
       details:
@@ -512,7 +525,7 @@ en:
         summary: If you don’t know your National Insurance number
       example: For example, QQ123456C
       prompt: National Insurance number
-      text: What is your National Insurance number?
+      text: Enter National Insurance number
       title: National Insurance number
     personal_detail:
       breadcrumb: Step 15 of 20

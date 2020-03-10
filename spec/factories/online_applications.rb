@@ -7,6 +7,7 @@ FactoryBot.define do
     refund { false }
     probate { false }
     ni_number { 'AB123456C' }
+    ni_number_present { true }
     date_of_birth { Time.zone.parse('10/03 {/1976') }
     first_name { 'Peter' }
     last_name { 'Smith' }

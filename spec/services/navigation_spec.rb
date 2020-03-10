@@ -20,8 +20,10 @@ RSpec.describe Navigation do
       dependent: :income_kind,
       income_amount: :probate,
       probate: :claim,
-      claim: :national_insurance,
-      national_insurance: :dob,
+      claim: :national_insurance_presence,
+      national_insurance_presence: :national_insurance,
+      national_insurance: :home_office,
+      home_office: :dob,
       dob: :personal_detail,
       personal_detail: :applicant_address,
       applicant_address: :contact
@@ -95,6 +97,7 @@ RSpec.describe Navigation do
       end
     end
 
+
     context 'for income_kind question' do
       let(:current_question) { :income_kind }
 
@@ -138,6 +141,24 @@ RSpec.describe Navigation do
         it 'routes to the probate question' do
           expect(subject).to eql(question_path(:probate, locale: :en))
         end
+      end
+    end
+
+    context 'when the NI number is not present' do
+      let(:current_question) { :national_insurance_presence }
+      let(:online_application) { build :online_application, ni_number_present: false }
+
+      it 'routes to the home office question' do
+        expect(subject).to eql(question_path(:home_office, locale: :en))
+      end
+    end
+
+    context 'when the NI number is not and current page is home office' do
+      let(:current_question) { :home_office }
+      let(:online_application) { build :online_application }
+
+      it 'routes to the dob question' do
+        expect(subject).to eql(question_path(:dob, locale: :en))
       end
     end
 

@@ -153,6 +153,11 @@ en:
             number:
               blank: Enter your National Insurance number
               invalid: Enter a valid National Insurance number
+        forms/home_office:
+          attributes:
+            ho_number:
+              blank: Enter your Home Office reference number
+              invalid: Enter a valid Home Office reference number
         forms/personal_detail:
           attributes:
             first_name:
@@ -505,7 +510,7 @@ en:
         section_1:
           item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
           item_2: ask for a reminder through the post
-        summary: Where to find my National Insurance number
+        summary: Where to find my National Insurance number?
       example: Select one
       ni_number_present_false: 'No'
       ni_number_present_true: 'Yes'
@@ -522,13 +527,15 @@ en:
             target='_blank'>use the paper form</a>."
           item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
           item_2: ask for a reminder through the post
-        summary: If you don’t know your National Insurance number
       example: For example, QQ123456C
       prompt: National Insurance number
       text: Enter National Insurance number
       title: National Insurance number
     home_office:
       breadcrumb: Step 14 of 20
+      text: What is your Home Office reference number?
+      title: What is your Home Office reference number?
+      example: For example, L1234567 or L1234567/1 (for family members)
       paper_form_link_html: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the
             <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
@@ -536,10 +543,6 @@ en:
       details:
         summary: "Where to find my Home Office reference number?"
         item_1: Your Home Office reference number can be found on any correspondence you have received from the Home Office
-
-      example: For example, L1234567 or L1234567/1 (for family members)
-      text: What is your Home Office reference number?
-      title: What is your Home Office reference number?
     personal_detail:
       breadcrumb: Step 15 of 20
       text: What is your full name?

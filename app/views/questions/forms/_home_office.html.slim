@@ -2,9 +2,9 @@
   label.govuk-label for='ho_number_number'
     span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
     - if @form.errors[:ho_number].any?
-      span.govuk-error-message#number = @form.errors[:number].join(' ')
+      span.govuk-error-message#number = @form.errors[:ho_number].join(' ')
     = f.text_field :ho_number, class: 'govuk-input govuk-!-width-one-third js-uppercase'
-    = f.hidden_field :ni_number, value: @online_application.ni_number
+    = f.hidden_field :ni_number_present, value: @online_application.ni_number_present
 
 p.govuk-body =t('paper_form_link_html', scope: "#{@form.i18n_scope}")
 

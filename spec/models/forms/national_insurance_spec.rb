@@ -43,9 +43,21 @@ RSpec.describe Forms::NationalInsurance, type: :model do
       end
 
       context 'when not provided' do
-        before { form_ni.number = '' }
+        before {
+          form_ni.number = ''
+          form_ni.has_ni_number = true
+        }
 
         it { expect(form_ni.valid?).to be false }
+      end
+
+      context 'when not does not have one' do
+        before do
+         form_ni.number = ''
+         form_ni.has_ni_number = false
+       end
+
+        it { expect(form_ni.valid?).to be true }
       end
     end
   end

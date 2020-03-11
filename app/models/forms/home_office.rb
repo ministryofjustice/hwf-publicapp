@@ -3,9 +3,9 @@ module Forms
     include ActiveModel::Validations::Callbacks
 
     attribute :ho_number, String
-    attribute :ni_number, String
+    attribute :ni_number_present, Boolean
 
-    validates :ho_number, presence: true, if: ->(form) { form.ni_number.blank? }
+    validates :ho_number, presence: true, if: ->(form) { form.ni_number_present != true }
 
     before_validation :format_number
 

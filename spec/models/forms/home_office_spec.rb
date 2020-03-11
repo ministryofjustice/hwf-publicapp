@@ -14,7 +14,7 @@ RSpec.describe Forms::HomeOffice, type: :model do
       context 'when NI and HO are empty' do
         before {
           form_ho.ho_number = ''
-          form_ho.ni_number = ''
+          form_ho.ni_number_present = false
         }
 
         it { expect(form_ho.valid?).to be false }
@@ -23,12 +23,20 @@ RSpec.describe Forms::HomeOffice, type: :model do
       context 'when NI is present' do
         before {
           form_ho.ho_number = ''
-          form_ho.ni_number = 'ABC'
+          form_ho.ni_number_present = true
         }
 
         it { expect(form_ho.valid?).to be true }
       end
 
+      context 'when NI number present is nil' do
+        before {
+          form_ho.ho_number = ''
+          form_ho.ni_number_present = nil
+        }
+
+        it { expect(form_ho.valid?).to be false }
+      end
     end
   end
 

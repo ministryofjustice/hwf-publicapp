@@ -513,7 +513,7 @@ en:
       text: Do you have a National Insurance number?
       title: Do you have a National Insurance number?
     national_insurance:
-      breadcrumb: Step 13 of 20
+      breadcrumb: Step 14 of 20
       details:
         section_1:
           detail_html: "If you don't have a National Insurance number, you need to
@@ -527,6 +527,19 @@ en:
       prompt: National Insurance number
       text: Enter National Insurance number
       title: National Insurance number
+    home_office:
+      breadcrumb: Step 14 of 20
+      paper_form_link_html: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the
+            <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
+            class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+            target='_blank'>paper application form</a>."
+      details:
+        summary: "Where to find my Home Office reference number?"
+        item_1: Your Home Office reference number can be found on any correspondence you have received from the Home Office
+
+      example: For example, L1234567 or L1234567/1 (for family members)
+      text: What is your Home Office reference number?
+      title: What is your Home Office reference number?
     personal_detail:
       breadcrumb: Step 15 of 20
       text: What is your full name?

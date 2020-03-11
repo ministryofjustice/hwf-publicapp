@@ -22,7 +22,7 @@ RSpec.describe Navigation do
       probate: :claim,
       claim: :national_insurance_presence,
       national_insurance_presence: :national_insurance,
-      national_insurance: :home_office,
+      national_insurance: :dob,
       home_office: :dob,
       dob: :personal_detail,
       personal_detail: :applicant_address,
@@ -153,7 +153,16 @@ RSpec.describe Navigation do
       end
     end
 
-    context 'when the NI number is not and current page is home office' do
+    context 'when the NI number is present and page is NI number page' do
+      let(:current_question) { :national_insurance }
+      let(:online_application) { build :online_application, ni_number_present: true }
+
+      it 'routes to the dob question' do
+        expect(subject).to eql(question_path(:dob, locale: :en))
+      end
+    end
+
+    context 'when the NI number is present and current page is home office' do
       let(:current_question) { :home_office }
       let(:online_application) { build :online_application }
 

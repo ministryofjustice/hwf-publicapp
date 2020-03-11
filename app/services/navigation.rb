@@ -23,6 +23,8 @@ class Navigation
       :benefit
     elsif @current_question == :national_insurance_presence
       ni_present?
+    elsif @current_question == :national_insurance
+      :dob
     else
       question_id
     end

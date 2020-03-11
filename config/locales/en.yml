@@ -527,6 +527,7 @@ en:
             target='_blank'>use the paper form</a>."
           item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
           item_2: ask for a reminder through the post
+        summary: If you don’t know your National Insurance number
       example: For example, QQ123456C
       prompt: National Insurance number
       text: Enter National Insurance number

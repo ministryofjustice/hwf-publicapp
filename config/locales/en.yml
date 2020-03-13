@@ -536,6 +536,7 @@ en:
       breadcrumb: Step 14 of 20
       text: What is your Home Office reference number?
       title: What is your Home Office reference number?
+      prompt: Home Office reference number
       example: For example, L1234567 or L1234567/1 (for family members)
       paper_form_link_html: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the
             <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'

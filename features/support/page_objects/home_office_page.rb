@@ -3,6 +3,6 @@ class HomeOfficePage < BasePage
 
   section :content, '#content' do
     element :header, 'h1'
-    element :step_info, '.govuk-caption-l', text: 'Step 1 of 20'
+    element :step_info, '.govuk-caption-l'
   end
 end

@@ -14,6 +14,32 @@ RSpec.describe Forms::HomeOffice, type: :model do
         it { expect(form_ho.ho_number).to eql('L123456') }
       end
 
+      describe 'New HO format' do
+        before { form_ho.ho_number = '1212-0001-0240-0490' }
+
+        it { expect(form_ho.valid?).to be true }
+
+        context 'multiple applicants' do
+          before { form_ho.ho_number = '1212-0001-0240-0490/1' }
+
+          it { expect(form_ho.valid?).to be true }
+        end
+
+        context 'invalid' do
+          context 'not enought digits' do
+            before { form_ho.ho_number = '1212-0001-0240-040' }
+
+            it { expect(form_ho.valid?).to be false }
+          end
+
+          context 'letters mixed in' do
+            before { form_ho.ho_number = '12s2-0001-0240-0490' }
+
+            it { expect(form_ho.valid?).to be false }
+          end
+        end
+      end
+
       context 'when NI not provided' do
         before { form_ho.ho_number = 'L123456' }
 

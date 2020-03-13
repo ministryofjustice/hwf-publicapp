@@ -97,7 +97,6 @@ RSpec.describe Navigation do
       end
     end
 
-
     context 'for income_kind question' do
       let(:current_question) { :income_kind }
 

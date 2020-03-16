@@ -5,11 +5,11 @@ Given(/^I am on the national insurance page$/) do
   expect(national_insurance_page.content).to have_national_insurance_text
 end
 
-When(/^I enter a valid national insurance number$/) do
+When(/^I submit a valid national insurance number$/) do
   national_insurance_page.submit_valid_ni
 end
 
-And(/^I enter a invalid national insurance number$/) do
+And(/^I submit an invalid national insurance number$/) do
   national_insurance_page.submit_invalid_ni
 end
 

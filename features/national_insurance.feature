@@ -7,11 +7,11 @@ Feature: National insurance page
     And I am on the national insurance page
 
   Scenario: Entering a valid national insurance number
-    When I enter a valid national insurance number
+    When I submit a valid national insurance number
     Then I should be taken to date of birth page
 
   Scenario: Displays error message enter a valid national insurance number
-    When I enter a invalid national insurance number
+    When I submit an invalid national insurance number
     Then I should see enter a valid National Insurance number error message
 
   Scenario: Displays error message enter your national insurance number

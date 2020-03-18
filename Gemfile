@@ -16,7 +16,6 @@ gem 'date_validator'
 gem 'rest-client'
 gem 'sentry-raven'
 gem 'virtus'
-gem 'zendesk_api'
 
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'

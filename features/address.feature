@@ -5,12 +5,6 @@ Feature: Address page
   Background: Navigating to the address page
     Given I am on the address page with probate enabled
 
-  Scenario: Displays step number
-    Then I should see step 16 of 20
-  
-  Scenario: Displays header
-    Then I should see 'What is your address?' header
-
   Scenario: Entering address with postcode
     When I enter my address with postcode
     Then I should be taken to contact page

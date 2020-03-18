@@ -25,6 +25,7 @@ class SummaryPage < BasePage
     income_kind_page.submit_no_income
     probate_page.submit_probate_no
     claim_page.submit_claim_no
+    national_insurance_presence_page.submit_yes
     national_insurance_page.submit_valid_ni
     dob_page.static_dob
     personal_details_page.submit_full_name
@@ -40,6 +41,7 @@ class SummaryPage < BasePage
     savings_investment_page.low_amount_checked
     benefit_page.submit_benefit_yes
     claim_page.submit_claim_no
+    national_insurance_presence_page.submit_yes
     national_insurance_page.submit_valid_ni
     dob_page.static_dob
     personal_details_page.submit_full_name

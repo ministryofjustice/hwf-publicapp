@@ -20,6 +20,7 @@ class ContactPage < BasePage
     benefit_page.submit_benefit_yes
     probate_page.submit_probate_no
     claim_page.submit_claim_no
+    national_insurance_presence_page.submit_yes
     national_insurance_page.submit_valid_ni
     dob_page.valid_dob
     personal_details_page.submit_full_name

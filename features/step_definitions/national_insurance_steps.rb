@@ -5,15 +5,11 @@ Given(/^I am on the national insurance page$/) do
   expect(national_insurance_page.content).to have_national_insurance_text
 end
 
-When(/^I enter a valid national insurance number$/) do
+When(/^I submit a valid national insurance number$/) do
   national_insurance_page.submit_valid_ni
 end
 
-When(/^I click on if you don't know your national insurance number$/) do
-  national_insurance_page.content.help_with_ni_dropdown.click
-end
-
-And(/^I enter a invalid national insurance number$/) do
+And(/^I submit an invalid national insurance number$/) do
   national_insurance_page.submit_invalid_ni
 end
 
@@ -27,11 +23,6 @@ end
 Then(/^I should see enter a valid National Insurance number error message$/) do
   expect(base_page.content).to have_there_is_a_problem
   expect(national_insurance_page.content).to have_invalid_error_link
-end
-
-Then(/^I should see enter your National Insurance number error message$/) do
-  expect(base_page.content).to have_there_is_a_problem
-  expect(national_insurance_page.content).to have_blank_error_link
 end
 
 Then(/^I should be taken to national insurance page$/) do

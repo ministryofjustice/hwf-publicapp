@@ -18,6 +18,7 @@ class OnlineApplication
   attribute :date_of_death, Date
   attribute :case_number, String
   attribute :form_name, String
+  attribute :ni_number_present, Boolean
   attribute :ni_number, String
   attribute :date_of_birth, Date
   attribute :title, String

@@ -6,8 +6,18 @@ Given("I am on the home office page") do
 end
 
 When("I submit a valid home office number") do
+  home_office_page.content.home_offce_number.set '1212-0001-0240-0490/01'
+  continue
+end
+
+When("I submit an invalid home office number") do
   home_office_page.content.home_offce_number.set 'L1234567/1'
   continue
+end
+
+Then("I should see enter a valid home office number error message") do
+  expect(home_office_page.content).to have_error_link
+  expect(home_office_page.content).to have_error_message
 end
 
 Then("I should see what to do if I do not have either a national insurance number or home office number") do
@@ -24,6 +34,6 @@ end
 
 Then("I should see enter your home office number error message") do
   expect(base_page.content).to have_there_is_a_problem
-  expect(home_office_page.content).to have_error_message
-  expect(home_office_page.content.error_link['href']).to end_with '#ho_number'
+  expect(home_office_page.content).to have_blank_error_message
+  expect(home_office_page.content.blank_error_link['href']).to end_with '#ho_number'
 end

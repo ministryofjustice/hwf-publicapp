@@ -3,9 +3,6 @@ Feature: Personal details page
   Background: Navigating to the personal details page
     Given probate is enabled
     And I am on the personal details page with probate enabled
-
-  Scenario: Displays step number
-    Then I should see step 15 of 20
   
   Scenario: Displays header
     Then I should see 'What is your full name?' header

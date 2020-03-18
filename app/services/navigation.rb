@@ -21,6 +21,8 @@ class Navigation
       probate_or_claim
     elsif skip_savings_and_investment_extra?
       :benefit
+    elsif ni_related_question?
+      @ni_next_page
     else
       question_id
     end
@@ -67,4 +69,17 @@ class Navigation
     @current_question == :savings_and_investment &&
       !@online_application.savings_and_investment_extra_required?
   end
+
+  def no_ni_number_page
+    @online_application.ni_number_present == false ? :home_office : :national_insurance
+  end
+
+  def ni_related_question?
+    if @current_question == :national_insurance_presence
+      @ni_next_page = no_ni_number_page
+    elsif @current_question == :national_insurance
+      @ni_next_page = :dob
+    end
+  end
+
 end

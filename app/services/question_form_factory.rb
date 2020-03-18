@@ -15,7 +15,9 @@ class QuestionFormFactory
     income_amount
     probate
     claim
+    national_insurance_presence
     national_insurance
+    home_office
     dob
     personal_detail
     applicant_address

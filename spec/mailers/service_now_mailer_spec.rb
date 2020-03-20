@@ -9,16 +9,12 @@ RSpec.describe ServiceNowMailer, type: :mailer do
       expect(mail.body).to eq(form.description)
     end
 
-    it 'uses the form email field in Reply-To header' do
-      expect(mail.reply_to).to eq(['johndoe@example.com'])
+    it 'renders the From header' do
+      expect(mail.from).to eq(['johndoe@example.com'])
     end
 
     it 'renders the subject' do
       expect(mail.subject).to include('[Ask-for-Help]')
-    end
-
-    it 'uses the hwf no-reply email in the From header' do
-      expect(mail.from).to eq(['no-reply@helpwithcourtfees.service.gov.uk'])
     end
   end
 end

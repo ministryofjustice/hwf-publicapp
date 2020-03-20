@@ -31,5 +31,4 @@ sentry:
 maintenance:
   show: <%= ENV['SHOW_MAINTENANCE_BANNER'] || false %>
 mail:
-  from: no-reply@helpwithcourtfees.service.gov.uk
   service_now: <%= ENV['SERVICE_NOW_EMAIL'] %>

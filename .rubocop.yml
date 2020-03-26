@@ -62,7 +62,7 @@ RSpec/DescribeClass:
     - spec/support/**/*
     - spec/views/**/*
 
-Rails/FilePath:
+RSpec/FilePath:
   Exclude:
     - spec/routing/**/*
 
@@ -72,7 +72,7 @@ Layout/AccessModifierIndentation:
 
 # Just indent parameters by two spaces. It's less volatile if methods change,
 # and there's less busy work lining things up.
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
 Style/ClassAndModuleChildren:
@@ -135,13 +135,13 @@ Style/TrivialAccessors:
   AllowPredicates: true
 
 # Prefer sensible naming to comments everywhere.
-Documentation:
+Style/Documentation:
   Description: Document classes and non-namespace modules.
   Enabled: false
 
 # Would enforce do_y if x over if x / do y / end. As with GuardClause above,
 # this enforces code organisation that doesn't necesarily make things clearer.
-IfUnlessModifier:
+Style/IfUnlessModifier:
   Enabled: false
 
 # Allow safe assignment in conditions.

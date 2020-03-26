@@ -16,7 +16,6 @@ gem 'date_validator'
 gem 'rest-client'
 gem 'sentry-raven'
 gem 'virtus'
-gem 'zendesk_api'
 
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'
@@ -34,6 +33,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rubocop', '~>0.60', require: false
   gem 'rubocop-rspec', '~>1.10', require: false
+  gem 'letter_opener'
 end
 
 group :development do

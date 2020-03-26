@@ -36,6 +36,24 @@ Feature: Summary page
     | contact                |
     And I should not see probate in the check details table
 
+  Scenario: Displays home office number
+    Given I have a home office number but not a national insurance number
+    And I am on the summary page
+    Then I should see my details:
+    | scope                                                                     |
+    | Form name or number C100 Change form name or number                       | 
+    | Fee paid No Change fee paid                                               |                
+    | Status Married or living with someone and sharing an income Change status |
+    | Savings and investments £0 to £2,999 Change savings and investments       |
+    | Benefits Receiving eligible benefits Change benefits                      |
+    | Claim number No Change claim number                                       |
+    | National Insurance number No Change national insurance number             |
+    | Home Office reference number 1212-0001-0240-0490/01 Change home office reference number|
+    | Date of birth 23/07/1980 Change date of birth                             |
+    | Full name Ms Sally Smith Change full name                                 |
+    | Address 102 Petty France, London SW1H 9AJ Change address                  |
+    | Email test@hmcts.net Change email                                         |
+
   Scenario: Displays declaration of truth
     Given I am on the summary page with probate enabled
     Then I should see declaration of truth

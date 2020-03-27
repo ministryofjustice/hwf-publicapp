@@ -49,6 +49,25 @@ class SummaryPage < BasePage
     contact_page.valid_email
   end
 
+  def home_office_number
+    form_name_page.to_form_name
+    form_name_page.submit_valid_form_number
+    fee_page.submit_fee_no
+    marital_status_page.submit_married
+    savings_investment_page.low_amount_checked
+    benefit_page.submit_benefit_yes
+    claim_page.submit_claim_no
+    national_insurance_presence_page.submit_no
+  end
+
+  def to_summary_page_with_ho_number
+    home_office_page.submit_valid_home_office_number
+    dob_page.static_dob
+    personal_details_page.submit_full_name
+    address_page.submit_full_address
+    contact_page.valid_email
+  end
+
   def submit_application
     content.submit_application_button.click
   end

@@ -26,4 +26,9 @@ class HomeOfficePage < BasePage
     claim_page.submit_claim_no
     national_insurance_presence_page.submit_no
   end
+
+  def submit_valid_home_office_number
+    home_office_page.content.home_offce_number.set '1212-0001-0240-0490/01'
+    continue
+  end
 end

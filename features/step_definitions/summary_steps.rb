@@ -15,6 +15,19 @@ Given(/^I am on the summary page with probate disabled$/) do
   expect(summary_page.content).to have_check_details_hint
 end
 
+Given(/^I have a home office number but not a national insurance number$/) do
+  probate_disabled
+  summary_page.home_office_number
+end
+
+Then(/^I am on the summary page$/) do
+  summary_page.to_summary_page_with_ho_number
+  expect(summary_page).to be_displayed
+  expect(summary_page.content).to have_step_info
+  expect(summary_page.content).to have_summary_header
+  expect(summary_page.content).to have_check_details_hint
+end
+
 Then(/^I should see my details:$/) do |scopes|
   scopes.rows.each_with_index do |scope, index|
     expect(summary_page.content.summary_row[index].text).to eq scope[0]

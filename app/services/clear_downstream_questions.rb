@@ -11,6 +11,8 @@ class ClearDownstreamQuestions
       @storage.clear_form(:income_amount)
     elsif income_range_change?(new_online_application, old_online_application)
       @storage.clear_form(:income_amount)
+    elsif !old_online_application.ni_number_present.nil?
+      clear_ni_or_ho(old_online_application)
     end
   end
 
@@ -31,5 +33,13 @@ class ClearDownstreamQuestions
   def dependent_change?(new_online_application, old_online_application)
     @question == :dependent &&
       old_online_application.children != new_online_application.children
+  end
+
+  def clear_ni_or_ho(old_online_application)
+    if old_online_application.ni_number_present == false && old_online_application.ni_number
+      @storage.clear_form(:national_insurance)
+    elsif old_online_application.ni_number && old_online_application.ho_number
+      @storage.clear_form(:home_office)
+    end
   end
 end

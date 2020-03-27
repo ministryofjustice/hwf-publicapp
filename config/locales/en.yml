@@ -651,6 +651,8 @@ en:
       income: Income
       married: Status
       ni_number: National Insurance number
+      ni_number_no: 'No'
+      ho_number: Home Office reference number
       personal: Full name
       probate: Probate case
       savings: Savings and investments

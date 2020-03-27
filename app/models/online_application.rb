@@ -20,6 +20,7 @@ class OnlineApplication
   attribute :form_name, String
   attribute :ni_number_present, Boolean
   attribute :ni_number, String
+  attribute :ho_number, String
   attribute :date_of_birth, Date
   attribute :title, String
   attribute :first_name, String

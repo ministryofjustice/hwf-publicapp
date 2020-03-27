@@ -8,7 +8,7 @@ Feature: Checklist page
  
   Scenario: National insurance number or home office number
     Then I see that I need my national insurance number or home office number
-    And if I do not have a national insurance or home office number I can use the paper form
+    And if I do not have a national insurance or home office number then I can use the paper form
 
   Scenario: If you do not know your national insurance number
     When I click on if you do not know your national insurance number
@@ -18,7 +18,6 @@ Feature: Checklist page
   Scenario: If you do not know your home office number
     When I click on if you do not know your home office number
     Then I should see where I can find my home office number
-    And a link to receive a reminder in the post
 
   Scenario: Court and tribunal form number
     Then I see that I need to make sure that I have the court or tribunal form number

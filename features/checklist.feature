@@ -6,13 +6,18 @@ Feature: Checklist page
     Given probate is enabled
     And I am on the checklist page
  
-  Scenario: National insurance number
-    Then I see that I need to make sure that I have my national insurance number
-    And if I do not have my national insurance number I can use the paper form
-    
+  Scenario: National insurance number or home office number
+    Then I see that I need my national insurance number or home office number
+    And if I do not have a national insurance or home office number I can use the paper form
+
   Scenario: If you do not know your national insurance number
     When I click on if you do not know your national insurance number
-    Then I should see where I can find the number
+    Then I should see where I can find my national insurance number
+    And a link to receive a reminder in the post
+
+  Scenario: If you do not know your home office number
+    When I click on if you do not know your home office number
+    Then I should see where I can find my home office number
     And a link to receive a reminder in the post
 
   Scenario: Court and tribunal form number

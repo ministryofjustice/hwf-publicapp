@@ -39,7 +39,7 @@ Feature: Income range page
     Given probate is disabled
     And I am a single person with no children on income range page
     When I submit less than
-    Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
+    Then I am taken to step 12 - Do you have a case, claim, appeal or ‘notice to pay’ number?
 
   Scenario: Selecting the between range
     Given probate is enabled
@@ -57,7 +57,7 @@ Feature: Income range page
     Given probate is disabled
     Given I am a single person with no children on income range page
     When I submit more than
-    Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
+    Then I am taken to step 12 - Do you have a case, claim, appeal or ‘notice to pay’ number?
 
   Scenario: Displays error message
     Given probate is enabled

@@ -352,7 +352,7 @@ cy:
       number_false: Nac oes
       number_true: Oes
       subtext: Mae'r rhif hwn ar lythyrau oddi wrth y llys neu dribiwnlys.
-      text: Oes gennych chi rif achos, rhif hawliad neu rif 'hysbysiad talu'?
+      text: A oes gennych rif achos, hawliad, apêl neu ‘rhybudd i dalu’?
       title: Rhif hawliad neu achos
     claim/et:
       breadcrumb: Cam 12 o 20
@@ -495,19 +495,18 @@ cy:
       text: Ydych chi'n sengl, yn briod neu'n byw gyda rhywun ac yn rhannu incwm?
       title: Eich statws priodasol
     national_insurance_presence:
-      breadcrumb: Step 13 of 20
+      breadcrumb: Cam 13 o 20
       details:
         section_1:
-          item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
-          item_2: ask for a reminder through the post
-        summary: Where to find my National Insurance number?
-      example: Select one
-      ni_number_present_false: 'No'
-      ni_number_present_true: 'Yes'
-      prompt: Do you have a National Insurance number?
-      text: Do you have a National Insurance number?
-      title: Do you have a National Insurance number?
-
+          item_1: chwiliwch am eich rhif Yswiriant Gwladol ar slipiau cyflog neu lythyrau swyddogol am dreth, pensiynau neu fudd-daliadau
+          item_2: gofynnwch am nodyn atgoffa drwy'r post
+        summary: Lle y gallaf ddod o hyd i fy rhif Yswiriant Gwladol?"
+      example: Dewiswch un
+      ni_number_present_false: 'Nac oes'
+      ni_number_present_true: 'Oes'
+      prompt: A oes gennych rif Yswiriant Gwladol?
+      text: A oes gennych rif Yswiriant Gwladol?
+      title: A oes gennych rif Yswiriant Gwladol?
     national_insurance:
       breadcrumb: Cam 13 o 20
       details:
@@ -523,6 +522,20 @@ cy:
       prompt: rhif Yswiriant Gwladol
       text: Beth yw eich rhif Yswiriant Gwladol?
       title: rhif Yswiriant Gwladol
+    home_office:
+      breadcrumb: Cam 14 o 20
+      text: Beth yw eich cyfeirnod Swyddfa Gartref?
+      title: Beth yw eich cyfeirnod Swyddfa Gartref?
+      prompt: Cyfeirnod y Swyddfa Gartref
+      example: Er enghraifft, L123456 neu L123456/1 (ar gyfer aelodau o’r teulu)
+      paper_form_link_html: "Os nad oes gennych rif Yswiriant Gwladol, neu gyfeirnod Swyddfa Gartref, bydd angen i chi lenwi'r
+            <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634330/ex160-bil.pdf'
+            class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+            target='_blank'>ffurflen gais bapur</a>."
+      details:
+        summary: "Lle y gallaf ddod o hyd i fy nghyfeirnod Swyddfa Gartref?"
+        item_1: Gallwch ddod o hyd i’ch cyfeirnod Swyddfa Gartref ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref
+
     personal_detail:
       breadcrumb: Cam 15 o 20
       text: Beth yw eich enw llawn?
@@ -787,7 +800,8 @@ cy:
       - parts:
           - p: 'Cyn i chi barhau, gwnewch yn siŵr fod gennych:'
           - ul:
-            - li: eich Rhif Yswiriant Gwladol
+            - li: eich rhif Yswiriant Gwladol neu
+            - li: eich cyfeirnod Swyddfa Gartref - efallai y bydd gennych gyfeirnod Swyddfa Gartref os ydych yn destun rheoliadau mewnfudo
             - li: rhif y ffurflen llys neu dribiwnlys
             - li: rhif eich achos, rhif yr hawliad neu’r rhybudd talu - os oes gennych un
       - title:
@@ -797,5 +811,14 @@ cy:
             - li: incwm, yn cynnwys cyflog
             - li: cynilion a buddsoddiadau
             - li: incwm, cynilion a buddsoddiadau eich partner - os oes gennych un
+      details:
+        section_1:
+          item_1: Mae’ch cyfeirnod Swyddfa Gartref i’w weld ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref.
+        summary: Os nad ydych chi’n gwybod beth yw eich rhif Yswiriant Gwladol
+      paper_form_html: "Os nad oes gennych rif Yswiriant Gwladol neu gyfeirnod Swyddfa Gartref, mae angen i chi ddefnyddio'r
+          <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634330/ex160-bil.pdf'
+          class='external govuk-link' rel='external' title='Ffurflen EX160: Gwneud cais am help i dalu ffioedd'
+          target='_blank'>ffurflen bapur</a>."
+
   maintenance:
     message: 'Hysbysiad ymlaen llaw: Ni fydd y gwasanaeth hwn ar gael ddydd Mercher y 4ydd o Fedi 2019 o 6am tan 11am gan y byddwn yn gwneud newidiadau hanfodol iddo.'

@@ -19,7 +19,7 @@ RSpec.feature 'As a user' do
       end
 
       scenario 'I expect to be routed to the "claim" page' do
-        expect(page).to have_content 'Do you have a case, claim or ‘notice to pay’ number? '
+        expect(page).to have_content 'Do you have a case, claim, appeal or ‘notice to pay’ number?'
       end
     end
 

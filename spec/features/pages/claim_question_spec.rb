@@ -25,7 +25,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Select whether you have a case, claim or ‘notice to pay’ number')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Select whether you have a case, claim, appeal or ‘notice to pay’ number')
         end
       end
 
@@ -36,7 +36,7 @@ RSpec.feature 'As a user' do
           before { click_button 'Continue' }
 
           scenario 'I expect the fields to have specific errors' do
-            expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter a case, claim or ‘notice to pay’ number')
+            expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter a case, claim, appeal or ‘notice to pay’ number')
           end
         end
       end

@@ -70,10 +70,10 @@ cy:
         forms/claim/default:
           attributes:
             identifier:
-              blank: Rhowch rif achos, hawliad neu 'hysbysiad talu'
+              blank: Rhowch rif achos, hawliad, apêl neu 'hysbysiad talu'
               too_long: Rhaid i'r rhif fod yn llai na 25 o nodau
             number:
-              inclusion: Dewiswch os oes gennych chi rif achos, hawliad neu 'hysbysiad talu'
+              inclusion: Dewiswch os oes gennych chi rif achos, hawliad, apêl neu 'hysbysiad talu'
         forms/claim/et:
           attributes:
             identifier:
@@ -348,7 +348,7 @@ cy:
         section_2: Os yw'ch achos yn mynd ymlaen ar hyn o bryd, bydd y cyfeirnod ar lythyrau oddi wrth y llys neu dribiwnlys.
         section_3: Rhowch 'nac oes' yn ateb i'r cwestiwn hwn os nad oes gennych chi gyfeirnod (efallai am nad yw'ch achos wedi dechrau eto).
         summary: Help gyda rhif achos
-      identifier: Y rhif achos, hawliad neu 'hysbysiad talu' yw
+      identifier: Y rhif achos, hawliad, apêl neu 'hysbysiad talu' yw
       number_false: Nac oes
       number_true: Oes
       subtext: Mae'r rhif hwn ar lythyrau oddi wrth y llys neu dribiwnlys.

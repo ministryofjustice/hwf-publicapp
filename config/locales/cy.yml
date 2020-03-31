@@ -637,6 +637,8 @@ cy:
       income: Incwm
       married: Statws
       ni_number: Rhif Yswiriant Gwladol
+      ni_number_no: Nac oes
+      ho_number: Cyfeirnod y Swyddfa Gartref
       personal: Enw llawn
       probate: Achos profiant
       savings: Cynilion a buddsoddiadau

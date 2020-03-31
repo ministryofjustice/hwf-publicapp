@@ -366,7 +366,7 @@ en:
       number_false: 'No'
       number_true: 'Yes'
       subtext: Find this number on letters from the court or tribunal.
-      text: Do you have a case, claim or ‘notice to pay’ number?
+      text: Do you have a case, claim, appeal or ‘notice to pay’ number?
       title: Claim or case number
     claim/et:
       breadcrumb: Step 12 of 20
@@ -816,7 +816,8 @@ en:
       - parts:
           - p: 'Before you continue, make sure you have:'
           - ul:
-            - li: your National Insurance number
+            - li: your National Insurance number or
+            - li: your Home Office reference number – you may have a Home Office reference number if you are subject to immigration control
             - li: the court or tribunal form number
             - li: your case number, claim number or notice to pay - if you have one
       - title:
@@ -826,5 +827,14 @@ en:
             - li: income, including wages
             - li: savings and investments
             - li: partner's income, savings and investments - if you have one
+      details:
+        section_1:
+          item_1: You will find your Home Office reference number on any of the correspondence you have received from the Home Office.
+        summary: If you don't know your Home Office reference number
+      paper_form_html: "If you don't have either a National Insurance number or a Home Office reference number, you need to
+          <a href='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/508760/ex160-eng-20160212.pdf'
+          class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+          target='_blank'>use the paper form</a>."
+
   maintenance:
     message: 'Advance notice: This service will be unavailable on Wednesday 4 September 2019 from 6am until 11am while we make essential upgrades.'

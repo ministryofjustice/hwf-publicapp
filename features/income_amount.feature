@@ -12,7 +12,7 @@ Feature: Income amount page
     Given probate is disabled
     And I am a single person on income amount page
     When I submit the form with my monthly income
-    Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
+    Then I am taken to step 12 - Do you have a case, claim, appeal or ‘notice to pay’ number?
 
   Scenario: Income list
     Given probate is enabled

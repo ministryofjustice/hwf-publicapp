@@ -8,12 +8,12 @@ class ClaimPage < BasePage
     element :no, 'label', text: 'No'
     element :yes, 'label', text: 'Yes'
     element :claim_input_field, '#claim_default_identifier'
-    element :claim_number_label, '.govuk-label', text: 'The case, claim or ‘notice to pay’ number is'
+    element :claim_number_label, '.govuk-label', text: 'The case, claim, appeal or ‘notice to pay’ number is'
     element :creates_reference_number_copy, 'p', text: 'The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.'
     element :ongoing_case_copy, 'p', text: 'If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.'
     element :dont_have_reference_number_copy, 'p', text: "Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet)."
-    element :blank_error_link, 'a', text: 'Select whether you have a case, claim or ‘notice to pay’ number'
-    element :enter_number_error_link, 'a', text: 'Enter a case, claim or ‘notice to pay’ number'
+    element :blank_error_link, 'a', text: 'Select whether you have a case, claim, appeal or ‘notice to pay’ number'
+    element :enter_number_error_link, 'a', text: 'Enter a case, claim, appeal or ‘notice to pay’ number'
   end
 
   def to_claim_page

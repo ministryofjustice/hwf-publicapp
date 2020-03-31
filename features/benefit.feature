@@ -39,7 +39,7 @@ Feature: Benefit page
     Given probate is disabled
     And I am on the benefit page
     When I submit the form with yes I am receiving one of the benefits listed
-    Then I am taken to step 12 - Do you have a case, claim or ‘notice to pay’ number?
+    Then I am taken to step 12 - Do you have a case, claim, appeal or ‘notice to pay’ number?
 
   Scenario: Displays error message
     Given probate is enabled

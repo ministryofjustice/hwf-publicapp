@@ -3,7 +3,7 @@ class ClaimPage < BasePage
 
   section :content, '#content' do
     element :step_info, '.govuk-caption-l', text: 'Step 12 of 20'
-    element :claim_header, 'h1', text: 'Do you have a case, claim or ‘notice to pay’ number?'
+    element :claim_header, 'h1', text: 'Do you have a case, claim, appeal or ‘notice to pay’ number?'
     element :claim_text, 'span.govuk-hint', text: 'Find this number on letters from the court or tribunal.'
     element :no, 'label', text: 'No'
     element :yes, 'label', text: 'Yes'

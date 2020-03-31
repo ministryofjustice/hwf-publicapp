@@ -19,6 +19,15 @@ details.govuk-details data-module="govuk-details"
         li =t('item_1', scope: 'questions.national_insurance.details.section_1')
         li =link_to t('item_2', scope: 'questions.national_insurance.details.section_1'), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
 
-p.govuk-body =t('detail_html', scope: 'questions.national_insurance.details.section_1')
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary
+    span =t('.details.summary')
+
+  .govuk-details__text
+    .text
+      ul.govuk-list.govuk-list--bullet
+        li =t('.details.section_1.item_1')
+
+p.govuk-body =t('.paper_form_html')
 
 = link_to(t('submit_button'), start_session_path, role: :button, class: 'govuk-button')

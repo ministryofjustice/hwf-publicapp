@@ -29,7 +29,7 @@ RSpec.feature 'As a user' do
 
       expect(page).to have_text('Step 12 of 20')
       expect(page).not_to have_text('Enter your employment tribunal claim number')
-      expect(page).to have_text('Do you have a case, claim or ‘notice to pay’ number?')
+      expect(page).to have_text('Do you have a case, claim, appeal or ‘notice to pay’ number?')
     end
 
   end

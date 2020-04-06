@@ -4,7 +4,7 @@ class HomeOfficePage < BasePage
   section :content, '#content' do
     element :header, 'h1', text: 'What is your Home Office reference number?'
     element :step_info, '.govuk-caption-l', text: 'Step 14 of 20'
-    element :hint, 'p', text: 'For example, L123456 or L123456/1 (for family members)'
+    element :hint, 'span.govuk-hint', text: 'For example, L123456 or L123456/1 (for family members)'
     element :home_offce_number, '#home_office_ho_number'
     element :user_paper_form, 'p', text: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the paper application form."
     element :paper_form_link, 'a', text: 'paper application form'

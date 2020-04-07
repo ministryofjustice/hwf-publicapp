@@ -30,7 +30,7 @@ en:
         contribution_esa: Contribution-based Employment and Support Allowance (ESA)
         contribution_jsa: Contribution-based Jobseeker's Allowance (JSA)
         maintenance_payment: Maintenance payments
-        other_description: Other monthly income
+        other_description: Other income
         pension: Pensions (state, work, private)
         rent_living_with: Rent from anyone living with you
         rent_other_property: Rent from other properties you own
@@ -358,7 +358,7 @@ en:
     claim/default:
       breadcrumb: Step 12 of 20
       details:
-        section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.
+        section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, appeal or ‘notice to pay’ number.
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
         section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet).
         summary: Help with case number
@@ -453,7 +453,7 @@ en:
         '1': Wages
         '10': Rent from anyone living with you
         '11': Rent from other properties you own
-        '12': Other monthly income
+        '12': Other income
         '13': No income
         '2': Child Benefit
         '3': Working Tax Credit
@@ -668,7 +668,7 @@ en:
     truth:
       button: Submit application and continue
       heading: Declaration and statement of truth
-      statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my application may be rejected and the full fee will be payable.
+      statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe that my financial circumstances mean that I may be entitled to help with fees. I declare that the information I have given in this application is correct and complete. I understand that if I have given false information, criminal or civil proceedings may be brought against me. I understand that if I have given false information or I do not provide evidence of the information given in this application if requested, my application may be rejected and the full fee will be payable.
   switch:
     language: Cymraeg
     locale: cy

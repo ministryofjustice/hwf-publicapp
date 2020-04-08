@@ -18,11 +18,11 @@ Feature: Income kind page
       | Pensions (state, work, private)                           |
       | Rent from anyone living with you                          |
       | Rent from other properties you own                        |
-      | Other monthly income                                      |
+      | Other income                                      |
       | No income                                                 |
 
   Scenario: Displays income lists for a couple
-    Given probate is enabled 
+    Given probate is enabled
     And I am a married person on kind of income page
     Then I should see an income list for myself and my partner
 

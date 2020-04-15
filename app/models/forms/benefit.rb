@@ -8,8 +8,12 @@ module Forms
 
     def export_params
       {
-        benefits: on_benefits
+        benefits: on_benefits_value
       }
+    end
+
+    def on_benefits_value
+      on_benefits == nil ? false : on_benefits
     end
   end
 end

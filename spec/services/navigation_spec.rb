@@ -14,16 +14,16 @@ RSpec.describe Navigation do
 
     {
       form_name: :fee,
-      fee: :marital_status,
+      fee: :national_insurance_presence,
+      national_insurance_presence: :national_insurance,
+      national_insurance: :marital_status,
+      home_office: :marital_status,
       marital_status: :savings_and_investment,
       savings_and_investment_extra: :benefit,
       dependent: :income_kind,
       income_amount: :probate,
       probate: :claim,
-      claim: :national_insurance_presence,
-      national_insurance_presence: :national_insurance,
-      national_insurance: :dob,
-      home_office: :dob,
+      claim: :dob,
       dob: :personal_detail,
       personal_detail: :applicant_address,
       applicant_address: :contact
@@ -81,7 +81,7 @@ RSpec.describe Navigation do
       end
 
       context 'when the extra question is not required' do
-        let(:online_application) { build :online_application }
+        let(:online_application) { build :online_application, ho_number: nil }
 
         it 'routes to the benefit question' do
           expect(subject).to eql(question_path(:benefit, locale: :en))
@@ -156,8 +156,8 @@ RSpec.describe Navigation do
       let(:current_question) { :national_insurance }
       let(:online_application) { build :online_application, ni_number_present: true }
 
-      it 'routes to the dob question' do
-        expect(subject).to eql(question_path(:dob, locale: :en))
+      it 'routes to the marital_status question' do
+        expect(subject).to eql(question_path(:marital_status, locale: :en))
       end
     end
 
@@ -165,8 +165,17 @@ RSpec.describe Navigation do
       let(:current_question) { :home_office }
       let(:online_application) { build :online_application }
 
-      it 'routes to the dob question' do
-        expect(subject).to eql(question_path(:dob, locale: :en))
+      it 'routes to the marital_status question' do
+        expect(subject).to eql(question_path(:marital_status, locale: :en))
+      end
+    end
+
+    context 'when the home office number is present' do
+      let(:online_application) { build :online_application, ho_number: 'L123456' }
+      let(:current_question) { :savings_and_investment_extra }
+
+      it 'skips the benefit question' do
+        expect(subject).to eql(question_path(:dependent, locale: :en))
       end
     end
 

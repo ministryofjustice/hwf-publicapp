@@ -13,7 +13,7 @@ module Forms
     end
 
     def on_benefits_value
-      on_benefits == nil ? false : on_benefits
+      on_benefits.nil? ? false : on_benefits
     end
   end
 end

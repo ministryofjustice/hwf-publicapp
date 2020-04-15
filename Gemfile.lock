@@ -174,7 +174,7 @@ GEM
     factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
       railties (>= 4.2.0)
-    faraday (1.0.0)
+    faraday (0.17.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
     foreman (0.87.0)
@@ -184,12 +184,14 @@ GEM
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashdiff (1.0.1)
+    hashie (3.6.0)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
+    inflection (1.0.0)
     io-like (0.3.1)
     jaro_winkler (1.5.4)
     jquery-rails (4.3.5)
@@ -200,9 +202,9 @@ GEM
     kgio (2.11.3)
     launchy (2.5.0)
       addressable (~> 2.7)
-    letter_opener (1.7.0)
-      launchy (~> 2.2)
     listen (3.2.1)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.5.9)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.4.0)
@@ -327,8 +329,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sentry-raven (3.0.0)
-      faraday (>= 1.0)
+    sentry-raven (2.13.0)
+      faraday (>= 0.7.6, < 1.0)
     shoulda-matchers (4.3.0)
       activesupport (>= 4.2.0)
     simplecov (0.13.0)
@@ -389,6 +391,12 @@ GEM
     websocket-extensions (0.1.4)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    zendesk_api (1.24.0)
+      faraday (>= 0.9.0, < 1.0.0)
+      hashie (>= 3.5.2, < 4.0.0)
+      inflection
+      mime-types
+      multipart-post (~> 2.0)
 
 PLATFORMS
   ruby
@@ -410,7 +418,6 @@ DEPENDENCIES
   geckodriver-helper (~> 0.23.0)
   jquery-rails
   launchy
-  letter_opener
   listen
   nokogiri
   poltergeist (= 1.15.0)
@@ -424,7 +431,7 @@ DEPENDENCIES
   rubocop-rspec (= 1.36.0)
   sass-rails
   selenium-webdriver (~> 3.141)
-  sentry-raven
+  sentry-raven (~> 2.13)
   shoulda-matchers
   site_prism (~> 2.9)
   slim-rails
@@ -435,6 +442,7 @@ DEPENDENCIES
   virtus
   web-console
   webmock
+  zendesk_api (~> 1.24)
 
 BUNDLED WITH
    1.17.3

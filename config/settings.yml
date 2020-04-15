@@ -10,6 +10,11 @@ health_status:
     build_date: <%= ENV['APP_BUILD_DATE'] || 'unknown' %>
     commit_id:  <%= ENV['APP_GIT_COMMIT'] || 'unknown' %>
     build_tag:  <%= ENV['APP_BUILD_TAG'] || 'unknown' %>
+zendesk:
+  enabled: <%= ENV['ZENDESK_ENABLED'].present? && ['1', 'true'].include?(ENV['ZENDESK_ENABLED'].downcase) %>
+  url: <%= ENV['ZENDESK_URL'] %>
+  username: <%= ENV['ZENDESK_USERNAME'] %>
+  token: <%= ENV['ZENDESK_TOKEN'] %>
 session:
   expires_in_minutes: 60
 et:
@@ -30,5 +35,3 @@ sentry:
   ssl_verification: <%= ENV['SENTRY_SSL_VERIFICATION'] %>
 maintenance:
   show: <%= ENV['SHOW_MAINTENANCE_BANNER'] || false %>
-mail:
-  service_now: <%= ENV['SERVICE_NOW_EMAIL'] %>

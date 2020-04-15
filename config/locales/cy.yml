@@ -30,7 +30,7 @@ cy:
         contribution_esa: Lwfans Cyflogaeth a Chymorth yn Seiliedig ar Gyfraniadau (ESA)
         contribution_jsa: Lwfans Ceisio Gwaith yn Seiliedig ar Gyfraniadau (JSA)
         maintenance_payment: Taliadau cynhaliaeth
-        other_description: Incwm misol arall
+        other_description: Incwm arall
         pension: Pensiynau (gwladwriaeth, gwaith, preifat)
         rent_living_with: Rhent oddi wrth rywun sy'n byw gyda chi
         rent_other_property: Rhent o eiddo arall rydych chi'n berchen arno
@@ -344,7 +344,7 @@ cy:
     claim/default:
       breadcrumb: Cam 12 o 20
       details:
-        section_1: Mae'r llys neu dribiwnlys yn creu cyfeirnod ar gyfer pob achos. Weithiau mae hwn yn cael ei elw'n rhif hawliad, rhif achos, neu rif 'hysbysiad talu'.
+        section_1: Mae'r llys neu dribiwnlys yn creu cyfeirnod ar gyfer pob achos. Weithiau mae hwn yn cael ei alw’n rhif hawliad, rhif achos, rhif apêl neu rif ‘hysbysiad talu’.
         section_2: Os yw'ch achos yn mynd ymlaen ar hyn o bryd, bydd y cyfeirnod ar lythyrau oddi wrth y llys neu dribiwnlys.
         section_3: Rhowch 'nac oes' yn ateb i'r cwestiwn hwn os nad oes gennych chi gyfeirnod (efallai am nad yw'ch achos wedi dechrau eto).
         summary: Help gyda rhif achos
@@ -352,7 +352,7 @@ cy:
       number_false: Nac oes
       number_true: Oes
       subtext: Mae'r rhif hwn ar lythyrau oddi wrth y llys neu dribiwnlys.
-      text: A oes gennych rif achos, hawliad, apêl neu ‘rhybudd i dalu’?
+      text: A oes gennych rif achos, hawliad, rhif apêl neu ‘rhybudd i dalu’?
       title: Rhif hawliad neu achos
     claim/et:
       breadcrumb: Cam 12 o 20
@@ -439,7 +439,7 @@ cy:
         '1': Cyflog
         '10': Rhent oddi wrth rywun sy'n byw gyda chi
         '11': Rhent o eiddo arall rydych chi'n berchen arnynt
-        '12': Incwm misol arall
+        '12': Incwm arall
         '13': Dim incwm
         '2': Budd-dal Plant
         '3': Credyd Treth Gwaith
@@ -654,7 +654,7 @@ cy:
     truth:
       button: Cyflwyno cais a pharhau
       heading: Datganiad a datganiad gwirionedd
-      statement: Drwy gwblhau'r cais hwn a chlicio'r botwm 'Cyflwyno cais a pharhau', rydw i'n datgan fy mod yn credu bod yr wybodaeth a roddais yn y ffurflen hon yn gywir hyd eithaf fy ngwybodaeth. Os ceir i mi fod yn anwireddus neu anonest o fwriad, gellir dwyn achos troseddol am dwyll yn fy erbyn. Rydw i'n deall, os ydw i wedi rhoi gwybodaeth anwir neu os na ddarparaf dystiolaeth ychwanegol os gofynnir, y gellir gwrthod fy nghais ac y bydd y ffi lawn yn daladwy.
+      statement: Drwy gwblhau’r cais hwn a chlicio’r botwm ‘Cyflwyno cais a pharhau’, rydw i'n credu bod fy amgylchiadau ariannol yn golygu y gallaf fod yn gymwys i gael help i dalu ffioedd. Rydw i'n datgan fy mod i'n credu bod yr wybodaeth rwyf wedi’i rhoi yn y cais hwn yn gywir ac yn gyflawn. Rwy’n deall os rwyf wedi rhoi gwybodaeth anwir y gellir dwyn achos troseddol neu sifil yn fy erbyn. Rwy’n deall os wyf wedi rhoi gwybodaeth anwir, neu os nad wyf yn darparu tystiolaeth o’r wybodaeth a roddir yn y cais hwn os gofynnir i mi wneud hynny, gall fy nghais gael ei wrthod a bydd rhaid i mi dalu’r ffi lawn.
   switch:
     language: English
     locale: en

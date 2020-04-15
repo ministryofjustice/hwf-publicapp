@@ -14,8 +14,9 @@ gem 'bootsnap', require: false
 gem 'config'
 gem 'date_validator'
 gem 'rest-client'
-gem 'sentry-raven'
+gem 'sentry-raven', '~> 2.13'
 gem 'virtus'
+gem 'zendesk_api', '~> 1.24'
 
 # Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'
@@ -33,7 +34,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rubocop', '0.76.0', require: false
   gem 'rubocop-rspec', '1.36.0', require: false
-  gem 'letter_opener'
 end
 
 group :development do

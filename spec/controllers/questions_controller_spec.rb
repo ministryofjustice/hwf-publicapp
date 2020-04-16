@@ -40,6 +40,10 @@ RSpec.describe QuestionsController, type: :controller do
         expect(assigns(:title_view)).to eql(question_title_view)
       end
 
+      it 'assigns the page number' do
+        expect(assigns(:page_number)).to eql(0)
+      end
+
       it 'loads the form from the storage' do
         expect(storage).to have_received(:load_form).with(form)
       end

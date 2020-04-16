@@ -14,6 +14,13 @@ class Navigation
     end
   end
 
+  def page_number
+    current_index = QuestionFormFactory::IDS.find_index(@current_question)
+    return 0 if current_index.nil?
+
+    current_index + 1
+  end
+
   private
 
   def next_question_id

@@ -352,7 +352,7 @@ cy:
       number_false: Nac oes
       number_true: Oes
       subtext: Mae'r rhif hwn ar lythyrau oddi wrth y llys neu dribiwnlys.
-      text: A oes gennych rif achos, hawliad, rhif apêl neu ‘rhybudd i dalu’?
+      text: A oes gennych chi rif achos, rhif hawliad, rhif apêl neu rif ‘hysbysiad talu’?
       title: Rhif hawliad neu achos
     claim/et:
       breadcrumb: Cam 12 o 20

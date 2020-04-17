@@ -3,7 +3,7 @@ class HomeOfficePage < BasePage
 
   section :content, '#content' do
     element :header, 'h1', text: 'What is your Home Office reference number?'
-    element :step_info, '.govuk-caption-l', text: 'Step 14 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 5 of 22'
     element :hint, 'span.govuk-hint', text: 'For example, L123456 or L123456/1 (for family members)'
     element :home_offce_number, '#home_office_ho_number'
     element :user_paper_form, 'p', text: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the paper application form."
@@ -19,11 +19,6 @@ class HomeOfficePage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
-    marital_status_page.submit_married
-    savings_investment_page.low_amount_checked
-    benefit_page.submit_benefit_yes
-    probate_page.submit_probate_no
-    claim_page.submit_claim_no
     national_insurance_presence_page.submit_no
   end
 

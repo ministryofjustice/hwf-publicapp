@@ -45,7 +45,9 @@ Feature: Summary page
     | Fee paid No Change fee paid                                               |                
     | Status Married or living with someone and sharing an income Change status |
     | Savings and investments £0 to £2,999 Change savings and investments       |
-    | Benefits Receiving eligible benefits Change benefits                      |
+    | Benefits Not receiving eligible benefits Change benefits                  |
+    | Children No Change children                                               |
+    | Income £0 Change income                                                   |
     | Claim number No Change claim number                                       |
     | National Insurance number No Change national insurance number             |
     | Home Office reference number 1212-0001-0240-0490/01 Change home office reference number|

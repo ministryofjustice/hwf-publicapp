@@ -1,7 +1,7 @@
 Given(/^I am on the dependent page$/) do
   dependent_page.to_dependent_page
   expect(dependent_page.content).to have_step_info
-  expect(dependent_page.content).to have_dependent_header
+  expect(dependent_page.content).to have_header
 end
 
 When(/^I select yes to do you have any children$/) do

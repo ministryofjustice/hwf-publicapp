@@ -2,7 +2,7 @@ class ConfirmationDonePage < BasePage
   set_url '/confirmation/done'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 20 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 22 of 22'
     element :header, 'h1', text: 'Send your claim form'
     element :send_your_form, 'h2', text: 'Send your C100 form with your HWF-000-000 reference on it to complete the process'
     element :post, '.post', text: 'Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.'
@@ -18,6 +18,8 @@ class ConfirmationDonePage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_no
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_married
     savings_investment_page.medium_amount_checked
     savings_investment_extra_page.submit_yes
@@ -26,8 +28,6 @@ class ConfirmationDonePage < BasePage
     income_kind_page.submit_no_income
     probate_page.submit_probate_no
     claim_page.submit_claim_no
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
     dob_page.valid_dob
     personal_details_page.submit_full_name
     address_page.submit_full_address

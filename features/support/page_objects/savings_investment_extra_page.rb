@@ -2,7 +2,7 @@ class SavingsInvestmentExtraPage < BasePage
   set_url '/questions/savings_and_investment_extra'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 5 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 8 of 22'
     element :single_header, 'h1', text: 'Are you 61 years old or over?'
     element :married_header, 'h1', text: 'Are you or your partner 61 years old or over?'
     element :yes, 'label', text: 'Yes'
@@ -18,6 +18,8 @@ class SavingsInvestmentExtraPage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_single
     savings_investment_page.medium_amount_checked
   end
@@ -26,6 +28,8 @@ class SavingsInvestmentExtraPage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_married
     savings_investment_page.medium_amount_checked
   end

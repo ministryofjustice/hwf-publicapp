@@ -3,7 +3,7 @@ Given(/^I am on the summary page with probate enabled$/) do
   summary_page.to_summary_page_probate_enabled
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
-  expect(summary_page.content).to have_summary_header
+  expect(summary_page.content).to have_header
   expect(summary_page.content).to have_check_details_hint
 end
 
@@ -11,7 +11,7 @@ Given(/^I am on the summary page with probate disabled$/) do
   probate_disabled
   summary_page.to_summary_page_probate_disabled
   expect(summary_page.content).to have_step_info
-  expect(summary_page.content).to have_summary_header
+  expect(summary_page.content).to have_header
   expect(summary_page.content).to have_check_details_hint
 end
 
@@ -24,7 +24,7 @@ Then(/^I am on the summary page$/) do
   summary_page.to_summary_page_with_ho_number
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
-  expect(summary_page.content).to have_summary_header
+  expect(summary_page.content).to have_header
   expect(summary_page.content).to have_check_details_hint
 end
 

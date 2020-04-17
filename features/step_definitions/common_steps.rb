@@ -64,10 +64,10 @@ Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
   expect(hint_group.text).to have_content hint
 end
 
-Then(/^I am taken to step (\d+) - ([^\"]*)$/) do |step, title|
-  expect(base_page.content.step_number.text).to have_content step
-  expect(base_page.content.h1.text).to eq title
-end
+# Then(/^I am taken to step (\d+) - ([^\"]*)$/) do |step, title|
+#   expect(base_page.content.step_number.text).to have_content step
+#   expect(base_page.content.h1.text).to eq title
+# end
 
 Then(/^I should see save or print this page$/) do
   expect(base_page.js_print['href']).to end_with '#'

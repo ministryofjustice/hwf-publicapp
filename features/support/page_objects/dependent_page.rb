@@ -2,8 +2,8 @@ class DependentPage < BasePage
   set_url '/questions/dependent'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 7 of 20'
-    element :dependent_header, 'h1', text: 'Do you have any children living with you, or who you support financially?'
+    element :step_info, '.govuk-caption-l', text: 'Step 10 of 22'
+    element :header, 'h1', text: 'Do you have any children living with you, or who you support financially?'
     element :no, 'label', text: 'No'
     element :yes, 'label', text: 'Yes'
     element :num_of_children, '.govuk-label', text: 'Number of children'
@@ -22,6 +22,8 @@ class DependentPage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_married
     savings_investment_page.low_amount_checked
     benefit_page.submit_benefit_no

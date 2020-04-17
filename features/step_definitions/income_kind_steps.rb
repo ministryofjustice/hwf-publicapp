@@ -2,14 +2,14 @@ Given(/^I am a single person on kind of income page$/) do
   income_kind_page.to_income_kind_single
   expect(income_kind_page.content).to have_choose_income_single
   expect(income_kind_page.content).to have_step_info
-  expect(income_kind_page.content).to have_income_kind_header_single
+  expect(income_kind_page.content).to have_single_header
 end
 
 Given(/^I am a married person on kind of income page$/) do
   income_kind_page.to_income_kind_married
   expect(income_kind_page.content).to have_choose_income_married
   expect(income_kind_page.content).to have_step_info
-  expect(income_kind_page.content).to have_income_kind_header_married
+  expect(income_kind_page.content).to have_married_header
 end
 
 When(/^I submit the form with no income checked$/) do

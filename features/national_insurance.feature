@@ -8,7 +8,7 @@ Feature: National insurance page
 
   Scenario: Entering a valid national insurance number
     When I submit a valid national insurance number
-    Then I should be taken to date of birth page
+    Then I should be taken to marital status page
 
   Scenario: Displays error message enter a valid national insurance number
     When I submit an invalid national insurance number

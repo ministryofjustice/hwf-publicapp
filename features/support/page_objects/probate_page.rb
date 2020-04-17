@@ -1,7 +1,9 @@
 class ProbatePage < BasePage
+  set_url '/questions/probate'
+
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 11 of 20'
-    element :probate_header, 'h1', text: 'Are you paying a fee for a probate case?'
+    element :step_info, '.govuk-caption-l', text: 'Step 14 of 22'
+    element :header, 'h1', text: 'Are you paying a fee for a probate case?'
     element :probate_hint, 'span.govuk-hint', text: 'These cases are usually about the property and belongings of someone who has died.'
     element :yes, 'label', text: 'Yes'
     element :no, 'label', text: 'No'
@@ -66,6 +68,8 @@ class ProbatePage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_married
     savings_investment_page.low_amount_checked
     benefit_page.submit_benefit_yes

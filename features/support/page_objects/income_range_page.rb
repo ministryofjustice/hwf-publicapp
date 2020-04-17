@@ -2,9 +2,9 @@ class IncomeRangePage < BasePage
   set_url '/questions/income_range'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 9 of 20'
-    element :income_range_header_single, 'h1', text: 'How much income did you receive each month?'
-    element :income_range_header_married, 'h1', text: 'How much income do you and your partner receive each month?'
+    element :step_info, '.govuk-caption-l', text: 'Step 12 of 22'
+    element :single_header, 'h1', text: 'How much income did you receive each month?'
+    element :married_header, 'h1', text: 'How much income do you and your partner receive each month?'
     element :select_single_income_hint, 'p', text: 'Select the monthly amount you received in income from:'
     element :select_married_income_hint, 'p', text: 'Select the monthly amount you and your partner receive in income from: Wages If your income varies from month to month, work out an average monthly income based on the last 3 months.'
     element :choose_income_single, 'p', text: 'Choose the different types of income you receive.'
@@ -22,6 +22,8 @@ class IncomeRangePage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_single
     savings_investment_page.high_amount_checked
     benefit_page.submit_benefit_no
@@ -33,6 +35,8 @@ class IncomeRangePage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_married
     savings_investment_page.high_amount_checked
     benefit_page.submit_benefit_no
@@ -44,6 +48,8 @@ class IncomeRangePage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_single
     savings_investment_page.high_amount_checked
     benefit_page.submit_benefit_no
@@ -55,6 +61,8 @@ class IncomeRangePage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_married
     savings_investment_page.high_amount_checked
     benefit_page.submit_benefit_no

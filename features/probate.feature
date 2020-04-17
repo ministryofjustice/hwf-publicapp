@@ -6,13 +6,13 @@ Feature: Probate page
 
   Scenario: Selecting no to are you paying a fee for a probate case
     When I select no to are you paying a fee for a probate case
-    Then I am taken to step 12 - Do you have a case, claim, appeal or ‘notice to pay’ number?
+    Then I should be taken to the claim page
 
   Scenario: Selecting yes to are you paying a fee for a probate case
     When I select yes to are you paying a fee for a probate case
     And I enter the name of deceased
     And I enter a valid date of death
-    Then I am taken to step 12 - Do you have a case, claim, appeal or ‘notice to pay’ number?
+    Then I should be taken to the claim page
 
   Scenario: Displays date can't be in the future error message
     When I enter a future date of death

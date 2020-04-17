@@ -30,13 +30,13 @@ Feature: Income kind page
     Given probate is enabled
     And I am a single person on kind of income page
     When I submit the form with no income checked
-    Then I am taken to step 11 - Are you paying a fee for a probate case?
+    Then I should be taken to the probate page
 
   Scenario: No income - probate disabled
     Given probate is disabled
     And I am a single person on kind of income page
     When I submit the form with no income checked
-    Then I am taken to step 12 - Do you have a case, claim, appeal or ‘notice to pay’ number?
+    Then I should be taken to the claim page
 
   Scenario: Submit the page with wages
     Given probate is disabled

@@ -2,7 +2,7 @@ Given(/^I am on the form number page$/) do
   form_name_page.to_form_name
   expect(current_url).to have_content '/questions/form_name'
   expect(form_name_page.content).to have_step_info
-  expect(form_name_page.content).to have_form_name_header
+  expect(form_name_page.content).to have_header
   expect(form_name_page.content).to have_enter_court_hint
 end
 

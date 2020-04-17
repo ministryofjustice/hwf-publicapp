@@ -2,8 +2,8 @@ class NationalInsurancePage < BasePage
   set_url '/questions/national_insurance'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 14 of 20'
-    element :national_insurance_header, 'h1', text: 'Enter National Insurance number'
+    element :step_info, '.govuk-caption-l', text: 'Step 4 of 22'
+    element :header, 'h1', text: 'Enter National Insurance number'
     element :national_insurance_text, 'span.govuk-hint', text: 'For example, QQ123456C'
     element :national_insurance_number, '#national_insurance_number'
     element :help_with_ni_dropdown, 'summary', text: 'If you don’t know your National Insurance number'
@@ -19,11 +19,6 @@ class NationalInsurancePage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
-    marital_status_page.submit_married
-    savings_investment_page.low_amount_checked
-    benefit_page.submit_benefit_yes
-    probate_page.submit_probate_no
-    claim_page.submit_claim_no
     national_insurance_presence_page.submit_yes
   end
 

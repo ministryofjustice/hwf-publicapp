@@ -2,7 +2,7 @@ Given(/^I am on the benefit page$/) do
   benefit_page.to_benefit_page
   expect(benefit_page).to be_displayed
   expect(benefit_page.content).to have_step_info
-  expect(benefit_page.content).to have_benefit_header
+  expect(benefit_page.content).to have_header
 end
 
 When(/^I submit the form with yes I am receiving one of the benefits listed$/) do
@@ -45,4 +45,14 @@ end
 Then(/^I should see select whether you're receiving one of the benefits listed error message$/) do
   expect(base_page.content).to have_there_is_a_problem
   expect(benefit_page.content).to have_blank_error_link
+end
+
+Then(/^I should be taken to the probate page$/) do
+  expect(probate_page).to be_displayed
+  expect(probate_page.content).to have_header
+end
+
+Then(/^I should be taken to the claim page$/) do
+  expect(claim_page).to be_displayed
+  expect(claim_page.content).to have_header
 end

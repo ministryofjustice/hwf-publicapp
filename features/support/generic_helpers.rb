@@ -95,6 +95,14 @@ def national_insurance_page
   @national_insurance_page ||= NationalInsurancePage.new
 end
 
+def national_insurance_presence_page
+  @national_insurance_presence_page ||= NationalInsurancePresencePage.new
+end
+
+def home_office_page
+  @home_office_page ||= HomeOfficePage.new
+end
+
 def dob_page
   @dob_page ||= DobPage.new
 end

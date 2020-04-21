@@ -2,7 +2,7 @@ Given(/^I am on the claim page$/) do
   claim_page.to_claim_page
   expect(claim_page).to be_displayed
   expect(claim_page.content).to have_step_info
-  expect(claim_page.content).to have_claim_header
+  expect(claim_page.content).to have_header
   expect(claim_page.content).to have_claim_text
 end
 

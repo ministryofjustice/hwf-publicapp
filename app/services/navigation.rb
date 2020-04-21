@@ -14,13 +14,20 @@ class Navigation
     end
   end
 
+  def page_number
+    current_index = QuestionFormFactory::IDS.find_index(@current_question)
+    return 0 if current_index.nil?
+
+    current_index + 1
+  end
+
   private
 
   def next_question_id
     if skip_income_questions?
       probate_or_claim
-    elsif skip_savings_and_investment_extra?
-      :benefit
+    elsif alternate_question_after_savings?
+      @after_savings
     elsif ni_related_question?
       @ni_next_page
     else
@@ -65,9 +72,25 @@ class Navigation
         @online_application.income_max_threshold_exceeded)
   end
 
+  def saving_question?
+    @current_question == :savings_and_investment || @current_question == :savings_and_investment_extra
+  end
+
+  def alternate_question_after_savings?
+    @after_savings = :dependent if @current_question == :savings_and_investment_extra && skip_benefit?
+    if skip_savings_and_investment_extra?
+      @after_savings = skip_benefit? ? :dependent : :benefit
+    end
+    @after_savings
+  end
+
   def skip_savings_and_investment_extra?
     @current_question == :savings_and_investment &&
       !@online_application.savings_and_investment_extra_required?
+  end
+
+  def skip_benefit?
+    @online_application.ho_number.present?
   end
 
   def no_ni_number_page
@@ -78,7 +101,7 @@ class Navigation
     if @current_question == :national_insurance_presence
       @ni_next_page = no_ni_number_page
     elsif @current_question == :national_insurance
-      @ni_next_page = :dob
+      @ni_next_page = :marital_status
     end
   end
 

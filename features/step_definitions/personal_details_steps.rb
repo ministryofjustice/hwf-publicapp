@@ -3,7 +3,7 @@ Given(/^I am on the personal details page with probate enabled$/) do
   personal_details_page.to_personal_details_page
   expect(personal_details_page).to be_displayed
   expect(personal_details_page.content).to have_step_info
-  expect(personal_details_page.content).to have_personal_details_header
+  expect(personal_details_page.content).to have_header
 end
 
 When(/^I enter my title$/) do

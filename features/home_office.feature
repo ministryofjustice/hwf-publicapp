@@ -8,7 +8,7 @@ Feature: Home office page
 
   Scenario: Entering a valid home office number
     When I submit a valid home office number
-    Then I should be taken to date of birth page
+    Then I should be taken to marital status page
 
   Scenario: Entering an invalid home office number
     When I submit an invalid home office number

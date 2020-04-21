@@ -2,9 +2,9 @@ class IncomeKindPage < BasePage
   set_url '/questions/income_kind'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 8 of 20'
-    element :income_kind_header_single, 'h1', text: 'What kind of income did you receive?'
-    element :income_kind_header_married, 'h1', text: 'What kind of income did you and your partner receive?'
+    element :step_info, '.govuk-caption-l', text: 'Step 11 of 22'
+    element :single_header, 'h1', text: 'What kind of income did you receive?'
+    element :married_header, 'h1', text: 'What kind of income did you and your partner receive?'
     element :choose_income_single, 'span.govuk-hint', text: 'Choose the different types of income you received at the time you paid the fee.'
     element :choose_income_married, 'span.govuk-hint', text: 'Choose the different types of income you and your partner received at the time you paid the fee.'
     element :your_income, 'h2', text: 'Your income'
@@ -20,6 +20,8 @@ class IncomeKindPage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_single
     savings_investment_page.high_amount_checked
     benefit_page.submit_benefit_no
@@ -30,6 +32,8 @@ class IncomeKindPage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_yes
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_married
     savings_investment_page.high_amount_checked
     benefit_page.submit_benefit_no

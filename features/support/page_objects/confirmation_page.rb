@@ -2,7 +2,7 @@ class ConfirmationPage < BasePage
   set_url '/confirmation'
 
   section :content, '#content' do
-    element :step_info, '.govuk-caption-l', text: 'Step 19 of 20'
+    element :step_info, '.govuk-caption-l', text: 'Step 21 of 22'
     element :header, 'h1', text: 'Reference number to add to your claim form'
     element :confirmation_header, 'h2', text: 'Your application for help with fees is not finished yet'
     section :list, '.govuk-list' do
@@ -17,6 +17,8 @@ class ConfirmationPage < BasePage
     form_name_page.to_form_name
     form_name_page.submit_valid_form_number
     fee_page.submit_fee_no
+    national_insurance_presence_page.submit_yes
+    national_insurance_page.submit_valid_ni
     marital_status_page.submit_married
     savings_investment_page.medium_amount_checked
     savings_investment_extra_page.submit_yes
@@ -25,8 +27,6 @@ class ConfirmationPage < BasePage
     income_kind_page.submit_no_income
     probate_page.submit_probate_no
     claim_page.submit_claim_no
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
     dob_page.valid_dob
     personal_details_page.submit_full_name
     address_page.submit_full_address

@@ -1,7 +1,7 @@
 Given(/^I am on the fee page$/) do
   fee_page.to_fee_page
   expect(fee_page.content).to have_step_info
-  expect(fee_page.content).to have_fee_header
+  expect(fee_page.content).to have_header
   expect(fee_page.content).to have_apply_for_refund
 end
 

@@ -1,7 +1,7 @@
 Given(/^I am a single person on income amount page$/) do
   income_amount_page.to_income_amount_single
   expect(income_amount_page.content).to have_step_info
-  expect(income_amount_page.content).to have_income_amount_single_header
+  expect(income_amount_page.content).to have_single_header
   expect(income_amount_page.content).to have_hint_text_single
   expect(income_amount_page.content).to have_average_income_hint
 end
@@ -9,7 +9,7 @@ end
 Given(/^I am a married person on income amount page$/) do
   income_amount_page.to_income_amount_married
   expect(income_amount_page.content).to have_step_info
-  expect(income_amount_page.content).to have_income_amount_married_header
+  expect(income_amount_page.content).to have_married_header
   expect(income_amount_page.content).to have_hint_text_married
   expect(income_amount_page.content).to have_average_income_hint
 end

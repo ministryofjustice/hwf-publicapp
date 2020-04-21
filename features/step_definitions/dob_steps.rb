@@ -1,7 +1,7 @@
 Given(/^I am on the date of birth page$/) do
   dob_page.to_dob_page
   expect(dob_page.content).to have_step_info
-  expect(dob_page.content).to have_dob_header
+  expect(dob_page.content).to have_header
   expect(dob_page.content).to have_dob_hint
 end
 

@@ -13,3 +13,5 @@ Rails.application.config.assets.paths << Rails.root.join('assets', 'fonts')
 Rails.application.config.assets.precompile += %w[*.png *.ico]
 Rails.application.config.assets.precompile += %w[.svg .eot .woff .ttf]
 Rails.application.config.assets.precompile += %w[confirmation-print.css ie8.css ie7.css]
+Rails.application.config.assets.precompile += %w( application-ie8.css )
+Rails.application.config.assets.precompile += %w( govuk-frontend/govuk/all.js )

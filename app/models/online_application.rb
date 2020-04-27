@@ -11,6 +11,7 @@ class OnlineApplication
   attribute :income_min_threshold_exceeded, Boolean
   attribute :income_max_threshold_exceeded, Boolean
   attribute :income, Integer
+  attribute :income_kind, Hash
   attribute :refund, Boolean
   attribute :date_fee_paid, Date
   attribute :probate, Boolean

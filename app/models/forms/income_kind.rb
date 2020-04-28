@@ -38,13 +38,24 @@ module Forms
     private
 
     def export_params
-      {}.tap do |export|
-        export[:income] = 0 if (applicant + partner).uniq == [self.class.no_income_index]
-      end
+      export = {
+        income_kind: {
+          applicant: income_kind_text_values(applicant),
+          partner: income_kind_text_values(partner)
+        }
+      }
+      export.merge!(income: 0) if (applicant + partner).uniq == [self.class.no_income_index]
+      export
     end
 
     def clear_empty_string(attributes, attribute)
       attributes[attribute]&.delete_if { |value| value == '' }
+    end
+
+    def income_kind_text_values(kinds)
+      kinds.map do |kind|
+        I18n.t(kind, scope: ['questions.income_kind.kinds'])
+      end
     end
   end
 end

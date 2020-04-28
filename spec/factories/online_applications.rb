@@ -16,6 +16,7 @@ FactoryBot.define do
     email_contact { false }
     phone_contact { false }
     post_contact { false }
+    income_kind { { applicant: ["No income"], partner: ["No income"] } }
 
     trait :refund do
       refund { true }

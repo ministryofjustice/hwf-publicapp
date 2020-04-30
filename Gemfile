@@ -8,7 +8,7 @@ end
 gem 'dotenv-rails', groups: [:development, :test] # this has to be here because of load order
 gem 'application_insights', '~> 0.5.6'
 
-gem 'rails', '5.2.4.1'
+gem 'rails', '~> 6.0'
 
 gem 'bootsnap', require: false
 gem 'config'

@@ -30,6 +30,7 @@ gem 'unicorn'
 
 group :development, :test do
   gem 'factory_bot_rails'
+  gem 'parallel_tests'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop', '0.76.0', require: false

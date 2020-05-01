@@ -20,7 +20,7 @@ gem 'sass-rails'
 gem 'sentry-raven', '~> 2.13'
 gem 'slim-rails'
 gem 'uglifier', '3.0.0'
-gem 'unicorn'
+gem 'puma', '~> 4.3'
 gem 'virtus'
 gem 'zendesk_api', '~> 1.24'
 

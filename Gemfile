@@ -31,7 +31,7 @@ gem 'unicorn'
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 4.0'
   gem 'rubocop', '0.76.0', require: false
   gem 'rubocop-rspec', '1.36.0', require: false
 end

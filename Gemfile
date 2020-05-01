@@ -12,7 +12,7 @@ gem 'rails', '~> 6.0'
 gem 'application_insights', '~> 0.5.6'
 gem 'bootsnap', require: false
 gem 'config'
-gem 'date_validator'
+gem 'date_validator', '0.9.0'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'rest-client'

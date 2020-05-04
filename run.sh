@@ -5,10 +5,10 @@ case ${PHUSION_SERVICE} in
 true)
     echo "running as service"
     cd /home/app/
-    bundle exec puma -p ${PUMA_PORT:-8080} -C ./config/puma.rb -E ${RAILS_ENV:-production}
+    bundle exec puma -p ${UNICORN_PORT:-8080} -C ./config/puma.rb -e ${RAILS_ENV:-production}
     ;;
 *)
     echo "normal startup"
-    bundle exec puma -p ${PUMA_PORT:-8080} -C ./config/puma.rb
+    bundle exec puma -p ${UNICORN_PORT:-8080} -C ./config/puma.rb -e ${RAILS_ENV:-production}
     ;;
 esac

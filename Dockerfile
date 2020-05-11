@@ -19,8 +19,8 @@ RUN apt-get update -q && \
     rm -rf /var/lib/apt/lists/* && rm -fr *Release* *Sources* *Packages* && \
     truncate -s 0 /var/log/*log
 
-ENV PUMA_PORT 3000
-EXPOSE $PUMA_PORT
+ENV UNICORN_PORT 3000
+EXPOSE $UNICORN_PORT
 
 RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
 

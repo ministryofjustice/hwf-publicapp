@@ -34,28 +34,29 @@ For integration and UI testing, we use:
 
 To run the standard Cucumber test suite, use:
 
-$ cucumber features
+$ bundle exec cucumber features
 
 ## check your ENV['HOSTNAME'] if you have an issues with "Real HTTP connections are disabled. Unregistered request"
 ## from webmock
 
 To run the all scenarios in a particular feature file:
 
-$ cucumber features/landing_page.feature
+$ bundle exec cucumber cucumber features/summary.feature
 
 To run a particular scenario using line number:
 
-$ cucumber features/landing_page.feature:10
+$ bundle exec cucumber cucumber features/summary.feature:10
 
 To run in a browser:
 
-$ DRIVER=chrome cucumber
+$ bundle exec DRIVER=chrome cucumber
 
-$ DRIVER=firefox cucumber
+$ bundle exec DRIVER=firefox cucumber
+Please note: Firefox with macOS 10.15 “Catalina”, please refer to [macOS notarization](https://firefox-source-docs.mozilla.org/testing/geckodriver/Notarization.html)
 
 ### Running smoke tests
 
-$ cucumber --tags @smoke
+$ bundle exec cucumber --tags @smoke
 
 ### Running cross browser and device tests using Sauce Labs
 

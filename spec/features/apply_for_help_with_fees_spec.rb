@@ -38,7 +38,7 @@ RSpec.feature 'As a user' do
         expect(page).to have_content I18n.t('questions.form_name.text')
         fill_in 'form_name_identifier', with: 'N1'
         find_continue_button.click
-        expect(page).to have_content
+        expect(page).to have_content I18n.t('questions.fee.text')
         choose 'fee_paid_false'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.national_insurance_presence.text')

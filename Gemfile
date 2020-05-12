@@ -17,9 +17,9 @@ gem 'jquery-rails'
 gem 'nokogiri'
 gem 'rest-client'
 gem 'sass-rails'
-gem 'sentry-raven', '~> 2.13'
+gem 'sentry-raven'
 gem 'slim-rails'
-gem 'uglifier', '3.0.0'
+gem 'uglifier'
 gem 'puma', '~> 4.3'
 gem 'virtus'
 gem 'zendesk_api', '~> 1.24'
@@ -28,7 +28,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'parallel_tests'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 4.0'
+  gem 'rspec-rails'
   gem 'rubocop', '0.76.0', require: false
   gem 'rubocop-rspec', '1.36.0', require: false
 end
@@ -42,18 +42,18 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '~> 2.7'
+  gem 'capybara'
   gem 'capybara-screenshot'
   gem 'chromedriver-helper', '~> 1.1'
   gem 'codeclimate-test-reporter', require: nil
-  gem 'cucumber-rails', '~> 1.5', require: false
+  gem 'cucumber-rails', require: false
   gem 'geckodriver-helper', '~> 0.23.0'
   gem 'poltergeist', '1.15.0'
   gem 'rails-controller-testing'
   gem 'rspec_junit_formatter', '~> 0.4.1'
   gem 'selenium-webdriver', '~> 3.141'
   gem 'shoulda-matchers'
-  gem 'site_prism', '~> 2.9'
+  gem 'site_prism'
   gem 'timecop'
   gem 'webmock', require: false
 end

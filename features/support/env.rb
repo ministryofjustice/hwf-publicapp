@@ -5,13 +5,8 @@
 # files.
 
 require 'cucumber/rails'
-require 'capybara/dsl'
-require 'capybara/poltergeist'
-require 'capybara-screenshot/cucumber'
-require 'rest-client'
-require 'selenium-webdriver'
-
 require_relative './page_objects/base_page'
+require 'capybara/apparition'
 
 Dir[File.dirname(__FILE__) + '/page_objects/**/*.rb'].each { |f| require f }
 
@@ -42,10 +37,6 @@ ENV['zap_proxy'] = "localhost"
 ENV['zap_proxy_port'] = '8099'
 ENV['HOSTNAME'] = 'localhost'
 
-Before do
-  stub_request(:any, 'https://dc.services.visualstudio.com/v2/track')
-end
-
 #Below lines are our driver profile settings to reach internet through a proxy
 #You can set security=true as environment variable or declare it on command window
 if ENV['security'] == "true"
@@ -65,3 +56,5 @@ if ENV['APP_HOST']
     Capybara.app_host += '/'
   end
 end
+
+Capybara.raise_server_errors = false

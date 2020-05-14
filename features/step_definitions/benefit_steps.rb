@@ -23,8 +23,8 @@ end
 Then(/^I should see the benefits table:$/) do |table|
   table.raw.each_with_index do |item, index|
     first = index * 2
-    expect(benefit_page.content.td[first].text).to eq item[0]
-    expect(benefit_page.content.td[first + 1].text).to eq item[1]
+    expect(benefit_page.content.td[first].text).to have_text item[0]
+    expect(benefit_page.content.td[first + 1].text).to have_text item[1]
   end
 end
 

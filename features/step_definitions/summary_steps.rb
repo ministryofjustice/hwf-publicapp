@@ -30,12 +30,12 @@ end
 
 Then(/^I should see my details:$/) do |scopes|
   scopes.rows.each_with_index do |scope, index|
-    expect(summary_page.content.summary_row[index].text).to eq scope[0]
+    expect(summary_page.content.summary_row[index].text).to have_text scope[0]
   end
 end
 
 And(/^I should not see probate in the check details table$/) do
-  expect(summary_page.content).to_not have_probate
+  expect(summary_page.content).to have_no_probate
 end
 
 Then(/^I should be able to go back and change my details:$/) do |urls|

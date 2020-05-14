@@ -22,7 +22,7 @@ class PersonalDetailsPage < BasePage
   end
 
   def submit_full_name
-    fill_in 'Title', with: 'Ms'
+    fill_in 'Title(Optional)', with: 'Ms'
     fill_in 'First name', with: 'Sally'
     fill_in 'Last name', with: 'Smith'
     continue

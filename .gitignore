@@ -18,13 +18,6 @@
 # node
 node_modules
 
-#nightwatch
-/tests/nightwatch/reports
-/tests/nightwatch/reports/*
-/tests/reports
-/tests/reports/*
-selenium-debug.log
-
 # Ignore IDE configurations
 .idea/
 

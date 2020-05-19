@@ -20,7 +20,8 @@ class ZendeskSender
       subject: subject(help_request),
       description: help_request.description,
       requester: {
-        name: help_request.name
+        name: help_request.name,
+        email: help_request.email
       },
       custom_fields: custom_fields(help_request)
     }

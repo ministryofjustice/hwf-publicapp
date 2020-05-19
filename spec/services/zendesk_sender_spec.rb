@@ -43,7 +43,8 @@ RSpec.describe ZendeskSender do
           subject: 'NAME has requested assistance, please email them back on: EMAIL',
           description: 'DESCRIPTION',
           requester: {
-            name: 'NAME'
+            name: 'NAME',
+            email: 'EMAIL'
           },
           custom_fields: [
             { id: '32342378', value: 'test' },

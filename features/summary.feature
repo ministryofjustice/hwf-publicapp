@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Summary page
 
   Scenario: Displays your details table - probate enabled

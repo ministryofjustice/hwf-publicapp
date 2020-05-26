@@ -1,4 +1,4 @@
-@hwf_submit_application @e2e
+@hwf_submit_application
 
 Feature: Confirmation page
 

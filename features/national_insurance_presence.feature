@@ -1,5 +1,3 @@
-@e2e
-
 Feature: National insurance presence page
 
   Background: Navigating to the national insurance page

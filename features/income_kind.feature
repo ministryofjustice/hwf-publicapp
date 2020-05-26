@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Income kind page
 
   Scenario: Displays income lists for a single person

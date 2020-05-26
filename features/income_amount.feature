@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Income amount page
 
   Scenario: Submits married monthly income - probate enabled

@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Fee page
 
   Background: Navigating to the fee page

@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Address page
 
   Background: Navigating to the address page

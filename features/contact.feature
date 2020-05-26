@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Contact page
 
   Background: Navigating to the contact page

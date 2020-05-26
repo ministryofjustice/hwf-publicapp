@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Claim page
 
   Background: Navigating to the claim page

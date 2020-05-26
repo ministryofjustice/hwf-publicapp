@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Checklist page
 
   Background: Navigating to the checklist page

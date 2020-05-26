@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Benefit page
 
   Scenario: Displays instruction bullet points

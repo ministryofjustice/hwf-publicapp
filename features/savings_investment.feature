@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Savings and investment page
 
   Background: Navigating to the savings and investment page

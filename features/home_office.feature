@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Home office page
 
   Background: Home office page

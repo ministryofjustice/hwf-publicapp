@@ -760,7 +760,7 @@ cy:
         - p:  Efallai y byddwn yn anfon eich gwybodaeth bersonol ymlaen os oes gennym ddyletswydd gyfreithiol i wneud hynny.
       - title: Mynediad at wybodaeth bersonol
         parts:
-        - p: 'Gallwch ganfod os oes gennym unrhyw ddata personol amdanoch drwy wneud ‘cais gwrthrych am wybodaeth’.  Gallwch wneud cais gwrthrych am wybodaeth trwy anfon e-bost i: <a href="mailto:data.access@justice.gsi.gov.uk" class="govuk-link">data.access@justice.gsi.gov.uk</a>'
+        - p: 'Gallwch ganfod os oes gennym unrhyw ddata personol amdanoch drwy wneud ‘cais gwrthrych am wybodaeth’.  Gallwch wneud cais gwrthrych am wybodaeth trwy anfon e-bost i: <a href="mailto:data.access@Justice.gov.uk" class="govuk-link">data.access@Justice.gov.uk</a>'
         - p: 'Gallwch gael rhagor o fanylion ynghylch:'
         - ul:
           - li: Cytundebau sydd gennym gyda sefydliadau eraill ar gyfer rhannu data personol;
@@ -768,7 +768,7 @@ cy:
           - li: Ein cyfarwyddiadau i staff ynghylch sut mae casglu, defnyddio neu ddileu eich data personol;
           - li: Sut rydym yn gwirio bod y data personol sydd gennym yn gywir ac yn gyfredol;
           - li: Sut i wneud cwyn
-        - p: 'I gael rhagor o wybodaeth am y materion uchod neu ar gyfer unrhyw ymholiadau eraill, cysylltwch â’n Swyddog Diogelu Data drwy e-bost yn: <a href="mailto:data.compliance@justice.gov.uk" class="govuk-link">data.compliance@justice.gov.uk</a>'
+        - p: 'I gael rhagor o wybodaeth am y materion uchod neu ar gyfer unrhyw ymholiadau eraill, cysylltwch â’n Swyddog Diogelu Data drwy e-bost yn: <a href="mailto:DPO@justice.gov.uk" class="govuk-link">DPO@justice.gov.uk</a>'
         - p: '<a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external" class="govuk-link">Gweler Polisi Preifatrwydd GOV.UK yma</a>'
       - title: Cwynion
         parts:

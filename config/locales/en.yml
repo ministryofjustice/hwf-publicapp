@@ -774,7 +774,7 @@ en:
         - p: We may pass on your personal data if we have a legal obligation to do so.
       - title: Access to personal information
         parts:
-        - p: 'You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: <a href="mailto:data.access@justice.gsi.gov.uk" class="govuk-link">data.access@justice.gsi.gov.uk</a>'
+        - p: 'You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: <a href="mailto:data.access@Justice.gov.uk" class="govuk-link">data.access@Justice.gov.uk</a>'
         - p: 'You can get more details on:'
         - ul:
           - li: Agreements we have with other organisations for sharing personal data;
@@ -782,7 +782,7 @@ en:
           - li: Our instructions to staff on how to collect, use or delete your personal data;
           - li: How we check that the personal data we hold is accurate and up-to-date;
           - li: How to make a complaint.
-        - p: 'For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: <a href="mailto:data.compliance@justice.gov.uk" class="govuk-link">data.compliance@justice.gov.uk</a>'
+        - p: 'For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: <a href="mailto:DPO@justice.gov.uk" class="govuk-link">DPO@justice.gov.uk</a>'
         - p: 'Refer to <a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external" class="govuk-link">GOV.UK privacy policy</a> here.'
       - title: Complaints
         parts:

@@ -677,7 +677,7 @@ en:
     sections:
     - title:
       parts:
-        - ul:
+        - list:
           - li: <a href="#general_terms_and_conditions" class="govuk-link">General terms and conditions</a>
           - li: <a href="#information_provided_by_this_service" class="govuk-link">Information provided by this service</a>
           - li: <a href="#applicable_law" class="govuk-link">Applicable law</a>

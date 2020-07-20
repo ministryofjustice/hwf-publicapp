@@ -663,7 +663,7 @@ cy:
     sections:
     - title:
       parts:
-        - ul:
+        - list:
           - li: <a href="#telerau_ac_amodau_cyffredinol" class="govuk-link">Telerau ac amodau cyffredinol</a>
           - li: <a href="#gwybodaeth_a_ddarperir_gan_y_gwasanaeth_hwn" class="govuk-link">Gwybodaeth a ddarperir gan y gwasanaeth hwn</a>
           - li: <a href="#y_gyfraith_sy_n_berthnasol" class="govuk-link">Y gyfraith sy’n berthnasol</a>

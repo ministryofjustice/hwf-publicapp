@@ -596,6 +596,7 @@ en:
     savings_and_investment_extra:
       amount_married: How much between £3,000 and £15,999 do you and your partner have in savings and investments?
       amount_single: How much between £3,000 and £15,999 do you have in savings and investments?
+      amount_hint: Rounded to the nearest £
       breadcrumb: Step %{page_number} of 22
       over_61_false_single: *no
       over_61_true_single: *yes

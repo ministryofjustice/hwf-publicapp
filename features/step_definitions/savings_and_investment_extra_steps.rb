@@ -19,6 +19,7 @@ When(/^I submit no to are you 61 years old or over$/) do
 end
 
 When(/^I enter £5000 as my savings and investments$/) do
+  expect(page).to have_text 'Rounded to the nearest £'
   expect(savings_investment_extra_page.content).to have_how_much_label_single
   savings_investment_extra_page.content.extra_amount.set(5000)
 end

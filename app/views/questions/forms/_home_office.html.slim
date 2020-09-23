@@ -1,5 +1,5 @@
 .govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
-  label.govuk-label for='ho_number_number'
+  label.govuk-label for='home_office_ho_number'
     span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
     - if @form.errors[:ho_number].any?
       span.govuk-error-message#number = @form.errors[:ho_number].join(' ')

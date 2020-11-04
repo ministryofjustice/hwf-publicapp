@@ -1,6 +1,6 @@
 Given(/^I am on the confirmation done page with probate enabled$/) do
   probate_enabled
-  confirmation_done_page.to_confirmation_done_page
+  to_confirmation_done_page
   expect(confirmation_done_page).to be_displayed
   expect(confirmation_done_page.content).to have_step_info
   expect(confirmation_done_page.content).to have_header

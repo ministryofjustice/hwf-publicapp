@@ -1,5 +1,5 @@
 Given("I am on the home office page") do
-  home_office_page.to_home_office_page
+  to_home_office_page
   expect(home_office_page.content).to have_step_info
   expect(home_office_page.content).to have_header
   expect(home_office_page.content).to have_hint

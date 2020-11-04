@@ -18,17 +18,6 @@ class DependentPage < BasePage
     element :error_link, 'a', text: 'You need to say whether you have financially dependent children'
   end
 
-  def to_dependent_page
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_married
-    savings_investment_page.low_amount_checked
-    benefit_page.submit_benefit_no
-  end
-
   def submit_dependent_no
     content.no.click
     continue

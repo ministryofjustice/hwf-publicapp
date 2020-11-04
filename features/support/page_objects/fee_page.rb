@@ -21,11 +21,6 @@ class FeePage < BasePage
     element :date_fee_paid, '.govuk-label', text: 'Date fee paid'
   end
 
-  def to_fee_page
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-  end
-
   def expired_date
     date = Time.zone.today - 4.months
     content.fee_day_date_paid.set(date.day)

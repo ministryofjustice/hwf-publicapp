@@ -1,5 +1,5 @@
 Given(/^I am on the national insurance presence page$/) do
-  national_insurance_presence_page.to_national_insurance_presence_page
+  to_national_insurance_presence_page
   expect(national_insurance_presence_page.content).to have_step_info
   expect(national_insurance_presence_page.content).to have_header
   expect(national_insurance_presence_page.content).to have_hint

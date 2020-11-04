@@ -18,58 +18,6 @@ class IncomeRangePage < BasePage
     element :income_range_more, '.govuk-label', text: 'More than'
   end
 
-  def to_income_range_page_single
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_single
-    savings_investment_page.high_amount_checked
-    benefit_page.submit_benefit_no
-    dependent_page.submit_dependent_no
-    income_kind_page.submit_single_income_wages_tax_credit
-  end
-
-  def to_income_range_page_married
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_married
-    savings_investment_page.high_amount_checked
-    benefit_page.submit_benefit_no
-    dependent_page.submit_dependent_no
-    income_kind_page.submit_married_income_wages_tax_credit
-  end
-
-  def to_income_range_page_single_dependent_3
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_single
-    savings_investment_page.high_amount_checked
-    benefit_page.submit_benefit_no
-    dependent_page.submit_dependent_3
-    income_kind_page.submit_single_income_wages_tax_credit
-  end
-
-  def to_income_range_page_married_dependent_3
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_married
-    savings_investment_page.high_amount_checked
-    benefit_page.submit_benefit_no
-    dependent_page.submit_dependent_3
-    income_kind_page.submit_married_income_wages_tax_credit
-  end
-
   def submit_less
     content.income_range_less.click
     continue

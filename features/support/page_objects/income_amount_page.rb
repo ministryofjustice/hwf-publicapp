@@ -15,13 +15,4 @@ class IncomeAmountPage < BasePage
     element :blank_error_link, 'a', text: 'Enter how much income do you receive'
   end
 
-  def to_income_amount_single
-    income_range_page.to_income_range_page_single
-    income_range_page.submit_between
-  end
-
-  def to_income_amount_married
-    income_range_page.to_income_range_page_married
-    income_range_page.submit_between
-  end
 end

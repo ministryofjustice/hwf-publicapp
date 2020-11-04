@@ -1,23 +1,23 @@
 Given(/^I am a single person with no children on income range page$/) do
-  income_range_page.to_income_range_page_single
+  to_income_range_page_single
   expect(income_range_page.content).to have_step_info
   expect(income_range_page.content).to have_single_header
   expect(income_range_page.content).to have_select_single_income_hint
 end
 
 Given(/^I am a married person with no children on income range page$/) do
-  income_range_page.to_income_range_page_married
+  to_income_range_page_married
   expect(income_range_page.content).to have_step_info
   expect(income_range_page.content).to have_married_header
   expect(income_range_page.content).to have_select_married_income_hint
 end
 
 Given(/^I am a married person with three children on income range page$/) do
-  income_range_page.to_income_range_page_married_dependent_3
+  to_income_range_page_married_dependent_3
 end
 
 Given(/^I am a single person with three children on income range page$/) do
-  income_range_page.to_income_range_page_single_dependent_3
+  to_income_range_page_single_dependent_3
 end
 
 When(/^I submit less than$/) do

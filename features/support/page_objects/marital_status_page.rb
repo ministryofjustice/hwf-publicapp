@@ -30,11 +30,4 @@ class MaritalStatusPage < BasePage
     continue
   end
 
-  def to_marital_status
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-  end
 end

@@ -15,13 +15,6 @@ class HomeOfficePage < BasePage
     element :blank_error_message, '.govuk-error-message', text: 'Enter your Home Office reference number'
   end
 
-  def to_home_office_page
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_no
-  end
-
   def submit_valid_home_office_number
     home_office_page.content.home_offce_number.set '1212-0001-0240-0490/01'
     continue

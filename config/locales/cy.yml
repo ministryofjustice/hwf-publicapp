@@ -544,6 +544,7 @@ cy:
       breadcrumb: Cam %{page_number} o 22
       details: Fel arfer mae'r achosion hyn yn ymwneud ag eiddo rhywun sydd wedi marw.
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
+      date_of_death: Dyddiad y farwolaeth
       probate_case_false: Nac ydw
       probate_case_true: Ydw
       text: Ydych chi'n talu ffi am achos profiant?

@@ -1,5 +1,5 @@
 Given(/^I am on the benefit page$/) do
-  benefit_page.to_benefit_page
+  to_benefit_page
   expect(benefit_page).to be_displayed
   expect(benefit_page.content).to have_step_info
   expect(benefit_page.content).to have_header

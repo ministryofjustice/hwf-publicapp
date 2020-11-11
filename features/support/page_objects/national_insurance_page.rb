@@ -15,13 +15,6 @@ class NationalInsurancePage < BasePage
     element :invalid_error_link, 'a', text: 'Enter a valid National Insurance number'
   end
 
-  def to_national_insurance_page
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-  end
-
   def submit_valid_ni
     national_insurance_page.content.national_insurance_number.set('JL806367D')
     continue

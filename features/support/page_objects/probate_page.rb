@@ -16,6 +16,8 @@ class ProbatePage < BasePage
     element :future_date_error_link, 'a', text: 'This date can\'t be in the future'
     element :expired_date_error_link, 'a', text: 'The date of death must have been in the last 20 years'
     element :invalid_date_error_link, 'a', text: 'Enter the date in this format DD/MM/YYYY'
+    element :date_of_death_example, 'span.govuk-hint', text: 'For example, 04 10 2018'
+    element :date_of_death_legend, '.govuk-fieldset__legend', text: 'Date of death'
   end
 
   def answer_probate_yes
@@ -62,16 +64,5 @@ class ProbatePage < BasePage
     probate_page.content.probate_year_date_of_death.set(date.year)
 
     continue
-  end
-
-  def to_probate_page
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_married
-    savings_investment_page.low_amount_checked
-    benefit_page.submit_benefit_yes
   end
 end

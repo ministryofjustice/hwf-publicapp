@@ -46,6 +46,9 @@ cy:
       forms/probate:
         date_of_death: Dyddiad y farwolaeth
         deceased_name: Enw'r ymadawedig
+        day_date_of_death: Dydd
+        month_date_of_death: Mis
+        year_date_of_death: Flwyddyn
       forms/savings_and_investment_extra:
         amount: Beth yw swm y cynilion a buddsoddiadau sydd gennych chi a'ch partner?
       forms/dob:
@@ -544,6 +547,7 @@ cy:
       breadcrumb: Cam %{page_number} o 22
       details: Fel arfer mae'r achosion hyn yn ymwneud ag eiddo rhywun sydd wedi marw.
       hint_html: Defnyddiwch y fformat hwn <span class="dateFormatAccessible">D D / M M / B B B B</span>
+      date_of_death: Dyddiad y farwolaeth
       probate_case_false: Nac ydw
       probate_case_true: Ydw
       text: Ydych chi'n talu ffi am achos profiant?

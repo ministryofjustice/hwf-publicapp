@@ -16,25 +16,28 @@
 
   #probate-details-panel.panel-indent.js-hidden
     .govuk-form-group class=('govuk-form-group--error' if @form.errors[:deceased_name].any?)
+      = f.label :deceased_name, class: 'govuk-label'
       - if @form.errors[:deceased_name].any?
         span.govuk-error-message#deceased_name = @form.errors[:deceased_name].join(' ')
-      = f.label :deceased_name, class: 'govuk-label'
       = f.text_field :deceased_name, class: 'govuk-input govuk-!-width-one-quarter'
     .govuk-form-group class=('govuk-form-group--error' if @form.errors[:date_of_death].any?)
-      - if @form.errors[:date_of_death].any?
-        span.govuk-error-message#date_of_death = @form.errors[:date_of_death].join(' ')
+      fieldset.govuk-fieldset
+        legend.govuk-fieldset__legend for='day_date_of_death' class='govuk-!-margin-bottom-1'
+           = t('date_of_death', scope: @form.i18n_scope)
+        span.govuk-hint = t('hint_html', scope: @form.i18n_scope)
+        - if @form.errors[:date_of_death].any?
+          span.govuk-error-message#date_of_death = @form.errors[:date_of_death].join(' ')
 
-      span.govuk-hint = t('hint_html', scope: @form.i18n_scope)
-      .govuk-date-input class="#{'error_dates' if @form.errors[:date_paid].present?}"
-        .govuk-date-input__item
-          .govuk-form-group.govuk-form-group-day
-            = f.label :day_date_of_death, class: 'govuk-label'
-            = f.text_field :day_date_of_death, class: 'govuk-input govuk-date-input__input govuk-input--width-2', type:"number", pattern: "[0-9]*", min: "0", max: "31"
-        .govuk-date-input__item
-          .govuk-form-group.govuk-form-group-month
-            = f.label :month_date_of_death, class: 'govuk-label'
-            = f.text_field :month_date_of_death, class: 'govuk-input govuk-date-input__input govuk-input--width-2', type:"number", pattern: "[0-9]*", min: "0", max: "12"
-        .govuk-date-input__item
-          .govuk-form-group.govuk-form-group-year
-            = f.label :year_date_of_death, class: 'govuk-label'
-            = f.text_field :year_date_of_death, class: 'govuk-input govuk-date-input__input govuk-input--width-4', type:"number", pattern: "[0-9]*"
+        .govuk-date-input class="#{'error_dates' if @form.errors[:date_paid].present?}"
+          .govuk-date-input__item
+            .govuk-form-group.govuk-form-group-day
+              = f.label :day_date_of_death, class: 'govuk-label'
+              = f.text_field :day_date_of_death, class: 'govuk-input govuk-date-input__input govuk-input--width-2', type:"number", pattern: "[0-9]*", min: "0", max: "31"
+          .govuk-date-input__item
+            .govuk-form-group.govuk-form-group-month
+              = f.label :month_date_of_death, class: 'govuk-label'
+              = f.text_field :month_date_of_death, class: 'govuk-input govuk-date-input__input govuk-input--width-2', type:"number", pattern: "[0-9]*", min: "0", max: "12"
+          .govuk-date-input__item
+            .govuk-form-group.govuk-form-group-year
+              = f.label :year_date_of_death, class: 'govuk-label'
+              = f.text_field :year_date_of_death, class: 'govuk-input govuk-date-input__input govuk-input--width-4', type:"number", pattern: "[0-9]*"

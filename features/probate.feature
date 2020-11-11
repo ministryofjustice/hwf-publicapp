@@ -2,7 +2,7 @@ Feature: Probate page
 
   Background: Navigating to the probate page
     Given probate is enabled
-    And I am on the page for step eleven - Are you paying a fee for a probate case?
+    And I am on the page for Are you paying a fee for a probate case?
 
   Scenario: Selecting no to are you paying a fee for a probate case
     When I select no to are you paying a fee for a probate case

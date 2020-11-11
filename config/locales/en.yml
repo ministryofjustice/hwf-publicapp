@@ -558,6 +558,7 @@ en:
       breadcrumb: Step %{page_number} of 22
       details: These cases are usually about the property and belongings of someone who has died.
       hint_html: For example, 04 10 2018
+      date_of_death: Date of death
       probate_case_false: 'No'
       probate_case_true: 'Yes'
       text: Are you paying a fee for a probate case?

@@ -1,6 +1,6 @@
 Given(/^I am on the summary page with probate enabled$/) do
   probate_enabled
-  summary_page.to_summary_page_probate_enabled
+  to_summary_page_probate_enabled
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
@@ -9,7 +9,7 @@ end
 
 Given(/^I am on the summary page with probate disabled$/) do
   probate_disabled
-  summary_page.to_summary_page_probate_disabled
+  to_summary_page_probate_disabled
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header
   expect(summary_page.content).to have_check_details_hint
@@ -21,7 +21,7 @@ Given(/^I have a home office number but not a national insurance number$/) do
 end
 
 Then(/^I am on the summary page$/) do
-  summary_page.to_summary_page_with_ho_number
+  to_summary_page_with_ho_number
   expect(summary_page).to be_displayed
   expect(summary_page.content).to have_step_info
   expect(summary_page.content).to have_header

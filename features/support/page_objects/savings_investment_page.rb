@@ -11,24 +11,6 @@ class SavingsInvestmentPage < BasePage
     element :help_text, 'h2', text: 'What to include in savings and investments:'
   end
 
-  def to_married_savings
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_married
-  end
-
-  def to_single_savings
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_single
-  end
-
   def low_amount_checked
     savings_investment_page.content.low_amount.click
     continue

@@ -1,6 +1,6 @@
 Given(/^I am on the contact page with probate enabled$/) do
   probate_enabled
-  contact_page.to_contact_page
+  to_contact_page
   expect(contact_page.content).to have_step_info
   expect(contact_page.content).to have_header
   expect(contact_page.content).to have_confirmation_email

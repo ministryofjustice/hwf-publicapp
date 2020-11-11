@@ -1,5 +1,5 @@
 Given(/^I am on the page for Are you paying a fee for a probate case\?$/) do
-  probate_page.to_probate_page
+  to_probate_page
   expect(probate_page.content).to have_step_info
   expect(probate_page.content).to have_header
   expect(probate_page.content).to have_probate_hint

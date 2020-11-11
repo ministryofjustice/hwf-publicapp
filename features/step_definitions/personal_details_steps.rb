@@ -1,6 +1,6 @@
 Given(/^I am on the personal details page with probate enabled$/) do
   probate_enabled
-  personal_details_page.to_personal_details_page
+  to_personal_details_page
   expect(personal_details_page).to be_displayed
   expect(personal_details_page.content).to have_step_info
   expect(personal_details_page.content).to have_header

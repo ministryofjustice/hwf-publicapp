@@ -1,6 +1,6 @@
 Given(/^I am on the address page with probate enabled$/) do
   probate_enabled
-  address_page.to_address_page
+  to_address_page
   expect(address_page.content).to have_step_info
   expect(address_page.content).to have_header
 end

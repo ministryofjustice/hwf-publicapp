@@ -27,8 +27,4 @@ class FormNamePage < BasePage
     continue
   end
 
-  def to_form_name
-    checklist_page.load_page
-    checklist_continue
-  end
 end

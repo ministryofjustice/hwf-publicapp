@@ -14,26 +14,6 @@ class SavingsInvestmentExtraPage < BasePage
     element :blank_error_link, 'a', text: 'Enter how much you have in savings and investments'
   end
 
-  def to_single_savings_extra
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_single
-    savings_investment_page.medium_amount_checked
-  end
-
-  def to_married_savings_extra
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-    national_insurance_presence_page.submit_yes
-    national_insurance_page.submit_valid_ni
-    marital_status_page.submit_married
-    savings_investment_page.medium_amount_checked
-  end
-
   def submit_yes
     content.yes.click
     continue

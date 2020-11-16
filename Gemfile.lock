@@ -287,6 +287,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.7.0)
+    report_builder (1.9)
+      json (>= 2.3.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -435,6 +437,7 @@ DEPENDENCIES
   puma (~> 4.3)
   rails (~> 6.0)
   rails-controller-testing
+  report_builder
   rest-client
   rspec-rails
   rspec_junit_formatter

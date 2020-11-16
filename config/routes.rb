@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'checklist' => 'home#checklist'
 
   get 'terms_and_conditions' => 'home#terms_and_conditions'
+  get 'accessibility-statement' => 'home#accessibility_statement'
 
   resources :questions, only: [:edit, :update], path_names: { edit: '' }
 

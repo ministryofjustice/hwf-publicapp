@@ -21,6 +21,7 @@ install:
 script:
 - bundle exec rubocop
 - bundle exec rspec
-- bundle exec cucumber features/*.feature
+- bundle exec cucumber -p report features/*.feature
 after_success:
 - bundle exec codeclimate-test-reporter
+

@@ -2,7 +2,7 @@ require 'report_builder'
 require 'date'
 
 at_exit do
-  current_time = DateTime.now
+  current_time = Time.zone.today
 
   ReportBuilder.configure do |config|
     config.input_path = 'features/cucumber-report/cucumber_report.json'

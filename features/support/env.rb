@@ -64,34 +64,21 @@ require 'capybara-screenshot/cucumber'
 require 'base64'
 require 'date'
 
-Capybara::Screenshot.autosave_on_failure = false
+Capybara::Screenshot.autosave_on_failure = true
 Capybara::Screenshot.prune_strategy = :keep_last_run
 
 After do |scenario|
   if scenario.failed?
-     add_screenshot
-     add_browser_logs
+      add_screenshot
   end
 end
 
 def add_screenshot
   file_path = 'features/cucumber-report/screenshot.png'
-  page.driver.browser.save_screenshot(file_path)
+  page.driver.save_screenshot(file_path)
   image = open(file_path, 'rb', &:read)
   encoded_image = Base64.encode64(image)
   embed(encoded_image, 'image/png;base64', 'SCREENSHOT')
 end
 
 
-
-def add_browser_logs
-  current_time = DateTime.now
-  # Getting current URL
-  current_url = Capybara.current_url.to_s
-  # Gather browser logs
-  logs = page.driver.browser.manage.logs.get(:browser).map {|line| [line.level, line.message]}
-  # Remove warnings and info messages
-  logs.reject! { |line| ['WARNING', 'INFO'].include?(line.first) }
-  logs.any? == true
-  embed(current_time.strftime("%d/%m/%Y %H:%M" + "\n") + ( "Current URL: " + current_url + "\n") + logs.join("\n"), 'text/plain', 'BROWSER ERROR')
-end

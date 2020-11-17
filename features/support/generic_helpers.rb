@@ -110,6 +110,10 @@ def saucelabs_page
   @saucelabs_page ||= SaucelabsPage.new
 end
 
+def footer_page
+  @footer_page ||= FooterPage.new
+end
+
 def checklist_continue
   base_page.content.checklist_continue_button.click
 end

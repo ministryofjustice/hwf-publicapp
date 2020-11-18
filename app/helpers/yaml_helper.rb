@@ -98,7 +98,8 @@ module YamlHelper
     {
       1 => 'govuk-heading-xl',
       2 => 'govuk-heading-l',
-      3 => 'govuk-heading-m'
+      3 => 'govuk-heading-m',
+      4 => 'govuk-heading-s'
     }[@recursion_level]
   end
 end

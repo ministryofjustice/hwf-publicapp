@@ -1,3 +1,6 @@
+- content_for :stylesheets
+  = stylesheet_link_tag('application.css')
+
 - content_for :page_title
   = t('application.title')
 
@@ -9,12 +12,7 @@
     .content
       =link_to t('application.name'), root_path, id: 'proposition-name'
 
-- content_for :stylesheets
-  = stylesheet_link_tag('application.css')
-  /[if IE 8]
-    = stylesheet_link_tag('ie8.css')
-  /[if IE 7]
-    = stylesheet_link_tag('ie7.css')
+
 
 - content_for :js_gt_ie
   6

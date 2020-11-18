@@ -48,6 +48,7 @@ group :test do
   gem 'codeclimate-test-reporter'
   gem 'cucumber-rails', require: false
   gem 'rails-controller-testing'
+  gem 'report_builder'
   gem 'rspec_junit_formatter'
   gem 'rubyzip'
   gem 'shoulda-matchers'

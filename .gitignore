@@ -25,3 +25,7 @@ node_modules
 
 
 .generators
+
+## Ignore cucumber report results
+features/cucumber-report/cucumber_report.html
+features/cucumber-report/screenshot.png

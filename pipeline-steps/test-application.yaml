@@ -31,4 +31,3 @@ steps:
 - script: |
     bundle exec cucumber features/*.feature --fail-fast
   displayName: 'cucumber'
-

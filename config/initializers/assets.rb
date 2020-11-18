@@ -20,6 +20,3 @@ Rails.application.config.assets.precompile += ['govuk-frontend/govuk/all.js']
 Rails.application.config.assets.precompile += ['govuk-frontend/govuk/all-ie8.css']
 Rails.application.config.assets.precompile += ['govuk-frontend/govuk/fonts/*']
 Rails.application.config.assets.precompile += ['images/*']
-
-
-

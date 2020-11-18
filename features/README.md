@@ -109,4 +109,4 @@ To convert the .json into a .html file, execute:
 This will create the .html in the features/cucumber-report directory. Open in browser by right-clicking the file and 
 going to 'Open in Browser'. 
 
-Note that the .json, .html and screenshot.png files are included in the .gitignore file.
+Note that the .html and screenshot.png files are included in the .gitignore file.

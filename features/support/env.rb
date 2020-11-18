@@ -80,5 +80,3 @@ def add_screenshot
   encoded_image = Base64.encode64(image)
   embed(encoded_image, 'image/png;base64', 'SCREENSHOT')
 end
-
-

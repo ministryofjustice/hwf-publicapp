@@ -33,4 +33,3 @@ Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/imag
 #   apple-touch-icon-180x180.png
 #   apple-touch-icon-167x167.png
 # )
-

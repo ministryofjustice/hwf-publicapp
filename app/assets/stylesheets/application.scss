@@ -1,10 +1,10 @@
-$govuk-assets-path: '/assets/govuk-frontend/govuk/assets/';
-@import "govuk-frontend/govuk/all";
+// $govuk-assets-path: '/govuk-frontend/govuk/assets/';
+// @import "govuk-frontend/govuk/all";
 
 // $govuk-global-styles: true;
-// $govuk-fonts-path: 'govuk-frontend/govuk/assets/fonts/';
-// $govuk-images-path: 'govuk-frontend/govuk/assets/images/';
-// @import "govuk-frontend/govuk/all";
+$govuk-fonts-path: '/govuk-frontend/govuk/assets/fonts/';
+$govuk-images-path: 'assets/govuk-frontend/govuk/assets/images/';
+@import "govuk-frontend/govuk/all";
 
 
 

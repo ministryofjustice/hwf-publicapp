@@ -28,8 +28,7 @@ Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/imag
 Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/images/govuk-logotype-crown.png']
 Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/images/govuk-mask-icon.svg']
 Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/images/govuk-opengraph-image.png']
-# Rails.application.config.assets.precompile += %w(
-#   apple-touch-icon.png
-#   apple-touch-icon-180x180.png
-#   apple-touch-icon-167x167.png
-# )
+Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/fonts/bold-affa96571d-v2.woff']
+Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/fonts/bold-b542beb274-v2.woff2']
+Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/fonts/light-94a07e06a1-v2.woff2']
+Rails.application.config.assets.precompile += ['govuk-frontend/govuk/assets/fonts/light-f591b13f7d-v2.woff']

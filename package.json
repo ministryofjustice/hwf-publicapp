@@ -11,6 +11,6 @@
   "scripts": {},
   "engineStrict": true,
   "dependencies": {
-    "govuk-frontend": "^3.3.0"
+    "govuk-frontend": "^3.9.1"
   }
 }

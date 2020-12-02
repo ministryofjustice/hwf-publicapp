@@ -7,11 +7,11 @@ RSpec.describe Forms::HomeOffice, type: :model do
     describe 'mandatory if no NI number' do
       context 'preformat the ho' do
         before {
-          form_ho.ho_number = ' L 123 45 6'
+          form_ho.ho_number = ' L 123 45 67'
           form_ho.valid?
         }
 
-        it { expect(form_ho.ho_number).to eql('L123456') }
+        it { expect(form_ho.ho_number).to eql('L1234567') }
       end
 
       describe 'New HO format' do
@@ -41,13 +41,13 @@ RSpec.describe Forms::HomeOffice, type: :model do
       end
 
       context 'when NI not provided' do
-        before { form_ho.ho_number = 'L123456' }
+        before { form_ho.ho_number = 'L1234567' }
 
         it { expect(form_ho.valid?).to be true }
 
         describe 'format for single applicant' do
           context 'invalid only numbers' do
-            before { form_ho.ho_number = '1234567' }
+            before { form_ho.ho_number = '12345678' }
 
             it { expect(form_ho.valid?).to be false }
           end
@@ -59,13 +59,13 @@ RSpec.describe Forms::HomeOffice, type: :model do
           end
 
           context 'invalid too short' do
-            before { form_ho.ho_number = 'L12345' }
+            before { form_ho.ho_number = 'L123456' }
 
             it { expect(form_ho.valid?).to be false }
           end
 
           context 'invalid letter not at the begining' do
-            before { form_ho.ho_number = '12L345' }
+            before { form_ho.ho_number = '12L34567' }
 
             it { expect(form_ho.valid?).to be false }
           end
@@ -73,7 +73,7 @@ RSpec.describe Forms::HomeOffice, type: :model do
 
         describe 'format for multiple applicants' do
           context 'invalid only numbers' do
-            before { form_ho.ho_number = '1234567/1' }
+            before { form_ho.ho_number = '12345678/1' }
 
             it { expect(form_ho.valid?).to be false }
           end
@@ -85,37 +85,37 @@ RSpec.describe Forms::HomeOffice, type: :model do
           end
 
           context 'invalid too short' do
-            before { form_ho.ho_number = 'L12345/1' }
+            before { form_ho.ho_number = 'L123456/1' }
 
             it { expect(form_ho.valid?).to be false }
           end
 
           context 'invalid letter not at the begining' do
-            before { form_ho.ho_number = '12L345/1' }
+            before { form_ho.ho_number = '12L3456/1' }
 
             it { expect(form_ho.valid?).to be false }
           end
 
           context 'invalid no number after slash' do
-            before { form_ho.ho_number = 'L123456/' }
+            before { form_ho.ho_number = 'L1234567/' }
 
             it { expect(form_ho.valid?).to be false }
           end
 
           context 'invalid number and letters after slash' do
-            before { form_ho.ho_number = 'L123456/1a' }
+            before { form_ho.ho_number = 'L1234567/1a' }
 
             it { expect(form_ho.valid?).to be false }
           end
 
           context 'invalid letters after slash' do
-            before { form_ho.ho_number = 'L123456/a' }
+            before { form_ho.ho_number = 'L1234567/a' }
 
             it { expect(form_ho.valid?).to be false }
           end
 
           context 'valid numbers only after slash' do
-            before { form_ho.ho_number = 'L123456/20' }
+            before { form_ho.ho_number = 'L1234567/20' }
 
             it { expect(form_ho.valid?).to be true }
           end

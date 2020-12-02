@@ -70,7 +70,7 @@ RSpec.describe ClearDownstreamQuestions do
     context 'when the ni is present' do
       let(:question) { :dob }
       let(:old_online_application) {
-        build :online_application, ho_number: 'L123456', ni_number: 'SN123456A'
+        build :online_application, ho_number: 'L1234567', ni_number: 'SN123456A'
       }
       let(:new_online_application) { build :online_application }
 
@@ -82,7 +82,7 @@ RSpec.describe ClearDownstreamQuestions do
 
       context 'and the HO number but the ni_number_present is false' do
         let(:old_online_application) {
-          build :online_application, ho_number: 'L123456',
+          build :online_application, ho_number: 'L1234567',
                                      ni_number: 'SN123456A', ni_number_present: false
         }
 

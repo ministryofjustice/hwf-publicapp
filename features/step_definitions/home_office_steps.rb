@@ -13,6 +13,8 @@ end
 When("I submit an invalid home office number") do
   home_office_page.content.home_offce_number.set 'L12345678/1'
   continue
+  home_office_page.content.home_offce_number.set 'L123456'
+  continue
 end
 
 Then("I should see enter a valid home office number error message") do

@@ -7,7 +7,7 @@ Feature: Confirmation done page
 
   Scenario: Displays deliver your paperwork instructions
     Then I should see deliver your paperwork instructions
-
+@test
   Scenario: Displays what happens next
     Then I should see what happens next
 

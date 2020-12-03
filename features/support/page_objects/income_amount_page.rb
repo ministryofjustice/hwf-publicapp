@@ -15,4 +15,8 @@ class IncomeAmountPage < BasePage
     element :blank_error_link, 'a', text: 'Enter how much income do you receive'
   end
 
+  def set_income(num)
+    content.income_amount.set(num)
+  end
+
 end

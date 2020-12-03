@@ -7,7 +7,7 @@ end
 
 def probate_enabled
   travel_to a_day_before_disable_probate_fees
-  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+  print 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
 end
 
 def checklist_page

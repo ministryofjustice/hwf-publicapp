@@ -8,15 +8,15 @@ end
 
 When(/^I enter my title$/) do
   expect(personal_details_page.content).to have_optional_hint
-  fill_in 'Title(Optional)', with: 'Ms'
+  personal_details_page.fillTitle('Ms')
 end
 
 When(/^I enter my first name$/) do
-  fill_in 'First name', with: 'Sally'
+  personal_details_page.fillFName('Sally')
 end
 
 When(/^I enter my last name$/) do
-  fill_in 'Last name', with: 'Smith'
+  personal_details_page.fillLName('Smith')
   continue
 end
 

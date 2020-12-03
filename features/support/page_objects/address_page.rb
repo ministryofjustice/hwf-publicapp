@@ -11,4 +11,12 @@ class AddressPage < BasePage
     fill_in 'Postcode', with: 'SW1H 9AJ'
     continue
   end
+
+  def fillInAddress(str)
+    fill_in 'Address', with: str
+  end
+
+  def fillInPostCode(str)
+    fill_in 'Postcode', with: str
+  end
 end

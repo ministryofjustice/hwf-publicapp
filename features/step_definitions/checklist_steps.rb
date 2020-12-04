@@ -4,21 +4,32 @@ Given(/^I am on the checklist page$/) do
   expect(checklist_page.content).to have_header
 end
 
-Then(/^I see that I need to make sure that I have my national insurance number$/) do
-  expect(checklist_page.content).to have_list_item_ni
+Then(/^I see that I need my national insurance number or home office number$/) do
+  expect(checklist_page.content).to have_list_item_ni_number
+  expect(checklist_page.content).to have_list_item_ho_number
 end
 
-Then(/^if I do not have my national insurance number I can use the paper form$/) do
+Then(/^if I do not have a national insurance or home office number then I can use the paper form$/) do
   expect(checklist_page.content).to have_use_paper_form
-  expect(checklist_page.content.use_paper_form_link['href']).to end_with 'government/publications/apply-for-help-with-court-and-tribunal-fees'
+  expect(checklist_page.content.use_paper_form_link['href']).to end_with '/government/uploads/system/uploads/attachment_data/file/508760/ex160-eng-20160212.pdf'
 end
 
 When(/^I click on if you do not know your national insurance number$/) do
-  checklist_page.content.do_not_know_ni.click
+  expect(checklist_page.content.do_not_know[0].text).to eq "If you don’t know your National Insurance number"
+  checklist_page.content.do_not_know[0].click
 end
 
-Then(/^I should see where I can find the number$/) do
+Then(/^I should see where I can find my national insurance number$/) do
   expect(checklist_page.content).to have_look_for_ni
+end
+
+When(/^I click on if you do not know your home office number$/) do
+  expect(checklist_page.content.do_not_know[1].text).to eq "If you don't know your Home Office reference number"
+  checklist_page.content.do_not_know[1].click
+end
+
+Then(/^I should see where I can find my home office number$/) do
+  expect(checklist_page.content).to have_look_for_ho
 end
 
 Then(/^a link to receive a reminder in the post$/) do
@@ -34,9 +45,18 @@ Then(/^I see that I need to make sure that I have the case number, claim number 
 end
 
 When(/^I continue$/) do
-  checklist_page.continue
+  checklist_continue
 end
 
 Then(/^I should be taken to form number page$/) do
   expect(form_name_page).to be_displayed
+end
+
+Then(/^I should see a list of six links$/) do
+  expect(footer_page.content.footer_links.text).to have_content("Help")
+  expect(footer_page.content.footer_links.text).to have_content("Cookies")
+  expect(footer_page.content.footer_links.text).to have_content("Contact")
+  expect(footer_page.content.footer_links.text).to have_content("Terms and conditions")
+  expect(footer_page.content.footer_links.text).to have_content("Cymraeg")
+  expect(footer_page.content.footer_links.text).to have_content("Accessibility statement")
 end

@@ -11,8 +11,8 @@ RSpec.feature 'As a user' do
           click_button 'Continue'
         end
 
-        scenario 'I expect to be routed to the "dob" page' do
-          expect(page).to have_content 'What is your date of birth?'
+        scenario 'I expect to be routed to the "marital-status" page' do
+          expect(page).to have_content 'Are you single, married or living with someone and sharing an income?'
         end
       end
     end
@@ -22,7 +22,7 @@ RSpec.feature 'As a user' do
         before { click_button 'Continue' }
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter your National Insurance number')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter your National Insurance number')
         end
       end
 
@@ -33,7 +33,7 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="error-message"]', text: 'Enter a valid National Insurance number')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter a valid National Insurance number')
         end
 
         scenario 'I expect the incorrect data to be shown' do

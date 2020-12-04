@@ -6,19 +6,20 @@
 
 - form_name = @online_application.form_name ? @online_application.form_name : t('confirmation.default_form_name')
 
-.text-panel
-  h1.heading-large
-    span.heading-secondary =t('confirmation.done.breadcrumb')
-    span.visuallyhidden
-      | :&nbsp;
-  h2.heading-medium.util_mt-0.util_mb-medium =t('confirmation.done.heading', form_name: form_name, reference: @result['message'])
+p.govuk-caption-l
+  =t('confirmation.done.breadcrumb')
+h1.govuk-heading-l
+  =t('confirmation.done.text')
 
-  .post.util_mb-large
+.text-panel
+  h2.govuk-heading-m.util_mt-0.util_mb-medium =t('confirmation.done.heading', form_name: form_name, reference: @result['message'])
+
+  .post.govuk-body class = 'govuk-!-margin-bottom-7'
     p =t('confirmation.done.instructions')
 
 .steps-panel
-  h2.heading-medium.util_mt-0 =t('confirmation.done.next.heading')
-  ol.list.list-number.next-steps.util_mb-0
+  h2.govuk-heading-m =t('confirmation.done.next.heading')
+  ol.govuk-list.govuk-list--number.next-steps
     li
       =t('confirmation.done.next.steps.one')
     li =t('confirmation.done.next.steps.two')

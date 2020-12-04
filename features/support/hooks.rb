@@ -7,3 +7,7 @@ end
 Before('@zap') do
   IO.popen('/Applications/ZAP\ 2.6.0.app/Contents/Java/zap.sh -daemon')
 end
+
+Before do
+  stub_request(:any, 'https://dc.services.visualstudio.com/v2/track')
+end

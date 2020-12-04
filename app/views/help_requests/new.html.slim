@@ -2,33 +2,35 @@
   = t('help_requests.title')
   = ' - '
 
-h1.heading-xlarge.heading-with-lede =t('help_requests.heading')
-
-h2.heading-large =t('help_requests.subheading')
-
 = render('shared/error_block', form: @form) if @form.errors.any?
 
-p =t('help_requests.description.line_1')
-
-p =t('help_requests.description.line_2')
 
 = form_for @form, as: @form.id, url: help_request_path do |f|
-  fieldset
-    .form-group class=('error' if @form.errors[:name].any?)
-      = f.label :name, class: 'form-label'
-      span.error-message#name = @form.errors[:name].join(' ') if @form.errors[:name].any?
-      = f.text_field :name, class: 'form-control'
+  fieldset.govuk-fieldset
+    legend.govuk-fieldset__legend
+      h1.govuk-heading-xl.heading-with-lede =t('help_requests.heading')
 
-    .form-group class=('error' if @form.errors[:email].any?)
-      = f.label :email, class: 'form-label'
-      span.error-message#email = @form.errors[:email].join(' ') if @form.errors[:email].any?
-      = f.text_field :email, class: 'form-control'
+    h2.govuk-heading-l =t('help_requests.subheading')
 
-    .form-group class=('error' if @form.errors[:description].any?)
-      = f.label :description, class: 'form-label'
-      span.error-message#description = @form.errors[:description].join(' ') if @form.errors[:description].any?
-      = f.text_area :description, class: 'form-control', rows: 6
+    p.govuk-body =t('help_requests.description.line_1')
+
+    p.govuk-body =t('help_requests.description.line_2')
+
+    .govuk-form-group class=('govuk-form-group--error' if @form.errors[:name].any?)
+      = f.label :name, class: 'govuk-label'
+      span.govuk-error-message#name = @form.errors[:name].join(' ') if @form.errors[:name].any?
+      = f.text_field :name, class: 'govuk-input govuk-!-width-one-half'
+
+    .govuk-form-group class=('govuk-form-group--error' if @form.errors[:email].any?)
+      = f.label :email, class: 'govuk-label'
+      span.govuk-error-message#email = @form.errors[:email].join(' ') if @form.errors[:email].any?
+      = f.text_field :email, class: 'govuk-input govuk-!-width-one-half'
+
+    .govuk-form-group class=('govuk-form-group--error' if @form.errors[:description].any?)
+      = f.label :description, class: 'govuk-label'
+      span.govuk-error-message#description = @form.errors[:description].join(' ') if @form.errors[:description].any?
+      = f.text_area :description, class: 'govuk-textarea', rows: 6
 
 
-    .form-group
-      = f.submit t('submit_button'), class: 'button', id: 'continue-button'
+    .govuk-form-group
+      = f.submit t('submit_button'), class: 'govuk-button', id: 'continue-button'

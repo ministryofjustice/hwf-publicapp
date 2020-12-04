@@ -3,18 +3,16 @@ class ChecklistPage < BasePage
 
   section :content, '#content' do
     element :header, 'h1', text: 'What you will need'
-    element :list_item_ni, 'li', text: 'your National Insurance number'
+    element :list_item_ni_number, 'li', text: 'your National Insurance number'
+    element :list_item_ho_number, 'li', text: 'your Home Office reference number – you may have a Home Office reference number if you are subject to immigration control'
     element :list_item_form_number, 'li', text: 'the court or tribunal form number'
     element :list_item_case_number, 'li', text: 'your case number, claim number or notice to pay - if you have one'
-    element :use_paper_form, 'p', text: 'If you don\'t have a National Insurance number, you need to '
+    element :use_paper_form, 'p', text: 'If you don\'t have either a National Insurance number or a Home Office reference number, you need to use the paper form.'
     element :use_paper_form_link, 'a', text: 'use the paper form'
-    element :do_not_know_ni, 'summary', text: 'If you don’t know your National Insurance number'
+    elements :do_not_know, 'span'
     element :look_for_ni, 'li', text: 'look for your National Insurance number on payslips or official letters about tax, pensions or benefits'
+    element :look_ho, 'li', text: 'You will find your Home Office reference number on any of the correspondence you have received from the Home Office.'
     element :reminder, 'a', text: 'ask for a reminder through the post'
-    element :continue, '.button', text: 'Continue'
-  end
-
-  def continue
-    content.continue.click
+    element :look_for_ho, 'li', text: 'You will find your Home Office reference number on any of the correspondence you have received from the Home Office.'
   end
 end

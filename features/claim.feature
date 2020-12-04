@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Claim page
 
   Background: Navigating to the claim page
@@ -8,12 +6,12 @@ Feature: Claim page
  
   Scenario: Selecting no to do you have a case, claim or notice to pay number
     When I select no to do you have a case, claim or notice to pay number
-    Then I should be taken to national insurance page
+    Then I should be taken to date of birth page
 
   Scenario: Entering a case, claim or notice to pay number
     When I select yes to do you have a case, claim or notice to pay number
     And I enter a case, claim or notice to pay number
-    Then I should be taken to national insurance page
+    Then I should be taken to date of birth page
 
   Scenario: Help with case numbers
     When I click on 'Help with case number'

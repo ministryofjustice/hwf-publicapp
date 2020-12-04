@@ -1,7 +1,7 @@
 Given(/^I am on the dependent page$/) do
-  dependent_page.to_dependent_page
+  to_dependent_page
   expect(dependent_page.content).to have_step_info
-  expect(dependent_page.content).to have_dependent_header
+  expect(dependent_page.content).to have_header
 end
 
 When(/^I select yes to do you have any children$/) do
@@ -34,9 +34,8 @@ Then(/^I should see help with financially dependent children copy$/) do
 end
 
 Then(/^I should see you need to say whether you have financially dependent children error message$/) do
-  expect(common_page.content).to have_there_is_a_problem
+  expect(base_page.content).to have_there_is_a_problem
   expect(dependent_page.content).to have_error_link
-  expect(dependent_page.content).to have_error_message
 end
 
 Then(/^I should be taken to dependent page$/) do

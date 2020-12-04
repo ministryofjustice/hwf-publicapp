@@ -36,8 +36,14 @@ module YamlHelper
     content_tag(:a, '', name: @this_section[:title].parameterize.underscore)
   end
 
+  def ul_tag_bullet(&block)
+    content_tag(:ul, class: 'govuk-list govuk-list--bullet') do
+      yield block
+    end
+  end
+
   def ul_tag(&block)
-    content_tag(:ul, class: 'list list-bullet') do
+    content_tag(:ul, class: 'govuk-list') do
       yield block
     end
   end
@@ -52,13 +58,29 @@ module YamlHelper
 
   def process_collection(name)
     @this_section[name].each do |part|
-      @result << if part.keys.first == :ul
-                   ul_tag do
-                     collect_list_items(part)
-                   end
-                 else
-                   content_tag(part.keys.first, part.values.first.html_safe)
-                 end
+      @result << tag_based_list(part)
+    end
+  end
+
+  def tag_based_list(part)
+    if part.keys.first == :ul
+      bullet_list_block(part)
+    elsif part.keys.first == :list
+      clear_list_block(part)
+    else
+      content_tag(part.keys.first, part.values.first.html_safe, class: 'govuk-body')
+    end
+  end
+
+  def bullet_list_block(part)
+    ul_tag_bullet do
+      collect_list_items(part)
+    end
+  end
+
+  def clear_list_block(part)
+    ul_tag do
+      collect_list_items(part)
     end
   end
 
@@ -74,9 +96,10 @@ module YamlHelper
 
   def header_class
     {
-      1 => 'heading-xlarge heading-with-lede',
-      2 => 'heading-large',
-      3 => 'heading-medium'
+      1 => 'govuk-heading-xl',
+      2 => 'govuk-heading-l',
+      3 => 'govuk-heading-m',
+      4 => 'govuk-heading-s'
     }[@recursion_level]
   end
 end

@@ -4,19 +4,30 @@
 
 = render "shared/maintenance_notice" if Settings.maintenance.show.present?
 
-h1.heading-large =t('.heading')
+h1.govuk-heading-l =t('.heading')
 
 - t('.sections').each do |section|
   =display_section(section)
 
-details.util_mt-small.util_mb-small
-  summary =t('questions.national_insurance.details.summary')
-  .panel-indent
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary
+    span =t('questions.national_insurance.details.summary')
+
+  .govuk-details__text
     .text
-      ul.list.list-bullet
+      ul.govuk-list.govuk-list--bullet
         li =t('item_1', scope: 'questions.national_insurance.details.section_1')
         li =link_to t('item_2', scope: 'questions.national_insurance.details.section_1'), 'https://www.gov.uk/lost-national-insurance-number', class: 'external', rel: 'external'
 
-p =t('detail_html', scope: 'questions.national_insurance.details.section_1')
+details.govuk-details data-module="govuk-details"
+  summary.govuk-details__summary
+    span =t('.details.summary')
 
-= link_to(t('submit_button'), start_session_path, role: :button, class: 'button')
+  .govuk-details__text
+    .text
+      ul.govuk-list.govuk-list--bullet
+        li =t('.details.section_1.item_1')
+
+p.govuk-body =t('.paper_form_html')
+
+= link_to(t('submit_button'), start_session_path, role: :button, class: 'govuk-button')

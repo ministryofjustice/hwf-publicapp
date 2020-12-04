@@ -37,7 +37,7 @@ RSpec.configure do |config|
   end
 
   # Include Factory Girl syntax to simplify calls to factories
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include ActiveSupport::Testing::TimeHelpers
 
   # Run specs in random order to surface order dependencies. If you find an
@@ -62,6 +62,10 @@ RSpec.configure do |config|
   # Setting this allows you to use `--seed` to deterministically reproduce
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
+
+  config.before(:each) do
+    stub_request(:any, 'https://dc.services.visualstudio.com/v2/track')
+  end
 
   config.before(:all) do
     I18n.locale = :en

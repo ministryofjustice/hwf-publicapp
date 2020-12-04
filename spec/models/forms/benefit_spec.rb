@@ -43,6 +43,14 @@ RSpec.describe Forms::Benefit, type: :model do
         expect(subject).to eql(benefits: false)
       end
     end
+
+    context 'when on_benefits is nil' do
+      let(:on_benefits) { nil }
+
+      it 'returns hash with on_benefits parameter false' do
+        expect(subject).to eql(benefits: false)
+      end
+    end
   end
 
 end

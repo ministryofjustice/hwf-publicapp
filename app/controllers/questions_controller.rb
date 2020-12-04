@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
 
   def edit
     assign_title_view
+    assign_page_number
     storage.load_form(form)
   end
 
@@ -31,7 +32,7 @@ class QuestionsController < ApplicationController
   end
 
   def form_params
-    params.require(@form.id).permit(*@form.permitted_attributes)
+    params.require(@form.id).permit(*@form.permitted_attributes).to_h
   end
 
   def process_form_and_online_application
@@ -51,5 +52,9 @@ class QuestionsController < ApplicationController
 
   def not_found
     render file: 'public/404.html', status: :not_found, layout: false
+  end
+
+  def assign_page_number
+    @page_number = Navigation.new(online_application, question).page_number
   end
 end

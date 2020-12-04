@@ -1,4 +1,4 @@
-FROM employmenttribunal.azurecr.io/ruby25-nodejs-onbuild:0.2
+FROM employmenttribunal.azurecr.io/ruby-nodejs-onbuild:2.6.6
 
 # Adding argument support for ping.json
 ARG APPVERSION=unknown
@@ -18,7 +18,6 @@ RUN apt-get update -q && \
     apt-get install -qy tzdata --no-install-recommends && apt-get clean && \
     rm -rf /var/lib/apt/lists/* && rm -fr *Release* *Sources* *Packages* && \
     truncate -s 0 /var/log/*log
-
 
 ENV UNICORN_PORT 3000
 EXPOSE $UNICORN_PORT

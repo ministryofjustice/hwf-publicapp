@@ -82,7 +82,11 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:partner) { [13] }
 
         it 'returns hash with income parameter set to 0' do
-          expect(subject).to eql(income: 0)
+          expect(subject[:income]).to be(0)
+        end
+
+        it 'returns hash with income_kind text value' do
+          expect(subject[:income_kind]).to eq(applicant: ["No income"], partner: ["No income"])
         end
       end
 
@@ -91,7 +95,11 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:partner) { [1] }
 
         it 'returns an empty hash' do
-          expect(subject).to eql({})
+          expect(subject[:income]).to be_nil
+        end
+
+        it 'returns hash with income_kind text value' do
+          expect(subject[:income_kind]).to eq(applicant: ["No income"], partner: ["Wages"])
         end
       end
 
@@ -100,7 +108,11 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:partner) { [5, 13] }
 
         it 'returns an empty hash' do
-          expect(subject).to eql({})
+          expect(subject[:income]).to be_nil
+        end
+
+        it 'returns hash with income_kind text value' do
+          expect(subject[:income_kind]).to eq(applicant: ["Wages", "No income"], partner: ["Maintenance payments", "No income"])
         end
       end
     end
@@ -112,7 +124,12 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:applicant) { [13] }
 
         it 'returns hash with income parameter set to 0' do
-          expect(subject).to eql(income: 0)
+          expect(subject[:income]).to be(0)
+
+        end
+
+        it 'returns hash with income_kind text value' do
+          expect(subject[:income_kind]).to eq(applicant: ["No income"], partner: [])
         end
       end
 
@@ -120,7 +137,11 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:applicant) { [1, 5] }
 
         it 'returns an empty hash' do
-          expect(subject).to eql({})
+          expect(subject[:income]).to be_nil
+        end
+
+        it 'returns hash with income_kind text value' do
+          expect(subject[:income_kind]).to eq(applicant: ["Wages", "Maintenance payments"], partner: [])
         end
       end
 
@@ -128,7 +149,11 @@ RSpec.describe Forms::IncomeKind, type: :model do
         let(:applicant) { [1, 13] }
 
         it 'returns an empty hash' do
-          expect(subject).to eql({})
+          expect(subject[:income]).to be_nil
+        end
+
+        it 'returns hash with income_kind text value' do
+          expect(subject[:income_kind]).to eq(applicant: ["Wages", "No income"], partner: [])
         end
       end
     end

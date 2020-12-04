@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Marital status page
 
   Background: Navigating to the marital status page

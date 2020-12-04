@@ -5,6 +5,9 @@ class QuestionFormFactory
   IDS = %i[
     form_name
     fee
+    national_insurance_presence
+    national_insurance
+    home_office
     marital_status
     savings_and_investment
     savings_and_investment_extra
@@ -15,7 +18,6 @@ class QuestionFormFactory
     income_amount
     probate
     claim
-    national_insurance
     dob
     personal_detail
     applicant_address

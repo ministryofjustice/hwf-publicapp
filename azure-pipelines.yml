@@ -14,7 +14,7 @@ trigger:
     include:
     - v*
 
-      
+
 pr:
   autoCancel: true
   branches:
@@ -36,7 +36,7 @@ jobs:
       vmImage: 'Ubuntu-16.04'
 
     variables:
-      rubyVersion: '= 2.5.5'
+      rubyVersion: '= 2.6.6'
       bundlerVersion: '1.17.3'
 
     steps:
@@ -47,7 +47,7 @@ jobs:
   - job: BuildAndPushImageCI
 
     dependsOn: TestApplication
-    condition: and(succeeded(), not(startsWith(variables['Build.SourceBranch'], 'refs/tags/')), ne(variables['Build.Reason'], 'Manual'))
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), not(startsWith(variables['Build.SourceBranch'], 'refs/tags/')), ne(variables['Build.Reason'], 'Manual'))
     pool:
       name: hmcts-pet
 
@@ -75,7 +75,7 @@ jobs:
 
 
   - job: ManualBuildAndPushImage
-  
+
     dependsOn: TestApplication
     condition: and(succeeded(), eq(variables['Build.Reason'], 'Manual'))
     pool:

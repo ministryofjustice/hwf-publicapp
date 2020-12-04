@@ -22,7 +22,7 @@ RSpec.describe QuestionsController, type: :controller do
   describe 'GET #edit' do
 
     before do
-      get :edit, id: id
+      get :edit, params: { id: id }
     end
 
     context 'when the question is a valid one' do
@@ -38,6 +38,10 @@ RSpec.describe QuestionsController, type: :controller do
 
       it 'assigns the question title view' do
         expect(assigns(:title_view)).to eql(question_title_view)
+      end
+
+      it 'assigns the page number' do
+        expect(assigns(:page_number)).to be 0
       end
 
       it 'loads the form from the storage' do
@@ -80,7 +84,7 @@ RSpec.describe QuestionsController, type: :controller do
       allow(ClearDownstreamQuestions).to receive(:new).with(storage, id).and_return(clear_service)
       allow(online_application).to receive(:dup).and_return(dupped_online_application)
 
-      put :update, id: id, id => params
+      put :update, params: { id: id, id => params }
     end
 
     context 'when the question is a valid one' do

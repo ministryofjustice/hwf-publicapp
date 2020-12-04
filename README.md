@@ -14,3 +14,20 @@ Using this command `docker build hmcts/hwf-publicapp:vX.Y`
 ## Feature tests
 
 See the [feature testing README](https://github.com/hmcts/hwf-publicapp/blob/master/README.md).
+
+## Frontend toolkit
+npm install --save govuk-frontend (https://github.com/alphagov/govuk-frontend/blob/master/docs/installation/installing-with-npm.md)
+
+## Run tests in parallel
+Follow the [official guides](https://github.com/grosser/parallel_tests#setup-environment-from-scratch-create-db-and-loads-schema-useful-for-ci) to setup your local env.
+
+
+Run the specs in parallel
+```
+RAILS_ENV=test bundle exec rake parallel:spec
+```
+
+Run the cucumber features in parallel
+```
+CAPYBARA_SERVER_PORT=random bundle exec rake parallel:features
+```

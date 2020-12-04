@@ -18,14 +18,14 @@
 # node
 node_modules
 
-#nightwatch
-/tests/nightwatch/reports
-/tests/nightwatch/reports/*
-/tests/reports
-/tests/reports/*
-selenium-debug.log
-
 # Ignore IDE configurations
 .idea/
 
 **/.DS_Store
+
+
+.generators
+
+## Ignore cucumber report results
+features/cucumber-report/cucumber_report.html
+features/cucumber-report/screenshot.png

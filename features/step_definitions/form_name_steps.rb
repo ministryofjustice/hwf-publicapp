@@ -1,8 +1,8 @@
 Given(/^I am on the form number page$/) do
-  form_name_page.to_form_name
+  to_form_name
   expect(current_url).to have_content '/questions/form_name'
   expect(form_name_page.content).to have_step_info
-  expect(form_name_page.content).to have_form_name_header
+  expect(form_name_page.content).to have_header
   expect(form_name_page.content).to have_enter_court_hint
 end
 
@@ -26,7 +26,7 @@ When(/^I submit the form with a valid form number$/) do
 end
 
 When(/^I submit the form with I don’t have a form checked$/) do
-  form_name_page.content.no_form.click
+  form_name_page.content.form_name_unknown.click
   continue
 end
 
@@ -43,9 +43,8 @@ Then(/^I should be taken to fee page$/) do
 end
 
 Then(/^I should see enter a number error message$/) do
-  expect(common_page.content).to have_there_is_a_problem
+  expect(base_page.content).to have_there_is_a_problem
   expect(form_name_page.content).to have_error_link
-  expect(form_name_page.content).to have_error_message
 end
 
 When(/^I submit the form with a help with fees form number '(.+?)'$/) do |num|
@@ -54,7 +53,6 @@ When(/^I submit the form with a help with fees form number '(.+?)'$/) do |num|
 end
 
 Then(/^I should see you entered the help with fees form number error message$/) do
-  expect(common_page.content).to have_there_is_a_problem
+  expect(base_page.content).to have_there_is_a_problem
   expect(form_name_page.content).to have_invalid_link
-  expect(form_name_page.content).to have_invalid_message
 end

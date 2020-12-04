@@ -30,7 +30,7 @@ en:
         contribution_esa: Contribution-based Employment and Support Allowance (ESA)
         contribution_jsa: Contribution-based Jobseeker's Allowance (JSA)
         maintenance_payment: Maintenance payments
-        other_description: Other monthly income
+        other_description: Other income
         pension: Pensions (state, work, private)
         rent_living_with: Rent from anyone living with you
         rent_other_property: Rent from other properties you own
@@ -73,10 +73,10 @@ en:
         forms/claim/default:
           attributes:
             identifier:
-              blank: Enter a case, claim or ‘notice to pay’ number
+              blank: Enter a case, claim, appeal or ‘notice to pay’ number
               too_long: The number must be less than 25 characters
             number:
-              inclusion: Select whether you have a case, claim or ‘notice to pay’ number
+              inclusion: Select whether you have a case, claim, appeal or ‘notice to pay’ number
         forms/claim/et:
           attributes:
             identifier:
@@ -153,6 +153,16 @@ en:
             number:
               blank: Enter your National Insurance number
               invalid: Enter a valid National Insurance number
+        forms/national_insurance_presence:
+          attributes:
+            ni_number_present:
+              inclusion: Select yes if you have National Insurance number
+              invalid: Select yes if you have National Insurance number
+        forms/home_office:
+          attributes:
+            ho_number:
+              blank: Enter your Home Office reference number
+              invalid: Enter a valid Home Office reference number
         forms/personal_detail:
           attributes:
             first_name:
@@ -194,7 +204,7 @@ en:
     back_to_start: Back to start
     default_form_name: claim
     default:
-      breadcrumb: Step 19 of 20
+      breadcrumb: Step 21 of 22
       continue: Continue
       heading: Your application for help with fees is not finished yet
       steps:
@@ -202,9 +212,10 @@ en:
         one_html: You must write this reference number <strong>%{reference}</strong> on your <strong>%{form_name}</strong> form.
         three: You can also save or print this page and attach it to your %{form_name} form.
         two: Write the reference number in the ‘HWF reference’ field if there is one. If not, you should write it wherever there is space on your %{form_name} form.
+      text: Reference number to add to your claim form
       title: Your application is not finished yet
     done:
-      breadcrumb: Step 20 of 20
+      breadcrumb: Step 22 of 22
       heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
       instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
       next:
@@ -213,6 +224,7 @@ en:
           one: Your application will be assessed by court or tribunal staff. This usually takes no longer than 21 days.
           three: If your application is successful you'll hear directly from the court or tribunal dealing with your case.
           two: You'll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.
+      text: Send your claim form
       title: Send your form to complete the process
     et:
       address:
@@ -237,7 +249,7 @@ en:
             three: 215 Bothwell Street
             two: Eagle Building
           heading: Scotland
-      breadcrumb: Step 20 of 20
+      breadcrumb: Step 22 of 22
       heading: Your application for help with fees is not finished yet
       letter:
         five: "%{full_name}"
@@ -262,7 +274,7 @@ en:
     finish: Finish application
     print: Save or print this page
     refund:
-      breadcrumb: Step 20 of 20
+      breadcrumb: Step 22 of 22
       heading: Send your reference number to the court or tribunal dealing with your case
       letter:
         five: "%{full_name}"
@@ -303,11 +315,11 @@ en:
   optional: "(Optional)"
   questions:
     applicant_address:
-      breadcrumb: Step 16 of 20
+      breadcrumb: Step %{page_number} of 22
       text: What is your address?
       title: Your address
     benefit:
-      breadcrumb: Step 6 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
         section_1:
           heading: If you’ve only recently started receiving one of these benefits,
@@ -344,21 +356,20 @@ en:
       text_refund: Did you receive any of the following benefits?
       title: Benefits
     claim/default:
-      breadcrumb: Step 12 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
-        section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, or ‘notice to pay’ number.
+        section_1: The court or tribunal creates a reference number for every case. This is sometimes called a claim number, case number, appeal or ‘notice to pay’ number.
         section_2: If your case is ongoing then you’ll find the reference number on letters from the court or tribunal.
         section_3: Answer 'no' to this question if you don’t have a reference number (this might be because your case hasn’t started yet).
         summary: Help with case number
-      hidden_legend: Do you have a case, claim or ‘notice to pay’ number?
-      identifier: The case, claim or ‘notice to pay’ number is
+      identifier: The case, claim, appeal or ‘notice to pay’ number is
       number_false: 'No'
       number_true: 'Yes'
       subtext: Find this number on letters from the court or tribunal.
-      text: Do you have a case, claim or ‘notice to pay’ number?
+      text: Do you have a case, claim, appeal or ‘notice to pay’ number?
       title: Claim or case number
     claim/et:
-      breadcrumb: Step 12 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
         section_1: Your employment tribunal claim number is a unique reference to identify your employment tribunal claim.
         section_2: You will receive a claim number when you make an employment tribunal claim online.
@@ -368,20 +379,20 @@ en:
       text: Enter your employment tribunal claim number
       title: Claim number
     contact:
-      breadcrumb: Step 17 of 20
+      breadcrumb: Step %{page_number} of 22
       details: We will email you to confirm your application has been received.
       email_label: Email address
       feedback_opt_in: Check this box if you're willing to share your experience of this service. A member of the team may contact you. We won't use your email address for anything else.
       text: What's your email address?
       title: Your email address
     dependent:
-      breadcrumb: Step 7 of 20
+      breadcrumb: Step %{page_number} of 22
       children_false: 'No'
       children_number: Number of children
       children_true: 'Yes'
       details:
         item_1: under 16 and living at home with you
-        item_2: between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class="external" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
+        item_2: between 16 – 19, single, living at home with you and in full-time education (not including studying for a degree or other higher education qualification). See <a class="external govuk-link" rel="external" href="https://www.gov.uk/child-tax-credit-when-child-reaches-16">gov.uk/child-tax-credit-when-child-reaches-16</a>
         item_3: a child who doesn’t live with you, but you (or your partner) pay regular maintenance for them
         section_1: You need to give details of any children you support financially.
         section_2: 'This includes children who are:'
@@ -389,26 +400,27 @@ en:
       text: Do you have any children living with you, or who you support financially?
       title: Number of children living with you
     dob:
-      breadcrumb: Step 14 of 20
+      breadcrumb: Step %{page_number} of 22
       hint_html: For example, 04 10 2018
       text: What is your date of birth?
       title: Date of birth
     fee:
-      breadcrumb: Step 2 of 20
+      breadcrumb: Step %{page_number} of 22
       details: You can apply for a refund for a fee paid in the last 3 months. If you’re applying for a refund, you should answer all questions about your circumstances at the time you paid the fee.
+      date_paid: Date fee paid
       fee_paid_false: 'No'
       fee_paid_true: 'Yes'
       hint_html: For example, 04 10 2018
       text: Have you already paid the fee?
       title: Refund
     form_name:
-      breadcrumb: Step 1 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
         item_1: Instead of a form number enter 'hearing fee' followed by short explanation, for example 'hearing fee for small claims' or 'hearing fee for fast track'.
         summary: Applying for help with hearing fees
       et: I need help with an employment tribunal fee
       example: You'll find a number at the bottom of paper forms, for example C100 or ADM1A.
-      probate_warning_html: Help with Fees is no longer available for probate applications. <a class="external" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Find further details and apply for probate.</a>
+      probate_warning_html: Help with Fees is no longer available for probate applications. <a class="external govuk-link" rel="external" href="https://www.gov.uk/wills-probate-inheritance/applying-for-a-grant-of-representation">Find further details and apply for probate.</a>
       text: What number is on your court or tribunal form?
       title: Form number
       unknown: I don’t have a form
@@ -416,13 +428,13 @@ en:
       amount:
         married: Enter the total monthly amount you and your partner receive in income.
         single: Enter the total monthly amount you receive in income.
-      breadcrumb: Step 10 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
-        kinds_list_married: 'Enter the total monthly amount you and your partner receive in income from:'
+        kinds_list_married: 'Enter the total amount you and your partner receive each month from:'
         kinds_list_married_refund: 'Enter the total monthly amount you and your partner received in income from:'
-        kinds_list_single: 'Enter the total monthly amount you receive in income from:'
+        kinds_list_single: 'Enter the total amount you receive each month from:'
         kinds_list_single_refund: 'Enter the total monthly amount you received in income from:'
       text_married: What’s your total monthly income?
       text_married_refund: What was your total monthly income?
@@ -430,10 +442,10 @@ en:
       text_single_refund: What was your total monthly income?
       title: Income amount
     income_kind:
-      breadcrumb: Step 8 of 20
+      breadcrumb: Step %{page_number} of 22
       details_married: Choose the different types of income you and your partner receive.
       details_married_refund: Choose the different types of income you and your partner received at the time you paid the fee.
-      details_single: Choose the different types of income you receive.
+      details_single: Select all that apply.
       details_single_refund: Choose the different types of income you received at the time you paid the fee.
       applicant_income: Your income
       partner_income: Your partner's income
@@ -441,7 +453,7 @@ en:
         '1': Wages
         '10': Rent from anyone living with you
         '11': Rent from other properties you own
-        '12': Other monthly income
+        '12': Other income
         '13': No income
         '2': Child Benefit
         '3': Working Tax Credit
@@ -457,13 +469,13 @@ en:
       text_single_refund: What kind of income did you receive?
       title: Income kind
     income_range:
-      breadcrumb: Step 9 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
         average_note: If your income varies from month to month, work out an average monthly income based on the last 3 months.
         average_note_refund: If your income varied from month to month, work out an average monthly income based on the 3 months before you paid the fee.
-        kinds_list_married: 'Select the monthly amount you and your partner receive in income from:'
+        kinds_list_married: 'You need to include income you and your partner receive from:'
         kinds_list_married_refund: 'Select the monthly amount you and your partner received in income from:'
-        kinds_list_single: 'Select the monthly amount you receive in income from:'
+        kinds_list_single: 'You need to include income from:'
         kinds_list_single_refund: 'Select the monthly amount you received in income from:'
       range:
         between: Between %{min_threshold} and %{max_threshold}
@@ -474,8 +486,9 @@ en:
       text_single: How much income do you receive each month?
       text_single_refund: How much income did you receive each month?
       title: Income range
+      wages: Wages before tax and National Insurance are taken off
     marital_status:
-      breadcrumb: Step 3 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
         section_1:
           heading: 'Choose ‘married or living with someone and sharing an income’ if you’re:'
@@ -496,36 +509,63 @@ en:
       married_true: Married or living with someone and sharing an income
       text: Are you single, married or living with someone and sharing an income?
       title: Your marital status
+    national_insurance_presence:
+      breadcrumb: Step %{page_number} of 22
+      details:
+        section_1:
+          item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
+          item_2: ask for a reminder through the post
+        summary: Where to find my National Insurance number?
+      example: Select one
+      ni_number_present_false: 'No'
+      ni_number_present_true: 'Yes'
+      prompt: Do you have a National Insurance number?
+      text: Do you have a National Insurance number?
+      title: Do you have a National Insurance number?
     national_insurance:
-      breadcrumb: Step 13 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
         section_1:
           detail_html: "If you don't have a National Insurance number, you need to
             <a href='https://www.gov.uk/government/publications/apply-for-help-with-court-and-tribunal-fees'
-            class='external' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+            class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
             target='_blank'>use the paper form</a>."
           item_1: look for your National Insurance number on payslips or official letters about tax, pensions or benefits
           item_2: ask for a reminder through the post
         summary: If you don’t know your National Insurance number
       example: For example, QQ123456C
       prompt: National Insurance number
-      text: What is your National Insurance number?
+      text: Enter National Insurance number
       title: National Insurance number
+    home_office:
+      breadcrumb: Step %{page_number} of 22
+      text: What is your Home Office reference number?
+      title: What is your Home Office reference number?
+      prompt: Home Office reference number
+      example: For example, L1234567 or L1234567/1 (for family members)
+      paper_form_link_html: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the
+            <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/880144/ex160-eng.pdf'
+            class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+            target='_blank'>paper application form</a>."
+      details:
+        summary: "Where to find my Home Office reference number?"
+        item_1: Your Home Office reference number can be found on any correspondence you have received from the Home Office
     personal_detail:
-      breadcrumb: Step 15 of 20
+      breadcrumb: Step %{page_number} of 22
       text: What is your full name?
-      title: Your name
+      title: Title
     probate:
-      breadcrumb: Step 11 of 20
+      breadcrumb: Step %{page_number} of 22
       details: These cases are usually about the property and belongings of someone who has died.
       hint_html: For example, 04 10 2018
+      date_of_death: Date of death
       probate_case_false: 'No'
       probate_case_true: 'Yes'
       text: Are you paying a fee for a probate case?
       title: Probate
     savings_and_investment:
       between: "£3,000 to £15,999"
-      breadcrumb: Step 4 of 20
+      breadcrumb: Step %{page_number} of 22
       details:
         section_1:
           heading: 'What to include in savings and investments:'
@@ -557,7 +597,8 @@ en:
     savings_and_investment_extra:
       amount_married: How much between £3,000 and £15,999 do you and your partner have in savings and investments?
       amount_single: How much between £3,000 and £15,999 do you have in savings and investments?
-      breadcrumb: Step 5 of 20
+      amount_hint: Rounded to the nearest £
+      breadcrumb: Step %{page_number} of 22
       over_61_false_single: *no
       over_61_true_single: *yes
       over_61_false_single_refund: *no
@@ -585,8 +626,8 @@ en:
   summary:
     applicant_on_benefits_false: Not receiving eligible benefits
     applicant_on_benefits_true: Receiving eligible benefits
-    breadcrumb: Step 18 of 20
-    change: Change
+    breadcrumb: Step 20 of 22
+    change: 'Change '
     children_false: 'No'
     claim_number_false: 'No'
     claim_number_true: 'Yes'
@@ -612,6 +653,8 @@ en:
       income: Income
       married: Status
       ni_number: National Insurance number
+      ni_number_no: 'No'
+      ho_number: Home Office reference number
       personal: Full name
       probate: Probate case
       savings: Savings and investments
@@ -627,7 +670,7 @@ en:
     truth:
       button: Submit application and continue
       heading: Declaration and statement of truth
-      statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe the information I have given in this form is true to the best of my knowledge. If I am found to have been deliberately untruthful or dishonest, criminal proceedings for fraud can be brought against me. I understand that if I have given false information or I do not provide further evidence if requested, my application may be rejected and the full fee will be payable.
+      statement: By completing this application and clicking the ‘Submit application and continue’ button, I believe that my financial circumstances mean that I may be entitled to help with fees. I declare that the information I have given in this application is correct and complete. I understand that if I have given false information, criminal or civil proceedings may be brought against me. I understand that if I have given false information or I do not provide evidence of the information given in this application if requested, my application may be rejected and the full fee will be payable.
   switch:
     language: Cymraeg
     locale: cy
@@ -636,14 +679,14 @@ en:
     sections:
     - title:
       parts:
-        - ul:
-          - li: <a href="#general_terms_and_conditions">General terms and conditions</a>
-          - li: <a href="#information_provided_by_this_service">Information provided by this service</a>
-          - li: <a href="#applicable_law">Applicable law</a>
-          - li: <a href="#responsible_use_of_this_service">Responsible use of this service</a>
-          - li: <a href="#general_data_protection_regulations_gdpr">General Data Protection Regulations (GDPR)</a>
-          - li: <a href="#hmcts_privacy_notice">HMCTS privacy notice</a>
-          - li: <a href="#disclaimer">Disclaimer</a>
+        - list:
+          - li: <a href="#general_terms_and_conditions" class="govuk-link">General terms and conditions</a>
+          - li: <a href="#information_provided_by_this_service" class="govuk-link">Information provided by this service</a>
+          - li: <a href="#applicable_law" class="govuk-link">Applicable law</a>
+          - li: <a href="#responsible_use_of_this_service" class="govuk-link">Responsible use of this service</a>
+          - li: <a href="#general_data_protection_regulations_gdpr" class="govuk-link">General Data Protection Regulations (GDPR)</a>
+          - li: <a href="#hmcts_privacy_notice" class="govuk-link">HMCTS privacy notice</a>
+          - li: <a href="#disclaimer" class="govuk-link">Disclaimer</a>
         - p: <i>By using this ‘Help with Fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.</i>
     - title: General terms and conditions
       parts:
@@ -677,7 +720,7 @@ en:
         parts:
         - p: This privacy notice sets out the standards that you can expect from the Ministry of Justice and Her Majesty’s Courts and Tribunals Service (HMCTS) when we process personal information (‘personal data’) about you in the context of court or tribunal proceedings; how you can get access to a copy of your personal data; and what you can do if you think the standards are not being met.
         - p: HMCTS is an Executive Agency of the Ministry of Justice (MoJ). MoJ is the data controller for the personal data held, although it may act jointly with HMCTS. HMCTS also collects and processes personal data for the exercise of its own and associated public functions and legal obligations.
-        - p: This privacy notice does not apply to the processing of personal data which is collected and controlled by the tribunal and its judges when they are acting in their judicial capacity. The judiciary are independent from MoJ and HMCTS and data protection law applies differently to them as a result. For more information, see <a href="http://www.judiciary.gov.uk" target="_blank">www.judiciary.gov.uk.</a>
+        - p: This privacy notice does not apply to the processing of personal data which is collected and controlled by the tribunal and its judges when they are acting in their judicial capacity. The judiciary are independent from MoJ and HMCTS and data protection law applies differently to them as a result. For more information, see <a href="http://www.judiciary.gov.uk" target="_blank" class="govuk-link">www.judiciary.gov.uk.</a>
       - title: About personal data
         parts:
         - p: Personal data is information that relates to a living individual who can be identified from the data.
@@ -719,12 +762,12 @@ en:
       - title: How your personal data is stored
         parts:
         - p: MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the European Economic Area (EEA).
-        - p: MOJ use the Amazon Web Services (AWS) to store your data. By submitting your data, you consent to the <a href="http://aws.amazon.com/service-terms/" target="_blank">AWS Terms and Conditions</a>.
-        - p: This service uses SendGrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos" target="_blank">SendGrid terms and conditions</a>.
+        - p: MOJ use the Amazon Web Services (AWS) to store your data. By submitting your data, you consent to the <a href="http://aws.amazon.com/service-terms/" target="_blank" class="govuk-link">AWS Terms and Conditions</a>.
+        - p: This service uses SendGrid to route emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be routed within the EEA. By submitting your information, you consent to the <a href="https://sendgrid.com/tos" target="_blank" class="govuk-link">SendGrid terms and conditions</a>.
         - p: We’ll never share your data with other organisations for their marketing, market research or commercial purposes, and we don’t pass on your personal data to any other websites.
       - title: How non-personal data is stored
         parts:
-        - p: Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html" target="_blank">Google Analytics terms and conditions</a>.
+        - p: Non-personal session information as described in the above section is stored on our secure servers within EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="http://www.google.co.uk/analytics/terms/us.html" target="_blank" class="govuk-link">Google Analytics terms and conditions</a>.
       - title: Keeping your data secure
         parts:
         - p: Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use SSL to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it.
@@ -733,7 +776,7 @@ en:
         - p: We may pass on your personal data if we have a legal obligation to do so.
       - title: Access to personal information
         parts:
-        - p: 'You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: <a href="mailto:data.access@justice.gsi.gov.uk">data.access@justice.gsi.gov.uk</a>'
+        - p: 'You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: <a href="mailto:data.access@Justice.gov.uk" class="govuk-link">data.access@Justice.gov.uk</a>'
         - p: 'You can get more details on:'
         - ul:
           - li: Agreements we have with other organisations for sharing personal data;
@@ -741,7 +784,8 @@ en:
           - li: Our instructions to staff on how to collect, use or delete your personal data;
           - li: How we check that the personal data we hold is accurate and up-to-date;
           - li: How to make a complaint.
-        - p: 'For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: <a href="mailto:data.compliance@justice.gov.uk">data.compliance@justice.gov.uk</a>'
+        - p: 'For more information about the above issues or for any other queries, please contact our Data Protection Officer by email: <a href="mailto:DPO@justice.gov.uk" class="govuk-link">DPO@justice.gov.uk</a>'
+        - p: 'Refer to <a href="https://www.gov.uk/help/privacy-notice" target=_blank rel="external" class="govuk-link">GOV.UK privacy policy</a> here.'
       - title: Complaints
         parts:
         - p: 'When we ask you for information, we will keep to the law. If you consider that your information has been handled incorrectly by MoJ or HMCTS, you can contact the Information Commissioner for independent advice about data protection. You can contact the Information Commissioner here:'
@@ -752,7 +796,7 @@ en:
         - span: 'Cheshire<br/>'
         - span: 'SK9 5AF<br/>'
         - span: 'Tel: 0303 123 1113<br/>'
-        - span: '<a href="http://www.ico.org.uk" target="_blank">www.ico.org.uk</a>'
+        - span: '<a href="http://www.ico.org.uk" target="_blank" class="govuk-link">www.ico.org.uk</a>'
     - title: Disclaimer
       parts:
       - p: 'While we make every effort to keep information up to date, we don’t provide any guarantees, conditions or warranties that it will be:'
@@ -766,6 +810,75 @@ en:
       - p: We do not accept liability for loss or damage incurred by users of this service, whether direct, indirect or consequential, whether caused by tort, breach of contract or otherwise. This includes loss of income or revenue, business, profits or contracts, anticipated savings, data, goodwill, tangible property or wasted time in connection with this service or any websites linked to it and any materials posted on it. This condition shall not prevent claims for loss of or damage to your tangible property or any other claims for direct financial loss that are not excluded by any of the categories set out above.
       - p: This does not affect our liability for death or personal injury arising from our negligence, nor our liability for fraudulent misrepresentation or misrepresentation as to a fundamental matter, nor any other liability which cannot be excluded or limited under applicable law.
     title: Terms and conditions
+  accessibility:
+    title: Accessibility statement for Help with  Fees service
+    heading: Accessibility statement for Help with  Fees service
+    sections:
+    - title:
+      parts:
+      - p: This accessibility statement applies to the Help with Fees service.
+      - p: "This website is run by Her Majesty's Courts and Tribunals Service (HMCTS). We want as many people as possible to be able to use this online form. For example, that means you should be able to:"
+      - ul:
+        - li: change colours, contrast levels and fonts
+        - li: zoom in up to 300% without the text spilling off the screen
+        - li: navigate the form using just a keyboard
+        - li: listen to the form using a screen reader
+      - p: Please note that the accessibility tests conducted to date only cover VoiceOver compatibility.
+      - p: We’ve also made the text as simple as possible to understand.
+      - p: <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> has advice on making your device easier to use if you have a disability.
+    - title: How accessible this website is
+      parts:
+      - p: We are in the process of arranging a full Web Content Accessibility Guidelines (WCAG) version 2.1 audit for this online form.
+      - p: We will update this statement once we’ve received the WCAG 2.1 audit report. In the meantime, we have done some basic tests, and addressed the issues that were flagged.
+      - p: We used components in the GOV.UK Design System to build this form. The <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">Design System accessibility guide</a> explains the current state of accessibility for these components.
+      - p: Components listed on the <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">Design System accessibility guide</a> are fully compliant with the WCAG 2.1 AA standard.
+      - p: The feedback form corresponding to the link ‘help us improve’ is provided by Google Forms and therefore does not use components of the GOV.UK Design System.
+    - title: Feedback and contact information
+      parts:
+      - p: "If you need information on this form in a different format like accessible PDF, large print, easy read, audio recording or braille:"
+      - ul:
+        - li: submit an <a href="https://helpwithcourtfees.service.gov.uk/ask-for-help/new" class="govuk-link">ask for technical help</a> form
+        - li: email <a href="mailto:hmctsforms@justice.gov.uk" class="govuk-link">hmctsforms@justice.gov.uk</a>
+      - p: If you send us an email, we will consider your request and get back to you within 10 days.
+      - p: "If you would like to talk to someone directly on the phone or in person, either:"
+      - ul:
+        - li: speak to a member of court or tribunal staff while you are in the building. They are best placed to help you
+        - li: <a href="https://courttribunalfinder.service.gov.uk/search/" class="govuk-link">contact the court or tribunal</a> directly by email, phone or letter
+      sections:
+        - title: Reporting accessibility problems
+          parts:
+          - p: We’re always looking to improve the accessibility of this online form. If you find any problems that aren’t listed on this page or think we’re not meeting the requirements of the accessibility requirements, email <a href="mailto:hmctsforms@justice.gov.uk" class="govuk-link">hmctsforms@justice.gov.uk</a> giving details of the issue and any assistive technology you are using.
+    - title: Enforcement procedure
+      parts:
+      - p: The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a href="https://www.equalityadvisoryservice.com/" class="govuk-link">contact the Equality Advisory and Support Service (EASS)</a>.
+    - title: Technical information about this website’s accessibility
+      parts:
+      - p: HMCTS is committed to making its online forms and services accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.
+      sections:
+        - title: Compliance status
+          parts:
+          - p: This website is partially compliant with the <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Web Content Accessibility Guidelines version 2.1</a> AA standard, due to the exemptions listed below.
+    - title: Non-accessible content
+      parts:
+      - p: The content listed below is non-accessible for the following reasons.
+      sections:
+        - title: Non-compliance with the accessibility regulations
+          parts:
+          sections:
+            - title: Lack of manual accessibility testing
+              parts:
+              - p: Some basic testing has been conducted on the Help with Fees service. Specifically, the service was made to pass WCAG 2.1 AA standard tests outputted by HTML web accessibility testing tools, Pa11y and WAVE. The form was also tested from start to finish with keyboard testing, zooming in to 300% and VoiceOver.
+              - p: However, the lack of manual accessibility testing means that it is not possible to declare the service fully compliant. The full WCAG 2.1 audit to be carried out will clarify the overall accessibility of the service. This will allow us to make the service fully compliant.
+    - title: What we’re doing to improve accessibility
+      parts:
+      - p: We are in the process of arranging a full WCAG 2.1 audit of this online form. We will then update this statement.
+    - title: Preparation of this accessibility statement
+      parts:
+      - p: This statement was prepared on 2 October 2020. It was last updated on 5 October 2020
+      - p: This website was last tested on 2 October 2020. The tests were carried out by Her Majesty’s Courts and Tribunals Service (HMCTS).
+
+
+
   home:
     checklist:
       title: What you will need
@@ -774,7 +887,8 @@ en:
       - parts:
           - p: 'Before you continue, make sure you have:'
           - ul:
-            - li: your National Insurance number
+            - li: your National Insurance number or
+            - li: your Home Office reference number – you may have a Home Office reference number if you are subject to immigration control
             - li: the court or tribunal form number
             - li: your case number, claim number or notice to pay - if you have one
       - title:
@@ -784,5 +898,14 @@ en:
             - li: income, including wages
             - li: savings and investments
             - li: partner's income, savings and investments - if you have one
+      details:
+        section_1:
+          item_1: You will find your Home Office reference number on any of the correspondence you have received from the Home Office.
+        summary: If you don't know your Home Office reference number
+      paper_form_html: "If you don't have either a National Insurance number or a Home Office reference number, you need to
+          <a href='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/508760/ex160-eng-20160212.pdf'
+          class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
+          target='_blank'>use the paper form</a>."
+
   maintenance:
     message: 'Advance notice: This service will be unavailable on Wednesday 4 September 2019 from 6am until 11am while we make essential upgrades.'

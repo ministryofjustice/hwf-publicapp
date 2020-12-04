@@ -3,7 +3,7 @@
 window.moj.Modules.ShowHide = {
   init: function() {
     var self = this,
-        $elements = $(".block-label input[type='radio'], .block-label input[type='checkbox']");
+        $elements = $("input[type='radio'].govuk-radios__input , input[type='checkbox'].govuk-checkboxes__input");
 
     if ($elements.length) {
       self.initCheckElements($elements);
@@ -32,27 +32,17 @@ window.moj.Modules.ShowHide = {
   },
 
   toggleElementContent: function($element) {
-    var self = this,
-        target = $element.closest('label').data('target'),
-        show = $element.is(':checked');
+    var target = $element.data('target');
 
-    if($element.attr('type') === 'radio') {
-      var radioGroup = $element.attr('name');
-
-      // hide any conditional content attached to radios in this group
-      $element.closest('form').find('.block-label input[name="' + radioGroup + '"]').each(function(n, groupMember) {
-          var $groupMember = $(groupMember),
-              memberTarget = $groupMember.closest('label').data('target'),
-              $memberTarget = $('#' + memberTarget);
-
-          $memberTarget.hide();
-          $memberTarget.attr('aria-hidden', 'true');
-          $groupMember.attr('aria-expanded', 'false');
+    if(target === undefined) {
+      $element.closest('form').find('.govuk-radios__input').each(function(n, groupMember) {
+        target = $(groupMember).data('target');
+        if( target != undefined ) {
+          $('#' + target).hide();
+        }
       });
-    }
-
-    if(target) {
-      self.showContent($element, target, show);
+    } else {
+      $('#' + target).show();
     }
   },
 

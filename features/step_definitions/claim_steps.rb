@@ -1,8 +1,8 @@
 Given(/^I am on the claim page$/) do
-  claim_page.to_claim_page
+  to_claim_page
   expect(claim_page).to be_displayed
   expect(claim_page.content).to have_step_info
-  expect(claim_page.content).to have_claim_header
+  expect(claim_page.content).to have_header
   expect(claim_page.content).to have_claim_text
 end
 
@@ -27,13 +27,11 @@ Then(/^I should see help with case number copy$/) do
 end
 
 Then(/^I should see enter a case, claim or ‘notice to pay’ number error message$/) do
-  expect(common_page.content).to have_there_is_a_problem
-  expect(claim_page.content).to have_enter_number_error_message
+  expect(base_page.content).to have_there_is_a_problem
   expect(claim_page.content).to have_enter_number_error_link
 end
 
 Then(/^I should see select whether you have a case, claim or ‘notice to pay’ error message$/) do
-  expect(common_page.content).to have_there_is_a_problem
-  expect(claim_page.content).to have_blank_error_message
+  expect(base_page.content).to have_there_is_a_problem
   expect(claim_page.content).to have_blank_error_link
 end

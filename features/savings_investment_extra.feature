@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Savings and investment extra page
   
   Scenario: Selecting yes to are you 61 years old or over?

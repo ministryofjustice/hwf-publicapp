@@ -10,35 +10,6 @@ def probate_enabled
   puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
 end
 
-def wait_for
-  Timeout.timeout(Capybara.default_max_wait_time) do
-    loop until yield
-  rescue StandardError # rubocop:disable Lint/HandleExceptions
-    # ignored
-  end
-end
-
-def wait_for_document_ready
-  wait_for { page.evaluate_script('document.readyState').eql? 'complete' }
-end
-
-def scroll_to_bottom
-  WaitUntil.wait_until(3, 'Failed as browser hasnt reached bottom of window') do
-    page.execute_script 'window.scrollTo(0,$(document).height())'
-    y_position = page.evaluate_script 'window.scrollY'
-    browser_height = page.evaluate_script '$(window).height();'
-    doc_height = page.evaluate_script '$(document).height();'
-    (y_position + browser_height).eql?(doc_height)
-  end
-end
-
-module WaitUntil
-  def self.wait_until(timeout = 10, message = nil, &block)
-    wait = Selenium::WebDriver::Wait.new(timeout: timeout, message: message)
-    wait.until(&block)
-  end
-end
-
 def checklist_page
   @checklist_page ||= ChecklistPage.new
 end
@@ -95,6 +66,14 @@ def national_insurance_page
   @national_insurance_page ||= NationalInsurancePage.new
 end
 
+def national_insurance_presence_page
+  @national_insurance_presence_page ||= NationalInsurancePresencePage.new
+end
+
+def home_office_page
+  @home_office_page ||= HomeOfficePage.new
+end
+
 def dob_page
   @dob_page ||= DobPage.new
 end
@@ -127,14 +106,18 @@ def base_page
   @base_page ||= BasePage.new
 end
 
-def common_page
-  @common_page ||= CommonPage.new
-end
-
 def saucelabs_page
   @saucelabs_page ||= SaucelabsPage.new
 end
 
+def footer_page
+  @footer_page ||= FooterPage.new
+end
+
+def checklist_continue
+  base_page.content.checklist_continue_button.click
+end
+
 def continue
-  common_page.content.continue_button.click
+  base_page.content.continue_button.click
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 def find_button_by_label(label_text)
-  find(:xpath, "//form//input[@class='button' and @value='#{label_text}']")
+  find(:xpath, "//form//input[contains(@class,'govuk-button') and @value='#{label_text}']")
 end
 
 def find_continue_button
@@ -27,6 +27,7 @@ RSpec.feature 'As a user' do
 
   I18n.available_locales.each do |locale|
     context "using the #{locale.upcase} language" do
+
       scenario 'I want to fill in all details, submit my application and see the confirmation' do
         given_the_submission_service_is_available('HWF-123-KLM')
 
@@ -37,8 +38,14 @@ RSpec.feature 'As a user' do
         expect(page).to have_content I18n.t('questions.form_name.text')
         fill_in 'form_name_identifier', with: 'N1'
         find_continue_button.click
-        expect(page).to have_content
+        expect(page).to have_content I18n.t('questions.fee.text')
         choose 'fee_paid_false'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.national_insurance_presence.text')
+        choose 'national_insurance_presence_ni_number_present_true'
+        find_continue_button.click
+        expect(page).to have_content I18n.t('questions.national_insurance.text')
+        fill_in 'national_insurance_number', with: 'AB123456A'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.marital_status.text')
         choose 'marital_status_married_false'
@@ -67,9 +74,6 @@ RSpec.feature 'As a user' do
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.claim/default.text')
         choose 'claim_default_number_false'
-        find_continue_button.click
-        expect(page).to have_content I18n.t('questions.national_insurance.text')
-        fill_in 'national_insurance_number', with: 'AB123456A'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.dob.text')
         fill_in 'dob_day', with: '01'

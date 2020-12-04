@@ -66,5 +66,30 @@ RSpec.describe ClearDownstreamQuestions do
         end
       end
     end
+
+    context 'when the ni is present' do
+      let(:question) { :dob }
+      let(:old_online_application) {
+        build :online_application, ho_number: 'L1234567', ni_number: 'SN123456A'
+      }
+      let(:new_online_application) { build :online_application }
+
+      context 'and the HO number should be nil' do
+        it 'clears home office questions' do
+          expect(storage).to have_received(:clear_form).with(:home_office)
+        end
+      end
+
+      context 'and the HO number but the ni_number_present is false' do
+        let(:old_online_application) {
+          build :online_application, ho_number: 'L1234567',
+                                     ni_number: 'SN123456A', ni_number_present: false
+        }
+
+        it 'clears national insurance questions' do
+          expect(storage).to have_received(:clear_form).with(:national_insurance)
+        end
+      end
+    end
   end
 end

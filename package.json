@@ -10,11 +10,7 @@
   },
   "scripts": {},
   "engineStrict": true,
-  "devDependencies": {
-    "nightwatch": "0.7.9",
-    "phantomjs-prebuilt": "~2.1.1",
-    "require-dir": "^0.1.0",
-    "selenium-server-standalone-jar": "~3.0",
-    "moment": "^2.11.1"
+  "dependencies": {
+    "govuk-frontend": "^3.9.1"
   }
 }

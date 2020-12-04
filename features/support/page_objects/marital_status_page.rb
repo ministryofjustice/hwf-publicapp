@@ -2,37 +2,32 @@ class MaritalStatusPage < BasePage
   set_url '/questions/marital_status'
 
   section :content, '#content' do
-    element :step_info, '.step-info', text: 'Step 3 of 20'
-    element :fee_header, 'h1', text: 'Are you single, married or living with someone and sharing an income?'
-    element :single, '.block-label', text: 'Single'
-    element :married, '.block-label', text: 'Married'
-    element :help_choose_married, '.heading-small', text: 'Choose ‘married or living with someone'
-    element :help_choose_single, '.heading-small', text: 'Choose ‘single’ if you rely on your own income'
-    element :help_married, '.text', text: 'married'
-    element :help_civil_partners, '.text', text: 'civil partners'
-    element :help_living_together, '.text', text: 'living together as if you are married or in a civil partnership'
-    element :help_same_address, '.text', text: 'living at the same address with a joint income'
-    element :help_live_apart, '.text', text: 'a couple forced to live apart, eg where one or both'
-    element :help_divorce, '.text', text: 'divorce, dissolution or annulment'
-    element :help_gender, '.text', text: 'gender recognition'
-    element :help_domestic_violence, '.text', text: 'domestic violence'
-    element :help_forced_marriage, '.text', text: 'forced marriage'
-    element :help_multiple_fee, '.text', text: 'you and your partner are both part of a multiple fee group'
+    element :step_info, '.govuk-caption-l', text: 'Step 6 of 22'
+    element :header, 'h1', text: 'Are you single, married or living with someone and sharing an income?'
+    element :single, 'label', text: 'Single'
+    element :married, 'label', text: 'Married'
+    element :help_choose_married, 'h2', text: 'Choose ‘married or living with someone'
+    element :help_choose_single, 'h2', text: 'Choose ‘single’ if you rely on your own income'
+    element :help_married, 'li', text: 'married'
+    element :help_civil_partners, 'li', text: 'civil partners'
+    element :help_living_together, 'li', text: 'living together as if you are married or in a civil partnership'
+    element :help_same_address, 'li', text: 'living at the same address with a joint income'
+    element :help_live_apart, 'li', text: 'a couple forced to live apart, eg where one or both'
+    element :help_divorce, 'li', text: 'divorce, dissolution or annulment'
+    element :help_gender, 'li', text: 'gender recognition'
+    element :help_domestic_violence, 'li', text: 'domestic violence'
+    element :help_forced_marriage, 'li', text: 'forced marriage'
+    element :help_multiple_fee, 'li', text: 'you and your partner are both part of a multiple fee group'
   end
 
   def submit_single
     content.single.click
-    common_page.continue_button.click
+    continue
   end
 
   def submit_married
     content.married.click
-    common_page.continue_button.click
+    continue
   end
 
-  def to_marital_status
-    form_name_page.to_form_name
-    form_name_page.submit_valid_form_number
-    fee_page.submit_fee_yes
-  end
 end

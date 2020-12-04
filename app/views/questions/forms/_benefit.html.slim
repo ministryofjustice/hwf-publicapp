@@ -1,22 +1,24 @@
-.form-group class=('error' if @form.errors.any?)
+.govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
   = f.hidden_field :on_benefits, value: nil
   - if @form.errors.any?
-    span.error-message#on_benefits = @form.errors[:on_benefits].join(' ')
-  fieldset
-    legend.visuallyhidden = t('text', scope: @form.i18n_scope)
-    label.block-label for='benefit_on_benefits_false'
-      = f.radio_button :on_benefits, 'false'
-      = t('on_benefits_false', scope: @form.i18n_scope)
-    label.block-label for='benefit_on_benefits_true'
-      = f.radio_button :on_benefits, 'true'
-      = t('on_benefits_true', scope: @form.i18n_scope)
+    span.govuk-error-message#on_benefits = @form.errors[:on_benefits].join(' ')
+  fieldset.govuk-fieldset
+    legend.govuk-fieldset__legend.govuk-fieldset__legend--s.visuallyhidden
+      = t('text', scope: "#{@form.i18n_scope}")
+    .govuk-form-group.govuk-radios
+      .govuk-radios__item
+        = f.radio_button :on_benefits, 'false', class: 'govuk-radios__input'
+        = f.label :on_benefits, t('on_benefits_false', scope: @form.i18n_scope), for: 'benefit_on_benefits_false', class: 'govuk-label govuk-radios__label'
+      .govuk-radios__item
+        = f.radio_button :on_benefits, 'true', class: 'govuk-radios__input', 'data-target': "date-fee-paid-panel"
+        = f.label :on_benefits, t('on_benefits_true', scope: @form.i18n_scope), for: 'benefit_on_benefits_true', class: 'govuk-label govuk-radios__label', 'data-target': "date-fee-paid-panel"
 
-.form-group
-  .text
-    h2.heading-small = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
+.govuk-form-group
+  .govuk-body
+    h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_2")
     p = t('details', scope: "#{@form.i18n_scope}.details.section_2")
 
-    h2.heading-small = t('heading', scope: "#{@form.i18n_scope}.details.section_1")
+    h2.govuk-heading-s = t('heading', scope: "#{@form.i18n_scope}.details.section_1")
     p = t('details', scope: "#{@form.i18n_scope}.details.section_1")
 
 

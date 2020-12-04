@@ -6,6 +6,7 @@ module FeatureSteps
 
     QuestionFormFactory::IDS.take_while { |id| id != question }.each do |id|
       next if ProbateFeesSwitch.disable_probate_fees? && id == :probate
+      next if id == :home_office
 
       send("fill_#{id}")
     end
@@ -22,6 +23,8 @@ module FeatureSteps
     click_link_or_button 'Continue'
     fill_form_name
     fill_fee(true)
+    fill_national_insurance_presence
+    fill_national_insurance
     fill_marital_status
     fill_savings_and_investment
     fill_savings_and_investment_extra
@@ -32,7 +35,6 @@ module FeatureSteps
     fill_income_amount
     fill_probate unless ProbateFeesSwitch.disable_probate_fees?
     fill_claim
-    fill_national_insurance
     fill_dob
     fill_personal_detail
     fill_applicant_address
@@ -45,6 +47,8 @@ module FeatureSteps
     click_link_or_button 'Continue'
     fill_form_name
     fill_fee(true)
+    fill_national_insurance_presence
+    fill_national_insurance
     fill_marital_status
     fill_savings_and_investment
     fill_savings_and_investment_extra
@@ -54,7 +58,6 @@ module FeatureSteps
     fill_income_range(below: true)
     fill_probate unless ProbateFeesSwitch.disable_probate_fees?
     fill_claim
-    fill_national_insurance
     fill_dob
     fill_personal_detail
     fill_applicant_address
@@ -67,13 +70,14 @@ module FeatureSteps
     click_link_or_button 'Continue'
     fill_form_name
     fill_fee
+    fill_national_insurance_presence
+    fill_national_insurance
     fill_marital_status
     fill_savings_and_investment
     fill_savings_and_investment_extra
     fill_benefit(true)
     fill_probate unless ProbateFeesSwitch.disable_probate_fees?
     fill_claim
-    fill_national_insurance
     fill_dob
     fill_personal_detail
     fill_applicant_address
@@ -118,6 +122,8 @@ module FeatureSteps
     when_they_go_back_to_homepage_and_start_again
     fill_et_form_name
     fill_fee
+    fill_national_insurance_presence
+    fill_national_insurance
     fill_marital_status
     fill_savings_and_investment
     fill_savings_and_investment_extra
@@ -127,7 +133,6 @@ module FeatureSteps
     fill_income_range(true)
     fill_probate
     fill_claim
-    fill_national_insurance
     fill_dob
     fill_personal_detail
     fill_applicant_address
@@ -138,6 +143,8 @@ module FeatureSteps
   def when_they_apply_for_help_with_et_case_up_to_step_12
     fill_et_form_name
     fill_fee
+    fill_national_insurance_presence
+    fill_national_insurance
     fill_marital_status
     fill_savings_and_investment
     fill_savings_and_investment_extra
@@ -150,7 +157,6 @@ module FeatureSteps
 
   def when_they_continue_from_step12_up_to_summary
     fill_claim
-    fill_national_insurance
     fill_dob
     fill_personal_detail
     fill_applicant_address
@@ -212,8 +218,18 @@ module FeatureSteps
     click_button 'Continue'
   end
 
+  def fill_national_insurance_presence
+    choose 'national_insurance_presence_ni_number_present_true'
+    click_button 'Continue'
+  end
+
   def fill_national_insurance
     fill_in 'national_insurance_number', with: 'AB123456A'
+    click_button 'Continue'
+  end
+
+  def fill_home_office
+    fill_in 'home_office_ho_number', with: 'L1234567'
     click_button 'Continue'
   end
 

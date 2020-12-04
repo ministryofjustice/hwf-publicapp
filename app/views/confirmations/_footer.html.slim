@@ -1,5 +1,5 @@
 .js-only.no-print
-  p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')
+  p.govuk-body =link_to(t('confirmation.print'), '#', class: 'govuk-link js-print')
 
 = form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
-  = submit_tag(t('confirmation.finish'), class: 'button', role: 'button')
+  = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')

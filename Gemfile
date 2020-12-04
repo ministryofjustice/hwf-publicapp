@@ -6,56 +6,54 @@ git_source(:github) do |repo_name|
 end
 
 gem 'dotenv-rails', groups: [:development, :test] # this has to be here because of load order
-
-gem 'rails', '~> 4.2.11'
-
-gem 'config'
-gem 'date_validator'
-gem 'rest-client'
-gem 'sentry-raven'
-gem 'virtus'
-gem 'zendesk_api'
-
-# Azure key vault secrets to ENV variables
 gem 'azure_env_secrets', github: 'ministryofjustice/azure_env_secrets', tag: 'v0.1.3'
+gem 'rails', '~> 6.0'
 
-gem 'govuk_elements_rails', '0.3.0'
-gem 'govuk_frontend_toolkit', '4.7.0'
+gem 'application_insights', '~> 0.5.6'
+gem 'bootsnap', require: false
+gem 'config'
+gem 'date_validator', '0.9.0'
 gem 'jquery-rails'
-gem 'moj_template', '~> 0.23.2'
-gem 'nokogiri', '~> 1.10.3'
+gem 'nokogiri'
+gem 'rest-client'
 gem 'sass-rails'
+gem 'sentry-raven'
 gem 'slim-rails'
-gem 'uglifier', '3.0.0'
-gem 'unicorn'
+gem 'uglifier'
+gem 'puma', '~> 5.0.4'
+gem 'virtus'
+gem 'zendesk_api', '~> 1.24'
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
+  gem 'parallel_tests'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.0'
-  gem 'rubocop', '~>0.60', require: false
-  gem 'rubocop-rspec', '~>1.10', require: false
+  gem 'rspec-rails'
+  gem 'rubocop', '0.76.0', require: false
+  gem 'rubocop-rspec', '1.36.0', require: false
 end
 
 group :development do
   gem 'foreman'
   gem 'launchy'
+  gem 'listen'
   gem 'spring'
   gem 'web-console'
 end
 
 group :test do
+  gem 'apparition'
   gem 'capybara'
   gem 'capybara-screenshot'
-  gem 'chromedriver-helper', '~> 1.1'
-  gem 'codeclimate-test-reporter', require: nil
-  gem 'cucumber-rails', '~> 1.5', require: false
-  gem 'geckodriver-helper', '~> 0.23.0'
-  gem 'poltergeist', '1.15.0'
-  gem 'rspec_junit_formatter', '~> 0.4.1'
-  gem 'selenium-webdriver', '~> 3.141'
+  gem 'codeclimate-test-reporter'
+  gem 'cucumber-rails', require: false
+  gem 'rails-controller-testing'
+  gem 'report_builder'
+  gem 'rspec_junit_formatter'
+  gem 'rubyzip'
   gem 'shoulda-matchers'
-  gem 'site_prism', '~> 2.9'
+  gem 'site_prism'
   gem 'timecop'
-  gem 'webmock', require: false
+  gem 'webdrivers'
+  gem 'webmock'
 end

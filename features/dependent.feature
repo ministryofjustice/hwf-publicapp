@@ -1,5 +1,3 @@
-@e2e
-
 Feature: Dependent page
 
   Background: Navigating to the dependent page

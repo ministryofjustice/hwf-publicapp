@@ -1,7 +1,7 @@
 Given(/^I am on the marital status page$/) do
-  marital_status_page.to_marital_status
+  to_marital_status
   expect(marital_status_page.content).to have_step_info
-  expect(marital_status_page.content).to have_fee_header
+  expect(marital_status_page.content).to have_header
 end
 
 When(/^I submit the form as single$/) do

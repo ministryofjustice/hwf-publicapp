@@ -6,15 +6,15 @@
 
 - form_name = @online_application.form_name ? @online_application.form_name : t('confirmation.default_form_name')
 
-h1.heading-large
-  span.heading-secondary =t('confirmation.default.breadcrumb')
-  span.visuallyhidden
-    | :&nbsp;
+.govuk-caption-l
+  =t('confirmation.default.breadcrumb')
+h1.govuk-heading-l
+  =t('confirmation.default.text')
 
 .steps-panel
-  h2.heading-medium.util_mt-0 =t('confirmation.default.heading', form_name: form_name)
+  h2.govuk-heading-m =t('confirmation.default.heading', form_name: form_name)
 
-  ol.list.list-number.next-steps.util_mb-0
+  ol.govuk-list.govuk-list--number.next-steps
     li
       =t('confirmation.default.steps.one_html', reference: @result['message'], form_name: form_name)
       .hwf-ref =@result['message']
@@ -26,7 +26,7 @@ h1.heading-large
 
 = form_tag(done_confirmation_path, method: :get, class: 'util_mb-medium util_mt-medium') do
   = hidden_field_tag :locale, params['locale']
-  = submit_tag(t('continue', scope: 'confirmation.default'), class: 'button', role: 'button')
+  = submit_tag(t('continue', scope: 'confirmation.default'), class: 'govuk-button no-print', role: 'button')
 
 .js-only.no-print
-  p.util_mt-large =link_to(t('confirmation.print'), '#', class: 'js-print')
+  p.govuk-body =link_to(t('confirmation.print'), '#', class: 'js-print govuk-link govuk-!-font-size-19')

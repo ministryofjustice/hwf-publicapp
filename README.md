@@ -31,3 +31,5 @@ Run the cucumber features in parallel
 ```
 CAPYBARA_SERVER_PORT=random bundle exec rake parallel:features
 ```
+
+just test

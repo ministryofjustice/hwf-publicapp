@@ -171,7 +171,7 @@ RSpec.describe Navigation do
     end
 
     context 'when the home office number is present' do
-      let(:online_application) { build :online_application, ho_number: 'L123456' }
+      let(:online_application) { build :online_application, ho_number: 'L1234567' }
       let(:current_question) { :savings_and_investment_extra }
 
       it 'skips the benefit question' do

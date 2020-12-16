@@ -16,7 +16,7 @@ end
 
 When(/^I click on if you do not know your national insurance number$/) do
   expect(checklist_page.content.do_not_know[0].text).to eq "If you don’t know your National Insurance number"
-  checklist_page.content.do_not_know[0].click
+  checklist_page.click_do_not_know
 end
 
 Then(/^I should see where I can find my national insurance number$/) do
@@ -25,7 +25,7 @@ end
 
 When(/^I click on if you do not know your home office number$/) do
   expect(checklist_page.content.do_not_know[1].text).to eq "If you don't know your Home Office reference number"
-  checklist_page.content.do_not_know[1].click
+  checklist_page.click_do_not_know_2
 end
 
 Then(/^I should see where I can find my home office number$/) do

@@ -16,7 +16,7 @@ end
 
 When(/^I enter a case, claim or notice to pay number$/) do
   expect(claim_page.content).to have_claim_number_label
-  claim_page.content.claim_input_field.set('012345678')
+  claim_page.fillInputField('012345678')
   continue
 end
 

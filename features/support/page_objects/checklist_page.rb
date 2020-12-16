@@ -15,4 +15,13 @@ class ChecklistPage < BasePage
     element :reminder, 'a', text: 'ask for a reminder through the post'
     element :look_for_ho, 'li', text: 'You will find your Home Office reference number on any of the correspondence you have received from the Home Office.'
   end
+
+  def click_do_not_know
+    content.do_not_know[0].click
+  end
+
+  def click_do_not_know_2
+    content.do_not_know[1].click
+  end
+
 end

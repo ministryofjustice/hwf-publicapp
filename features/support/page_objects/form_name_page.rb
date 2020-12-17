@@ -18,13 +18,21 @@ class FormNamePage < BasePage
   end
 
   def submit_valid_form_number
-    content.form_name.set('C100')
+    form_name('C100')
     continue
   end
 
   def submit_valid_form_name
-    content.form_name.set('notice to appeal')
+    form_name('notice to appeal')
     continue
+  end
+
+  def form_name(str)
+    content.form_name.set str
+  end
+
+  def no_form
+    content.form_name_unknown.click
   end
 
 end

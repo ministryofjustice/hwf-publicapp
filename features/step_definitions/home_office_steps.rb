@@ -6,12 +6,12 @@ Given("I am on the home office page") do
 end
 
 When("I submit a valid home office number") do
-  home_office_page.content.home_offce_number.set '1212-0001-0240-0490/01'
+  home_office_page.home_offce_number('1212-0001-0240-0490/01')
   continue
 end
 
 When("I submit an invalid home office number") do
-  home_office_page.content.home_offce_number.set 'L1234567/1'
+  home_office_page.home_offce_number('L1234567/1')
   continue
 end
 

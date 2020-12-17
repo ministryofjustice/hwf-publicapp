@@ -24,15 +24,15 @@ class ProbatePage < BasePage
     probate_page.content.yes.click
   end
 
-  def setDay(num)
+  def day(num)
     content.probate_day_date_of_death.set(num)
   end
 
-  def setMonth(num)
+  def month(num)
     content.probate_month_date_of_death.set(num)
   end
 
-  def setYear(num)
+  def year(num)
     content.probate_year_date_of_death.set(num)
   end
 
@@ -47,33 +47,33 @@ class ProbatePage < BasePage
 
   def valid_date_of_death
     date = Time.zone.today - 1.month
-    setDay(date.day)
-    setMonth(date.month)
-    setYear(date.year)
+    day(date.day)
+    month(date.month)
+    year(date.year)
     continue
   end
 
   def date_of_death_over_20_years
     date = Time.zone.today - 21.years
-    setDay(date.day)
-    setMonth(date.month)
-    setYear(date.year)
+    day(date.day)
+    month(date.month)
+    year(date.year)
 
     continue
   end
 
   def invalid_date_of_death
-    setDay('31')
-    setMonth('02')
-    setYear(Time.zone.today.year - 1)
+    day('31')
+    month('02')
+    year(Time.zone.today.year - 1)
     continue
   end
 
   def future_date_of_death
     date = Time.zone.today + 1.month
-    setDay(date.day)
-    setMonth(date.month)
-    setYear(date.year)
+    day(date.day)
+    month(date.month)
+    year(date.year)
 
     continue
   end

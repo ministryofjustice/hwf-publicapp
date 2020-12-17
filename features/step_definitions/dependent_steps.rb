@@ -5,12 +5,11 @@ Given(/^I am on the dependent page$/) do
 end
 
 When(/^I select yes to do you have any children$/) do
-  dependent_page.content.yes.click
+  dependent_page.dependent_yes
 end
 
 When(/^I submit the form with no I do not have any children$/) do
-  dependent_page.content.no.click
-  continue
+  dependent_page.submit_dependent_no
 end
 
 When(/^I submit the form with four children$/) do

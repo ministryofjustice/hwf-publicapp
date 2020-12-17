@@ -17,7 +17,7 @@ When(/^I enter a invalid email address$/) do
 end
 
 And(/^I click share experience checkbox$/) do
-  contact_page.content.share_experience.click
+  contact_page.click_share_experience
 end
 
 Then(/^I remain on this page$/) do

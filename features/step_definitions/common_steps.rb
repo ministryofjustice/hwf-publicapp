@@ -17,7 +17,6 @@ When(/^I click on '([^\"]*)'$/) do |help|
   base_page.click_help_with
 end
 
-
 Then(/^I should see '([^\"]*)' header$/) do |header|
   expect(base_page.content.h1.text).to have_content header
 end

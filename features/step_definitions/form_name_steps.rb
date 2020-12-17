@@ -26,7 +26,7 @@ When(/^I submit the form with a valid form number$/) do
 end
 
 When(/^I submit the form with I don’t have a form checked$/) do
-  form_name_page.content.form_name_unknown.click
+  form_name_page.no_form
   continue
 end
 
@@ -48,7 +48,7 @@ Then(/^I should see enter a number error message$/) do
 end
 
 When(/^I submit the form with a help with fees form number '(.+?)'$/) do |num|
-  form_name_page.content.form_name.set num
+  form_name_page.form_name(num)
   continue
 end
 

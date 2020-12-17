@@ -7,16 +7,16 @@ class AddressPage < BasePage
   end
 
   def submit_full_address
-    address_page.fillInAddress('102 Petty France, London')
-    address_page.fillInPostCode('SW1H 9AJ')
+    address_page.address('102 Petty France, London')
+    address_page.post_code('SW1H 9AJ')
     continue
   end
 
-  def fillInAddress(str)
+  def address(str)
     fill_in 'Address', with: str
   end
 
-  def fillInPostCode(str)
+  def post_code(str)
     fill_in 'Postcode', with: str
   end
 end

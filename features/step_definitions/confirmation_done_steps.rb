@@ -8,7 +8,7 @@ Given(/^I am on the confirmation done page with probate enabled$/) do
 end
 
 When(/^I click the finish application button$/) do
-  confirmation_done_page.content.finish_application_button.click
+  confirmation_done_page.submit
 end
 
 Then(/^I should see deliver your paperwork instructions$/) do

@@ -19,4 +19,8 @@ class HomeOfficePage < BasePage
     home_office_page.content.home_offce_number.set '1212-0001-0240-0490/01'
     continue
   end
+
+  def home_offce_number(str)
+    content.home_offce_number.set str
+  end
 end

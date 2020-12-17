@@ -20,4 +20,8 @@ class ContactPage < BasePage
     content.contact_email.set 'testhmctsnet'
     continue
   end
+
+  def click_share_experience
+    content.share_experience.click
+  end
 end

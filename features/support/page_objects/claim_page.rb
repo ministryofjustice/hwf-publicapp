@@ -26,8 +26,8 @@ class ClaimPage < BasePage
     continue
   end
 
-  def fillInputField(str)
-    content.claim_input_field.set('012345678')
+  def input_field(str)
+    content.claim_input_field.set(str)
   end
 
 end

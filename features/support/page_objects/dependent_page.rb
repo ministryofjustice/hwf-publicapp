@@ -23,9 +23,17 @@ class DependentPage < BasePage
     continue
   end
 
+  def dependent_yes
+    content.yes.click
+  end
+
   def submit_dependent_3
     content.yes.click
     content.children_number.set 3
     continue
+  end
+
+  def children_number(num)
+    content.children_number.set num
   end
 end

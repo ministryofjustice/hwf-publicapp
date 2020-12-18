@@ -530,7 +530,7 @@ cy:
       text: Beth yw eich cyfeirnod Swyddfa Gartref?
       title: Beth yw eich cyfeirnod Swyddfa Gartref?
       prompt: Cyfeirnod y Swyddfa Gartref
-      example: Er enghraifft, L123456 neu L123456/1 (ar gyfer aelodau o’r teulu)
+      example: Er enghraifft, L1234567 neu L1234567/1 (ar gyfer aelodau o’r teulu)
       paper_form_link_html: "Os nad oes gennych rif Yswiriant Gwladol, neu gyfeirnod Swyddfa Gartref, bydd angen i chi lenwi'r
             <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634330/ex160-bil.pdf'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'

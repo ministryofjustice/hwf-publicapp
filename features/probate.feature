@@ -3,7 +3,7 @@ Feature: Probate page
   Background: Navigating to the probate page
     Given probate is enabled
     And I am on the page for Are you paying a fee for a probate case?
-@test
+
   Scenario: Selecting no to are you paying a fee for a probate case
     When I select no to are you paying a fee for a probate case
     Then I should be taken to the claim page

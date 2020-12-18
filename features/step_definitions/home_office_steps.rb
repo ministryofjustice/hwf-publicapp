@@ -11,7 +11,7 @@ When("I submit a valid home office number") do
 end
 
 When("I submit an invalid home office number") do
-  home_office_page.home_offce_number('L1234567/1')
+  home_office_page.home_offce_number('L12345678/1')
   continue
   home_office_page.home_offce_number('L123456')
   continue

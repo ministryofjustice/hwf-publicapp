@@ -14,4 +14,8 @@ class ConfirmationDonePage < BasePage
     element :finish_application_button, 'input[value="Finish application"]'
   end
 
+  def submit
+    content.finish_application_button.click
+  end
+
 end

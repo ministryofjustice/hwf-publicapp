@@ -18,4 +18,9 @@ class BasePage < SitePrism::Page
   end
   elements :error_message, '.govuk-error-message'
   element :js_print, '.js-print'
+
+  def click_help_with
+    help_with.click
+  end
+
 end

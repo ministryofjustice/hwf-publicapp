@@ -13,4 +13,16 @@ class PersonalDetailsPage < BasePage
     fill_in 'Last name', with: 'Smith'
     continue
   end
+
+  def title(str)
+    fill_in 'Title(Optional)', with: str
+  end
+
+  def first_name(str)
+    fill_in 'First name', with: str
+  end
+
+  def last_name(str)
+    fill_in 'Last name', with: str
+  end
 end

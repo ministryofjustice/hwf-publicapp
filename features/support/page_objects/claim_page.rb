@@ -25,4 +25,9 @@ class ClaimPage < BasePage
     content.yes.click
     continue
   end
+
+  def input_field(str)
+    content.claim_input_field.set(str)
+  end
+
 end

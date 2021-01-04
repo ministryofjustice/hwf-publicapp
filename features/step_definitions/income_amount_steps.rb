@@ -15,7 +15,7 @@ Given(/^I am a married person on income amount page$/) do
 end
 
 When(/^I submit the form with my monthly income$/) do
-  income_amount_page.content.income_amount.set(1900)
+  income_amount_page.income(1900)
   continue
 end
 

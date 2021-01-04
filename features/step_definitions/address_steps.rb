@@ -10,11 +10,11 @@ When(/^I enter my address with postcode$/) do
 end
 
 When(/^I enter my address$/) do
-  fill_in 'Address', with: '102 Petty France, London'
+  address_page.address('102 Petty France, London')
 end
 
 When(/^I enter my postcode$/) do
-  fill_in 'Postcode', with: 'SW1H 9AJ'
+  address_page.post_code('SW1H 9AJ')
 end
 
 Then(/^I should be taken to address page$/) do

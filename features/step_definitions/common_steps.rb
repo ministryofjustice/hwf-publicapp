@@ -2,18 +2,10 @@ def group_common(index)
   base_page.content.form_group[index]
 end
 
-When(/^I click on cancel application$/) do
-  base_page.restart_application.click
-end
-
 When(/^I see the are you sure copy$/) do
   expect(base_page.restart_confirm).to have_yes_button
   expect(base_page.restart_confirm).to have_are_you_sure
   expect(base_page.restart_confirm).to have_if_you_cancel
-end
-
-When(/^I click on no, return to current application$/) do
-  base_page.restart_confirm.no_button.click
 end
 
 When(/^I click continue$/) do
@@ -22,11 +14,7 @@ end
 
 When(/^I click on '([^\"]*)'$/) do |help|
   expect(base_page.help_with.text).to have_content help
-  base_page.help_with.click
-end
-
-And(/^I click on yes, cancel$/) do
-  base_page.restart_confirm.yes_button.click
+  base_page.click_help_with
 end
 
 Then(/^I should see '([^\"]*)' header$/) do |header|

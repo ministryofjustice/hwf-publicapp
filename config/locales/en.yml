@@ -569,29 +569,32 @@ en:
       details:
         section_1:
           heading: 'What to include in savings and investments:'
-          item_1: money in ISAs and any other savings account
+          item_1: money in ISAs and any other savings account, including matured Child Trust Funds or Junior ISAs
           item_2: joint savings accounts that you share with your partner
           item_3: fixed rate or investment bonds
           item_4: any lump sum (eg a redundancy payout)
           item_5: stocks and shares
           item_6: trust funds (or any other kind of fund)
-          item_7: second homes
+          item_7: value of second homes
           item_8: any money or property outside the UK
+          p_1: If you have a partner, remember to include their savings and investments too, unless your case involves them.
         section_2:
           heading: 'Don’t include the following in your savings total:'
           item_1: wages or benefits
           item_2: joint savings accounts that you share with your partner if your case is against your partner or concerns divorce or gender recognition
           item_3: personal pensions
           item_4: capital value of self-employed businesses
-          item_5: student loans
-          item_6: unfair dismissal awards
-          item_7: money from the criminal injury compensation scheme
-          item_8: medical negligence or personal injury awards
-          item_9: any compensation under a statutory scheme in respect of Mesothelioma
-        summary: Help with savings and investments
+          item_5: the value of any vehicle which would leave you or your partner without motor transport if sold
+          item_6: loans
+          item_7: unfair dismissal awards
+          item_8: money from the criminal injury compensation scheme
+          item_9: medical negligence or personal injury awards
+          item_10: any compensation under a statutory scheme in respect of Mesothelioma
+        summary: Help on what to include as savings and investments
       less: "£0 to £2,999"
       more: "£16,000 or more"
-      subtext_married: Remember to include your partner’s savings and investments in your total.
+      subtext_married: Remember to include your partner’s savings and investments in your total. For more information on what to include in your total see the Help section below.
+      subtext_single: For more information on what to include in your total see the Help section below.
       text: How much do you have in savings and investments?
       title: Savings and investments
     savings_and_investment_extra:

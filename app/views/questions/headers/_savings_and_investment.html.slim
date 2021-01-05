@@ -1,2 +1,5 @@
 - if @online_application.married?
-  p.govuk-body =t('subtext_married', scope: @form.i18n_scope)
+  span.govuk-hint =t('subtext_married', scope: @form.i18n_scope)
+
+- else
+  span.govuk-hint =t('subtext_single', scope: @form.i18n_scope)

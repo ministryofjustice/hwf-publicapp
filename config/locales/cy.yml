@@ -558,29 +558,32 @@ cy:
       details:
         section_1:
           heading: 'Beth i''w gynnwys mewn cynilion a buddsoddiadau:'
-          item_1: arian mewn ISAs ac unrhyw gyfrif cynilo arall
+          item_1: arian mewn ISAs ac unrhyw gyfrif cynilo arall, gan gynnwys Cronfeydd Ymddiriedolaeth Plant aeddfed neu ISAs pobl ifanc
           item_2: cyfrifon cynilo ar y cyd rydych chi'n eu rhannu â'ch partner
           item_3: bondiau cyfradd sefydlog neu fuddsoddi
           item_4: unrhyw gyfandaliad (ee tâl diswyddo)
           item_5: stociau a chyfrannau
           item_6: cronfeydd ymddiriedolaeth (neu unrhyw fath arall o gronfa)
-          item_7: ail gartrefi
+          item_7: gwerth ail gartrefi
           item_8: unrhyw arian neu eiddo y tu allan i'r DU
+          p_1: Os oes gennych bartner, cofiwch gynnwys eu cynilion a'u buddsoddiadau hefyd, oni bai bod eich achos yn eu cynnwys.
         section_2:
           heading: 'Peidiwch â chynnwys y canlynol yng nghyfanswm eich cynilion:'
           item_1: cyflogau neu fudd-daliadau
           item_2: cyfrifon cynilo ar y cyd rydych chi'n eu rhannu â'ch partner os yw'ch achos yn erbyn eich partner neu'n ymwneud ag ysgaru neu gydnabod rhywedd
           item_3: pensiynau personol
           item_4: gwerth cyfalaf busnesau pobl hunangyflogedig
-          item_5: benthyciadau myfyriwr
-          item_6: dyfarndal am ddiswyddo annheg
-          item_7: arian o'r cynllun digolledu am anafiadau troseddol
-          item_8: dyfarndal am esgeuluster meddygol neu anaf personol
-          item_9: digollediad o dan gynllun statudol mewn perthynas â Mesothelioma
-        summary: Help gyda chynilion a buddsoddiadau
+          item_5: gwerth unrhyw gerbyd a fyddai'n eich gadael chi neu'ch partner heb gludiant modur os caiff ei werthu
+          item_6: benthyciadau
+          item_7: dyfarndal am ddiswyddo annheg
+          item_8: arian o'r cynllun digolledu am anafiadau troseddol
+          item_9: dyfarndal am esgeuluster meddygol neu anaf personol
+          item_10: digollediad o dan gynllun statudol mewn perthynas â Mesothelioma
+        summary: Help ar beth i'w gynnwys fel cynilion a buddsoddiadau
       less: "£0 i £2,999"
       more: "£16,000 neu fwy"
-      subtext_married: Cofiwch gynnwys cynilion a buddsoddiadau'ch partner yn eich cyfanswm.
+      subtext_married: Cofiwch gynnwys cynilion a buddsoddiadau'ch partner yn eich cyfanswm. I gael rhagor o wybodaeth am beth i'w gynnwys yn eich cyfanswm gweler yr adran Help isod.
+      subtext_single: I gael rhagor o wybodaeth am beth i'w gynnwys yn eich cyfanswm gweler yr adran Help isod.
       text: Beth yw swm eich cynilion a buddsoddiadau?
       title: Cynilion a buddsoddiadau
     savings_and_investment_extra:

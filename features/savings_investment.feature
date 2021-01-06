@@ -17,5 +17,5 @@ Feature: Savings and investment page
     Then I should be taken to benefits page
 
   Scenario: Help with savings and investments
-    When I click on 'Help with savings and investments'
+    When I click on 'Help on what to include as savings and investments'
     Then I should see help with savings and investments copy

@@ -190,6 +190,16 @@ cy:
   application:
     name: 'Help i dalu ffioedd'
     title: 'Help i dalu ffioedd - MoJ'
+    footer:
+      help: 'Cymorth'
+      cookies: 'Cwyis'
+      contact: 'Cysylltu'
+      terms_and_conditions: 'Telerau ac Amodau'
+      cymraeg: 'Cymraeg'
+      accessibility_statement: 'Datganiad hygyrchedd'
+      ogl_html: Mae’r holl gynnwys ar gael dan <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Drwydded Llywodraeth Agored f3.0</a>, oni bai pan nodir fel arall
+      copyright_html: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Hawlfraint y Goron</a>
+      built_by_html: Built by the <a href="https://mojdigital.blog.gov.uk/" class="govuk-footer__link">MOJ Digital Services</a>
   confirmation:
     back_to_start: Yn ôl i'r dechrau
     default_form_name: hawlio

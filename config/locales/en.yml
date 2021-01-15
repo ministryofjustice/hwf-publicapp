@@ -200,6 +200,16 @@ en:
   application:
     name: 'Help with fees'
     title: 'Help with fees - MoJ'
+    footer:
+      help: 'Help'
+      cookies: 'Cookies'
+      contact: 'Contact'
+      terms_and_conditions: 'Terms and conditions'
+      cymraeg: 'Cymraeg'
+      accessibility_statement: 'Accessibility statement'
+      ogl_html: All content is available under the <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+      copyright_html: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+      built_by_html: Built by the <a href="https://mojdigital.blog.gov.uk/" class="govuk-footer__link">MOJ Digital Services</a>
   confirmation:
     back_to_start: Back to start
     default_form_name: claim
@@ -814,8 +824,8 @@ en:
       - p: This does not affect our liability for death or personal injury arising from our negligence, nor our liability for fraudulent misrepresentation or misrepresentation as to a fundamental matter, nor any other liability which cannot be excluded or limited under applicable law.
     title: Terms and conditions
   accessibility:
-    title: Accessibility statement for Help with  Fees service
-    heading: Accessibility statement for Help with  Fees service
+    title: Accessibility statement for Help with Fees service
+    heading: Accessibility statement for Help with Fees service
     sections:
     - title:
       parts:

@@ -190,6 +190,16 @@ cy:
   application:
     name: 'Help i dalu ffioedd'
     title: 'Help i dalu ffioedd - MoJ'
+    footer:
+      help: 'Cymorth'
+      cookies: 'Cwyis'
+      contact: 'Cysylltu'
+      terms_and_conditions: 'Telerau ac Amodau'
+      cymraeg: 'Cymraeg'
+      accessibility_statement: 'Datganiad hygyrchedd'
+      ogl_html: Mae’r holl gynnwys ar gael dan <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Drwydded Llywodraeth Agored f3.0</a>, oni bai pan nodir fel arall
+      copyright_html: <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Hawlfraint y Goron</a>
+      built_by_html: Built by the <a href="https://mojdigital.blog.gov.uk/" class="govuk-footer__link">MOJ Digital Services</a>
   confirmation:
     back_to_start: Yn ôl i'r dechrau
     default_form_name: hawlio
@@ -803,71 +813,71 @@ cy:
       - p: Nid yw hyn yn effeithio ar ein hatebolrwydd am farwolaeth neu anaf personol sy’n codi o’n hesgeuluster, nac ar ein hatebolrwydd am gamliwio twyllodrus neu gamliwio mewn perthynas â mater sylfaenol, nac unrhyw atebolrwydd arall na ellir ei eithrio neu ei gyfyngu dan y gyfraith berthnasol.
     title: Telerau ac amodau
   accessibility:
-    title: Accessibility statement for Help with  Fees service
-    heading: Accessibility statement for Help with  Fees service
+    title: Datganiad hygyrchedd ar gyfer y gwasanaeth cymorth gyda ffioedd
+    heading: Datganiad hygyrchedd ar gyfer y gwasanaeth cymorth gyda ffioedd
     sections:
     - title:
       parts:
-      - p: This accessibility statement applies to the Help with Fees service.
-      - p: "This website is run by Her Majesty's Courts and Tribunals Service (HMCTS). We want as many people as possible to be able to use this online form. For example, that means you should be able to:"
+      - p: Mae'r datganiad hygyrchedd hwn yn berthnasol i'r gwasanaeth Cymorth â Ffioedd.
+      - p: "Mae'r wefan hon yn cael ei rhedeg gan Wasanaeth Llysoedd a Thribiwnlysoedd Ei Mawrhydi (GLlTEM). Rydym am i gynifer o bobl â phosibl allu defnyddio'r ffurflen ar-lein hon. Er enghraifft, mae hynny'n golygu y dylech chi allu:"
       - ul:
-        - li: change colours, contrast levels and fonts
-        - li: zoom in up to 300% without the text spilling off the screen
-        - li: navigate the form using just a keyboard
-        - li: listen to the form using a screen reader
-      - p: Please note that the accessibility tests conducted to date only cover VoiceOver compatibility.
-      - p: We’ve also made the text as simple as possible to understand.
-      - p: <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> has advice on making your device easier to use if you have a disability.
-    - title: How accessible this website is
+        - li: newid lliwiau, lefelau cyferbyniad a ffontiau
+        - li: chwyddo hyd at 300% heb golli'r testun oddi ar y sgrin
+        - li: mynd drwy'r ffurflen gan ddefnyddio bysellfwrdd yn unig
+        - li: gwrando ar y ffurflen gan ddefnyddio darllenydd sgrin
+      - p: Sylwch mai cydnawsedd â VoiceOver yn unig a gynhwyswyd yn y profion hygyrchedd a gynhaliwyd hyd yma.
+      - p: Rydym hefyd wedi gwneud y testun mor syml â phosibl i'w ddeall.
+      - p: Mae gan <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">AbilityNet</a> gyngor ar wneud eich dyfais yn haws i'w defnyddio os oes gennych anabledd.
+    - title: Hygyrchedd y wefan hon
       parts:
-      - p: We are in the process of arranging a full Web Content Accessibility Guidelines (WCAG) version 2.1 audit for this online form.
-      - p: We will update this statement once we’ve received the WCAG 2.1 audit report. In the meantime, we have done some basic tests, and addressed the issues that were flagged.
-      - p: We used components in the GOV.UK Design System to build this form. The <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">Design System accessibility guide</a> explains the current state of accessibility for these components.
-      - p: Components listed on the <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">Design System accessibility guide</a> are fully compliant with the WCAG 2.1 AA standard.
-      - p: The feedback form corresponding to the link ‘help us improve’ is provided by Google Forms and therefore does not use components of the GOV.UK Design System.
-    - title: Feedback and contact information
+      - p: Rydym yn y broses o drefnu archwiliad llawn fersiwn 2.1 y Canllawiau Hygyrchedd Cynnwys ar y We (WCAG) o’r ffurflen ar-lein hon.
+      - p: Byddwn yn diweddaru'r datganiad hwn ar ôl i ni dderbyn adroddiad archwilio 2.1 WCAG. Yn y cyfamser, rydym wedi gwneud rhai profion sylfaenol, ac wedi mynd i'r afael â'r materion a amlygwyd.
+      - p: Defnyddiwyd cydrannau yn System Ddylunio GOV.UK. i lunio’r ffurflen hon. Mae <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">canllaw hygyrchedd y System Ddylunio</a> yn egluro cyflwr hygyrchedd cyfredol y cydrannau hyn.
+      - p: Mae'r cydrannau a restrir yng <a href="https://design-system.service.gov.uk/accessibility/" class="govuk-link">nghanllaw hygyrchedd y System Ddylunio</a> yn cydymffurfio'n llawn â safon AA WCAG 2.1.
+      - p: Darperir y ffurflen adborth y gellir ei chael drwy’r ddolen ‘helpwch ni i wella’ gan Google Forms ac felly nid yw’n defnyddio cydrannau System Ddylunio GOV.UK.
+    - title: Sylwadau a gwybodaeth am sut i gysylltu â ni
       parts:
-      - p: "If you need information on this form in a different format like accessible PDF, large print, easy read, audio recording or braille:"
+      - p: "Os oes arnoch angen yr wybodaeth ar y ffurflen hon mewn fformat gwahanol fel PDF hygyrch, print bras, hawdd ei ddarllen, recordiad sain neu braille:"
       - ul:
-        - li: submit an <a href="https://helpwithcourtfees.service.gov.uk/ask-for-help/new" class="govuk-link">ask for technical help</a> form
-        - li: email <a href="mailto:hmctsforms@justice.gov.uk" class="govuk-link">hmctsforms@justice.gov.uk</a>
-      - p: If you send us an email, we will consider your request and get back to you within 10 days.
-      - p: "If you would like to talk to someone directly on the phone or in person, either:"
+        - li: cyflwynwch ffurflen i <a href="https://helpwithcourtfees.service.gov.uk/ask-for-help/new" class="govuk-link">ofyn am gymorth technegol</a>
+        - li: e-bostiwch <a href="mailto:hmctsforms@justice.gov.uk" class="govuk-link">hmctsforms@justice.gov.uk</a>
+      - p: Os anfonwch e-bost atom, byddwn yn ystyried eich cais ac yn cysylltu â chi cyn pen 10 diwrnod.
+      - p: "Os hoffech chi siarad â rhywun yn uniongyrchol ar y ffôn neu'n bersonol, gallwch:"
       - ul:
-        - li: speak to a member of court or tribunal staff while you are in the building. They are best placed to help you
-        - li: <a href="https://courttribunalfinder.service.gov.uk/search/" class="govuk-link">contact the court or tribunal</a> directly by email, phone or letter
+        - li: siarad ag aelod o staff llys neu dribiwnlys tra byddwch chi yn yr adeilad. Nhw sydd yn y lle gorau i'ch helpu chi
+        - li: <a href="https://courttribunalfinder.service.gov.uk/search/" class="govuk-link">cysylltu â’r llys neu’r tribiwnlys</a> yn uniongyrchol trwy e-bost, ffôn neu lythyr
       sections:
-        - title: Reporting accessibility problems
+        - title: Rhoi gwybod am broblemau hygyrchedd
           parts:
-          - p: We’re always looking to improve the accessibility of this online form. If you find any problems that aren’t listed on this page or think we’re not meeting the requirements of the accessibility requirements, email <a href="mailto:hmctsforms@justice.gov.uk" class="govuk-link">hmctsforms@justice.gov.uk</a> giving details of the issue and any assistive technology you are using.
-    - title: Enforcement procedure
+          - p: Rydym bob amser yn ceisio gwella hygyrchedd y ffurflen ar-lein hon. Os byddwch chi'n dod o hyd i unrhyw broblemau nad ydyn nhw wedi'u rhestru ar y dudalen hon neu'n credu nad ydyn ni'n cwrdd â gofynion y gofynion hygyrchedd, e-bostiwch <a href="mailto:hmctsforms@justice.gov.uk" class="govuk-link">hmctsforms@justice.gov.uk</a> gan roi manylion y mater ac unrhyw dechnoleg gynorthwyol rydych chi'n ei defnyddio.
+    - title: Y drefn orfodi
       parts:
-      - p: The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018 (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a href="https://www.equalityadvisoryservice.com/" class="govuk-link">contact the Equality Advisory and Support Service (EASS)</a>.
-    - title: Technical information about this website’s accessibility
+      - p: Mae’r Comisiwn Cydraddoldeb a Hawliau Dynol (EHRC) yn gyfrifol am orfodi Rheoliadau Hygyrchedd Cyrff Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018 (y ‘rheoliadau hygyrchedd’). Os nad ydych yn hapus â sut rydym yn ymateb i'ch cwyn, cysylltwch â'r <a href="https://www.equalityadvisoryservice.com/" class="govuk-link">Gwasanaeth Cynghori a Chefnogi Cydraddoldeb (EASS)</a>.
+    - title: Gwybodaeth dechnegol am hygyrchedd y wefan hon
       parts:
-      - p: HMCTS is committed to making its online forms and services accessible, in accordance with the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018.
+      - p: Mae HMCTS wedi ymrwymo i wneud ei ffurflenni a'i wasanaethau ar-lein yn hygyrch, yn unol â Rheoliadau Hygyrchedd Cyrff Sector Cyhoeddus (Gwefannau a Chymwysiadau Symudol) (Rhif 2) 2018.
       sections:
-        - title: Compliance status
+        - title: Statws cydymffurfio
           parts:
-          - p: This website is partially compliant with the <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">Web Content Accessibility Guidelines version 2.1</a> AA standard, due to the exemptions listed below.
-    - title: Non-accessible content
+          - p: Mae'r wefan hon yn cydymffurfio'n rhannol â safon AA <a href="https://www.w3.org/TR/WCAG21/" class="govuk-link">fersiwn 2.1 y Canllawiau Hygyrchedd Cynnwys ar y We</a>, oherwydd yr eithriadau a restrir isod.
+    - title: Cynnwys nad yw’n hygyrch
       parts:
-      - p: The content listed below is non-accessible for the following reasons.
+      - p: Nid yw'r cynnwys a restrir isod yn hygyrch am y rhesymau canlynol.
       sections:
-        - title: Non-compliance with the accessibility regulations
+        - title: Diffyg cydymffurfio â’r rheoliadau hygyrchedd
           parts:
           sections:
-            - title: Lack of manual accessibility testing
+            - title: Diffyg profion hygyrchedd llawn
               parts:
-              - p: Some basic testing has been conducted on the Help with Fees service. Specifically, the service was made to pass WCAG 2.1 AA standard tests outputted by HTML web accessibility testing tools, Pa11y and WAVE. The form was also tested from start to finish with keyboard testing, zooming in to 300% and VoiceOver.
-              - p: However, the lack of manual accessibility testing means that it is not possible to declare the service fully compliant. The full WCAG 2.1 audit to be carried out will clarify the overall accessibility of the service. This will allow us to make the service fully compliant.
-    - title: What we’re doing to improve accessibility
+              - p: Mae rhywfaint o brofion sylfaenol wedi'u cynnal ar y gwasanaeth Cymorth gyda Ffioedd. Yn benodol, sicrhawyd bod y gwasanaeth yn pasio profion safonol AA WCAG 2.1 a gynhaliwyd gydag offer profi hygyrchedd gwe HTML, Pa11y a WAVE. Profwyd y ffurflen hefyd o'r dechrau i'r diwedd gyda phrofion bysellfwrdd, chwyddo i mewn i 300% a VoiceOver.
+              - p: Fodd bynnag, mae'r diffyg profion hygyrchedd llawn yn golygu nad yw'n bosibl datgan bod y gwasanaeth yn cydymffurfio'n llawn. Bydd archwiliad llawn WCAG 2.1 sydd i'w gynnal yn egluro hygyrchedd cyffredinol y gwasanaeth. Bydd hyn yn caniatáu inni sicrhau bod y gwasanaeth yn cydymffurfio'n llawn.
+    - title: Beth rydym ni’n ei wneud i wella hygyrchedd
       parts:
-      - p: We are in the process of arranging a full WCAG 2.1 audit of this online form. We will then update this statement.
-    - title: Preparation of this accessibility statement
+      - p: Rydym wrthi'n trefnu archwiliad llawn WCAG 2.1 o'r ffurflen ar-lein hon. Yna byddwn yn diweddaru'r datganiad hwn.
+    - title: Paratoi’r datganiad hygyrchedd hwn
       parts:
-      - p: This statement was prepared on 2 October 2020. It was last updated on 5 October 2020
-      - p: This website was last tested on 2 October 2020. The tests were carried out by Her Majesty’s Courts and Tribunals Service (HMCTS).
+      - p: Paratowyd y datganiad hwn ar 2 Hydref 2020. Fe'i diweddarwyd ddiwethaf ar 5 Hydref 2020.
+      - p: Profwyd y wefan hon ddiwethaf ar 2 Hydref 2020. Cynhaliwyd y profion gan Wasanaeth Llysoedd a Thribiwnlysoedd Ei Mawrhydi (GLlTEM).
 
   home:
     checklist:

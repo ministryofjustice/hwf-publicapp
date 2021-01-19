@@ -75,7 +75,7 @@ RSpec.describe QuestionsController, type: :controller do
     let(:exported_form) { double }
 
     let(:next_path) { root_path }
-    let(:navigation) { instance_double(Navigation, next: next_path) }
+    let(:navigation) { instance_double(Navigation, next: next_path, page_number: 0) }
     let(:clear_service) { instance_double(ClearDownstreamQuestions, for_changes: nil) }
     let(:dupped_online_application) { double }
 
@@ -121,6 +121,10 @@ RSpec.describe QuestionsController, type: :controller do
 
         it 'assigns the form' do
           expect(assigns(:form)).to eql(form)
+        end
+
+        it 'assigns the page number' do
+          expect(assigns(:page_number)).to be 0
         end
 
         it 'assigns the question title view' do

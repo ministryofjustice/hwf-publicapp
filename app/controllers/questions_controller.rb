@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
       redirect_to(Navigation.new(online_application, question).next)
     else
       assign_title_view
+      assign_page_number
       render :edit
     end
   end

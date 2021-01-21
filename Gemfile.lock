@@ -461,4 +461,4 @@ DEPENDENCIES
   zendesk_api (~> 1.24)
 
 BUNDLED WITH
-   1.17.3
+   2.2.5

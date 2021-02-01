@@ -52,10 +52,11 @@ Then(/^I should be taken to form number page$/) do
   expect(form_name_page).to be_displayed
 end
 
-Then(/^I should see a list of six links$/) do
+Then(/^I should see a list of seven links$/) do
   expect(footer_page.content.footer_links.text).to have_content("Help")
   expect(footer_page.content.footer_links.text).to have_content("Cookies")
   expect(footer_page.content.footer_links.text).to have_content("Contact")
+  expect(footer_page.content.footer_links.text).to have_content("Privacy policy")
   expect(footer_page.content.footer_links.text).to have_content("Terms and conditions")
   expect(footer_page.content.footer_links.text).to have_content("Cymraeg")
   expect(footer_page.content.footer_links.text).to have_content("Accessibility statement")

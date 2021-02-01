@@ -28,4 +28,4 @@ Feature: Checklist page
     Then I should be taken to form number page
 
   Scenario: Footer content
-    Then I should see a list of six links
+    Then I should see a list of seven links

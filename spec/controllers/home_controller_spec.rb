@@ -22,4 +22,18 @@ RSpec.describe HomeController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe '#accessibility_statement' do
+    it 'returns http success' do
+      get :accessibility_statement
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe '#privacy_policy' do
+    it 'returns http success' do
+      get :privacy_policy
+      expect(response).to have_http_status(:success)
+    end
+  end
 end

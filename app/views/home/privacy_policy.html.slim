@@ -1,0 +1,8 @@
+- content_for :page_title
+  = t('privacy.title')
+  = ' - '
+
+h1.govuk-heading-xl =t('privacy.heading')
+
+- t('privacy.sections').each do |section|
+  =display_section(section)

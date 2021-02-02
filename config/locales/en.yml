@@ -700,7 +700,7 @@ en:
           - li: <a href="#responsible_use_of_this_service" class="govuk-link">Responsible use of this service</a>
           - li: <a href="#general_data_protection_regulations_gdpr" class="govuk-link">General Data Protection Regulations (GDPR)</a>
           - li: <a href="#disclaimer" class="govuk-link">Disclaimer</a>
-        - p: <i>By using this ‘Help with Fees’ service you agree to our privacy policy and to these terms and conditions. Read them carefully.</i>
+        - p: <i>By using this ‘Help with Fees’ service you agree to these terms and conditions. Read them carefully.</i>
     - title: General terms and conditions
       parts:
       - p: These terms and conditions affect your rights and liabilities under the law. They govern your use of, and relationship with, this ‘Help with Fees’ service. They do not apply to other Ministry of Justice (HM Courts and Tribunals Service) services, or to any department or service that is linked to in this service.

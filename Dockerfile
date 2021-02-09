@@ -1,4 +1,4 @@
-FROM phusion/passenger-ruby26
+FROM phusion/passenger-customizable:1.0.12
 
 # Adding argument support for ping.json
 ARG APPVERSION=unknown
@@ -12,6 +12,8 @@ ENV APP_BUILD_DATE ${APP_BUILD_DATE}
 ENV APP_GIT_COMMIT ${APP_GIT_COMMIT}
 ENV APP_BUILD_TAG ${APP_BUILD_TAG}
 
+RUN /pd_build/ruby-2.6.*.sh
+RUN /pd_build/nodejs.sh
 # fix to address http://tzinfo.github.io/datasourcenotfound - PET ONLY
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -q && \
@@ -30,8 +32,9 @@ COPY Gemfile.lock /home/app/hwf
 
 
 RUN gem install bundler -v 2.2.8
-RUN bundle install --without test
+RUN bundle install --without test development
 RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
+RUN npm install
 
 # running app as a servive
 ENV PHUSION true

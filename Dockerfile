@@ -17,7 +17,7 @@ RUN /pd_build/nodejs.sh
 # fix to address http://tzinfo.github.io/datasourcenotfound - PET ONLY
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -q && \
-    apt-get install -qy tzdata yarn --no-install-recommends && apt-get clean && \
+    apt-get install -qy tzdata --no-install-recommends && apt-get clean && \
     rm -rf /var/lib/apt/lists/* && rm -fr *Release* *Sources* *Packages* && \
     truncate -s 0 /var/log/*log
 
@@ -33,10 +33,11 @@ COPY Gemfile.lock /home/app/hwf
 
 RUN gem install bundler -v 2.2.8
 RUN bundle install --without test development
-RUN yarn install
-RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
 RUN npm install
+RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
+
 
 # running app as a servive
+ONBUILD COPY . /home/app/hwf
 ENV PHUSION true
 CMD ["./run.sh"]

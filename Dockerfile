@@ -29,11 +29,12 @@ COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
 RUN gem install bundler -v 2.2.8
 RUN bundle install --without test development
-RUN npm install
+
 
 # running app as a service
 ENV PHUSION true
 COPY . /usr/src/app/
+RUN npm install
 RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
 
 COPY run.sh /usr/src/app/run

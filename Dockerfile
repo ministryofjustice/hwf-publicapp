@@ -36,7 +36,7 @@ ONBUILD RUN npm install
 ONBUILD RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
 
 
-# running app as a servive
-ONBUILD COPY . /home/app/hwf
+# running app as a service
 ENV PHUSION true
-CMD ["./run.sh"]
+COPY run.sh /usr/src/app/run
+RUN chmod +x /usr/src/app/run

@@ -24,17 +24,16 @@ RUN apt-get update -q && \
 ENV UNICORN_PORT 3000
 EXPOSE $UNICORN_PORT
 
-COPY . /home/app/hwf
-ENV HOME /home/app/hwf
-WORKDIR /home/app/hwf
-COPY Gemfile /home/app/hwf
-COPY Gemfile.lock /home/app/hwf
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
+ONBUILD COPY Gemfile /usr/src/app/
+ONBUILD COPY Gemfile.lock /usr/src/app/
 
-RUN gem install bundler -v 2.2.8
-RUN bundle install --without test development
-RUN npm install
-RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
+ONBUILD RUN gem install bundler -v 2.2.8
+ONBUILD RUN bundle install --without test development
+ONBUILD RUN npm install
+ONBUILD RUN bash -c "bundle exec rake assets:precompile RAILS_ENV=production SECRET_TOKEN=blah"
 
 
 # running app as a servive

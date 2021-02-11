@@ -30,54 +30,54 @@ variables:
 
 jobs:
 
-  # - job: TestApplication
+  - job: TestApplication
 
-  #   pool:
-  #     vmImage: 'Ubuntu-16.04'
+    pool:
+      vmImage: 'Ubuntu-16.04'
 
-  #   variables:
-  #     rubyVersion: '= 2.6.6'
-  #     bundlerVersion: '2.2.8'
+    variables:
+      rubyVersion: '= 2.6.6'
+      bundlerVersion: '2.2.8'
 
-  #   steps:
-  #   - template: ./pipeline-steps/test-application.yaml
-  #   - template: ./pipeline-steps/publish-tests.yaml
-
-
-  # - job: BuildAndPushImageCI
-
-  #   dependsOn: TestApplication
-  #   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), not(startsWith(variables['Build.SourceBranch'], 'refs/tags/')), ne(variables['Build.Reason'], 'Manual'))
-  #   pool:
-  #     vmImage: 'Ubuntu-16.04'
-
-  #   steps:
-  #   - template: ./pipeline-steps/docker-build.yaml
-  #     parameters:
-  #       azureContainerRegistry: $(azure.container.registry)
-  #       azureSubscriptionEndpoint: $(azure.subscription.endpoint)
-  #       applicationName: $(application.name)
+    steps:
+    - template: ./pipeline-steps/test-application.yaml
+    - template: ./pipeline-steps/publish-tests.yaml
 
 
-  # - job: BuildAndPushImageRelease
+  - job: BuildAndPushImageCI
 
-  #   dependsOn: TestApplication
-  #   condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
-  #   pool:
-  #     vmImage: 'Ubuntu-16.04'
+    dependsOn: TestApplication
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), not(startsWith(variables['Build.SourceBranch'], 'refs/tags/')), ne(variables['Build.Reason'], 'Manual'))
+    pool:
+      vmImage: 'Ubuntu-16.04'
 
-  #   steps:
-  #   - template: ./pipeline-steps/docker-build-release.yaml
-  #     parameters:
-  #       azureContainerRegistry: $(azure.container.registry)
-  #       azureSubscriptionEndpoint: $(azure.subscription.endpoint)
-  #       applicationName: $(application.name)
+    steps:
+    - template: ./pipeline-steps/docker-build.yaml
+      parameters:
+        azureContainerRegistry: $(azure.container.registry)
+        azureSubscriptionEndpoint: $(azure.subscription.endpoint)
+        applicationName: $(application.name)
+
+
+  - job: BuildAndPushImageRelease
+
+    dependsOn: TestApplication
+    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
+    pool:
+      vmImage: 'Ubuntu-16.04'
+
+    steps:
+    - template: ./pipeline-steps/docker-build-release.yaml
+      parameters:
+        azureContainerRegistry: $(azure.container.registry)
+        azureSubscriptionEndpoint: $(azure.subscription.endpoint)
+        applicationName: $(application.name)
 
 
   - job: ManualBuildAndPushImage
 
-    # dependsOn: TestApplication
-    # condition: and(succeeded(), eq(variables['Build.Reason'], 'Manual'))
+    dependsOn: TestApplication
+    condition: and(succeeded(), eq(variables['Build.Reason'], 'Manual'))
     pool:
       vmImage: 'Ubuntu-16.04'
 

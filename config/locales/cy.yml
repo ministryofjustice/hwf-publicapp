@@ -127,6 +127,11 @@ cy:
               blank: Rhowch enw dilys.
             email:
               blank: Rhowch gyfeiriad e-bost dilys.
+        forms/home_office:
+          attributes:
+            ho_number:
+              blank: Nodwch eich cyfeirnod Swyddfa Gartref
+              invalid: Nodwch gyfeirnod Swyddfa Gartref dilys
         forms/income_amount:
           attributes:
             amount:
@@ -153,6 +158,11 @@ cy:
             number:
               blank: Rhowch eich rhif Yswiriant Gwladol
               invalid: Rhowch rif Yswiriant Gwladol dilys
+        forms/national_insurance_presence:
+          attributes:
+            ni_number_present:
+              inclusion: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
+              invalid: Dewiswch Oes, os oes gennych Rif Yswiriant Gwladol
         forms/personal_detail:
           attributes:
             first_name:
@@ -486,6 +496,7 @@ cy:
       text_single: Faint o incwm rydych chi'n ei gael bob mis?
       text_single_refund: Faint o incwm roeddech chi'n ei gael bob mis?
       title: Ystod incwm
+      wages: Cyflog cyn unrhyw ddidyniadau treth ac Yswiriant Gwladol
     marital_status:
       breadcrumb: Cam %{page_number} o 22
       details:
@@ -549,7 +560,6 @@ cy:
       details:
         summary: "Lle y gallaf ddod o hyd i fy nghyfeirnod Swyddfa Gartref?"
         item_1: Gallwch ddod o hyd i’ch cyfeirnod Swyddfa Gartref ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref
-
     personal_detail:
       breadcrumb: Cam %{page_number} o 22
       text: Beth yw eich enw llawn?

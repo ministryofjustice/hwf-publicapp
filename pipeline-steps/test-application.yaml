@@ -25,6 +25,10 @@ steps:
   displayName: 'rubocop'
 
 - script: |
+    bundle exec brakeman
+  displayName: 'brakeman'
+
+- script: |
     bundle exec rspec --fail-fast --format documentation --format RspecJunitFormatter --out test-rspec.xml
   displayName: 'rspec'
 

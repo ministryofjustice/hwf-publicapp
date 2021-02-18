@@ -78,6 +78,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
+    brakeman (5.0.0)
     builder (3.2.4)
     capybara (3.32.1)
       addressable
@@ -421,6 +422,7 @@ DEPENDENCIES
   application_insights (~> 0.5.6)
   azure_env_secrets!
   bootsnap
+  brakeman
   capybara
   capybara-screenshot
   codeclimate-test-reporter

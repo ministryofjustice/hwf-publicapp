@@ -923,6 +923,7 @@ en:
           <a href='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/508760/ex160-eng-20160212.pdf'
           class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
           target='_blank'>use the paper form</a>."
+      accurate_information: The information you provide needs to be accurate as it will act as evidence for your application. We’ll contact you if we need to see proof of this information.
 
   maintenance:
     message: 'Advance notice: This service will be unavailable on Wednesday 4 September 2019 from 6am until 11am while we make essential upgrades.'

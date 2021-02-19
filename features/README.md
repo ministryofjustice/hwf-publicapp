@@ -114,3 +114,7 @@ This will create the .html in the features/cucumber-report directory. Open in br
 going to 'Open in Browser'. 
 
 Note that the .html and screenshot.png files are included in the .gitignore file.
+
+### Brakeman
+
+[Brakeman](https://github.com/presidentbeef/brakeman) is a static analysis tool which checks Ruby on Rails applications for security vulnerabilities.

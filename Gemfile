@@ -39,6 +39,7 @@ end
 
 group :test do
   gem 'apparition'
+  gem 'brakeman'
   gem 'capybara'
   gem 'capybara-screenshot'
   gem 'codeclimate-test-reporter'

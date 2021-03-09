@@ -15,6 +15,7 @@ class ConfirmationDonePage < BasePage
   end
 
   def submit
+    Rails.application.config.finish_page_redirect_url = '/'
     content.finish_application_button.click
   end
 

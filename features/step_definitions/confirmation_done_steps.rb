@@ -25,6 +25,7 @@ Then(/^I should be taken to the confirmation done page$/) do
   expect(confirmation_done_page).to be_displayed
 end
 
-Then(/^I should be taken to the thank you page$/) do
-  expect(current_path).to eq '/'
+Then(/^I should be taken to the survey page$/) do
+  survey_url = Rails.application.config.finish_page_redirect_url
+  expect(current_path).to eq survey_url
 end

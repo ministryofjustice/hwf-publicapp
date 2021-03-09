@@ -18,7 +18,10 @@ end
 
 RSpec.feature 'As a user' do
 
-  before { travel_to a_day_before_disable_probate_fees }
+  before {
+    travel_to a_day_before_disable_probate_fees
+    allow(Rails.application.config).to receive(:finish_page_redirect_url).and_return root_url
+  }
 
   after do
     travel_back

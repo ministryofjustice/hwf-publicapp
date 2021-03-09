@@ -48,7 +48,10 @@ module HwfPublicapp
 
     # The following values are required by the phase banner
     config.phase = 'beta'
-    config.feedback_url = 'https://docs.google.com/a/digital.justice.gov.uk/forms/d/14Y5aWnDO5J71QaStlVh3djwMZ3_sI_c0FQI6qsnj4P4/viewform?c=0&w=1'
+    config.feedback_url = 'https://www.smartsurvey.co.uk/s/HWFFeed20/'
+
+    # When the application is finished
+    config.finish_page_redirect_url = 'https://www.smartsurvey.co.uk/s/HWFExit20/'
 
     # prevent fields being enclosed in field_with_error divs
     config.action_view.field_error_proc = proc { |html_tag, _instance|

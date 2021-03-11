@@ -319,7 +319,7 @@ cy:
     subheading: 'Sylwch: ni allwn gynnig cyngor cyfreithiol.'
     success: Diolch, byddwn ni'n ffonio'n ôl yn ystod y diwrnod gwaith nesaf rhwng 8am a 6pm.
     survey_nudge:
-      link: helpwch ni i wella
+      link: helpwch ni i wella (agor mewn ffenestr newydd)
       text_html: Rhowch eich barn i ni a %{link}.
     title: Gofynnwch am help technegol
   optional: "(Dewisol)"

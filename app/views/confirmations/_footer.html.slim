@@ -1,5 +1,7 @@
 .js-only.no-print
   p.govuk-body =link_to(t('confirmation.print'), '#', class: 'govuk-link js-print')
 
+p.govuk-body =t('confirmation.feedback_text')
+
 = form_tag(finish_session_path, method: :post, class: 'util_mb-medium util_mt-medium') do
   = submit_tag(t('confirmation.finish'), class: 'govuk-button no-print', role: 'button')

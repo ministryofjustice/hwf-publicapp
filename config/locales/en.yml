@@ -284,6 +284,7 @@ en:
       link: Give us your feedback
     finish: Finish application
     print: Save or print this page
+    feedback_text: After you finish your application, you are directed to an optional feedback form.
     refund:
       breadcrumb: Step 22 of 22
       heading: Send your reference number to the court or tribunal dealing with your case

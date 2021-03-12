@@ -11,6 +11,7 @@ class ConfirmationDonePage < BasePage
       element :two, 'li', text: 'You\'ll hear from the court or tribunal if your application is unsuccessful or if they need more information from you.'
       element :three, 'li', text: 'If your application is successful you\'ll hear directly from the court or tribunal dealing with your case.'
     end
+    element :feedback_text, 'p', text: 'After you finish your application, you are directed to an optional feedback form.'
     element :finish_application_button, 'input[value="Finish application"]'
   end
 

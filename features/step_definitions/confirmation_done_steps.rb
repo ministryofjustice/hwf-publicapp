@@ -23,6 +23,7 @@ end
 
 Then(/^I should be taken to the confirmation done page$/) do
   expect(confirmation_done_page).to be_displayed
+  expect(confirmation_done_page.content).to have_feedback_text
 end
 
 Then(/^I should be taken to the survey page$/) do

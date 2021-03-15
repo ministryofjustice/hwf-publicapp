@@ -283,7 +283,7 @@ cy:
       link: Rhowch eich adborth i ni
     finish: Gorffen y cais
     print: Cadw neu argraffu'r dudalen hon
-    feedback_text: After you finish your application, you are directed to an optional feedback form.
+    feedback_text: Ar ôl llenwi eich cais, fe gewch eich cyfeirio i ffurflen adborth; mae llenwi’r ffurflen hon yn ddewisol.
     refund:
       breadcrumb: Cam 22 o 22
       heading: Anfonwch eich cyfeirnod i'r llys neu dribiwnlys sy'n delio â'ch achos

@@ -17,4 +17,4 @@ Feature: Confirmation done page
   @smoke
   Scenario: Finish application
     When I click the finish application button
-    Then I should be taken to the thank you page
+    Then I should be taken to the survey page

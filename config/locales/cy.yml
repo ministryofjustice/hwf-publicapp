@@ -283,6 +283,7 @@ cy:
       link: Rhowch eich adborth i ni
     finish: Gorffen y cais
     print: Cadw neu argraffu'r dudalen hon
+    feedback_text: Ar ôl llenwi eich cais, fe gewch eich cyfeirio i ffurflen adborth; mae llenwi’r ffurflen hon yn ddewisol.
     refund:
       breadcrumb: Cam 22 o 22
       heading: Anfonwch eich cyfeirnod i'r llys neu dribiwnlys sy'n delio â'ch achos
@@ -319,7 +320,7 @@ cy:
     subheading: 'Sylwch: ni allwn gynnig cyngor cyfreithiol.'
     success: Diolch, byddwn ni'n ffonio'n ôl yn ystod y diwrnod gwaith nesaf rhwng 8am a 6pm.
     survey_nudge:
-      link: helpwch ni i wella
+      link: helpwch ni i wella (agor mewn ffenestr newydd)
       text_html: Rhowch eich barn i ni a %{link}.
     title: Gofynnwch am help technegol
   optional: "(Dewisol)"

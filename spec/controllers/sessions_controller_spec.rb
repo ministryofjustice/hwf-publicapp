@@ -28,7 +28,7 @@ RSpec.describe SessionsController, type: :controller do
     let(:external_url) { nil }
 
     before do
-      allow(Settings.done_page).to receive(:external_url).and_return(external_url)
+      allow(Rails.application.config).to receive(:finish_page_redirect_url).and_return(external_url)
       allow(Storage).to receive(:new).with(session).and_return(storage)
 
       post :finish

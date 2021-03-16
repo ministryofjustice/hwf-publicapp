@@ -391,7 +391,7 @@ cy:
       title: Rhif hawliad
     contact:
       breadcrumb: Cam %{page_number} o 22
-      details: Byddwn ni'n anfon e-bost i gadarnhau ein bod wedi cael eich cais.
+      details: Byddwn yn anfon neges e-bost atoch yn cadarnhau eich cyfeirnod Help i Dalu Ffioedd.
       email_label: Cyfeiriad e-bost
       feedback_opt_in: Ticiwch y blwch hwn os ydych chi'n barod i rannu'ch profiad o'r gwasanaeth hwn. Efallai y bydd aelod o'r tîm yn cysylltu â chi. Ni fyddwn yn defnyddio'ch cyfeiriad e-bost at unrhyw bwrpas arall.
       text: Beth yw eich cyfeiriad e-bost?

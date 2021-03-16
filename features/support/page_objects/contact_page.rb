@@ -7,7 +7,7 @@ class ContactPage < BasePage
     element :email_label, '.govuk-label', text: 'Email address'
     element :optional_hint, '.optional', text: '(Optional)'
     element :contact_email, '#contact_email'
-    element :confirmation_email, 'p', text: 'We will email you to confirm your application has been received.'
+    element :confirmation_email, 'p', text: 'We will email you confirmation of your Help with Fees reference number.'
     element :share_experience, '.govuk-checkboxes', text: 'Check this box if you\'re willing to share your experience of this service.'
   end
 

@@ -229,6 +229,7 @@ en:
       breadcrumb: Step 22 of 22
       heading: Send your %{form_name} form with your %{reference} reference on it to complete the process
       instructions: Deliver your paperwork to the court or tribunal dealing with your case. You can do this by post or in person.
+      courtfinder_html: 'Find the court or tribunal information here: <a href="https://www.gov.uk/find-court-tribunal" target="_blank" title="Find a court or tribunal">https://www.gov.uk/find-court-tribunal</a> (opens in new tab).'
       next:
         heading: What happens next?
         steps:

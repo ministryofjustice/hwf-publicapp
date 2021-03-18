@@ -15,6 +15,10 @@ Then(/^I should see deliver your paperwork instructions$/) do
   expect(confirmation_done_page.content).to have_post
 end
 
+And(/^I should see courtfinder link with text$/) do
+  expect(confirmation_done_page.content).to have_courtfinder
+end
+
 Then(/^I should see what happens next$/) do
   expect(confirmation_done_page.content.what_happens_next).to have_one
   expect(confirmation_done_page.content.what_happens_next).to have_two

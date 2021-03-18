@@ -229,6 +229,7 @@ cy:
       breadcrumb: Cam 22 o 22
       heading: Anfonwch eich ffurflen %{form_name} gyda'ch cyfeirnod %{reference} arni i gwblhau'r broses
       instructions: Anfonwch eich gwaith papur i'r llys neu dribiwnlys sy'n delio â'ch achos. Gallwch chi wneud hyn drwy'r post neu ei ddanfon eich hun.
+      courtfinder_html: 'Gallwch ddod o hyd i wybodaeth am lys neu dribiwnlys yma: <a href="https://www.gov.uk/chwilio-am-lys-neu-dribiwnlys" target="_blank" title="Chwilio am lys neu dribiwnlys">https://www.gov.uk/chwilio-am-lys-neu-dribiwnlys</a> (agor mewn tab newydd).'
       next:
         heading: Beth fydd yn digwydd nesaf?
         steps:

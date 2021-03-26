@@ -5,6 +5,10 @@
 
 Help with fees app for public
 
+## Dependency
+Mimemagic gem has a dependency so you need to install this on your machine first
+```brew install shared-mime-info.```
+
 ## Docker
 
 Using this command `docker build hmcts/hwf-publicapp:vX.Y`

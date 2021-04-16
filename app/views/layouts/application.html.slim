@@ -43,7 +43,7 @@
 - content_for :footer_support_links
   ul.govuk-footer__inline-list
     li.govuk-footer__inline-list-item =link_to t('application.footer.help'), 'http://www.gov.uk/help', class: 'govuk-footer__link'
-    li.govuk-footer__inline-list-item =link_to t('application.footer.cookies'), 'http://www.gov.uk/help/cookies', class: 'govuk-footer__link'
+    li.govuk-footer__inline-list-item =link_to t('application.footer.cookies'), cookies_path, class: 'govuk-footer__link'
     li.govuk-footer__inline-list-item =link_to t('application.footer.contact'), 'http://www.gov.uk/contact', class: 'govuk-footer__link'
     li.govuk-footer__inline-list-item =link_to t('application.footer.privacy'), privacy_policy_path, class: 'govuk-footer__link'
     li.govuk-footer__inline-list-item =link_to t('application.footer.terms_and_conditions'), terms_and_conditions_path, class: 'govuk-footer__link'

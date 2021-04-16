@@ -941,7 +941,7 @@ en:
             - li: measure how you use the service so it can be improved
             - li: remember the notifications you’ve seen so that you’re not shown them again
             - li: temporarily store the answers you give
-          - p: Find out more about <a href="https://www.aboutcookies.org/" class="govuk-link" target="_blank">how to manage cookies (opens in a new window)</a>
+          - p: Find out more about <a href="https://www.aboutcookies.org/" class="govuk-link" target="_blank">how to manage cookies (opens in a new window)</a>.
       - title: Essential cookies
         parts:
           - p: "Essential cookies are needed for the service to work. We do not need to ask for permission to use them."
@@ -986,7 +986,7 @@ en:
               - li: how long you spend on each page
               - li: how you got to the service
               - li: what you click on while you’re visiting the service
-            - p: We allow Google to use or share our analytics data. You can find out more about how Google use this information in their <a href="privacy-policy?locale=en" class="govuk-link" target="_blank">privacy policy (opens in a new window)</a>.
+            - p: We allow Google to use or share our analytics data. You can find out more about how Google use this information in their <a href="https://policies.google.com/technologies/partner-sites" class="govuk-link" target="_blank">privacy policy (opens in a new window)</a>.
             - table:
               - caption: "Google Analytics sets the following cookies:"
               - thead:

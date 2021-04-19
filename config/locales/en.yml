@@ -1007,6 +1007,27 @@ en:
                   - td: _gat
                   - td: Used to manage the rate at which page view requests are made
                   - td: 10 minutes
+      accept_cookies: Do you want to accept analytics cookies?
+      accept_cookies_true: 'Yes'
+      accept_cookies_false: 'No'
+      accept_cookies_button: 'Save cookie settings'
+  success:
+    heading: Success
+  cookie_banner:
+    heading: Cookies
+    success: "You've set your cookie preferences"
+    banner:
+      heading: Cookies on help with fees
+      content:
+        line_1: We use some essential cookies to make this service work.
+        line_2: "We'd also like to use analytics cookies so we can understand how you use the service and make improvements."
+        accepted_html: You've accepted analytics cookies. You can <a class="govuk-link" href="/cookies#cookie-settings"> change your cookie settings</a> at any time.
+        rejected_html: You've rejected analytics cookies. You can <a class="govuk-link" href="/cookies#cookie-settings"> change your cookie settings</a> at any time.
+      button:
+        accept: Accept analytics cookies
+        reject: Reject analytics cookies
+        hide: Hide this message
+      link: View cookies
 
 
   maintenance:

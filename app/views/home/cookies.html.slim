@@ -7,3 +7,28 @@ h1.govuk-heading-l =t('.heading')
 - t('.sections').each do |section|
   =display_section(section)
 
+
+
+.govuk-form-group
+  fieldset.govuk-fieldset
+    legend.govuk-fieldset__legend.govuk-fieldset__legend--m
+      = t('accept_cookies', scope: "#{@form.i18n_scope}")
+
+    = render('shared/error_block', form: @form) if @form.errors.any?
+
+    = form_for @form, as: 'cookie_setting', url: set_cookie_preference_path, html: { autocomplete: @form.autocomplete, method: :put } do |f|
+      .govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
+        - if @form.errors.any?
+          span.govuk-error-message#on_benefits = @form.errors[:cookie_setting].join(' ')
+
+      .govuk-form-group.govuk-radios
+        .govuk-radios__item
+          = f.radio_button :cookie_setting, Forms::Cookie::SettingForm::COOKIES_VALUES[:no], class: 'govuk-radios__input'
+          = f.label :cookie_setting, t('accept_cookies_false', scope: @form.i18n_scope), for: 'cookie_setting_cookie_setting_false', class: 'govuk-label govuk-radios__label'
+        .govuk-radios__item
+          = f.radio_button :cookie_setting, Forms::Cookie::SettingForm::COOKIES_VALUES[:yes], class: 'govuk-radios__input'
+          = f.label :cookie_setting, t('accept_cookies_true', scope: @form.i18n_scope), for: 'cookie_setting_cookie_setting_true', class: 'govuk-label govuk-radios__label'
+
+
+      .govuk-form-group
+        = f.submit t('accept_cookies_button', scope: "#{@form.i18n_scope}"), class: 'govuk-button', id: 'continue-button'

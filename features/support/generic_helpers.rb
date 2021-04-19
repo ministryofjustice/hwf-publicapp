@@ -114,6 +114,10 @@ def footer_page
   @footer_page ||= FooterPage.new
 end
 
+def cookie_page
+  @cookie_page ||= CookiePage.new
+end
+
 def checklist_continue
   base_page.content.checklist_continue_button.click
 end

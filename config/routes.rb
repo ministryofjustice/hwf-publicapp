@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'accessibility-statement' => 'home#accessibility_statement'
   get 'privacy-policy' => 'home#privacy_policy'
   get 'cookies' => 'home#cookies'
+  put :cookies, to: 'home#update', as: :set_cookie_preference
 
   resources :questions, only: [:edit, :update], path_names: { edit: '' }
 

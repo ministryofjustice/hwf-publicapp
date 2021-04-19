@@ -5,7 +5,8 @@
   = t('application.title')
 
 - content_for :head
-  = render 'shared/analytics'
+  - if cookies_accepted?
+    = render 'shared/analytics'
 
 - content_for :proposition_header
   .header-proposition
@@ -32,9 +33,15 @@
               - flash.each do |field, message|
                 li
                   span.govuk-error-message = message
+      - if flash.key?("cookie_notification")
+        .govuk-notification-banner.govuk-notification-banner--success role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner"
+          .govuk-notification-banner__header
+            h2.govuk-notification-banner__title id="govuk-notification-banner-title" =t('success.heading')
 
+          .govuk-notification-banner__content
+            h3.govuk-notification-banner__heading =t('cookie_banner.success')
 
-
+      = render partial: 'layouts/cookie_banner'
       = yield
 
 - content_for :javascripts

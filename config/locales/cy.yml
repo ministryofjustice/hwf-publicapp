@@ -1006,27 +1006,27 @@ cy:
                   - td: 10 munud
               - p: Gweler [cookies] am ragor o wybodaeth am sut rydym yn casglu data defnydd ar gyfer safleoedd penodol.
               - p: Byddwn yn gofyn am eich caniatâd i ddefnyddio eich cyfeiriad e-bost i anfon negeseuon e-bost atoch gan <a href="https://ssl.microsofttranslator.com/bv.aspx?ref=TVert&from=&to=cy&a=GOV.UK" class="govuk-link" target="_blank">GOV.UK</a> Notify. Mae'r system hon yn prosesu negeseuon e-bost o fewn yr Ardal Economaidd Ewropeaidd yn unig hyd nes y caiff negeseuon e-bost eu trosglwyddo i'r darparwr e-bost a ddefnyddiwch.
-      accept_cookies: Do you want to accept analytics cookies?
-      accept_cookies_true: 'Yes'
-      accept_cookies_false: 'No'
-      accept_cookies_button: 'Save cookie settings'
+      accept_cookies: A ydych eisiau derbyn cwcis dadansoddol?
+      accept_cookies_true: 'Ydw'
+      accept_cookies_false: 'Nac ydw'
+      accept_cookies_button: 'Cadw gosodiadau cwcis'
   success:
-    heading: Success
+    heading: Llwydd
   cookie_banner:
-    heading: Cookies
-    success: "You've set your cookie preferences"
+    heading: Cwcis
+    success: "Rydych wedi cadw eich dewisiadau cwcis"
     banner:
-      heading: Cookies on help with fees
+      heading: Cwcis f yn helpu gyda ffioedd
       content:
-        line_1: We use some essential cookies to make this service work.
-        line_2: "We'd also like to use analytics cookies so we can understand how you use the service and make improvements."
-        accepted_html: You've accepted analytics cookies. You can <a class="govuk-link" href="/cookies#cookie-settings"> change your cookie settings</a> at any time.
-        rejected_html: You've rejected analytics cookies. You can <a class="govuk-link" href="/cookies#cookie-settings"> change your cookie settings</a> at any time.
+        line_1: Rydym yn defnyddio rhai cwcis hanfodol i wneud i’r gwasanaeth hwn weithio.
+        line_2: "Hoffem hefyd ddefnyddio cwcis dadansoddol fel y gallwn ddeall sut mae pobl yn defnyddio’r gwasanaeth hwn a gwneud gwelliannau."
+        accepted_html: Rydych wedi derbyn cwcis dadansoddol. Gallwch newid <a class="govuk-link" href="/cookies?locale=cy#cwcis_dadansoddol_dewisol">eich dewisiadau cwcis</a> ar unrhyw adeg.
+        rejected_html: Rydych chi wedi gwrthod cwcis dadansoddeg. Gallwch newid <a class="govuk-link" href="/cookies?locale=cy#cwcis_dadansoddol_dewisol">eich dewisiadau cwcis</a> ar unrhyw adeg.
       button:
-        accept: Accept analytics cookies
-        reject: Reject analytics cookies
-        hide: Hide this message
-      link: View cookies
+        accept: Derbyn cwcis dadansoddol
+        reject: Gwrthod cwcis dadansoddol
+        hide: Cuddiwch y neges hon
+      link: Bwrw golwg dros y cwcis
 
   maintenance:
     message: 'Hysbysiad ymlaen llaw: Ni fydd y gwasanaeth hwn ar gael ddydd Mercher y 4ydd o Fedi 2019 o 6am tan 11am gan y byddwn yn gwneud newidiadau hanfodol iddo.'

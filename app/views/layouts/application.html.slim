@@ -22,6 +22,9 @@
   noscript
     iframe src="https://www.googletagmanager.com/ns.html?id=#{Settings.analytics.id}" height="0" width="0" style="display:none;visibility:hidden"
 
+- content_for :cookie_banner
+  = render partial: 'layouts/cookie_banner'
+
 - content_for :content_override
   .container
     main#content.cf
@@ -41,7 +44,6 @@
           .govuk-notification-banner__content
             h3.govuk-notification-banner__heading =t('cookie_banner.success')
 
-      = render partial: 'layouts/cookie_banner'
       = yield
 
 - content_for :javascripts

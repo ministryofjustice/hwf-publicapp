@@ -36,4 +36,44 @@ RSpec.describe HomeController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe '#cookies' do
+    it 'renders the expected page' do
+      get :cookies
+      expect(response).to render_template(:cookies)
+    end
+
+    it 'sets for cookie_setting form object' do
+      get :cookies
+      expect(assigns(:form)).to be_a(Forms::Cookie::SettingForm)
+    end
+  end
+
+  describe '#update' do
+    let(:referer) { 'http://local.net/page' }
+
+    before do
+      request.env['HTTP_REFERER'] = referer
+    end
+
+    Forms::Cookie::SettingForm.choices.each do |selection|
+      it "saves cookie preferences #{selection}" do
+        allow(Forms::Cookie::SettingForm).to receive(:new).
+          and_return(Forms::Cookie::SettingForm.new)
+        put :update, params: { cookie_setting: { cookie_setting: selection } }
+        expect(Forms::Cookie::SettingForm).to have_received(:new).with(hash_including(cookie_setting: selection))
+      end
+    end
+
+    it 'sets notification flag' do
+      put :update, params: { cookie_setting: { cookie_setting: 'yes' } }
+      expect(flash[:cookie_notification]).to be_present
+    end
+
+    it 'redirects to cookies page' do
+      put :update, params: { cookie_setting: { cookie_setting: 'yes' } }
+      expect(response).to redirect_to(referer)
+    end
+  end
+
 end

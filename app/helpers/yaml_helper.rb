@@ -1,5 +1,6 @@
 module YamlHelper
   include ActionView::Helpers::TagHelper
+  include YamlTableHelper
 
   def display_section(yaml_hash, from = 2, add_to = nil)
     @recursion_level = from
@@ -62,15 +63,15 @@ module YamlHelper
     end
   end
 
+  # rubocop:disable Metrics/AbcSize
   def tag_based_list(part)
-    if part.keys.first == :ul
-      bullet_list_block(part)
-    elsif part.keys.first == :list
-      clear_list_block(part)
-    else
-      content_tag(part.keys.first, part.values.first.html_safe, class: 'govuk-body')
-    end
+    return bullet_list_block(part) if part.keys.first == :ul
+    return clear_list_block(part) if part.keys.first == :list
+    return table_block(part) if part.keys.first == :table
+
+    content_tag(part.keys.first, part.values.first.html_safe, class: 'govuk-body')
   end
+  # rubocop:enable Metrics/AbcSize
 
   def bullet_list_block(part)
     ul_tag_bullet do
@@ -102,4 +103,5 @@ module YamlHelper
       4 => 'govuk-heading-s'
     }[@recursion_level]
   end
+
 end

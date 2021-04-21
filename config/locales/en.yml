@@ -773,10 +773,10 @@ en:
       - title: How we use your personal data
         parts:
         - p: The legal basis on which we collect the data is for the administration of justice and, anonymously, for research and statistical purposes. We use your personal data to complete a claim for Help with Fees. Any email address you supply to us will be used by HMCTS to contact you with regards to your application. We may also use your details to contact you for research purposes or to prevent or detect fraud. Your personal data may be shared with Other Government Departments for the purpose of validating or assisting you in progressing your application.
-        - p: This online service contains free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive data into these free-text fields or upload documents containing sensitive data unless necessary to your application or specifically requested. Sensitive data may include, but is not limited to, details of religious beliefs and financial data. Entering or uploading sensitive data is done so at your own risk.
+        - p: This online service contains free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive data into these free-text fields or upload documents containing sensitive data unless necessary to your application or specifically requested. Sensitive data may include, but is not limited to, details of religious beliefs and financial data.
       - title: How we use non-personal data
         parts:
-        - p: Separately from the data entered by those using this service, we also collect site-usage data, which allows us to see how the service is being used in order to allow us to improve it. This data does not contain any personal data.
+        - p: Separately from the data entered by those using this service, we also collect site-usage data, which allows us to see how the service is being used in order to allow us to improve it. This data does not contain any personal data. See <a href="/cookies" class="govuk-link">cookies</a> for more information on how we collect of site usage data.
         - p: The service also offers the opportunity to provide feedback that helps us make targeted improvements. The feedback is anonymous and does not collect personally identifiable information (PII). The surveys contain free-text fields in which you’re invited to enter feedback. You should not enter sensitive data into these free-text fields, for example, financial data. There are also some questions such as age range and ethnic group. These questions are optional and are only used to better understand the feedback that we receive.
         - p: We’ll only ever collect data that will help us make the site work better for you; data that will let us contact you if you’ve asked us to, let us give you accurate data if you need it, and give us a sense of how people are using this service, so we can keep improving it.
         - p: 'It includes:'
@@ -796,9 +796,6 @@ en:
         - p: MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the United Kingdom. MOJ use the Microsoft Azure cloud platform to store your data. By submitting your data, you consent to the <a href="https://azure.microsoft.com/en-gb/support/legal/" class="govuk-link">Microsoft Azure Terms and Conditions</a>.
         - p: The service invites you to provide your email address, but this is not compulsory. It uses SendGrid to route its emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be solely routed within the UK. By submitting your information, you consent to the <a href="https://sendgrid.com/tos" class="govuk-link">SendGrid terms and conditions</a>.
         - p: We’ll never share your data with other organisations for their marketing, market research or commercial purposes, and we don’t pass on your personal data to any other websites.
-      - title: How non-personal data is stored
-        parts:
-        - p: Non-personal session information as described in the above section is stored on our secure servers within the UK or the EEA. It is also stored outside of Europe in the USA. By using this service, you consent to the <a href="https://www.google.co.uk/analytics/terms/us.html" class="govuk-link">Google Analytics terms and conditions</a>.
       - title: Keeping your data secure
         parts:
         - p: Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use Secure Socket Layer (SSL) encryption to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it.
@@ -926,6 +923,109 @@ en:
           class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
           target='_blank'>use the paper form</a>."
       accurate_information: The information you provide needs to be accurate as it will act as evidence for your application. We’ll contact you if we need to see proof of this information.
+
+    cookies:
+      title: Cookies
+      heading: Cookies
+      sections:
+      - title:
+        parts:
+          - p: "A cookie is a small piece of data that’s stored on your computer, tablet, or phone when you visit a website. Most websites need cookies to work properly."
+      - title: How cookies are used in this service
+        parts:
+          - p: "This service uses them to:"
+          - ul:
+            - li: measure how you use the service so it can be improved
+            - li: remember the notifications you’ve seen so that you’re not shown them again
+            - li: temporarily store the answers you give
+          - p: Find out more about <a href="https://www.aboutcookies.org/" class="govuk-link" target="_blank">how to manage cookies (opens in a new window)</a>.
+      - title: Essential cookies
+        parts:
+          - p: "Essential cookies are needed for the service to work. We do not need to ask for permission to use them."
+        sections:
+          - title: Session cookies
+            parts:
+            - p: Session cookies are stored on your computer as you travel through a website, and let the website know what you’ve seen and done so far. These are temporary cookies and are automatically deleted a short while after you leave the website.
+            - p: Cookies used to store the answers you’ve given during your visit (known as a ‘session’)
+            - table:
+              - thead:
+                - tr:
+                  - th: Cookie name
+                  - th: What this cookie is for
+                  - th: Expires after
+              - tbody:
+                - tr:
+                  - td: _hwf-publicapp_session
+                  - td: Stores form responses while the form is being completed.
+                  - td: 60 minutes or when you reach the end of the form.
+          - title: Cookies message
+            parts:
+            - p: You may see a banner when you visit help with fees inviting you to accept or reject optional cookies. We’ll set cookies so that your computer knows you’ve seen it and not to show it again, and also to store your settings.
+            - table:
+              - thead:
+                - tr:
+                  - th: Cookie name
+                  - th: What this cookie is for
+                  - th: Expires after
+              - tbody:
+                - tr:
+                  - td: cookie_setting
+                  - td: Saves your cookie consent settings.
+                  - td: 1 year.
+      - title: Analytics cookies (optional)
+        sections:
+          - title: Measuring website usage (Google analytics)
+            parts:
+            - p: We use Google Analytics software to collect information about how you use this service. We do this to help make sure the service is meeting the needs of its users and to help us make improvements, for example improving site search.
+            - p: "Google Analytics stores information about:"
+            - ul:
+              - li: the pages you visit
+              - li: how long you spend on each page
+              - li: how you got to the service
+              - li: what you click on while you’re visiting the service
+            - p: We allow Google to use or share our analytics data. You can find out more about how Google use this information in their <a href="https://policies.google.com/technologies/partner-sites" class="govuk-link" target="_blank">privacy policy (opens in a new window)</a>.
+            - table:
+              - caption: "Google Analytics sets the following cookies:"
+              - thead:
+                - tr:
+                  - th: Cookie name
+                  - th: What this cookie is for
+                  - th: Expires after
+              - tbody:
+                - tr:
+                  - td: _ga
+                  - td: This helps us count how many people visit the service by tracking if you’ve visited before
+                  - td: 2 years
+                - tr:
+                  - td: _gid
+                  - td: This helps us count how many people visit Appeal to the tax tribunal by tracking if you've visited before
+                  - td: 24 hours
+                - tr:
+                  - td: _gat
+                  - td: Used to manage the rate at which page view requests are made
+                  - td: 10 minutes
+      accept_cookies: Do you want to accept analytics cookies?
+      accept_cookies_true: 'Yes'
+      accept_cookies_false: 'No'
+      accept_cookies_button: 'Save cookie settings'
+  success:
+    heading: Success
+  cookie_banner:
+    heading: Cookies
+    success: "You've set your cookie preferences"
+    banner:
+      heading: Cookies on help with fees
+      content:
+        line_1: We use some essential cookies to make this service work.
+        line_2: "We'd also like to use analytics cookies so we can understand how you use the service and make improvements."
+        accepted_html: You've accepted analytics cookies. You can <a class="govuk-link" href="/cookies#analytics_cookies_optional"> change your cookie settings</a> at any time.
+        rejected_html: You've rejected analytics cookies. You can <a class="govuk-link" href="/cookies#analytics_cookies_optional"> change your cookie settings</a> at any time.
+      button:
+        accept: Accept analytics cookies
+        reject: Reject analytics cookies
+        hide: Hide this message
+      link: View cookies
+
 
   maintenance:
     message: 'Advance notice: This service will be unavailable on Wednesday 4 September 2019 from 6am until 11am while we make essential upgrades.'

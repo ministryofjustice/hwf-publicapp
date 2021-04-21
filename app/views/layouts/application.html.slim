@@ -5,7 +5,8 @@
   = t('application.title')
 
 - content_for :head
-  = render 'shared/analytics'
+  - if cookies_accepted?
+    = render 'shared/analytics'
 
 - content_for :proposition_header
   .header-proposition
@@ -21,6 +22,9 @@
   noscript
     iframe src="https://www.googletagmanager.com/ns.html?id=#{Settings.analytics.id}" height="0" width="0" style="display:none;visibility:hidden"
 
+- content_for :cookie_banner
+  = render partial: 'layouts/cookie_banner'
+
 - content_for :content_override
   .container
     main#content.cf
@@ -32,8 +36,13 @@
               - flash.each do |field, message|
                 li
                   span.govuk-error-message = message
+      - if flash.key?("cookie_notification")
+        .govuk-notification-banner.govuk-notification-banner--success role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner"
+          .govuk-notification-banner__header
+            h2.govuk-notification-banner__title id="govuk-notification-banner-title" =t('success.heading')
 
-
+          .govuk-notification-banner__content
+            h3.govuk-notification-banner__heading =t('cookie_banner.success')
 
       = yield
 
@@ -43,7 +52,7 @@
 - content_for :footer_support_links
   ul.govuk-footer__inline-list
     li.govuk-footer__inline-list-item =link_to t('application.footer.help'), 'http://www.gov.uk/help', class: 'govuk-footer__link'
-    li.govuk-footer__inline-list-item =link_to t('application.footer.cookies'), 'http://www.gov.uk/help/cookies', class: 'govuk-footer__link'
+    li.govuk-footer__inline-list-item =link_to t('application.footer.cookies'), cookies_path, class: 'govuk-footer__link'
     li.govuk-footer__inline-list-item =link_to t('application.footer.contact'), 'http://www.gov.uk/contact', class: 'govuk-footer__link'
     li.govuk-footer__inline-list-item =link_to t('application.footer.privacy'), privacy_policy_path, class: 'govuk-footer__link'
     li.govuk-footer__inline-list-item =link_to t('application.footer.terms_and_conditions'), terms_and_conditions_path, class: 'govuk-footer__link'

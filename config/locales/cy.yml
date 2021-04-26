@@ -1015,13 +1015,13 @@ cy:
     banner:
       heading: Cwcis f yn helpu gyda ffioedd
       content:
-        line_1: Rydym yn defnyddio rhai cwcis hanfodol i wneud i’r gwasanaeth hwn weithio.
-        line_2: "Hoffem hefyd ddefnyddio cwcis dadansoddol fel y gallwn ddeall sut mae pobl yn defnyddio’r gwasanaeth hwn a gwneud gwelliannau."
+        line_1: Rydym yn defnyddio cwcis hanfodol i wneud i'r wefan hon weithio.
+        line_2: "Hoffem osod cwcis ychwanegol i ddeall sut rydych yn defnyddio'r wefan a gwella gwasanaethau'r llywodraeth."
         accepted_html: Rydych wedi derbyn cwcis dadansoddol. Gallwch newid <a class="govuk-link" href="/cookies?locale=cy#cwcis_dadansoddol_dewisol">eich dewisiadau cwcis</a> ar unrhyw adeg.
         rejected_html: Rydych chi wedi gwrthod cwcis dadansoddeg. Gallwch newid <a class="govuk-link" href="/cookies?locale=cy#cwcis_dadansoddol_dewisol">eich dewisiadau cwcis</a> ar unrhyw adeg.
       button:
-        accept: Derbyn cwcis dadansoddol
-        reject: Gwrthod cwcis dadansoddol
+        accept: Derbyn cwcis ychwanegol
+        reject: Gwrthod cwcis ychwanegol
         hide: Cuddiwch y neges hon
       link: Bwrw golwg dros y cwcis
 

@@ -27,6 +27,7 @@ gem 'zendesk_api', '~> 1.24'
 group :development, :test do
   gem 'pry-rails'
   gem 'rubocop', '~> 1.15', require: false
+  gem 'rubocop-rails'
 end
 
 group :development do

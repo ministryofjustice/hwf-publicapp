@@ -224,4 +224,7 @@ Capybara/CurrentPathExpectation:
 RSpec/ContextWording:
   Enabled: false
 
-require: rubocop-rspec
+require:
+  - rubocop-rspec
+  - rubocop-rails
+

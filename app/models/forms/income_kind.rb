@@ -6,13 +6,13 @@ module Forms
     validates_each :applicant do |record, attr, value|
       if value.blank?
         record.errors.add(attr, :blank)
-      elsif value.any? { |v| !allowed_kinds.include?(v) }
+      elsif value.any? { |v| allowed_kinds.exclude?(v) }
         record.errors.add(attr, :invalid)
       end
     end
 
     validates_each :partner do |record, attr, value|
-      if value.any? { |v| !allowed_kinds.include?(v) }
+      if value.any? { |v| allowed_kinds.exclude?(v) }
         record.errors.add(attr, :invalid)
       end
     end

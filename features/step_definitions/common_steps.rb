@@ -12,12 +12,12 @@ When(/^I click continue$/) do
   continue
 end
 
-When(/^I click on '([^\"]*)'$/) do |help|
+When(/^I click on '([^"]*)'$/) do |help|
   expect(base_page.help_with.text).to have_content help
   base_page.click_help_with
 end
 
-Then(/^I should see '([^\"]*)' header$/) do |header|
+Then(/^I should see '([^"]*)' header$/) do |header|
   expect(base_page.content.h1.text).to have_content header
 end
 
@@ -37,17 +37,17 @@ Then(/^I should remain on the page$/) do
   expect(current_path).to eq '/questions/form_name'
 end
 
-Then(/^I should see hint '([^\"]*)'$/) do |hint|
+Then(/^I should see hint '([^"]*)'$/) do |hint|
   hint_group = base_page.content.text.p[0]
   expect(hint_group.text).to have_content hint
 end
 
-Then(/^I should see single person hint '([^\"]*)'$/) do |hint|
+Then(/^I should see single person hint '([^"]*)'$/) do |hint|
   hint_group = base_page.content.text.p[0]
   expect(hint_group.text).to have_content hint
 end
 
-Then(/^I should see married person hint '([^\"]*)'$/) do |hint|
+Then(/^I should see married person hint '([^"]*)'$/) do |hint|
   hint_group = base_page.content.text.p[0]
   expect(hint_group.text).to have_content hint
 end
@@ -57,7 +57,7 @@ Then(/^I should see save or print this page$/) do
   expect(base_page.js_print.text).to eq 'Save or print this page'
 end
 
-Then(/^I should see '([^\"]*)' error message$/) do |error_message|
+Then(/^I should see '([^"]*)' error message$/) do |error_message|
   expect(base_page.content).to have_there_is_a_problem
   error_summary_group = base_page.error_summary
   expect(error_summary_group).to have_error_summary_heading

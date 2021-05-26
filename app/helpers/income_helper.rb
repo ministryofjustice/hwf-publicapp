@@ -1,8 +1,8 @@
 module IncomeHelper
-  def i18n_status_refund_suffix
+  def i18n_status_refund_suffix(online_application)
     ''.tap do |suffix|
-      suffix << (@online_application.married? ? '_married' : '_single')
-      suffix << '_refund' if @online_application.refund?
+      suffix << (online_application.married? ? '_married' : '_single')
+      suffix << '_refund' if online_application.refund?
     end
   end
 

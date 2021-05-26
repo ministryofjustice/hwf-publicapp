@@ -1,6 +1,6 @@
 module ApplicationHelper
   def ni_number_value(summary)
-    summary.ni_number.blank? ? t('ni_number_no', scope: 'summary.labels') : summary.ni_number
+    summary.ni_number.presence || t('ni_number_no', scope: 'summary.labels')
   end
 
   def cookies_accepted?

@@ -3,6 +3,7 @@ module Forms
     include ActiveModel::Validations::Callbacks
 
     attr_reader :date_of_birth
+
     attribute :day, Integer
     attribute :month, Integer
     attribute :year, Integer

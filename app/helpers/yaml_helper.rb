@@ -1,3 +1,4 @@
+# rubocop:disable Rails/HelperInstanceVariable
 module YamlHelper
   include ActionView::Helpers::TagHelper
   include YamlTableHelper
@@ -24,33 +25,33 @@ module YamlHelper
   end
 
   def header_block(&block)
-    content_tag("h#{@recursion_level}", class: header_class) do
+    tag.send("h#{@recursion_level}", class: header_class) do
       yield block
     end
   end
 
   def header_text
-    content_tag(:span, @this_section[:title])
+    tag.span(@this_section[:title])
   end
 
   def anchor_tag
-    content_tag(:a, '', name: @this_section[:title].parameterize.underscore)
+    tag.a('', name: @this_section[:title].parameterize.underscore)
   end
 
   def ul_tag_bullet(&block)
-    content_tag(:ul, class: 'govuk-list govuk-list--bullet') do
+    tag.ul(class: 'govuk-list govuk-list--bullet') do
       yield block
     end
   end
 
   def ul_tag(&block)
-    content_tag(:ul, class: 'govuk-list') do
+    tag.ul(class: 'govuk-list') do
       yield block
     end
   end
 
   def li_tag(item)
-    content_tag('li', item.html_safe)
+    tag.li(item.html_safe)
   end
 
   def collection_exists?(name)
@@ -63,7 +64,6 @@ module YamlHelper
     end
   end
 
-  # rubocop:disable Metrics/AbcSize
   def tag_based_list(part)
     return bullet_list_block(part) if part.keys.first == :ul
     return clear_list_block(part) if part.keys.first == :list
@@ -71,7 +71,6 @@ module YamlHelper
 
     content_tag(part.keys.first, part.values.first.html_safe, class: 'govuk-body')
   end
-  # rubocop:enable Metrics/AbcSize
 
   def bullet_list_block(part)
     ul_tag_bullet do
@@ -105,3 +104,4 @@ module YamlHelper
   end
 
 end
+# rubocop:enable Rails/HelperInstanceVariable

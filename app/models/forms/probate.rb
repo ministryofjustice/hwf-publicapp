@@ -5,6 +5,7 @@ module Forms
     attribute :kase, Boolean
     attribute :deceased_name, String
     attr_reader :date_of_death
+
     attribute :day_date_of_death, Integer
     attribute :month_date_of_death, Integer
     attribute :year_date_of_death, Integer

@@ -14,10 +14,10 @@ module Forms
         ].map(&:to_s)
       end
 
-      validates_inclusion_of :cookie_setting, in: choices
+      validates :cookie_setting, inclusion: { in: choices }
 
       def cookie_setting
-        super.blank? ? cookie_setting_value : super
+        super.presence || cookie_setting_value
       end
 
       def accepted?
@@ -33,7 +33,7 @@ module Forms
       end
 
       def save
-        unless cookie_setting.blank?
+        if cookie_setting.present?
           persist!
         end
       end

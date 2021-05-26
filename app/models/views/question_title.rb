@@ -10,8 +10,8 @@ module Views
         if (%w[savings_and_investment_extra] + income_questions).include?(@form.id)
           i18n << (@online_application.married? ? '_married' : '_single')
         end
-        if (%w[benefit] + income_questions).include?(@form.id)
-          i18n << '_refund' if @online_application.refund?
+        if (%w[benefit] + income_questions).include?(@form.id) && @online_application.refund?
+          i18n << '_refund'
         end
       end
     end

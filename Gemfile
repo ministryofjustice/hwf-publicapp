@@ -26,7 +26,8 @@ gem 'zendesk_api', '~> 1.24'
 
 group :development, :test do
   gem 'pry-rails'
-  gem 'rubocop', '0.76.0', require: false
+  gem 'rubocop', '~> 1.15', require: false
+  gem 'rubocop-rails'
 end
 
 group :development do
@@ -41,6 +42,7 @@ group :test do
   gem 'apparition'
   gem 'brakeman'
   gem 'capybara'
+  gem 'regexp_parser'
   gem 'capybara-screenshot'
   gem 'codeclimate-test-reporter'
   gem 'cucumber-rails', require: false
@@ -50,7 +52,7 @@ group :test do
   gem 'report_builder'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
-  gem 'rubocop-rspec', '1.36.0', require: false
+  gem 'rubocop-rspec', '~> 2.3', require: false
   gem 'rubyzip'
   gem 'shoulda-matchers'
   gem 'site_prism'

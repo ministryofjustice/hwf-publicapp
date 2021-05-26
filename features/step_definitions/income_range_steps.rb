@@ -32,15 +32,15 @@ When(/^I submit more than$/) do
   income_range_page.submit_more
 end
 
-Then(/^I should see low income range '([^\"]*)'$/) do |income|
+Then(/^I should see low income range '([^"]*)'$/) do |income|
   expect(income_range_page.content.income_label[0].text).to eq income
 end
 
-Then(/^I should see medium income range '([^\"]*)'$/) do |income|
+Then(/^I should see medium income range '([^"]*)'$/) do |income|
   expect(income_range_page.content.income_label[1].text).to eq income
 end
 
-Then(/^I should see high income range '([^\"]*)'$/) do |income|
+Then(/^I should see high income range '([^"]*)'$/) do |income|
   expect(income_range_page.content.income_label[2].text).to eq income
 end
 

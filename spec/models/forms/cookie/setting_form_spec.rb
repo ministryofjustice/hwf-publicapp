@@ -8,7 +8,7 @@ RSpec.describe Forms::Cookie::SettingForm do
   let(:response) { nil }
 
   before do
-    Timecop.freeze(Time.local(1990))
+    Timecop.freeze(Time.zone.local(1990))
   end
 
   after do

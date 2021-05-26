@@ -98,9 +98,10 @@ class Navigation
   end
 
   def ni_related_question?
-    if @current_question == :national_insurance_presence
+    case @current_question
+    when :national_insurance_presence
       @ni_next_page = no_ni_number_page
-    elsif @current_question == :national_insurance
+    when :national_insurance
       @ni_next_page = :marital_status
     end
   end

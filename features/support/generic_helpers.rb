@@ -2,12 +2,12 @@ require Rails.root.join('spec', 'support', 'probate_fees_switchover_helper.rb')
 
 def probate_disabled
   travel_to probate_fees_release_date + 1.day
-  puts 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+  puts "probate is disabled: #{ProbateFeesSwitch.disable_probate_fees?}"
 end
 
 def probate_enabled
   travel_to a_day_before_disable_probate_fees
-  print 'probate is disabled: ' + ProbateFeesSwitch.disable_probate_fees?.to_s
+  print "probate is disabled: #{ProbateFeesSwitch.disable_probate_fees?}"
 end
 
 def checklist_page

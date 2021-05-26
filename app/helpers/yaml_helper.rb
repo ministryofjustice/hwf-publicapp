@@ -1,3 +1,4 @@
+# rubocop:disable Rails/HelperInstanceVariable
 module YamlHelper
   include ActionView::Helpers::TagHelper
   include YamlTableHelper
@@ -24,7 +25,7 @@ module YamlHelper
   end
 
   def header_block(&block)
-    tag("h#{@recursion_level}", class: header_class) do
+    tag.send("h#{@recursion_level}", class: header_class) do
       yield block
     end
   end
@@ -103,3 +104,4 @@ module YamlHelper
   end
 
 end
+# rubocop:enable Rails/HelperInstanceVariable

@@ -1,3 +1,4 @@
+# rubocop:disable Rails/OutputSafety
 module YamlTableHelper
   # rubocop:disable Metrics/MethodLength
   def table_block(part)
@@ -60,15 +61,16 @@ module YamlTableHelper
   end
 
   def th_tag(item)
-    tag.th(item.html_safe, class: 'govuk-table__header')
+    tag.th(item, class: 'govuk-table__header').html_safe
   end
 
   def td_tag(item)
-    tag.td(item.html_safe, class: 'govuk-table__cell')
+    tag.td(item, class: 'govuk-table__cell').html_safe
   end
 
   def caption_tag(item)
-    tag.caption(item.html_safe, class: 'govuk-table__caption')
+    tag.caption(item, class: 'govuk-table__caption').html_safe
   end
 
 end
+# rubocop:enable Rails/OutputSafety

@@ -29,7 +29,7 @@ Rails:
 
 # Allow long lines in specs, as it's almost impossible to fit RSpec's
 # expectations into 80 characters.
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
   Exclude:
     - 'features/**/*'
@@ -209,13 +209,13 @@ Metrics/ModuleLength:
   Exclude:
     - 'spec/support/feature_steps.rb'
 
-Capybara/FeatureMethods:
+RSpec/Capybara/FeatureMethods:
   Enabled: false
 
 RSpec/NamedSubject:
   Enabled: false
 
-Capybara/CurrentPathExpectation:
+RSpec/Capybara/CurrentPathExpectation:
   Enabled: false
 
 RSpec/ContextWording:
@@ -321,6 +321,8 @@ Rails/WhereExists: # (new in 2.7)
   Enabled: true
 Rails/WhereNot: # (new in 2.8)
   Enabled: true
+Naming/VariableNumber:
+  EnforcedStyle: 'snake_case'
 
 
 require:

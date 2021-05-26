@@ -1,13 +1,11 @@
 require 'rails_helper'
 
 module Forms
+  class SomeQuestion < Forms::Base
+    attribute :one, String
+    attribute :two, Boolean
+  end
   RSpec.describe Base, type: :model do
-    # rubocop:disable  RSpec/LeakyConstantDeclaration
-    class SomeQuestion < Forms::Base
-      attribute :one, String
-      attribute :two, Boolean
-    end
-    # rubocop:enable  RSpec/LeakyConstantDeclaration
 
     # Because this is a base (abstract) class, I use a concrete model for testing the features
     subject(:model) { SomeQuestion.new }

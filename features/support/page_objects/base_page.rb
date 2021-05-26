@@ -1,5 +1,5 @@
 class BasePage < SitePrism::Page
-
+  # rubocop:disable Naming/VariableNumber
   section :cookie, '.govuk-cookie-banner' do
     element :header, 'h2', text: 'Cookies on help with fees'
     element :accept_button, "input[value='Accept analytics cookies']"
@@ -29,5 +29,5 @@ class BasePage < SitePrism::Page
   def click_help_with
     help_with.click
   end
-
+  # rubocop:enable Naming/VariableNumber
 end

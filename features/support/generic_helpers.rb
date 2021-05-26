@@ -1,4 +1,4 @@
-require Rails.root.join('spec', 'support', 'probate_fees_switchover_helper.rb')
+require Rails.root.join('spec/support/probate_fees_switchover_helper.rb')
 
 def probate_disabled
   travel_to probate_fees_release_date + 1.day

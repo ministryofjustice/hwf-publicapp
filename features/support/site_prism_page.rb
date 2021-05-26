@@ -1,6 +1,7 @@
 module SitePrism
   class Page
     def self.inherited(subclass)
+      super
       SitePrismSubclass << subclass
     end
 

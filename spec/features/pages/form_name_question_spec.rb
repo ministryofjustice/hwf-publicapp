@@ -26,7 +26,7 @@ RSpec.feature 'As a user' do
       end
     end
 
-    context 'when probate fees are still supported' do
+    context 'day before when probate fees are still supported' do
       before do
         travel_to a_day_before_disable_probate_fees
         given_user_answers_questions_up_to(:form_name)
@@ -39,7 +39,7 @@ RSpec.feature 'As a user' do
       end
     end
 
-    context 'when probate fees are no longer supported' do
+    context 'release date when probate fees are no longer supported' do
       before do
         travel_to(probate_fees_release_date)
         given_user_answers_questions_up_to(:form_name)
@@ -52,7 +52,7 @@ RSpec.feature 'As a user' do
       end
     end
 
-    context 'when probate fees are still supported' do
+    context 'day after when probate fees are still supported' do
       before do
         Timecop.freeze(a_day_before_disable_probate_fees)
         given_user_answers_questions_up_to(:form_name)

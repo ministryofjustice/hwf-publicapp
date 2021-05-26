@@ -324,6 +324,11 @@ Rails/WhereNot: # (new in 2.8)
 Naming/VariableNumber:
   EnforcedStyle: 'snake_case'
 
+Style/OptionalBooleanParameter:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
 
 require:
   - rubocop-rspec

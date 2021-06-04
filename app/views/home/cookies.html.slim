@@ -2,6 +2,8 @@
   = t('.title')
   = ' - '
 
+= render('shared/error_block', form: @form) if @form.errors.any?
+
 h1.govuk-heading-l =t('.heading')
 
 - t('.sections').each do |section|
@@ -13,8 +15,6 @@ h1.govuk-heading-l =t('.heading')
   fieldset.govuk-fieldset
     legend.govuk-fieldset__legend.govuk-fieldset__legend--m
       = t('accept_cookies', scope: "#{@form.i18n_scope}")
-
-    = render('shared/error_block', form: @form) if @form.errors.any?
 
     = form_for @form, as: 'cookie_setting', url: set_cookie_preference_path, html: { autocomplete: @form.autocomplete, method: :put } do |f|
       .govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)

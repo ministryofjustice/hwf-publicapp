@@ -2,6 +2,8 @@
   = t('title', scope: @form.i18n_scope)
   = ' - '
 
+= render('shared/error_block', form: @form) if @form.errors.any?
+
 .govuk-caption-l
   = t('breadcrumb', scope: @form.i18n_scope, page_number: @page_number)
 
@@ -10,9 +12,6 @@
     legend.govuk-fieldset__legend
       h1.govuk-heading-l
         = t(@title_view.i18n_title, scope: @form.i18n_scope)
-
-
-    = render('shared/error_block', form: @form) if @form.errors.any?
 
 
     = render("questions/headers/#{@form.id}")

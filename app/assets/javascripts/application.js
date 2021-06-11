@@ -25,6 +25,7 @@
 // = require ./modules/selection-buttons
 // = require ./modules/show-hide
 // = require ./modules/uppercase-fields
+// = require ./modules/address-lookup
 
 
 // overwrite annoying console message module

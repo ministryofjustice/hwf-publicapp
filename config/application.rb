@@ -58,5 +58,9 @@ module HwfPublicapp
       html_tag
     }
 
+    config.x.address_lookup.endpoint = ENV['ADDRESS_LOOKUP_ENDPOINT']
+    config.x.address_lookup.api_key = ENV['ADDRESS_LOOKUP_API_KEY']
+    config.x.address_lookup.api_secret = ENV['ADDRESS_LOOKUP_API_SECRET']
+
   end
 end

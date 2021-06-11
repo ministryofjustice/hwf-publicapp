@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   rescue_from QuestionFormFactory::QuestionDoesNotExist, with: :not_found
   before_action :redirect_if_storage_unstarted
   after_action :suppress_browser_cache
+  before_action :address_lookup_access_token
 
   def edit
     assign_title_view
@@ -57,5 +58,33 @@ class QuestionsController < ApplicationController
 
   def assign_page_number
     @page_number = Navigation.new(online_application, question).page_number
+  end
+
+  def address_lookup_access_token
+    return if question != :applicant_address
+    Rails.cache.fetch('address_lookup', expires_in: 290) do
+      uri = URI(Rails.configuration.x.address_lookup.endpoint)
+
+      req = Net::HTTP::Post.new('/oauth2/token/v1')
+      req.basic_auth(
+        Rails.configuration.x.address_lookup.api_key,
+        Rails.configuration.x.address_lookup.api_secret
+      )
+      req.set_form_data('grant_type' => 'client_credentials')
+
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = uri.instance_of? URI::HTTPS
+      begin
+        res = http.request(req)
+        if res.is_a?(Net::HTTPSuccess)
+          JSON.parse(res.body).fetch('access_token', nil).tap do |token|
+            Rails.logger.info("[Address Lookup] :: os cred #{res.body} -- token: #{token}")
+          end
+        end
+      rescue StandardError => e
+        Rails.logger.error("Address Lookup Fetch Access Token error: #{e}")
+        nil
+      end
+    end
   end
 end

@@ -202,10 +202,10 @@ RSpec.describe Views::Summary do
   end
 
   describe '#full_address' do
-    let(:online_application) { build :online_application, address: 'Street, City', postcode: 'POSTCODE' }
+    let(:online_application) { build :online_application, street: 'Street', town: 'City', postcode: 'POSTCODE' }
 
     it 'returns address and postcode with space between' do
-      expect(summary.full_address).to eql('Street, City POSTCODE')
+      expect(summary.full_address).to eql('Street City POSTCODE')
     end
   end
 end

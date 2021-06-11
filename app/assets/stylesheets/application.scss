@@ -16,6 +16,7 @@ $govuk-image-url-function: frontend-image-url;
 
 
 // /*local*/
+@import 'local/address_lookup';
 @import 'local/phase-banner';
 @import 'local/panels';
 @import 'local/utilities';

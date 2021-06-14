@@ -9,6 +9,17 @@ en:
       forms/applicant_address:
         address: Address
         postcode: Postcode
+        town: Town or City
+        # address_lookup:
+        #   enter_a_uk_postcode: Enter a UK postcode
+        #   find_address: Find address
+        #   enter_address_manually: Enter address manually
+        #   select_an_address: Select an address
+        #   error: Error
+        #   please_enter_valid_postcode: Please enter a valid UK postcode
+        #   api_call_error: An error occurred, Please enter the address manually
+        #   addresses_found: addresses found
+        #   no_address_found: no address found
       forms/claim/et:
         identifier: Employment tribunal claim number
       forms/dependent:
@@ -60,12 +71,15 @@ en:
       models:
         forms/applicant_address:
           attributes:
-            address:
-              blank: Enter your address
-              too_long: Address must be less than 100 characters
+            street:
+              blank: Enter your street
+              too_long: Street must be less than 100 characters
             postcode:
               blank: Enter your postcode
               too_long: Postcode must be less than 10 characters
+            town:
+              blank: Enter your town or city
+              too_long: Town must be less than 50 characters
         forms/benefit:
           attributes:
             on_benefits:

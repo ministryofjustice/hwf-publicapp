@@ -14,6 +14,8 @@ module Forms
     def export_params
       {
         address: address,
+        street: street,
+        town: town,
         postcode: postcode
       }
     end

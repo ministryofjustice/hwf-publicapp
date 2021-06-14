@@ -8,7 +8,6 @@ module Forms
     validates :postcode, presence: true, length: { maximum: 8 }
     validates :town, presence: true, length: { maximum: 30 }
 
-
     private
 
     def export_params

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'User completes their' do
   before { disable_postcode_lookup }
+
   scenario 'benefit application up to the summary page' do
     given_user_provides_all_data_for_benefit
     find(:xpath, "//a[@href='#{question_path(:benefit, locale: :en)}']").click

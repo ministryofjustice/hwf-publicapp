@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   before { disable_postcode_lookup }
+
   context 'when accessing the "summary" page for "Help with fees"' do
     context 'after answering yes to the dependents question' do
       before do

@@ -15,9 +15,10 @@ Feature: Address page
   Scenario: Displays enter your address error message
     When I enter my postcode
     And I click continue
-    Then I should see 'Enter your address' error message
+    Then I should see 'Enter your street' error message
 
   Scenario: Displays error message when no address is entered
     And I click continue
-    Then I should see 'Enter your address' error message
+    Then I should see 'Enter your street' error message
+
     

@@ -10,16 +10,6 @@ en:
         address: Address
         postcode: Postcode
         town: Town or City
-        # address_lookup:
-        #   enter_a_uk_postcode: Enter a UK postcode
-        #   find_address: Find address
-        #   enter_address_manually: Enter address manually
-        #   select_an_address: Select an address
-        #   error: Error
-        #   please_enter_valid_postcode: Please enter a valid UK postcode
-        #   api_call_error: An error occurred, Please enter the address manually
-        #   addresses_found: addresses found
-        #   no_address_found: no address found
       forms/claim/et:
         identifier: Employment tribunal claim number
       forms/dependent:

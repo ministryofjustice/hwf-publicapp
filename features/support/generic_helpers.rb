@@ -1,11 +1,13 @@
 require Rails.root.join('spec/support/probate_fees_switchover_helper.rb')
 
 def probate_disabled
+  disable_address_lookup
   travel_to probate_fees_release_date + 1.day
   puts "probate is disabled: #{ProbateFeesSwitch.disable_probate_fees?}"
 end
 
 def probate_enabled
+  disable_address_lookup
   travel_to a_day_before_disable_probate_fees
   print "probate is disabled: #{ProbateFeesSwitch.disable_probate_fees?}"
 end
@@ -124,4 +126,19 @@ end
 
 def continue
   base_page.content.continue_button.click
+end
+
+def disable_address_lookup
+  stub_request(:post, "https://api.os.uk/oauth2/token/v1").
+    with(
+      body: { "grant_type" => "client_credentials" },
+      headers: {
+        'Accept' => '*/*',
+        'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'Authorization' => 'Basic YXBpX2tleTphcGlfc2VjcmV0',
+        'Content-Type' => 'application/x-www-form-urlencoded',
+        'User-Agent' => 'Ruby'
+      }
+    ).
+    to_return(status: 200, body: "", headers: {})
 end

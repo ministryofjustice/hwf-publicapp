@@ -10,7 +10,8 @@ When(/^I enter my address with postcode$/) do
 end
 
 When(/^I enter my address$/) do
-  address_page.address('102 Petty France, London')
+  address_page.street('102 Petty France')
+  address_page.town('London')
 end
 
 When(/^I enter my postcode$/) do

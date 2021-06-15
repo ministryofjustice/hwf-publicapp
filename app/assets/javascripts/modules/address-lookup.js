@@ -17,7 +17,8 @@ moj.Modules.addressLookup = {
         errorSpan: '#address-lookup-postcode-error',
         addressFields: ['.street', '.town', '.postcode'],
         addressesFound: '#addresses-found',
-        noAddressFound: '#no-address-found'
+        noAddressFound: '#no-address-found',
+        continueButton: '#continue-button'
     },
 
     classes: {
@@ -46,6 +47,8 @@ moj.Modules.addressLookup = {
 
         $(self.selectors.manualLink).hide();
         $(self.selectors.manualAddress).removeClass('hide');
+        $(self.selectors.manualAddress).removeClass('hide');
+        $(self.selectors.continueButton).enable();
     },
 
     govukErrorSummary: {

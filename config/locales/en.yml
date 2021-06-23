@@ -789,7 +789,7 @@ en:
       - title: How we use your personal data
         parts:
         - p: The legal basis on which we collect the data is for the administration of justice and, anonymously, for research and statistical purposes. We use your personal data to complete a claim for Help with Fees. Any email address you supply to us will be used by HMCTS to contact you with regards to your application. We may also use your details to contact you for research purposes or to prevent or detect fraud. Your personal data may be shared with Other Government Departments for the purpose of validating or assisting you in progressing your application.
-        - p: This online service contains free-text fields in which you’re invited to enter certain types of information. You should not enter sensitive data into these free-text fields or upload documents containing sensitive data unless necessary to your application or specifically requested. Sensitive data may include, but is not limited to, details of religious beliefs and financial data.
+        - p: This online service contains free-text fields in which you’re invited to enter certain types of information. This includes sensitive data such as, but not limited to, financial data. Please only enter the information specifically requested.
       - title: How we use non-personal data
         parts:
         - p: Separately from the data entered by those using this service, we also collect site-usage data, which allows us to see how the service is being used in order to allow us to improve it. This data does not contain any personal data. See <a href="/cookies" class="govuk-link">cookies</a> for more information on how we collect of site usage data.
@@ -810,21 +810,21 @@ en:
       - title: How your personal data is stored
         parts:
         - p: MOJ takes data security very seriously and we take every step to ensure that your data remains private and secure. All data collected by this service and stored in our secure database is kept entirely within the United Kingdom. MOJ use the Microsoft Azure cloud platform to store your data. By submitting your data, you consent to the <a href="https://azure.microsoft.com/en-gb/support/legal/" class="govuk-link">Microsoft Azure Terms and Conditions</a>.
-        - p: The service invites you to provide your email address, but this is not compulsory. It uses SendGrid to route its emails. Because of the global nature of internet infrastructure, we can't guarantee that information contained in emails sent from this service will be solely routed within the UK. By submitting your information, you consent to the <a href="https://sendgrid.com/tos" class="govuk-link">SendGrid terms and conditions</a>.
+        - p: We will ask for your permission to use your email address to send you emails using GOV.UK Notify. This system processes emails only within the UK until the point where emails are handed over to the email provider you use.
         - p: We’ll never share your data with other organisations for their marketing, market research or commercial purposes, and we don’t pass on your personal data to any other websites.
       - title: Keeping your data secure
         parts:
         - p: Transmitting information over the internet is generally not completely secure, and we cannot guarantee the security of your data. We do however use Secure Socket Layer (SSL) encryption to encrypt all data transferred to and received from our server. We take data security very seriously and we take every step to ensure that your data remains private and secure. We have procedures and security features to try and keep your data secure once we receive it.
       - title: Disclosing your data
         parts:
-        - p: We may pass on your personal data if we have a legal obligation to do so.
+        - p: We may share your personal data if we have a legal obligation to do so.
       - title: Access to personal information
         parts:
         - p: 'You can find out if we hold any personal data about you by making a ‘subject access request’. You can make a subject access request by emailing: <a href="mailto:data.access@justice.gov.uk" class="govuk-link">data.access@justice.gov.uk</a>.'
         - p: 'You can get more details on:'
         - ul:
           - li: Agreements we have with other organisations for sharing personal data;
-          - li: Circumstances where we can pass on personal data without telling you, for example, to help with the prevention or detection of crime or to produce anonymised statistics;
+          - li: Circumstances where we may share your personal data without telling you, for example, to help with the prevention or detection of crime or to produce anonymised statistics;
           - li: Our instructions to staff on how to collect, use or delete your personal data;
           - li: How we check that the personal data we hold is accurate and up-to-date;
           - li: How to make a complaint.

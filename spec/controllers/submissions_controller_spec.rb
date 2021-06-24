@@ -20,7 +20,13 @@ RSpec.describe SubmissionsController, type: :controller do
       allow(service).to receive(:post).with(online_application).and_return(response)
       allow(storage).to receive(:submission_result=)
 
-      post :create
+      post :create, params: { locale: 'cy' }
+    end
+
+    context 'submit with correct params' do
+      it {
+        expect(SubmitApplication).to have_received(:new).with(Settings.submission.url, Settings.submission.token, 'cy')
+      }
     end
 
     context 'on a successful response' do

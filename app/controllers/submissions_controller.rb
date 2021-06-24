@@ -22,6 +22,7 @@ class SubmissionsController < ApplicationController
   private
 
   def submit_service
-    @submit_service ||= SubmitApplication.new(Settings.submission.url, Settings.submission.token)
+    @submit_service ||= SubmitApplication.new(Settings.submission.url, Settings.submission.token, params[:locale])
   end
+
 end

@@ -1,7 +1,8 @@
 class SubmitApplication
-  def initialize(url, token)
+  def initialize(url, token, locale)
     @url = url
     @token = token
+    @locale = locale
   end
 
   def available?
@@ -25,7 +26,7 @@ class SubmitApplication
   end
 
   def build_params(online_application)
-    { online_application: online_application.as_json }
+    { online_application: online_application.as_json, locale: @locale }
   end
 
   def build_headers

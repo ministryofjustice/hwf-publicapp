@@ -1,5 +1,5 @@
 class SubmitApplication
-  def initialize(url, token, locale)
+  def initialize(url, token, locale = 'en')
     @url = url
     @token = token
     @locale = locale

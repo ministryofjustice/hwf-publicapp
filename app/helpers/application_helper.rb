@@ -11,4 +11,15 @@ module ApplicationHelper
     !Forms::Cookie::SettingForm.new(request: request).preference_set?
   end
 
+  def address_lookup_access_token
+    Rails.cache.read('address_lookup')
+  end
+
+  def address_lookup_url
+    [Rails.configuration.x.address_lookup.endpoint, "/search/places/v1/postcode"].join
+  end
+
+  def address_lookup_details_filled?(record)
+    record.send("street").present?
+  end
 end

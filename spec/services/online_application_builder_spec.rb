@@ -20,7 +20,7 @@ RSpec.describe OnlineApplicationBuilder do
         'national_insurance' => { 'number' => 'AA123456A' },
         'personal_detail' => { 'title' => 'Mrs.', 'first_name' => 'Mary', 'last_name' => 'Jones' },
         'dob' => { 'day' => '10', 'month' => '03', 'year' => '1967' },
-        'applicant_address' => { 'address' => '1 Blue Fields, Shine Town', 'postcode' => 'SH01 TW0' },
+        'applicant_address' => { 'street' => '1 Blue Fields', 'town' => 'Shine Town', 'postcode' => 'SH01 TW0' },
         'contact' => { 'email' => 'mary@jones.com', 'feedback_opt_in' => true }
       }
     }
@@ -56,7 +56,8 @@ RSpec.describe OnlineApplicationBuilder do
       expect(online_application.title).to eql('Mrs.')
       expect(online_application.first_name).to eql('Mary')
       expect(online_application.last_name).to eql('Jones')
-      expect(online_application.address).to eql('1 Blue Fields, Shine Town')
+      expect(online_application.street).to eql('1 Blue Fields')
+      expect(online_application.town).to eql('Shine Town')
       expect(online_application.postcode).to eql('SH01 TW0')
       expect(online_application.email_contact).to be true
       expect(online_application.email_address).to eql('mary@jones.com')

@@ -4,11 +4,24 @@ cy:
     single_yes: &single_yes 'Ydw'
     married_no: &married_no 'Nac ydy'
     married_yes: &married_yes 'Ydy'
+  helpers:
+    address_lookup:
+      addresses_found: "daethpwyd o hyd i gyfeiriadau"
+      api_call_error: "Roedd gwall. Teipiwch y cyfeiriad â llaw"
+      enter_a_uk_postcode: "Rhowch god post yn y DU"
+      enter_address_manually: "Rhoi cyfeiriad â llaw"
+      error: Gwall
+      find_address: "Dod o hyd i gyfeiriad"
+      no_address_found: "heb gael hyd i gyfeiriad"
+      please_enter_valid_postcode: "Rhowch god post dilys yn y DU"
+      select_an_address: "Dewiswch gyfeiriad"
   activemodel:
     attributes:
       forms/applicant_address:
-        address: Cyfeiriad
+        street: Cyfeiriad
+        town: Tref
         postcode: Cod post
+        find_address: "Dod o hyd i gyfeiriad"
       forms/claim/et:
         identifier: Rhif hawliad tribiwnlys cyflogaeth
       forms/dependent:
@@ -60,12 +73,17 @@ cy:
       models:
         forms/applicant_address:
           attributes:
-            address:
+            street:
               blank: Rhowch eich cyfeiriad
               too_long: Rhaid i'r cyfeiriad fod yn llai na 100 o nodau
             postcode:
               blank: Rhowch eich cod post
-              too_long: Rhaid i'r cod post fod yn llai na 10 o nodau
+              too_long: Rhaid i'r cod post fod yn llai na 8 o nodau
+            town:
+              blank: Rhowch eich tref
+              too_long: Rhaid i'r cod tref fod yn llai na 30 o nodau
+
+
         forms/benefit:
           attributes:
             on_benefits:

@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "contact" page for "Help with fees"' do
-    before { given_user_answers_questions_up_to(:contact) }
+    before {
+      disable_postcode_lookup
+      given_user_answers_questions_up_to(:contact)
+    }
 
     context 'completing the form correctly' do
       before do

@@ -51,7 +51,7 @@ module Views
     end
 
     def full_address
-      [address, postcode].join(' ')
+      [street, town, postcode].join(' ')
     end
 
     private

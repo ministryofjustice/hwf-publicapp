@@ -4,6 +4,8 @@ RSpec.feature 'User submits their application' do
   let(:current_time) { Time.zone.parse('2016-03-29 14:50') }
   let(:reference) { 'HWF-CIDI16' }
 
+  before { disable_postcode_lookup }
+
   scenario 'User submits their non refund application and it is successfully processed' do
     given_user_provides_all_data
     and_the_submission_service_is_available(reference)

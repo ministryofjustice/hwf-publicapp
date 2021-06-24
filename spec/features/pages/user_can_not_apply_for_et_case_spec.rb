@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.feature 'As a user' do
-  before { travel_to a_day_before_disable_probate_fees }
+  before {
+    disable_postcode_lookup
+    travel_to a_day_before_disable_probate_fees
+  }
 
   after { travel_back }
 

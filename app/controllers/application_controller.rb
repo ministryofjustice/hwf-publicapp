@@ -43,4 +43,5 @@ class ApplicationController < ActionController::Base
     flash[:error] = t('session.expired_message')
     redirect_to(root_path)
   end
+
 end

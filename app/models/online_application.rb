@@ -26,7 +26,8 @@ class OnlineApplication
   attribute :title, String
   attribute :first_name, String
   attribute :last_name, String
-  attribute :address, String
+  attribute :street, String
+  attribute :town, String
   attribute :postcode, String
   attribute :email_contact, Boolean
   attribute :email_address, String

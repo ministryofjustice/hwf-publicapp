@@ -199,7 +199,8 @@ module FeatureSteps
   end
 
   def fill_applicant_address
-    fill_in 'applicant_address_address', with: 'Foo Street'
+    fill_in 'applicant_address_street', with: 'Foo Street'
+    fill_in 'applicant_address_town', with: 'Foo Town'
     fill_in 'applicant_address_postcode', with: 'Bar'
     click_button 'Continue'
   end
@@ -309,6 +310,21 @@ module FeatureSteps
   def fill_marital_status
     choose 'marital_status_married_false'
     click_button 'Continue'
+  end
+
+  def disable_postcode_lookup
+    stub_request(:post, "https://api.os.uk/oauth2/token/v1").
+      with(
+        body: { "grant_type" => "client_credentials" },
+        headers: {
+          'Accept' => '*/*',
+          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+          'Authorization' => 'Basic YXBpX2tleTphcGlfc2VjcmV0',
+          'Content-Type' => 'application/x-www-form-urlencoded',
+          'User-Agent' => 'Ruby'
+        }
+      ).
+      to_return(status: 200, body: "", headers: {})
   end
 end
 

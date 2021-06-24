@@ -11,7 +11,8 @@ FactoryBot.define do
     date_of_birth { Time.zone.parse('10/03 {/1976') }
     first_name { 'Peter' }
     last_name { 'Smith' }
-    address { '102 Petty France, London' }
+    street { '102 Petty France' }
+    town { 'London' }
     postcode { 'SW1H 9AJ' }
     email_contact { false }
     phone_contact { false }

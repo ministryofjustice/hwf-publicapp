@@ -19,6 +19,7 @@ end
 RSpec.feature 'As a user' do
 
   before {
+    disable_postcode_lookup
     travel_to a_day_before_disable_probate_fees
     allow(Rails.application.config).to receive(:finish_page_redirect_url).and_return root_url
   }
@@ -89,7 +90,8 @@ RSpec.feature 'As a user' do
         fill_in 'personal_detail_last_name', with: 'Oliver'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.applicant_address.text')
-        fill_in 'applicant_address_address', with: 'Foo Street'
+        fill_in 'applicant_address_street', with: 'Foo Street'
+        fill_in 'applicant_address_town', with: 'Foo Town'
         fill_in 'applicant_address_postcode', with: 'Bar'
         find_continue_button.click
         expect(page).to have_content I18n.t('questions.contact.text')

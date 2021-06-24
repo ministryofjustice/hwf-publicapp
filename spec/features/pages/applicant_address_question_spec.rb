@@ -2,11 +2,15 @@ require 'rails_helper'
 
 RSpec.feature 'As a user' do
   context 'when accessing the "applicant-address" page for "Help with fees"' do
-    before { given_user_answers_questions_up_to(:applicant_address) }
+    before {
+      disable_postcode_lookup
+      given_user_answers_questions_up_to(:applicant_address)
+    }
 
     context 'completing the form correctly' do
       before do
-        fill_in :applicant_address_address, with: '10, The Street'
+        fill_in :applicant_address_street, with: '10, The Street'
+        fill_in :applicant_address_town, with: 'London'
         fill_in :applicant_address_postcode, with: 'PO5T 0DE'
         click_button 'Continue'
       end
@@ -28,13 +32,13 @@ RSpec.feature 'As a user' do
         end
 
         scenario 'I expect the fields to have specific errors' do
-          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter your address')
+          expect(page).to have_xpath('//span[@class="govuk-error-message"]', text: 'Enter your street')
         end
       end
 
       describe 'by omitting the postcode' do
         before do
-          fill_in :applicant_address_address, with: '10, The Street'
+          fill_in :applicant_address_street, with: '10, The Street'
           click_button 'Continue'
         end
 

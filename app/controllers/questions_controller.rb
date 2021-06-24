@@ -1,7 +1,10 @@
 class QuestionsController < ApplicationController
+  include AddressLookup
+
   rescue_from QuestionFormFactory::QuestionDoesNotExist, with: :not_found
   before_action :redirect_if_storage_unstarted
   after_action :suppress_browser_cache
+  before_action :address_lookup_access_token
 
   def edit
     assign_title_view
@@ -58,4 +61,9 @@ class QuestionsController < ApplicationController
   def assign_page_number
     @page_number = Navigation.new(online_application, question).page_number
   end
+
+  def address_lookup_access_token
+    AddressLookup.access_token(question)
+  end
+
 end

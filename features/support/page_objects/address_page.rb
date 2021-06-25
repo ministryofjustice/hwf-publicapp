@@ -14,7 +14,7 @@ class AddressPage < BasePage
   end
 
   def street(str)
-    fill_in 'Street', with: str
+    fill_in 'House number and street', with: str
   end
 
   def town(str)

@@ -21,6 +21,7 @@ en:
         address: Address
         postcode: Postcode
         town: Town or City
+        street: House number and street
       forms/claim/et:
         identifier: Employment tribunal claim number
       forms/dependent:
@@ -73,7 +74,7 @@ en:
         forms/applicant_address:
           attributes:
             street:
-              blank: Enter your street
+              blank: Enter your house number and street
               too_long: Street must be less than 100 characters
             postcode:
               blank: Enter your postcode

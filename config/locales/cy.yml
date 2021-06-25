@@ -18,7 +18,7 @@ cy:
   activemodel:
     attributes:
       forms/applicant_address:
-        street: Cyfeiriad
+        street: Rhif tŷ a stryd
         town: Tref
         postcode: Cod post
         find_address: "Dod o hyd i gyfeiriad"
@@ -74,8 +74,8 @@ cy:
         forms/applicant_address:
           attributes:
             street:
-              blank: Rhowch eich cyfeiriad
-              too_long: Rhaid i'r cyfeiriad fod yn llai na 100 o nodau
+              blank: Rhowch eich rhif tŷ a stryd
+              too_long: Rhaid i'r rhif tŷ a stryd fod yn llai na 100 o nodau
             postcode:
               blank: Rhowch eich cod post
               too_long: Rhaid i'r cod post fod yn llai na 8 o nodau

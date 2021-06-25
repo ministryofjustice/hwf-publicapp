@@ -48,7 +48,6 @@ moj.Modules.addressLookup = {
         $(self.selectors.manualLink).hide();
         $(self.selectors.manualAddress).removeClass('hide');
         $(self.selectors.manualAddress).removeClass('hide');
-        $(self.selectors.continueButton).enable();
     },
 
     govukErrorSummary: {
@@ -149,7 +148,7 @@ moj.Modules.addressLookup = {
 
         self.addresses = data.results;
 
-        if (self.addresses.length > 0) {
+        if (data.header.totalresults > 0 && self.addresses.length > 0) {
             var options = $.map(self.addresses, (self.formatOptions).bind(self));
             options.unshift('<option>' + options.length + ' ' + adrFound + '</option>');
             $addressBox.find('p').hide();

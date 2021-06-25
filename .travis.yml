@@ -22,6 +22,5 @@ script:
 - bundle exec rubocop
 - bundle exec rspec
 - bundle exec cucumber features/*.feature
-- npm run serve-ci & sleep 5; npm run pa11y-ci;
 after_success:
 - bundle exec codeclimate-test-reporter

@@ -35,3 +35,7 @@ steps:
 - script: |
     bundle exec cucumber features/*.feature --fail-fast
   displayName: 'cucumber'
+
+- script: |
+    npm run pa11y-ci
+  displayName: 'pa11y'

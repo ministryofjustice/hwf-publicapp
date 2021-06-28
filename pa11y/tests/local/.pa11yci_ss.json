@@ -6,7 +6,8 @@
       "width": 600,
       "height": 500
     },
-    "concurrency": 1
+    "concurrency": 1,
+    "hideElements": ".new_cookie, .cookie_return_path, .cookie_usage, .new_cookie, #new_cookie, #cookie_banner, #cookie_setting_cookie_setting"
   },
   "urls": [
     {
@@ -34,7 +35,7 @@
       "url": "127.0.0.1:3001/questions/form_name/?info=step2",
       "actions": [
         "click element .govuk-button",
-        "set field #form_name_identifier to C100",
+        "set field #main-content #form_name_identifier to C100",
         "click element #continue-button",
         "wait for element #fee_paid_false to be visible",
         "screen capture pa11y/screenshots/local/step2.png"

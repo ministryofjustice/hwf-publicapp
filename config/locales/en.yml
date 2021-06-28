@@ -4,12 +4,24 @@ en:
     no: &no 'No'
     # intentionally blank to align with welsh file
     # intentionally blank to align with welsh file
+  helpers:
+    address_lookup:
+      addresses_found: "Address found"
+      api_call_error: "An error occurred, Please enter the address manually"
+      enter_a_uk_postcode: "Enter a UK postcode"
+      enter_address_manually: "Enter address manually"
+      error: Error
+      find_address: "Find address"
+      no_address_found: "No address found"
+      please_enter_valid_postcode: "Please enter valid postcode"
+      select_an_address: "Select an address"
   activemodel:
     attributes:
       forms/applicant_address:
         address: Address
         postcode: Postcode
         town: Town or City
+        street: House number and street
       forms/claim/et:
         identifier: Employment tribunal claim number
       forms/dependent:
@@ -62,7 +74,7 @@ en:
         forms/applicant_address:
           attributes:
             street:
-              blank: Enter your street
+              blank: Enter your house number and street
               too_long: Street must be less than 100 characters
             postcode:
               blank: Enter your postcode

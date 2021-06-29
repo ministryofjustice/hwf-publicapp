@@ -576,7 +576,7 @@ cy:
       paper_form_link_html: "Os nad oes gennych rif Yswiriant Gwladol, neu gyfeirnod Swyddfa Gartref, bydd angen i chi lenwi'r
             <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/634330/ex160-bil.pdf'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-            target='_blank'>ffurflen gais bapur</a>."
+            target='_blank'>ffurflen gais bapur</a> a gwneud cais i’r llys neu’r tribwnlys drwy’r post neu drwy e-bost."
       details:
         summary: "Lle y gallaf ddod o hyd i fy nghyfeirnod Swyddfa Gartref?"
         item_1: Gallwch ddod o hyd i’ch cyfeirnod Swyddfa Gartref ar unrhyw ohebiaeth a gawsoch gan y Swyddfa Gartref

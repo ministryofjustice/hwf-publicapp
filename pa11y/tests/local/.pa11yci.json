@@ -7,7 +7,7 @@
       "height": 500
     },
     "concurrency": 1,
-    "hideElements": ".new_cookie, .cookie_return_path, .cookie_usage, .new_cookie, #new_cookie"
+    "hideElements": ".new_cookie, .cookie_return_path, .cookie_usage, .new_cookie, #new_cookie, #cookie_banner"
   },
   "urls": [
     {

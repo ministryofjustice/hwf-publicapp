@@ -9,7 +9,7 @@
     "node": ">=0.12.x"
   },
   "scripts": {
-    "pa11y-ci": "pa11y-ci --config pa11y/tests/local/.pa11yci_ss.json"
+    "pa11y-ci": "pa11y-ci --config pa11y/tests/local/.pa11yci.json"
   },
   "engineStrict": true,
   "dependencies": {

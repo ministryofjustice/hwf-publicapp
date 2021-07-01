@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe SubmitApplication do
-  subject(:submit_application) { described_class.new(url, token) }
+  subject(:submit_application) { described_class.new(url, token, locale) }
 
   let(:url) { 'URL' }
   let(:token) { 'TOKEN' }
   let(:online_application) { build(:online_application) }
+  let(:locale) { 'en' }
 
   describe '#available?' do
     subject { submit_application.available? }
@@ -42,16 +43,34 @@ RSpec.describe SubmitApplication do
   describe '#post' do
     subject(:post) { submit_application.post(online_application) }
 
-    describe 'when the request is valid' do
-      let(:response) { { 'result' => 'RESPONSE' } }
-      let(:expected_response) { { result: 'RESPONSE' } }
+    let(:response) { { 'result' => 'RESPONSE' } }
+    let(:expected_response) { { result: 'RESPONSE' } }
 
-      before do
-        stub_request(:post, "#{url}/api/submissions").to_return(status: 200, body: response.to_json)
+    context 'welsh locale' do
+      let(:locale) { 'cy' }
+
+      describe 'when the request is valid' do
+        before do
+          stub_request(:post, "#{url}/api/submissions").
+            with(body: hash_including({ "locale" => "cy" })).to_return(status: 200, body: response.to_json).to_return(status: 200, body: response.to_json)
+        end
+
+        it 'returns the response with symbilised keys' do
+          expect(subject).to eql(expected_response)
+        end
       end
+    end
 
-      it 'returns the response with symbilised keys' do
-        expect(subject).to eql(expected_response)
+    context 'english locale' do
+      describe 'when the request is valid' do
+        before do
+          stub_request(:post, "#{url}/api/submissions").
+            with(body: hash_including({ "locale" => "en" })).to_return(status: 200, body: response.to_json).to_return(status: 200, body: response.to_json)
+        end
+
+        it 'returns the response with symbilised keys' do
+          expect(subject).to eql(expected_response)
+        end
       end
     end
   end

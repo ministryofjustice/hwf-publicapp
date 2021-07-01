@@ -766,7 +766,7 @@ cy:
         parts:
           - p: Mae'r hysbysiad preifatrwydd hwn yn pennu’r safonau y gallwch eu disgwyl gan y Weinyddiaeth Gyfiawnder (MoJ) a Gwasanaeth Llysoedd a Thribiwnlysoedd Ei Mawrhydi (GLlTEM) pan fyddwn yn prosesu gwybodaeth bersonol (‘data personol’) amdanoch chi yng nghyd-destun ceisiadau am Help i Dalu Ffioedd; sut y gallwch gael copi o’ch data personol; a’r hyn y gallwch ei wneud os ydych yn credu nad yw’r safonau’n cael eu bodloni.
           - p: Mae GLlTEM yn un o asiantaethau gweithredol MoJ. MoJ yw’r rheolydd data ar gyfer y data personol a gedwir, er gall weithio ar y cyd â GLlTEM. Mae GLlTEM hefyd yn casglu ac yn prosesu data personol er mwyn gweithredu ei swyddogaethau cyhoeddus a'i rwymedigaethau cyfreithiol ei hun a rhai cysylltiedig.
-          - p: Nid yw’r hysbysiad preifatrwydd hwn yn berthnasol i brosesu data personol sy’n cael ei gasglu a’i reoli gan y llys/tribiwnlys a’u barnwyr pan maent yn gweithredu mewn capasiti barnwrol. Mae’r farnwriaeth yn annibynnol o MoJ a GLlTEM ac mae’r ddeddfwriaeth diogelu data yn ei heffeithio'n wahanol o ganlyniad i hyn. Am ragor o wybodaeth, gweler <a href="https://www.judiciary.uk/data-privacy-notices/data-privacy" class="govuk-link">www.judiciary.uk/data-privacy-notices/data-privacy</a>.
+          - p: Nid yw’r hysbysiad preifatrwydd hwn yn berthnasol o ran prosesu data personol sy’n cael ei gasglu a’i reoli gan y llys/tribiwnlys a’u barnwyr pan maent yn gweithredu mewn capasiti barnwrol. Mae’r farnwriaeth yn annibynnol o MoJ a GLlTEM ac mae’r ddeddfwriaeth diogelu data yn ei heffeithio'n wahanol o ganlyniad i hyn. Am ragor o wybodaeth, gweler <a href="https://www.judiciary.uk/data-privacy-notices/data-privacy" class="govuk-link">www.judiciary.uk/data-privacy-notices/data-privacy</a>.
       - title: Ynghylch data personol
         parts:
           - p: Data personol yw gwybodaeth sy’n ymwneud ag unigolyn byw y gellir ei adnabod o’r data hwnnw.
@@ -790,47 +790,47 @@ cy:
       - title: Sut rydym ni’n defnyddio eich data personol
         parts:
           - p: Y sail gyfreithiol dros gasglu'r data yw er mwyn gweinyddu cyfiawnder ac, yn ddienw, at bwrpas ystadegol ac ymchwil. Rydym yn defnyddio eich data personol i gwblhau eich cais am Help i Dalu Ffioedd. Bydd GLlTEM yn defnyddio unrhyw gyfeiriad e-bost a ddarperir gennych i gysylltu â chi ynghylch eich cais. Efallai byddwn hefyd yn defnyddio eich manylion i gysylltu â chi at ddibenion ymchwil neu i atal neu i ganfod twyll. Gall eich data personol gael ei rannu ag adrannau eraill y Llywodraeth at ddibenion dilysu neu i’ch cynorthwyo gyda symud eich cais yn ei flaen.
-          - p: Mae’r gwasanaeth ar-lein hwn yn cynnwys meysydd testun rhydd lle’ch gwahoddir i nodi mathau penodol o wybodaeth. Ni ddylech nodi data sensitif yn y meysydd testun rhydd hyn a ni ddylech lwytho dogfennau sy'n cynnwys data sensitif, oni bai ei fod yn angenrheidiol ar gyfer eich cais neu y gofynnwyd yn benodol amdano. Gall data sensitif gynnwys, ond heb ei gyfyngu i, manylion credoau crefyddol a data ariannol.
+          - p: Mae’r gwasanaeth ar-lein hwn yn cynnwys meysydd testun rhydd lle’ch gwahoddir i nodi mathau penodol o wybodaeth. Mae hyn yn cynnwys data sensitif megis data ariannol, ond heb fod yn gyfyngedig iddo. Rhowch yr wybodaeth y gofynnir amdani yn unig.
       - title: Sut rydym ni’n defnyddio data nad yw’n bersonol
         parts:
-          - p: Ar wahân i’r data y mae’r rhai sy’n defnyddio’r gwasanaeth yn ei gofnodi, rydym hefyd yn casglu data am ddefnydd o’r wefan sy’n ein galluogi i weld sut mae’r gwasanaeth yn cael ei ddefnyddio fel y gallwn ei wella. Nid yw’r data hwn yn cynnwys unrhyw ddata personol. Gweler <a href="/cookies?locale=cy" class="govuk-link">cwyis</a> am ragor o wybodaeth am sut rydym yn casglu data defnydd ar gyfer safleoedd penodol.
-          - p: Mae’r gwasanaeth hwn hefyd yn cynnig cyfle i chi ddarparu adborth sy’n ein helpu ni i wneud gwelliannau iddo. Bydd yr adborth yn gwbl ddienw ac ni fydd yn cynnwys gwybodaeth bersonol adnabyddadwy (PII). Mae’r arolygon yn cynnwys meysydd testun rhydd lle’ch gwahoddir i nodi adborth. Ni ddylech roi data sensitif yn y meysydd testun rhydd hyn, er enghraifft, data ariannol. Mae yna hefyd gwestiynau megis am eich amrediad oed a grŵp ethnig. Nid oes rhaid i chi ateb y cwestiynau hyn, ac fe’u defnyddir dim ond i ddeall yr adborth a gawn yn well.
+          - p: Ar wahân i’r data y mae’r rhai sy’n defnyddio’r gwasanaeth yn ei gofnodi, rydym hefyd yn casglu data am ddefnydd o’r wefan sy’n ein galluogi i weld sut mae’r gwasanaeth yn cael ei ddefnyddio fel y gallwn ei wella. Nid yw’r data hwn yn cynnwys unrhyw ddata personol. Gweler <a href="/cookies?locale=cy" class="govuk-link">cwyis</a> i gael rhagor o wybodaeth am sut rydym yn casglu data defnydd gwefannau.
+          - p: Mae’r gwasanaeth hwn hefyd yn cynnig cyfle i chi ddarparu adborth sy’n ein helpu ni i wneud gwelliannau iddo. Bydd yr adborth yn gwbl ddienw ac ni fydd yn cynnwys gwybodaeth bersonol adnabyddadwy (PII). Mae’r arolygon yn cynnwys meysydd testun rhydd lle’ch gwahoddir i nodi adborth. Ni ddylech roi data sensitif yn y meysydd testun rhydd hyn, er enghraifft, data ariannol. Mae yna hefyd gwestiynau megis eich amrediad oed a grŵp ethnig. Nid oes rhaid i chi ateb y cwestiynau hyn, ac fe’u defnyddir dim ond i ddeall yr adborth a gawn yn well.
           - p: Byddwn ond yn casglu data a fydd yn ein cynorthwyo i wella’r wefan ar eich cyfer; data a fydd yn ein galluogi i gysylltu â chi os ydych wedi gofyn inni wneud hynny, ein galluogi i roi data cywir ichi os byddwch ei angen, a rhoi syniad inni am sut mae pobl yn defnyddio’r gwasanaeth hwn, er mwyn i ni barhau i’w wella.
           - p: 'Mae’n cynnwys:'
           - ul:
               - li: cwestiynau, ymholiadau neu adborth rydych yn ei gyflwyno, gan gynnwys eich cyfeiriad e-bost os ydych yn anfon neges i roi adborth
               - li: eich cyfeiriad IP, a manylion ynghylch pa fath o borwr gwe y gwnaethoch ei ddefnyddio
-              - li: data am sut ydych yn defnyddio'r wefan, gan ddefnyddio cwcis a dulliau tagio tudalennau i'n cynorthwyo i wella'r wefan
+              - li: data am sut byddwch yn defnyddio'r wefan, gan ddefnyddio cwcis a dulliau tagio tudalennau i'n cynorthwyo i wella'r wefan
           - p: 'Mae hyn yn ein helpu i:'
           - ul:
               - li: wella’r wefan drwy fonitro sut rydych yn ei defnyddio
               - li: ymateb i unrhyw adborth rydych wedi’i anfon atom, os ydych wedi gofyn inni wneud hynny
               - li: rhoi gwybodaeth ichi am wasanaethau lleol os ydych eisiau hynny
           - p: Nid oes modd i ni eich adnabod trwy ddefnyddio eich data defnyddiwr safle.
-          - p: I weld sut rydym yn defnyddio cwcis, ac i ddewis pa gwcis yr ydych yn hapus i ni eu defnyddio, gweler <a href="https://www.gov.uk/help/cookies" class="govuk-link">cwyis</a>.
-      - title: Sut mae eich data personol yn cael ei storio
+          - p: I  weld sut rydym yn defnyddio cwcis, ac i ddewis pa gwcis yr ydych yn hapus i ni eu defnyddio, gweler y  <a href="https://www.gov.uk/help/cookies" class="govuk-link">polisi cwyis</a>.
+      - title: Sut mae eich data personol yn cael ei storio?
         parts:
-          - p: Mae MoJ yn cymryd diogelu data o ddifrif ac yn cymryd pob cam posib i sicrhau bod eich data yn aros yn breifat ac yn ddiogel. Mae’r holl ddata a gesglir gan y gwasanaeth hwn ac sy'n cael ei storio ar ein cronfa ddata diogel yn cael ei gadw o fewn y Deyrnas Unedig. Mae MoJ yn defnyddio platfform cwmwl Microsoft Azure i storio eich data. Drwy gyflwyno eich data, rydych yn derbyn <a href="https://azure.microsoft.com/en-gb/support/legal/" class="govuk-link">Telerau ac Amodau Microsoft Azure</a>.
-          - p: Mae’r gwasanaeth yn eich gwahodd i ddarparu eich cyfeiriad e-bost, ond nid yw hyn yn orfodol. Mae’n defnyddio SendGrid i brosesu ei negeseuon e-bost. Oherwydd natur byd-eang isadeiledd y rhyngrwyd, ni allwn warantu y bydd gwybodaeth sy'n cael ei chynnwys mewn negeseuon e-bost a anfonir o'r gwasanaeth hwn yn cael ei phrosesu o fewn y DU yn unig. Drwy gyflwyno eich gwybodaeth, rydych yn derbyn <a href="https://sendgrid.com/tos" class="govuk-link">telerau ac amodau SendGrid</a>.
+          - p: Mae MoJ yn cymryd diogelu data o ddifri ac yn cymryd pob cam posib i sicrhau bod eich data yn aros yn breifat ac yn ddiogel. Mae’r holl ddata a gesglir gan y gwasanaeth hwn ac sy'n cael ei storio ar ein cronfa ddata diogel yn cael ei gadw o fewn y Deyrnas Unedig. Mae MoJ yn defnyddio platfform cwmwl Microsoft Azure i storio eich data. Drwy gyflwyno eich data, rydych yn derbyn <a href="https://azure.microsoft.com/en-gb/support/legal/" class="govuk-link">Telerau ac Amodau Microsoft Azure</a>.
+          - p: Byddwn yn gofyn am eich caniatâd i ddefnyddio’ch cyfeiriad e-bost i anfon negeseuon e-bost atoch trwy’r system GOV.UK Notify. Mae'r system hon yn prosesu negeseuon e-bost yn y DU yn unig tan y pwynt lle caiff negeseuon e-bost eu trosglwyddo i'r darparwr e-bost a ddefnyddiwch.
           - p: Ni fyddwn byth yn rhannu eich data gyda sefydliadau eraill at ddibenion marchnata, ymchwil i’r farchnad neu ddibenion masnachol, ac nid ydym yn anfon eich data personol ymlaen i wefannau eraill.
       - title: Cadw eich data’n ddiogel
         parts:
-          - p: Yn gyffredinol, nid yw trosglwyddo gwybodaeth dros y rhyngrwyd yn hollol ddiogel, ac ni allwn warantu y bydd eich data’n ddiogel. Fodd bynnag, rydym yn defnyddio Haen Socedi Diogel (SSL) i amgryptio'r holl ddata sy'n cael ei drosglwyddo i'n gweinydd ac allan ohono. Rydym yn cymryd diogelu data o ddifrif ac yn cymryd pob cam posib i sicrhau bod eich data yn aros yn breifat a diogel. Mae gennym weithdrefnau a nodweddion diogelwch mewn lle i geisio cadw’ch data’n ddiogel unwaith y byddwn wedi’i gael.
+          - p: Yn gyffredinol, nid yw trosglwyddo gwybodaeth dros y rhyngrwyd yn hollol ddiogel, ac ni allwn warantu y bydd eich data’n ddiogel. Fodd bynnag, rydym yn defnyddio Haen Socedi Diogel (SSL) i amgryptio'r holl ddata sy'n cael ei drosglwyddo i'n gweinydd ac allan ohono. Rydym yn cymryd diogelu data o ddifri ac yn cymryd pob cam posib i sicrhau bod eich data yn aros yn breifat a diogel. Mae gennym weithdrefnau a nodweddion diogelwch mewn lle i geisio cadw’ch data’n ddiogel unwaith y byddwn wedi’i gael.
       - title: Datgelu eich data
         parts:
-          - p: Efallai y byddwn yn anfon eich gwybodaeth bersonol ymlaen os oes gennym ddyletswydd gyfreithiol i wneud hynny.
+          - p: Efallai y byddwn yn rhannu eich gwybodaeth bersonol os oes gennym ddyletswydd gyfreithiol i wneud hynny.
       - title: Mynediad at wybodaeth bersonol
         parts:
           - p: 'Gallwch ganfod os oes gennym unrhyw ddata personol amdanoch drwy wneud ‘cais gwrthrych am wybodaeth’. Gallwch wneud cais gwrthrych am wybodaeth trwy anfon e-bost i: <a href="mailto:data.access@justice.gov.uk" class="govuk-link">data.access@justice.gov.uk</a>.'
           - p: 'Gallwch gael rhagor o fanylion ynghylch:'
           - ul:
               - li: Cytundebau sydd gennym gyda sefydliadau eraill ar gyfer rhannu data personol;
-              - li: Amgylchiadau lle gallwn drosglwyddo'ch data personol heb roi gwybod i chi, er enghraifft, i helpu i atal a datrys troseddau neu gynhyrchu ystadegau dienw;
+              - li: Amgylchiadau lle gallwn rannu eich data personol heb roi gwybod i chi, er enghraifft, i helpu i atal a datrys troseddau neu gynhyrchu ystadegau dienw;
               - li: Ein cyfarwyddiadau i staff ynghylch sut i gasglu, defnyddio neu ddileu eich data personol;
               - li: Sut rydym yn gwirio bod y data personol sydd gennym yn gywir ac yn gyfredol;
               - li: Sut i wneud cwyn.
           - p: "I gael rhagor o wybodaeth am y materion uchod neu ar gyfer unrhyw ymholiadau eraill, cysylltwch â’n Swyddog Diogelu Data drwy e-bost yn: <a href='mailto:DPO@justice.gov.uk' class='govuk-link'>DPO@justice.gov.uk</a>."
-          - p: Gallwch weld <a href="https://www.gov.uk/help/privacy-notice" class="govuk-link">polisi preifatrwydd GOV.UK</a> yma.
+
       - title: Cwynion
         parts:
           - p: 'Pan ofynnwn i chi am wybodaeth, byddwn yn cadw at y gyfraith. Os ydych yn credu bod eich gwybodaeth wedi cael ei thrin yn anghywir gan MoJ neu GLlTEM, gallwch gysylltu â’r Comisiynydd Gwybodaeth i gael cyngor annibynnol ar ddiogelu data. Manylion cyswllt y Comisiynydd Gwybodaeth yw:'
@@ -838,7 +838,7 @@ cy:
           - span: 'Wycliffe House<br/>'
           - span: 'Water Lane<br/>'
           - span: 'Wilmslow<br/>'
-          - span: 'Cheshire<br/>'
+          - span: 'Swydd Gaer<br/>'
           - span: 'SK9 5AF<br/>'
           - span: 'Ffôn: 0303 123 1113<br/>'
           - span: <a href="https://www.ico.org.uk" class="govuk-link">www.ico.org.uk</a>

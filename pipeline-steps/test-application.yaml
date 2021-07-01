@@ -37,5 +37,9 @@ steps:
   displayName: 'cucumber'
 
 - script: |
+<<<<<<< HEAD
      bundle exec rails s -p 3001 & sleep 5; npm run pa11y-ci
+=======
+    bundle exec rails s -p 3001 & sleep 5; npm run pa11y-ci
+>>>>>>> d2f1e70 (add port when running rails)
   displayName: 'pa11y'

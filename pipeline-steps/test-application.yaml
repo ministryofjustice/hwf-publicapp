@@ -37,5 +37,5 @@ steps:
   displayName: 'cucumber'
 
 - script: |
-    bundle exec rails s & sleep 5; npm run pa11y-ci
+    bundle exec rails s -p 3001 & sleep 5; npm run pa11y-ci
   displayName: 'pa11y'

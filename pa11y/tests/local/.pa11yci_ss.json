@@ -6,7 +6,8 @@
       "width": 600,
       "height": 500
     },
-    "concurrency": 1
+    "concurrency": 1,
+    "hideElements": ".new_cookie, .cookie_return_path, .cookie_usage, .new_cookie, #new_cookie"
   },
   "urls": [
     {
@@ -27,6 +28,7 @@
       "url": "127.0.0.1:3001/checklist/?info=step1",
       "actions": [
         "click element .govuk-button",
+        "click element #main-content .govuk-button",
         "screen capture pa11y/screenshots/local/step1.png"
       ]
     },

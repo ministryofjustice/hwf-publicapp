@@ -455,6 +455,7 @@ cy:
       title: Enw neu rif y ffurflen
       unknown: Nid oes gen i ffurflen
     income_amount:
+      prompt: Rhowch gyfanswm yr incwm rydych chi'n ei gael bob mis.
       amount:
         married: Rhowch gyfanswm yr incwm rydych chi a'ch partner yn ei gael bob mis.
         single: Rhowch gyfanswm yr incwm rydych chi'n ei gael bob mis.

@@ -454,6 +454,7 @@ en:
       title: Form number
       unknown: I don’t have a form
     income_amount:
+      prompt: Enter the total monthly amount you receive in income.
       amount:
         married: Enter the total monthly amount you and your partner receive in income.
         single: Enter the total monthly amount you receive in income.

@@ -3,4 +3,4 @@
     span.govuk-error-message#amount = @form.errors[:amount].join(' ')
   = f.label :amount, class: 'govuk-label text visuallyhidden'
   span.govuk-body.currency £
-  = f.text_field :amount, type: 'number', class: 'govuk-input govuk-!-width-one-quarter'
+  = f.text_field :amount, type: 'number', class: 'govuk-input govuk-!-width-one-quarter','aria-label': t('prompt', scope: @form.i18n_scope)

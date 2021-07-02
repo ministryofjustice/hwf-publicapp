@@ -1,7 +1,7 @@
 .govuk-form-group class=('govuk-form-group--error' if @form.errors.any?)
-  label.govuk-label for='national_insurance_number'
+  = f.label class: 'govuk-label'
     span.visuallyhidden =t('prompt', scope: @form.i18n_scope)
     - if @form.errors[:number].any?
       span.govuk-error-message#number = @form.errors[:number].join(' ')
-    = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase'
+    = f.text_field :number, class: 'govuk-input govuk-!-width-one-third js-uppercase', 'aria-label': t('prompt', scope: @form.i18n_scope)
     = f.hidden_field :has_ni_number, value: @online_application.ni_number_present

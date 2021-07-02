@@ -575,7 +575,7 @@ en:
       paper_form_link_html: "If you don't have either National Insurance number, or a Home Office reference number, you'll need to fill in the
             <a href='https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/880144/ex160-eng.pdf'
             class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-            target='_blank'>paper application form</a>."
+            target='_blank'>paper application form</a> and apply to the court or tribunal by post or email."
       details:
         summary: "Where to find my Home Office reference number?"
         item_1: Your Home Office reference number can be found on any correspondence you have received from the Home Office
@@ -937,7 +937,7 @@ en:
       paper_form_html: "If you don't have either a National Insurance number or a Home Office reference number, you need to
           <a href='https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/508760/ex160-eng-20160212.pdf'
           class='external govuk-link' rel='external' title='Form EX160: Apply for help with court and tribunal fees'
-          target='_blank'>use the paper form</a>."
+          target='_blank'>use the paper form</a> and apply to the court or tribunal by post or email."
       accurate_information: The information you provide needs to be accurate as it will act as evidence for your application. We’ll contact you if we need to see proof of this information.
 
     cookies:

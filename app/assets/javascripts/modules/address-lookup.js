@@ -37,6 +37,12 @@ moj.Modules.addressLookup = {
     bindEvents: function() {
         const self = this;
 
+        $(self.selectors.postcode).on("keypress", function(e){
+          if(e.which == 13) {
+            $(self.selectors.btn).click();
+            return false;
+          }
+        });
         $(self.selectors.btn).on("click", (self.postcodeLookup).bind(self));
         $(self.selectors.manualLink).on("click", (self.showAddressFields).bind(self));
         $(self.selectors.addressOptionSelect).on("change", (self.fillAddressFields).bind(self));

@@ -17,7 +17,7 @@ steps:
   displayName: 'bundle install'
 
 - script: |
-    npm install --production
+    npm install --only=dev
   displayName: 'npm install'
 
 - script: |
@@ -35,3 +35,7 @@ steps:
 - script: |
     bundle exec cucumber features/*.feature --fail-fast
   displayName: 'cucumber'
+
+  - script: |
+    bundle exec rails s -p 3001 & sleep 5; npm run pa11y-ci
+  displayName: 'pa11y'

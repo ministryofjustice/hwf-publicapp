@@ -882,8 +882,7 @@
         "click element #continue-button",
         "set field #contact_email to pa11y-test@gmail.com",
         "click element #continue-button",
-        "click element .govuk-button",
-        "click element [type=\"submit\"]"
+        "click element .govuk-button"
       ]
     },
     {

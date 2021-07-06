@@ -9,7 +9,11 @@
     "node": ">=0.12.x"
   },
   "scripts": {
+<<<<<<< HEAD
     "pa11y-ci": "pa11y-ci --config pa11y/tests/local/.pa11yci.json"
+=======
+    "pa11y-ci": "pa11y-ci --config pa11y/tests/local/.pa11yci_ss.json"
+>>>>>>> 4046cc9 (adding pa11y to the build)
   },
   "engineStrict": true,
   "dependencies": {

@@ -36,6 +36,8 @@ steps:
     bundle exec cucumber features/*.feature --fail-fast
   displayName: 'cucumber'
 
-  - script: |
+- script: |
     bundle exec rails s -p 3001 & sleep 5; npm run pa11y-ci
   displayName: 'pa11y'
+
+

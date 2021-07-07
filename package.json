@@ -15,7 +15,6 @@
   "dependencies": {
     "govuk-frontend": "^3.12.0"
   },
-  
   "devDependencies": {
     "pa11y-ci": "2.4.1"
   }
